@@ -1,0 +1,11 @@
+rank,id,name,scaffold,smiles,mw,clogp,tpsa,hbd,hba,nrb,fsp3,ro5_violations,veber_pass,pains_clean,rf_prob,gbt_prob,svm_prob,tanimoto_th5427,twcs_consensus,ad_tier,role
+1,NC5-01,Xanthine-Triazole Hybrid,Xanthine-triazole,"O=c1[nH]c(=O)c2n(Cc3nn(C)c(-c4ccc(F)cc4)n3)c(N3CCNCC3)nc2n1C",439.5,-0.18,118.7,2,7,4,0.35,0,True,True,0.94,0.91,0.88,0.526,0.82,High,Hit-expansion analog
+2,NC5-07,Pteridinone-Oxadiazole,Pteridinone-oxadiazole,"O=c1[nH]c(Nc2ccc(F)cc2)nc2cnc(Cc3nnc(-c4ccc(Cl)cc4)o3)nc12",449.8,3.89,122.5,2,8,5,0.05,0,True,True,0.72,0.67,0.61,0.255,0.58,Moderate,Hit-to-lead
+3,NC5-04,Adenine-Acylsulfonamide,Adenine-acylSO2NH,"c1nc(N)c2ncn(CC(=O)NS(=O)(=O)c3ccc(Cl)cc3)c2n1",366.8,0.57,132.9,2,7,4,0.08,0,True,True,0.68,0.63,0.54,0.104,0.52,Moderate,Mechanistic probe
+4,NC5-02,Pyrazolopyrimidine,Pyrazolopyrimidine,"Nc1ncnc2[nH]nc(-c3ccc(Oc4ccccc4)cc3)c12",303.3,3.39,89.7,2,5,3,0.00,0,True,True,0.62,0.55,0.41,0.079,0.48,Extrapolation,Screening hit
+5,NC5-06,Pteridine-Piperazine,Pteridine-piperazine,"Nc1nc2ncc(CN3CCNCC3)nc2c(=O)[nH]1",261.3,-1.30,112.8,3,7,2,0.45,0,True,True,0.56,0.49,0.42,0.220,0.44,Moderate,Early lead-like
+6,NC5-08,Lumazine-Acetanilide,Lumazine-acetanilide,"O=C(Nc1ccc(F)cc1)Cn1c(=O)[nH]c2nc[nH]c(=O)c21",303.3,0.19,112.6,3,4,3,0.08,0,True,True,0.54,0.47,0.40,0.170,0.42,Extrapolation,Fragment / screening hit
+7,NC5-03,Benzimidazole-Sulfonamide,Benzimidazole-SO2NH,"O=S(=O)(N1CCNCC1)c1ccc2[nH]c(-c3ccccn3)nc2c1",343.4,1.22,91.0,2,5,3,0.25,0,True,True,0.51,0.42,0.35,0.191,0.39,Extrapolation,Screening hit
+8,NC5-10,Imidazopyrimidine-Carboxamide,Imidazopyrimidine,"O=C(c1cnc2nc(N)ccn12)Nc1cccc(S(N)(=O)=O)c1",332.3,0.21,145.5,3,6,3,0.00,0,False,True,0.48,0.41,0.34,0.081,0.37,Extrapolation,Screening hit / early lead
+9,NC5-09,Quinazolinone-Acrylamide,Quinazolinone-acrylamide,"O=C(/C=C/c1ccc(F)cc1)N1CCN(c2nc3ccccc3c(=O)[nH]2)CC1",378.4,2.42,69.3,1,4,3,0.19,0,True,True,0.44,0.37,0.31,0.160,0.35,Extrapolation,Covalent probe (speculative)
+10,NC5-05,Indole-Carboxamide Fragment,Indole-carboxamide,"O=C(NCc1cnc2ccccc2n1)c1c[nH]c2ccccc12",302.3,3.04,70.7,2,3,3,0.06,0,True,True,0.38,0.32,0.28,0.097,0.31,Extrapolation,Fragment

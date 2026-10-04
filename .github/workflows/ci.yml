@@ -1,0 +1,38 @@
+name: Reproducibility checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6.8.0
+        with:
+          version: '0.12.22'
+      - name: Install locked environment
+        run: |
+          uv venv .venv --python 3.12
+          uv pip sync --python .venv/bin/python --require-hashes requirements.lock
+          uv pip install --python .venv/bin/python --no-deps -e .
+      - name: Lint and types
+        run: |
+          .venv/bin/ruff check .
+          .venv/bin/ruff format --check .
+          .venv/bin/mypy --no-incremental
+      - name: Tests, build and dependency audit
+        run: |
+          .venv/bin/python -m pytest
+          .venv/bin/python -m compileall -q scripts tests
+          .venv/bin/python -m build
+          .venv/bin/pip-audit
+      - name: Exercise audit CLI and document generation
+        run: |
+          .venv/bin/nudt5-audit audit --output results/ci-audit
+          .venv/bin/python scripts/build_research_documents.py --output results/ci-documents

@@ -1,0 +1,3 @@
+training_id,reference_name,source_smiles,source_url,source_sha256,source_doi,identity_note
+ACT-01,TH5427,CN1C(=O)N(C)c2nc(N3CCNCC3)n(Cc4oc(nn4)c5ccc(Cl)c(Cl)c5)c2C1=O,https://files.rcsb.org/ligands/download/9CH.cif,e1791b0bdfe51ae1475dae195bccba78a76e7bd430b027e7986da3d1f6a1ad5a,10.1038/s41467-017-02293-7,"Structure assignment from Page 2018 synthesis/PDB; 958 has a conflicting TH5427 synonym, not used for identification."
+ACT-02,TH1713,CN(C)c1nc2N(C)C(=O)N(C)C(=O)c2n1Cc3oc(nn3)c4cccc(C)c4,https://files.rcsb.org/ligands/download/958.cif,c1c904b5715a2ccf2f9411995d79291129f29fe77a28d14e8500e84482f77255,10.1038/s41467-017-02293-7,"Structure assignment from Page 2018 synthesis/PDB; 958 has a conflicting TH5427 synonym, not used for identification."

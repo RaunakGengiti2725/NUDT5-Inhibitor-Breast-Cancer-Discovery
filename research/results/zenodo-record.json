@@ -1,0 +1,123 @@
+{
+  "created": "2026-04-01T20:14:43.124101+00:00",
+  "modified": "2026-04-01T20:14:43.376403+00:00",
+  "id": 19374517,
+  "conceptrecid": "19374516",
+  "doi": "10.5281/zenodo.19374517",
+  "conceptdoi": "10.5281/zenodo.19374516",
+  "doi_url": "https://doi.org/10.5281/zenodo.19374517",
+  "metadata": {
+    "title": "RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery: Structure-Based and Machine Learning Discovery of NUDT5 Inhibitors for Breast Cancer",
+    "doi": "10.5281/zenodo.19374517",
+    "publication_date": "2026-04-01",
+    "description": "<h2>Description</h2>\n<p>This release contains the complete computational pipeline for the discovery of novel NUDT5 inhibitors targeting estrogen receptor\u2013positive (ER+) breast cancer. The project integrates structure-based drug design, cheminformatics, and machine learning approaches to identify and prioritize potential therapeutic candidates.</p>\n<p>The workflow combines molecular fingerprinting (ECFP4), Tanimoto similarity screening, Glide SP/XP docking, MM-GBSA rescoring, and supervised learning using a random forest classifier. The pipeline is designed to operate effectively under low-data conditions, making it suitable for early-stage drug discovery.</p>\n<p>The dataset includes an initial compound library of approximately 18,400 molecules, which was filtered through the pipeline to yield 10 structurally diverse candidate inhibitors. These candidates exhibit favorable drug-like properties, including appropriate molecular weight, lipophilicity, and polar surface area.</p>\n<p>This repository provides all scripts, datasets, and results necessary to reproduce the analysis. It is intended to support transparency, reproducibility, and reuse in computational drug discovery research.</p>\n<h2>Contents</h2>\n<ul>\n<li><code>scripts/</code> \u2013 Pipeline implementation and analysis code</li>\n<li><code>data/</code> \u2013 Input compound libraries</li>\n<li><code>results/</code> \u2013 Final screened hits and outputs</li>\n<li><code>requirements.txt</code> \u2013 Python dependencies</li>\n</ul>\n<h2>Keywords</h2>\n<p>NUDT5, breast cancer, drug discovery, molecular docking, machine learning, cheminformatics, in silico screening</p>\n<h2>License</h2>\n<p>Please refer to the repository for licensing details.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "RaunakGengiti2725",
+        "affiliation": null
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/tree/research",
+        "relation": "isSupplementTo",
+        "resource_type": "software",
+        "scheme": "url"
+      }
+    ],
+    "version": "research",
+    "custom": {
+      "code:codeRepository": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery"
+    },
+    "resource_type": {
+      "title": "Software",
+      "type": "software"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "19374516"
+          }
+        }
+      ]
+    }
+  },
+  "title": "RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery: Structure-Based and Machine Learning Discovery of NUDT5 Inhibitors for Breast Cancer",
+  "links": {
+    "self": "https://zenodo.org/api/records/19374517",
+    "self_html": "https://zenodo.org/records/19374517",
+    "preview_html": "https://zenodo.org/records/19374517?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.19374517",
+    "self_doi": "https://doi.org/10.5281/zenodo.19374517",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.19374517",
+    "reserve_doi": "https://zenodo.org/api/records/19374517/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/19374516",
+    "parent_html": "https://zenodo.org/records/19374516",
+    "parent_doi": "https://doi.org/10.5281/zenodo.19374516",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.19374516",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:19374517/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:19374517/sequence/default",
+    "files": "https://zenodo.org/api/records/19374517/files",
+    "media_files": "https://zenodo.org/api/records/19374517/media-files",
+    "archive": "https://zenodo.org/api/records/19374517/files-archive",
+    "archive_media": "https://zenodo.org/api/records/19374517/media-files-archive",
+    "latest": "https://zenodo.org/api/records/19374517/versions/latest",
+    "latest_html": "https://zenodo.org/records/19374517/latest",
+    "versions": "https://zenodo.org/api/records/19374517/versions",
+    "draft": "https://zenodo.org/api/records/19374517/draft",
+    "access_links": "https://zenodo.org/api/records/19374517/access/links",
+    "access_grants": "https://zenodo.org/api/records/19374517/access/grants",
+    "access_users": "https://zenodo.org/api/records/19374517/access/users",
+    "access_request": "https://zenodo.org/api/records/19374517/access/request",
+    "access": "https://zenodo.org/api/records/19374517/access",
+    "communities": "https://zenodo.org/api/records/19374517/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/19374517/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/19374517/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/19374517/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/19374517/quota-increase",
+    "requests": "https://zenodo.org/api/records/19374517/requests"
+  },
+  "updated": "2026-04-01T20:14:43.376403+00:00",
+  "recid": "19374517",
+  "revision": 3,
+  "files": [
+    {
+      "id": "91e002db-252e-41a6-a14e-7eecf4d36f72",
+      "key": "RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery-research.zip",
+      "size": 9365,
+      "checksum": "md5:72e28aa847c97099a376017036c578b2",
+      "links": {
+        "self": "https://zenodo.org/api/records/19374517/files/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery-research.zip/content"
+      }
+    }
+  ],
+  "swh": {
+    "swhid": "swh:1:dir:25b745a20eb80477afc9e9ad5d400b53dcc8c7b4;origin=https://doi.org/10.5281/zenodo.19374516;visit=swh:1:snp:e1e7d39ba366ed8284a3bc3e82fbdddf170e3d6d;anchor=swh:1:rel:957ce674b9e1d96cbd597eca00dc7c0939c2dd19;path=RaunakGengiti2725-NUDT5-Inhibitor-Breast-Cancer-Discovery-8c2a1b6"
+  },
+  "owners": [
+    {
+      "id": "1595868"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 18,
+    "unique_downloads": 18,
+    "views": 88,
+    "unique_views": 85,
+    "version_downloads": 18,
+    "version_unique_downloads": 18,
+    "version_unique_views": 85,
+    "version_views": 88
+  },
+  "state": "done",
+  "submitted": true
+}

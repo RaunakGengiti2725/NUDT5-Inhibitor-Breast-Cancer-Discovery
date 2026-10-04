@@ -1,0 +1,629 @@
+{
+  "candidate_duplicates": [],
+  "candidate_issues": [],
+  "candidates": [
+    {
+      "canonical_smiles": "Cn1nc(Cn2c(N3CCNCC3)nc3c2c(=O)[nH]c(=O)n3C)nc1-c1ccc(F)cc1",
+      "id": "NC5-01",
+      "max_active_tanimoto": 0.6617647058823529,
+      "max_training_tanimoto": 0.6617647058823529,
+      "nearest_active_id": "ACT-04",
+      "nearest_training_id": "ACT-04",
+      "pains_alerts": [],
+      "properties": {
+        "clogp": -0.18419999999999925,
+        "fsp3": 0.35,
+        "hba": 7.0,
+        "hbd": 2.0,
+        "mw": 439.4550000000002,
+        "nrb": 4.0,
+        "tpsa": 118.66
+      },
+      "reported_property_comparison": {
+        "clogp": {
+          "computed": -0.18419999999999925,
+          "delta": -0.00419999999999926,
+          "reported": -0.18
+        },
+        "fsp3": {
+          "computed": 0.35,
+          "delta": 0.0,
+          "reported": 0.35
+        },
+        "hba": {
+          "computed": 7.0,
+          "delta": 0.0,
+          "reported": 7.0
+        },
+        "hbd": {
+          "computed": 2.0,
+          "delta": 0.0,
+          "reported": 2.0
+        },
+        "mw": {
+          "computed": 439.4550000000002,
+          "delta": -0.04499999999978854,
+          "reported": 439.5
+        },
+        "nrb": {
+          "computed": 4.0,
+          "delta": 0.0,
+          "reported": 4.0
+        },
+        "tpsa": {
+          "computed": 118.66,
+          "delta": -0.04000000000000625,
+          "reported": 118.7
+        }
+      },
+      "ro5_violations": 0,
+      "status": "not_in_training_set_novelty_and_activity_unverified",
+      "training_identity_matches": [],
+      "veber_pass": true
+    },
+    {
+      "canonical_smiles": "Nc1ncnc2[nH]nc(-c3ccc(Oc4ccccc4)cc3)c12",
+      "id": "NC5-02",
+      "max_active_tanimoto": 1.0,
+      "max_training_tanimoto": 1.0,
+      "nearest_active_id": "ACT-19",
+      "nearest_training_id": "ACT-19",
+      "pains_alerts": [],
+      "properties": {
+        "clogp": 3.394400000000002,
+        "fsp3": 0.0,
+        "hba": 5.0,
+        "hbd": 2.0,
+        "mw": 303.32500000000005,
+        "nrb": 3.0,
+        "tpsa": 89.71000000000001
+      },
+      "reported_property_comparison": {
+        "clogp": {
+          "computed": 3.394400000000002,
+          "delta": 0.004400000000001736,
+          "reported": 3.39
+        },
+        "fsp3": {
+          "computed": 0.0,
+          "delta": 0.0,
+          "reported": 0.0
+        },
+        "hba": {
+          "computed": 5.0,
+          "delta": 0.0,
+          "reported": 5.0
+        },
+        "hbd": {
+          "computed": 2.0,
+          "delta": 0.0,
+          "reported": 2.0
+        },
+        "mw": {
+          "computed": 303.32500000000005,
+          "delta": 0.025000000000034106,
+          "reported": 303.3
+        },
+        "nrb": {
+          "computed": 3.0,
+          "delta": 0.0,
+          "reported": 3.0
+        },
+        "tpsa": {
+          "computed": 89.71000000000001,
+          "delta": 0.010000000000005116,
+          "reported": 89.7
+        }
+      },
+      "ro5_violations": 0,
+      "status": "training_overlap_not_novel",
+      "training_identity_matches": [
+        "ACT-19"
+      ],
+      "veber_pass": true
+    },
+    {
+      "canonical_smiles": "O=S(=O)(c1ccc2[nH]c(-c3ccccn3)nc2c1)N1CCNCC1",
+      "id": "NC5-03",
+      "max_active_tanimoto": 0.20238095238095238,
+      "max_training_tanimoto": 0.25862068965517243,
+      "nearest_active_id": "ACT-03",
+      "nearest_training_id": "DEC-18",
+      "pains_alerts": [],
+      "properties": {
+        "clogp": 1.2187999999999997,
+        "fsp3": 0.25,
+        "hba": 5.0,
+        "hbd": 2.0,
+        "mw": 343.41200000000003,
+        "nrb": 3.0,
+        "tpsa": 90.98
+      },
+      "reported_property_comparison": {
+        "clogp": {
+          "computed": 1.2187999999999997,
+          "delta": -0.001200000000000312,
+          "reported": 1.22
+        },
+        "fsp3": {
+          "computed": 0.25,
+          "delta": 0.0,
+          "reported": 0.25
+        },
+        "hba": {
+          "computed": 5.0,
+          "delta": 0.0,
+          "reported": 5.0
+        },
+        "hbd": {
+          "computed": 2.0,
+          "delta": 0.0,
+          "reported": 2.0
+        },
+        "mw": {
+          "computed": 343.41200000000003,
+          "delta": 0.012000000000057298,
+          "reported": 343.4
+        },
+        "nrb": {
+          "computed": 3.0,
+          "delta": 0.0,
+          "reported": 3.0
+        },
+        "tpsa": {
+          "computed": 90.98,
+          "delta": -0.01999999999999602,
+          "reported": 91.0
+        }
+      },
+      "ro5_violations": 0,
+      "status": "not_in_training_set_novelty_and_activity_unverified",
+      "training_identity_matches": [],
+      "veber_pass": true
+    },
+    {
+      "canonical_smiles": "Nc1ncnc2c1ncn2CC(=O)NS(=O)(=O)c1ccc(Cl)cc1",
+      "id": "NC5-04",
+      "max_active_tanimoto": 0.19718309859154928,
+      "max_training_tanimoto": 0.2698412698412698,
+      "nearest_active_id": "ACT-20",
+      "nearest_training_id": "DEC-12",
+      "pains_alerts": [],
+      "properties": {
+        "clogp": 0.567,
+        "fsp3": 0.07692307692307693,
+        "hba": 7.0,
+        "hbd": 2.0,
+        "mw": 366.7900000000001,
+        "nrb": 4.0,
+        "tpsa": 132.86
+      },
+      "reported_property_comparison": {
+        "clogp": {
+          "computed": 0.567,
+          "delta": -0.0030000000000000027,
+          "reported": 0.57
+        },
+        "fsp3": {
+          "computed": 0.07692307692307693,
+          "delta": -0.0030769230769230743,
+          "reported": 0.08
+        },
+        "hba": {
+          "computed": 7.0,
+          "delta": 0.0,
+          "reported": 7.0
+        },
+        "hbd": {
+          "computed": 2.0,
+          "delta": 0.0,
+          "reported": 2.0
+        },
+        "mw": {
+          "computed": 366.7900000000001,
+          "delta": -0.009999999999934062,
+          "reported": 366.8
+        },
+        "nrb": {
+          "computed": 4.0,
+          "delta": 0.0,
+          "reported": 4.0
+        },
+        "tpsa": {
+          "computed": 132.86,
+          "delta": -0.03999999999999204,
+          "reported": 132.9
+        }
+      },
+      "ro5_violations": 0,
+      "status": "not_in_training_set_novelty_and_activity_unverified",
+      "training_identity_matches": [],
+      "veber_pass": true
+    },
+    {
+      "canonical_smiles": "O=C(NCc1cnc2ccccc2n1)c1c[nH]c2ccccc12",
+      "id": "NC5-05",
+      "max_active_tanimoto": 0.13043478260869565,
+      "max_training_tanimoto": 0.3392857142857143,
+      "nearest_active_id": "ACT-19",
+      "nearest_training_id": "DEC-09",
+      "pains_alerts": [],
+      "properties": {
+        "clogp": 3.041100000000001,
+        "fsp3": 0.05555555555555555,
+        "hba": 3.0,
+        "hbd": 2.0,
+        "mw": 302.33700000000005,
+        "nrb": 3.0,
+        "tpsa": 70.67
+      },
+      "reported_property_comparison": {
+        "clogp": {
+          "computed": 3.041100000000001,
+          "delta": 0.001100000000000989,
+          "reported": 3.04
+        },
+        "fsp3": {
+          "computed": 0.05555555555555555,
+          "delta": -0.004444444444444445,
+          "reported": 0.06
+        },
+        "hba": {
+          "computed": 3.0,
+          "delta": 0.0,
+          "reported": 3.0
+        },
+        "hbd": {
+          "computed": 2.0,
+          "delta": 0.0,
+          "reported": 2.0
+        },
+        "mw": {
+          "computed": 302.33700000000005,
+          "delta": 0.03700000000003456,
+          "reported": 302.3
+        },
+        "nrb": {
+          "computed": 3.0,
+          "delta": 0.0,
+          "reported": 3.0
+        },
+        "tpsa": {
+          "computed": 70.67,
+          "delta": -0.030000000000001137,
+          "reported": 70.7
+        }
+      },
+      "ro5_violations": 0,
+      "status": "not_in_training_set_novelty_and_activity_unverified",
+      "training_identity_matches": [],
+      "veber_pass": true
+    },
+    {
+      "canonical_smiles": "Nc1nc2ncc(CN3CCNCC3)nc2c(=O)[nH]1",
+      "id": "NC5-06",
+      "max_active_tanimoto": 0.23376623376623376,
+      "max_training_tanimoto": 0.23376623376623376,
+      "nearest_active_id": "ACT-03",
+      "nearest_training_id": "ACT-03",
+      "pains_alerts": [],
+      "properties": {
+        "clogp": -1.2994999999999992,
+        "fsp3": 0.45454545454545453,
+        "hba": 7.0,
+        "hbd": 3.0,
+        "mw": 261.28899999999993,
+        "nrb": 2.0,
+        "tpsa": 112.82
+      },
+      "reported_property_comparison": {
+        "clogp": {
+          "computed": -1.2994999999999992,
+          "delta": 0.0005000000000008331,
+          "reported": -1.3
+        },
+        "fsp3": {
+          "computed": 0.45454545454545453,
+          "delta": 0.004545454545454519,
+          "reported": 0.45
+        },
+        "hba": {
+          "computed": 7.0,
+          "delta": 0.0,
+          "reported": 7.0
+        },
+        "hbd": {
+          "computed": 3.0,
+          "delta": 0.0,
+          "reported": 3.0
+        },
+        "mw": {
+          "computed": 261.28899999999993,
+          "delta": -0.011000000000080945,
+          "reported": 261.3
+        },
+        "nrb": {
+          "computed": 2.0,
+          "delta": 0.0,
+          "reported": 2.0
+        },
+        "tpsa": {
+          "computed": 112.82,
+          "delta": 0.01999999999999602,
+          "reported": 112.8
+        }
+      },
+      "ro5_violations": 0,
+      "status": "not_in_training_set_novelty_and_activity_unverified",
+      "training_identity_matches": [],
+      "veber_pass": true
+    },
+    {
+      "canonical_smiles": "O=c1[nH]c(Nc2ccc(F)cc2)nc2cnc(Cc3nnc(-c4ccc(Cl)cc4)o3)nc12",
+      "id": "NC5-07",
+      "max_active_tanimoto": 0.3218390804597701,
+      "max_training_tanimoto": 0.3218390804597701,
+      "nearest_active_id": "ACT-02",
+      "nearest_training_id": "ACT-02",
+      "pains_alerts": [],
+      "properties": {
+        "clogp": 3.8900000000000015,
+        "fsp3": 0.047619047619047616,
+        "hba": 8.0,
+        "hbd": 2.0,
+        "mw": 449.8330000000002,
+        "nrb": 5.0,
+        "tpsa": 122.48
+      },
+      "reported_property_comparison": {
+        "clogp": {
+          "computed": 3.8900000000000015,
+          "delta": 1.3322676295501878e-15,
+          "reported": 3.89
+        },
+        "fsp3": {
+          "computed": 0.047619047619047616,
+          "delta": -0.0023809523809523864,
+          "reported": 0.05
+        },
+        "hba": {
+          "computed": 8.0,
+          "delta": 0.0,
+          "reported": 8.0
+        },
+        "hbd": {
+          "computed": 2.0,
+          "delta": 0.0,
+          "reported": 2.0
+        },
+        "mw": {
+          "computed": 449.8330000000002,
+          "delta": 0.03300000000018599,
+          "reported": 449.8
+        },
+        "nrb": {
+          "computed": 5.0,
+          "delta": 0.0,
+          "reported": 5.0
+        },
+        "tpsa": {
+          "computed": 122.48,
+          "delta": -0.01999999999999602,
+          "reported": 122.5
+        }
+      },
+      "ro5_violations": 0,
+      "status": "not_in_training_set_novelty_and_activity_unverified",
+      "training_identity_matches": [],
+      "veber_pass": true
+    },
+    {
+      "canonical_smiles": "O=C(Cn1c(=O)[nH]c2nc[nH]c(=O)c21)Nc1ccc(F)cc1",
+      "id": "NC5-08",
+      "max_active_tanimoto": 0.2345679012345679,
+      "max_training_tanimoto": 0.3050847457627119,
+      "nearest_active_id": "ACT-04",
+      "nearest_training_id": "DEC-20",
+      "pains_alerts": [],
+      "properties": {
+        "clogp": 0.19069999999999998,
+        "fsp3": 0.07692307692307693,
+        "hba": 4.0,
+        "hbd": 3.0,
+        "mw": 303.25300000000004,
+        "nrb": 3.0,
+        "tpsa": 112.63999999999999
+      },
+      "reported_property_comparison": {
+        "clogp": {
+          "computed": 0.19069999999999998,
+          "delta": 0.0006999999999999784,
+          "reported": 0.19
+        },
+        "fsp3": {
+          "computed": 0.07692307692307693,
+          "delta": -0.0030769230769230743,
+          "reported": 0.08
+        },
+        "hba": {
+          "computed": 4.0,
+          "delta": 0.0,
+          "reported": 4.0
+        },
+        "hbd": {
+          "computed": 3.0,
+          "delta": 0.0,
+          "reported": 3.0
+        },
+        "mw": {
+          "computed": 303.25300000000004,
+          "delta": -0.04699999999996862,
+          "reported": 303.3
+        },
+        "nrb": {
+          "computed": 3.0,
+          "delta": 0.0,
+          "reported": 3.0
+        },
+        "tpsa": {
+          "computed": 112.63999999999999,
+          "delta": 0.03999999999999204,
+          "reported": 112.6
+        }
+      },
+      "ro5_violations": 0,
+      "status": "not_in_training_set_novelty_and_activity_unverified",
+      "training_identity_matches": [],
+      "veber_pass": true
+    },
+    {
+      "canonical_smiles": "O=C(/C=C/c1ccc(F)cc1)N1CCN(c2nc3ccccc3c(=O)[nH]2)CC1",
+      "id": "NC5-09",
+      "max_active_tanimoto": 0.23255813953488372,
+      "max_training_tanimoto": 0.3103448275862069,
+      "nearest_active_id": "ACT-04",
+      "nearest_training_id": "DEC-25",
+      "pains_alerts": [],
+      "properties": {
+        "clogp": 2.4242,
+        "fsp3": 0.19047619047619047,
+        "hba": 4.0,
+        "hbd": 1.0,
+        "mw": 378.40700000000015,
+        "nrb": 3.0,
+        "tpsa": 69.30000000000001
+      },
+      "reported_property_comparison": {
+        "clogp": {
+          "computed": 2.4242,
+          "delta": 0.0041999999999999815,
+          "reported": 2.42
+        },
+        "fsp3": {
+          "computed": 0.19047619047619047,
+          "delta": 0.0004761904761904634,
+          "reported": 0.19
+        },
+        "hba": {
+          "computed": 4.0,
+          "delta": 0.0,
+          "reported": 4.0
+        },
+        "hbd": {
+          "computed": 1.0,
+          "delta": 0.0,
+          "reported": 1.0
+        },
+        "mw": {
+          "computed": 378.40700000000015,
+          "delta": 0.0070000000001755325,
+          "reported": 378.4
+        },
+        "nrb": {
+          "computed": 3.0,
+          "delta": 0.0,
+          "reported": 3.0
+        },
+        "tpsa": {
+          "computed": 69.30000000000001,
+          "delta": 1.4210854715202004e-14,
+          "reported": 69.3
+        }
+      },
+      "ro5_violations": 0,
+      "status": "not_in_training_set_novelty_and_activity_unverified",
+      "training_identity_matches": [],
+      "veber_pass": true
+    },
+    {
+      "canonical_smiles": "Nc1ccn2c(C(=O)Nc3cccc(S(N)(=O)=O)c3)cnc2n1",
+      "id": "NC5-10",
+      "max_active_tanimoto": 0.14666666666666667,
+      "max_training_tanimoto": 0.3333333333333333,
+      "nearest_active_id": "ACT-20",
+      "nearest_training_id": "DEC-26",
+      "pains_alerts": [],
+      "properties": {
+        "clogp": 0.21119999999999994,
+        "fsp3": 0.0,
+        "hba": 6.0,
+        "hbd": 3.0,
+        "mw": 332.34500000000014,
+        "nrb": 3.0,
+        "tpsa": 145.47
+      },
+      "reported_property_comparison": {
+        "clogp": {
+          "computed": 0.21119999999999994,
+          "delta": 0.001199999999999951,
+          "reported": 0.21
+        },
+        "fsp3": {
+          "computed": 0.0,
+          "delta": 0.0,
+          "reported": 0.0
+        },
+        "hba": {
+          "computed": 6.0,
+          "delta": 0.0,
+          "reported": 6.0
+        },
+        "hbd": {
+          "computed": 3.0,
+          "delta": 0.0,
+          "reported": 3.0
+        },
+        "mw": {
+          "computed": 332.34500000000014,
+          "delta": 0.0450000000001296,
+          "reported": 332.3
+        },
+        "nrb": {
+          "computed": 3.0,
+          "delta": 0.0,
+          "reported": 3.0
+        },
+        "tpsa": {
+          "computed": 145.47,
+          "delta": -0.030000000000001137,
+          "reported": 145.5
+        }
+      },
+      "ro5_violations": 0,
+      "status": "not_in_training_set_novelty_and_activity_unverified",
+      "training_identity_matches": [],
+      "veber_pass": false
+    }
+  ],
+  "duplicate_structures": [],
+  "identity_policy": "RDKit canonical isomeric SMILES; no salt, tautomer or protonation merging",
+  "invalid_records": [
+    {
+      "error": "Invalid or empty SMILES: 'O=c1[nH]c(=O)c2n(Cc3nnc(-c4ccc(Cl)c(Cl)c4)o3)c(N3CCNCC3)nc2n1'",
+      "id": "ACT-18",
+      "line": 19,
+      "source_row": {
+        "id": "ACT-18",
+        "label": "1",
+        "notes": "Desmethyl N1",
+        "series": "TH5427-SAR",
+        "smiles": "O=c1[nH]c(=O)c2n(Cc3nnc(-c4ccc(Cl)c(Cl)c4)o3)c(N3CCNCC3)nc2n1",
+        "source": "Page2018"
+      }
+    }
+  ],
+  "label_counts": {
+    "0": 26,
+    "1": 19
+  },
+  "scaffold_policy": "RDKit Bemis-Murcko, no chirality; all acyclic molecules share ACYCLIC",
+  "source_counts": {
+    "Balikci2024": 2,
+    "Decoy": 26,
+    "Page2018": 17
+  },
+  "unique_records": 45,
+  "unique_scaffolds": 34,
+  "valid_records": 45,
+  "warning": "Exploratory diagnostics of unverified source labels versus untested decoys. Not evidence of NUDT5 inhibition, scaffold transfer, safety or therapeutic efficacy."
+}

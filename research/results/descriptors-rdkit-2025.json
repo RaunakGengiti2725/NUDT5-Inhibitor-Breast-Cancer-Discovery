@@ -1,0 +1,56 @@
+{
+  "rdkit": "2025.09.6",
+  "python": "3.12.15",
+  "rows": [
+    {
+      "id": "NC5-01",
+      "reported_hba": 7,
+      "CalcNumHBA": 7
+    },
+    {
+      "id": "NC5-07",
+      "reported_hba": 8,
+      "CalcNumHBA": 8
+    },
+    {
+      "id": "NC5-04",
+      "reported_hba": 7,
+      "CalcNumHBA": 7
+    },
+    {
+      "id": "NC5-02",
+      "reported_hba": 5,
+      "CalcNumHBA": 5
+    },
+    {
+      "id": "NC5-06",
+      "reported_hba": 7,
+      "CalcNumHBA": 7
+    },
+    {
+      "id": "NC5-08",
+      "reported_hba": 4,
+      "CalcNumHBA": 4
+    },
+    {
+      "id": "NC5-03",
+      "reported_hba": 5,
+      "CalcNumHBA": 5
+    },
+    {
+      "id": "NC5-10",
+      "reported_hba": 6,
+      "CalcNumHBA": 6
+    },
+    {
+      "id": "NC5-09",
+      "reported_hba": 4,
+      "CalcNumHBA": 4
+    },
+    {
+      "id": "NC5-05",
+      "reported_hba": 3,
+      "CalcNumHBA": 3
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "created_utc": "2026-10-04T22:27:05.903718+00:00",
+  "rdkit_version": "2025.03.6",
+  "chembl_version": {
+    "activities": 24527044,
+    "chembl_db_version": "ChEMBL_37",
+    "chembl_release_date": "2026-05-01",
+    "compound_records": 3824604,
+    "disinct_compounds": 2921148,
+    "publications": 101100,
+    "status": "UP",
+    "targets": 18552
+  },
+  "target_query_chembl_count": 29,
+  "target_query_bindingdb_count": 21,
+  "observed_database_rows": 50,
+  "chembl_by_endpoint": {
+    "IC50": 13,
+    "Activity": 3,
+    "Kd": 4,
+    "EC50": 7,
+    "ED50": 2
+  },
+  "bindingdb_by_endpoint": {
+    "IC50": 10,
+    "Kd": 4,
+    "EC50": 7
+  },
+  "chembl_by_publication": {
+    "CHEMBL4007403": {
+      "count": 1,
+      "title": "Identification of Triazolothiadiazoles as Potent Inhibitors of the dCTP Pyrophosphatase 1.",
+      "doi": "10.1021/acs.jmedchem.6b01786",
+      "endpoints": {
+        "IC50": 1
+      }
+    },
+    "CHEMBL5506016": {
+      "count": 22,
+      "title": "Unexpected Noncovalent Off-Target Activity of Clinical BTK Inhibitors Leads to Discovery of a Dual NUDT5/14 Antagonist.",
+      "doi": "10.1021/acs.jmedchem.4c00072",
+      "endpoints": {
+        "Activity": 3,
+        "IC50": 10,
+        "Kd": 2,
+        "EC50": 7
+      }
+    },
+    "CHEMBL5579821": {
+      "count": 1,
+      "title": "Non-kinase off-target inhibitory activities of clinically-relevant kinase inhibitors.",
+      "doi": "10.1016/j.ejmech.2024.116540",
+      "endpoints": {
+        "IC50": 1
+      }
+    },
+    "CHEMBL5649169": {
+      "count": 4,
+      "title": "NVP-BHG712: Effects of Regioisomers on the Affinity and Selectivity toward the EPHrin Family.",
+      "doi": "10.1002/cmdc.201800398",
+      "endpoints": {
+        "Kd": 2,
+        "ED50": 2
+      }
+    },
+    "CHEMBL5723035": {
+      "count": 1,
+      "title": "Affinity Biochemical Literature for EUbOPEN Chemogenomic Library",
+      "doi": "10.6019/CHEMBL5723035",
+      "endpoints": {
+        "IC50": 1
+      }
+    }
+  },
+  "bindingdb_by_publication": {
+    "10.1021/acs.jmedchem.6b01786": 1,
+    "10.1021/acs.jmedchem.4c00072": 17,
+    "10.1016/j.ejmech.2024.116540": 1,
+    "10.1002/cmdc.201800398": 2
+  },
+  "ledger_rows": 8,
+  "ledger_unique_graphs": 6,
+  "ledger_by_endpoint": {
+    "IC50": 4,
+    "apparent_Kd": 2,
+    "Kd": 2
+  },
+  "ki_rows": 0,
+  "strict_new_human_primary_confirmed_biochemical_holdout_rows": 0,
+  "broad_epmc_hits": 633,
+  "broad_epmc_retrieved": 100,
+  "targeted_epmc_hits": 58,
+  "targeted_epmc_retrieved": 58,
+  "snapshot_requests": 41,
+  "all_snapshot_hashes_verified": true,
+  "source_csv_smiles_formula_and_inchikey_checks_pass": true,
+  "known_th5427_pdb_and_chembl_graph_match": true
+}

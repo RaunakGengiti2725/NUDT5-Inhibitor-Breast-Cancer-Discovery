@@ -1,0 +1,28 @@
+{
+  "arguments": {
+    "acknowledge_unverified_labels": true,
+    "allow_invalid": true,
+    "command": "controls",
+    "repeat_seeds": 5,
+    "seed": 42
+  },
+  "files": {
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/compounds.csv": "d628a0fa1926c1e44c9b2a79adf92b444959e80153cf9019ef5e56b4747c3576",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/requirements.lock": "be23dbecaf88d46dcd0a985949c015a8d75676f76ed00115c7b9c754fb62bd0c",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/extension_design.md": "f3fc896ed889688d1731d6f4175d1ca1b2832e5bfedbf252281c56f7809dec42",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/scripts/scripts/controls.py": "c9ce53b4c3141c9b3f9dbb999c256b59cde0d67688efab4d1dbaef15ad0b8aaa",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/scripts/scripts/pipeline.py": "03f3755abcbbb15a90c71ae837f16e8377b521b4b8151c1fe71306e96317bc38"
+  },
+  "git_dirty": true,
+  "git_revision": "8c2a1b6990df1e140e15ab5a0eabea69b70eee14",
+  "platform": "Linux-6.8.0-1061-aws-x86_64-with-glibc2.35",
+  "python": "3.12.15",
+  "versions": {
+    "matplotlib": "3.10.3",
+    "numpy": "2.2.6",
+    "rdkit": "2025.9.6",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.3"
+  },
+  "warning": "Exploratory diagnostics of unverified source labels versus untested decoys. Not evidence of NUDT5 inhibition, scaffold transfer, safety or therapeutic efficacy."
+}

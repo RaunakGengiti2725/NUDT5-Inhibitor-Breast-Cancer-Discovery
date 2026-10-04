@@ -1,0 +1,861 @@
+{
+  "files": [
+    {
+      "filename": ".github/workflows/ci.yml",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "840f004ec8e59c0deddd8ae851fd99739088911d76b7b05e9d68048121b414e6",
+      "size_bytes": 1361
+    },
+    {
+      "filename": ".gitignore",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "4c4f6a6b754bd759be05b5ca41b0c89a885fe51090038eb332f47e2a986c1977",
+      "size_bytes": 130
+    },
+    {
+      "filename": "README.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "ee018d182cf6e945dd97159230cf4684672b980105e86afb5070c26a8ac6d026",
+      "size_bytes": 10953
+    },
+    {
+      "filename": "compounds.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "original Git release and author upload",
+      "purpose": "Immutable original input",
+      "reproducibility_status": "preserved; biological labels not independently authenticated",
+      "sha256": "d628a0fa1926c1e44c9b2a79adf92b444959e80153cf9019ef5e56b4747c3576",
+      "size_bytes": 4055
+    },
+    {
+      "filename": "final_hits.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "original Git release and author upload",
+      "purpose": "Immutable original input",
+      "reproducibility_status": "preserved; biological labels not independently authenticated",
+      "sha256": "38c8d5266ce127b1fd5babde0c895190d0b382e3c9e3dae7581e320766745100",
+      "size_bytes": 2149
+    },
+    {
+      "filename": "pyproject.toml",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "9c0b94b69dc2eaca670b980fc1832edb07f21f61a39414fd69b72ff8b856345e",
+      "size_bytes": 972
+    },
+    {
+      "filename": "requirements-dev.txt",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "2bc4fac45e3322a50370d3c615b2203386351933010d27e075bf0345a504111a",
+      "size_bytes": 189
+    },
+    {
+      "filename": "requirements.lock",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "be23dbecaf88d46dcd0a985949c015a8d75676f76ed00115c7b9c754fb62bd0c",
+      "size_bytes": 98701
+    },
+    {
+      "filename": "requirements.txt",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "216a8777906d6bae699bfff1fbb436cafdfa7fd89f1cc6de2aa525452793d7af",
+      "size_bytes": 82
+    },
+    {
+      "filename": "research/audit.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "2fa41e0a0fea4d11dc597ff1e849d9ed8f5718ac27fb3f53b479f7cd3fb62561",
+      "size_bytes": 16405
+    },
+    {
+      "filename": "research/claim_ledger.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "6f6282fc9ceaac06491387e33862c46d2639df1a300852e58fce130db19ad73c",
+      "size_bytes": 29371
+    },
+    {
+      "filename": "research/conclusion_categories.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "bb3da47223d0fe3e2e2ac831cb00d4aabef722309d4a6497630f478c3c940302",
+      "size_bytes": 5788
+    },
+    {
+      "filename": "research/deposit_correction.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "d99d27920ab275f2cb2b93ca3b3d4e23293bb2d06367bf4258b5c9a1a683ffdb",
+      "size_bytes": 2750
+    },
+    {
+      "filename": "research/extension_design.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "f3fc896ed889688d1731d6f4175d1ca1b2832e5bfedbf252281c56f7809dec42",
+      "size_bytes": 6053
+    },
+    {
+      "filename": "research/external/NUDT5_external_evidence_report.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "4a979762256737fcd39e8a9a6176531a86e92cceddef1c9fb3615a16fc2591e5",
+      "size_bytes": 11099
+    },
+    {
+      "filename": "research/external/artifact_sources.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "5a1bc67c0959308cf2c80e2c03562fe18289a5534ad82e9d9795f021b50b3bfe",
+      "size_bytes": 6110
+    },
+    {
+      "filename": "research/external/ic50_ledger.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "dc40f1328a2977c330037815c04922891a20e677abbe56cad709eb79595abb47",
+      "size_bytes": 6345
+    },
+    {
+      "filename": "research/external/kd_ledger.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "128aa61f61e2c905f677f593eec62cf57ccdced2200c044fe1ded9bae5522eb7",
+      "size_bytes": 6332
+    },
+    {
+      "filename": "research/external/nudt5_measured_ledger.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "6eb8553db17eea6e08ad8769ecdad4d72fb9d5bbc388746d21906646a76881ea",
+      "size_bytes": 11981
+    },
+    {
+      "filename": "research/external/nudt5_measured_ledger.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "c6fb54a1c4ceef325b907b40336b0bd7f9e835d8661a27d97a444a22ba11225a",
+      "size_bytes": 20340
+    },
+    {
+      "filename": "research/external/observed_database_rows.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "1d29500847c5e038005c81ded55edc1032561b2c4003aa678517e9e6a2f9b3f1",
+      "size_bytes": 25844
+    },
+    {
+      "filename": "research/external/observed_source_overlap.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "c17fbacd20e3df6ff29f1c7db094bd77afa2c22e4984fdd4dea778074b6320b5",
+      "size_bytes": 1464
+    },
+    {
+      "filename": "research/external/snapshot_manifest.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "36a3c62b43bc6daa0c17139f67c72decf6b47b6e86be05ca15347126133a5847",
+      "size_bytes": 19377
+    },
+    {
+      "filename": "research/external/summary_counts.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "92c5b12103c628354e81f6d6ad1aa2ffade6d1c48bf033681b8bdfc7d2799868",
+      "size_bytes": 2690
+    },
+    {
+      "filename": "research/figures/all_metrics.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "355b2d20d302ebea63c05500c3465da4ec39d3baa110fec5917c9c982edae59e",
+      "size_bytes": 31656
+    },
+    {
+      "filename": "research/figures/candidate_axes.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "85318bc35641190c73af87ca4764d2dcca46d6ba8da041514053c51385da4e77",
+      "size_bytes": 2839
+    },
+    {
+      "filename": "research/figures/diagnostics.png",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "6303eb28bddeec56d06182d94896f737bb87299e79c2dd4b21dd21435674a2d4",
+      "size_bytes": 118958
+    },
+    {
+      "filename": "research/figures/property_controls.pdf",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "77e83b5154e7eb858699f986595b53548cec35dd6ae456bc267aadb3d79da3ea",
+      "size_bytes": 18986
+    },
+    {
+      "filename": "research/figures/property_controls.png",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "049b3c022f7fa5c9526a3369a1262541f1e81be4b780f5659d4ae679aa1e0fc7",
+      "size_bytes": 101122
+    },
+    {
+      "filename": "research/figures/property_controls.svg",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "1ade3f775741b9911b668163082ebdf558eb76271d458e4adf57002ab464a779",
+      "size_bytes": 24711
+    },
+    {
+      "filename": "research/figures/reliability_domain.pdf",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "c671cf274b5d77e1608f0aa74f5f2b13064a88be274acaabba45994f4bc083c3",
+      "size_bytes": 20286
+    },
+    {
+      "filename": "research/figures/reliability_domain.png",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "5d7a63ebf7f0aae1071fbb2cf6a1170f781b7651a629670d18a59fab67a37bd9",
+      "size_bytes": 216051
+    },
+    {
+      "filename": "research/figures/reliability_domain.svg",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "285308101464ca5d21de35f8e9a1545d8f37884c109b3ec5d4935ccb411f59b7",
+      "size_bytes": 27334
+    },
+    {
+      "filename": "research/figures/source_transfer.pdf",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "97d4b075bdf76ff84807b1839c36b74a4b8f8a682703c0ec20af2542480e8bfa",
+      "size_bytes": 20425
+    },
+    {
+      "filename": "research/figures/source_transfer.png",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "d91d424399a7b22e2c23c3b166970f64df6df1dd06e842d06a4b87d7ec674264",
+      "size_bytes": 143233
+    },
+    {
+      "filename": "research/figures/source_transfer.svg",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "af55969e8db70eb877bb9ea871e8973e53f27629ed8deb762beee5bbacc714fa",
+      "size_bytes": 24574
+    },
+    {
+      "filename": "research/figures/supplementary_results.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "c7c03b18785e8b6e2319dd2ad1c5bf30a72551c814688e2237e8539069553c29",
+      "size_bytes": 14888
+    },
+    {
+      "filename": "research/manuscript.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "8cbdb0a1f725940efb02eb724dd90aa498aaeb4bb34da8242b12f21d964eb339",
+      "size_bytes": 45032
+    },
+    {
+      "filename": "research/original_inventory.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "87ecfe39ac5fea2029c680b0e186cf2523a63a4567bcd76640aea9d2c57c10ae",
+      "size_bytes": 4244
+    },
+    {
+      "filename": "research/provenance.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "24c38f1a8d952c1ce4d0f571e6bca8f77cc351d52caddd817e12e2809513de93",
+      "size_bytes": 5998
+    },
+    {
+      "filename": "research/publication_strategy.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "4521fb99e920901a20ef8ab8427b3dfa671cc1aa38415194d9f39de7934bb125",
+      "size_bytes": 8488
+    },
+    {
+      "filename": "research/reference_sources/958.cif.gz",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "decc78f688dc1943ed8faaba165805ba6808402b967b230123383835a3619b39",
+      "size_bytes": 3249
+    },
+    {
+      "filename": "research/reference_sources/9CH.cif.gz",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "d93e17484d537759d928cbd6f02daada3278981e05f4c6ddb1e2cd4de28eec45",
+      "size_bytes": 3267
+    },
+    {
+      "filename": "research/reference_structures.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "db8f9c3d748c75b0d14895f30080ce105e57f47d88597b5db3ea2a3d060b2d2f",
+      "size_bytes": 755
+    },
+    {
+      "filename": "research/results/audit.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "named run manifests and source ledgers",
+      "purpose": "Recorded results or source/run provenance",
+      "reproducibility_status": "reproduced diagnostics where executable; source metadata is evidence only",
+      "sha256": "f62ffa50147b3d8ba6d73fd141172b3ffc728fbadda5b2889d6c634ad0403654",
+      "size_bytes": 16991
+    },
+    {
+      "filename": "research/results/benchmark.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "named run manifests and source ledgers",
+      "purpose": "Recorded results or source/run provenance",
+      "reproducibility_status": "reproduced diagnostics where executable; source metadata is evidence only",
+      "sha256": "e143831e4c56e32f7f26c6ebe194e478c0828e2b4a17c1da1157fc04dccd5c65",
+      "size_bytes": 155899
+    },
+    {
+      "filename": "research/results/controls-manifest.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "named run manifests and source ledgers",
+      "purpose": "Recorded results or source/run provenance",
+      "reproducibility_status": "reproduced diagnostics where executable; source metadata is evidence only",
+      "sha256": "37988ad857c29fb2bc62added04f63612bfd483d9b569d767e48d0297f142c58",
+      "size_bytes": 1454
+    },
+    {
+      "filename": "research/results/controls.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "named run manifests and source ledgers",
+      "purpose": "Recorded results or source/run provenance",
+      "reproducibility_status": "reproduced diagnostics where executable; source metadata is evidence only",
+      "sha256": "6593a34bbf9f75b64216af68b4a23d539026d284b102a63f2d234c3ae0d040a6",
+      "size_bytes": 1609244
+    },
+    {
+      "filename": "research/results/descriptors-rdkit-2023.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "named run manifests and source ledgers",
+      "purpose": "Recorded results or source/run provenance",
+      "reproducibility_status": "reproduced diagnostics where executable; source metadata is evidence only",
+      "sha256": "95d7f8be64c185705cc1359458c3b1b52faec1f4d071008e13ca2edaa2ffeae7",
+      "size_bytes": 887
+    },
+    {
+      "filename": "research/results/descriptors-rdkit-2025.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "named run manifests and source ledgers",
+      "purpose": "Recorded results or source/run provenance",
+      "reproducibility_status": "reproduced diagnostics where executable; source metadata is evidence only",
+      "sha256": "b70b5636c4c109e057923bbd2231fbe021483d2f25f26bf62dd16a0268a1be90",
+      "size_bytes": 886
+    },
+    {
+      "filename": "research/results/manifest.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "named run manifests and source ledgers",
+      "purpose": "Recorded results or source/run provenance",
+      "reproducibility_status": "reproduced diagnostics where executable; source metadata is evidence only",
+      "sha256": "11dd44252c626966830d430c46b079c7ef74f53911c7041c52a3252582586ec6",
+      "size_bytes": 1750
+    },
+    {
+      "filename": "research/results/source-assay-provenance.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "named run manifests and source ledgers",
+      "purpose": "Recorded results or source/run provenance",
+      "reproducibility_status": "reproduced diagnostics where executable; source metadata is evidence only",
+      "sha256": "788645a68ee6e87e1be9528283d9a821246395ce0a1fcfe673545706e0774b56",
+      "size_bytes": 736
+    },
+    {
+      "filename": "research/results/transfer-manifest.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "named run manifests and source ledgers",
+      "purpose": "Recorded results or source/run provenance",
+      "reproducibility_status": "reproduced diagnostics where executable; source metadata is evidence only",
+      "sha256": "cb60e86c60aa1d51d804020ba2790427f2db5f0ef3a6ca0de06d8ec3455f5b7e",
+      "size_bytes": 2249
+    },
+    {
+      "filename": "research/results/transfer.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "named run manifests and source ledgers",
+      "purpose": "Recorded results or source/run provenance",
+      "reproducibility_status": "reproduced diagnostics where executable; source metadata is evidence only",
+      "sha256": "df6b544a2c5b8aca0ab3007f016133f8fd012629210e375bd34d0fdbad32e50a",
+      "size_bytes": 413591
+    },
+    {
+      "filename": "research/results/zenodo-record.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "named run manifests and source ledgers",
+      "purpose": "Recorded results or source/run provenance",
+      "reproducibility_status": "reproduced diagnostics where executable; source metadata is evidence only",
+      "sha256": "14b01c39ac1da9d7dcc6fa1d58bab6aea2e696eb18fbb4b0d486ce33858defa9",
+      "size_bytes": 6846
+    },
+    {
+      "filename": "research/reviewer_simulation.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "008358839f108187c1a4462ef23af6621c93cf8ad7bdddc77e06771b051ddea4",
+      "size_bytes": 7134
+    },
+    {
+      "filename": "research/reviews/code-baseline.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "21549d14dc6a599cb3da850c939f433f53b3c63539854b9ac232e6ebd56860b9",
+      "size_bytes": 6644
+    },
+    {
+      "filename": "research/reviews/code-extension.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "b4c4452e192d921b590f58f5e533ae46b9cd1c3745764cac5c932fda8ea4a45c",
+      "size_bytes": 8168
+    },
+    {
+      "filename": "research/reviews/initial_workflow_results.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "4e507589684bee33b39637a3e45b061beacf20111fc301c09ad1a99b9390df26",
+      "size_bytes": 75604
+    },
+    {
+      "filename": "research/reviews/public_evidence_workflow_results.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "a095cea3f4b4de15ad98e24e0ba147cd51df21a73db3bb6f8e1405c8df8adaf2",
+      "size_bytes": 30491
+    },
+    {
+      "filename": "research/reviews/scientific-baseline.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "d689eae412af4d607cb45e6226097e6cd5c548b7d3bb92da7c5fc0d6292c9327",
+      "size_bytes": 10750
+    },
+    {
+      "filename": "research/reviews/scientific-extension.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "36841a5be4b6043610f92e3443203745195de82db51f53b3a09003568fa84a36",
+      "size_bytes": 9394
+    },
+    {
+      "filename": "research/source_assays.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "5bd0f9e201135d0ae2c5786887a5a514d6e6516e7e791bb4cdf1ae45286f573e",
+      "size_bytes": 7582
+    },
+    {
+      "filename": "research/structural/artifact_sources.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "3f3558d857821bbf33b7631c5515966ea163ce49411242a9065b531ced93e22d",
+      "size_bytes": 3796
+    },
+    {
+      "filename": "research/structural/compound_control_panel.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "1fa35a8e5cdac30bd16b4bb91bfec2698331139e9a8a0eda26277d5be9a1fe61",
+      "size_bytes": 4611
+    },
+    {
+      "filename": "research/structural/evidence_ledger.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "fcf96c425a1cbbd76be88432c2ed8fc2e4a348d23baf2698da26ef4b03d76bea",
+      "size_bytes": 193147
+    },
+    {
+      "filename": "research/structural/experimental_plan.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "a931a9f20f42398389ff082fe64810bbffeab8a24f95d391778e285548fc8851",
+      "size_bytes": 7516
+    },
+    {
+      "filename": "research/structural/structural_metadata.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "c20d4f8e07eeda95beaff78107560cfac2170c2139f233b49d78353a45f75e00",
+      "size_bytes": 3551
+    },
+    {
+      "filename": "research/structural/structural_selectivity_report.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "5089a76c9d44f3a05730c9adc26c7961bcc9c8d97a9d7439ec245154b643bb48",
+      "size_bytes": 14030
+    },
+    {
+      "filename": "research/study/NUDT5_extension_report.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "ec2e2a048fc01f9921f83a84e1424ffc5e52b014ce5c99d3462414e7c8e0e836",
+      "size_bytes": 18652
+    },
+    {
+      "filename": "research/study/artifact_sources.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "6ea016e20567008e21f4ec3069f6aaaa024b1d5bbfa72a0a56d013ef6d43bd2c",
+      "size_bytes": 4905
+    },
+    {
+      "filename": "research/study/artifact_validation.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "66808c2e12119782c80ee60a85525de66d82bf3e70153bd6c939b93f5847dd3b",
+      "size_bytes": 875
+    },
+    {
+      "filename": "research/study/evidence_categories.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "3ec664bd0855740fbe391bc0d6332e2164f3776d9683ad17dfe659dc1c86af54",
+      "size_bytes": 24390
+    },
+    {
+      "filename": "research/study/hypotheses_falsification.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "9e77964ce1b1f769137e822c9a65b2597e3b096d9258310a67c78c1a46357c23",
+      "size_bytes": 5623
+    },
+    {
+      "filename": "research/study/source_register.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "cba942a0ec284e3b6023f21b48eff0488bcafc2db3fb05d349d9962fe39590dd",
+      "size_bytes": 12322
+    },
+    {
+      "filename": "research/study/validation_and_gates.json",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "b7ab91cf7b41e12e51d6efebaf2e402a9a449469af2ca5be67e3ee335dd3b499",
+      "size_bytes": 9932
+    },
+    {
+      "filename": "research/verification.md",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "source citations and review records within file",
+      "purpose": "Manuscript, ledger or evidence report",
+      "reproducibility_status": "auditable; limitations and access gaps retained",
+      "sha256": "1b63bba86943fb81fee4b9b019866e2554d6a92df93d55ae055d8468a67c6281",
+      "size_bytes": 1787
+    },
+    {
+      "filename": "scripts/build_extension_figures.py",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "7ff28cdbc3bc8c3bacdeef282fd76d8184ec664d1bbf90030814320610e53c04",
+      "size_bytes": 13059
+    },
+    {
+      "filename": "scripts/build_release_manifest.py",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "36a77d0c49b25cebeca6ecd1ed7e8d308ba42be266aa67dfa432642f955641bd",
+      "size_bytes": 3544
+    },
+    {
+      "filename": "scripts/build_research_documents.py",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "c329b8ed325036bd78f8bd56e8340775b4a7cdc7946ac8bdcb14e0e4821a89cd",
+      "size_bytes": 10989
+    },
+    {
+      "filename": "scripts/scripts/controls.py",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "c9ce53b4c3141c9b3f9dbb999c256b59cde0d67688efab4d1dbaef15ad0b8aaa",
+      "size_bytes": 30415
+    },
+    {
+      "filename": "scripts/scripts/nudt5_evidence_audit.egg-info/PKG-INFO",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "ed8405a806103d2ade0f7ac161761eb85b8890e2242ae9402648742a7754b7a9",
+      "size_bytes": 337
+    },
+    {
+      "filename": "scripts/scripts/nudt5_evidence_audit.egg-info/SOURCES.txt",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "b8f8c2d634c4f600e644999362d86bb8dcbcca0179a4bf3af08395541649bec2",
+      "size_bytes": 634
+    },
+    {
+      "filename": "scripts/scripts/nudt5_evidence_audit.egg-info/dependency_links.txt",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size_bytes": 1
+    },
+    {
+      "filename": "scripts/scripts/nudt5_evidence_audit.egg-info/entry_points.txt",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "8c435db7208988a02213cf52f83d91f41e67636c7be45661debcecf7475ee5b7",
+      "size_bytes": 108
+    },
+    {
+      "filename": "scripts/scripts/nudt5_evidence_audit.egg-info/requires.txt",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "216a8777906d6bae699bfff1fbb436cafdfa7fd89f1cc6de2aa525452793d7af",
+      "size_bytes": 82
+    },
+    {
+      "filename": "scripts/scripts/nudt5_evidence_audit.egg-info/top_level.txt",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "bc75f609ccb2be74021e659f109350e8042bb0e469e19ce0c6ce3721bfef36ef",
+      "size_bytes": 27
+    },
+    {
+      "filename": "scripts/scripts/pipeline.py",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "03f3755abcbbb15a90c71ae837f16e8377b521b4b8151c1fe71306e96317bc38",
+      "size_bytes": 33715
+    },
+    {
+      "filename": "scripts/scripts/transfer.py",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "e592d095678369c08ff0b4574ba867cfced70c0baebf4776df7257380e6676fa",
+      "size_bytes": 19614
+    },
+    {
+      "filename": "tests/test_controls.py",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "85223ccd98b9c61f12f5c1c3584094406fa1372de8f2a4b0239252ad6fa7ecf8",
+      "size_bytes": 7171
+    },
+    {
+      "filename": "tests/test_documents.py",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "a361d036f56295130aecbc9897d584642ce5c587b43fbd9bc6307f1ae90dc530",
+      "size_bytes": 2273
+    },
+    {
+      "filename": "tests/test_extension_figures.py",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "facb9f51a0f49352265bee0e79f20330b074ffb26ff63561b5adcc01957dde3c",
+      "size_bytes": 2615
+    },
+    {
+      "filename": "tests/test_pipeline.py",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "fc635f98224f68dbbf2d68bb60615c97b5804ffe332abcce47115f80b767caf0",
+      "size_bytes": 15418
+    },
+    {
+      "filename": "tests/test_release.py",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "60a38585469476cc9d122cd26deba1f7ccaebfed38fa095e563bf23106846a65",
+      "size_bytes": 2453
+    },
+    {
+      "filename": "tests/test_transfer.py",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "this revision; inspect Git history",
+      "purpose": "Executable reproduction, tests or environment",
+      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
+      "sha256": "ff6955484af06316d93978fae9b84593ae89c299e9f388323fa2b4318f91a81b",
+      "size_bytes": 6999
+    }
+  ],
+  "hash_algorithm": "SHA-256",
+  "scope": "Repository research release; excludes this manifest, Git internals, environments and caches. Original attachments separately indexed in original_inventory.json."
+}

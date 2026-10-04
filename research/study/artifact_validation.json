@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "claims": 21,
+  "categories": {
+    "Demonstrated": 7,
+    "Strongly supported": 2,
+    "Suggestive": 2,
+    "Hypothesized": 3,
+    "Unknown": 3,
+    "Refuted": 4
+  },
+  "matrix_rows": 6,
+  "experimental_gates": 6,
+  "downloaded_response_hashes_verified": 12,
+  "http_counts": {
+    "200": 11,
+    "500": 1
+  },
+  "exact_text_quotes_verified": 4,
+  "checks": [
+    "JSON parsing",
+    "CSV round trip",
+    "All six evidence categories",
+    "Unique claim IDs and complete source references",
+    "Three ranked hypotheses",
+    "Exact quotations checked against normalized raw primary XML/HTML",
+    "All downloaded raw-source SHA-256 digests rechecked",
+    "HTTP status accounting"
+  ],
+  "not_run": [
+    "Repository tests/build/lint: no repository was inspected or edited",
+    "Model scoring",
+    "Experimental or simulation validation"
+  ]
+}

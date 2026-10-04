@@ -1,0 +1,412 @@
+[
+  {
+    "file": "raw/bindingdb_rest_docs.html",
+    "url": "https://www.bindingdb.org/rwd/bind/BindingDBRESTfulAPI.jsp",
+    "final_url": "https://www.bindingdb.org/rwd/bind/BindingDBRESTfulAPI.jsp",
+    "retrieved_utc": "2026-10-04T22:18:31.158829+00:00",
+    "http_status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "bytes": 16959,
+    "sha256": "343013e2c2ab632a4fe05c39cce404605cb8ebe5170f7106b7eb9acec28d4d6c"
+  },
+  {
+    "file": "raw/chembl_target_search.json",
+    "url": "https://www.ebi.ac.uk/chembl/api/data/target/search.json?q=NUDT5&limit=20",
+    "final_url": "https://www.ebi.ac.uk/chembl/api/data/target/search.json?q=NUDT5&limit=20",
+    "retrieved_utc": "2026-10-04T22:18:31.155309+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "bytes": 13588,
+    "sha256": "4bc88dfccc896766f9a3097eb68dd79d3cd3c4a510a604fb3085a0a6e9d9b0e9"
+  },
+  {
+    "file": "raw/uniprot_Q9UKK9.json",
+    "url": "https://rest.uniprot.org/uniprotkb/Q9UKK9.json",
+    "final_url": "https://rest.uniprot.org/uniprotkb/Q9UKK9.json",
+    "retrieved_utc": "2026-10-04T22:18:31.155835+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "bytes": 93607,
+    "sha256": "c6ce15985ddb39a042ba8f7164fd818f1be362df552de5ff07f571bbc0667f02"
+  },
+  {
+    "file": "raw/europepmc_search.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=NUDT5%20AND%20(INHIBITOR%20OR%20INHIBITORS)&format=json&pageSize=100&resultType=core",
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=NUDT5%20AND%20(INHIBITOR%20OR%20INHIBITORS)&format=json&pageSize=100&resultType=core",
+    "retrieved_utc": "2026-10-04T22:18:31.382448+00:00",
+    "http_status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "bytes": 792857,
+    "sha256": "8be4c208e639f79f8d77ea2962243a71c20bd45e77f9dfad3bf285b219fd23d3"
+  },
+  {
+    "file": "raw/chembl_activities.json",
+    "url": "https://www.ebi.ac.uk/chembl/api/data/activity.json?target_chembl_id=CHEMBL4105713&limit=1000",
+    "final_url": "https://www.ebi.ac.uk/chembl/api/data/activity.json?target_chembl_id=CHEMBL4105713&limit=1000",
+    "retrieved_utc": "2026-10-04T22:18:31.157824+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "bytes": 55532,
+    "sha256": "c0c59b0f9adc7cc23f8c71de73052ae53e24c74b1078c9895486473bcbb1e790"
+  },
+  {
+    "file": "raw/bindingdb_uniprot_page.html",
+    "url": "https://www.bindingdb.org/rwd/bind/ByUniProtids.jsp",
+    "final_url": "https://www.bindingdb.org/rwd/bind/ByUniProtids.jsp",
+    "retrieved_utc": "2026-10-04T22:18:59.379749+00:00",
+    "http_status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "bytes": 96528,
+    "sha256": "cc073928394d146ac0624f705b35a62af47aac933f9237da7dcf634147d5a198"
+  },
+  {
+    "file": "raw/bindingdb_Q9UKK9.json",
+    "url": "https://www.bindingdb.org/rest/getLigandsByUniprots?uniprot=Q9UKK9&response=application/json",
+    "final_url": "https://www.bindingdb.org/rest/getLigandsByUniprots?uniprot=Q9UKK9&response=application/json",
+    "retrieved_utc": "2026-10-04T22:18:59.376450+00:00",
+    "http_status": 200,
+    "content_type": "text/json;charset=UTF-8",
+    "bytes": 5941,
+    "sha256": "e0dc8abbf4795ad7bdc6981ccd12777f4dab6ba488c4dc2212bbb54258b43380"
+  },
+  {
+    "file": "raw/chembl_documents.json",
+    "url": "https://www.ebi.ac.uk/chembl/api/data/document.json?document_chembl_id__in=CHEMBL4007403,CHEMBL5506016,CHEMBL5579821,CHEMBL5649169,CHEMBL5723035&limit=100",
+    "final_url": "https://www.ebi.ac.uk/chembl/api/data/document.json?document_chembl_id__in=CHEMBL4007403,CHEMBL5506016,CHEMBL5579821,CHEMBL5649169,CHEMBL5723035&limit=100",
+    "retrieved_utc": "2026-10-04T22:18:59.378817+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "bytes": 8052,
+    "sha256": "7b03cd1ba16849378a0ed9bbd79231d75dee97eda39231843aa9bed3fce8008b"
+  },
+  {
+    "file": "raw/chembl_assays.json",
+    "url": "https://www.ebi.ac.uk/chembl/api/data/assay.json?target_chembl_id=CHEMBL4105713&limit=1000",
+    "final_url": "https://www.ebi.ac.uk/chembl/api/data/assay.json?target_chembl_id=CHEMBL4105713&limit=1000",
+    "retrieved_utc": "2026-10-04T22:18:59.377930+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "bytes": 10611,
+    "sha256": "1295fe3ffd39faf266d4b2f7542210cf6325917c651a5e0d7cddb33c32e02df5"
+  },
+  {
+    "file": "raw/epmc_title_abstract.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE_ABS:NUDT5%20AND%20(INHIBITOR%20OR%20INHIBITORS)&format=json&pageSize=100&resultType=core",
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE_ABS:NUDT5%20AND%20(INHIBITOR%20OR%20INHIBITORS)&format=json&pageSize=100&resultType=core",
+    "retrieved_utc": "2026-10-04T22:19:12.138601+00:00",
+    "http_status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "bytes": 492106,
+    "sha256": "6f2dd174deeb08b3453c8cf5e24cece38a99e3a38f3bb70af665410d27a6ad45"
+  },
+  {
+    "file": "raw/page2018.html",
+    "url": "https://www.nature.com/articles/s41467-017-02293-7",
+    "final_url": "https://www.nature.com/articles/s41467-017-02293-7",
+    "retrieved_utc": "2026-10-04T22:19:12.139520+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 525099,
+    "sha256": "f9988109bb83f7cc9fa30bec8cb4a55dff2488b34684329577c19a4ae095a82c"
+  },
+  {
+    "file": "raw/chembl_status.json",
+    "url": "https://www.ebi.ac.uk/chembl/api/data/status.json",
+    "final_url": "https://www.ebi.ac.uk/chembl/api/data/status.json",
+    "retrieved_utc": "2026-10-04T22:19:12.141181+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "bytes": 212,
+    "sha256": "29dc1fb09487a8d2962253a4d0d92c4ded0aa0d831effab42445d0c3483d4740"
+  },
+  {
+    "file": "raw/page2018_supplement.pdf",
+    "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-017-02293-7/MediaObjects/41467_2017_2293_MOESM1_ESM.pdf",
+    "final_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-017-02293-7/MediaObjects/41467_2017_2293_MOESM1_ESM.pdf",
+    "retrieved_utc": "2026-10-04T22:19:48.071709+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "bytes": 29188722,
+    "sha256": "490c6658a4089c122d0e69897c6ea5ebb9809fb350f2c72b7d16e784b76e1ea9"
+  },
+  {
+    "file": "raw/approved2020.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7145388/fullTextXML",
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7145388/fullTextXML",
+    "retrieved_utc": "2026-10-04T22:19:48.074301+00:00",
+    "http_status": 200,
+    "content_type": "application/xml",
+    "bytes": 66071,
+    "sha256": "d8ca801689b8b93746930998695c9243e20315802900260b41d459898c255171"
+  },
+  {
+    "file": "raw/degrader2026.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+    "retrieved_utc": "2026-10-04T22:19:48.073546+00:00",
+    "http_status": 200,
+    "content_type": "application/xml",
+    "bytes": 138253,
+    "sha256": "410d0bb126d04581d8a02a94ae1b444790ddefaa38eaa640ebc512b49421b7d5"
+  },
+  {
+    "file": "raw/fluvoxamine2025.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11668718/fullTextXML",
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11668718/fullTextXML",
+    "retrieved_utc": "2026-10-04T22:19:49.194225+00:00",
+    "http_status": 500,
+    "content_type": "application/json",
+    "bytes": 151,
+    "sha256": "e99ed6c9d2f318b16cd8e75d6a1e9b0dfebda2e1c729b8900bb7208a36ff9fbb"
+  },
+  {
+    "file": "raw/coumarin2022.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9822328/fullTextXML",
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9822328/fullTextXML",
+    "retrieved_utc": "2026-10-04T22:19:48.779080+00:00",
+    "http_status": 200,
+    "content_type": "application/xml",
+    "bytes": 135332,
+    "sha256": "68df08e22f5fe21b94dd573a67b540571f2dd01805b8329394d3f49eb5a6ba37"
+  },
+  {
+    "file": "raw/page2018.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+    "retrieved_utc": "2026-10-04T22:19:48.071018+00:00",
+    "http_status": 200,
+    "content_type": "application/xml",
+    "bytes": 152176,
+    "sha256": "bc7c46fc4d464adb0cb2d5ec1ce56c4accc781f94c23f1c8744441d2b045a071"
+  },
+  {
+    "file": "raw/review2024.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11243610/fullTextXML",
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11243610/fullTextXML",
+    "retrieved_utc": "2026-10-04T22:19:49.427745+00:00",
+    "http_status": 500,
+    "content_type": "application/json",
+    "bytes": 151,
+    "sha256": "bbc2965539da51d3cc364897fb12bf3670bb50493adf1f1096934c6f57e38611"
+  },
+  {
+    "file": "raw/bindingdb_inactive.html",
+    "url": "https://www.bindingdb.org/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50236118",
+    "final_url": "https://www.bindingdb.org/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50236118",
+    "retrieved_utc": "2026-10-04T22:19:50.012790+00:00",
+    "http_status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "bytes": 57580,
+    "sha256": "45e5cbdecc3de11e37cb712ac79fef945cb8f70370e20556f0336b3c5492e828"
+  },
+  {
+    "file": "raw/independent_papers_metadata.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:28145708%20OR%20EXT_ID:29928781&format=json&resultType=core",
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:28145708%20OR%20EXT_ID:29928781&format=json&resultType=core",
+    "retrieved_utc": "2026-10-04T22:19:50.008779+00:00",
+    "http_status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "bytes": 23958,
+    "sha256": "8be41ae399470d65c3bf14eedd5bfd4253cd88270141d862b987529771574c26"
+  },
+  {
+    "file": "raw/bindingdb_nvp.html",
+    "url": "https://www.bindingdb.org/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50652793",
+    "final_url": "https://www.bindingdb.org/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50652793",
+    "retrieved_utc": "2026-10-04T22:19:50.023928+00:00",
+    "http_status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "bytes": 635716,
+    "sha256": "77c1c6b5dee92dc82650650cbbba60cabe2d93e2913b5338745878ba0861ec51"
+  },
+  {
+    "file": "raw/dctp2017_publisher.html",
+    "url": "https://pubs.acs.org/doi/10.1021/acs.jmedchem.6b01786",
+    "final_url": "https://pubs.acs.org/doi/10.1021/acs.jmedchem.6b01786",
+    "retrieved_utc": "2026-10-04T22:20:51.805330+00:00",
+    "http_status": 403,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 5584,
+    "sha256": "580495eb1121a8b92d780839880ff5209968545195183bdc2cddc3538fab6d02"
+  },
+  {
+    "file": "raw/nvp2018_publisher.html",
+    "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cmdc.201800398",
+    "final_url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cmdc.201800398",
+    "retrieved_utc": "2026-10-04T22:20:51.807132+00:00",
+    "http_status": 403,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 5679,
+    "sha256": "7215e5a2a291b7f175386eac369158cfcb0bcf22c5c573b489c13c3d56c18dc3"
+  },
+  {
+    "file": "raw/fluvoxamine2025.html",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11668718/",
+    "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11668718/",
+    "retrieved_utc": "2026-10-04T22:20:51.808144+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 21308,
+    "sha256": "3364a67e476b3c37aa88f8542a2c430dccd7997eeeeccef12f8d527d620d462b"
+  },
+  {
+    "file": "raw/review2024.html",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11243610/",
+    "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11243610/",
+    "retrieved_utc": "2026-10-04T22:20:51.809024+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 21308,
+    "sha256": "8c8473f27b375e269ce2a1a367c23a4d65ed452a55bede545000c3ef3a4a3ed3"
+  },
+  {
+    "file": "raw/rcsb_5NWH_entry.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/5NWH",
+    "final_url": "https://data.rcsb.org/rest/v1/core/entry/5NWH",
+    "retrieved_utc": "2026-10-04T22:21:18.266078+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "bytes": 10948,
+    "sha256": "788c424b1f151a8002a60a9eff095819e6cc4fec3dccfef458b5485aa9cb7349"
+  },
+  {
+    "file": "raw/mrk952_sgc.html",
+    "url": "https://www.thesgc.org/chemical-probes/mrk-952",
+    "final_url": "https://www.thesgc.org/chemical-probes/mrk-952",
+    "retrieved_utc": "2026-10-04T22:21:18.263637+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 59934,
+    "sha256": "5b894ef2de3383b2ecba8fd5b56ba9c7062941a7780d8b746fbeb31d8e4bbbb2"
+  },
+  {
+    "file": "raw/dctp2017_figshare.html",
+    "url": "https://acs.figshare.com/doi/suppl/10.1021/acs.jmedchem.6b01786",
+    "final_url": "https://acs.figshare.com/doi/suppl/10.1021/acs.jmedchem.6b01786",
+    "retrieved_utc": "2026-10-04T22:21:18.264330+00:00",
+    "http_status": 202,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "file": "raw/nvp2018_table1.xlsx",
+    "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/suppl/10.1002/cmdc.201800398/supinfo/cmdc201800398-sup-0001-Table_1.xlsx",
+    "final_url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/suppl/10.1002/cmdc.201800398/supinfo/cmdc201800398-sup-0001-Table_1.xlsx",
+    "retrieved_utc": "2026-10-04T22:21:48.362219+00:00",
+    "http_status": 403,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 5893,
+    "sha256": "e3c1d8d046ee6abc45f9c93f1b8ddd7ba6a5c0aafcb4583b6162518cec6e8cf1"
+  },
+  {
+    "file": "raw/nvp2018_si.pdf",
+    "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/suppl/10.1002/cmdc.201800398/supinfo/cmdc201800398-sup-0001-misc_information.pdf",
+    "final_url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/suppl/10.1002/cmdc.201800398/supinfo/cmdc201800398-sup-0001-misc_information.pdf",
+    "retrieved_utc": "2026-10-04T22:21:48.361396+00:00",
+    "http_status": 403,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 5938,
+    "sha256": "83902719d4159c19e61aee7522b6115571d413150dadecc99f8dd02238730b02"
+  },
+  {
+    "file": "raw/nvp2018_table2.xlsx",
+    "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/suppl/10.1002/cmdc.201800398/supinfo/cmdc201800398-sup-0001-Table_2.xlsx",
+    "final_url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/suppl/10.1002/cmdc.201800398/supinfo/cmdc201800398-sup-0001-Table_2.xlsx",
+    "retrieved_utc": "2026-10-04T22:21:48.362886+00:00",
+    "http_status": 403,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 5893,
+    "sha256": "c748bb995cf918d56744ec55169ed4e9bc022d9290ac754ded4411bcf3aeb6a2"
+  },
+  {
+    "file": "raw/rcsb_5NWH_ligand.json",
+    "url": "https://data.rcsb.org/rest/v1/core/nonpolymer_entity/5NWH/2",
+    "final_url": "https://data.rcsb.org/rest/v1/core/nonpolymer_entity/5NWH/2",
+    "retrieved_utc": "2026-10-04T22:22:19.958187+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "bytes": 587,
+    "sha256": "b1f378b1df357a47a5a307ce66841b53cd258c43cb00f2143cce107150b49436"
+  },
+  {
+    "file": "raw/mrk952_assay1.png",
+    "url": "https://www.thesgc.org/sites/default/files/inline-images/download_17.png",
+    "final_url": "https://www.thesgc.org/sites/default/files/inline-images/download_17.png",
+    "retrieved_utc": "2026-10-04T22:23:03.230634+00:00",
+    "http_status": 200,
+    "content_type": "image/png",
+    "bytes": 60173,
+    "sha256": "1f2a6ee5d197b6a0cdaf5319c014c6616d10e203e497551c76d3b72f7f08effa"
+  },
+  {
+    "file": "raw/mrk952_structure.png",
+    "url": "https://www.thesgc.org/sites/default/files/inline-images/MRK-952.png",
+    "final_url": "https://www.thesgc.org/sites/default/files/inline-images/MRK-952.png",
+    "retrieved_utc": "2026-10-04T22:23:03.228869+00:00",
+    "http_status": 200,
+    "content_type": "image/png",
+    "bytes": 353607,
+    "sha256": "e63e305f50c057ffb4b9f2e8506f8b0b964a40db850b257620f2b413983209e6"
+  },
+  {
+    "file": "raw/mrk952_sgc.csv",
+    "url": "https://www.thesgc.org/chem-detail-export/9850?page&_format=csv",
+    "final_url": "https://www.thesgc.org/chem-detail-export/9850?page&_format=csv",
+    "retrieved_utc": "2026-10-04T22:23:03.227254+00:00",
+    "http_status": 200,
+    "content_type": "text/csv; charset=UTF-8",
+    "bytes": 464,
+    "sha256": "6771d3686502be4211ce821464e5bbcdd276b254a64366be12d8a025d5adab81"
+  },
+  {
+    "file": "raw/mrk952nc_structure.png",
+    "url": "https://www.thesgc.org/sites/default/files/inline-images/MRK-952-NC.png",
+    "final_url": "https://www.thesgc.org/sites/default/files/inline-images/MRK-952-NC.png",
+    "retrieved_utc": "2026-10-04T22:23:03.229742+00:00",
+    "http_status": 200,
+    "content_type": "image/png",
+    "bytes": 326947,
+    "sha256": "153ba7f978b6a35d44ec54f3b5de9739928e7bd93be44b64ed1b74f6cf5fcd8a"
+  },
+  {
+    "file": "raw/dctp2017_publisher_alternate.html",
+    "url": "https://pubs.acs.org/jmcmar/article/60/5/2148/697468/Identification-of-Triazolothiadiazoles-as-Potent",
+    "final_url": "https://pubs.acs.org/jmcmar/article/60/5/2148/697468/Identification-of-Triazolothiadiazoles-as-Potent",
+    "retrieved_utc": "2026-10-04T22:23:03.519469+00:00",
+    "http_status": 403,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 5792,
+    "sha256": "f1a203fde3afb9d1c958cf92436836eeb33f22e945651a16b6a7215dd8557375"
+  },
+  {
+    "file": "raw/rcsb_TH5427_component.json",
+    "url": "https://data.rcsb.org/rest/v1/core/chemcomp/9CH",
+    "final_url": "https://data.rcsb.org/rest/v1/core/chemcomp/9CH",
+    "retrieved_utc": "2026-10-04T22:23:03.496213+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "bytes": 3440,
+    "sha256": "fda21bba3f3c5cda8d19d29d6b18a4667aa5e259caaa600aec7c68f89430dea3"
+  },
+  {
+    "file": "raw/mrk952_assay2.png",
+    "url": "https://www.thesgc.org/sites/default/files/inline-images/download%20%281%29_13.png",
+    "final_url": "https://www.thesgc.org/sites/default/files/inline-images/download%20%281%29_13.png",
+    "retrieved_utc": "2026-10-04T22:23:03.443419+00:00",
+    "http_status": 200,
+    "content_type": "image/png",
+    "bytes": 118249,
+    "sha256": "cb584602546df68dd53394b8978ff88f1f47c235ce949143dbc68a218ec23857"
+  },
+  {
+    "file": "raw/fluvoxamine2025_publisher.html",
+    "url": "https://link.springer.com/article/10.1007/s40203-024-00293-2",
+    "final_url": "https://link.springer.com/article/10.1007/s40203-024-00293-2",
+    "retrieved_utc": "2026-10-04T22:23:03.547160+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 416409,
+    "sha256": "a1c2cfc625fb42234d8cc1f67e427fd385e5d4b1c23a30ee065fb5012b4373de"
+  }
+]

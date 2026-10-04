@@ -1,0 +1,534 @@
+{
+  "as_of_utc": "2026-10-04",
+  "category_definitions": {
+    "Demonstrated": "Direct reported observation in an inspected primary source, under its reported conditions; not independently replicated here.",
+    "Strongly supported": "Convergent source evidence supports a bounded interpretation; not universal proof.",
+    "Suggestive": "Grounded rationale that does not establish causal or quantitative transfer.",
+    "Hypothesized": "Proposed testable extension; no new outcomes generated.",
+    "Unknown": "Unresolved, uninspected or not yet measured.",
+    "Refuted": "The explicitly stated assertion is contradicted by identified evidence; scope of refutation is limited."
+  },
+  "claims": [
+    {
+      "id": "D1",
+      "category": "Demonstrated",
+      "verification_status": "verified primary producer evidence",
+      "claim": "SGC reports MRK-952 biochemical IC50 85 nM versus NC 10 micromolar; NC is weakly active, not inert.",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "source_urls": [
+        "https://www.thesgc.org/chemical-probes/mrk-952",
+        "https://www.thesgc.org/sites/default/files/inline-images/download%20%281%29_13.png"
+      ],
+      "locator": "Dossier overview; biochemical curve tables",
+      "supporting_passage_paraphrase": "Prose reports the IC50 values. Curve tables label EC50 0.0849 and 10.6 micromolar, respectively.",
+      "exact_quote": null,
+      "limits": [
+        "IC50/EC50 label discrepancy; not independent measurements.",
+        "Species/construct not specified in inspected dossier.",
+        "NC stereochemistry explicitly assumed."
+      ]
+    },
+    {
+      "id": "D2",
+      "category": "Demonstrated",
+      "verification_status": "verified primary figure",
+      "claim": "The SPR panel reports KD 0.031 ± 0.018 and 1.380 ± 0.380 micromolar (n=2) for MRK-952 and NC.",
+      "source_ids": [
+        "S2"
+      ],
+      "source_urls": [
+        "https://www.thesgc.org/sites/default/files/inline-images/download_17.png"
+      ],
+      "locator": "SPR/selectivity table",
+      "supporting_passage_paraphrase": "Both probes have NUDT5 binding values; NUDT14 is marked NB and the footnote says also inactive in NUDT14 catalytic assay.",
+      "exact_quote": null,
+      "limits": [
+        "No numerical nonbinding/inactivity cutoff is specified in the inspected figure.",
+        "This is not a proteome-wide cellular selectivity guarantee."
+      ]
+    },
+    {
+      "id": "D3",
+      "category": "Demonstrated",
+      "verification_status": "verified primary paper",
+      "claim": "Compound 9 binds NUDT5 and NUDT14, and retains BTK engagement in cells.",
+      "source_ids": [
+        "S4"
+      ],
+      "source_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML"
+      ],
+      "locator": "Results/Figs. 3–5",
+      "supporting_passage_paraphrase": "NUDT5 NanoBRET EC50 1.08 ± 0.07 micromolar; BTK EC50 0.377 ± 0.062 micromolar; NUDT14 CETSA measured at 30 micromolar.",
+      "exact_quote": null,
+      "limits": [
+        "Different readouts are not interchangeable occupancy measures.",
+        "Cellular selectivity at the intended exposure must be measured."
+      ]
+    },
+    {
+      "id": "D4",
+      "category": "Demonstrated",
+      "verification_status": "verified primary methods",
+      "claim": "Balikci catalytic inhibition assays used different incubation times for NUDT5 and NUDT14.",
+      "source_ids": [
+        "S4"
+      ],
+      "source_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML"
+      ],
+      "locator": "Catalytic assay Methods",
+      "supporting_passage_paraphrase": "NUDT5 was incubated for 20 minutes and NUDT14 for 1 hour.",
+      "exact_quote": "NUDT5 reactions were incubated for 20 min, while NUDT14 reactions were carried out for 1 h at rt.",
+      "limits": [
+        "Published IC50 ratios are not affinity constants or matched-kinetic comparisons."
+      ]
+    },
+    {
+      "id": "D5",
+      "category": "Demonstrated",
+      "verification_status": "verified primary paper",
+      "claim": "TH5427 reduced hormone-stimulated nuclear luciferase signal and downstream hormone responses in the reported T47D system.",
+      "source_ids": [
+        "S5"
+      ],
+      "source_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML"
+      ],
+      "locator": "Fig. 4 and hormone-response Results",
+      "supporting_passage_paraphrase": "The study links a reduced nuclear ATP reporter signal to chromatin, transcription and proliferation endpoints.",
+      "exact_quote": "cells treated with TH5427 had a marked reduction in nuclear luminescence",
+      "limits": [
+        "Source-specific model and exposure.",
+        "Reporter interference, general toxicity and noncatalytic mechanisms must be controlled in a new experiment."
+      ]
+    },
+    {
+      "id": "D6",
+      "category": "Demonstrated",
+      "verification_status": "verified primary paper",
+      "claim": "In the tested thiopurine setting, TH5427 and MRK-952 failed to reproduce the NUDT5-knockout resistance phenotype, whereas protein loss and rescue experiments gave distinct results.",
+      "source_ids": [
+        "S6"
+      ],
+      "source_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML"
+      ],
+      "locator": "Figs. 1 and 4; Results",
+      "supporting_passage_paraphrase": "The paper compares catalytic inhibitors, genetic knockout, degrader/control and E112Q reconstitution.",
+      "exact_quote": "neither inhibitor was able to phenocopy the NUDT5 KO in HAP1 or HL-60 cells",
+      "limits": [
+        "This does not demonstrate the same behavior in hormone-stimulated T47D.",
+        "A universal equivalence claim is contradicted; not every catalytic role is excluded."
+      ]
+    },
+    {
+      "id": "D7",
+      "category": "Demonstrated",
+      "verification_status": "verified primary paper",
+      "claim": "Nguyen reports that Y74E disrupts NUDT5–PPAT interaction while retaining catalytic activity in the reported ADP-ribose assay; E112Q supplies a complementary catalytic-deficient comparison.",
+      "source_ids": [
+        "S7"
+      ],
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7618541/"
+      ],
+      "locator": "Figs. 4–6; Y74-mutant Results; Enzymatic activity Methods",
+      "supporting_passage_paraphrase": "Y74E loses PPAT binding and differs from WT/E112Q in the reported purine-stress rescue experiments.",
+      "exact_quote": "We confirmed that mutation of residue Y74 did not affect NUDT5 catalytic activity",
+      "limits": [
+        "Mutants need requalification in T47D, including localization and ATP-producing reaction competence.",
+        "PPAT complex geometry is AlphaFold-predicted, not an experimentally solved complex."
+      ]
+    },
+    {
+      "id": "S1",
+      "category": "Strongly supported",
+      "verification_status": "primary evidence triangulation",
+      "claim": "NUDT5 has a noncatalytic PPAT-associated contribution to purine regulation in the studied contexts.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ],
+      "source_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7618541/"
+      ],
+      "locator": "S7 Figs. 4–6; S6 Fig. 4 and Discussion",
+      "supporting_passage_paraphrase": "Chemical depletion, catalytic inhibition, genetic rescue, interaction experiments and purified-protein PPAT experiments converge.",
+      "exact_quote": null,
+      "limits": [
+        "Shared investigators/toolkit; do not count as fully independent replication.",
+        "Not proof of universal scaffolding dependence across breast-cancer phenotypes."
+      ]
+    },
+    {
+      "id": "S2",
+      "category": "Strongly supported",
+      "verification_status": "scope-limited inference from primary sources",
+      "claim": "The proposed general noncatalytic/PPAT mechanism is already published and cannot honestly be presented as newly discovered by this project.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ],
+      "source_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7618541/"
+      ],
+      "locator": "Paper titles and Results",
+      "supporting_passage_paraphrase": "Both primary papers explicitly investigate catalytic-independent NUDT5 functions.",
+      "exact_quote": null,
+      "limits": [
+        "A distinct context-specific mechanistic result could still be new; exhaustive novelty search not performed."
+      ]
+    },
+    {
+      "id": "G1",
+      "category": "Suggestive",
+      "verification_status": "published structural rationale; causal test pending",
+      "claim": "Arg51-dependent recognition may distinguish ligand interactions between NUDT5 and NUDT14.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "I2"
+      ],
+      "source_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+        "https://la-hacks-rttothemoon.devinenterprise.com/attachments/835676c8-c47a-45a8-9551-ff7acf74a54d/structural_selectivity_report.md"
+      ],
+      "locator": "S4 Figs. 3–4 and Results; S5 TH5427 structure; supplied structural caveats",
+      "supporting_passage_paraphrase": "Published contact assignments distinguish the NUDT5 Arg51 environment from the NUDT14 pocket.",
+      "exact_quote": null,
+      "limits": [
+        "No new contact distances, energy calculation or mutagenesis performed.",
+        "The supplied Arg51 occupancy warning is inherited and requires local-density inspection."
+      ]
+    },
+    {
+      "id": "G2",
+      "category": "Suggestive",
+      "verification_status": "producer selectivity evidence; intended use untested",
+      "claim": "MRK-952 is a candidate orthogonal NUDT5 comparator for a NUDT14 deconvolution panel.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S6"
+      ],
+      "source_urls": [
+        "https://www.thesgc.org/chemical-probes/mrk-952",
+        "https://www.thesgc.org/sites/default/files/inline-images/download_17.png",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML"
+      ],
+      "locator": "SGC selectivity panel; S6 inhibitor comparison",
+      "supporting_passage_paraphrase": "Different chemical scaffold and reported NUDT14 inactivity support testing it beside TH5427 and compound 9.",
+      "exact_quote": null,
+      "limits": [
+        "No qualified T47D engagement window or proteome-wide selectivity in that system.",
+        "Purified-assay species/construct unresolved."
+      ]
+    },
+    {
+      "id": "H1",
+      "category": "Hypothesized",
+      "verification_status": "proposed; not tested",
+      "claim": "Acute hormone-response catalysis and purine-stress PPAT dependence can be separated by qualified E112Q/Y74E rescue.",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "source_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7618541/"
+      ],
+      "locator": "Extension hypothesis informed by these sources",
+      "supporting_passage_paraphrase": "The sources establish distinct experimental contexts and published separation-of-function tools.",
+      "exact_quote": null,
+      "limits": [
+        "No T47D mutant or paired-context experiment performed.",
+        "Different cell lines alone cannot establish a context interaction."
+      ]
+    },
+    {
+      "id": "H2",
+      "category": "Hypothesized",
+      "verification_status": "proposed; not tested",
+      "claim": "A ligand-by-Arg51-mutant binding interaction can guide a prospectively measured NUDT5-over-NUDT14 selectivity change.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ],
+      "source_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML"
+      ],
+      "locator": "Extension hypothesis",
+      "supporting_passage_paraphrase": "A differential binding experiment can test the contact rationale before new chemistry.",
+      "exact_quote": null,
+      "limits": [
+        "R51K/R51A are proposed, not validated resistance alleles.",
+        "Existing SAR remeasurement is retrospective."
+      ]
+    },
+    {
+      "id": "H3",
+      "category": "Hypothesized",
+      "verification_status": "proposed; not scored",
+      "claim": "A fixed activity-ranking rule will prefer MRK-952 to NC under a prespecified scoring interpretation.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3",
+        "I1"
+      ],
+      "source_urls": [
+        "https://www.thesgc.org/chemical-probes/mrk-952",
+        "https://www.thesgc.org/sites/default/files/inline-images/download_17.png",
+        "https://www.thesgc.org/sites/default/files/inline-images/download%20%281%29_13.png",
+        "https://la-hacks-rttothemoon.devinenterprise.com/attachments/7ba87084-14c3-48f4-a9fb-efa8469e7db0/NUDT5_external_evidence_report.md"
+      ],
+      "locator": "Diagnostic proposal",
+      "supporting_passage_paraphrase": "Published biochemical and direct-binding results motivate a known-answer, one-pair challenge.",
+      "exact_quote": null,
+      "limits": [
+        "Outcomes already exposed; no blinded external-validation claim.",
+        "No scores computed or actual training-overlap check performed.",
+        "The scorer may not make a potency claim at all."
+      ]
+    },
+    {
+      "id": "U1",
+      "category": "Unknown",
+      "verification_status": "unresolved metadata",
+      "claim": "Species and construct of the SGC purified-enzyme measurements remain unresolved from inspected sources.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "source_urls": [
+        "https://www.thesgc.org/chemical-probes/mrk-952",
+        "https://www.thesgc.org/sites/default/files/inline-images/download_17.png",
+        "https://www.thesgc.org/sites/default/files/inline-images/download%20%281%29_13.png"
+      ],
+      "locator": "Inspected dossier and figures",
+      "supporting_passage_paraphrase": "The published cell use does not supply the missing biochemical assay identity.",
+      "exact_quote": null,
+      "limits": [
+        "Blocks strict species-confirmed human biochemical holdout status; does not invalidate producer observations."
+      ]
+    },
+    {
+      "id": "U2",
+      "category": "Unknown",
+      "verification_status": "not inspected in this session",
+      "claim": "Overlap with all 45 repository graphs, actual model behavior, reagent availability, cost and laboratory capability remain unassessed.",
+      "source_ids": [
+        "I1",
+        "I2"
+      ],
+      "source_urls": [
+        "https://la-hacks-rttothemoon.devinenterprise.com/attachments/7ba87084-14c3-48f4-a9fb-efa8469e7db0/NUDT5_external_evidence_report.md",
+        "https://la-hacks-rttothemoon.devinenterprise.com/attachments/835676c8-c47a-45a8-9551-ff7acf74a54d/structural_selectivity_report.md"
+      ],
+      "locator": "Input limitations and present scope",
+      "supporting_passage_paraphrase": "Prior similarity calculations concern retrieved Balikci graphs rather than all project structures.",
+      "exact_quote": null,
+      "limits": [
+        "Repository files and vendors were not searched."
+      ]
+    },
+    {
+      "id": "U3",
+      "category": "Unknown",
+      "verification_status": "new-system validation required",
+      "claim": "Mutant integrity, compartment localization, PPAT binding, dual-reaction competence and target-engagement windows in T47D remain untested.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "source_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7618541/"
+      ],
+      "locator": "New-system qualification requirements",
+      "supporting_passage_paraphrase": "Published validation in other systems does not close these requirements.",
+      "exact_quote": null,
+      "limits": [
+        "No experimental outcomes or prospectively validated predictions supplied."
+      ]
+    },
+    {
+      "id": "R1",
+      "category": "Refuted",
+      "verification_status": "contradicted universal claim",
+      "claim": "Catalytic inhibition and NUDT5 protein loss are universally interchangeable interventions.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ],
+      "source_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7618541/"
+      ],
+      "locator": "S6 Figs. 1, 4; S7 Figs. 4–6",
+      "supporting_passage_paraphrase": "The tested purine/thiopurine contexts provide counterexamples.",
+      "exact_quote": null,
+      "limits": [
+        "Refutation is of the universal statement, not a claim that inhibitors can never phenocopy depletion."
+      ]
+    },
+    {
+      "id": "R2",
+      "category": "Refuted",
+      "verification_status": "contradicted by direct producer measurements",
+      "claim": "MRK-952-NC is an experimentally inactive NUDT5 compound.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "source_urls": [
+        "https://www.thesgc.org/chemical-probes/mrk-952",
+        "https://www.thesgc.org/sites/default/files/inline-images/download_17.png",
+        "https://www.thesgc.org/sites/default/files/inline-images/download%20%281%29_13.png"
+      ],
+      "locator": "Biochemical and SPR data",
+      "supporting_passage_paraphrase": "NC has micromolar inhibition and binding.",
+      "exact_quote": null,
+      "limits": [
+        "It may function as a weak comparator within a qualified exposure window."
+      ]
+    },
+    {
+      "id": "R3",
+      "category": "Refuted",
+      "verification_status": "contradicted by primary target engagement and binding",
+      "claim": "Balikci compound 9 is a NUDT5-specific cellular probe.",
+      "source_ids": [
+        "S4"
+      ],
+      "source_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML"
+      ],
+      "locator": "Figs. 3–5",
+      "supporting_passage_paraphrase": "NUDT14 direct binding and cellular stabilization, plus BTK cellular engagement, contradict unqualified specificity.",
+      "exact_quote": null,
+      "limits": [
+        "An exposure-dependent functional attribution could still be established experimentally."
+      ]
+    },
+    {
+      "id": "R4",
+      "category": "Refuted",
+      "verification_status": "contradicted novelty assertion",
+      "claim": "NUDT5–PPAT scaffolding or generic catalytic-inhibitor/degrader discordance would be a first discovery here.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ],
+      "source_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7618541/"
+      ],
+      "locator": "Titles and mechanistic Results",
+      "supporting_passage_paraphrase": "These findings are already directly reported in 2025/2026 primary papers.",
+      "exact_quote": null,
+      "limits": [
+        "No exhaustive assessment of the novelty of the narrower H1 extension."
+      ]
+    }
+  ],
+  "sources": {
+    "S1": {
+      "title": "SGC/MSD MRK-952 producer dossier",
+      "url": "https://www.thesgc.org/chemical-probes/mrk-952",
+      "type": "primary producer dossier",
+      "inspected": "Overview and both assay figures",
+      "independence": "Producer data, not a dedicated peer-reviewed MRK assay paper."
+    },
+    "S2": {
+      "title": "Selectivity profile of MRK-952 by SPR",
+      "url": "https://www.thesgc.org/sites/default/files/inline-images/download_17.png",
+      "type": "primary producer figure",
+      "inspected": "Entire figure, visually",
+      "independence": "Same dossier as S1; not a separate study."
+    },
+    "S3": {
+      "title": "MRK-952/NC biochemical curves and stereochemistry annotation",
+      "url": "https://www.thesgc.org/sites/default/files/inline-images/download%20%281%29_13.png",
+      "type": "primary producer figure",
+      "inspected": "Entire figure, visually",
+      "independence": "Same biochemical observations as dossier prose, despite different endpoint labels."
+    },
+    "S4": {
+      "title": "Balıkçı et al. Unexpected Noncovalent Off-Target Activity of Clinical BTK Inhibitors Leads to Discovery of a Dual NUDT5/14 Antagonist (2024)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+      "doi": "10.1021/acs.jmedchem.4c00072",
+      "type": "primary paper",
+      "inspected": "Selected Results/Figs. 3–5, synthesis/structural assignments, catalytic and cellular engagement Methods",
+      "independence": "Already-curated project source, never counted as new external data."
+    },
+    "S5": {
+      "title": "Page et al. Targeted NUDT5 inhibitors block hormone signaling in breast cancer cells (2018)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+      "doi": "10.1038/s41467-017-02293-7",
+      "type": "primary paper",
+      "inspected": "Selected Results, Fig. 4, DARTS and ligand-contact assignments",
+      "independence": "Known reference, not new training data."
+    },
+    "S6": {
+      "title": "Marques et al. Targeted Protein Degradation of NUDT5 Dissociates Catalytic Inhibition from Protein Loss in 6-Thioguanine Response (2026)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+      "doi": "10.1038/s41467-026-74489-9",
+      "type": "primary paper",
+      "inspected": "Abstract, Results/Figs. 1, 3–4, Discussion, reference 45 and acknowledgments",
+      "independence": "Overlapping investigators and degrader toolkit with S7; not wholly independent replication."
+    },
+    "S7": {
+      "title": "Nguyen et al. A non-enzymatic role of Nudix hydrolase 5 in repressing purine de novo synthesis (2025)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7618541/",
+      "doi": "10.1126/science.adv4257",
+      "type": "primary paper",
+      "inspected": "Abstract, Results/Figs. 4–6, Discussion, mutant construction, PPAT co-IP and catalytic Methods",
+      "independence": "Followed S6 reference 45; overlaps investigators and tools with S6."
+    },
+    "V1": {
+      "title": "ACS Chemical Biology author guidelines",
+      "url": "https://researcher-resources.acs.org/publish/author_guidelines?coden=acbcct",
+      "type": "official journal policy",
+      "inspected": "Scope and article-type requirements"
+    },
+    "V2": {
+      "title": "ACS Medicinal Chemistry Letters author guidelines",
+      "url": "https://researcher-resources.acs.org/publish/author_guidelines?coden=amclct",
+      "type": "official journal policy",
+      "inspected": "Scope and article-type requirements"
+    },
+    "V3": {
+      "title": "Journal of Chemical Information and Modeling author guidelines",
+      "url": "https://researcher-resources.acs.org/publish/author_guidelines?coden=jcisd8",
+      "type": "official journal policy",
+      "inspected": "Scope and article-type requirements"
+    },
+    "I1": {
+      "title": "Supplied external-evidence report",
+      "url": "https://la-hacks-rttothemoon.devinenterprise.com/attachments/7ba87084-14c3-48f4-a9fb-efa8469e7db0/NUDT5_external_evidence_report.md",
+      "type": "supplied research synthesis",
+      "inspected": "Report read; database counts and fingerprint calculations not rerun"
+    },
+    "I2": {
+      "title": "Supplied structural-selectivity report",
+      "url": "https://la-hacks-rttothemoon.devinenterprise.com/attachments/835676c8-c47a-45a8-9551-ff7acf74a54d/structural_selectivity_report.md",
+      "type": "supplied research synthesis",
+      "inspected": "Report read; PDB metadata/occupancy calculations not rerun"
+    }
+  }
+}

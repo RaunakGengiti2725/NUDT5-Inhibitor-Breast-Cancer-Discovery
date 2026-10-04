@@ -49,3 +49,45 @@ def test_empty_manuscript_and_missing_results_fail(tmp_path: Path) -> None:
     with pytest.raises(ValueError, match="benchmark.json"):
         build(manuscript, tmp_path, tmp_path / "out")
     assert not (tmp_path / "out").exists()
+
+
+@pytest.mark.parametrize(
+    ("cutoff", "n", "positives"),
+    [(c, 10, p) for c in ("1.0", "10.0", "50.0") for p in (0, 10)] + [("50.0", 0, 0)],
+)
+def test_one_class_cutoffs_remain_explicit_in_documents(
+    tmp_path: Path, cutoff: str, n: int, positives: int
+) -> None:
+    import csv
+    import json
+    import shutil
+
+    results = tmp_path / "results"
+    results.mkdir()
+    for name in ("benchmark.json", "controls.json"):
+        shutil.copyfile(ROOT / "research/results" / name, results / name)
+    transfer = json.loads((ROOT / "research/results/transfer.json").read_text())
+    for source in (transfer, transfer["reference_sensitivity"]):
+        evaluations = source["measured_source_challenge"]["threshold_sensitivity_uM"]
+        for key in evaluations if n == 0 else [cutoff]:
+            evaluations[key] = {"n": n, "positives": positives, "metrics": None}
+    (results / "transfer.json").write_text(json.dumps(transfer))
+    manuscript = tmp_path / "paper.md"
+    manuscript.write_text("# One-class diagnostic\n\nUndefined ROC-AUC is not zero.\n")
+    output = tmp_path / "documents"
+    pdf, word = build(manuscript, results, output)
+    assert pdf.read_bytes().startswith(b"%PDF")
+    assert word.is_file()
+    status = list(csv.DictReader((output / "source_cutoff_status.csv").open()))
+    affected = [row for row in status if row["design"].endswith(f"_{cutoff}_uM")]
+    assert len(affected) == 2
+    for row in affected:
+        assert row["status"].startswith("infeasible")
+        assert int(row["n"]) == n
+        assert int(row["positives"]) == positives
+        assert int(row["negatives"]) == n - positives
+    metrics = list(csv.DictReader((output / "all_metrics.csv").open()))
+    assert not any(row["design"] in {r["design"] for r in affected} for row in metrics)
+    assert "infeasible: both classes required" in (output / "supplementary_results.md").read_text()
+    if cutoff == "50.0":
+        assert "Source ROC-AUC unavailable" in (output / "source_transfer.svg").read_text()

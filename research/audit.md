@@ -70,7 +70,7 @@ Run in a locked Python 3.12.15 environment:
 ruff check .                            All checks passed!
 ruff format --check .                   12 files already formatted
 mypy --no-incremental                   Success: no issues found in 12 source files
-python -m pytest                        80 passed
+python -m pytest                        87 passed
 python -m compileall -q scripts tests   clean
 python -m build                         sdist and wheel built
 pip-audit                               No known vulnerabilities in installed third-party dependencies

@@ -152,6 +152,19 @@ These are exploratory diagnostics. AP and trapezoidal PR-AUC are distinct. Thres
 | ablation_similarity_component_split | without_nrb_lr | 45 | 1.0000 | 1.0000 | 0.0211 | 0.9115 |
 | ablation_similarity_component_split | without_tpsa_lr | 45 | 0.9960 | 0.9946 | 0.0298 | 0.9115 |
 
+## Source cutoff feasibility
+
+No score is imputed when a cutoff lacks both classes; undefined metrics are omitted from all_metrics.csv, not treated as zero.
+
+| Design | n | Positive | Negative | Status |
+|---|---:|---:|---:|---|
+| measured_source_below_1.0_uM | 10 | 2 | 8 | available |
+| measured_source_below_10.0_uM | 10 | 2 | 8 | available |
+| measured_source_below_50.0_uM | 10 | 5 | 5 | available |
+| authenticated_reference_source_below_1.0_uM | 10 | 2 | 8 | available |
+| authenticated_reference_source_below_10.0_uM | 10 | 2 | 8 | available |
+| authenticated_reference_source_below_50.0_uM | 10 | 5 | 5 | available |
+
 ## All fixed-seed runs
 
 | Design | Seed | Property LR AUC | Equal mean AUC |

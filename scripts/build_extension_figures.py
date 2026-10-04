@@ -142,6 +142,19 @@ def build_figures(results: Path, output: Path) -> list[tuple[Path, str]]:
             (measured["metrics"], "Measured-source challenge", ORANGE),
         ]
     ):
+        if values is None:
+            axes[0].text(
+                0.98,
+                0.83,
+                f"Source ROC-AUC unavailable\nn={measured['n']}; "
+                f"{measured['positives']} positive, "
+                f"{measured['n'] - measured['positives']} negative",
+                transform=axes[0].transAxes,
+                ha="right",
+                va="top",
+                fontsize=8,
+            )
+            continue
         axes[0].bar(
             [i + (index - 0.5) * 0.35 for i in range(6)],
             [values[m]["auc"] for m in METHODS],
@@ -176,9 +189,11 @@ def build_figures(results: Path, output: Path) -> list[tuple[Path, str]]:
             save_figure(fig, output, "source_transfer"),
             (
                 "Figure 4. Retrospective source-transfer stress tests without tuning. A: "
-                "45-record repository OOF discrimination versus 10 previously inspected, measured "
-                "Balikci compounds after excluding two training/parent overlaps and eleven "
-                "untested compounds; five IC50 <50 uM versus five reported inactive >50 uM. "
+                f"Repository OOF discrimination (n={full['methods']['Property_LR']['n']}) versus "
+                f"the measured-source challenge after eligibility/identity exclusions "
+                f"(n={measured['n']}; {measured['positives']} threshold-positive and "
+                f"{measured['n'] - measured['positives']} threshold-negative at IC50 <50 uM). "
+                "Source ROC-AUC is unavailable unless both classes are present. "
                 "Different sample sizes, labels and fitting regimes preclude a controlled "
                 "performance-drop estimate. B: scores for one externally sourced, already-known "
                 "strong/weak pair; neither is a new inhibitor and NC is not inactive. No "
@@ -194,31 +209,38 @@ def build_figures(results: Path, output: Path) -> list[tuple[Path, str]]:
 def write_tables(results: Path, output: Path) -> Path:
     controls = json.loads((results / "controls.json").read_text())
     transfer = json.loads((results / "transfer.json").read_text())
-    rows = []
+    rows: list[dict[str, Any]] = []
+    cutoffs: list[dict[str, Any]] = []
+
+    def add_source_rows(prefix: str, challenge: dict[str, Any]) -> None:
+        for cutoff, evaluation in challenge["threshold_sensitivity_uM"].items():
+            design = f"{prefix}_below_{cutoff}_uM"
+            metrics = evaluation["metrics"]
+            cutoffs.append(
+                {
+                    "design": design,
+                    "n": evaluation["n"],
+                    "positives": evaluation["positives"],
+                    "negatives": evaluation["n"] - evaluation["positives"],
+                    "status": "available"
+                    if metrics is not None
+                    else "infeasible: both classes required",
+                }
+            )
+            for method, values in (metrics or {}).items():
+                rows.append({"design": design, "method": method, **values})
+
     for design, evaluation in controls["evaluations"].items():
         for method, metrics in evaluation.get("methods", {}).items():
             rows.append({"design": design, "method": method, **metrics})
-    for threshold, evaluation in transfer["measured_source_challenge"][
-        "threshold_sensitivity_uM"
-    ].items():
-        for method, metrics in evaluation["metrics"].items():
-            rows.append(
-                {"design": f"measured_source_below_{threshold}_uM", "method": method, **metrics}
-            )
+    add_source_rows("measured_source", transfer["measured_source_challenge"])
     for split, evaluation in transfer["reference_sensitivity"]["evaluations"].items():
         for method, metrics in evaluation["metrics"].items():
             rows.append({"design": f"authenticated_reference_{split}", "method": method, **metrics})
-    for cutoff, evaluation in transfer["reference_sensitivity"]["measured_source_challenge"][
-        "threshold_sensitivity_uM"
-    ].items():
-        for method, metrics in evaluation["metrics"].items():
-            rows.append(
-                {
-                    "design": f"authenticated_reference_source_below_{cutoff}_uM",
-                    "method": method,
-                    **metrics,
-                }
-            )
+    add_source_rows(
+        "authenticated_reference_source",
+        transfer["reference_sensitivity"]["measured_source_challenge"],
+    )
     for design, evaluation in controls["evaluations"].items():
         for method, result in evaluation.get("ablations", {}).items():
             rows.append({"design": f"ablation_{design}", "method": method, **result["metrics"]})
@@ -226,6 +248,10 @@ def write_tables(results: Path, output: Path) -> Path:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
+    with (output / "source_cutoff_status.csv").open("x", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(cutoffs[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(cutoffs)
     candidates = [
         {
             "id": row["id"],
@@ -260,6 +286,23 @@ def write_tables(results: Path, output: Path) -> Path:
         lines.append(
             f"| {row['design']} | {row['method']} | {row['n']} | {row['auc']:.4f} | "
             f"{row['average_precision']:.4f} | {row['brier']:.4f} | {row['mcc_at_0_5']:.4f} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Source cutoff feasibility",
+            "",
+            "No score is imputed when a cutoff lacks both classes; undefined metrics are omitted "
+            "from all_metrics.csv, not treated as zero.",
+            "",
+            "| Design | n | Positive | Negative | Status |",
+            "|---|---:|---:|---:|---|",
+        ]
+    )
+    for cutoff in cutoffs:
+        lines.append(
+            f"| {cutoff['design']} | {cutoff['n']} | {cutoff['positives']} | "
+            f"{cutoff['negatives']} | {cutoff['status']} |"
         )
     lines.extend(
         [

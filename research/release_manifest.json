@@ -24,8 +24,8 @@
       "provenance": "this revision; inspect Git history",
       "purpose": "Executable reproduction, tests or environment",
       "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "ee018d182cf6e945dd97159230cf4684672b980105e86afb5070c26a8ac6d026",
-      "size_bytes": 10953
+      "sha256": "54a3e37ddf53d6b59b228b67de6faf350557bef9c3a1dd911ba3cfecbd973b2f",
+      "size_bytes": 11837
     },
     {
       "filename": "compounds.csv",
@@ -87,7 +87,7 @@
       "provenance": "source citations and review records within file",
       "purpose": "Manuscript, ledger or evidence report",
       "reproducibility_status": "auditable; limitations and access gaps retained",
-      "sha256": "2fa41e0a0fea4d11dc597ff1e849d9ed8f5718ac27fb3f53b479f7cd3fb62561",
+      "sha256": "356a0e0d7744ef8c6a9f2434dd25a44573dc0e1f6ca0de346ce851a85de6894d",
       "size_bytes": 16405
     },
     {
@@ -249,7 +249,7 @@
       "provenance": "recorded JSON via figure/document builders",
       "purpose": "Generated figure or table",
       "reproducibility_status": "regenerable, not experimental validation",
-      "sha256": "77e83b5154e7eb858699f986595b53548cec35dd6ae456bc267aadb3d79da3ea",
+      "sha256": "b088f6cf5230f3748ee9a7100b8125bdd72d081444150178a96e2781540464ac",
       "size_bytes": 18986
     },
     {
@@ -267,7 +267,7 @@
       "provenance": "recorded JSON via figure/document builders",
       "purpose": "Generated figure or table",
       "reproducibility_status": "regenerable, not experimental validation",
-      "sha256": "1ade3f775741b9911b668163082ebdf558eb76271d458e4adf57002ab464a779",
+      "sha256": "11ee633caade76545f344162756cb9fdf37bda5de25eeff7d2bbf86b894b1463",
       "size_bytes": 24711
     },
     {
@@ -276,7 +276,7 @@
       "provenance": "recorded JSON via figure/document builders",
       "purpose": "Generated figure or table",
       "reproducibility_status": "regenerable, not experimental validation",
-      "sha256": "c671cf274b5d77e1608f0aa74f5f2b13064a88be274acaabba45994f4bc083c3",
+      "sha256": "f8444b243a66486d9a1b22b2e0f46e98f14cfa641bda3a4e3e9aa84ed55955ba",
       "size_bytes": 20286
     },
     {
@@ -294,8 +294,17 @@
       "provenance": "recorded JSON via figure/document builders",
       "purpose": "Generated figure or table",
       "reproducibility_status": "regenerable, not experimental validation",
-      "sha256": "285308101464ca5d21de35f8e9a1545d8f37884c109b3ec5d4935ccb411f59b7",
+      "sha256": "f1390114e3ab3e22d61ddfe4c1d9baf402ea068a8a149854466d3c28c6b466de",
       "size_bytes": 27334
+    },
+    {
+      "filename": "research/figures/source_cutoff_status.csv",
+      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
+      "provenance": "recorded JSON via figure/document builders",
+      "purpose": "Generated figure or table",
+      "reproducibility_status": "regenerable, not experimental validation",
+      "sha256": "34696cd299a0dd977e6d1a3ddb026897ab0de5edcdbbd976b88c0dbb6779ee53",
+      "size_bytes": 361
     },
     {
       "filename": "research/figures/source_transfer.pdf",
@@ -303,7 +312,7 @@
       "provenance": "recorded JSON via figure/document builders",
       "purpose": "Generated figure or table",
       "reproducibility_status": "regenerable, not experimental validation",
-      "sha256": "97d4b075bdf76ff84807b1839c36b74a4b8f8a682703c0ec20af2542480e8bfa",
+      "sha256": "d41ade920dc8143268004f5967d95101380d3e898703cd6a19a7f3fe13819ed5",
       "size_bytes": 20425
     },
     {
@@ -321,7 +330,7 @@
       "provenance": "recorded JSON via figure/document builders",
       "purpose": "Generated figure or table",
       "reproducibility_status": "regenerable, not experimental validation",
-      "sha256": "af55969e8db70eb877bb9ea871e8973e53f27629ed8deb762beee5bbacc714fa",
+      "sha256": "1f521b8656777dcfc16faaa07ec928dad19cdc98de5bae513c0aa5d83d0daa16",
       "size_bytes": 24574
     },
     {
@@ -330,8 +339,8 @@
       "provenance": "recorded JSON via figure/document builders",
       "purpose": "Generated figure or table",
       "reproducibility_status": "regenerable, not experimental validation",
-      "sha256": "c7c03b18785e8b6e2319dd2ad1c5bf30a72551c814688e2237e8539069553c29",
-      "size_bytes": 14888
+      "sha256": "1afe9a6c02f503c2e3c2809e7b665215ee2bcde0709a2ded74e743417479e404",
+      "size_bytes": 15515
     },
     {
       "filename": "research/manuscript.md",
@@ -690,8 +699,8 @@
       "provenance": "source citations and review records within file",
       "purpose": "Manuscript, ledger or evidence report",
       "reproducibility_status": "auditable; limitations and access gaps retained",
-      "sha256": "1b63bba86943fb81fee4b9b019866e2554d6a92df93d55ae055d8468a67c6281",
-      "size_bytes": 1787
+      "sha256": "8c365bb12550c746c2e07bf2c99deb8115cd265f15a638597104e91075f654f7",
+      "size_bytes": 2196
     },
     {
       "filename": "scripts/build_extension_figures.py",
@@ -699,8 +708,8 @@
       "provenance": "this revision; inspect Git history",
       "purpose": "Executable reproduction, tests or environment",
       "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "7ff28cdbc3bc8c3bacdeef282fd76d8184ec664d1bbf90030814320610e53c04",
-      "size_bytes": 13059
+      "sha256": "87cf68f00a2d717a152ab5a5ebaec9319a74ecad2500b793c31c0f1b08a5d617",
+      "size_bytes": 14850
     },
     {
       "filename": "scripts/build_release_manifest.py",
@@ -762,8 +771,8 @@
       "provenance": "this revision; inspect Git history",
       "purpose": "Executable reproduction, tests or environment",
       "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "a361d036f56295130aecbc9897d584642ce5c587b43fbd9bc6307f1ae90dc530",
-      "size_bytes": 2273
+      "sha256": "a0b3d5a0feb2858e2ba594a54d0cf7f21d25c916c5ce2af2728b47e4da21e155",
+      "size_bytes": 4288
     },
     {
       "filename": "tests/test_extension_figures.py",

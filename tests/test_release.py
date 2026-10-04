@@ -12,6 +12,9 @@ from pipeline import ROOT
 def test_inventory_hashes_inputs_and_refuses_overwrite(tmp_path: Path) -> None:
     source = tmp_path / "compounds.csv"
     source.write_text("original input")
+    generated = tmp_path / "scripts" / "package.egg-info"
+    generated.mkdir(parents=True)
+    (generated / "PKG-INFO").write_text("Build metadata is not an evidence input")
     output = tmp_path / "inventory.json"
     result = build_manifest(tmp_path, output)
     assert len(result["files"]) == 1

@@ -28,7 +28,9 @@ def build_manifest(root: Path, output: Path) -> dict[str, Any]:
         path
         for name in DIRECTORIES
         for path in (root / name).rglob("*")
-        if path.is_file() and "__pycache__" not in path.parts
+        if path.is_file()
+        and "__pycache__" not in path.parts
+        and not any(part.endswith(".egg-info") for part in path.relative_to(root).parts)
     )
     rows = []
     for path in sorted(paths):

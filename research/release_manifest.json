@@ -708,8 +708,8 @@
       "provenance": "this revision; inspect Git history",
       "purpose": "Executable reproduction, tests or environment",
       "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "36a77d0c49b25cebeca6ecd1ed7e8d308ba42be266aa67dfa432642f955641bd",
-      "size_bytes": 3544
+      "sha256": "34629b7da438e68ca68b3f6349eee1e9ff0f2a1c5ec952d6fbaee6b17acd586d",
+      "size_bytes": 3641
     },
     {
       "filename": "scripts/build_research_documents.py",
@@ -728,60 +728,6 @@
       "reproducibility_status": "covered by release quality checks; not proof of biological validity",
       "sha256": "c9ce53b4c3141c9b3f9dbb999c256b59cde0d67688efab4d1dbaef15ad0b8aaa",
       "size_bytes": 30415
-    },
-    {
-      "filename": "scripts/scripts/nudt5_evidence_audit.egg-info/PKG-INFO",
-      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
-      "provenance": "this revision; inspect Git history",
-      "purpose": "Executable reproduction, tests or environment",
-      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "ed8405a806103d2ade0f7ac161761eb85b8890e2242ae9402648742a7754b7a9",
-      "size_bytes": 337
-    },
-    {
-      "filename": "scripts/scripts/nudt5_evidence_audit.egg-info/SOURCES.txt",
-      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
-      "provenance": "this revision; inspect Git history",
-      "purpose": "Executable reproduction, tests or environment",
-      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "b8f8c2d634c4f600e644999362d86bb8dcbcca0179a4bf3af08395541649bec2",
-      "size_bytes": 634
-    },
-    {
-      "filename": "scripts/scripts/nudt5_evidence_audit.egg-info/dependency_links.txt",
-      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
-      "provenance": "this revision; inspect Git history",
-      "purpose": "Executable reproduction, tests or environment",
-      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-      "size_bytes": 1
-    },
-    {
-      "filename": "scripts/scripts/nudt5_evidence_audit.egg-info/entry_points.txt",
-      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
-      "provenance": "this revision; inspect Git history",
-      "purpose": "Executable reproduction, tests or environment",
-      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "8c435db7208988a02213cf52f83d91f41e67636c7be45661debcecf7475ee5b7",
-      "size_bytes": 108
-    },
-    {
-      "filename": "scripts/scripts/nudt5_evidence_audit.egg-info/requires.txt",
-      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
-      "provenance": "this revision; inspect Git history",
-      "purpose": "Executable reproduction, tests or environment",
-      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "216a8777906d6bae699bfff1fbb436cafdfa7fd89f1cc6de2aa525452793d7af",
-      "size_bytes": 82
-    },
-    {
-      "filename": "scripts/scripts/nudt5_evidence_audit.egg-info/top_level.txt",
-      "manuscript_dependency": "Methods/results, evidence traceability or reproduction",
-      "provenance": "this revision; inspect Git history",
-      "purpose": "Executable reproduction, tests or environment",
-      "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "bc75f609ccb2be74021e659f109350e8042bb0e469e19ce0c6ce3721bfef36ef",
-      "size_bytes": 27
     },
     {
       "filename": "scripts/scripts/pipeline.py",
@@ -843,8 +789,8 @@
       "provenance": "this revision; inspect Git history",
       "purpose": "Executable reproduction, tests or environment",
       "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "60a38585469476cc9d122cd26deba1f7ccaebfed38fa095e563bf23106846a65",
-      "size_bytes": 2453
+      "sha256": "31c88e8de72ed10556eadf9ad21d091de1bea0beb39ee0aa46829f24fdea5439",
+      "size_bytes": 2628
     },
     {
       "filename": "tests/test_transfer.py",

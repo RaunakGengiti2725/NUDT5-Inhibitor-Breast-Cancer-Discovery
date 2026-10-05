@@ -347,6 +347,7 @@ def build(
     structure_input: Path | None = None,
     structure_manifest: Path | None = None,
     require_structure: bool = False,
+    repository: Path = ROOT,
     handoff_directory: Path = ROOT / "research/structure_comparison",
 ) -> tuple[Path, Path]:
     """Stage complete documents before non-overwriting, completion-last publication."""
@@ -373,8 +374,14 @@ def build(
     if require_structure or any(path.exists() or path.is_symlink() for path in supplied):
         if structure_input is None or structure_manifest is None:
             raise ValueError("Required structural input and manifest")
-        structural = structure_figures.load_recorded(structure_input, structure_manifest)
+        structural = structure_figures.load_recorded(
+            structure_input, structure_manifest, repository=repository
+        )
         inputs.extend([structure_input, structure_manifest])
+        inputs.extend(structure_figures.publication_inputs(repository))
+        inputs.extend(
+            repository / name for name in structure_figures.source_hashes(structural["provenance"])
+        )
         for name in ("lab_handoff.md", "hypotheses_controls.csv", "handoff_sources.json"):
             path = handoff_directory / name
             if not path.is_file() or path.is_symlink() or not path.read_bytes().strip():
@@ -415,6 +422,9 @@ def main() -> None:
     parser.add_argument("--results", type=Path, default=ROOT / "research/results")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument(
+        "--repository", type=Path, default=ROOT, help="Trusted structural evidence checkout"
+    )
+    parser.add_argument(
         "--allow-missing-selectivity",
         action="store_true",
         help="Legacy results only: explicitly annotate absent paired-target results",
@@ -447,6 +457,7 @@ def main() -> None:
         structure_manifest=args.structure_manifest,
         require_structure=not args.allow_missing_structure,
         handoff_directory=args.handoff_directory,
+        repository=args.repository,
     ):
         print(path)
 

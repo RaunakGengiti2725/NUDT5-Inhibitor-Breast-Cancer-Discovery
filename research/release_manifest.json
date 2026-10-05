@@ -24,8 +24,8 @@
       "provenance": "this revision; inspect Git history",
       "purpose": "Executable reproduction, tests or environment",
       "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "320480ef49c4742ffdbd9e6a3a17a053c936ef4d7120c0f159d2561d78d15b53",
-      "size_bytes": 20228
+      "sha256": "18bfdad19a677ef6b386f81d1ec729e4bd27d58eb7460d6e41282eb8b1af0fb3",
+      "size_bytes": 21217
     },
     {
       "filename": "compounds.csv",
@@ -582,8 +582,8 @@
       "provenance": "source citations and review records within file",
       "purpose": "Manuscript, ledger or evidence report",
       "reproducibility_status": "auditable; limitations and access gaps retained",
-      "sha256": "fa97f2e776dbe4ae4850978420ba752b3193d5281104a729f6a28ac938befa48",
-      "size_bytes": 54960
+      "sha256": "5ee7257be5a09c9862c2ead2f98416e1e8d1b2fa875624ca009df5cb95934bbb",
+      "size_bytes": 55815
     },
     {
       "filename": "research/original_inventory.json",
@@ -600,8 +600,8 @@
       "provenance": "source citations and review records within file",
       "purpose": "Manuscript, ledger or evidence report",
       "reproducibility_status": "auditable; limitations and access gaps retained",
-      "sha256": "4e1e271567df4b0f126ae1fff143353f316e9a046da2bbb639d960166f800353",
-      "size_bytes": 10122
+      "sha256": "7c30fd12abd3e2c7447152b13abca0c67d16ff6e459251be8813387383a3c4bc",
+      "size_bytes": 11579
     },
     {
       "filename": "research/publication_strategy.md",
@@ -1635,8 +1635,8 @@
       "provenance": "source citations and review records within file",
       "purpose": "Manuscript, ledger or evidence report",
       "reproducibility_status": "auditable; limitations and access gaps retained",
-      "sha256": "577cc3541b915e74b7f38e76befc5f37613b90bfdd7ce844db1f35af838add47",
-      "size_bytes": 13140
+      "sha256": "238a2deba77b257816fb07ab30db91e31a73f5edb0bc719c5d13466725d0dcfd",
+      "size_bytes": 17626
     },
     {
       "filename": "scripts/build_extension_figures.py",
@@ -1671,8 +1671,8 @@
       "provenance": "this revision; inspect Git history",
       "purpose": "Executable reproduction, tests or environment",
       "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "1cca895ee36f336e637ec54c7d110ae69af3566febef7d2b9f8812618ab26bfa",
-      "size_bytes": 20938
+      "sha256": "5e3c463733e59fee61dd8167c0a1075536870423ce5ff834f3928bf77b90c22e",
+      "size_bytes": 21377
     },
     {
       "filename": "scripts/build_selectivity_figures.py",
@@ -1689,8 +1689,8 @@
       "provenance": "this revision; inspect Git history",
       "purpose": "Executable reproduction, tests or environment",
       "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "4169aeb1dae1e9ae4fa1ee7d41ab4a8698c5897e3cf2bb21e9494955b055768a",
-      "size_bytes": 24814
+      "sha256": "c70a55f4642f63b163ae3c8c7a9f5ce7def226da84088a3ad0eeaf3953059ce5",
+      "size_bytes": 28041
     },
     {
       "filename": "scripts/scripts/assay.py",
@@ -1770,8 +1770,8 @@
       "provenance": "this revision; inspect Git history",
       "purpose": "Executable reproduction, tests or environment",
       "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "ed75dd722b1d591f79515636e506f3aad2306e226d95f7c3f3f5d54301d9017f",
-      "size_bytes": 14528
+      "sha256": "ebf87ef3cb2674d4121605cd033f31e92cb795cdf124b603650a5001c31aa338",
+      "size_bytes": 16457
     },
     {
       "filename": "tests/test_extension_figures.py",
@@ -1806,8 +1806,8 @@
       "provenance": "this revision; inspect Git history",
       "purpose": "Executable reproduction, tests or environment",
       "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "7303ecc88499f66346573ebd23a1ba69e6e0fbe74865151b578b1243679289e6",
-      "size_bytes": 8932
+      "sha256": "97724e31ca804d94d8ea3c5568b2b5747cec97661114a2d64db4f2bfbccb44af",
+      "size_bytes": 10207
     },
     {
       "filename": "tests/test_selectivity.py",
@@ -1842,8 +1842,8 @@
       "provenance": "this revision; inspect Git history",
       "purpose": "Executable reproduction, tests or environment",
       "reproducibility_status": "covered by release quality checks; not proof of biological validity",
-      "sha256": "dea95d532ac255728c6c5144e9bf9cf4b5434569f40ceeb165e0509e2b057f1d",
-      "size_bytes": 6421
+      "sha256": "e5aacda43306584d4b27764bbe967a25abe091d7efa18338a53d68ef68e73c94",
+      "size_bytes": 17516
     },
     {
       "filename": "tests/test_transfer.py",

@@ -15,8 +15,18 @@ from typing import Any
 
 import numpy as np
 from selectivity import publish
-from structure_comparison import RADII, THRESHOLDS, WARNING, digest, json_bytes, read_json, require
+from structure_comparison import (
+    RADII,
+    THRESHOLDS,
+    WARNING,
+    build_result,
+    digest,
+    json_bytes,
+    read_json,
+    require,
+)
 
+ROOT = Path(__file__).resolve().parents[1]
 FIGURE = "observed_proximity_map"
 TOP_LEVEL = [
     "radii_A",
@@ -76,9 +86,58 @@ def validate_pair(pair: Any) -> None:
     )
 
 
-def validate(result: Any) -> dict[str, Any]:
+def publication_inputs(repository: Path) -> list[Path]:
+    """Resolve the trusted checkout package, never paths supplied by a result."""
+    require(repository.is_absolute(), "Publication repository must be absolute")
+    require(
+        not any(p.is_symlink() for p in (repository, *repository.parents)),
+        "Publication repository symlink refused",
+    )
+    base = repository / "research/structure_comparison"
+    return [base / "runtime_input_manifest.json", base / "geometry_contract.json"]
+
+
+def source_hashes(provenance: dict[str, Any]) -> dict[str, str]:
+    """Compare historical input fingerprints without reopening historical machine paths."""
+    root = Path(provenance["repository"])
+    require(root.is_absolute() and ".." not in root.parts, "Invalid provenance repository")
+    hashes = provenance["input_hashes"]
+    require(isinstance(hashes, dict), "Invalid provenance input hashes")
+    portable = {}
+    for name, value in hashes.items():
+        path = Path(name)
+        require(path.is_absolute() and ".." not in path.parts, "Invalid provenance input path")
+        relative = path.relative_to(root).as_posix()
+        require(relative not in portable, "Duplicate provenance input path")
+        portable[relative] = value
+    return portable
+
+
+def validate_source_package(result: dict[str, Any], repository: Path) -> None:
+    manifest, contract = publication_inputs(repository)
+    expected = build_result(repository, manifest, contract, ["publication integrity verification"])
+    for key in TOP_LEVEL:
+        if key != "provenance":
+            require(
+                json_bytes(result[key]) == json_bytes(expected[key]),
+                f"Source-package mismatch: {key}",
+            )
+    actual_provenance, expected_provenance = result["provenance"], expected["provenance"]
+    require(isinstance(actual_provenance, dict), "Malformed structural provenance")
+    for key in ("contract_id", "contract_sha256", "manifest_sha256"):
+        require(
+            actual_provenance[key] == expected_provenance[key],
+            f"Source-package provenance mismatch: {key}",
+        )
+    require(
+        source_hashes(actual_provenance) == source_hashes(expected_provenance),
+        "Source-package provenance input hashes mismatch",
+    )
+
+
+def validate(result: Any, *, repository: Path = ROOT) -> dict[str, Any]:
     """Refuse incomplete/invalid recorded geometry before any figure or document is staged."""
-    require(isinstance(result, dict) and set(TOP_LEVEL) <= set(result), "Invalid result schema")
+    require(isinstance(result, dict) and set(TOP_LEVEL) == set(result), "Invalid result schema")
     require(
         type(result["schema_version"]) is int
         and result["schema_version"] == 1
@@ -182,13 +241,14 @@ def validate(result: Any) -> dict[str, Any]:
                 {chain for chain, _ in residues} == set(structure["protein_chains"]),
                 "Incomplete protein chains",
             )
+        validate_source_package(result, repository)
         tables(result)
     except (KeyError, TypeError, IndexError, AttributeError) as exc:
         raise ValueError(f"Malformed structural result: {exc}") from exc
     return dict(result)
 
 
-def load_recorded(source: Path, manifest: Path) -> dict[str, Any]:
+def load_recorded(source: Path, manifest: Path, *, repository: Path = ROOT) -> dict[str, Any]:
     for path in (source, manifest):
         require(not any(p.is_symlink() for p in (path, *path.parents)), "Input symlink refused")
         require(path.is_file(), f"Required structural input: {path}")
@@ -198,7 +258,7 @@ def load_recorded(source: Path, manifest: Path) -> dict[str, Any]:
         "Malformed structural manifest",
     )
     require(digest(source.read_bytes()) == record["input_sha256"], "Structural input hash mismatch")
-    return validate(read_json(source))
+    return validate(read_json(source), repository=repository)
 
 
 def residue_label(row: dict[str, Any]) -> str:
@@ -584,17 +644,31 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     parser.add_argument("--input-sha256", required=True, help="Expected recorded result hash")
     parser.add_argument("--output", type=Path, required=True, help="New or empty directory")
+    parser.add_argument(
+        "--repository", type=Path, default=ROOT, help="Trusted evidence checkout (absolute path)"
+    )
     args = parser.parse_args(argv)
     try:
+        require(
+            not any(p.is_symlink() for p in (args.input, *args.input.parents)),
+            "Input symlink refused",
+        )
         data = args.input.read_bytes()
         require(digest(data) == args.input_sha256, "Recorded result hash mismatch")
-        result = validate(read_json(args.input))
+        result = validate(read_json(args.input), repository=args.repository)
         payloads = {**tables(result), **render(result)}
         manifest = {
             "warning": WARNING,
             "input": str(args.input.resolve()),
             "input_sha256": digest(data),
             "code_sha256": digest(Path(__file__).read_bytes()),
+            "source_validation": {
+                "method": "exact_nonprovenance_reconstruction_from_trusted_source_package",
+                "repository": str(args.repository),
+                "manifest_sha256": result["provenance"]["manifest_sha256"],
+                "contract_sha256": result["provenance"]["contract_sha256"],
+                "input_hashes_relative": source_hashes(result["provenance"]),
+            },
             "artifacts": {
                 name: {"sha256": digest(value), "size_bytes": len(value)}
                 for name, value in sorted(payloads.items())

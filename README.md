@@ -217,9 +217,11 @@ mkdir "$OUT"
 SHA="$(sha256sum "$OUT/observed_proximity.json" | cut -d ' ' -f 1)"
 .venv/bin/python scripts/build_structure_comparison_figures.py \
   --input "$OUT/observed_proximity.json" --input-sha256 "$SHA" \
+  --repository "$REPO" \
   --output "$OUT/derived"
 .venv/bin/python scripts/build_research_documents.py \
   --structure-input "$OUT/observed_proximity.json" \
+  --repository "$REPO" \
   --structure-manifest "$OUT/derived/derived_manifest.json" \
   --output "$OUT/documents"
 .venv/bin/python scripts/build_release_manifest.py --output "$OUT/release-manifest.json"
@@ -236,7 +238,17 @@ and a completion-last manifest. No output overwrites previous evidence.
 
 The document CLI defaults to the committed structural result plus its hash-bearing derived
 manifest. Missing, malformed, hash-mismatched or empty structural evidence fails closed before
-publication. `--allow-missing-structure` is a legacy-only opt-in for **absent** inputs; it labels
+publication. Both builders reconstruct the complete fixed-contract result from the trusted
+checkout's archived source package and require exact scientific-field agreement, including all
+sites, conformers, residue/atom identities, pair inventories, occupancy, missingness and target
+labels. A caller-supplied result hash or self-consistent derived manifest is not evidence of that
+agreement. `--repository` selects the absolute trusted evidence checkout (default: this checkout,
+not the caller's working directory); it is never inferred from untrusted result provenance.
+Source fingerprints must match after relative-path normalization, while historical runtime
+paths, commands, timestamps and Git state are preserved, not rewritten. This is reproduction by
+the existing coordinate engine, not an independent scientific validation. Changed source packages
+need a separate versioned contract; publication is not a generic renderer for arbitrary results.
+`--allow-missing-structure` is a legacy-only opt-in for **absent** inputs; it labels
 unavailability and cannot excuse malformed/partial inputs. The separate `--allow-missing-selectivity`
 option retains the same legacy boundary for paired-target evidence.
 

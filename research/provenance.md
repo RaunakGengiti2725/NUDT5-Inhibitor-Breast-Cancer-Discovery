@@ -86,3 +86,23 @@ Document regeneration consumes hash-checked structural results, not silently sub
 and retains complete tables beside the map. Its completion manifest records current inputs/code;
 it does not authenticate physical experiments. Release inventory is regenerated after final
 tracked content, without modifying original CSVs or any prior `research/results/*` bytes.
+
+## Source-bound publication repair (5 October 2026)
+
+This repair starts exactly at 411f31ba73f20f098c4509b37edc51b76a100a37. Internal consistency
+and a caller-supplied result hash did not authenticate the four-site inventory or atom
+identities. Both publication entry points now reconstruct the complete fixed-contract
+result from the explicit trusted checkout's archived, hash-verified source package before
+rendering or staging. Every scientific field must match; contract, manifest and portable
+source-input fingerprints must also match. Historical machine paths, timestamps, commands
+and Git state remain historical records, not silently rewritten to the repair revision.
+The same coordinate engine is reused: this is a publication-integrity check, not independent
+structural or biological validation. Numerical results, thresholds, archived sources,
+uncertainty and unfavorable evidence remain unchanged.
+
+The manuscript's added Methods paragraph describes only this software boundary. The parent's
+limited editorial follow-up expands nine abbreviations, standardizes seven unit spellings
+to µM and retains all reported values and sources. New external document manifests record
+the actual generating checkout and content hashes; earlier external artifacts and every
+committed historical result/manifest remain intact. The portable release inventory records
+current source content separately, without pretending prior analyses ran after this repair.

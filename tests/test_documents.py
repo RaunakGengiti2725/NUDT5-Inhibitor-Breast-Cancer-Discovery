@@ -248,6 +248,16 @@ def test_structural_documents_and_supplement_are_recorded(tmp_path: Path) -> Non
         ).read_bytes()
     record = json.loads((word.parent / "documents-manifest.json").read_text())
     assert record["structure_status"] == "recorded"
+    required_inputs = [
+        STRUCTURE / "runtime_input_manifest.json",
+        STRUCTURE / "geometry_contract.json",
+    ]
+    required_inputs.extend(
+        ROOT / entry["path"]
+        for entry in json.loads((STRUCTURE / "runtime_input_manifest.json").read_text())["inputs"]
+    )
+    for path in required_inputs:
+        assert record["files"][str(path)] == hashlib.sha256(path.read_bytes()).hexdigest()
     for name, entry in record["artifacts"].items():
         assert entry["sha256"] == hashlib.sha256((word.parent / name).read_bytes()).hexdigest()
 
@@ -358,3 +368,50 @@ def test_failed_structural_render_does_not_publish(
         )
     assert not output.exists()
     assert not list(tmp_path.glob(".nudt5-documents-*"))
+
+
+@pytest.mark.parametrize(
+    "defect",
+    [
+        "drop_site",
+        "witness_ligand_component",
+        "witness_protein_identity",
+        "empty_pairs",
+        "swap_targets",
+    ],
+)
+@pytest.mark.parametrize("allow_missing", [False, True])
+def test_document_cli_rejects_review_bypasses_outside_checkout(
+    tmp_path: Path, defect: str, allow_missing: bool
+) -> None:
+    import subprocess
+    import sys
+
+    import structure_comparison as mod
+    from test_structure_comparison_figures import software_corrupted_result
+
+    source, manifest = tmp_path / "SOFTWARE_TEST_ONLY.json", tmp_path / "manifest.json"
+    bad = software_corrupted_result(mod.read_json(RECORDED), defect)
+    source.write_bytes(mod.json_bytes(bad))
+    manifest.write_bytes(mod.json_bytes({"input_sha256": mod.digest(source.read_bytes())}))
+    output = tmp_path / "unpublished"
+    output.mkdir()
+    command = [
+        sys.executable,
+        str(ROOT / "scripts/build_research_documents.py"),
+        "--structure-input",
+        str(source),
+        "--structure-manifest",
+        str(manifest),
+        "--repository",
+        str(ROOT),
+        "--output",
+        str(output),
+    ]
+    if allow_missing:
+        command.append("--allow-missing-structure")
+    run = subprocess.run(command, cwd=tmp_path, capture_output=True, text=True, check=False)
+    assert run.returncode != 0
+    assert "Source-package mismatch" in run.stderr
+    assert list(output.iterdir()) == []
+    assert not list(tmp_path.glob(".nudt5-*"))

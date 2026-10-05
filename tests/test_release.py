@@ -210,3 +210,33 @@ def test_release_inventory_includes_structural_dependency_locks(tmp_path: Path) 
             "reproducibility_status"
         ]
     )
+
+
+def test_manuscript_defines_requested_abbreviations_and_uses_micromolar_symbol() -> None:
+    import re
+
+    text = (ROOT / "research/manuscript.md").read_text()
+    abstract, body = text.split("## Abstract")[1].split("## 1.", 1)
+    assert len(abstract.split()) < 250
+    definitions = {
+        "NUDT5": "Nudix hydrolase 5 (NUDT5)",
+        "ROC-AUC": "area under the receiver operating characteristic curve (ROC-AUC)",
+        "TPSA": "topological polar surface area (TPSA)",
+    }
+    for abbreviation, definition in definitions.items():
+        assert definition in abstract
+        assert abstract.index(abbreviation) == abstract.index(definition) + definition.index(
+            abbreviation
+        )
+    definitions = {
+        "HBD": "hydrogen-bond donor count (HBD)",
+        "HBA": "hydrogen-bond acceptor count (HBA)",
+        "Fsp3": "fraction of sp3-hybridized carbon atoms (Fsp3)",
+        "ADPr": "adenosine diphosphate ribose (ADPr)",
+        "WT": "wild-type (WT)",
+        "SPR": "surface plasmon resonance (SPR)",
+    }
+    for abbreviation, definition in definitions.items():
+        assert definition in body
+        assert body.index(abbreviation) == body.index(definition) + definition.index(abbreviation)
+    assert not re.search(r"\buM\b", text)

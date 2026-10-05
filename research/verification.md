@@ -183,3 +183,60 @@ minimum guanidinium witness. Qualified protein preparations, direct/orthogonal b
 interference/NUDT14 controls, pilot precision and governance gates remain unresolved.
 No physical-experiment-ready qualification, completed prospective lock, affinity/selectivity
 estimate or clinical inference is supplied. Remote CI is not asserted by these local checks.
+
+## Source-bound publication repair — 5 October 2026
+
+Repair begins at `411f31ba73f20f098c4509b37edc51b76a100a37`, on an isolated branch.
+The incoming validator's dropped-site, empty-pair, swapped-target and relabelled-witness
+bypasses were reproduced before editing. The repair authenticates every scientific
+result field against a fresh fixed-contract reconstruction from the trusted archived
+source package, rather than accepting a result's own internally consistent declarations.
+Historical execution metadata remains historical; source fingerprints are checked
+portably. This reuses the coordinate engine, not an independent scientific calculation.
+
+| Command / check | Observed result |
+|---|---|
+| `.venv/bin/ruff check .` | Passed |
+| `.venv/bin/ruff format --check .` | 24 Python files already formatted |
+| `.venv/bin/mypy --no-incremental` | No issues in 24 source files |
+| `.venv/bin/python -m pytest -q` | **639 passed**, none skipped; 16 upstream Matplotlib/pyparsing deprecation warnings; final run 226.80 s |
+| `.venv/bin/python -m pytest -q tests/test_release.py` | 12 passed after the requested editorial cleanup |
+| `.venv/bin/python -m compileall -q scripts tests` | Passed |
+| `.venv/bin/python -m build --outdir <new-external-directory>` | sdist and wheel built |
+| `.venv/bin/pip-audit` | No known third-party vulnerabilities; unpublished local project could not be audited against PyPI |
+| `git diff --check` | Passed |
+| Installed-wheel imports and all six console-script `--help` commands outside checkout | Passed; imports resolved from the separate environment's site-packages |
+| Installed `nudt5-structure` with explicit repository/manifest/contract paths | All non-provenance fields exactly match the recorded result: 1,730 rows and 1,278 retained pairs |
+| Second installed structural write to the same path | Refused; original hash unchanged |
+| Installed `nudt5-audit` outside checkout | Completed |
+| Source-bound figure publication using installed-wheel geometry | Passed; six figure/table payloads byte-identical to incoming outputs |
+| Final rebuilt wheel payload comparison | All archive members identical to the externally tested wheel |
+| New external document build | 43 files; all 42 artifact hashes and 35 generating-input hashes verified |
+
+The 128 added publication regressions cover all reported bypasses, coherent downstream
+corruption, dropped residues/conformers/pairs, duplicate or reused witnesses, altered
+coordinates and deposited atom fields, changed occupancies/targets/inventories/missingness,
+provenance hash/path corruption and unavailable or symlinked trusted source packages.
+They assert rejection before figure rendering or document staging, no output or temporary
+publication residue, and unchanged inputs. `--allow-missing-structure` does not excuse
+malformed supplied evidence. Historical provenance portability remains tested. One additional
+editorial regression verifies requested first-use definitions and unit typography.
+
+The Methods 3.8 publication-integrity claim was checked against the implemented source
+reconstruction and publication-entry tests. It explicitly disclaims independent biological
+validation. The parent's requested abbreviation/unit substitutions leave a 239-word abstract,
+with no changed values, references or scientific interpretation. The regenerated PDF has
+24 pages; the abstract, Methods and separate Figure 7A/7B pages were visually inspected.
+PDF text and DOCX XML contain the requested definitions and fixed structural totals; the
+DOCX passes CRC and all eight embedded figures match generated PNGs. No independent Word
+or LibreOffice rendering was performed in this repair session.
+
+All 16 protected legacy files match both `94eb1dde461eef82fb7a903f5cfd2eefb1deaf1e` and
+the incoming commit byte-for-byte. All ten incoming structural result files, fifteen
+archived structural sources, five dependency files and `pyproject.toml` remain unchanged.
+Earlier external document artifact hashes still match; final documents were generated in
+a new directory. Historical manifests were not rewritten. No diagnostic research models,
+thresholds or biological interpretations were changed. Geometry remains descriptive,
+not affinity, selectivity, hydrogen-bond proof or causality. Physical qualification and
+prospective governance remain unresolved. Remote CI was not observed; the parent retains
+control of PR #1. No PR, public deposit, environment blueprint or external release was changed.

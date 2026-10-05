@@ -1,0 +1,63 @@
+{
+  "arguments": {
+    "input": "/home/ubuntu/selectivity-release/selectivity.json",
+    "manifest": "/home/ubuntu/selectivity-release/selectivity-manifest.json",
+    "output": "/home/ubuntu/selectivity-release-figures"
+  },
+  "artifacts": {
+    "selectivity_historical.pdf": {
+      "sha256": "a75c700a833ced2ba98d6ddae1ddecd3a6e158df3ab107007bf6487a47cb954a",
+      "size_bytes": 22691
+    },
+    "selectivity_historical.png": {
+      "sha256": "a2817737013d4884a92efd4317ffa0bfa5396bbb5353900283a36e77b7b110a0",
+      "size_bytes": 226764
+    },
+    "selectivity_historical.svg": {
+      "sha256": "1cc408891a9fb68b2dc6739412c289f3c6e9140e25843ea9de12d8a897ec354c",
+      "size_bytes": 16840
+    },
+    "selectivity_reference_sensitivity.pdf": {
+      "sha256": "af99a8ad7d37e54009e5957c91a4b3d17f200848a62d765775837571d1910ec8",
+      "size_bytes": 22525
+    },
+    "selectivity_reference_sensitivity.png": {
+      "sha256": "1edd9a159fb5207c8caa9f68c9844060c4e3a183f9b1551a6663503aada6d126",
+      "size_bytes": 232092
+    },
+    "selectivity_reference_sensitivity.svg": {
+      "sha256": "b6d61ddcbe8f70ce8a5a2651574fd10abc4dd1bf019fb32eb55d66794c3492b5",
+      "size_bytes": 16853
+    }
+  },
+  "command": [
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/.venv/bin/python",
+    "scripts/build_selectivity_figures.py",
+    "--input",
+    "/home/ubuntu/selectivity-release/selectivity.json",
+    "--manifest",
+    "/home/ubuntu/selectivity-release/selectivity-manifest.json",
+    "--output",
+    "/home/ubuntu/selectivity-release-figures"
+  ],
+  "completion": "This manifest is published last; absent manifest means incomplete run",
+  "files": {
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/scripts/build_selectivity_figures.py": "1c40d18a457622d652e63d0aff6a42e040904000259c9ea4c90889e1ed05da72",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/scripts/scripts/selectivity.py": "ea68091d0602c8f423865f7556eea421c8c43758b510aa0b96f8a7aef5f01d85",
+    "/home/ubuntu/selectivity-release/selectivity-manifest.json": "2056dee7040fdc58a04da95b71b17fa489108a112e41ec2729e03f608ffe273d",
+    "/home/ubuntu/selectivity-release/selectivity.json": "380f193ec8c895397bac0aea0c802acd1d2c6d483de0cd732b2868431b57aedd"
+  },
+  "git_dirty": false,
+  "git_revision": "26c20a349bbdbaab67550802d3922b6b7e7ba163",
+  "platform": "Linux-6.8.0-1061-aws-x86_64-with-glibc2.35",
+  "python": "3.12.15",
+  "schema_version": "1.0.0",
+  "versions": {
+    "matplotlib": "3.10.3",
+    "numpy": "2.2.6",
+    "rdkit": "2025.9.6",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.3"
+  },
+  "warning": "Previously inspected single-publication retrospective evidence; not fresh external or prospective validation. No models fitted, new experiments, selectivity classifier, significance tests, ratio confidence intervals or biological qualification."
+}

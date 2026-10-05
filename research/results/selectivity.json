@@ -1,0 +1,4975 @@
+{
+  "assay_conditions": [
+    {
+      "analysis_software": "GraphPad Prism 9",
+      "biological_replicates_as_reported": 2,
+      "biological_unit_definition": "independent biological replicates; exact preparation/batch and nesting not specified",
+      "buffer": {
+        "BSA_percent": 0.1,
+        "DMSO_percent": 1,
+        "HEPES_mM": 20,
+        "MgCl2_mM": 1,
+        "NaCl_mM": 100,
+        "TCEP_mM": 0.5,
+        "pH": 7.4
+      },
+      "compound_range_uM_as_reported": "50 to 0",
+      "conditions_id": "Balikci2024_NUDT5_catalytic",
+      "construct": "pNIC28-Bsa4; N-terminal 6xHis-TEV; TEV cleavage followed by reverse nickel and size exclusion",
+      "construct_residual_sequence": "not specified in catalytic Methods; not replaced by crystallographic construct length",
+      "curve_model": "not specified in inspected Table 1/Methods",
+      "detection": "AMP-Glo luminescence; PHERAstar FSX",
+      "detection_incubation_minutes": 60,
+      "detection_solution_uL": 4,
+      "endpoint": "IC50",
+      "endpoint_family": "purified_enzyme_catalytic_inhibition",
+      "enzyme_nM": 1,
+      "expression_host_as_reported": "Escherichia coli (DE3)",
+      "kinetic_limitations": "Different reaction durations; target-specific Km, linear progress regime and control performance not established by inspected passages; not affinity constants.",
+      "locations": [
+        "sec4.2",
+        "sec4.3",
+        "tbl1/t1fn1"
+      ],
+      "methods_repeat_wording": "Experiments were done in triplicate sets",
+      "ncbi_protein_reference": "NP_054861",
+      "normalization_as_reported": "vehicle-only 1% DMSO = 100% activity; 500 nM TH5427 (6), 1% DMSO = 0% activity; no target-specific exception stated",
+      "normalization_caveat_id": "D3",
+      "plate_wells": 1536,
+      "protein_residues": "1-208",
+      "reaction_minutes": 20,
+      "reaction_temperature": "room temperature; numerical temperature not reported",
+      "reaction_volume_uL": 2,
+      "replicate_limitations": "Table 1 reports IC50 mean/SD across n=2 biological replicates. Figure 1 caption describes technical-triplicate plotted mean/SD in a representative biological experiment. Do not infer six independent biological observations or raw paired target replicates.",
+      "source_id": "balikci_xml",
+      "species_context": "human proteins in Results; catalytic Methods specifies reference accessions",
+      "stop_solution": "2 uL AMP-Glo I supplemented with 25 uM PubChem CID 16339098; 25 uM not asserted as final reaction concentration",
+      "substrate": "ADP-ribose (ADPr)",
+      "substrate_uM": 10,
+      "target": "NUDT5",
+      "technical_replicates_figure1": 3,
+      "unit": "uM"
+    },
+    {
+      "analysis_software": "GraphPad Prism 9",
+      "biological_replicates_as_reported": 2,
+      "biological_unit_definition": "independent biological replicates; exact preparation/batch and nesting not specified",
+      "buffer": {
+        "BSA_percent": 0.1,
+        "DMSO_percent": 1,
+        "HEPES_mM": 20,
+        "MgCl2_mM": 1,
+        "NaCl_mM": 100,
+        "TCEP_mM": 0.5,
+        "pH": 7.4
+      },
+      "compound_range_uM_as_reported": "50 to 0",
+      "conditions_id": "Balikci2024_NUDT14_catalytic",
+      "construct": "pNIC28-Bsa4; N-terminal 6xHis-TEV; TEV cleavage followed by reverse nickel and size exclusion",
+      "construct_residual_sequence": "not specified in catalytic Methods; not replaced by crystallographic construct length",
+      "curve_model": "not specified in inspected Table 1/Methods",
+      "detection": "AMP-Glo luminescence; PHERAstar FSX",
+      "detection_incubation_minutes": 60,
+      "detection_solution_uL": 4,
+      "endpoint": "IC50",
+      "endpoint_family": "purified_enzyme_catalytic_inhibition",
+      "enzyme_nM": 1,
+      "expression_host_as_reported": "Escherichia coli (DE3)",
+      "kinetic_limitations": "Different reaction durations; target-specific Km, linear progress regime and control performance not established by inspected passages; not affinity constants.",
+      "locations": [
+        "sec4.2",
+        "sec4.3",
+        "tbl1/t1fn1"
+      ],
+      "methods_repeat_wording": "Experiments were done in triplicate sets",
+      "ncbi_protein_reference": "NP_803877",
+      "normalization_as_reported": "vehicle-only 1% DMSO = 100% activity; 500 nM TH5427 (6), 1% DMSO = 0% activity; no target-specific exception stated",
+      "normalization_caveat_id": "D3",
+      "plate_wells": 1536,
+      "protein_residues": "1-222",
+      "reaction_minutes": 60,
+      "reaction_temperature": "room temperature; numerical temperature not reported",
+      "reaction_volume_uL": 2,
+      "replicate_limitations": "Table 1 reports IC50 mean/SD across n=2 biological replicates. Figure 1 caption describes technical-triplicate plotted mean/SD in a representative biological experiment. Do not infer six independent biological observations or raw paired target replicates.",
+      "source_id": "balikci_xml",
+      "species_context": "human proteins in Results; catalytic Methods specifies reference accessions",
+      "stop_solution": "2 uL AMP-Glo I supplemented with 25 uM PubChem CID 16339098; 25 uM not asserted as final reaction concentration",
+      "substrate": "ADP-ribose (ADPr)",
+      "substrate_uM": 10,
+      "target": "NUDT14",
+      "technical_replicates_figure1": 3,
+      "unit": "uM"
+    }
+  ],
+  "historical_prediction_manifest": {
+    "arguments": {
+      "acknowledge_unverified_labels": true,
+      "allow_invalid": true,
+      "command": "transfer",
+      "seed": 42
+    },
+    "files": {
+      "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/compounds.csv": "d628a0fa1926c1e44c9b2a79adf92b444959e80153cf9019ef5e56b4747c3576",
+      "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/final_hits.csv": "38c8d5266ce127b1fd5babde0c895190d0b382e3c9e3dae7581e320766745100",
+      "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/requirements.lock": "be23dbecaf88d46dcd0a985949c015a8d75676f76ed00115c7b9c754fb62bd0c",
+      "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/extension_design.md": "f3fc896ed889688d1731d6f4175d1ca1b2832e5bfedbf252281c56f7809dec42",
+      "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/external/nudt5_measured_ledger.csv": "6eb8553db17eea6e08ad8769ecdad4d72fb9d5bbc388746d21906646a76881ea",
+      "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/reference_structures.csv": "db8f9c3d748c75b0d14895f30080ce105e57f47d88597b5db3ea2a3d060b2d2f",
+      "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/source_assays.csv": "5bd0f9e201135d0ae2c5786887a5a514d6e6516e7e791bb4cdf1ae45286f573e",
+      "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/scripts/scripts/controls.py": "c9ce53b4c3141c9b3f9dbb999c256b59cde0d67688efab4d1dbaef15ad0b8aaa",
+      "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/scripts/scripts/pipeline.py": "03f3755abcbbb15a90c71ae837f16e8377b521b4b8151c1fe71306e96317bc38",
+      "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/scripts/scripts/transfer.py": "e592d095678369c08ff0b4574ba867cfced70c0baebf4776df7257380e6676fa"
+    },
+    "git_dirty": true,
+    "git_revision": "8c2a1b6990df1e140e15ab5a0eabea69b70eee14",
+    "platform": "Linux-6.8.0-1061-aws-x86_64-with-glibc2.35",
+    "python": "3.12.15",
+    "versions": {
+      "matplotlib": "3.10.3",
+      "numpy": "2.2.6",
+      "rdkit": "2025.9.6",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.15.3"
+    },
+    "warning": "Exploratory diagnostics of unverified source labels versus untested decoys. Not evidence of NUDT5 inhibition, scaffold transfer, safety or therapeutic efficacy."
+  },
+  "limitations": [
+    "Previously inspected single-publication retrospective evidence; not fresh external or prospective validation. No models fitted, new experiments, selectivity classifier, significance tests, ratio confidence intervals or biological qualification.",
+    "R is reported mean catalytic IC50(NUDT14)/reported mean catalytic IC50(NUDT5), dimensionless; R>1 favors lower reported NUDT5 IC50 under these assay conditions, not an affinity constant, clinical selectivity or a validated biological class.",
+    "Source mean \u00b1 SD remains visible at each target. Raw paired replicates and covariance are unavailable; ratio uncertainty is not estimated. Table 1 reports two biological replicates; Methods triplicate sets and Figure 1 technical triplicates are not extra independent biological replicates.",
+    "NUDT5 and NUDT14 reaction times differ (20 versus 60 minutes). The shared TH5427 normalization wording has no clear NUDT14-specific exception. Comparability remains unresolved; this is not proof of assay failure.",
+    "Untested is not inactive. >50 uM is a strict bound, never an exact mean of 50. Double censoring permits any positive R and identifies no finite bound or direction.",
+    "Exact/neutral-parent/parent-tautomer training matches exclude only model diagnostics. All source rows, known controls and source roles remain visible. Related chemistry from one already-inspected publication is not an independent validation cohort.",
+    "All six frozen methods and both recorded scenarios are retained separately. Scores are uncalibrated label diagnostics, not IC50 predictions or selectivity probabilities. There is no outcome-chosen high-score threshold and no pooling of scenarios.",
+    "Source disagreements remain unresolved: Figure 1 versus CSV SD precision for 4/5, two trailing spaces, control/replication ambiguity, all-compounds-tested context and the reciprocal ratio orientation in the earlier structural report."
+  ],
+  "methods": [
+    "RF",
+    "GBT",
+    "SVM_RBF",
+    "Nearest_active",
+    "Property_LR",
+    "Equal_mean"
+  ],
+  "quarantined_training_records": [
+    {
+      "error": "Invalid or empty SMILES: 'O=c1[nH]c(=O)c2n(Cc3nnc(-c4ccc(Cl)c(Cl)c4)o3)c(N3CCNCC3)nc2n1'",
+      "id": "ACT-18",
+      "line": 19,
+      "source_row": {
+        "id": "ACT-18",
+        "label": "1",
+        "notes": "Desmethyl N1",
+        "series": "TH5427-SAR",
+        "smiles": "O=c1[nH]c(=O)c2n(Cc3nnc(-c4ccc(Cl)c(Cl)c4)o3)c(N3CCNCC3)nc2n1",
+        "source": "Page2018"
+      }
+    }
+  ],
+  "ratio_definition": "IC50_NUDT14 / IC50_NUDT5",
+  "ratio_unit": "dimensionless",
+  "rows": [
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "0.990 \u00b1 0.110",
+          "biological_n_for_reported_sd": 2,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": "=",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "0.990 \u00b1 0.110",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": 0.99,
+          "reported_sd": 0.11,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 2:column NUDT14 IC50",
+            "tbl1/fx2:compound 1:NUDT14",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "numeric",
+          "table1_text": "0.990 \u00b1 0.110",
+          "target": "NUDT14",
+          "uncertainty_definition": "Table 1 mean and SD of two independent biological replicates (n=2)",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "0.837 \u00b1 0.329",
+          "biological_n_for_reported_sd": 2,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": "=",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "0.837 \u00b1 0.329",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": 0.837,
+          "reported_sd": 0.329,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 2:column NUDT5 IC50",
+            "tbl1/fx2:compound 1:NUDT5",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "numeric",
+          "table1_text": "0.837 \u00b1 0.329",
+          "target": "NUDT5",
+          "uncertainty_definition": "Table 1 mean and SD of two independent biological replicates (n=2)",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "C=CC(=O)N1CCC[C@@H](n2nc(-c3ccc(Oc4ccccc4)cc3)c3c(N)ncnc32)C1",
+        "canonical_smiles": "C=CC(=O)N1CCC[C@@H](n2nc(-c3ccc(Oc4ccccc4)cc3)c3c(N)ncnc32)C1",
+        "formal_charge": 0,
+        "formula": "C25H24N6O2",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C25H24N6O2/c1-2-21(32)30-14-6-7-18(15-30)31-25-22(24(26)27-16-28-25)23(29-31)17-10-12-20(13-11-17)33-19-8-4-3-5-9-19/h2-5,8-13,16,18H,1,6-7,14-15H2,(H2,26,27,28)/t18-/m1/s1",
+        "inchikey": "XYFPWWZEPKGCCK-GOSISDBHSA-N",
+        "neutral_fragment_parent": "C=CC(=O)N1CCC[C@@H](n2nc(-c3ccc(Oc4ccccc4)cc3)c3c(N)ncnc32)C1",
+        "scaffold": "c1ccc(Oc2ccc(-c3nn(C4CCCNC4)c4ncncc34)cc2)cc1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "ibrutinib / previously published BTK inhibitor",
+      "model_diagnostic_eligible": true,
+      "model_exclusion_reasons": [],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": "=",
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": 0.07290973660428995,
+        "non_estimability_reason": null,
+        "point": 1.1827956989247312,
+        "status": "point",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": true,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "1",
+      "source_csv_line": 2,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": true,
+      "source_smiles": "NC1=C2C(N([C@H]3CN(C(C=C)=O)CCC3)N=C2C4=CC=C(OC5=CC=CC=C5)C=C4)=NC=N1",
+      "table1_verified": true
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 3:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not active",
+          "biological_n_for_reported_sd": null,
+          "bound": 50.0,
+          "bound_strict": true,
+          "comparator": ">",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not active",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 3:column NUDT5 IC50",
+            "sec2/p[1]:no NUDT5 inhibition up to 50 uM"
+          ],
+          "status": "right_censored",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "CC#CC(=O)N1CCC[C@H]1c1nc(-c2ccc(C(=O)Nc3ccccn3)cc2)c2c(N)nccn12",
+        "canonical_smiles": "CC#CC(=O)N1CCC[C@H]1c1nc(-c2ccc(C(=O)Nc3ccccn3)cc2)c2c(N)nccn12",
+        "formal_charge": 0,
+        "formula": "C26H23N7O2",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C26H23N7O2/c1-2-6-21(34)32-15-5-7-19(32)25-31-22(23-24(27)29-14-16-33(23)25)17-9-11-18(12-10-17)26(35)30-20-8-3-4-13-28-20/h3-4,8-14,16,19H,5,7,15H2,1H3,(H2,27,29)(H,28,30,35)/t19-/m0/s1",
+        "inchikey": "WDENQIQQYWYTPO-IBGZPJMESA-N",
+        "neutral_fragment_parent": "CC#CC(=O)N1CCC[C@H]1c1nc(-c2ccc(C(=O)Nc3ccccn3)cc2)c2c(N)nccn12",
+        "scaffold": "O=C(Nc1ccccn1)c1ccc(-c2nc(C3CCCN3)n3ccncc23)cc1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "2",
+      "source_csv_line": 3,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "NC1=NC=CN2C1=C(C3=CC=C(C(NC4=NC=CC=C4)=O)C=C3)N=C2[C@@H]5CCCN5C(C#CC)=O",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 4:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not active",
+          "biological_n_for_reported_sd": null,
+          "bound": 50.0,
+          "bound_strict": true,
+          "comparator": ">",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not active",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 4:column NUDT5 IC50",
+            "sec2/p[1]:no NUDT5 inhibition up to 50 uM"
+          ],
+          "status": "right_censored",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "CC#CC(=O)N[C@H]1CCCN(c2c(F)cc(C(N)=O)c3[nH]c(C)c(C)c23)C1",
+        "canonical_smiles": "CC#CC(=O)N[C@H]1CCCN(c2c(F)cc(C(N)=O)c3[nH]c(C)c(C)c23)C1",
+        "formal_charge": 0,
+        "formula": "C20H23FN4O2",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C20H23FN4O2/c1-4-6-16(26)24-13-7-5-8-25(10-13)19-15(21)9-14(20(22)27)18-17(19)11(2)12(3)23-18/h9,13,23H,5,7-8,10H2,1-3H3,(H2,22,27)(H,24,26)/t13-/m0/s1",
+        "inchikey": "VJPPLCNBDLZIFG-ZDUSSCGKSA-N",
+        "neutral_fragment_parent": "CC#CC(=O)N[C@H]1CCCN(c2c(F)cc(C(N)=O)c3[nH]c(C)c(C)c23)C1",
+        "scaffold": "c1cc(N2CCCCC2)c2cc[nH]c2c1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "3",
+      "source_csv_line": 4,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "FC1=CC(C(N)=O)=C(NC(C)=C2C)C2=C1N3C[C@@H](NC(C#CC)=O)CCC3",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 5:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "13.9 \u00b1 0.62 ",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": "=",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [
+            "D1",
+            "D2",
+            "D6"
+          ],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "13.9 \u00b1 0.62",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": 13.9,
+          "reported_sd": 0.62,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 5:column NUDT5 IC50",
+            "fig1/caption:panel B",
+            "sec4.3"
+          ],
+          "status": "numeric",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "CSV mean/SD; Methods says two biological replicates but Figure 1 caption technical-triplicate graph wording differs; aggregation unresolved",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "C=CC(=O)N1CCC(CNc2ncnc(N)c2-c2ccc(Oc3ccccc3)cc2)CC1",
+        "canonical_smiles": "C=CC(=O)N1CCC(CNc2ncnc(N)c2-c2ccc(Oc3ccccc3)cc2)CC1",
+        "formal_charge": 0,
+        "formula": "C25H27N5O2",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C25H27N5O2/c1-2-22(31)30-14-12-18(13-15-30)16-27-25-23(24(26)28-17-29-25)19-8-10-21(11-9-19)32-20-6-4-3-5-7-20/h2-11,17-18H,1,12-16H2,(H3,26,27,28,29)",
+        "inchikey": "QUIWHXQETADMGN-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "C=CC(=O)N1CCC(CNc2ncnc(N)c2-c2ccc(Oc3ccccc3)cc2)CC1",
+        "scaffold": "c1ccc(Oc2ccc(-c3cncnc3NCC3CCNCC3)cc2)cc1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "4",
+      "source_csv_line": 5,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "NC1=C(C2=CC=C(OC3=CC=CC=C3)C=C2)C(NCC4CCN(C(C=C)=O)CC4)=NC=N1",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 6:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "21.2 \u00b1 1.02 ",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": "=",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [
+            "D1",
+            "D2",
+            "D6"
+          ],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "21.2 \u00b1 1.02",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": 21.2,
+          "reported_sd": 1.02,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 6:column NUDT5 IC50",
+            "fig1/caption:panel B",
+            "sec4.3"
+          ],
+          "status": "numeric",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "CSV mean/SD; Methods says two biological replicates but Figure 1 caption technical-triplicate graph wording differs; aggregation unresolved",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "C#Cc1cccc(Oc2ccc(-c3nn([C@@H]4CCCN(C(=O)C=C)C4)c4ncnc(N)c34)cc2)c1",
+        "canonical_smiles": "C#Cc1cccc(Oc2ccc(-c3nn([C@@H]4CCCN(C(=O)C=C)C4)c4ncnc(N)c34)cc2)c1",
+        "formal_charge": 0,
+        "formula": "C27H24N6O2",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C27H24N6O2/c1-3-18-7-5-9-22(15-18)35-21-12-10-19(11-13-21)25-24-26(28)29-17-30-27(24)33(31-25)20-8-6-14-32(16-20)23(34)4-2/h1,4-5,7,9-13,15,17,20H,2,6,8,14,16H2,(H2,28,29,30)/t20-/m1/s1",
+        "inchikey": "SFTPIUYKBLYRKF-HXUWFJFHSA-N",
+        "neutral_fragment_parent": "C#Cc1cccc(Oc2ccc(-c3nn([C@@H]4CCCN(C(=O)C=C)C4)c4ncnc(N)c34)cc2)c1",
+        "scaffold": "c1ccc(Oc2ccc(-c3nn(C4CCCNC4)c4ncncc34)cc2)cc1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "5",
+      "source_csv_line": 6,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "NC1=C2C(N([C@H]3CN(C(C=C)=O)CCC3)N=C2C4=CC=C(OC5=CC(C#C)=CC=C5)C=C4)=NC=N1",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [
+            "D3"
+          ],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 7:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [
+            "D3"
+          ],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 7:column NUDT5 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "Cn1c(=O)c2c(nc(N3CCNCC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+        "canonical_smiles": "Cn1c(=O)c2c(nc(N3CCNCC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+        "formal_charge": 0,
+        "formula": "C20H20Cl2N8O3",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C20H20Cl2N8O3/c1-27-16-15(18(31)28(2)20(27)32)30(19(24-16)29-7-5-23-6-8-29)10-14-25-26-17(33-14)11-3-4-12(21)13(22)9-11/h3-4,9,23H,5-8,10H2,1-2H3",
+        "inchikey": "QXCXMVYVUHVFLP-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "Cn1c(=O)c2c(nc(N3CCNCC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+        "scaffold": "O=c1[nH]c(=O)c2c(nc(N3CCNCC3)n2Cc2nnc(-c3ccccc3)o2)[nH]1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "TH5427 / Methods normalization control, not a catalytic IC50 titration",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [
+          "ACT-01"
+        ],
+        "canonical_smiles": [
+          "ACT-01"
+        ],
+        "neutral_fragment_parent": [
+          "ACT-01"
+        ]
+      },
+      "source_compound": "6",
+      "source_csv_line": 7,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "CN(C(N1C)=O)C2=C(C1=O)N(CC3=NN=C(O3)C4=CC=C(C(Cl)=C4)Cl)C(N5CCNCC5)=N2",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 8:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 8:column NUDT5 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "Cn1c(=O)c2c(nc(N3CCN(CCCCN)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+        "canonical_smiles": "Cn1c(=O)c2c(nc(N3CCN(CCCCN)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+        "formal_charge": 0,
+        "formula": "C24H29Cl2N9O3",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C24H29Cl2N9O3/c1-31-20-19(22(36)32(2)24(31)37)35(23(28-20)34-11-9-33(10-12-34)8-4-3-7-27)14-18-29-30-21(38-18)15-5-6-16(25)17(26)13-15/h5-6,13H,3-4,7-12,14,27H2,1-2H3",
+        "inchikey": "DIUJKVQRHCNRJQ-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "Cn1c(=O)c2c(nc(N3CCN(CCCCN)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+        "scaffold": "O=c1[nH]c(=O)c2c(nc(N3CCNCC3)n2Cc2nnc(-c3ccccc3)o2)[nH]1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "7",
+      "source_csv_line": 8,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "CN(C(N=C1N(CC2)CCN2CCCCN)=C(N1CC3=NN=C(C4=CC=C(Cl)C(Cl)=C4)O3)C5=O)C(N5C)=O",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 9:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 9:column NUDT5 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "Cn1c(=O)c2c(nc(N3CCN(CCCCNC(=O)CCc4ccc5n4[B-](F)(F)[N+]4=C(c6ccc[nH]6)C=CC4=C5)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+        "canonical_smiles": "Cn1c(=O)c2c(nc(N3CCN(CCCCNC(=O)CCc4ccc5n4[B-](F)(F)[N+]4=C(c6ccc[nH]6)C=CC4=C5)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+        "formal_charge": 0,
+        "formula": "C40H41BCl2F2N12O4",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C40H41BCl2F2N12O4/c1-51-36-35(38(59)52(2)40(51)60)55(24-34-49-50-37(61-34)25-7-12-29(42)30(43)22-25)39(48-36)54-20-18-53(19-21-54)17-4-3-15-47-33(58)14-11-26-8-9-27-23-28-10-13-32(31-6-5-16-46-31)57(28)41(44,45)56(26)27/h5-10,12-13,16,22-23,46H,3-4,11,14-15,17-21,24H2,1-2H3,(H,47,58)",
+        "inchikey": "VCSACFQMNYLALS-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "Cn1c(=O)c2c(nc(N3CCN(CCCCNC(=O)CCc4ccc5n4[B-](F)(F)[N+]4=C(c6ccc[nH]6)C=CC4=C5)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+        "scaffold": "O=C(CCc1ccc2n1[BH2-][N+]1=C(c3ccc[nH]3)C=CC1=C2)NCCCCN1CCN(c2nc3[nH]c(=O)[nH]c(=O)c3n2Cc2nnc(-c3ccccc3)o2)CC1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "8",
+      "source_csv_line": 9,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "CN(C(N=C1N(CC2)CCN2CCCCNC(CCC3=CC=C4N3[B-](F)(F)[N+]5=C(C6=CC=CN6)C=CC5=C4)=O)=C(N1CC7=NN=C(C8=CC=C(Cl)C(Cl)=C8)O7)C9=O)C(N9C)=O",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "0.162 \u00b1 0.005",
+          "biological_n_for_reported_sd": 2,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": "=",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "0.162 \u00b1 0.005",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": 0.162,
+          "reported_sd": 0.005,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 10:column NUDT14 IC50",
+            "tbl1/fx2:compound 9:NUDT14",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "numeric",
+          "table1_text": "0.162 \u00b1 0.005",
+          "target": "NUDT14",
+          "uncertainty_definition": "Table 1 mean and SD of two independent biological replicates (n=2)",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "0.270 \u00b1 0.027",
+          "biological_n_for_reported_sd": 2,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": "=",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "0.270 \u00b1 0.027",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": 0.27,
+          "reported_sd": 0.027,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 10:column NUDT5 IC50",
+            "tbl1/fx2:compound 9:NUDT5",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "numeric",
+          "table1_text": "0.270 \u00b1 0.027",
+          "target": "NUDT5",
+          "uncertainty_definition": "Table 1 mean and SD of two independent biological replicates (n=2)",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "CN1CCC(n2nc(-c3ccc(Oc4ccccc4)cc3)c3c(N)ncnc32)CC1",
+        "canonical_smiles": "CN1CCC(n2nc(-c3ccc(Oc4ccccc4)cc3)c3c(N)ncnc32)CC1",
+        "formal_charge": 0,
+        "formula": "C23H24N6O",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C23H24N6O/c1-28-13-11-17(12-14-28)29-23-20(22(24)25-15-26-23)21(27-29)16-7-9-19(10-8-16)30-18-5-3-2-4-6-18/h2-10,15,17H,11-14H2,1H3,(H2,24,25,26)",
+        "inchikey": "KHLKLLMMPVSSQY-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "CN1CCC(n2nc(-c3ccc(Oc4ccccc4)cc3)c3c(N)ncnc32)CC1",
+        "scaffold": "c1ccc(Oc2ccc(-c3nn(C4CCNCC4)c4ncncc34)cc2)cc1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "published dual NUDT5/NUDT14 inhibitor; not a new discovery",
+      "model_diagnostic_eligible": true,
+      "model_exclusion_reasons": [],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": "=",
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": -0.22184874961635637,
+        "non_estimability_reason": null,
+        "point": 0.6,
+        "status": "point",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": true,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "9",
+      "source_csv_line": 10,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": true,
+      "source_smiles": "NC1=C2C(N(C3CCN(C)CC3)N=C2C4=CC=C(C=C4)OC5=CC=CC=C5)=NC=N1",
+      "table1_verified": true
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "0.263 \u00b1 0.031",
+          "biological_n_for_reported_sd": 2,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": "=",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "0.263 \u00b1 0.031",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": 0.263,
+          "reported_sd": 0.031,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 11:column NUDT14 IC50",
+            "tbl1/fx2:compound 10:NUDT14",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "numeric",
+          "table1_text": "0.263 \u00b1 0.031",
+          "target": "NUDT14",
+          "uncertainty_definition": "Table 1 mean and SD of two independent biological replicates (n=2)",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "0.487 \u00b1 0.010",
+          "biological_n_for_reported_sd": 2,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": "=",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "0.487 \u00b1 0.010",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": 0.487,
+          "reported_sd": 0.01,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 11:column NUDT5 IC50",
+            "tbl1/fx2:compound 10:NUDT5",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "numeric",
+          "table1_text": "0.487 \u00b1 0.010",
+          "target": "NUDT5",
+          "uncertainty_definition": "Table 1 mean and SD of two independent biological replicates (n=2)",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [
+          "ACT-20"
+        ],
+        "canonical_smiles": [
+          "ACT-20"
+        ],
+        "neutral_fragment_parent": [
+          "ACT-20"
+        ]
+      },
+      "identity": {
+        "canonical_parent_tautomer": "Cn1nc(-c2ccc(Oc3ccccc3)cc2)c2c(N)ncnc21",
+        "canonical_smiles": "Cn1nc(-c2ccc(Oc3ccccc3)cc2)c2c(N)ncnc21",
+        "formal_charge": 0,
+        "formula": "C18H15N5O",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C18H15N5O/c1-23-18-15(17(19)20-11-21-18)16(22-23)12-7-9-14(10-8-12)24-13-5-3-2-4-6-13/h2-11H,1H3,(H2,19,20,21)",
+        "inchikey": "GMSABXWDTDDUPQ-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "Cn1nc(-c2ccc(Oc3ccccc3)cc2)c2c(N)ncnc21",
+        "scaffold": "c1ccc(Oc2ccc(-c3n[nH]c4ncncc34)cc2)cc1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "training_exact_parent_or_tautomer_overlap"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": "=",
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": -0.26757321272487644,
+        "non_estimability_reason": null,
+        "point": 0.540041067761807,
+        "status": "point",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": true,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [
+          "ACT-20"
+        ],
+        "canonical_smiles": [
+          "ACT-20"
+        ],
+        "neutral_fragment_parent": [
+          "ACT-20"
+        ]
+      },
+      "source_compound": "10",
+      "source_csv_line": 11,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": true,
+      "source_smiles": "NC1=C2C(N(C)N=C2C3=CC=C(OC4=CC=CC=C4)C=C3)=NC=N1",
+      "table1_verified": true
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [
+          "NC5-02"
+        ],
+        "canonical_smiles": [
+          "NC5-02"
+        ],
+        "neutral_fragment_parent": [
+          "NC5-02"
+        ]
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "0.519 \u00b1 0.084",
+          "biological_n_for_reported_sd": 2,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": "=",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "0.519 \u00b1 0.084",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": 0.519,
+          "reported_sd": 0.084,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 12:column NUDT14 IC50",
+            "tbl1/fx2:compound 11:NUDT14",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "numeric",
+          "table1_text": "0.519 \u00b1 0.084",
+          "target": "NUDT14",
+          "uncertainty_definition": "Table 1 mean and SD of two independent biological replicates (n=2)",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "2.04 \u00b1 0.240",
+          "biological_n_for_reported_sd": 2,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": "=",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "2.04 \u00b1 0.240",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": 2.04,
+          "reported_sd": 0.24,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 12:column NUDT5 IC50",
+            "tbl1/fx2:compound 11:NUDT5",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "numeric",
+          "table1_text": "2.04 \u00b1 0.240",
+          "target": "NUDT5",
+          "uncertainty_definition": "Table 1 mean and SD of two independent biological replicates (n=2)",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [
+          "ACT-19"
+        ],
+        "canonical_smiles": [
+          "ACT-19"
+        ],
+        "neutral_fragment_parent": [
+          "ACT-19"
+        ]
+      },
+      "identity": {
+        "canonical_parent_tautomer": "Nc1ncnc2[nH]nc(-c3ccc(Oc4ccccc4)cc3)c12",
+        "canonical_smiles": "Nc1ncnc2[nH]nc(-c3ccc(Oc4ccccc4)cc3)c12",
+        "formal_charge": 0,
+        "formula": "C17H13N5O",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C17H13N5O/c18-16-14-15(21-22-17(14)20-10-19-16)11-6-8-13(9-7-11)23-12-4-2-1-3-5-12/h1-10H,(H3,18,19,20,21,22)",
+        "inchikey": "YYVUOZULIDAKRN-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "Nc1ncnc2[nH]nc(-c3ccc(Oc4ccccc4)cc3)c12",
+        "scaffold": "c1ccc(Oc2ccc(-c3n[nH]c4ncncc34)cc2)cc1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "training_exact_parent_or_tautomer_overlap"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": "=",
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": -0.5944628095774409,
+        "non_estimability_reason": null,
+        "point": 0.25441176470588234,
+        "status": "point",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": true,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [
+          "ACT-19"
+        ],
+        "canonical_smiles": [
+          "ACT-19"
+        ],
+        "neutral_fragment_parent": [
+          "ACT-19"
+        ]
+      },
+      "source_compound": "11",
+      "source_csv_line": 12,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": true,
+      "source_smiles": "NC1=C2C(NN=C2C3=CC=C(OC4=CC=CC=C4)C=C3)=NC=N1",
+      "table1_verified": true
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not active",
+          "biological_n_for_reported_sd": null,
+          "bound": 50.0,
+          "bound_strict": true,
+          "comparator": ">",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not active",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 13:column NUDT14 IC50",
+            "tbl1/fx2:compound 12:NUDT14",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "right_censored",
+          "table1_text": "NA",
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not active",
+          "biological_n_for_reported_sd": null,
+          "bound": 50.0,
+          "bound_strict": true,
+          "comparator": ">",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not active",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 13:column NUDT5 IC50",
+            "tbl1/fx2:compound 12:NUDT5",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "right_censored",
+          "table1_text": "NA",
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "C=CC(=O)N1CC=C(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)CC1",
+        "canonical_smiles": "C=CC(=O)N1CC=C(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)CC1",
+        "formal_charge": 0,
+        "formula": "C19H25N7O",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C19H25N7O/c1-3-15(27)25-10-4-13(5-11-25)17-16-18(20)21-12-22-19(16)26(23-17)14-6-8-24(2)9-7-14/h3-4,12,14H,1,5-11H2,2H3,(H2,20,21,22)",
+        "inchikey": "SNUGJDIPJKTZQS-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "C=CC(=O)N1CC=C(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)CC1",
+        "scaffold": "C1=C(c2nn(C3CCNCC3)c3ncncc23)CCNC1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": true,
+      "model_exclusion_reasons": [],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "Both IC50 >50 uM permit any positive ratio; no informative finite bound or direction",
+        "point": null,
+        "status": "double_censored",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "12",
+      "source_csv_line": 13,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": true,
+      "source_smiles": "NC1=C2C(N(C3CCN(C)CC3)N=C2C4=CCN(C(C=C)=O)CC4)=NC=N1",
+      "table1_verified": true
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "3.72 \u00b1 0.190",
+          "biological_n_for_reported_sd": 2,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": "=",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "3.72 \u00b1 0.190",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": 3.72,
+          "reported_sd": 0.19,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 14:column NUDT14 IC50",
+            "tbl1/fx2:compound 13:NUDT14",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "numeric",
+          "table1_text": "3.72 \u00b1 0.190",
+          "target": "NUDT14",
+          "uncertainty_definition": "Table 1 mean and SD of two independent biological replicates (n=2)",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not active",
+          "biological_n_for_reported_sd": null,
+          "bound": 50.0,
+          "bound_strict": true,
+          "comparator": ">",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not active",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 14:column NUDT5 IC50",
+            "tbl1/fx2:compound 13:NUDT5",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "right_censored",
+          "table1_text": "NA",
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "C=CC(=O)N1CC=CC(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)C1",
+        "canonical_smiles": "C=CC(=O)N1CCC=C(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)C1",
+        "formal_charge": 0,
+        "formula": "C19H25N7O",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C19H25N7O/c1-3-15(27)25-8-4-5-13(11-25)17-16-18(20)21-12-22-19(16)26(23-17)14-6-9-24(2)10-7-14/h3,5,12,14H,1,4,6-11H2,2H3,(H2,20,21,22)",
+        "inchikey": "XQQOFBWNXPTVPQ-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "C=CC(=O)N1CCC=C(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)C1",
+        "scaffold": "C1=C(c2nn(C3CCNCC3)c3ncncc23)CNCC1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": true,
+      "model_exclusion_reasons": [],
+      "ratio": {
+        "bound": 0.07440000000000001,
+        "bound_strict": true,
+        "comparator": "<",
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": -1.1284270644541212,
+        "log10_point": null,
+        "non_estimability_reason": null,
+        "point": null,
+        "status": "upper_bound",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": true,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "13",
+      "source_csv_line": 14,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": true,
+      "source_smiles": "NC1=C2C(N(C3CCN(C)CC3)N=C2C4=CCCN(C(C=C)=O)C4)=NC=N1",
+      "table1_verified": true
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "1.64 \u00b1 0.140",
+          "biological_n_for_reported_sd": 2,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": "=",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "1.64 \u00b1 0.140",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": 1.64,
+          "reported_sd": 0.14,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 15:column NUDT14 IC50",
+            "tbl1/fx2:compound 14:NUDT14",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "numeric",
+          "table1_text": "1.64 \u00b1 0.140",
+          "target": "NUDT14",
+          "uncertainty_definition": "Table 1 mean and SD of two independent biological replicates (n=2)",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "13.8 \u00b1 0.900",
+          "biological_n_for_reported_sd": 2,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": "=",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "13.8 \u00b1 0.900",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": 13.8,
+          "reported_sd": 0.9,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 15:column NUDT5 IC50",
+            "tbl1/fx2:compound 14:NUDT5",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "numeric",
+          "table1_text": "13.8 \u00b1 0.900",
+          "target": "NUDT5",
+          "uncertainty_definition": "Table 1 mean and SD of two independent biological replicates (n=2)",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "C=CC(=O)NCc1ccc(-c2nn(C3CCN(C)CC3)c3ncnc(N)c23)cc1",
+        "canonical_smiles": "C=CC(=O)NCc1ccc(-c2nn(C3CCN(C)CC3)c3ncnc(N)c23)cc1",
+        "formal_charge": 0,
+        "formula": "C21H25N7O",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C21H25N7O/c1-3-17(29)23-12-14-4-6-15(7-5-14)19-18-20(22)24-13-25-21(18)28(26-19)16-8-10-27(2)11-9-16/h3-7,13,16H,1,8-12H2,2H3,(H,23,29)(H2,22,24,25)",
+        "inchikey": "UXFCROQDHASCPV-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "C=CC(=O)NCc1ccc(-c2nn(C3CCN(C)CC3)c3ncnc(N)c23)cc1",
+        "scaffold": "c1ccc(-c2nn(C3CCNCC3)c3ncncc23)cc1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": true,
+      "model_exclusion_reasons": [],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": "=",
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": -0.9250352383535386,
+        "non_estimability_reason": null,
+        "point": 0.11884057971014492,
+        "status": "point",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": true,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "14",
+      "source_csv_line": 15,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": true,
+      "source_smiles": "NC1=C2C(N(C3CCN(C)CC3)N=C2C4=CC=C(CNC(C=C)=O)C=C4)=NC=N1",
+      "table1_verified": true
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not active",
+          "biological_n_for_reported_sd": null,
+          "bound": 50.0,
+          "bound_strict": true,
+          "comparator": ">",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not active",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 16:column NUDT14 IC50",
+            "tbl1/fx2:compound 15:NUDT14",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "right_censored",
+          "table1_text": "NA",
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not active",
+          "biological_n_for_reported_sd": null,
+          "bound": 50.0,
+          "bound_strict": true,
+          "comparator": ">",
+          "conditions_application": "reported endpoint protocol",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not active",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml",
+            "table1_values"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 16:column NUDT5 IC50",
+            "tbl1/fx2:compound 15:NUDT5",
+            "tbl1/t1fn1",
+            "tbl1/t1fn2"
+          ],
+          "status": "right_censored",
+          "table1_text": "NA",
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "C=CC(=O)N1CCC(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)CC1",
+        "canonical_smiles": "C=CC(=O)N1CCC(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)CC1",
+        "formal_charge": 0,
+        "formula": "C19H27N7O",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C19H27N7O/c1-3-15(27)25-10-4-13(5-11-25)17-16-18(20)21-12-22-19(16)26(23-17)14-6-8-24(2)9-7-14/h3,12-14H,1,4-11H2,2H3,(H2,20,21,22)",
+        "inchikey": "GGHDQMRDOHFUHR-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "C=CC(=O)N1CCC(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)CC1",
+        "scaffold": "c1ncc2c(C3CCNCC3)nn(C3CCNCC3)c2n1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": true,
+      "model_exclusion_reasons": [],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "Both IC50 >50 uM permit any positive ratio; no informative finite bound or direction",
+        "point": null,
+        "status": "double_censored",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "15",
+      "source_csv_line": 16,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": true,
+      "source_smiles": "NC1=C2C(N(C3CCN(C)CC3)N=C2C4CCN(C(C=C)=O)CC4)=NC=N1",
+      "table1_verified": true
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 17:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 17:column NUDT5 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "Nc1ncnc2[nH]nc(Br)c12",
+        "canonical_smiles": "Nc1ncnc2[nH]nc(Br)c12",
+        "formal_charge": 0,
+        "formula": "C5H4BrN5",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C5H4BrN5/c6-3-2-4(7)8-1-9-5(2)11-10-3/h1H,(H3,7,8,9,10,11)",
+        "inchikey": "GZQVGSRUUTUJNG-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "Nc1ncnc2[nH]nc(Br)c12",
+        "scaffold": "c1ncc2cn[nH]c2n1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "16",
+      "source_csv_line": 17,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "NC1=C2C(NN=C2Br)=NC=N1",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 18:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 18:column NUDT5 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "CN1CCC(n2nc(Br)c3c(N)ncnc32)CC1",
+        "canonical_smiles": "CN1CCC(n2nc(Br)c3c(N)ncnc32)CC1",
+        "formal_charge": 0,
+        "formula": "C11H15BrN6",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C11H15BrN6/c1-17-4-2-7(3-5-17)18-11-8(9(12)16-18)10(13)14-6-15-11/h6-7H,2-5H2,1H3,(H2,13,14,15)",
+        "inchikey": "VOMGIZRMOOOOPU-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "CN1CCC(n2nc(Br)c3c(N)ncnc32)CC1",
+        "scaffold": "c1ncc2cnn(C3CCNCC3)c2n1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "17a",
+      "source_csv_line": 18,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "NC1=C2C(N(C3CCN(C)CC3)N=C2Br)=NC=N1",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 19:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 19:column NUDT5 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "Cn1nc(Br)c2c(N)ncnc21",
+        "canonical_smiles": "Cn1nc(Br)c2c(N)ncnc21",
+        "formal_charge": 0,
+        "formula": "C6H6BrN5",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C6H6BrN5/c1-12-6-3(4(7)11-12)5(8)9-2-10-6/h2H,1H3,(H2,8,9,10)",
+        "inchikey": "DHFYKLULHRGVSL-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "Cn1nc(Br)c2c(N)ncnc21",
+        "scaffold": "c1ncc2cn[nH]c2n1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "17b",
+      "source_csv_line": 19,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "NC1=C2C(N(C)N=C2Br)=NC=N1",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 20:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 20:column NUDT5 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "CN1CCC(n2nc(C3=CCN(C(=O)OC(C)(C)C)CC3)c3c(N)ncnc32)CC1",
+        "canonical_smiles": "CN1CCC(n2nc(C3=CCN(C(=O)OC(C)(C)C)CC3)c3c(N)ncnc32)CC1",
+        "formal_charge": 0,
+        "formula": "C21H31N7O2",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C21H31N7O2/c1-21(2,3)30-20(29)27-11-5-14(6-12-27)17-16-18(22)23-13-24-19(16)28(25-17)15-7-9-26(4)10-8-15/h5,13,15H,6-12H2,1-4H3,(H2,22,23,24)",
+        "inchikey": "ZNKIQOAUZKNQMG-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "CN1CCC(n2nc(C3=CCN(C(=O)OC(C)(C)C)CC3)c3c(N)ncnc32)CC1",
+        "scaffold": "C1=C(c2nn(C3CCNCC3)c3ncncc23)CCNC1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "18a",
+      "source_csv_line": 20,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "NC1=C2C(N(C3CCN(C)CC3)N=C2C(CC4)=CCN4C(OC(C)(C)C)=O)=NC=N1",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 21:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 21:column NUDT5 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "CN1CCC(n2nc(C3=CCCN(C(=O)OC(C)(C)C)C3)c3c(N)ncnc32)CC1",
+        "canonical_smiles": "CN1CCC(n2nc(C3=CCCN(C(=O)OC(C)(C)C)C3)c3c(N)ncnc32)CC1",
+        "formal_charge": 0,
+        "formula": "C21H31N7O2",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C21H31N7O2/c1-21(2,3)30-20(29)27-9-5-6-14(12-27)17-16-18(22)23-13-24-19(16)28(25-17)15-7-10-26(4)11-8-15/h6,13,15H,5,7-12H2,1-4H3,(H2,22,23,24)",
+        "inchikey": "XVKVABUYLPRCKC-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "CN1CCC(n2nc(C3=CCCN(C(=O)OC(C)(C)C)C3)c3c(N)ncnc32)CC1",
+        "scaffold": "C1=C(c2nn(C3CCNCC3)c3ncncc23)CNCC1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "18b",
+      "source_csv_line": 21,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "NC1=C2C(N(C3CCN(C)CC3)N=C2C(C4)=CCCN4C(OC(C)(C)C)=O)=NC=N1",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 22:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 22:column NUDT5 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "CN1CCC(n2nc(-c3ccc(CNC(=O)OC(C)(C)C)cc3)c3c(N)ncnc32)CC1",
+        "canonical_smiles": "CN1CCC(n2nc(-c3ccc(CNC(=O)OC(C)(C)C)cc3)c3c(N)ncnc32)CC1",
+        "formal_charge": 0,
+        "formula": "C23H31N7O2",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C23H31N7O2/c1-23(2,3)32-22(31)25-13-15-5-7-16(8-6-15)19-18-20(24)26-14-27-21(18)30(28-19)17-9-11-29(4)12-10-17/h5-8,14,17H,9-13H2,1-4H3,(H,25,31)(H2,24,26,27)",
+        "inchikey": "KAZROIAMJHLIBY-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "CN1CCC(n2nc(-c3ccc(CNC(=O)OC(C)(C)C)cc3)c3c(N)ncnc32)CC1",
+        "scaffold": "c1ccc(-c2nn(C3CCNCC3)c3ncncc23)cc1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "18c",
+      "source_csv_line": 22,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "NC1=C2C(N(C3CCN(C)CC3)N=C2C4=CC=C(CNC(OC(C)(C)C)=O)C=C4)=NC=N1",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 23:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 23:column NUDT5 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "CN1CCC(n2nc(C3CCN(C(=O)OC(C)(C)C)CC3)c3c(N)ncnc32)CC1",
+        "canonical_smiles": "CN1CCC(n2nc(C3CCN(C(=O)OC(C)(C)C)CC3)c3c(N)ncnc32)CC1",
+        "formal_charge": 0,
+        "formula": "C21H33N7O2",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C21H33N7O2/c1-21(2,3)30-20(29)27-11-5-14(6-12-27)17-16-18(22)23-13-24-19(16)28(25-17)15-7-9-26(4)10-8-15/h13-15H,5-12H2,1-4H3,(H2,22,23,24)",
+        "inchikey": "GYPSIJHRSHJUDT-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "CN1CCC(n2nc(C3CCN(C(=O)OC(C)(C)C)CC3)c3c(N)ncnc32)CC1",
+        "scaffold": "c1ncc2c(C3CCNCC3)nn(C3CCNCC3)c2n1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "19",
+      "source_csv_line": 23,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "NC1=C2C(N(C3CCN(C)CC3)N=C2C4CCN(CC4)C(OC(C)(C)C)=O)=NC=N1",
+      "table1_verified": false
+    },
+    {
+      "candidate_identity_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "endpoints": {
+        "NUDT14": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT14_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 24:column NUDT14 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT14",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        },
+        "NUDT5": {
+          "author_csv_raw": "not tested",
+          "biological_n_for_reported_sd": null,
+          "bound": null,
+          "bound_strict": null,
+          "comparator": null,
+          "conditions_application": "context only; no IC50 observation supplied",
+          "conditions_id": "Balikci2024_NUDT5_catalytic",
+          "discrepancy_ids": [],
+          "endpoint": "IC50",
+          "endpoint_family": "purified_enzyme_catalytic_inhibition",
+          "ledger_text": "not tested",
+          "paired_target_replicates_available": false,
+          "raw_replicates_available": false,
+          "reported_mean": null,
+          "reported_sd": null,
+          "source_ids": [
+            "balikci_csv",
+            "balikci_xml"
+          ],
+          "source_locations": [
+            "jm4c00072_si_002.csv:line 24:column NUDT5 IC50"
+          ],
+          "status": "untested",
+          "table1_text": null,
+          "target": "NUDT5",
+          "uncertainty_definition": "No numeric mean or SD reported",
+          "unit": "uM"
+        }
+      },
+      "historical_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "identity": {
+        "canonical_parent_tautomer": "Cn1c(=O)c2c(nc(N3CCN(CCCCNC(=O)OC(C)(C)C)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+        "canonical_smiles": "Cn1c(=O)c2c(nc(N3CCN(CCCCNC(=O)OC(C)(C)C)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+        "formal_charge": 0,
+        "formula": "C29H37Cl2N9O5",
+        "fragment_count": 1,
+        "inchi": "InChI=1S/C29H37Cl2N9O5/c1-29(2,3)45-27(42)32-10-6-7-11-38-12-14-39(15-13-38)26-33-23-22(25(41)37(5)28(43)36(23)4)40(26)17-21-34-35-24(44-21)18-8-9-19(30)20(31)16-18/h8-9,16H,6-7,10-15,17H2,1-5H3,(H,32,42)",
+        "inchikey": "JYDMCDFEAOYQLD-UHFFFAOYSA-N",
+        "neutral_fragment_parent": "Cn1c(=O)c2c(nc(N3CCN(CCCCNC(=O)OC(C)(C)C)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+        "scaffold": "O=c1[nH]c(=O)c2c(nc(N3CCNCC3)n2Cc2nnc(-c3ccccc3)o2)[nH]1",
+        "unspecified_tetrahedral_centers": 0
+      },
+      "identity_verification": "Recomputed from unchanged author SMILES with pinned RDKit; exact graph matches ledger and both frozen-score scenarios",
+      "known_source_role": "source compound; no new control qualification asserted",
+      "model_diagnostic_eligible": false,
+      "model_exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "At least one target untested",
+        "point": null,
+        "status": "missing_endpoint",
+        "unit": "dimensionless"
+      },
+      "ratio_informative": false,
+      "reference_sensitivity_training_matches": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      },
+      "source_compound": "N-Boc-protected 7",
+      "source_csv_line": 24,
+      "source_doi": "10.1021/acs.jmedchem.4c00072",
+      "source_pair_has_both_endpoints": false,
+      "source_smiles": "CN1C(N(C)C(C2=C1N=C(N3CCN(CCCCNC(OC(C)(C)C)=O)CC3)N2CC4=NN=C(O4)C5=CC=C(Cl)C(Cl)=C5)=O)=O",
+      "table1_verified": false
+    }
+  ],
+  "schema_version": "1.0.0",
+  "score_rows": [
+    {
+      "Equal_mean": 0.6849901880480272,
+      "Equal_mean_rank_within_six": 2,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": 1,
+      "Nearest_active": 0.4925373134328358,
+      "Nearest_active_rank_within_six": 2,
+      "Property_LR": 0.9570928670244283,
+      "Property_LR_rank_within_six": 1,
+      "RF": 0.54,
+      "RF_rank_within_six": 2,
+      "SVM_RBF": 0.7074485212245764,
+      "SVM_RBF_rank_within_six": 2,
+      "canonical_isomeric_smiles": "C=CC(=O)N1CCC[C@@H](n2nc(-c3ccc(Oc4ccccc4)cc3)c3c(N)ncnc32)C1",
+      "exclusion_reasons": [],
+      "inclusion_reason": "paired_endpoints_without_training_identity_overlap",
+      "join_verified": true,
+      "max_training_tanimoto": 0.4925373134328358,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": true,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": 2,
+        "GBT": 1,
+        "Nearest_active": 2,
+        "Property_LR": 1,
+        "RF": 2,
+        "SVM_RBF": 2
+      },
+      "ratio_status": "point",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/0",
+      "source_compound": "1",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.15723739242148538,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.010568599031301815,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.20454545454545456,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9803534579986785,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.21,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.20383551610918513,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CC#CC(=O)N1CCC[C@H]1c1nc(-c2ccc(C(=O)Nc3ccccn3)cc2)c2c(N)nccn12",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.36363636363636365,
+      "nearest_training_id": "DEC-13",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/1",
+      "source_compound": "2",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.09828230375667701,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.00012097858691209213,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.1262135922330097,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.6059750921221727,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.1,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.16679464420678625,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CC#CC(=O)N[C@H]1CCCN(c2c(F)cc(C(N)=O)c3[nH]c(C)c(C)c23)C1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.1643835616438356,
+      "nearest_training_id": "DEC-25",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/2",
+      "source_compound": "3",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.520513774904821,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.9986998092344505,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.34782608695652173,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.979230071067366,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.32,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.41552920342831146,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "C=CC(=O)N1CCC(CNc2ncnc(N)c2-c2ccc(Oc3ccccc3)cc2)CC1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.34782608695652173,
+      "nearest_training_id": "ACT-19",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/3",
+      "source_compound": "4",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.6377302290159412,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.41025641025641024,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.967248546164679,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.52,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.6206895882726579,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "C#Cc1cccc(Oc2ccc(-c3nn([C@@H]4CCCN(C(=O)C=C)C4)c4ncnc(N)c34)cc2)c1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.41025641025641024,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/4",
+      "source_compound": "5",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.818961834547526,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.8745651757049284,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.7761194029850746,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9842890312095646,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.71,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.915162759500101,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Cn1c(=O)c2c(nc(N3CCNCC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.7761194029850746,
+      "nearest_training_id": "ACT-01",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/5",
+      "source_compound": "6",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.7382872870934964,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.8745651757049284,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.6103896103896104,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9993132449825076,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.68,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.7881943622794466,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Cn1c(=O)c2c(nc(N3CCN(CCCCN)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.6103896103896104,
+      "nearest_training_id": "ACT-12",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/6",
+      "source_compound": "7",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.614167358435922,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.8745651757049284,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.4067796610169492,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9999994006432742,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.66,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.5153245970218099,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Cn1c(=O)c2c(nc(N3CCN(CCCCNC(=O)CCc4ccc5n4[B-](F)(F)[N+]4=C(c6ccc[nH]6)C=CC4=C5)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.4067796610169492,
+      "nearest_training_id": "ACT-12",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/7",
+      "source_compound": "8",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.8112918447294915,
+      "Equal_mean_rank_within_six": 1,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": 1,
+      "Nearest_active": 0.660377358490566,
+      "Nearest_active_rank_within_six": 1,
+      "Property_LR": 0.8538290968504938,
+      "Property_LR_rank_within_six": 3,
+      "RF": 0.69,
+      "RF_rank_within_six": 1,
+      "SVM_RBF": 0.894815102892703,
+      "SVM_RBF_rank_within_six": 1,
+      "canonical_isomeric_smiles": "CN1CCC(n2nc(-c3ccc(Oc4ccccc4)cc3)c3c(N)ncnc32)CC1",
+      "exclusion_reasons": [],
+      "inclusion_reason": "paired_endpoints_without_training_identity_overlap",
+      "join_verified": true,
+      "max_training_tanimoto": 0.660377358490566,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": true,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": 1,
+        "GBT": 1,
+        "Nearest_active": 1,
+        "Property_LR": 3,
+        "RF": 1,
+        "SVM_RBF": 1
+      },
+      "ratio_status": "point",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/8",
+      "source_compound": "9",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.9349196665743033,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 1.0,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.44894736110611133,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.76,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.9797037487625161,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Cn1nc(-c2ccc(Oc3ccccc3)cc2)c2c(N)ncnc21",
+      "exclusion_reasons": [
+        "training_exact_parent_or_tautomer_overlap"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 1.0,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "point",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/9",
+      "source_compound": "10",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.9224122759443929,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 1.0,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.5954021434485256,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.71,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.9796741862428747,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Nc1ncnc2[nH]nc(-c3ccc(Oc4ccccc4)cc3)c12",
+      "exclusion_reasons": [
+        "training_exact_parent_or_tautomer_overlap"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 1.0,
+      "nearest_training_id": "ACT-19",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "point",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/10",
+      "source_compound": "11",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.2549123059853779,
+      "Equal_mean_rank_within_six": 4,
+      "GBT": 0.15304550305907036,
+      "GBT_rank_within_six": 3,
+      "Nearest_active": 0.2702702702702703,
+      "Nearest_active_rank_within_six": 4,
+      "Property_LR": 0.6911372527954982,
+      "Property_LR_rank_within_six": 5,
+      "RF": 0.28,
+      "RF_rank_within_six": 4,
+      "SVM_RBF": 0.3163334506121709,
+      "SVM_RBF_rank_within_six": 4,
+      "canonical_isomeric_smiles": "C=CC(=O)N1CC=C(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)CC1",
+      "exclusion_reasons": [],
+      "inclusion_reason": "paired_endpoints_without_training_identity_overlap",
+      "join_verified": true,
+      "max_training_tanimoto": 0.2702702702702703,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": true,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": 4,
+        "GBT": 3,
+        "Nearest_active": 4,
+        "Property_LR": 5,
+        "RF": 4,
+        "SVM_RBF": 4
+      },
+      "ratio_status": "double_censored",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/11",
+      "source_compound": "12",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.2536109467853122,
+      "Equal_mean_rank_within_six": 5,
+      "GBT": 0.15304550305907036,
+      "GBT_rank_within_six": 3,
+      "Nearest_active": 0.2702702702702703,
+      "Nearest_active_rank_within_six": 4,
+      "Property_LR": 0.6911372527954982,
+      "Property_LR_rank_within_six": 5,
+      "RF": 0.28,
+      "RF_rank_within_six": 4,
+      "SVM_RBF": 0.31112801381190813,
+      "SVM_RBF_rank_within_six": 5,
+      "canonical_isomeric_smiles": "C=CC(=O)N1CCC=C(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)C1",
+      "exclusion_reasons": [],
+      "inclusion_reason": "paired_endpoints_without_training_identity_overlap",
+      "join_verified": true,
+      "max_training_tanimoto": 0.2702702702702703,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": true,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": 5,
+        "GBT": 3,
+        "Nearest_active": 4,
+        "Property_LR": 5,
+        "RF": 4,
+        "SVM_RBF": 5
+      },
+      "ratio_status": "upper_bound",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/12",
+      "source_compound": "13",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.3255848133232393,
+      "Equal_mean_rank_within_six": 3,
+      "GBT": 0.15304550305907036,
+      "GBT_rank_within_six": 3,
+      "Nearest_active": 0.3472222222222222,
+      "Nearest_active_rank_within_six": 3,
+      "Property_LR": 0.9281408236070818,
+      "Property_LR_rank_within_six": 2,
+      "RF": 0.39,
+      "RF_rank_within_six": 3,
+      "SVM_RBF": 0.4120715280116647,
+      "SVM_RBF_rank_within_six": 3,
+      "canonical_isomeric_smiles": "C=CC(=O)NCc1ccc(-c2nn(C3CCN(C)CC3)c3ncnc(N)c23)cc1",
+      "exclusion_reasons": [],
+      "inclusion_reason": "paired_endpoints_without_training_identity_overlap",
+      "join_verified": true,
+      "max_training_tanimoto": 0.3472222222222222,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": true,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": 3,
+        "GBT": 3,
+        "Nearest_active": 3,
+        "Property_LR": 2,
+        "RF": 3,
+        "SVM_RBF": 3
+      },
+      "ratio_status": "point",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/13",
+      "source_compound": "14",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.23655272439605374,
+      "Equal_mean_rank_within_six": 6,
+      "GBT": 0.15304550305907036,
+      "GBT_rank_within_six": 3,
+      "Nearest_active": 0.25,
+      "Nearest_active_rank_within_six": 6,
+      "Property_LR": 0.697845339807619,
+      "Property_LR_rank_within_six": 4,
+      "RF": 0.26,
+      "RF_rank_within_six": 6,
+      "SVM_RBF": 0.2831653945251446,
+      "SVM_RBF_rank_within_six": 6,
+      "canonical_isomeric_smiles": "C=CC(=O)N1CCC(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)CC1",
+      "exclusion_reasons": [],
+      "inclusion_reason": "paired_endpoints_without_training_identity_overlap",
+      "join_verified": true,
+      "max_training_tanimoto": 0.25,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": true,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": 6,
+        "GBT": 3,
+        "Nearest_active": 6,
+        "Property_LR": 4,
+        "RF": 6,
+        "SVM_RBF": 6
+      },
+      "ratio_status": "double_censored",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/14",
+      "source_compound": "15",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.30455592787404956,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.15304550305907036,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.42857142857142855,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.05129054702462385,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.28,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.35660677986569916,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Nc1ncnc2[nH]nc(Br)c12",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.42857142857142855,
+      "nearest_training_id": "ACT-19",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/15",
+      "source_compound": "16",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.2762672792168512,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.15304550305907036,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.3103448275862069,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.17204073719341165,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.3,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.3416787862221276,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CN1CCC(n2nc(Br)c3c(N)ncnc32)CC1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.3103448275862069,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/16",
+      "source_compound": "17a",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.36245895943302064,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.15304550305907036,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.4666666666666667,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.02870790390839087,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.38,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.45012366800634557,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Cn1nc(Br)c2c(N)ncnc21",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.4666666666666667,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/17",
+      "source_compound": "17b",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.27078895332671266,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.15304550305907036,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.28,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.8829412632218469,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.3,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.3501103102477802,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CN1CCC(n2nc(C3=CCN(C(=O)OC(C)(C)C)CC3)c3c(N)ncnc32)CC1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.28,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/18",
+      "source_compound": "18a",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.2732874006225817,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.15304550305907036,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.28,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.8829412632218469,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.3,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.3601040994312566,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CN1CCC(n2nc(C3=CCCN(C(=O)OC(C)(C)C)C3)c3c(N)ncnc32)CC1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.28,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/19",
+      "source_compound": "18b",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.33603461039514726,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.15304550305907036,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.3561643835616438,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9775479615956405,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.4,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.4349285549598749,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CN1CCC(n2nc(-c3ccc(CNC(=O)OC(C)(C)C)cc3)c3c(N)ncnc32)CC1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.3561643835616438,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/20",
+      "source_compound": "18c",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.25206361968598817,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.15304550305907036,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.2602739726027397,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.8862842581386104,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.28,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.31493500308214256,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CN1CCC(n2nc(C3CCN(C(=O)OC(C)(C)C)CC3)c3c(N)ncnc32)CC1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.2602739726027397,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/21",
+      "source_compound": "19",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.6867095071003966,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.8745651757049284,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.5340909090909091,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9999516058837643,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.65,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.6881819436057486,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Cn1c(=O)c2c(nc(N3CCN(CCCCNC(=O)OC(C)(C)C)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.5340909090909091,
+      "nearest_training_id": "ACT-12",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "historical_original_graphs",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/measured_source_challenge/rows/22",
+      "source_compound": "N-Boc-protected 7",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.7038807231413113,
+      "Equal_mean_rank_within_six": 2,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": 1,
+      "Nearest_active": 0.4925373134328358,
+      "Nearest_active_rank_within_six": 2,
+      "Property_LR": 0.9632850780328581,
+      "Property_LR_rank_within_six": 1,
+      "RF": 0.57,
+      "RF_rank_within_six": 2,
+      "SVM_RBF": 0.7530106615977127,
+      "SVM_RBF_rank_within_six": 2,
+      "canonical_isomeric_smiles": "C=CC(=O)N1CCC[C@@H](n2nc(-c3ccc(Oc4ccccc4)cc3)c3c(N)ncnc32)C1",
+      "exclusion_reasons": [],
+      "inclusion_reason": "paired_endpoints_without_training_identity_overlap",
+      "join_verified": true,
+      "max_training_tanimoto": 0.4925373134328358,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": true,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": 2,
+        "GBT": 1,
+        "Nearest_active": 2,
+        "Property_LR": 1,
+        "RF": 2,
+        "SVM_RBF": 2
+      },
+      "ratio_status": "point",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/0",
+      "source_compound": "1",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.17295069055607346,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.02836885219481269,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.20454545454545456,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9813996078924051,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.22,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.23888845548402657,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CC#CC(=O)N1CCC[C@H]1c1nc(-c2ccc(C(=O)Nc3ccccn3)cc2)c2c(N)nccn12",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.36363636363636365,
+      "nearest_training_id": "DEC-13",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/1",
+      "source_compound": "2",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.10124426550614236,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.00016537703250819646,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.1262135922330097,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.5817985497440271,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.08,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.19859809275905158,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CC#CC(=O)N[C@H]1CCCN(c2c(F)cc(C(N)=O)c3[nH]c(C)c(C)c23)C1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.1643835616438356,
+      "nearest_training_id": "DEC-25",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/2",
+      "source_compound": "3",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.5445039288340865,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.9974610364674174,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.34782608695652173,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9804531827400917,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.37,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.46272859191240673,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "C=CC(=O)N1CCC(CNc2ncnc(N)c2-c2ccc(Oc3ccccc3)cc2)CC1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.34782608695652173,
+      "nearest_training_id": "ACT-19",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/3",
+      "source_compound": "4",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.6670638953722202,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.41025641025641024,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9720599017559438,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.57,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.688024253697774,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "C#Cc1cccc(Oc2ccc(-c3nn([C@@H]4CCCN(C(=O)C=C)C4)c4ncnc(N)c34)cc2)c1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.41025641025641024,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/4",
+      "source_compound": "5",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.9809387380859219,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 1.0,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9885030371529137,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.94,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.9837800348089909,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Cn1c(=O)c2c(nc(N3CCNCC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+      "exclusion_reasons": [
+        "training_exact_parent_or_tautomer_overlap",
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 1.0,
+      "nearest_training_id": "ACT-01",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/5",
+      "source_compound": "6",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.9065213787352118,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.7464788732394366,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.999566377750256,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.94,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.9396317241667137,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Cn1c(=O)c2c(nc(N3CCN(CCCCN)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.7464788732394366,
+      "nearest_training_id": "ACT-01",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/6",
+      "source_compound": "7",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.7702147876192894,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.48214285714285715,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9999996006592229,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.9,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.6987413757996033,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Cn1c(=O)c2c(nc(N3CCN(CCCCNC(=O)CCc4ccc5n4[B-](F)(F)[N+]4=C(c6ccc[nH]6)C=CC4=C5)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.48214285714285715,
+      "nearest_training_id": "ACT-01",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/7",
+      "source_compound": "8",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.8290051715657679,
+      "Equal_mean_rank_within_six": 1,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": 1,
+      "Nearest_active": 0.660377358490566,
+      "Nearest_active_rank_within_six": 1,
+      "Property_LR": 0.8684970596769688,
+      "Property_LR_rank_within_six": 3,
+      "RF": 0.74,
+      "RF_rank_within_six": 1,
+      "SVM_RBF": 0.9156684102378085,
+      "SVM_RBF_rank_within_six": 1,
+      "canonical_isomeric_smiles": "CN1CCC(n2nc(-c3ccc(Oc4ccccc4)cc3)c3c(N)ncnc32)CC1",
+      "exclusion_reasons": [],
+      "inclusion_reason": "paired_endpoints_without_training_identity_overlap",
+      "join_verified": true,
+      "max_training_tanimoto": 0.660377358490566,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": true,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": 1,
+        "GBT": 1,
+        "Nearest_active": 1,
+        "Property_LR": 3,
+        "RF": 1,
+        "SVM_RBF": 1
+      },
+      "ratio_status": "point",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/8",
+      "source_compound": "9",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.9434362919881296,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 1.0,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.46453310627705535,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.79,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.9837702504178218,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Cn1nc(-c2ccc(Oc3ccccc3)cc2)c2c(N)ncnc21",
+      "exclusion_reasons": [
+        "training_exact_parent_or_tautomer_overlap"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 1.0,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "point",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/9",
+      "source_compound": "10",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.925937847766225,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 1.0,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.5765469148630313,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.72,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.9837764735302035,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Nc1ncnc2[nH]nc(-c3ccc(Oc4ccccc4)cc3)c12",
+      "exclusion_reasons": [
+        "training_exact_parent_or_tautomer_overlap"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 1.0,
+      "nearest_training_id": "ACT-19",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "point",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/10",
+      "source_compound": "11",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.3433912657299014,
+      "Equal_mean_rank_within_six": 4,
+      "GBT": 0.41952016175005835,
+      "GBT_rank_within_six": 3,
+      "Nearest_active": 0.2702702702702703,
+      "Nearest_active_rank_within_six": 4,
+      "Property_LR": 0.7407519450106889,
+      "Property_LR_rank_within_six": 5,
+      "RF": 0.31,
+      "RF_rank_within_six": 4,
+      "SVM_RBF": 0.373774630899277,
+      "SVM_RBF_rank_within_six": 4,
+      "canonical_isomeric_smiles": "C=CC(=O)N1CC=C(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)CC1",
+      "exclusion_reasons": [],
+      "inclusion_reason": "paired_endpoints_without_training_identity_overlap",
+      "join_verified": true,
+      "max_training_tanimoto": 0.2702702702702703,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": true,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": 4,
+        "GBT": 3,
+        "Nearest_active": 4,
+        "Property_LR": 5,
+        "RF": 4,
+        "SVM_RBF": 4
+      },
+      "ratio_status": "double_censored",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/11",
+      "source_compound": "12",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.3406830854708086,
+      "Equal_mean_rank_within_six": 5,
+      "GBT": 0.41952016175005835,
+      "GBT_rank_within_six": 3,
+      "Nearest_active": 0.2702702702702703,
+      "Nearest_active_rank_within_six": 4,
+      "Property_LR": 0.7407519450106889,
+      "Property_LR_rank_within_six": 5,
+      "RF": 0.31,
+      "RF_rank_within_six": 4,
+      "SVM_RBF": 0.36294190986290586,
+      "SVM_RBF_rank_within_six": 5,
+      "canonical_isomeric_smiles": "C=CC(=O)N1CCC=C(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)C1",
+      "exclusion_reasons": [],
+      "inclusion_reason": "paired_endpoints_without_training_identity_overlap",
+      "join_verified": true,
+      "max_training_tanimoto": 0.2702702702702703,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": true,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": 5,
+        "GBT": 3,
+        "Nearest_active": 4,
+        "Property_LR": 5,
+        "RF": 4,
+        "SVM_RBF": 5
+      },
+      "ratio_status": "upper_bound",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/12",
+      "source_compound": "13",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.4085066801941919,
+      "Equal_mean_rank_within_six": 3,
+      "GBT": 0.41952016175005835,
+      "GBT_rank_within_six": 3,
+      "Nearest_active": 0.3472222222222222,
+      "Nearest_active_rank_within_six": 3,
+      "Property_LR": 0.9355030470743105,
+      "Property_LR_rank_within_six": 2,
+      "RF": 0.4,
+      "RF_rank_within_six": 3,
+      "SVM_RBF": 0.4672843368044868,
+      "SVM_RBF_rank_within_six": 3,
+      "canonical_isomeric_smiles": "C=CC(=O)NCc1ccc(-c2nn(C3CCN(C)CC3)c3ncnc(N)c23)cc1",
+      "exclusion_reasons": [],
+      "inclusion_reason": "paired_endpoints_without_training_identity_overlap",
+      "join_verified": true,
+      "max_training_tanimoto": 0.3472222222222222,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": true,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": 3,
+        "GBT": 3,
+        "Nearest_active": 3,
+        "Property_LR": 2,
+        "RF": 3,
+        "SVM_RBF": 3
+      },
+      "ratio_status": "point",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/13",
+      "source_compound": "14",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.3184457885448807,
+      "Equal_mean_rank_within_six": 6,
+      "GBT": 0.41952016175005835,
+      "GBT_rank_within_six": 3,
+      "Nearest_active": 0.25,
+      "Nearest_active_rank_within_six": 6,
+      "Property_LR": 0.7499279442973583,
+      "Property_LR_rank_within_six": 4,
+      "RF": 0.27,
+      "RF_rank_within_six": 6,
+      "SVM_RBF": 0.33426299242946433,
+      "SVM_RBF_rank_within_six": 6,
+      "canonical_isomeric_smiles": "C=CC(=O)N1CCC(c2nn(C3CCN(C)CC3)c3ncnc(N)c23)CC1",
+      "exclusion_reasons": [],
+      "inclusion_reason": "paired_endpoints_without_training_identity_overlap",
+      "join_verified": true,
+      "max_training_tanimoto": 0.25,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": true,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": 6,
+        "GBT": 3,
+        "Nearest_active": 6,
+        "Property_LR": 4,
+        "RF": 6,
+        "SVM_RBF": 6
+      },
+      "ratio_status": "double_censored",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/14",
+      "source_compound": "15",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.38051181893734204,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.41952016175005835,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.42857142857142855,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.04724704648360957,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.3,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.37395568542788127,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Nc1ncnc2[nH]nc(Br)c12",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.42857142857142855,
+      "nearest_training_id": "ACT-19",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/15",
+      "source_compound": "16",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.3556707013446253,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.41952016175005835,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.3103448275862069,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.1972133363263229,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.31,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.3828178160422359,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CN1CCC(n2nc(Br)c3c(N)ncnc32)CC1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.3103448275862069,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/16",
+      "source_compound": "17a",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.4415303400481354,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.41952016175005835,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.4666666666666667,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.03087429351060145,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.39,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.48993453177581675,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Cn1nc(Br)c2c(N)ncnc21",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.4666666666666667,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/17",
+      "source_compound": "17b",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.35959889104902343,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.41952016175005835,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.28,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9045318293169483,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.33,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.40887540244603526,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CN1CCC(n2nc(C3=CCN(C(=O)OC(C)(C)C)CC3)c3c(N)ncnc32)CC1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.28,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/18",
+      "source_compound": "18a",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.36111915322601673,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.41952016175005835,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.28,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9045318293169483,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.33,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.41495645115400853,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CN1CCC(n2nc(C3=CCCN(C(=O)OC(C)(C)C)C3)c3c(N)ncnc32)CC1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.28,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/19",
+      "source_compound": "18b",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.41935003678241034,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.41952016175005835,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.3561643835616438,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.979631328986808,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.41,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.49171560181793916,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CN1CCC(n2nc(-c3ccc(CNC(=O)OC(C)(C)C)cc3)c3c(N)ncnc32)CC1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.3561643835616438,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/20",
+      "source_compound": "18c",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.3348220823474044,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.41952016175005835,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.2602739726027397,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9085644043531744,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.29,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.36949419503681963,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "CN1CCC(n2nc(C3CCN(C(=O)OC(C)(C)C)CC3)c3c(N)ncnc32)CC1",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.2602739726027397,
+      "nearest_training_id": "ACT-20",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/21",
+      "source_compound": "19",
+      "unavailable_score_reason": null
+    },
+    {
+      "Equal_mean": 0.8563862886884803,
+      "Equal_mean_rank_within_six": null,
+      "GBT": 0.9999749175346968,
+      "GBT_rank_within_six": null,
+      "Nearest_active": 0.6463414634146342,
+      "Nearest_active_rank_within_six": null,
+      "Property_LR": 0.9999699636434667,
+      "Property_LR_rank_within_six": null,
+      "RF": 0.9,
+      "RF_rank_within_six": null,
+      "SVM_RBF": 0.8792287738045901,
+      "SVM_RBF_rank_within_six": null,
+      "canonical_isomeric_smiles": "Cn1c(=O)c2c(nc(N3CCN(CCCCNC(=O)OC(C)(C)C)CC3)n2Cc2nnc(-c3ccc(Cl)c(Cl)c3)o2)n(C)c1=O",
+      "exclusion_reasons": [
+        "missing_target_endpoint"
+      ],
+      "inclusion_reason": null,
+      "join_verified": true,
+      "max_training_tanimoto": 0.6463414634146342,
+      "nearest_training_id": "ACT-01",
+      "paired_diagnostic_eligible": false,
+      "rank_denominator": 6,
+      "ranks": {
+        "Equal_mean": null,
+        "GBT": null,
+        "Nearest_active": null,
+        "Property_LR": null,
+        "RF": null,
+        "SVM_RBF": null
+      },
+      "ratio_status": "missing_endpoint",
+      "scenario": "stored_authenticated_reference_sensitivity",
+      "score_availability": "available_frozen_identity_join",
+      "score_source_json_pointer": "/reference_sensitivity/measured_source_challenge/rows/22",
+      "source_compound": "N-Boc-protected 7",
+      "unavailable_score_reason": null
+    }
+  ],
+  "source_disagreements": {
+    "items": [
+      {
+        "compounds": [
+          "4",
+          "5"
+        ],
+        "id": "D1",
+        "kind": "source_numeric_reporting_difference",
+        "locations": [
+          "jm4c00072_si_002.csv:lines 5-6",
+          "fig1/caption:panel B"
+        ],
+        "representations": [
+          {
+            "caption_mean": 13.9,
+            "caption_sd": 0.6,
+            "compound": "4",
+            "csv_mean": 13.9,
+            "csv_sd": 0.62,
+            "unit": "uM"
+          },
+          {
+            "caption_mean": 21.2,
+            "caption_sd": 1.0,
+            "compound": "5",
+            "csv_mean": 21.2,
+            "csv_sd": 1.02,
+            "unit": "uM"
+          }
+        ],
+        "resolution": "Unresolved reporting precision; compatible with rounding, not silently reconciled. Both representations preserved. No effect on paired ratios because NUDT14 untested.",
+        "sources": [
+          "balikci_csv",
+          "balikci_xml"
+        ],
+        "target": "NUDT5"
+      },
+      {
+        "compounds": [
+          "4",
+          "5"
+        ],
+        "id": "D2",
+        "kind": "lexical_provenance_difference",
+        "locations": [
+          "author CSV lines 5-6; trailing spaces",
+          "repository provenance transform field"
+        ],
+        "resolution": "Ledger trims one trailing space in each NUDT5 cell. Digits/status preserved; historical claim parsed cell values unchanged is not literally true for whitespace. Original files unchanged; raw strings retained here.",
+        "sources": [
+          "balikci_csv",
+          "research/source_assays.csv",
+          "research/results/source-assay-provenance.json"
+        ]
+      },
+      {
+        "compounds": [
+          "6"
+        ],
+        "id": "D3",
+        "kind": "unresolved_normalization_control_scope",
+        "locations": [
+          "sec4.3",
+          "sec2/p[7]",
+          "author CSV line 7"
+        ],
+        "resolution": "Combined NUDT5/NUDT14 Methods claims 500 nM TH5427 = 0% activity without a target-specific exception; Results describes NUDT5 selectivity over NUDT14. Target-specific control efficacy cannot be reconstructed. No assumption that NUDT14 was validly zeroed; no claim of demonstrated assay failure. Compound6 not-tested means no IC50 estimate in this CSV, not absence of control use.",
+        "sources": [
+          "balikci_xml",
+          "balikci_csv"
+        ]
+      },
+      {
+        "compounds": [],
+        "id": "D4",
+        "kind": "coverage_scope_ambiguity",
+        "locations": [
+          "sec2/p[5]:All compounds were tested",
+          "author CSV all 23 rows; 26 untested cells"
+        ],
+        "resolution": "Phrase occurs in SAR/Table1 context. Preserve explicit CSV missingness outside eight Table1 rows; do not expand all to all23 or import other endpoints.",
+        "sources": [
+          "balikci_xml",
+          "balikci_csv"
+        ]
+      },
+      {
+        "compounds": [
+          "13"
+        ],
+        "id": "D5",
+        "kind": "ratio_orientation_in_existing_report",
+        "locations": [
+          "structural report section3 panel: nominal ratio >13.4",
+          "tbl1/fx2 compound13"
+        ],
+        "resolution": "Existing number is reciprocal NUDT5/NUDT14 orientation. Here R=NUDT14/NUDT5 is strictly <0.0744. Source values agree; explicitly convert orientation, do not edit existing report or copy >13.4 as R.",
+        "sources": [
+          "research/structural/structural_selectivity_report.md",
+          "table1_values"
+        ]
+      },
+      {
+        "compounds": [
+          "1",
+          "4",
+          "5"
+        ],
+        "id": "D6",
+        "kind": "replication_level_ambiguity",
+        "locations": [
+          "tbl1/t1fn1",
+          "sec4.3",
+          "fig1/caption"
+        ],
+        "resolution": "Table1 defines IC50 SD over n=2 biological replicates. Methods says triplicate sets; Figure1 describes plotted technical-triplicate mean/SD representative of two biological repeats. Full nesting/IC50 aggregation unspecified; no n=6, covariance, paired raw replicates or ratio CI inferred. Compound4/5 uncertainty definition is not uniquely established by Table1.",
+        "sources": [
+          "balikci_xml"
+        ]
+      }
+    ],
+    "paired_table1_value_disagreements": 0,
+    "schema_version": "1.0.0"
+  },
+  "source_provenance": {
+    "historical_run_provenance": "transfer-manifest.json is retained unchanged; its git revision/dirty status describe the original run, not this curation checkout",
+    "input_revision": "4f92a9742270a155f470aad5f06369bd76ed3092",
+    "inputs": [
+      {
+        "path": "compounds.csv",
+        "sha256": "d628a0fa1926c1e44c9b2a79adf92b444959e80153cf9019ef5e56b4747c3576",
+        "size_bytes": 4055
+      },
+      {
+        "path": "final_hits.csv",
+        "sha256": "38c8d5266ce127b1fd5babde0c895190d0b382e3c9e3dae7581e320766745100",
+        "size_bytes": 2149
+      },
+      {
+        "path": "requirements.lock",
+        "sha256": "be23dbecaf88d46dcd0a985949c015a8d75676f76ed00115c7b9c754fb62bd0c",
+        "size_bytes": 98701
+      },
+      {
+        "path": "research/source_assays.csv",
+        "sha256": "5bd0f9e201135d0ae2c5786887a5a514d6e6516e7e791bb4cdf1ae45286f573e",
+        "size_bytes": 7582
+      },
+      {
+        "path": "research/results/source-assay-provenance.json",
+        "sha256": "788645a68ee6e87e1be9528283d9a821246395ce0a1fcfe673545706e0774b56",
+        "size_bytes": 736
+      },
+      {
+        "path": "research/results/transfer.json",
+        "sha256": "df6b544a2c5b8aca0ab3007f016133f8fd012629210e375bd34d0fdbad32e50a",
+        "size_bytes": 413591
+      },
+      {
+        "path": "research/results/transfer-manifest.json",
+        "sha256": "cb60e86c60aa1d51d804020ba2790427f2db5f0ef3a6ca0de06d8ec3455f5b7e",
+        "size_bytes": 2249
+      },
+      {
+        "path": "research/reference_structures.csv",
+        "sha256": "db8f9c3d748c75b0d14895f30080ce105e57f47d88597b5db3ea2a3d060b2d2f",
+        "size_bytes": 755
+      },
+      {
+        "path": "scripts/scripts/transfer.py",
+        "sha256": "e592d095678369c08ff0b4574ba867cfced70c0baebf4776df7257380e6676fa",
+        "size_bytes": 19614
+      }
+    ],
+    "primary_citation": "Balikci E et al. Unexpected Noncovalent Off-Target Activity of Clinical BTK Inhibitors Leads to Discovery of a Dual NUDT5/14 Antagonist. J Med Chem 67,7245-7259 (2024). DOI 10.1021/acs.jmedchem.4c00072; PMC11089510.",
+    "primary_license_as_inspected": "\u00a9 2024 The Authors; ACS publication; article permissions specify CC BY 4.0. Archived source bytes are unmodified; derived transcriptions are identified separately.",
+    "schema_version": "1.0.0",
+    "source_package_download": {
+      "bytes": 5798869,
+      "retrieved_utc": "2026-10-05T03:50:32.517062+00:00",
+      "sha256": "1181de982f576870fb66526fa0343564cd5d6cc7c7f0a44ec12070fd9a885cb4",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/supplementaryFiles"
+    },
+    "sources": [
+      {
+        "access_status": "retrieved_and_inspected",
+        "encoding": "XML declaration UTF-8",
+        "inspected_locations": [
+          "tbl1/t1fn1",
+          "tbl1/t1fn2",
+          "sec4.2",
+          "sec4.3",
+          "fig1/caption",
+          "sec2/p[1]",
+          "sec2/p[4]",
+          "sec2/p[5]",
+          "sec2/p[7]"
+        ],
+        "retrieved_utc": "2026-10-05T03:49:46.449676+00:00",
+        "sha256_stored": "c314a1940ec6ee60cb530cb75bcea3b437303653cec1bcb661e955cd8b40627b",
+        "sha256_uncompressed": "0710da1ebedd4accde6e6cddf8cfe9a2d350c062890fbcfd03bf94bd6f316df0",
+        "size_bytes_uncompressed": 130787,
+        "source_id": "balikci_xml",
+        "source_member": null,
+        "stored_path": "sources/balikci.xml.gz",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML"
+      },
+      {
+        "access_status": "retrieved_and_inspected",
+        "encoding": "Latin-1",
+        "inspected_locations": [
+          "header and all 23 data rows (lines 2-24)"
+        ],
+        "retrieved_utc": "2026-10-05T03:50:32.517062+00:00",
+        "sha256_stored": "a628c90932abb6c9eaac12a6236462248da96cd6e7a855fb4cde28562a5705dd",
+        "sha256_uncompressed": "17ef0e3770d49db8b7575a18fd1cdb4623fd83db0c928ba7ade75d951f7d7533",
+        "size_bytes_uncompressed": 2089,
+        "source_id": "balikci_csv",
+        "source_member": "jm4c00072_si_002.csv",
+        "stored_path": "sources/jm4c00072_si_002.csv.gz",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/supplementaryFiles"
+      },
+      {
+        "access_status": "retrieved_and_inspected",
+        "encoding": "JPEG",
+        "inspected_locations": [
+          "tbl1/fx1; scaffold only"
+        ],
+        "retrieved_utc": "2026-10-05T03:50:32.517062+00:00",
+        "sha256_stored": "92dfc00c9547b4e7b715822f5b6d016a5e2aae76de26c6abf42b50fce3542b6b",
+        "sha256_uncompressed": "dae7572f3d20892ce6dc86e15fb0a3f2722a9881510fcf92ff4ef64d42f218b5",
+        "size_bytes_uncompressed": 20516,
+        "source_id": "table1_scaffold",
+        "source_member": "jm4c00072_0007.jpg",
+        "stored_path": "sources/jm4c00072_0007.jpg.gz",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/supplementaryFiles"
+      },
+      {
+        "access_status": "retrieved_and_inspected",
+        "encoding": "JPEG",
+        "inspected_locations": [
+          "tbl1/fx2; all eight compounds and both endpoint columns"
+        ],
+        "retrieved_utc": "2026-10-05T03:50:32.517062+00:00",
+        "sha256_stored": "eb656f3aeddeb9c1b0b888a75b2f5bcf13555745b3d9dc63a8ec566ac87339a1",
+        "sha256_uncompressed": "fdfc9e95b92fe83bf84fc870c9d7188b3f5d45ed9162dace5640c281ef8b437a",
+        "size_bytes_uncompressed": 76610,
+        "source_id": "table1_values",
+        "source_member": "jm4c00072_0008.jpg",
+        "stored_path": "sources/jm4c00072_0008.jpg.gz",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/supplementaryFiles"
+      }
+    ],
+    "transforms": [
+      "Lossless gzip of primary snapshots with mtime=0",
+      "Decode author CSV Latin-1; preserve raw text including trailing whitespace; derived UTF-8 CSVs use LF records",
+      "Verify all Table1 cells against manual image transcription and footnotes; preserve other source representations separately",
+      "Recompute exact isomeric, neutral parent and canonical parent tautomer identity; do not mutate source graphs or infer biological equivalence",
+      "Join stored scores by compound ID plus exact source/canonical identity; no fitting/scoring calls",
+      "Derive ratios from reported means and strict bounds only; do not propagate SD into ratios"
+    ],
+    "workflow": {
+      "interpretation": "Two-stage independent read-only source verification then censoring/identity-contract review; software/source checking, not fresh biological evidence",
+      "run_id": "wfr-0225de3594f2447397d548a22043f292",
+      "stages": [
+        "devin-0720e88b21654dcd9b7fffcf1caa0fa5",
+        "devin-57c9a99afb7045629d6cbc150978929b"
+      ]
+    }
+  },
+  "summary": {
+    "endpoint_cells": 46,
+    "endpoint_status_counts": {
+      "NUDT14": {
+        "numeric": 6,
+        "right_censored": 2,
+        "untested": 15
+      },
+      "NUDT5": {
+        "numeric": 7,
+        "right_censored": 5,
+        "untested": 11
+      }
+    },
+    "scenarios": {
+      "historical_original_graphs": {
+        "Equal_mean_descending_ids": [
+          "9",
+          "1",
+          "14",
+          "12",
+          "13",
+          "15"
+        ],
+        "eligible_ids": [
+          "1",
+          "9",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "n": 6,
+        "ratio_status_counts": {
+          "double_censored": 2,
+          "point": 3,
+          "upper_bound": 1
+        }
+      },
+      "stored_authenticated_reference_sensitivity": {
+        "Equal_mean_descending_ids": [
+          "9",
+          "1",
+          "14",
+          "12",
+          "13",
+          "15"
+        ],
+        "eligible_ids": [
+          "1",
+          "9",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "n": 6,
+        "ratio_status_counts": {
+          "double_censored": 2,
+          "point": 3,
+          "upper_bound": 1
+        }
+      }
+    },
+    "source_graphs": 23,
+    "source_paired_n": 8,
+    "source_ratio_status_counts": {
+      "double_censored": 2,
+      "missing_endpoint": 15,
+      "point": 5,
+      "upper_bound": 1
+    }
+  },
+  "uncertainty": "Source SD retained; ratio uncertainty not estimated without raw paired replicates",
+  "warning": "Previously inspected single-publication retrospective evidence; not fresh external or prospective validation. No models fitted, new experiments, selectivity classifier, significance tests, ratio confidence intervals or biological qualification."
+}

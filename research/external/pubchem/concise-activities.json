@@ -1,0 +1,438 @@
+{
+  "Table": {
+    "Columns": {
+      "Column": [
+        "AID",
+        "SID",
+        "CID",
+        "Activity Outcome",
+        "Target Accession",
+        "Target GeneID",
+        "Activity Value [uM]",
+        "Activity Name",
+        "Assay Name",
+        "Assay Type",
+        "PubMed ID",
+        "RNAi"
+      ]
+    },
+    "Row": [
+      {
+        "Cell": [
+          "1440791",
+          "381837745",
+          "3163969",
+          "Unspecified",
+          "Q9UKK9",
+          "11164",
+          "100.0000000000",
+          "IC50",
+          "Inhibition of human His-tagged NUDT5 expressed in bacterial expression system in presence of ADP after 1 hr by malachite green reagent based assay",
+          "Confirmatory",
+          "28145708",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070371",
+          "123084107",
+          "22346757",
+          "Active",
+          "Q9UKK9",
+          "",
+          "2.0400000000",
+          "IC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) using ADP as substrate incubated for 1 hr by luminescence based microplate reader analysis",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070371",
+          "136940589",
+          "24821094",
+          "Active",
+          "Q9UKK9",
+          "",
+          "0.8370000000",
+          "IC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) using ADP as substrate incubated for 1 hr by luminescence based microplate reader analysis",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070371",
+          "381847098",
+          "71479709",
+          "Unspecified",
+          "Q9UKK9",
+          "",
+          "13.9000000000",
+          "IC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) using ADP as substrate incubated for 1 hr by luminescence based microplate reader analysis",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070371",
+          "440125594",
+          "74766102",
+          "Unspecified",
+          "Q9UKK9",
+          "",
+          "21.2000000000",
+          "IC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) using ADP as substrate incubated for 1 hr by luminescence based microplate reader analysis",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070371",
+          "520015903",
+          "177647031",
+          "Inconclusive",
+          "Q9UKK9",
+          "",
+          "",
+          "IC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) using ADP as substrate incubated for 1 hr by luminescence based microplate reader analysis",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070371",
+          "520016054",
+          "58149659",
+          "Active",
+          "Q9UKK9",
+          "",
+          "0.4870000000",
+          "IC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) using ADP as substrate incubated for 1 hr by luminescence based microplate reader analysis",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070371",
+          "520018098",
+          "139475244",
+          "Active",
+          "Q9UKK9",
+          "",
+          "0.2700000000",
+          "IC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) using ADP as substrate incubated for 1 hr by luminescence based microplate reader analysis",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070371",
+          "520018702",
+          "177374568",
+          "Unspecified",
+          "Q9UKK9",
+          "",
+          "50.0000000000",
+          "IC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) using ADP as substrate incubated for 1 hr by luminescence based microplate reader analysis",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070371",
+          "520021835",
+          "177374570",
+          "Inconclusive",
+          "Q9UKK9",
+          "",
+          "",
+          "IC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) using ADP as substrate incubated for 1 hr by luminescence based microplate reader analysis",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070371",
+          "520068161",
+          "177374569",
+          "Unspecified",
+          "Q9UKK9",
+          "",
+          "13.8000000000",
+          "IC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) using ADP as substrate incubated for 1 hr by luminescence based microplate reader analysis",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070373",
+          "136940589",
+          "24821094",
+          "Active",
+          "Q9UKK9",
+          "",
+          "0.2000000000",
+          "Kd",
+          "Binding affinity to N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) assessed as dissociation constant by SPR analysis",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070373",
+          "520018098",
+          "139475244",
+          "Active",
+          "Q9UKK9",
+          "",
+          "0.2500000000",
+          "Kd",
+          "Binding affinity to N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) assessed as dissociation constant by SPR analysis",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070374",
+          "136940589",
+          "24821094",
+          "Active",
+          "Q9UKK9",
+          "",
+          "1.2300000000",
+          "EC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) expressed in HEK293 cells incubated for 2 hrs by nanoBRET assay",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070374",
+          "318464585",
+          "71226662",
+          "Unspecified",
+          "Q9UKK9",
+          "",
+          "10.0000000000",
+          "EC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) expressed in HEK293 cells incubated for 2 hrs by nanoBRET assay",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070374",
+          "381847098",
+          "71479709",
+          "Unspecified",
+          "Q9UKK9",
+          "",
+          "10.0000000000",
+          "EC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) expressed in HEK293 cells incubated for 2 hrs by nanoBRET assay",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070374",
+          "404719200",
+          "121293929",
+          "Unspecified",
+          "Q9UKK9",
+          "",
+          "10.0000000000",
+          "EC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) expressed in HEK293 cells incubated for 2 hrs by nanoBRET assay",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070374",
+          "440125594",
+          "74766102",
+          "Unspecified",
+          "Q9UKK9",
+          "",
+          "10.0000000000",
+          "EC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) expressed in HEK293 cells incubated for 2 hrs by nanoBRET assay",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070374",
+          "520016642",
+          "132472992",
+          "Active",
+          "Q9UKK9",
+          "",
+          "0.0025000000",
+          "EC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) expressed in HEK293 cells incubated for 2 hrs by nanoBRET assay",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2070374",
+          "520018098",
+          "139475244",
+          "Active",
+          "Q9UKK9",
+          "",
+          "1.0800000000",
+          "EC50",
+          "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) expressed in HEK293 cells incubated for 2 hrs by nanoBRET assay",
+          "Confirmatory",
+          "38635563",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2116012",
+          "136940589",
+          "24821094",
+          "Active",
+          "Q9UKK9",
+          "",
+          "0.8300000000",
+          "IC50",
+          "Antagonist activity at NUDT5 (unknown origin)",
+          "Confirmatory",
+          "38852338",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2148899",
+          "336871813",
+          "16747388",
+          "Active",
+          "Q9UKK9",
+          "",
+          "3.6168400000",
+          "Kd",
+          "Binding affinity to human NUDT5 incubated for 45 mins by Kinobead based pull down assay",
+          "Confirmatory",
+          "29928781",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2148899",
+          "336871813",
+          "16747388",
+          "Active",
+          "Q9UKK9",
+          "",
+          "3.7571600000",
+          "ED50",
+          "Binding affinity to human NUDT5 incubated for 45 mins by Kinobead based pull down assay",
+          "Confirmatory",
+          "29928781",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2148899",
+          "519996070",
+          "117602383",
+          "Active",
+          "Q9UKK9",
+          "",
+          "7.6844700000",
+          "Kd",
+          "Binding affinity to human NUDT5 incubated for 45 mins by Kinobead based pull down assay",
+          "Confirmatory",
+          "29928781",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2148899",
+          "519996070",
+          "117602383",
+          "Active",
+          "Q9UKK9",
+          "",
+          "7.9826000000",
+          "ED50",
+          "Binding affinity to human NUDT5 incubated for 45 mins by Kinobead based pull down assay",
+          "Confirmatory",
+          "29928781",
+          ""
+        ]
+      },
+      {
+        "Cell": [
+          "2200593",
+          "520016642",
+          "132472992",
+          "Active",
+          "Q9UKK9",
+          "",
+          "0.0290000000",
+          "IC50",
+          "Affinity Biochemical interaction: (MG assay) EUB0002332a NUDT5",
+          "Confirmatory",
+          "",
+          ""
+        ]
+      }
+    ]
+  }
+}

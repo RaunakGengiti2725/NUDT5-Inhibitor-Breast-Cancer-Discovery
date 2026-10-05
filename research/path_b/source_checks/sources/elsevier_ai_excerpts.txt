@@ -1,0 +1,10 @@
+https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals
+Accessed 2026-10-05 via webfetch. Selected exact excerpts, not the full policy.
+
+Authors should document their use of AI, including the name of the AI tool used, the purpose of its use, and the extent of their oversight.
+
+Where AI tools are used as part of the research process rather than manuscript preparation, this use should be described in detail in the Methods section.
+
+AI tools must not be used to fabricate results, invent or alter underlying data, or generate figures that are not faithfully derived from the underlying data and methods used in the research.
+
+The use of AI tools should be disclosed in the caption of each image (including the specific tool, version, and how the tool was used) and in the general AI disclosure statement in the article.

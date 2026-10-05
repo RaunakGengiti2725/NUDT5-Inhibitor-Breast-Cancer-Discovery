@@ -1,0 +1,94 @@
+{
+  "base_revision": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+  "validation_date_utc": "2026-10-05",
+  "complete": true,
+  "checks": [
+    {
+      "name": "lint",
+      "command": "/home/ubuntu/path_b_source_scratch/venv/bin/ruff check --no-cache research/path_b/source_checks",
+      "cwd": "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery",
+      "started_utc": "2026-10-05T23:28:08.078616+00:00",
+      "exit_code": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "name": "format",
+      "command": "/home/ubuntu/path_b_source_scratch/venv/bin/ruff format --check research/path_b/source_checks",
+      "cwd": "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery",
+      "started_utc": "2026-10-05T23:28:08.086388+00:00",
+      "exit_code": 0,
+      "stdout": "3 files already formatted\n",
+      "stderr": ""
+    },
+    {
+      "name": "typecheck",
+      "command": "PYTHONDONTWRITEBYTECODE=1 MYPYPATH=scripts/scripts:scripts /home/ubuntu/path_b_source_scratch/venv/bin/mypy --cache-dir /home/ubuntu/path_b_source_scratch/mypy-cache research/path_b/source_checks",
+      "cwd": "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery",
+      "started_utc": "2026-10-05T23:28:08.093009+00:00",
+      "exit_code": 0,
+      "stdout": "Success: no issues found in 3 source files\n",
+      "stderr": ""
+    },
+    {
+      "name": "identity_reproduction",
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=scripts/scripts:scripts /home/ubuntu/path_b_source_scratch/venv/bin/python research/path_b/source_checks/regenerate_identity.py --repository /home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery --output /home/ubuntu/path_b_source_scratch/identity_summary_final.json && cmp /home/ubuntu/path_b_source_scratch/identity_summary_final.json research/path_b/source_checks/identity_summary.json",
+      "cwd": "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery",
+      "started_utc": "2026-10-05T23:28:08.294751+00:00",
+      "exit_code": 0,
+      "stdout": "{\"output\": \"/home/ubuntu/path_b_source_scratch/identity_summary_final.json\", \"mode\": \"identity_only_no_fitting\"}\n",
+      "stderr": "[23:28:10] Can't kekulize mol.  Unkekulized atoms: 5 21 28 29 30\n[23:28:10] WARNING: Omitted undefined stereo\n\n[23:28:10] WARNING: Omitted undefined stereo\n\n[23:28:10] WARNING: Omitted undefined stereo\n\n[23:28:12] WARNING: Omitted undefined stereo\n\n[23:28:12] WARNING: Omitted undefined stereo\n\n[23:28:12] WARNING: Omitted undefined stereo\n\n"
+    },
+    {
+      "name": "original_audit_reproduction",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/ubuntu/path_b_source_scratch/venv/bin/python scripts/scripts/pipeline.py audit --output /home/ubuntu/path_b_source_scratch/original_audit_final && cmp /home/ubuntu/path_b_source_scratch/original_audit_final/audit.json research/results/audit.json",
+      "cwd": "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery",
+      "started_utc": "2026-10-05T23:28:12.243900+00:00",
+      "exit_code": 0,
+      "stdout": "Exploratory diagnostics of unverified source labels versus untested decoys. Not evidence of NUDT5 inhibition, scaffold transfer, safety or therapeutic efficacy.\nAudited 45 unique valid records; 1 invalid records retained in report.\nResults: /home/ubuntu/path_b_source_scratch/original_audit_final\n",
+      "stderr": "[23:28:13] Can't kekulize mol.  Unkekulized atoms: 5 21 28 29 30\n"
+    },
+    {
+      "name": "pubchem_reproduction",
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=scripts/scripts:scripts /home/ubuntu/path_b_source_scratch/venv/bin/python scripts/build_pubchem_audit.py --snapshots research/external/pubchem --ledger research/external/observed_database_rows.csv --output /home/ubuntu/path_b_source_scratch/pubchem_audit_final.json && cmp /home/ubuntu/path_b_source_scratch/pubchem_audit_final.json research/external/pubchem/audit.json",
+      "cwd": "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery",
+      "started_utc": "2026-10-05T23:28:14.141582+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "relevant_tests",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/ubuntu/path_b_source_scratch/venv/bin/python -m pytest -p no:cacheprovider -q research/path_b/source_checks tests/test_pubchem_audit.py tests/test_pipeline.py::test_source_dataset_counts_invalid_and_overlap tests/test_pipeline.py::test_explicit_validation_and_canonical_identity tests/test_pipeline.py::test_schema_and_empty_input tests/test_pipeline.py::test_invalid_molecules_raise tests/test_pipeline.py::test_fingerprint_and_properties tests/test_pipeline.py::test_audit_cli_preserves_sources_and_refuses_overwrite tests/test_pipeline.py::test_cli_from_other_working_directory_and_import_has_no_io tests/test_pipeline.py::test_candidate_audit_distinguishes_active_and_all_training_reference tests/test_transfer.py::test_identity_preserves_stereo_and_flags_parent_equivalence tests/test_transfer.py::test_invalid_identity_fails tests/test_transfer.py::test_reference_substitution_is_separate_and_preserves_unaffected_records tests/test_transfer.py::test_missing_source_columns_and_unmatched_reference_fail",
+      "cwd": "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery",
+      "started_utc": "2026-10-05T23:28:15.940190+00:00",
+      "exit_code": 0,
+      "stdout": "........................................                                 [100%]\n40 passed in 9.72s\n",
+      "stderr": ""
+    },
+    {
+      "name": "build",
+      "command": "mkdir /home/ubuntu/path_b_source_scratch/build_checkout && git archive 40b9b0708d888a015abe5043bb273c3c6ee601ae | tar -x -C /home/ubuntu/path_b_source_scratch/build_checkout && mkdir -p /home/ubuntu/path_b_source_scratch/build_checkout/research/path_b && cp -R research/path_b/source_checks /home/ubuntu/path_b_source_scratch/build_checkout/research/path_b/ && /home/ubuntu/path_b_source_scratch/venv/bin/python -m build --no-isolation --outdir /home/ubuntu/path_b_source_scratch/dist /home/ubuntu/path_b_source_scratch/build_checkout",
+      "cwd": "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery",
+      "started_utc": "2026-10-05T23:28:26.178466+00:00",
+      "exit_code": 0,
+      "stdout": "* Getting build dependencies for sdist...\nrunning egg_info\ncreating scripts/scripts/nudt5_evidence_audit.egg-info\nwriting scripts/scripts/nudt5_evidence_audit.egg-info/PKG-INFO\nwriting dependency_links to scripts/scripts/nudt5_evidence_audit.egg-info/dependency_links.txt\nwriting entry points to scripts/scripts/nudt5_evidence_audit.egg-info/entry_points.txt\nwriting requirements to scripts/scripts/nudt5_evidence_audit.egg-info/requires.txt\nwriting top-level names to scripts/scripts/nudt5_evidence_audit.egg-info/top_level.txt\nwriting manifest file 'scripts/scripts/nudt5_evidence_audit.egg-info/SOURCES.txt'\nreading manifest file 'scripts/scripts/nudt5_evidence_audit.egg-info/SOURCES.txt'\nwriting manifest file 'scripts/scripts/nudt5_evidence_audit.egg-info/SOURCES.txt'\n* Building sdist...\nrunning sdist\nrunning egg_info\nwriting scripts/scripts/nudt5_evidence_audit.egg-info/PKG-INFO\nwriting dependency_links to scripts/scripts/nudt5_evidence_audit.egg-info/dependency_links.txt\nwriting entry points to scripts/scripts/nudt5_evidence_audit.egg-info/entry_points.txt\nwriting requirements to scripts/scripts/nudt5_evidence_audit.egg-info/requires.txt\nwriting top-level names to scripts/scripts/nudt5_evidence_audit.egg-info/top_level.txt\nreading manifest file 'scripts/scripts/nudt5_evidence_audit.egg-info/SOURCES.txt'\nwriting manifest file 'scripts/scripts/nudt5_evidence_audit.egg-info/SOURCES.txt'\nrunning check\ncreating nudt5_evidence_audit-0.1.0\ncreating nudt5_evidence_audit-0.1.0/scripts/scripts\ncreating nudt5_evidence_audit-0.1.0/scripts/scripts/nudt5_evidence_audit.egg-info\ncreating nudt5_evidence_audit-0.1.0/tests\ncopying files to nudt5_evidence_audit-0.1.0...\ncopying README.md -> nudt5_evidence_audit-0.1.0\ncopying pyproject.toml -> nudt5_evidence_audit-0.1.0\ncopying requirements-structure.txt -> nudt5_evidence_audit-0.1.0\ncopying requirements.txt -> nudt5_evidence_audit-0.1.0\ncopying scripts/scripts/assay.py -> nudt5_evidence_audit-0.1.0/scripts/scripts\ncopying scripts/scripts/controls.py -> nudt5_evidence_audit-0.1.0/scripts/scripts\ncopying scripts/scripts/pipeline.py -> nudt5_evidence_audit-0.1.0/scripts/scripts\ncopying scripts/scripts/selectivity.py -> nudt5_evidence_audit-0.1.0/scripts/scripts\ncopying scripts/scripts/structure_comparison.py -> nudt5_evidence_audit-0.1.0/scripts/scripts\ncopying scripts/scripts/transfer.py -> nudt5_evidence_audit-0.1.0/scripts/scripts\ncopying scripts/scripts/nudt5_evidence_audit.egg-info/PKG-INFO -> nudt5_evidence_audit-0.1.0/scripts/scripts/nudt5_evidence_audit.egg-info\ncopying scripts/scripts/nudt5_evidence_audit.egg-info/SOURCES.txt -> nudt5_evidence_audit-0.1.0/scripts/scripts/nudt5_evidence_audit.egg-info\ncopying scripts/scripts/nudt5_evidence_audit.egg-info/dependency_links.txt -> nudt5_evidence_audit-0.1.0/scripts/scripts/nudt5_evidence_audit.egg-info\ncopying scripts/scripts/nudt5_evidence_audit.egg-info/entry_points.txt -> nudt5_evidence_audit-0.1.0/scripts/scripts/nudt5_evidence_audit.egg-info\ncopying scripts/scripts/nudt5_evidence_audit.egg-info/requires.txt -> nudt5_evidence_audit-0.1.0/scripts/scripts/nudt5_evidence_audit.egg-info\ncopying scripts/scripts/nudt5_evidence_audit.egg-info/top_level.txt -> nudt5_evidence_audit-0.1.0/scripts/scripts/nudt5_evidence_audit.egg-info\ncopying tests/test_assay.py -> nudt5_evidence_audit-0.1.0/tests\ncopying tests/test_controls.py -> nudt5_evidence_audit-0.1.0/tests\ncopying tests/test_documents.py -> nudt5_evidence_audit-0.1.0/tests\ncopying tests/test_extension_figures.py -> nudt5_evidence_audit-0.1.0/tests\ncopying tests/test_pipeline.py -> nudt5_evidence_audit-0.1.0/tests\ncopying tests/test_pubchem_audit.py -> nudt5_evidence_audit-0.1.0/tests\ncopying tests/test_release.py -> nudt5_evidence_audit-0.1.0/tests\ncopying tests/test_selectivity.py -> nudt5_evidence_audit-0.1.0/tests\ncopying tests/test_selectivity_figures.py -> nudt5_evidence_audit-0.1.0/tests\ncopying tests/test_structure_comparison.py -> nudt5_evidence_audit-0.1.0/tests\ncopying tests/test_structure_comparison_figures.py -> nudt5_evidence_audit-0.1.0/tests\ncopying tests/test_transfer.py -> nudt5_evidence_audit-0.1.0/tests\ncopying scripts/scripts/nudt5_evidence_audit.egg-info/SOURCES.txt -> nudt5_evidence_audit-0.1.0/scripts/scripts/nudt5_evidence_audit.egg-info\nWriting nudt5_evidence_audit-0.1.0/setup.cfg\nCreating tar archive\nremoving 'nudt5_evidence_audit-0.1.0' (and everything under it)\n* Building wheel from sdist\n* Getting build dependencies for wheel...\nrunning egg_info\nwriting scripts/scripts/nudt5_evidence_audit.egg-info/PKG-INFO\nwriting dependency_links to scripts/scripts/nudt5_evidence_audit.egg-info/dependency_links.txt\nwriting entry points to scripts/scripts/nudt5_evidence_audit.egg-info/entry_points.txt\nwriting requirements to scripts/scripts/nudt5_evidence_audit.egg-info/requires.txt\nwriting top-level names to scripts/scripts/nudt5_evidence_audit.egg-info/top_level.txt\nreading manifest file 'scripts/scripts/nudt5_evidence_audit.egg-info/SOURCES.txt'\nwriting manifest file 'scripts/scripts/nudt5_evidence_audit.egg-info/SOURCES.txt'\n* Building wheel...\nrunning bdist_wheel\nrunning build\nrunning build_py\ncreating build/lib\ncopying scripts/scripts/pipeline.py -> build/lib\ncopying scripts/scripts/controls.py -> build/lib\ncopying scripts/scripts/transfer.py -> build/lib\ncopying scripts/scripts/selectivity.py -> build/lib\ncopying scripts/scripts/assay.py -> build/lib\ncopying scripts/scripts/structure_comparison.py -> build/lib\nrunning egg_info\nwriting scripts/scripts/nudt5_evidence_audit.egg-info/PKG-INFO\nwriting dependency_links to scripts/scripts/nudt5_evidence_audit.egg-info/dependency_links.txt\nwriting entry points to scripts/scripts/nudt5_evidence_audit.egg-info/entry_points.txt\nwriting requirements to scripts/scripts/nudt5_evidence_audit.egg-info/requires.txt\nwriting top-level names to scripts/scripts/nudt5_evidence_audit.egg-info/top_level.txt\nreading manifest file 'scripts/scripts/nudt5_evidence_audit.egg-info/SOURCES.txt'\nwriting manifest file 'scripts/scripts/nudt5_evidence_audit.egg-info/SOURCES.txt'\ninstalling to build/bdist.linux-x86_64/wheel\nrunning install\nrunning install_lib\ncreating build/bdist.linux-x86_64/wheel\ncopying build/lib/pipeline.py -> build/bdist.linux-x86_64/wheel/.\ncopying build/lib/assay.py -> build/bdist.linux-x86_64/wheel/.\ncopying build/lib/controls.py -> build/bdist.linux-x86_64/wheel/.\ncopying build/lib/selectivity.py -> build/bdist.linux-x86_64/wheel/.\ncopying build/lib/transfer.py -> build/bdist.linux-x86_64/wheel/.\ncopying build/lib/structure_comparison.py -> build/bdist.linux-x86_64/wheel/.\nrunning install_egg_info\nCopying scripts/scripts/nudt5_evidence_audit.egg-info to build/bdist.linux-x86_64/wheel/./nudt5_evidence_audit-0.1.0-py3.12.egg-info\nrunning install_scripts\ncreating build/bdist.linux-x86_64/wheel/nudt5_evidence_audit-0.1.0.dist-info/WHEEL\ncreating '/home/ubuntu/path_b_source_scratch/dist/.tmp-l5qka0_a/nudt5_evidence_audit-0.1.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it\nadding 'assay.py'\nadding 'controls.py'\nadding 'pipeline.py'\nadding 'selectivity.py'\nadding 'structure_comparison.py'\nadding 'transfer.py'\nadding 'nudt5_evidence_audit-0.1.0.dist-info/METADATA'\nadding 'nudt5_evidence_audit-0.1.0.dist-info/WHEEL'\nadding 'nudt5_evidence_audit-0.1.0.dist-info/entry_points.txt'\nadding 'nudt5_evidence_audit-0.1.0.dist-info/top_level.txt'\nadding 'nudt5_evidence_audit-0.1.0.dist-info/RECORD'\nremoving build/bdist.linux-x86_64/wheel\nSuccessfully built nudt5_evidence_audit-0.1.0.tar.gz and nudt5_evidence_audit-0.1.0-py3-none-any.whl\n",
+      "stderr": "warning: build_py: byte-compiling is disabled, skipping.\n\nwarning: install_lib: byte-compiling is disabled, skipping.\n\n"
+    },
+    {
+      "name": "tracked_scope_and_whitespace",
+      "command": "git diff --exit-code && git diff --check",
+      "cwd": "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery",
+      "started_utc": "2026-10-05T23:28:27.695994+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "scope": "Source/identity/provenance tests and unchanged package build in scratch; not biological validation",
+  "not_run": [
+    "Full repository benchmark/control/transfer training suite: prohibited new fitting; only relevant no-fitting tests selected.",
+    "New geometry, docking, MD, experimental work, live database search, journal portal or submission."
+  ],
+  "hooks": "No active local pre-commit/pre-push hook or repository pre-commit configuration found; only .sample hooks. Normal git commit/push will retain hook behavior."
+}

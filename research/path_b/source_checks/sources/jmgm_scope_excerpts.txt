@@ -1,0 +1,15 @@
+https://shop.elsevier.com/journals/journal-of-molecular-graphics-and-modelling/1093-3263
+Accessed 2026-10-05 via webfetch. Selected exact excerpts, not the full policy.
+
+The Journal of Molecular Graphics and Modelling is devoted to the publication of papers on the uses
+of **computers** in theoretical investigations of molecular structure, function, interaction, and
+design.
+
+Routine applications of standard modelling approaches, providing only
+very limited new scientific insight, will not meet our criteria for publication.
+
+Reproducibility of
+reported calculations is an important issue. Wherever possible, we urge authors to enhance their
+papers with Supplementary Data, for example, in QSAR studies machine-readable versions of molecular
+datasets or in the development of new force-field parameters versions of the topology and force
+field parameter files.

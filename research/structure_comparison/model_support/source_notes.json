@@ -1,0 +1,130 @@
+{
+  "definitions": [
+    {
+      "excerpt_whitespace_normalized": "Real Space R (RSR) value - This is a measure of how well each residue in the 3D atomic model matches the experimental data locally in real space (Jones et al., 1991). A lower value indicates better local fitting. A related measure called the RSR Z-score (or RSRZ) (Kleywegt et al., 2004) is included in the X-ray validation reports. Learn more about X-ray validation reports.",
+      "retrieved_utc": "2026-10-05T23:12:48.756969+00:00",
+      "source_file_not_redistributed": "rcsb-quality.html",
+      "source_sha256": "84da8c94deb924ae748a26329dd70107f8bfe1ad0f470554557296190364e53b",
+      "source_url": "https://www.rcsb.org/docs/general-help/assessing-the-quality-of-3d-structures"
+    },
+    {
+      "excerpt_whitespace_normalized": "Another measure, Real-Space-Correlation-Coefficient (RSCC), reflects agreement between 3D atomic coordinates and experimental electron density of over 100 million individual amino acid residues in PDB structures (Shao et al.",
+      "retrieved_utc": "2026-10-05T23:12:48.756969+00:00",
+      "source_file_not_redistributed": "rcsb-quality.html",
+      "source_sha256": "84da8c94deb924ae748a26329dd70107f8bfe1ad0f470554557296190364e53b",
+      "source_url": "https://www.rcsb.org/docs/general-help/assessing-the-quality-of-3d-structures"
+    },
+    {
+      "excerpt_whitespace_normalized": "The quality of a ligand structure in the PDB can be assessed based on how well it matches with the experimental data and on the accuracy of geometrical parameters such as bond lengths and angles. The wwPDB validation report provides validation of individual ligand quality (Feng et al., 2021), including the local electron density goodness-of-fit indicators of real space R factor (RSR) (Jones et al.",
+      "retrieved_utc": "2026-10-05T23:14:13.701548+00:00",
+      "source_file_not_redistributed": "rcsb-ligand-quality.html",
+      "source_sha256": "8d8a4ee0eda030deba5fb06fcd241ce497f103b7f1509aef16e2e10eac4313ea",
+      "source_url": "https://www.rcsb.org/docs/general-help/ligand-structure-quality-in-pdb-structures"
+    },
+    {
+      "excerpt_whitespace_normalized": "Data files contained in the PDB archive are available under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.",
+      "retrieved_utc": "2026-10-05T23:10:39.522161+00:00",
+      "source_file_not_redistributed": "data-policy.html",
+      "source_sha256": "3ee0265456f2ac322d337bc0853a1546b6e0b3637893ccedbd72c0ccee62b06b",
+      "source_url": "https://www.wwpdb.org/about/usage-policies"
+    },
+    {
+      "excerpt_whitespace_normalized": "EMBL-EBI itself places no additional restrictions on the use or redistribution of the data available via its Data Resources and Tools other than those provided by the original data owners, unless otherwise specified in these Terms of Use.",
+      "retrieved_utc": "2026-10-05T23:14:13.703669+00:00",
+      "source_file_not_redistributed": "ebi-terms.html",
+      "source_sha256": "f3c148e6b91501af2a516e24edf0be61c21e2ce1b4e9f40bd834c606f1f23ae9",
+      "source_url": "https://www.ebi.ac.uk/about/terms-of-use/"
+    }
+  ],
+  "original_claims": [
+    {
+      "assessment": "Published interaction interpretation, not a claim that the closest atom must be guanidinium. A backbone or CD minimum is not a refutation.",
+      "attribution": "Balikci et al., J Med Chem 67 (2024), 7245–7259; CC BY 4.0",
+      "doi": "10.1021/acs.jmedchem.4c00072",
+      "end": 496,
+      "id": "B1",
+      "quote": "An additional\nhydrophobic interaction with R51 in chain B",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11089510/",
+      "start": 439,
+      "xpath": "//fig[@id=\"fig3\"]/caption"
+    },
+    {
+      "assessment": "Already published structural contrast; all-site coordinate/model-support bookkeeping adds resolution of identity and missingness, not discovery of the contrast.",
+      "attribution": "Balikci et al., J Med Chem 67 (2024), 7245–7259; CC BY 4.0",
+      "doi": "10.1021/acs.jmedchem.4c00072",
+      "end": 1616,
+      "id": "B2",
+      "quote": "In contrast to NUDT5 where the phenoxy group of the inhibitor engages\nwith the hydrophobic side chain of R51, the NUDT14 structure revealed\nan interaction with L107",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11089510/",
+      "start": 1452,
+      "xpath": "/article/body/sec[2]/p[7]"
+    },
+    {
+      "assessment": "The source explicitly says may; these W0O structures do not test the TH5427 energetic mechanism. No TH5427 complex was added.",
+      "attribution": "Balikci et al., J Med Chem 67 (2024), 7245–7259; CC BY 4.0",
+      "doi": "10.1021/acs.jmedchem.4c00072",
+      "end": 1887,
+      "id": "B3",
+      "quote": "This may also explain the exquisite selectivity\nof TH5427 (6) for NUDT5 over NUDT14.",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11089510/",
+      "start": 1803,
+      "xpath": "/article/body/sec[2]/p[7]"
+    },
+    {
+      "assessment": "Structure and ligand binding predate this analysis; no new complex or independent experiment is added.",
+      "attribution": "Balikci et al., J Med Chem 67 (2024), 7245–7259; CC BY 4.0",
+      "doi": "10.1021/acs.jmedchem.4c00072",
+      "end": 246,
+      "id": "B4",
+      "quote": "solved a cocrystal structure of NUDT5 in complex with 9 at a 2.29 Å resolution",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11089510/",
+      "start": 168,
+      "xpath": "/article/body/sec[2]/p[6]"
+    },
+    {
+      "assessment": "NUDT14-specific numbering, not an asserted Arg51/Leu107 homologous-residue mapping.",
+      "attribution": "Balikci et al., J Med Chem 67 (2024), 7245–7259; CC BY 4.0",
+      "doi": "10.1021/acs.jmedchem.4c00072",
+      "end": 666,
+      "id": "B5",
+      "quote": "The phenoxy substituent engages in a hydrophobic interaction with\nL107 in chain B",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11089510/",
+      "start": 585,
+      "xpath": "//fig[@id=\"fig4\"]/caption"
+    }
+  ],
+  "report_pdf_metadata": [
+    {
+      "CCP4": "9.0.010 (Gargrove)",
+      "Density-Fitness": "1.0.12",
+      "EDS": "3.0",
+      "Mogul": "2022.3.0, CSD as543be (2022)",
+      "MolProbity": "4-5-2 with Phenix2.0",
+      "Xtriage": "2.0",
+      "inspection": "Text extracted with isolated pypdf==6.1.1; PDF figures not a substitute for direct map inspection.",
+      "pdb_id": "8RIY",
+      "pdf_page": 1,
+      "percentile_statistics": "20250101.v01",
+      "report_time": "Mar 20, 2026 – 11:51 AM UTC",
+      "sha256": "9765e69950eb137171f4d7964e1fa505612cb2fba52ac622762b61c4c8ce37a7",
+      "source_url": "https://www.ebi.ac.uk/pdbe/entry-files/download/8riy_full_validation.pdf",
+      "validation_pipeline": "2.49"
+    },
+    {
+      "CCP4": "9.0.010 (Gargrove)",
+      "Density-Fitness": "1.0.12",
+      "EDS": "3.0",
+      "Mogul": "2022.3.0, CSD as543be (2022)",
+      "MolProbity": "4-5-2 with Phenix2.0",
+      "Xtriage": "2.0",
+      "inspection": "Text extracted with isolated pypdf==6.1.1; PDF figures not a substitute for direct map inspection.",
+      "pdb_id": "8OTV",
+      "pdf_page": 1,
+      "percentile_statistics": "20250101.v01",
+      "report_time": "Mar 8, 2026 – 09:48 AM UTC",
+      "sha256": "48130a60d09fc7f3221f03f42ecc20149c4bae4b5751a010ab49ef26e4551a5b",
+      "source_url": "https://www.ebi.ac.uk/pdbe/entry-files/download/8otv_full_validation.pdf",
+      "validation_pipeline": "2.49"
+    }
+  ]
+}

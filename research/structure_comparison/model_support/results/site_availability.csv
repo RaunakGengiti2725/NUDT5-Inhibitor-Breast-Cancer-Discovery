@@ -1,0 +1,5 @@
+assembly_id,auth_asym_id,auth_comp_id,auth_seq_id,insertion_code_raw,label_asym_id,label_comp_id,label_entity_id,label_seq_id,model_id,operation_id,pdb_id,site_id,target,rscc,rsr,rsrz,avgoccu,NatomsEDS,report_status,map_availability,independent_density_validation,rerefinement
+1,A,W0O,301,?,C,W0O,2,.,1,1,8OTV,8OTV:model1:C:A:301,NUDT14,0.952,0.076,,1.000,30,exact_record,both_PDBe_maps_retrieved_and_sampled,False,False
+1,B,W0O,302,?,F,W0O,2,.,1,1,8OTV,8OTV:model1:F:B:302,NUDT14,0.928,0.097,,1.000,30,exact_record,both_PDBe_maps_retrieved_and_sampled,False,False
+1,AAA,W0O,301,?,C,W0O,2,.,1,1,8RIY,8RIY:model1:C:AAA:301,NUDT5,0.931,0.094,,1.000,30,exact_record,both_PDBe_maps_retrieved_and_sampled,False,False
+1,BBB,W0O,301,?,D,W0O,2,.,1,1,8RIY,8RIY:model1:D:BBB:301,NUDT5,0.940,0.091,,1.000,30,exact_record,both_PDBe_maps_retrieved_and_sampled,False,False

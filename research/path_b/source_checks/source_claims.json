@@ -1,0 +1,155 @@
+{
+  "scope": "Claim-level bounded source checks; see writer instructions for scope limits.",
+  "claims": [
+    {
+      "id": "S01",
+      "status": "verified_with_stated_bounds",
+      "claim": "TH1713 is Page compound 2; reported malachite-green IC50 70 nM.",
+      "source_id": "page_fulltext",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+      "locator": "/article/body/sec[2]/sec[3]/p[1]",
+      "quote": "The 8-dimethylamino variant, 2 (TH1713, MG assay IC50 = 70 nM, Fig. 2b), had more than 8-fold greater potency over TH1167.",
+      "limitations": "Source-specific assay, not a binding KD."
+    },
+    {
+      "id": "S02",
+      "status": "verified_with_stated_bounds",
+      "claim": "TH5427 is Page compound 28; MG IC50 29 nM and intact-cell ITDRF-CETSA apparent EC50 2.1 µM are different endpoints.",
+      "source_id": "page_fulltext",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+      "locator": "/article/body/sec[2]/sec[6]/p[3]",
+      "quote": "The 16 NUDT5 inhibitors that met the IC50 < 100 nM criterion were subsequently screened for NUDT5 engagement at 20 µM in HL-60 cell lysates. Relative NUDT5 levels in the presence of compounds compared to a 37 °C control are shown in Fig. 3b. Of the evaluated inhibitors, compounds 25 (TH5423, MG assay IC50 = 54 nM), 26 (TH5424, MG assay IC50 = 39 nM) and 28 (TH5427, MG assay IC50 = 29 nM) showed the most stabilization of NUDT5 in cell lysates. These compounds, as well as 4 (TH1659, MG assay IC50 = 20 nM but was unable to stabilize NUDT5 above the 50 % cutoff) were then analyzed for target engagement with intact cells. At 20 µM, TH5423, TH5424 and TH5427 all stabilized NUDT5 to nearly the same levels as observed in the 37 °C DMSO control (Fig. 3c), whereas TH1659 showed a smaller degree of stabilization. ITDRFCETSA illustrated that TH5427 was the most potent stabilizer under the described conditions with an apparent EC50 of 2.1 µM (Fig. 3d). Accordingly, TH5427 had a positive, dose-dependent shift in the apparent Tagg—the temperature at which 50 % of the target protein denatures and aggregates (TH5427 shifted NUDT5 Tagg up to ≈ 8 °C; Supplementary Fig. 6). TH5423 and TH5424 could also dose-dependently stabilize NUDT5, however much higher concentrations were required. TH1659 demonstrated poor-to-moderate stabilization of NUDT5 in lysates and intact cells and was also distinctly toxic under tested conditions, which cast further doubt on its potential as an adequately selective NUDT5-targeted probe (Supplementary Fig. 7).",
+      "limitations": "Do not exchange catalytic potency, binding affinity and cell engagement."
+    },
+    {
+      "id": "S03",
+      "status": "verified_with_stated_bounds",
+      "claim": "Page maps TH1713 to 5NQR and TH5427 to 5NWH.",
+      "source_id": "page_fulltext",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+      "locator": "/article/body/sec[4]/sec[14]/p",
+      "quote": "The coordinates and structure factors for the structures presented in this paper were deposited in the PDB under code 5NQR (NUDT5_TH1713) and 5NWH (NUDT5_TH5427).",
+      "limitations": "CCD 958 synonym text conflicts with source/PDB graph assignment."
+    },
+    {
+      "id": "S04",
+      "status": "verified_with_stated_bounds",
+      "claim": "Published TH5427 route: Page Supplementary Methods, publisher-linked Supplementary Information.",
+      "source_id": "page_fulltext",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+      "locator": "/article/body/sec[4]/sec[11]/p",
+      "quote": "NUDT5 inhibitors were synthesized according to the methods described in the Supplementary Methods.",
+      "limitations": "Route identified; PDF fetched, not internally text-inspected; no sample acquisition, synthesis or batch verification."
+    },
+    {
+      "id": "S05",
+      "status": "verified_with_stated_bounds",
+      "claim": "Page states materials/protocols/supporting data may be obtained by reasonable request.",
+      "source_id": "page_fulltext",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+      "locator": "/article/body/sec[4]/sec[23]/p",
+      "quote": "Materials, protocols and other supporting data used in this study may be obtained from the corresponding authors upon reasonable request. The coordinates and structure factors for the structures presented in this paper were deposited in the PDB under code 5NQR (NUDT5_TH1713) and 5NWH (NUDT5_TH5427).",
+      "limitations": "This is a published request route, not evidence of current availability; nobody contacted."
+    },
+    {
+      "id": "S06",
+      "status": "verified_with_stated_bounds",
+      "claim": "Compound 9 has a published synthesis and characterization in section 4.1.2 (with precursors/Scheme 1); source reports 69% yield, HPLC 96.3%, NMR and MS.",
+      "source_id": "balikci_fulltext",
+      "source_url": "https://doi.org/10.1021/acs.jmedchem.4c00072",
+      "locator": "//*[@id=\"sec4.1.2\"]",
+      "quote": "1-(1-Methylpiperidin-4-yl)-3-(4-phenoxyphenyl)-1H-pyrazolo[3,4-d]pyrimidin-4-amine (9)A solution of 17a (91.6 mg, 0.294 mmol, 1.0 equiv), 4-phenoxyphenylboronic acid (94.5 mg, 0.442 mmol, 1.5 equiv), and sodium carbonate (68.6 mg, 0.648 mmol, 2.2 equiv) in 1,4-dioxane/water (21/3 mL) was degassed. After addition of Pd(dppf)Cl2·DCM (13.2 mg, 0.0162 mmol, 0.055 equiv), the reaction mixture was again degassed and stirred overnight with vigorous stirring at 80 °C. After cooling to rt, the mixture was diluted in ethyl acetate, filtered through a short pad of celite, and concentrated in vacuo. The purification of the residue by automated flash chromatography (silica column) using a gradient elution of 0–10% methanol in DCM afforded 9 as a beige solid (81.0 mg, 0.202 mmol, 69% yield). 1H NMR (400 MHz, DMSO-d6) δ 8.23 (s, 1H), 7.65 (d, J = 8.5 Hz, 2H), 7.43 (t, J = 7.9 Hz, 2H), 7.20–7.11 (m, 5H), 4.68–4.60 (m, 1H), 2.92 (d, J = 10.5 Hz, 2H), 2.24 (s, 3H), 2.20–2.09 (m, 4H), 1.89 (d, J = 11.4, 2H); 13C NMR (101 MHz, DMSO-d6) δ 158.2, 157.1, 156.3, 155.5, 153.7, 142.8, 130.1 (2C), 130.0 (2C), 128.1, 123.8, 118.98 (2C), 118.96 (2C), 97.5, 54.4 (2C), 53.4, 45.7, 30.9 (2C); HPLC: tR = 1.36 min (96.3%); MS (ESI+): m/z 401.615 [M + H]+.",
+      "limitations": "Reported analytical results authenticate the publication, not any future supplied lot."
+    },
+    {
+      "id": "S07",
+      "status": "verified_with_stated_bounds",
+      "claim": "Paired catalytic AMP-Glo assay uses 1 nM enzyme, 10 µM ADPr, 1% DMSO; NUDT5 20 minutes versus NUDT14 1 hour, with shared 500 nM TH5427 zero normalization.",
+      "source_id": "balikci_fulltext",
+      "source_url": "https://doi.org/10.1021/acs.jmedchem.4c00072",
+      "locator": "//*[@id=\"sec4.3\"]/p",
+      "quote": "Inhibition activities of the compounds were determined using AMP-Glo system (Promega). The compounds were diluted from 50 μM to 0 μM in a final reaction containing 20 mM HEPES, 100 mM NaCl, 0.5 mM TCEP, 1 mM MgCl2, and 0.1% BSA, pH 7.4. The reactions were performed in 1536-well plates in a 2 μL reaction volume with 1 nM of NUDT5 or NUDT14, and 10 μM of ADPr as the substrate. The final DMSO concentration was 1% for all reactions. NUDT5 reactions were incubated for 20 min, while NUDT14 reactions were carried out for 1 h at rt. The reactions were stopped by adding 2 μL of AMP-Glo I. The stop solution is supplemented with 25 μM of a compound, PubChem CID 16339098, in order to stop enzyme activity completely. The reactions were further incubated with 4 μL of the detection solution for 1 h at rt. Luminescence signals were then measured in a PHERAstar FSX plate reader. Experiments were done in triplicate sets, and data were analyzed by GraphPad Prism 9. Inhibitor dose–response data were normalized to reactions containing vehicle only (1% v/v DMSO, 100% activity) and reactions containing 500 nM TH5427 (6) (1% v/v DMSO, 0% activity). Data are represented as the mean ± SD of two independent biological replicates.",
+      "limitations": "Triplicate sets and two independent biological replicates are both stated; do not invent replicate hierarchy, raw covariance, ratio confidence interval, matched kinetics, KD or Ki."
+    },
+    {
+      "id": "S08",
+      "status": "verified_with_stated_bounds",
+      "claim": "Table 1 footnote reports IC50 and SD from two independent biological replicates; NA means IC50 >50 µM.",
+      "source_id": "balikci_fulltext",
+      "source_url": "https://doi.org/10.1021/acs.jmedchem.4c00072",
+      "locator": "//*[@id=\"tbl1\"]",
+      "quote": "Table 1NUDT5 and NUDT14 Catalytic Assay ResultsaaIC50 values and SD were calculated from two independent biological replicates (n = 2).bNA, not active (IC50 > 50 μM).",
+      "limitations": "Numerical source cells come from author supplement CSV, not invented extraction from a table image; censored values are not exact 50."
+    },
+    {
+      "id": "S09",
+      "status": "verified_with_stated_bounds",
+      "claim": "Compound 9 source NUDT5 structure is 8RIY; source SPR caption reports approximately 250 nM KD.",
+      "source_id": "balikci_fulltext",
+      "source_url": "https://doi.org/10.1021/acs.jmedchem.4c00072",
+      "locator": "//*[@id=\"fig3\"]/caption/p",
+      "quote": "Biophysical assay results and cocrystal structure of compound 9 bound to NUDT5. (A) SPR results for compound 9 indicating a KD value of approximately 250 nM for NUDT5. Data are from two independent experiments (n = 2). (B) Cocrystal structure of NUDT5 bound to compound 9 (PDB: 8RIY). Compound 9 occupies the active site of NUDT5 where it mediates π–π stacking interactions with W46 of chain A (dark gray) and W28 of chain B (light gray). An additional hydrophobic interaction with R51 in chain B and a hydrogen bond with the main chain of E47 in chain A can be observed. Compound 9 (salmon) and interacting residues are shown in stick representation.",
+      "limitations": "A source SPR KD is separate from catalytic IC50; caption reading is not new coordinate or density validation."
+    },
+    {
+      "id": "S10",
+      "status": "verified_with_stated_bounds",
+      "claim": "Compound 9 source NUDT14 structure is 8OTV; source SPR caption reports approximately 400 nM KD.",
+      "source_id": "balikci_fulltext",
+      "source_url": "https://doi.org/10.1021/acs.jmedchem.4c00072",
+      "locator": "//*[@id=\"fig4\"]/caption/p",
+      "quote": "Biophysical assay results and cocrystal structure of compound 9 bound to NUDT14. (A) SPR results for compound 9 indicating a KD value of approximately 400 nM for NUDT14. Data are from two independent experiments (n = 2). (B) Overall structure of NUDT14 depicting the N-terminal domain, the NUDIX domain, and the active site (PDB: 8OTV). Chain A (pale green) and chain B (green) constitute a dimer. Compound 9 (violet) is located in the catalytic site. (C) Compound 9 binds to NUDT14 at the dimer interface between W34 of chain A and Y17 of chain B, enabling π–π stacking interactions. The phenoxy substituent engages in a hydrophobic interaction with L107 in chain B, whereas the purine core forms hydrogen bonds with D35 in chain A. (D) Superposition of NUDT5 and -14 active sites bound to compound 9. NUDT5 in complex with 9 (black) is shown in gray tones (chain A—dark gray and chain B—light gray), while NUDT14 in complex with compound 9 (dark green) is in green tones (chain A—green and chain B—pale green).",
+      "limitations": "Source interpretation is not proof of a proximity-to-energy mechanism or a selectivity inference."
+    },
+    {
+      "id": "S11",
+      "status": "verified_with_stated_bounds",
+      "claim": "Qian xenograft protocol reports four mice in the TH5427 group found dead after day 7.",
+      "source_id": "qian_fulltext",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10845800/fullTextXML",
+      "locator": "/article/body/sec[2]/sec[7]/p",
+      "quote": "4 mice in the TH5427 treatment group were found dead after day 7.",
+      "limitations": "Retain safety/interpretability context; cause of death is not established here and this is not independent toxicity validation."
+    },
+    {
+      "id": "S12",
+      "status": "verified_with_stated_bounds",
+      "claim": "Qian 2024 correction addresses incomplete funding information for Negar Koupaei.",
+      "source_id": "qian_correction_fulltext",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10967199/fullTextXML",
+      "locator": "/article/body/p[3]",
+      "quote": "The original article has incomplete funding information with regard to author Negar Koupaei. The complete funding note is as follows:",
+      "limitations": "Not a correction to efficacy, compound identity or cause of deaths; cite the correction without inventing changed results."
+    },
+    {
+      "id": "S13",
+      "status": "verified_with_stated_bounds",
+      "claim": "Marques now has a 2026 peer-reviewed version: selective degradation/knockout context supports a non-enzymatic contribution to 6-TG response.",
+      "source_id": "marques_fulltext",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+      "locator": "/article/front/article-meta/abstract[1]",
+      "quote": "6-Thioguanine (6-TG) is an FDA-approved antimetabolite drug that is widely used clinically, including for the treatment of leukemia. Its cellular effects require metabolic activation and are regulated through interactions with various proteins such as NUDT15, which catalyzes the hydrolysis of the active 6-TG metabolites 6-thio-deoxyGTP (6-thio-dGTP) and 6-thio-GTP. Recent genome-wide CRISPR loss-of-function studies have identified another NUDIX hydrolase, NUDT5, as a crucial mediator of 6-TG toxicity. Here, we develop and validate a selective, cell-active NUDT5 degrader toolkit and orthogonally characterize target engagement, ternary complex formation, degradation kinetics, and proteome-wide selectivity. These degraders, in conjunction with orthogonal CRISPR knock-out and reconstitution experiments, support a non-enzymatic role for NUDT5 in modulating the cellular response to 6-TG. Depletion of NUDT5 protein is antagonistic to NUDT15 inhibition, suggesting a distinct mode-of-action with potential implications for patient therapy.",
+      "limitations": "Different perturbations and cellular contexts are not equivalent; do not generalize protein loss to catalytic inhibition or claim clinical efficacy."
+    },
+    {
+      "id": "S14",
+      "status": "abstract_supported_only",
+      "claim": "Nguyen reports a scaffolding/non-enzymatic role involving PPAT and purine de novo synthesis.",
+      "source_id": "nguyen_metadata",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:41196952%20AND%20SRC:MED&format=json&resultType=core",
+      "locator": "resultList.result[0].abstractText",
+      "quote": "Folate metabolism is intricately linked to purine de novo synthesis through the incorporation of folate-derived one-carbon units into the purine scaffold. By investigating chemical and genetic dependencies caused by mutations in methylenetetrahydrofolate dehydrogenase, cyclohydrolase, and formyltetrahydrofolate synthetase 1 (MTHFD1), we discovered a key role for Nudix hydrolase 5 (NUDT5) in regulating purine de novo synthesis. Genetic depletion and selective chemical degradation showed that a scaffolding role, rather than NUDT5 enzymatic activity, was causing this phenotype. NUDT5 interacted with phosphoribosyl pyrophosphate amidotransferase (PPAT), the rate-limiting enzyme of purine de novo synthesis, to repress the pathway in response to increased purine abundance. Through this mechanism, loss of NUDT5 mediates resistance to purine analogs in cancer treatment and prevents adenosine toxicity in MTHFD1 deficiency.",
+      "limitations": "One official full-text attempt returned 403. Cut Y74E and all full-text/figure-inspection claims. Access failure does not disprove the publication."
+    },
+    {
+      "id": "S15",
+      "status": "verified_with_stated_bounds",
+      "claim": "Page 2019 correction adds ERC 695376 (T.H.) to acknowledgements.",
+      "source_id": "page_correction",
+      "source_url": "https://doi.org/10.1038/s41467-019-12806-1",
+      "locator": "publisher correction body",
+      "quote": "This work was funded by the European Research Council (695376) (T.H.).",
+      "limitations": "Not a structural/identity or experimental-results correction."
+    }
+  ]
+}

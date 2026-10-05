@@ -1,0 +1,53 @@
+{
+  "as_of_utc": "2026-10-05",
+  "journal": "Journal of Molecular Graphics and Modelling",
+  "guide_source_id": "jmgm_author_guide",
+  "guide_access_status": 403,
+  "scope_source_id": "jmgm_scope",
+  "general_policy_source_id": "elsevier_ai",
+  "compliance_certified": false,
+  "checks": [
+    {
+      "topic": "article_fit",
+      "status": "scope_verified_not_fit_certified",
+      "verified_or_bounded_note": "Computational molecular structure/interaction work is within the broad scope, but the publisher excludes routine methods without genuine new insight. This is a narrow deposited-coordinate reanalysis, not a demonstrated accepted contribution.",
+      "unchecked_requirements": "Exact eligible article category and editorial sufficiency remain unchecked."
+    },
+    {
+      "topic": "structure_and_word_limits",
+      "status": "unchecked",
+      "verified_or_bounded_note": "No numeric word, abstract, title, keyword, highlight, reference, table or figure limits are certified.",
+      "unchecked_requirements": "Article-type limits, mandatory headings, structured abstract, highlights and graphical abstract requirements."
+    },
+    {
+      "topic": "declarations",
+      "status": "partly_verified_general_AI_policy_only",
+      "verified_or_bounded_note": "General AI policy gives human accountability/authorship and disclosure obligations; author-owned facts remain unresolved.",
+      "unchecked_requirements": "JMGM title-page fields, CRediT format, funding/COI forms, approvals, acknowledgments/permissions and declaration placement."
+    },
+    {
+      "topic": "data_and_code",
+      "status": "scope_encouragement_verified",
+      "verified_or_bounded_note": "Official scope emphasizes reproducibility and encourages machine-readable supplementary datasets. This is not proof of a mandatory repository or licensing rule.",
+      "unchecked_requirements": "Mandatory availability statement, repository/deposit rules, code/software citation, review anonymization, embargo and supplement limits."
+    },
+    {
+      "topic": "figures",
+      "status": "current_general_AI_policy_verified",
+      "verified_or_bounded_note": "Current publisher policy distinguishes explanatory images, data visualizations and primary research images. Reproducible data-derived AI-assisted visualization is permitted with Methods disclosure; explanatory images need caption plus general disclosure. Do not invent underlying data or primary research images. Formal AI-based research methods must be reproducibly described in Methods. General-purpose generative-AI image tools must not create graphical abstracts; AI-generated cover art requires prior journal editor/publisher permission.",
+      "unchecked_requirements": "JMGM-specific file type, resolution, dimensions, color/accessibility, graphical-abstract and rights/permission requirements."
+    },
+    {
+      "topic": "AI_disclosure",
+      "status": "current_general_policy_verified_author_approval_pending",
+      "verified_or_bounded_note": "Disclose tool, purpose and oversight for substantive manuscript assistance; research-process use belongs in Methods. AI is not an author. Basic spelling/grammar-only checks are exempt, but this assistance goes beyond that.",
+      "unchecked_requirements": "Author-approved complete tool/version/assistance history and exact JMGM statement placement/portal fields."
+    },
+    {
+      "topic": "submission",
+      "status": "unchecked_not_authorized",
+      "verified_or_bounded_note": "No submission, account/portal action, cover letter or final declaration prepared.",
+      "unchecked_requirements": "Current portal, blinded versus unblinded files, article category, reviewer/exclusion fields, submission forms, prior-publication declarations, exclusivity, revision requirements and any fees/open-access choices."
+    }
+  ]
+}

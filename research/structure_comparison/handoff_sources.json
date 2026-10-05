@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "citation": "Balıkçı et al. J Med Chem 67, 7245–7259 (2024), DOI 10.1021/acs.jmedchem.4c00072. © 2024 The Authors, CC BY 4.0.",
+  "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+  "source_path": "sources/PMC11089510.xml",
+  "source_sha256": "0710da1ebedd4accde6e6cddf8cfe9a2d350c062890fbcfd03bf94bd6f316df0",
+  "inspection": "Re-inspected archived XML during integration; no new retrieval or measurements. Exact concatenated itertext including title and whitespace, no invented page numbers. Original retrieval metadata remains in retrieval_manifest.json.",
+  "excerpts": [
+    {
+      "claim_id": "M01",
+      "claim_category": "reported_primary_methods",
+      "verification_status": "verified",
+      "xpath": "//sec[@id=\"sec4.2\"]",
+      "text_exact_itertext": "Protein Expression and PurificationGenes encoding\nNUDT5 (NCBI reference NP_054861, residues 1-208) and NUDT14 (NCBI\nreference NP_803877, residues 1-222) were amplified by PCR (primer\ninformation Table S3). The amplified PCR\nproducts were cloned into expression vector pNIC28-Bsa426 by ligation-independent cloning. The resulting\nconstructs express the proteins fused with an N-terminal 6× histidine\ntag followed by a TEV protease cleavage site. All plasmids were transformed\ninto Escherichia coli (DE3), and protein\nexpression was induced at a cell density of OD600 = 0.8\nwith 0.3 or 0.5 mM isopropyl-d-1-thiogalactopyranoside (IPTG)\nat 18 °C overnight for NUDT14 and NUDT5, respectively. Cell pellets\nwere resuspended in lysis buffer containing 20 mM HEPES, 500 mM NaCl,\n5% glycerol, and 0.5 mM TCEP pH 7.5 supplemented with lysozyme, protease\ninhibitor cocktail (Set III, EDTA-free, Calbiochem), and benzonase\n(2 μL of 10,000 U/μL, Merck). Cells were then lysed using\nan ultrasonic cell disruptor Vibra-Cell (Sonics). The clarified supernatant\nwas injected into a Ni-NTA affinity chromatography column (HisTrap\nCrude FF GE Healthcare) and eluted with a gradient of increasing imidazole\nconcentrations. The affinity-purified proteins were further incubated\nwith TEV protease overnight at 4 °C and purified by reverse nickel\naffinity. Proteins were further purified by size-exclusion chromatography\n(16/600 Superdex 75 PG, GE Healthcare) in buffer (20 mM HEPES, pH\n7.5, 500 mM NaCl, 0.5 mM TCEP). Protein purity was analyzed by sodium\ndodecyl sulfate polyacrylamide gel electrophoresis (SDS-PAGE), and\nproteins were concentrated to 20 mg/mL for NUDT14 and 26 mg/mL for\nNUDT5 using 10,000 MWCO Vivaspin concentrators (Vivascience).",
+      "limit": "Construct/purification precedent; not qualification of new mutants."
+    },
+    {
+      "claim_id": "M02",
+      "claim_category": "reported_primary_methods",
+      "verification_status": "verified",
+      "xpath": "//sec[@id=\"sec4.8\"]",
+      "text_exact_itertext": "Binding Affinity DeterminationSurface plasmon resonance\n(SPR) experiments were performed using a Biacore S200 instrument at\n25 °C. Samples were immobilized on a CM5 chip using amine-coupling\nmethod according to the manufacturer’s instructions using a\nrunning buffer containing 50 mM HEPES, 150 mM NaCl, 2 mM MgCl2, and 0.05% Tween-20, pH 7.5. The binding affinity assay was\nrun with 2% DMSO in the running buffer at a flow rate of 30 μL/min\nwith a 60 s association and 200 s dissociation times. All of the assays\nwere performed twice, and binding affinity was calculated using BIAevaluation\nsoftware.",
+      "limit": "SPR precedent only; text does not qualify R51 variants, active fractions or fitting model."
+    },
+    {
+      "claim_id": "M03",
+      "claim_category": "reported_primary_methods",
+      "verification_status": "verified",
+      "xpath": "//sec[@id=\"sec4.3\"]",
+      "text_exact_itertext": "Catalytic\nAssaysInhibition activities of the compounds\nwere determined using AMP-Glo system (Promega). The compounds were\ndiluted from 50 μM to 0 μM in a final reaction containing\n20 mM HEPES, 100 mM NaCl, 0.5 mM TCEP, 1 mM MgCl2, and\n0.1% BSA, pH 7.4. The reactions were performed in 1536-well plates\nin a 2 μL reaction volume with 1 nM of NUDT5 or NUDT14, and\n10 μM of ADPr as the substrate. The final DMSO concentration\nwas 1% for all reactions. NUDT5 reactions were incubated for 20 min,\nwhile NUDT14 reactions were carried out for 1 h at rt. The reactions\nwere stopped by adding 2 μL of AMP-Glo I. The stop solution\nis supplemented with 25 μM of a compound, PubChem CID 16339098,\nin order to stop enzyme activity completely. The reactions were further\nincubated with 4 μL of the detection solution for 1 h at rt.\nLuminescence signals were then measured in a PHERAstar FSX plate reader.\nExperiments were done in triplicate sets, and data were analyzed by\nGraphPad Prism 9. Inhibitor dose–response data were normalized\nto reactions containing vehicle only (1% v/v DMSO, 100% activity)\nand reactions containing 500 nM TH5427 (6) (1% v/v DMSO,\n0% activity). Data are represented as the mean ± SD of two independent\nbiological replicates.",
+      "limit": "Catalytic not binding endpoint; target times differ; normalization/replication ambiguities retained."
+    },
+    {
+      "claim_id": "M04",
+      "claim_category": "reported_primary_methods",
+      "verification_status": "verified",
+      "xpath": "//sec[@id=\"sec4.4\"]",
+      "text_exact_itertext": "NanoBRET Target Engagement AssayNanoBRET Target Engagement\nAssays were done by using the NanoBRET Target Engagement Intracellular\nKinase Assay kit (Promega) according to the manufacturer’s\ninstructions. In brief, 200,000 HEK293 cells/mL were reverse-transfected\nwith either N-terminal NanoLuc tagged NUDT5 or C-terminal NanoLuc\ntagged BTK plasmid using FuGENE transfection reagent (Promega). After\n24 h of incubation, cells were trypsinized and adjusted to 200,000\ncells/mL in assay medium (Opti-MEM + 4% FBS). 2.5 nM CBH-004 and 0.5\nμM tracer-05 (Promega) were used for the NUDT5 and BTK assay,\nrespectively. Tracers were spiked into the cell suspension, and 40\nμL of cells were seeded into each well of a white PP 384-well\nplate (781207, Greiner) containing the compounds prepared by an Echo\nLiquid Handler. After 2 h of incubation, a mix of substrate and extracellular\nNanoLuc inhibitor in assay medium were added into each well. Donor\nand acceptor signals were measured in a PHERAstar FSX or FS plate\nreader and analyzed by GraphPad Prism (v.9 or v.10). For this, the\nacceptor/donor ratio was calculated and the no tracer background signal\nwas subtracted and multiplied by 1000 to yield mBRET units. Data were\nthen normalized to DMSO.",
+      "limit": "NUDT5/BTK NanoBRET protocol, not an occupancy equivalence rule."
+    },
+    {
+      "claim_id": "M05",
+      "claim_category": "reported_primary_methods",
+      "verification_status": "verified",
+      "xpath": "//sec[@id=\"sec4.5\"]",
+      "text_exact_itertext": "HiBiT Cellular Thermal Shift AssayTo determine NUDT14\nengagement in intact cells, a HiBiT cellular thermal shift assay was\nset up.27 The Nano-Glo HiBiT lytic detection\nsystem was used following the manufacturer’s instructions (Promega).\nIn brief, 400,000 HEK293 cells/mL were reverse-transfected with N-terminal\nHiBiT tagged NUDT14 using FuGENE transfection reagent (Promega). After\n24 h of incubation, cells were trypsinized and resuspended at 400,000\ncells/mL in assay medium. The cells were divided into compound and\nuntreated (DMSO) groups and treated accordingly. Ten μL of cells\nwere seeded into each well in a 384-well white PCR plate and incubated\nfor 1 h. After incubation, the samples were heated in a PCR thermocycler\nat the desired temperature gradient. The plate was allowed to stand\nfor 5 min at rt, and 10 μL of Nano-Glo HiBiT lytic mix was added\ninto each well. The signals were measured in a PHERAstar FSX and analyzed\nby GraphPad Prism (v.9 or v.10).",
+      "limit": "NUDT14 HiBiT-CETSA protocol, not an affinity or occupancy curve."
+    }
+  ]
+}

@@ -70,3 +70,13 @@ Structure analysis cannot establish cellular selectivity, inhibition kinetics, o
 - **P:** Page et al., *Targeted NUDT5 inhibitors block hormone signaling in breast cancer cells*, Nature Communications 9, 250 (2018). DOI [10.1038/s41467-017-02293-7](https://doi.org/10.1038/s41467-017-02293-7). [Full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC5772648/); [downloaded full-text XML](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML); [supplementary package](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/supplementaryFiles). Relevant: structural Results, TH5427 selectivity, Fig. 4, crystallography/selectivity Methods, SI Figs. 5 and 9, TH5427 synthesis.
 - **B:** Balikci et al., *Unexpected Noncovalent Off-Target Activity of Clinical BTK Inhibitors Leads to Discovery of a Dual NUDT5/14 Antagonist*, Journal of Medicinal Chemistry 67, 7245–7259 (2024). DOI [10.1021/acs.jmedchem.4c00072](https://doi.org/10.1021/acs.jmedchem.4c00072). [Full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC11089510/); [downloaded XML](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML); [supplementary package](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/supplementaryFiles). Relevant: Table 1, Figs. 1–5, catalytic/protein/crystallography Methods, SI S11–12 and S44, and jm4c00072_si_002.csv.
 - Deposits are linked above. Exact mmCIF, entity, assembly and CCD endpoints, retrieval hashes and a claim-to-source ledger accompany this report.
+
+
+## Integration pointer (5 October 2026; original investigation preserved above)
+
+The later [all-site observed-coordinate run](../structure_comparison/results/VERIFICATION.md)
+and [bounded lab handoff](../structure_comparison/lab_handoff.md) supersede the prospective
+contact-calculation recommendation, not this report's historical scope. They retain all sites,
+missingness and occupancy, including a backbone Arg51 minimum at one NUDT5 site. They do not
+establish the published Arg51 rationale, energetics, selectivity or experiment readiness.
+No earlier source inspection or runtime provenance is retroactively claimed.

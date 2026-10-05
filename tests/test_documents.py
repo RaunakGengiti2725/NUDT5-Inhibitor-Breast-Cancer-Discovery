@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 from zipfile import ZipFile
 
@@ -13,6 +14,7 @@ def test_markdown_blocks_preserve_headings_paragraphs_and_table() -> None:
         ("table", [["A", "B"], ["1", "2"]]),
     ]
     assert plain("**bold** and `code`") == "bold and code"
+    assert plain("fractional (*) and partial (†)") == "fractional (*) and partial (†)"
 
 
 def test_build_pdf_and_word_from_recorded_results(tmp_path: Path) -> None:
@@ -201,4 +203,158 @@ def test_render_failure_does_not_publish_partial_documents(
     with pytest.raises(RuntimeError, match="Rendering failed"):
         build(ROOT / "research/manuscript.md", ROOT / "research/results", output)
     assert list(output.iterdir()) == []
+    assert not list(tmp_path.glob(".nudt5-documents-*"))
+
+
+STRUCTURE = ROOT / "research/structure_comparison"
+RECORDED = STRUCTURE / "results/observed_proximity.json"
+RECORDED_MANIFEST = STRUCTURE / "results/derived/derived_manifest.json"
+
+
+def test_structural_documents_and_supplement_are_recorded(tmp_path: Path) -> None:
+    import hashlib
+
+    manuscript = tmp_path / "paper.md"
+    manuscript.write_text("# SOFTWARE INTEGRATION TEST\n\nNo new biological result.\n")
+    pdf, word = build(
+        manuscript,
+        ROOT / "research/results",
+        tmp_path / "output",
+        structure_input=RECORDED,
+        structure_manifest=RECORDED_MANIFEST,
+        require_structure=True,
+    )
+    assert pdf.read_bytes().startswith(b"%PDF")
+    with ZipFile(word) as archive:
+        text = archive.read("word/document.xml").decode()
+        assert "Figure 7A" in text and "Figure 7B" in text
+        assert "binding measurements" in text
+        assert len([p for p in archive.namelist() if p.startswith("word/media/")]) == 8
+    assert (
+        "Observed-coordinate supplement" in (word.parent / "supplementary_results.md").read_text()
+    )
+    for name in ("lab_handoff.md", "hypotheses_controls.csv", "handoff_sources.json"):
+        assert (word.parent / name).read_bytes() == (STRUCTURE / name).read_bytes()
+    for name in (
+        "residue_proximity.csv",
+        "atom_pairs_within_5A.csv",
+        "radius_sensitivity.csv",
+        "observed_proximity_map.png",
+        "observed_proximity_map.svg",
+        "observed_proximity_map.pdf",
+    ):
+        assert (word.parent / name).read_bytes() == (
+            STRUCTURE / "results/derived" / name
+        ).read_bytes()
+    record = json.loads((word.parent / "documents-manifest.json").read_text())
+    assert record["structure_status"] == "recorded"
+    for name, entry in record["artifacts"].items():
+        assert entry["sha256"] == hashlib.sha256((word.parent / name).read_bytes()).hexdigest()
+
+
+@pytest.mark.parametrize(
+    "defect",
+    [
+        "missing_input",
+        "missing_manifest",
+        "both_missing",
+        "stale",
+        "invalid_json",
+        "empty_object",
+        "empty_rows",
+        "empty_sites",
+        "empty_structures",
+        "manifest_array",
+        "manifest_missing_hash",
+        "truncated_inventory",
+        "symlink",
+    ],
+)
+def test_bad_structural_evidence_never_publishes(tmp_path: Path, defect: str) -> None:
+    import hashlib
+
+    source, manifest = tmp_path / "structure.json", tmp_path / "manifest.json"
+    data = RECORDED.read_bytes()
+    if defect == "invalid_json":
+        data = b"{broken"
+    elif defect == "empty_object":
+        data = b"{}"
+    elif defect.startswith("empty_") or defect == "truncated_inventory":
+        result = json.loads(data)
+        if defect == "truncated_inventory":
+            result["residue_proximity"].pop()
+        else:
+            key = {
+                "empty_rows": "residue_proximity",
+                "empty_sites": "sites",
+                "empty_structures": "structures",
+            }[defect]
+            result[key] = []
+        data = json.dumps(result).encode()
+    source.write_bytes(data)
+    manifest.write_text(json.dumps({"input_sha256": hashlib.sha256(data).hexdigest()}))
+    if defect in ("missing_input", "both_missing", "symlink"):
+        source.unlink()
+        if defect == "symlink":
+            source.symlink_to(RECORDED)
+    if defect in ("missing_manifest", "both_missing"):
+        manifest.unlink()
+    if defect == "stale":
+        source.write_bytes(data + b" ")
+    if defect.startswith("manifest_"):
+        manifest.write_text("[]" if defect == "manifest_array" else "{}")
+    output = tmp_path / "output"
+    # Legacy opt-in must never excuse malformed or partially present input.
+    with pytest.raises(ValueError):
+        build(
+            ROOT / "research/manuscript.md",
+            ROOT / "research/results",
+            output,
+            structure_input=source,
+            structure_manifest=manifest,
+            require_structure=defect == "both_missing",
+        )
+    assert not output.exists()
+    assert not list(tmp_path.glob(".nudt5-documents-*"))
+
+
+def test_absent_structural_evidence_is_explicit(tmp_path: Path) -> None:
+    manuscript = tmp_path / "legacy.md"
+    manuscript.write_text("# Legacy document\n")
+    _, word = build(
+        manuscript,
+        ROOT / "research/results",
+        tmp_path / "legacy-output",
+        structure_input=tmp_path / "absent.json",
+        structure_manifest=tmp_path / "absent-manifest.json",
+    )
+    with ZipFile(word) as archive:
+        assert "Structural results unavailable" in archive.read("word/document.xml").decode()
+    assert not (word.parent / "observed_proximity_map.png").exists()
+    assert not (word.parent / "lab_handoff.md").exists()
+    assert (
+        json.loads((word.parent / "documents-manifest.json").read_text())["structure_status"]
+        == "unavailable"
+    )
+
+
+def test_failed_structural_render_does_not_publish(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    import build_structure_comparison_figures as figures
+
+    def fail(*args: object) -> None:
+        raise RuntimeError("Structural renderer failed")
+
+    monkeypatch.setattr(figures, "render", fail)
+    output = tmp_path / "output"
+    with pytest.raises(RuntimeError, match="Structural renderer failed"):
+        build(
+            ROOT / "research/manuscript.md",
+            ROOT / "research/results",
+            output,
+            structure_input=RECORDED,
+            structure_manifest=RECORDED_MANIFEST,
+        )
+    assert not output.exists()
     assert not list(tmp_path.glob(".nudt5-documents-*"))

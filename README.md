@@ -10,10 +10,11 @@ The supplied dataset contains 46 records (20 labelled positives, 26 untested dec
 ```sh
 uv venv .venv --python 3.12
 uv pip sync --python .venv/bin/python --require-hashes requirements.lock
+uv pip install --python .venv/bin/python --require-hashes -r requirements-structure.lock
 uv pip install --python .venv/bin/python --no-deps -e .
 ```
 
-`requirements.lock` pins and hashes the complete development/document-generation environment. `requirements.txt` contains pinned analysis dependencies; `requirements-dev.txt` is the lockfile input. No commercial docking software or credentials are needed for the implemented audit. No docking or MM-GBSA implementation is included.
+`requirements.lock` pins and hashes the original development/document-generation environment; `requirements-structure.lock` adds Gemmi 0.7.3 for the deposited-coordinate CLI and structural document inputs, without changing existing pins. `requirements.txt` contains pinned analysis dependencies; `requirements-dev.txt` is the lockfile input. No commercial docking software or credentials are needed for the implemented audit. No docking or MM-GBSA implementation is included.
 
 ## Audit the raw data
 
@@ -81,7 +82,7 @@ Funding, affiliations, competing interests, contributions and original-study app
 .venv/bin/python scripts/build_research_documents.py --output results/documents
 ```
 
-This produces a PDF, editable DOCX and a data-derived diagnostic figure from `research/manuscript.md` and the recorded benchmark. These files are author-review drafts, not submission-ready declarations. Choose a new/empty output directory. No generated research image represents an experiment. The textual method settings and seed labels describe the supplied seed-42/five-seed diagnostic release; if rerunning a different protocol, update the manuscript and figure annotations accordingly.
+This produces a PDF, editable DOCX, figures and accessible supplementary tables from `research/manuscript.md` and the recorded diagnostic, paired-target and structural evidence. These files are author-review drafts, not submission-ready declarations. Choose a new/empty output directory. No generated research image represents an experiment. The textual method settings and seed labels describe the supplied seed-42/five-seed diagnostic release; if rerunning a different protocol, update the manuscript and figure annotations accordingly.
 
 ## Fixed-design controls, measured-source challenge and probe pair
 
@@ -187,3 +188,61 @@ cmp results/pubchem-audit.json research/external/pubchem/audit.json
 ```
 
 Use an existing output parent and a new filename. This bounded search is not exhaustive.
+
+
+## Published structures: observed geometry and a bounded lab handoff
+
+Read [the lab handoff](research/structure_comparison/lab_handoff.md) and
+[the hypothesis/control/falsification table](research/structure_comparison/hypotheses_controls.csv).
+This is an all-site calculation on the published compound-9 complexes 8RIY/8OTV, not a new
+inhibitor, binding observation, affinity estimate or test of the published Arg51 rationale.
+The nearby 8RIY Arg51 minima are 3.756 Å to backbone N (partial residue, zero-occupancy CZ
+excluded) and 3.251 Å to side-chain CD (occupancy 0.78). The calculation does not establish
+uniform side-chain dependence. The handoff prioritizes qualified WT/R51A/R51K direct-binding
+falsification with TH5427 and compound 9 as **unmatched comparators**. Physical prerequisites,
+pilot precision and prospective locking remain unresolved; `nudt5-assay` is not KD software.
+
+From the repository root, after the installation above, reproduce **only geometry and documents**
+without refitting any model. Choose a new external directory; `mkdir` deliberately fails if reused:
+
+```sh
+REPO="$(pwd)"
+OUT="$HOME/nudt5-structure-reproduction"
+mkdir "$OUT"
+.venv/bin/nudt5-structure \
+  --repository "$REPO" \
+  --input-manifest "$REPO/research/structure_comparison/runtime_input_manifest.json" \
+  --contract "$REPO/research/structure_comparison/geometry_contract.json" \
+  --output "$OUT/observed_proximity.json"
+SHA="$(sha256sum "$OUT/observed_proximity.json" | cut -d ' ' -f 1)"
+.venv/bin/python scripts/build_structure_comparison_figures.py \
+  --input "$OUT/observed_proximity.json" --input-sha256 "$SHA" \
+  --output "$OUT/derived"
+.venv/bin/python scripts/build_research_documents.py \
+  --structure-input "$OUT/observed_proximity.json" \
+  --structure-manifest "$OUT/derived/derived_manifest.json" \
+  --output "$OUT/documents"
+.venv/bin/python scripts/build_release_manifest.py --output "$OUT/release-manifest.json"
+```
+
+The structural result has 1,730 residue-conformer rows (1,564 observed, 58 partial, 108
+null/refused) and 1,278 atom pairs within 5 Å. All four sites and both receptor chains remain;
+crystal copies are not independent n. Fixed inclusive radii are 3.5/4.0/4.5/5.0 Å. Missing
+atoms are not imputed; complete-residue distances and coordinate uncertainty are not estimated.
+The figure command produces three CSVs, PNG/SVG/PDF and a derived manifest. Documents include
+the structural map as readable separate-target Figure 7A–B pages, the complete vector map,
+complete accessible tables, the handoff/control/source files
+and a completion-last manifest. No output overwrites previous evidence.
+
+The document CLI defaults to the committed structural result plus its hash-bearing derived
+manifest. Missing, malformed, hash-mismatched or empty structural evidence fails closed before
+publication. `--allow-missing-structure` is a legacy-only opt-in for **absent** inputs; it labels
+unavailability and cannot excuse malformed/partial inputs. The separate `--allow-missing-selectivity`
+option retains the same legacy boundary for paired-target evidence.
+
+For a wheel installed outside the checkout, run `nudt5-structure` with the same absolute
+repository/manifest/contract/output paths. The wheel packages the engine, not source evidence;
+figures/documents are checkout-only builders. Compare numerical content excluding the newly
+recorded provenance, not runtime timestamps/paths. The original structure-package README and
+manifests describe the earlier curation stage; [the run record](research/structure_comparison/results/VERIFICATION.md)
+and this section describe the implemented stage without rewriting historical provenance.

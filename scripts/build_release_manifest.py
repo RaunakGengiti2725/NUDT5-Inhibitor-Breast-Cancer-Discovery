@@ -18,6 +18,8 @@ FILES = (
     "requirements.txt",
     "requirements-dev.txt",
     "requirements.lock",
+    "requirements-structure.txt",
+    "requirements-structure.lock",
     ".gitignore",
 )
 
@@ -51,6 +53,12 @@ def build_manifest(root: Path, output: Path) -> dict[str, Any]:
                 "named run manifests and source ledgers",
             )
             status = "reproduced diagnostics where executable; source metadata is evidence only"
+        elif relative.startswith("research/structure_comparison/results/"):
+            purpose, provenance = (
+                "Recorded observed-coordinate geometry or derived display",
+                "structure_comparison/results/run_provenance.json; archived deposited coordinates",
+            )
+            status = "reproducible proximity only; missingness retained; no independent biology"
         elif relative.startswith("research/figures/"):
             purpose, provenance = (
                 "Generated figure or table",

@@ -96,3 +96,74 @@ def test_cli_hash_and_overwrite_refusal(tmp_path: Path, result: dict[str, Any]) 
     before = {p.name: p.read_bytes() for p in output.iterdir()}
     assert figures.main([*args, mod.digest(source.read_bytes())]) == 2
     assert before == {p.name: p.read_bytes() for p in output.iterdir()}
+
+
+@pytest.mark.parametrize(
+    "mode",
+    [
+        "nan",
+        "negative",
+        "string",
+        "bool",
+        "duplicate",
+        "witness",
+        "occupancy",
+        "coordinates",
+        "missingness",
+        "pair_nan",
+        "site",
+        "unestimated",
+    ],
+)
+def test_malformed_geometry_refuses_before_render(result: dict[str, Any], mode: str) -> None:
+    bad = copy.deepcopy(result)
+    row = next(r for r in bad["residue_proximity"] if r["observed_min_distance_A"] is not None)
+    if mode in ("nan", "negative", "string", "bool"):
+        row["observed_min_distance_A"] = {
+            "nan": float("nan"),
+            "negative": -1,
+            "string": "3.0",
+            "bool": True,
+        }[mode]
+    elif mode == "duplicate":
+        bad["residue_proximity"].append(row)
+    elif mode == "witness":
+        row["minimum_witness_pairs"] = []
+    elif mode == "occupancy":
+        row["minimum_witness_pairs"][0]["protein_atom"]["occupancy"] = 0
+    elif mode == "coordinates":
+        atom = row["minimum_witness_pairs"][0]["protein_atom"]
+        atom["xyz_A"] = [x + 100 for x in atom["xyz_A"]]
+    elif mode == "missingness":
+        del row["missing_or_excluded_atoms"]
+    elif mode == "pair_nan":
+        bad["atom_pairs_within_5A"][0]["distance_A"] = float("nan")
+    elif mode == "site":
+        row["site_id"] = "invented"
+    else:
+        row["complete_residue_distance_A"] = 3.0
+    with pytest.raises(ValueError):
+        figures.validate(bad)
+
+
+@pytest.mark.parametrize("target", ["NUDT5", "NUDT14"])
+def test_readable_target_panels_retain_both_sites_and_all_rows(
+    result: dict[str, Any], target: str
+) -> None:
+    files = figures.render(result, target=target)
+    assert files == figures.render(result, target=target)
+    svg = files[f"{figures.FIGURE}_{target}.svg"].decode()
+    rows = [
+        r
+        for r in result["residue_proximity"]
+        if r["residue_identity"]["pdb_id"] == ("8RIY" if target == "NUDT5" else "8OTV")
+    ]
+    for row in rows:
+        if row["within_5_0A"]:
+            assert figures.residue_label(row) in svg
+    assert "4.0 (primary)" in svg and "null/refused" in svg
+    import xml.etree.ElementTree as ET
+
+    visible = " ".join(" ".join(ET.fromstring(svg).itertext()).split())
+    assert figures.CAVEAT in visible
+    assert len({r["site_id"] for r in rows}) == 2

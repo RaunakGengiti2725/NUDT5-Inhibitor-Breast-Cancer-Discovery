@@ -64,3 +64,25 @@ Historical analysis and curation manifests remain their original execution-time 
 local reruns have separate manifests with their real revision and dirty state. The portable
 `release_manifest.json` inventories final content without pretending historical runs occurred
 post-commit. Original CSVs, source assay ledger and historical numerical JSON remain byte-identical.
+
+
+## Observed-coordinate integration (5 October 2026)
+
+Integration starts exactly at ca06233acc3190a876495155224864a99d625fd5. The structural numerical
+result and all historical input/run manifests remain unchanged. The calculation's actual code
+revision is bfd5d7ea57c1ea0315c47ddc315117c0724d6433, as recorded at execution; integration does
+not replace it with a later documentation commit. Earlier analysis runtime versions remain in
+their own manifests, distinct from the structural Python 3.12.15/Gemmi 0.7.3 run.
+
+`structure_comparison/handoff_sources.json` re-extracts exact archived Balıkçı XML sections
+4.2, 4.3, 4.4, 4.5 and 4.8 with source hash, attribution and claim-level limits. No new network
+retrieval or biological observation is implied. `lab_handoff.md` and `hypotheses_controls.csv`
+separate reported findings, retained-coordinate proximity, proposed H2/control/attribution tests
+and finite unresolved physical prerequisites. The control design inherits study H2; it does not
+invent pilot outcomes, precision, sample size or a completed lock. The 3.756 Å backbone witness
+and 3.251 Å fractional CD witness are not uniform side-chain, affinity or hydrogen-bond evidence.
+
+Document regeneration consumes hash-checked structural results, not silently substituted zeros,
+and retains complete tables beside the map. Its completion manifest records current inputs/code;
+it does not authenticate physical experiments. Release inventory is regenerated after final
+tracked content, without modifying original CSVs or any prior `research/results/*` bytes.

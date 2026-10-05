@@ -125,3 +125,61 @@ snapshot/manifest/audit data files matched the supplied contribution commits.
 No models, thresholds, seeds or source exclusions were optimized. No physical assay,
 independent validation, therapeutic discovery, PR creation or PR merge was performed.
 These are local release checks; remote CI was not observed. The parent owns PR #1.
+
+## Observed-coordinate handoff and manuscript integration — 5 October 2026
+
+Integration starts at `ca06233acc3190a876495155224864a99d625fd5` on a separate branch.
+No diagnostic model was rerun for new results. Published compound-9 dual binding and
+Arg51 reasoning remain attributed to Balıkçı et al.; the integration adds a bounded
+H2 handoff, five unmeasured hypothesis/control rows, five exact primary-Methods
+excerpts, and document-generation safeguards, not biological observations.
+
+| Command / check | Observed result |
+|---|---|
+| `.venv/bin/ruff check .` | Passed |
+| `.venv/bin/ruff format --check .` | 24 Python files already formatted |
+| `.venv/bin/mypy --no-incremental` | No issues in 24 source files |
+| `.venv/bin/python -m pytest -q` | **510 passed**, none skipped; 16 upstream Matplotlib/pyparsing deprecation warnings; final run 99.99 s |
+| `.venv/bin/python -m compileall -q scripts tests` | Passed |
+| `.venv/bin/python -m build --outdir <external-directory>` | sdist and wheel built |
+| `.venv/bin/pip-audit` | No known third-party vulnerabilities; unpublished local project cannot be audited against PyPI |
+| `git diff --check` | Passed |
+| Installed-wheel `nudt5-structure`, outside checkout with explicit repository/manifest/contract paths | All 1,730 residue rows, 1,278 pairs and other non-provenance fields identical to recorded output |
+| Fresh Python 3.12.15 wheel environment | Original hash lock, then Gemmi 0.7.3 hash lock, then `--no-deps` wheel installation succeeded; the inherited CI install sequence includes the necessary separate structural lock |
+| Standalone figure/table reproduction from installed-wheel output | All six payloads byte-identical to the recorded three CSVs and PNG/SVG/PDF; new derived manifest correctly hashes the new runtime-provenance-bearing input |
+| Document generation to an external directory | **43 files**: 42 hashed payloads plus completion-last manifest; paired and structure statuses both `recorded` |
+| Document input and output hashes | All matched the final generating inputs and payloads |
+
+The 34 integration regressions added to the incoming 476 cover missing, malformed,
+empty, stale, symlinked and truncated structural input; invalid geometry/witnesses;
+explicit legacy absence; failed-render nonpublication; complete supplement transport;
+deterministic target panels retaining both sites and every display-eligible row;
+source quotations against archived XML bytes; handoff uncertainty/control fields;
+manuscript numerical anchors and structure; and structural dependency inventory.
+The independent-source and geometry-engine tests from the incoming branch remain intact.
+
+The complete two-panel map was too small at portrait manuscript width. Figure 7A–B now
+uses separate target pages, without dropping displayed rows or altering cutoffs; the
+complete vector map and all-residue CSV remain in the supplement. Explicit figure page
+breaks in DOCX and heading-following rules in PDF prevent orphaned displays/headings.
+The final **24-page PDF** was rasterized and the new Methods, Results, proposed-H2 and
+figure pages inspected at ordinary reading size. DOCX was independently rendered with
+LibreOffice (**25 pages**) and its structural Results and both target figure pages inspected.
+The abstract is 225 words and the conclusion-category synthesis follows every Results
+section. These are editorial/rendering checks, not independent scientific peer review.
+
+All **16 protected legacy files** (the two original CSVs, source-assay CSV and all 13
+`research/results/*` files) are byte-identical to the incoming commit. The structural
+results, all four dependency input/lock files, archived sources and historical execution
+manifests are unchanged. The historical structural report is retained as an exact byte
+prefix with a dated supersession pointer appended. The portable release inventory is
+regenerated after these final source/verification changes; it is not an edited historical
+run manifest. External builds, screenshots, environments and wheels are not committed.
+
+Remaining science: no density/structure-factor review or coordinate-uncertainty propagation;
+partial-residue minima do not estimate complete residues; crystal sites are not independent
+samples. Nearby Arg51 minima involve backbone N and fractional-occupancy CD, neither a
+minimum guanidinium witness. Qualified protein preparations, direct/orthogonal binding,
+interference/NUDT14 controls, pilot precision and governance gates remain unresolved.
+No physical-experiment-ready qualification, completed prospective lock, affinity/selectivity
+estimate or clinical inference is supplied. Remote CI is not asserted by these local checks.

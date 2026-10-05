@@ -11,12 +11,25 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
+import build_structure_comparison_figures as structure_figures
 from build_selectivity_figures import FIGURE_NAMES, load_recorded, render
 from docx import Document
 from docx.shared import Inches, Pt
 from selectivity import artifacts, json_bytes, publish, run_manifest
 
 ROOT = Path(__file__).resolve().parents[1]
+STRUCTURE_CAPTION = (
+    "Observed-coordinate comparison of published compound-9 complexes (Balıkçı et al. 2024, "
+    "Figures 3–4; PDB 8RIY/8OTV). Each target-specific row has a retained pair within 5.0 Å "
+    "at either site; columns preserve both sites and both dimer chains. Inclusive radii are "
+    "3.5/4.0/4.5/5.0 Å (4.0 primary), with no threshold tuning. Grey cells exceed 5.0 Å; "
+    "null/refused rows are counted below, not plotted as no-contact. Partial residues (†) give "
+    "upper bounds on unknown complete-residue minima; positive fractional occupancies (*) "
+    "are unweighted. Residue axes are not homology-aligned; crystal copies are not independent n. "
+    "No density or coordinate-uncertainty propagation. Residue-name proximity is not a "
+    "guanidinium interaction, binding energy, hydrogen bond, selectivity or a causal test of "
+    "the published Arg51 rationale. Full-precision tables retain every row, including nulls."
+)
 
 
 def read_blocks(text: str) -> list[tuple[str, Any]]:
@@ -56,7 +69,7 @@ def read_blocks(text: str) -> list[tuple[str, Any]]:
 
 
 def plain(text: str) -> str:
-    return text.replace("**", "").replace("`", "").replace("*", "")
+    return re.sub(r"(?<!\w)\*([^*\n]+)\*(?!\w)", r"\1", text.replace("**", "").replace("`", ""))
 
 
 def diagnostic_figure(results: Path, output: Path) -> Path:
@@ -107,7 +120,12 @@ def diagnostic_figure(results: Path, output: Path) -> Path:
 
 
 def _build(
-    manuscript: Path, results: Path, output: Path, paired: dict[str, Any] | None
+    manuscript: Path,
+    results: Path,
+    output: Path,
+    paired: dict[str, Any] | None,
+    structural: dict[str, Any] | None,
+    handoff: dict[str, bytes],
 ) -> tuple[Path, Path]:
     if output.exists() and (not output.is_dir() or any(output.iterdir())):
         raise ValueError("Document output must be a new or empty directory")
@@ -149,6 +167,47 @@ def _build(
                 "Unavailable measurements are not zero; legacy diagnostic results remain separate.",
             )
         )
+    structural_headings: dict[Path, str] = {}
+    if structural is not None:
+        for name, content in {
+            **structure_figures.tables(structural),
+            **structure_figures.render(structural),
+            **handoff,
+        }.items():
+            (output / name).write_bytes(content)
+        figure_number = len(extension) + 2
+        for index, target in enumerate(sorted(s["target"] for s in structural["structures"])):
+            for name, content in structure_figures.render(structural, target=target).items():
+                (output / name).write_bytes(content)
+            path = output / f"{structure_figures.FIGURE}_{target}.png"
+            structural_headings[path] = f"Figure {figure_number}{chr(65 + index)}"
+            extension.append(
+                (
+                    path,
+                    f"{target}: published compound-9 coordinates [2], not new "
+                    "binding measurements. Both sites and every row with any retained "
+                    "pair within 5 Å remain. Missingness and limitations are adjacent; "
+                    "full vector map and all-residue tables are in the supplement.",
+                )
+            )
+        with (output / "supplementary_results.md").open("a") as stream:
+            stream.write(
+                "\n\n## Observed-coordinate supplement\n\n"
+                + STRUCTURE_CAPTION
+                + "\n\nFull residue_proximity.csv, atom_pairs_within_5A.csv and "
+                "radius_sensitivity.csv retain all sites and missingness. "
+                "lab_handoff.md, hypotheses_controls.csv and handoff_sources.json "
+                "separate proposals, source Methods and unresolved prerequisites.\n"
+            )
+    else:
+        blocks.append(
+            (
+                "paragraph",
+                "Structural results unavailable: no structural figure, "
+                "distance table or lab handoff was generated. Missing evidence is not "
+                "zero proximity or no contact; no geometry claim is supplied by this build.",
+            )
+        )
     flow = importlib.import_module("reportlab.platypus")
     styles_module = importlib.import_module("reportlab.lib.styles")
     colours = importlib.import_module("reportlab.lib.colors")
@@ -173,6 +232,8 @@ def _build(
     table_style = styles_module.ParagraphStyle(
         "TableBody", parent=styles["BodyText"], fontSize=7, leading=10
     )
+    for name in ("Title", "Heading1", "Heading2", "Heading3"):
+        styles[name].keepWithNext = True
     doc = Document()
     doc.sections[0].left_margin = Inches(1)
     doc.sections[0].right_margin = Inches(1)
@@ -227,7 +288,7 @@ def _build(
         "Descriptor performance is compatible with confounding but does not establish "
         "its causal contribution."
     )
-    doc.add_heading("Diagnostic figure", level=1)
+    doc.add_heading("Diagnostic figure", level=1).paragraph_format.page_break_before = True
     doc.add_picture(str(figure), width=Inches(6.4))
     doc.add_paragraph(caption)
     story.extend(
@@ -239,8 +300,8 @@ def _build(
         ]
     )
     for index, (path, figure_caption) in enumerate(extension, start=2):
-        heading = f"Figure {index}"
-        doc.add_heading(heading, level=1)
+        heading = structural_headings.get(path, f"Figure {index}")
+        doc.add_heading(heading, level=1).paragraph_format.page_break_before = True
         doc.add_picture(str(path), width=Inches(6.4))
         doc.add_paragraph(figure_caption)
         image = flow.Image(str(path))
@@ -278,7 +339,15 @@ def _build(
 
 
 def build(
-    manuscript: Path, results: Path, output: Path, *, require_selectivity: bool = False
+    manuscript: Path,
+    results: Path,
+    output: Path,
+    *,
+    require_selectivity: bool = False,
+    structure_input: Path | None = None,
+    structure_manifest: Path | None = None,
+    require_structure: bool = False,
+    handoff_directory: Path = ROOT / "research/structure_comparison",
 ) -> tuple[Path, Path]:
     """Stage complete documents before non-overwriting, completion-last publication."""
     if output.is_symlink() or (output.exists() and (not output.is_dir() or any(output.iterdir()))):
@@ -298,21 +367,42 @@ def build(
             raise ValueError("Recorded selectivity.json and selectivity-manifest.json are required")
         paired = load_recorded(source, manifest)
         inputs.extend([source, manifest])
+    structural = None
+    handoff: dict[str, bytes] = {}
+    supplied = [path for path in (structure_input, structure_manifest) if path is not None]
+    if require_structure or any(path.exists() or path.is_symlink() for path in supplied):
+        if structure_input is None or structure_manifest is None:
+            raise ValueError("Required structural input and manifest")
+        structural = structure_figures.load_recorded(structure_input, structure_manifest)
+        inputs.extend([structure_input, structure_manifest])
+        for name in ("lab_handoff.md", "hypotheses_controls.csv", "handoff_sources.json"):
+            path = handoff_directory / name
+            if not path.is_file() or path.is_symlink() or not path.read_bytes().strip():
+                raise ValueError(f"Required nonempty structural handoff: {path}")
+            handoff[name] = path.read_bytes()
+            inputs.append(path)
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=".nudt5-documents-", dir=output.parent) as directory:
         staging = Path(directory)
-        pdf, word = _build(manuscript, results, staging, paired)
+        pdf, word = _build(manuscript, results, staging, paired, structural, handoff)
         payloads = {path.name: path.read_bytes() for path in staging.iterdir()}
         inputs.extend(
             [
                 Path(__file__),
                 Path(__file__).with_name("build_extension_figures.py"),
                 Path(__file__).with_name("build_selectivity_figures.py"),
+                Path(__file__).with_name("build_structure_comparison_figures.py"),
+                Path(__file__).parent / "scripts/structure_comparison.py",
                 Path(__file__).parent / "scripts/selectivity.py",
                 Path(__file__).parent / "scripts/pipeline.py",
             ]
         )
-        record = run_manifest(inputs, {"require_selectivity": require_selectivity}, payloads)
+        record = run_manifest(
+            inputs,
+            {"require_selectivity": require_selectivity, "require_structure": require_structure},
+            payloads,
+        )
+        record["structure_status"] = "recorded" if structural is not None else "unavailable"
         record["selectivity_status"] = "recorded" if paired is not None else "unavailable"
         payloads["documents-manifest.json"] = json_bytes(record)
         publish(output, payloads, "documents-manifest.json")
@@ -329,12 +419,34 @@ def main() -> None:
         action="store_true",
         help="Legacy results only: explicitly annotate absent paired-target results",
     )
+    parser.add_argument(
+        "--structure-input",
+        type=Path,
+        default=ROOT / "research/structure_comparison/results/observed_proximity.json",
+    )
+    parser.add_argument(
+        "--structure-manifest",
+        type=Path,
+        default=ROOT / "research/structure_comparison/results/derived/derived_manifest.json",
+    )
+    parser.add_argument(
+        "--handoff-directory", type=Path, default=ROOT / "research/structure_comparison"
+    )
+    parser.add_argument(
+        "--allow-missing-structure",
+        action="store_true",
+        help="Legacy only: annotate absent structural evidence; never ignore malformed input",
+    )
     args = parser.parse_args()
     for path in build(
         args.manuscript,
         args.results,
         args.output,
         require_selectivity=not args.allow_missing_selectivity,
+        structure_input=args.structure_input,
+        structure_manifest=args.structure_manifest,
+        require_structure=not args.allow_missing_structure,
+        handoff_directory=args.handoff_directory,
     ):
         print(path)
 

@@ -122,3 +122,91 @@ def test_portable_inventory_excludes_canonical_previous_inventory(tmp_path: Path
     second = build_manifest(tmp_path, tmp_path / "inventory-b.json")
     assert first == second
     assert [row["filename"] for row in first["files"]] == ["research/evidence.md"]
+
+
+def test_handoff_source_quotes_match_archived_primary_xml() -> None:
+    import xml.etree.ElementTree as ET
+
+    base = ROOT / "research/structure_comparison"
+    ledger = json.loads((base / "handoff_sources.json").read_text())
+    source = (base / ledger["source_path"]).read_bytes()
+    assert hashlib.sha256(source).hexdigest() == ledger["source_sha256"]
+    tree = ET.fromstring(source)
+    assert len(ledger["excerpts"]) == 5
+    for excerpt in ledger["excerpts"]:
+        node = tree.find("." + excerpt["xpath"])
+        assert node is not None
+        assert "".join(node.itertext()) == excerpt["text_exact_itertext"]
+        assert excerpt["limit"] and excerpt["claim_category"] == "reported_primary_methods"
+
+
+def test_handoff_arg51_and_manuscript_track_recorded_geometry() -> None:
+    from collections import Counter
+
+    base = ROOT / "research/structure_comparison"
+    result = json.loads((base / "results/observed_proximity.json").read_text())
+    rows = result["residue_proximity"]
+    assert Counter(r["geometry_status"] for r in rows) == {
+        "observed": 1564,
+        "partial_observed": 58,
+        "refused": 108,
+    }
+    assert len(result["atom_pairs_within_5A"]) == 1278
+    text = (base / "lab_handoff.md").read_text()
+    for site, atom_id, name, occupancy in (("C", "306", "N", 1.0), ("D", "1775", "CD", 0.78)):
+        row = next(
+            r
+            for r in rows
+            if r["site_id"].startswith(f"8RIY:model1:{site}:")
+            and r["residue_identity"]["auth_seq_id"] == "51"
+            and r["within_4_0A"]
+        )
+        atom = row["minimum_witness_pairs"][0]["protein_atom"]
+        assert (atom["atom_site_id"], atom["label_atom_id"], atom["occupancy"]) == (
+            atom_id,
+            name,
+            occupancy,
+        )
+        assert f"{row['observed_min_distance_A']:.3f}" in text
+        assert f"#{atom_id}" in text
+    paper = (ROOT / "research/manuscript.md").read_text()
+    abstract = paper.split("## Abstract")[1].split("## 1.")[0]
+    assert len(abstract.split()) <= 245
+    assert "three questions" not in paper
+    assert paper.index("### 4.11") > paper.index("### 4.10 Observed")
+    assert "guanidinium" in paper and "historical" in paper.lower()
+
+
+def test_handoff_controls_remain_unmeasured_and_bounded() -> None:
+    import csv
+
+    base = ROOT / "research/structure_comparison"
+    rows = list(csv.DictReader((base / "hypotheses_controls.csv").open()))
+    assert len(rows) == 5 and len({r["id"] for r in rows}) == 5
+    assert {r["measurement_status"] for r in rows} == {"unmeasured"}
+    for row in rows:
+        assert all(
+            row[k]
+            for k in (
+                "controls",
+                "falsifying_or_challenging_outcome_if_qualified",
+                "inconclusive_conditions",
+                "unresolved_gates",
+                "source_refs",
+            )
+        )
+    text = (base / "lab_handoff.md").read_text()
+    assert "../assay/PROTOCOL.md" in text and "UNMATCHED" in text
+    assert "not physical-experiment-ready" in text
+
+
+def test_release_inventory_includes_structural_dependency_locks(tmp_path: Path) -> None:
+    report = build_manifest(ROOT, tmp_path / "release.json")
+    rows = {row["filename"]: row for row in report["files"]}
+    assert "requirements-structure.lock" in rows and "requirements-structure.txt" in rows
+    assert (
+        "proximity only"
+        in rows["research/structure_comparison/results/observed_proximity.json"][
+            "reproducibility_status"
+        ]
+    )

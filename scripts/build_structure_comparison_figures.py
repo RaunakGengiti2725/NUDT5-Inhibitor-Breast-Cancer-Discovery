@@ -6,6 +6,7 @@ import argparse
 import csv
 import importlib
 import io
+import math
 import sys
 import textwrap
 from collections.abc import Sequence
@@ -18,6 +19,8 @@ from structure_comparison import RADII, THRESHOLDS, WARNING, digest, json_bytes,
 
 FIGURE = "observed_proximity_map"
 TOP_LEVEL = [
+    "radii_A",
+    "primary_radius_A",
     "schema_version",
     "contract_id",
     "origin",
@@ -42,21 +45,160 @@ CAVEAT = (
 )
 
 
+def validate_pair(pair: Any) -> None:
+    require(isinstance(pair, dict), "Malformed atom pair")
+    distance = pair["distance_A"]
+    require(
+        type(distance) in (int, float) and math.isfinite(distance) and distance >= 0,
+        "Invalid atom-pair distance",
+    )
+    for name in ("ligand_atom", "protein_atom"):
+        atom = pair[name]
+        require(
+            type(atom["occupancy"]) in (int, float) and 0 < atom["occupancy"] <= 1,
+            "Invalid witness occupancy",
+        )
+        coords = atom["xyz_A"]
+        require(
+            isinstance(coords, (list, tuple))
+            and len(coords) == 3
+            and all(type(x) in (int, float) and math.isfinite(x) for x in coords),
+            "Invalid witness coordinates",
+        )
+    require(
+        math.isclose(
+            math.dist(pair["ligand_atom"]["xyz_A"], pair["protein_atom"]["xyz_A"]),
+            distance,
+            abs_tol=1e-10,
+            rel_tol=1e-12,
+        ),
+        "Witness coordinates disagree with distance",
+    )
+
+
 def validate(result: Any) -> dict[str, Any]:
+    """Refuse incomplete/invalid recorded geometry before any figure or document is staged."""
     require(isinstance(result, dict) and set(TOP_LEVEL) <= set(result), "Invalid result schema")
-    require(result["schema_version"] == 1 and result["warning"] == WARNING, "Unsupported result")
+    require(
+        type(result["schema_version"]) is int
+        and result["schema_version"] == 1
+        and result["warning"] == WARNING,
+        "Unsupported result",
+    )
     require(result["contract_id"] == "W0O-8RIY-8OTV-observed-proximity-v1", "Wrong contract")
-    require(result["radii_A"] == list(RADII), "Unexpected radii")
-    sites = {s["site_identity"]["site_id"] for s in result["sites"]}
-    require(sites and {r["site_id"] for r in result["residue_proximity"]} == sites, "Site rows")
-    for row in result["residue_proximity"]:
-        distance = row["observed_min_distance_A"]
-        flags = [row[field] for field in THRESHOLDS]
-        if distance is None:
-            require(all(flag is None for flag in flags) and row["reasons"], "Null row needs reason")
-        else:
-            require(flags == [distance <= r for r in RADII], "Threshold inconsistent with distance")
+    require(result["origin"] == "retrospective_deposited_coordinates", "Unexpected origin")
+    require(
+        result["radii_A"] == list(RADII) and result["primary_radius_A"] == 4.0, "Unexpected radii"
+    )
+    for name in ("structures", "sites", "residue_proximity"):
+        require(isinstance(result[name], list) and result[name], f"Empty or malformed {name}")
+    try:
+        structures = {s["pdb_id"]: s for s in result["structures"]}
+        require(len(structures) == len(result["structures"]), "Duplicate structure")
+        identities = [s["site_identity"] for s in result["sites"]]
+        sites = {s["site_id"]: s for s in identities}
+        require(len(sites) == len(identities), "Duplicate site")
+        require({s["pdb_id"] for s in identities} == set(structures), "Structure/site mismatch")
+        require({r["site_id"] for r in result["residue_proximity"]} == set(sites), "Site rows")
+        require(isinstance(result["atom_pairs_within_5A"], list), "Malformed atom pairs")
+        for pair in result["atom_pairs_within_5A"]:
+            validate_pair(pair)
+            require(pair["site_id"] in sites and pair["distance_A"] <= 5.0, "Invalid local pair")
+        keys = set()
+        for row in result["residue_proximity"]:
+            i = row["residue_identity"]
+            require(int(i["label_seq_id"]) > 0, "Invalid residue label")
+            require(i["pdb_id"] == sites[row["site_id"]]["pdb_id"], "Row/site structure mismatch")
+            key = (
+                row["site_id"],
+                i["label_asym_id"],
+                i["label_seq_id"],
+                row["ligand_conformer_id"],
+                row["protein_conformer_id"],
+            )
+            require(key not in keys, "Duplicate residue-conformer row")
+            keys.add(key)
+            require(
+                row["complete_residue_distance_A"] is None
+                and row["complete_residue_distance_status"] == "not_estimated",
+                "Complete-residue distance must remain unestimated",
+            )
+            require(
+                all(
+                    type(row[k]) is bool
+                    for k in ("fractional_occupancy", "conditional_local_conformer")
+                ),
+                "Invalid flags",
+            )
+            distance = row["observed_min_distance_A"]
+            flags = [row[field] for field in THRESHOLDS]
+            if distance is None:
+                require(
+                    all(flag is None for flag in flags)
+                    and row["reasons"]
+                    and row["geometry_status"] == "refused"
+                    and not row["minimum_witness_pairs"],
+                    "Null row needs refusal and reason",
+                )
+            else:
+                require(
+                    type(distance) in (int, float) and math.isfinite(distance) and distance >= 0,
+                    "Invalid observed distance",
+                )
+                require(
+                    all(type(f) is bool for f in flags) and flags == [distance <= r for r in RADII],
+                    "Threshold inconsistent with distance",
+                )
+                require(
+                    row["geometry_status"] in ("observed", "partial_observed"),
+                    "Invalid geometry status",
+                )
+                require(row["minimum_witness_pairs"], "Missing minimum witnesses")
+                for witness in row["minimum_witness_pairs"]:
+                    validate_pair(witness)
+                    require(witness["distance_A"] == distance, "Inconsistent witness distance")
+            # Access the identities/missingness consumed by both tables and figures.
+            residue_label(row)
+            missing = row["missing_or_excluded_atoms"]
+            for field in ("declared_missing_atoms", "declared_missing_residues", "excluded_atoms"):
+                require(isinstance(missing[field], list), "Malformed missingness")
+        require(
+            any(r["observed_min_distance_A"] is not None for r in result["residue_proximity"]),
+            "No observed structural distances to render",
+        )
+        # A truncated site must not silently lose a protein chain or an unobserved residue.
+        for site_id, identity in sites.items():
+            structure = structures[identity["pdb_id"]]
+            rows = [r for r in result["residue_proximity"] if r["site_id"] == site_id]
+            residues = {
+                (r["residue_identity"]["label_asym_id"], r["residue_identity"]["label_seq_id"])
+                for r in rows
+            }
+            require(
+                len(residues) == structure["polymer_residue_model_count"],
+                "Incomplete residue inventory",
+            )
+            require(
+                {chain for chain, _ in residues} == set(structure["protein_chains"]),
+                "Incomplete protein chains",
+            )
+        tables(result)
+    except (KeyError, TypeError, IndexError, AttributeError) as exc:
+        raise ValueError(f"Malformed structural result: {exc}") from exc
     return dict(result)
+
+
+def load_recorded(source: Path, manifest: Path) -> dict[str, Any]:
+    for path in (source, manifest):
+        require(not any(p.is_symlink() for p in (path, *path.parents)), "Input symlink refused")
+        require(path.is_file(), f"Required structural input: {path}")
+    record = read_json(manifest)
+    require(
+        isinstance(record, dict) and isinstance(record.get("input_sha256"), str),
+        "Malformed structural manifest",
+    )
+    require(digest(source.read_bytes()) == record["input_sha256"], "Structural input hash mismatch")
+    return validate(read_json(source))
 
 
 def residue_label(row: dict[str, Any]) -> str:
@@ -250,7 +392,20 @@ def notes(result: dict[str, Any]) -> list[str]:
     return lines
 
 
-def render(result: dict[str, Any]) -> dict[str, bytes]:
+def render(result: dict[str, Any], *, target: str | None = None) -> dict[str, bytes]:
+    if target is not None:
+        structures = [s for s in result["structures"] if s["target"] == target]
+        require(len(structures) == 1, "Target panel requires one recorded structure")
+        pdb_id = structures[0]["pdb_id"]
+        result = {
+            **result,
+            "structures": structures,
+            "sites": [s for s in result["sites"] if s["site_identity"]["pdb_id"] == pdb_id],
+            "residue_proximity": [
+                r for r in result["residue_proximity"] if r["residue_identity"]["pdb_id"] == pdb_id
+            ],
+        }
+
     mpl = importlib.import_module("matplotlib")
     mpl.use("Agg")
     plt = importlib.import_module("matplotlib.pyplot")
@@ -292,13 +447,22 @@ def render(result: dict[str, Any]) -> dict[str, bytes]:
             for r in rows
         }
         panels.append((structure, sites, keys, lookup))
-    with mpl.rc_context(settings):
+    with mpl.rc_context({**mpl.rcParamsDefault, **settings}):
         heights = [len(p[2]) + 3 for p in panels]
         fig, axes = plt.subplots(
-            1, len(panels), figsize=(14, 0.32 * max(heights) + 4.2), squeeze=False
+            1,
+            len(panels),
+            figsize=(7, 8.3) if target else (14, 0.32 * max(heights) + 4.2),
+            squeeze=False,
         )
         try:
-            fig.subplots_adjust(left=0.2, right=0.9, top=0.86, bottom=0.17, wspace=0.95)
+            fig.subplots_adjust(
+                left=0.43 if target else 0.2,
+                right=0.89 if target else 0.9,
+                top=0.82 if target else 0.86,
+                bottom=0.29 if target else 0.17,
+                wspace=0.95,
+            )
             cmap = plt.get_cmap("viridis").copy()
             norm = colors.Normalize(vmin=2.5, vmax=5.0)
             image = None
@@ -359,12 +523,12 @@ def render(result: dict[str, Any]) -> dict[str, bytes]:
                 colorbar.ax.axhline(radius, color="black", linewidth=0.8)
             fig.suptitle(
                 "W0O/compound 9: per-site observed ligand–residue minimum distances",
-                fontsize=13,
+                fontsize=10 if target else 13,
                 y=0.97,
             )
             fig.text(
                 0.03,
-                0.915,
+                0.87 if target else 0.915,
                 (
                     "Inclusive radii 3.5, 4.0 (primary), 4.5, 5.0 Å. Grey cells: >5.0 Å. "
                     "† partial residue (declared missing or zero-occupancy atom); "
@@ -376,7 +540,19 @@ def render(result: dict[str, Any]) -> dict[str, bytes]:
             fig.text(
                 0.03,
                 0.015,
-                "\n".join([*notes(result), *textwrap.wrap(CAVEAT, 175)]),
+                "\n".join(
+                    [
+                        line
+                        for note in [*notes(result), CAVEAT]
+                        for line in (
+                            textwrap.wrap(note, 83)
+                            if target
+                            else textwrap.wrap(note, 175)
+                            if note == CAVEAT
+                            else [note]
+                        )
+                    ]
+                ),
                 fontsize=8.5,
                 va="bottom",
             )
@@ -395,7 +571,7 @@ def render(result: dict[str, Any]) -> dict[str, bytes]:
                     data = (
                         "\n".join(s.rstrip() for s in data.decode().splitlines()) + "\n"
                     ).encode()
-                payloads[f"{FIGURE}.{extension}"] = data
+                payloads[f"{FIGURE}{'_' + target if target else ''}.{extension}"] = data
         finally:
             plt.close(fig)
     return payloads

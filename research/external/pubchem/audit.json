@@ -1,0 +1,494 @@
+{
+  "activity_matches": [
+    {
+      "aid": 1440791,
+      "chembl_assay_id": "CHEMBL4008387",
+      "chembl_record_id": "18034931",
+      "cid": 3163969,
+      "endpoint": "IC50",
+      "inchikey": "YTGYWPTWNBGCLG-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.6b01786",
+      "ledger_relation_not_provided_by_concise": ">",
+      "pubchem_concise_value_uM": "100.0000000000"
+    },
+    {
+      "aid": 2070371,
+      "chembl_assay_id": "CHEMBL5509526",
+      "chembl_record_id": "25858862",
+      "cid": 22346757,
+      "endpoint": "IC50",
+      "inchikey": "YYVUOZULIDAKRN-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "2.0400000000"
+    },
+    {
+      "aid": 2070371,
+      "chembl_assay_id": "CHEMBL5509526",
+      "chembl_record_id": "25858858",
+      "cid": 24821094,
+      "endpoint": "IC50",
+      "inchikey": "XYFPWWZEPKGCCK-GOSISDBHSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "0.8370000000"
+    },
+    {
+      "aid": 2070371,
+      "chembl_assay_id": "CHEMBL5509526",
+      "chembl_record_id": "25858857",
+      "cid": 71479709,
+      "endpoint": "IC50",
+      "inchikey": "QUIWHXQETADMGN-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "13.9000000000"
+    },
+    {
+      "aid": 2070371,
+      "chembl_assay_id": "CHEMBL5509526",
+      "chembl_record_id": "25858859",
+      "cid": 74766102,
+      "endpoint": "IC50",
+      "inchikey": "SFTPIUYKBLYRKF-HXUWFJFHSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "21.2000000000"
+    },
+    {
+      "aid": 2070371,
+      "chembl_assay_id": "CHEMBL5509526",
+      "chembl_record_id": "25858866",
+      "cid": 177647031,
+      "endpoint": "IC50",
+      "inchikey": "GGHDQMRDOHFUHR-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "",
+      "pubchem_concise_value_uM": ""
+    },
+    {
+      "aid": 2070371,
+      "chembl_assay_id": "CHEMBL5509526",
+      "chembl_record_id": "25858861",
+      "cid": 58149659,
+      "endpoint": "IC50",
+      "inchikey": "GMSABXWDTDDUPQ-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "0.4870000000"
+    },
+    {
+      "aid": 2070371,
+      "chembl_assay_id": "CHEMBL5509526",
+      "chembl_record_id": "25858860",
+      "cid": 139475244,
+      "endpoint": "IC50",
+      "inchikey": "KHLKLLMMPVSSQY-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "0.2700000000"
+    },
+    {
+      "aid": 2070371,
+      "chembl_assay_id": "CHEMBL5509526",
+      "chembl_record_id": "25858863",
+      "cid": 177374568,
+      "endpoint": "IC50",
+      "inchikey": "SNUGJDIPJKTZQS-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": ">",
+      "pubchem_concise_value_uM": "50.0000000000"
+    },
+    {
+      "aid": 2070371,
+      "chembl_assay_id": "CHEMBL5509526",
+      "chembl_record_id": "25858864",
+      "cid": 177374570,
+      "endpoint": "IC50",
+      "inchikey": "XQQOFBWNXPTVPQ-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "",
+      "pubchem_concise_value_uM": ""
+    },
+    {
+      "aid": 2070371,
+      "chembl_assay_id": "CHEMBL5509526",
+      "chembl_record_id": "25858865",
+      "cid": 177374569,
+      "endpoint": "IC50",
+      "inchikey": "UXFCROQDHASCPV-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "13.8000000000"
+    },
+    {
+      "aid": 2070373,
+      "chembl_assay_id": "CHEMBL5509528",
+      "chembl_record_id": "25858869",
+      "cid": 24821094,
+      "endpoint": "Kd",
+      "inchikey": "XYFPWWZEPKGCCK-GOSISDBHSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "0.2000000000"
+    },
+    {
+      "aid": 2070373,
+      "chembl_assay_id": "CHEMBL5509528",
+      "chembl_record_id": "25858870",
+      "cid": 139475244,
+      "endpoint": "Kd",
+      "inchikey": "KHLKLLMMPVSSQY-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "0.2500000000"
+    },
+    {
+      "aid": 2070374,
+      "chembl_assay_id": "CHEMBL5509529",
+      "chembl_record_id": "25858872",
+      "cid": 24821094,
+      "endpoint": "EC50",
+      "inchikey": "XYFPWWZEPKGCCK-GOSISDBHSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "1.2300000000"
+    },
+    {
+      "aid": 2070374,
+      "chembl_assay_id": "CHEMBL5509529",
+      "chembl_record_id": "25858873",
+      "cid": 71226662,
+      "endpoint": "EC50",
+      "inchikey": "WDENQIQQYWYTPO-IBGZPJMESA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": ">",
+      "pubchem_concise_value_uM": "10.0000000000"
+    },
+    {
+      "aid": 2070374,
+      "chembl_assay_id": "CHEMBL5509529",
+      "chembl_record_id": "25858875",
+      "cid": 71479709,
+      "endpoint": "EC50",
+      "inchikey": "QUIWHXQETADMGN-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": ">",
+      "pubchem_concise_value_uM": "10.0000000000"
+    },
+    {
+      "aid": 2070374,
+      "chembl_assay_id": "CHEMBL5509529",
+      "chembl_record_id": "25858874",
+      "cid": 121293929,
+      "endpoint": "EC50",
+      "inchikey": "VJPPLCNBDLZIFG-ZDUSSCGKSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": ">",
+      "pubchem_concise_value_uM": "10.0000000000"
+    },
+    {
+      "aid": 2070374,
+      "chembl_assay_id": "CHEMBL5509529",
+      "chembl_record_id": "25858876",
+      "cid": 74766102,
+      "endpoint": "EC50",
+      "inchikey": "SFTPIUYKBLYRKF-HXUWFJFHSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": ">",
+      "pubchem_concise_value_uM": "10.0000000000"
+    },
+    {
+      "aid": 2070374,
+      "chembl_assay_id": "CHEMBL5509529",
+      "chembl_record_id": "25858871",
+      "cid": 132472992,
+      "endpoint": "EC50",
+      "inchikey": "QXCXMVYVUHVFLP-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "0.0025000000"
+    },
+    {
+      "aid": 2070374,
+      "chembl_assay_id": "CHEMBL5509529",
+      "chembl_record_id": "25858877",
+      "cid": 139475244,
+      "endpoint": "EC50",
+      "inchikey": "KHLKLLMMPVSSQY-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1021/acs.jmedchem.4c00072",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "1.0800000000"
+    },
+    {
+      "aid": 2116012,
+      "chembl_assay_id": "CHEMBL5580778",
+      "chembl_record_id": "26023226",
+      "cid": 24821094,
+      "endpoint": "IC50",
+      "inchikey": "XYFPWWZEPKGCCK-GOSISDBHSA-N",
+      "ledger_publication_doi": "10.1016/j.ejmech.2024.116540",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "0.8300000000"
+    },
+    {
+      "aid": 2148899,
+      "chembl_assay_id": "CHEMBL5651941",
+      "chembl_record_id": "26220621",
+      "cid": 16747388,
+      "endpoint": "Kd",
+      "inchikey": "ZCCPLJOKGAACRT-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1002/cmdc.201800398",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "3.6168400000"
+    },
+    {
+      "aid": 2148899,
+      "chembl_assay_id": "CHEMBL5651941",
+      "chembl_record_id": "26220622",
+      "cid": 16747388,
+      "endpoint": "ED50",
+      "inchikey": "ZCCPLJOKGAACRT-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1002/cmdc.201800398",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "3.7571600000"
+    },
+    {
+      "aid": 2148899,
+      "chembl_assay_id": "CHEMBL5651941",
+      "chembl_record_id": "26220619",
+      "cid": 117602383,
+      "endpoint": "Kd",
+      "inchikey": "MWKSRKSEWLRPBL-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1002/cmdc.201800398",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "7.6844700000"
+    },
+    {
+      "aid": 2148899,
+      "chembl_assay_id": "CHEMBL5651941",
+      "chembl_record_id": "26220620",
+      "cid": 117602383,
+      "endpoint": "ED50",
+      "inchikey": "MWKSRKSEWLRPBL-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1002/cmdc.201800398",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "7.9826000000"
+    },
+    {
+      "aid": 2200593,
+      "chembl_assay_id": "CHEMBL5723177",
+      "chembl_record_id": "26335711",
+      "cid": 132472992,
+      "endpoint": "IC50",
+      "inchikey": "QXCXMVYVUHVFLP-UHFFFAOYSA-N",
+      "ledger_publication_doi": "10.1038/s41467-017-02293-7",
+      "ledger_relation_not_provided_by_concise": "=",
+      "pubchem_concise_value_uM": "0.0290000000"
+    }
+  ],
+  "assay_catalog": [
+    {
+      "accession_query": false,
+      "aid": 1904,
+      "gene_query": true,
+      "name": "siRNA Circadian Assay",
+      "source": "The Genomics Institute of the Novartis Research Foundation (GNF)",
+      "source_assay_id": "siRNA_circadian",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/1904"
+    },
+    {
+      "accession_query": false,
+      "aid": 624099,
+      "gene_query": true,
+      "name": "An siRNA screen for human genes that are involved in human papilloma virus (HPV) E2 transcriptional repression of the E6 and E7 oncogenes",
+      "source": "ICCB-Longwood/NSRB Screening Facility, Harvard Medical School",
+      "source_assay_id": "HMS729",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/624099"
+    },
+    {
+      "accession_query": false,
+      "aid": 651810,
+      "gene_query": true,
+      "name": "Genome-wide high-content siRNA screens for regulators of Parkin translocation in selective mitophagy (Dharmacon Library)",
+      "source": "NCGC",
+      "source_assay_id": "Parkin-RNAi-Dharmacon",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/651810"
+    },
+    {
+      "accession_query": false,
+      "aid": 651811,
+      "gene_query": true,
+      "name": "Genome-wide high-content siRNA screens for regulators of Parkin translocation in selective mitophagy (Ambion Library)",
+      "source": "NCGC",
+      "source_assay_id": "Parkin-RNAi-Ambion",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/651811"
+    },
+    {
+      "accession_query": false,
+      "aid": 743454,
+      "gene_query": true,
+      "name": "RNAi screen for vorinostat resistance genes - Primary Screen",
+      "source": "1154",
+      "source_assay_id": "vorinostat-resistance-genes-primary-screen",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/743454"
+    },
+    {
+      "accession_query": false,
+      "aid": 1117281,
+      "gene_query": true,
+      "name": "A whole genome RNAi screen highlights components of the ER/Golgi as a prominent source of resistance to immunotoxin-mediated cytotoxicity",
+      "source": "NCGC",
+      "source_assay_id": "ITOXAMBION-WG",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/1117281"
+    },
+    {
+      "accession_query": false,
+      "aid": 1117357,
+      "gene_query": true,
+      "name": "InfectX: Pathogen infection siRNA screens",
+      "source": "10589",
+      "source_assay_id": "Schmich_2015",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/1117357"
+    },
+    {
+      "accession_query": false,
+      "aid": 1159506,
+      "gene_query": true,
+      "name": "Identification of proteins required for the processing of the EWS-FLI1 nascent transcript",
+      "source": "NCGC",
+      "source_assay_id": "NROBsiRNAI001",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/1159506"
+    },
+    {
+      "accession_query": false,
+      "aid": 1159578,
+      "gene_query": true,
+      "name": "A screen to identify genes that regulate lymphatic endothelial cell migration - Primary Screen",
+      "source": "1154",
+      "source_assay_id": "VCFG_SW_PS_20151201",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/1159578"
+    },
+    {
+      "accession_query": false,
+      "aid": 1159584,
+      "gene_query": true,
+      "name": "A screen to identify synthetic lethal interactions with E-cadherin in an MCF10A isogenic cell line",
+      "source": "1154",
+      "source_assay_id": "VCFG_BT_PS_20150112",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/1159584"
+    },
+    {
+      "accession_query": false,
+      "aid": 1224830,
+      "gene_query": true,
+      "name": "Genome-wide siRNA screen of genes regulating the Lipopolysaccharide-induced TNF-alpha response in human macrophages_Primary screen TNF readout",
+      "source": "11962",
+      "source_assay_id": "LPS genome wide primary screen-Human",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/1224830"
+    },
+    {
+      "accession_query": true,
+      "aid": 1440791,
+      "gene_query": true,
+      "name": "Inhibition of human His-tagged NUDT5 expressed in bacterial expression system in presence of ADP after 1 hr by malachite green reagent based assay",
+      "source": "ChEMBL",
+      "source_assay_id": "CHEMBL4008387",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/1440791"
+    },
+    {
+      "accession_query": false,
+      "aid": 1508588,
+      "gene_query": true,
+      "name": "RNAi screen for vemurafenib enhancer genes in BRAFV600 melanoma - Primary Screen",
+      "source": "1154",
+      "source_assay_id": "BRAFV600-vemurafenib-primary",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/1508588"
+    },
+    {
+      "accession_query": true,
+      "aid": 2070370,
+      "gene_query": false,
+      "name": "Binding affinity to N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) pull-down based Western blotting analysis",
+      "source": "ChEMBL",
+      "source_assay_id": "CHEMBL5509525",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/2070370"
+    },
+    {
+      "accession_query": true,
+      "aid": 2070371,
+      "gene_query": false,
+      "name": "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) using ADP as substrate incubated for 1 hr by luminescence based microplate reader analysis",
+      "source": "ChEMBL",
+      "source_assay_id": "CHEMBL5509526",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/2070371"
+    },
+    {
+      "accession_query": true,
+      "aid": 2070372,
+      "gene_query": false,
+      "name": "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) using ADP as substrate upto 50 uM incubated for 1 hr by luminescence based microplate reader analysis",
+      "source": "ChEMBL",
+      "source_assay_id": "CHEMBL5509527",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/2070372"
+    },
+    {
+      "accession_query": true,
+      "aid": 2070373,
+      "gene_query": false,
+      "name": "Binding affinity to N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) assessed as dissociation constant by SPR analysis",
+      "source": "ChEMBL",
+      "source_assay_id": "CHEMBL5509528",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/2070373"
+    },
+    {
+      "accession_query": true,
+      "aid": 2070374,
+      "gene_query": false,
+      "name": "Antagonist activity at N-terminal his6-tagged human recombinant NUDT5 (1 to 208 residues) expressed in Escherichia coli Rosetta (DE3) expressed in HEK293 cells incubated for 2 hrs by nanoBRET assay",
+      "source": "ChEMBL",
+      "source_assay_id": "CHEMBL5509529",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/2070374"
+    },
+    {
+      "accession_query": true,
+      "aid": 2116012,
+      "gene_query": false,
+      "name": "Antagonist activity at NUDT5 (unknown origin)",
+      "source": "ChEMBL",
+      "source_assay_id": "CHEMBL5580778",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/2116012"
+    },
+    {
+      "accession_query": true,
+      "aid": 2148899,
+      "gene_query": false,
+      "name": "Binding affinity to human NUDT5 incubated for 45 mins by Kinobead based pull down assay",
+      "source": "ChEMBL",
+      "source_assay_id": "CHEMBL5651941",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/2148899"
+    },
+    {
+      "accession_query": true,
+      "aid": 2200593,
+      "gene_query": false,
+      "name": "Affinity Biochemical interaction: (MG assay) EUB0002332a NUDT5",
+      "source": "ChEMBL",
+      "source_assay_id": "CHEMBL5723177",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/bioassay/2200593"
+    }
+  ],
+  "counts": {
+    "accession_query_aids": 9,
+    "concise_aids": 7,
+    "concise_rows_matched": 26,
+    "distinct_cids_matched": 16,
+    "gene_query_aids": 13,
+    "ledger_strict_greater_than_rows": 6,
+    "missing_numeric_values": 2,
+    "union_aids": 21
+  },
+  "ledger_sha256": "1d29500847c5e038005c81ded55edc1032561b2c4003aa678517e9e6a2f9b3f1",
+  "scope": "Offline provenance cross-check; not a new biological evaluation or exhaustive search",
+  "warning": "Concise API omits relation symbols; joined ledger relations are not inferred from numeric values"
+}

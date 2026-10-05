@@ -37,6 +37,8 @@ def build_manifest(root: Path, output: Path) -> dict[str, Any]:
         if path.resolve() == output.resolve():
             continue
         relative = path.relative_to(root).as_posix()
+        if relative == "research/release_manifest.json":
+            continue
         if relative in ("compounds.csv", "final_hits.csv"):
             purpose, provenance = (
                 "Immutable original input",

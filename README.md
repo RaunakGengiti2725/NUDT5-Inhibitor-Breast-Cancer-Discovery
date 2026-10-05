@@ -105,10 +105,85 @@ To regenerate figures, supplementary tables and the PDF/DOCX from the recorded r
 
 Both destinations must be new (the document builder also accepts an empty directory). The inventory contains relative filenames, purpose, provenance, size, SHA-256 and evidence/reproduction status. The run manifests identify exact analysis inputs and source hashes; the release inventory covers the broader dossier. The supplied manuscript's quantitative source-comparison table is checked against recorded JSON by the test suite.
 
-The final local verification passed 87 tests, Ruff, formatting, strict mypy, byte-compilation and package build. The dependency audit found no known advisories in the pinned third-party environment; it cannot certify this local project. Tests do not establish biological validity. Independent-review reports and their reconciliation are in `research/reviews/` and `research/reviewer_simulation.md`.
+The baseline verification passed 87 tests; the integrated release adds paired-target, assay, provenance and document regressions. See [the verification ledger](research/verification.md) for current command results. The dependency audit found no known advisories in the pinned third-party environment; it cannot certify this local project. Tests do not establish biological validity. Independent-review reports and their reconciliation are in `research/reviews/` and `research/reviewer_simulation.md`.
 
 ### Numerical reproduction versus run provenance
 
 The committed run manifests preserve their real execution-time revision, dirty-worktree state, paths and command arguments. A fresh run on another checkout should produce its own manifest; those runtime records are **not** expected to be byte-identical. The reported byte-identical reruns refer to numerical audit/benchmark/control/transfer JSON, not runtime metadata. Compare source/input content hashes and settings, and use the separate relative-path release inventory for the portable bundle. Do not rewrite historical provenance to resemble a post-commit run.
 
 Source cutoffs lacking both classes remain explicit in `source_cutoff_status.csv` and supplementary feasibility tables. Undefined ROC-AUC is never displayed as zero; the source-comparison figure annotates an unavailable 50 µM comparison instead of fabricating bars.
+
+## Descriptive paired-target analysis (not a selectivity predictor)
+
+```sh
+.venv/bin/nudt5-selectivity \
+  --source research/selectivity/paired_evidence.json \
+  --predictions research/results/transfer.json --repository . \
+  --output results/paired-analysis
+.venv/bin/python scripts/build_selectivity_figures.py \
+  --input results/paired-analysis/selectivity.json \
+  --manifest results/paired-analysis/selectivity-manifest.json \
+  --output results/paired-figures
+```
+
+All 23 source graphs/46 endpoint cells are preserved. Eight source rows have paired endpoints;
+six remain after overlap exclusion, with three point ratios, one strict upper bound and two
+double-censored ratios with no finite bound. R is reported mean IC50(NUDT14)/IC50(NUDT5), not an
+affinity constant. Highest Equal_mean accompanies known dual compound 9 (R=0.600) in both frozen
+scenarios. Related chemistry from one already-inspected publication is **not fresh validation**.
+No fitting, score selection, ratio confidence interval or selectivity classifier is introduced.
+Source SDs, reaction-time differences and unresolved control/replication wording remain visible.
+See [the complete paired evidence](research/selectivity/analysis/selectivity.md).
+
+The analysis writes numerical JSON, complete pharmacology/endpoint/score CSVs, Markdown and an
+execution-time manifest. The figure command writes PNG/PDF/SVG for **both** scenarios. All
+commands refuse replacement. The document command above now includes both figures and full
+paired tables, publishing `documents-manifest.json` last after successful staging. It requires
+recorded paired results and a matching manifest by default. For a legacy results directory only,
+pass `--allow-missing-selectivity`; absence is explicitly annotated, never converted to zero.
+An empty eligible cohort renders an explicit empty state, not fictitious observations.
+
+For a wheel installation, provide absolute paths and `--repository /path/to/evidence-checkout`.
+The wheel packages both new modules, not research CSVs, source snapshots or contract files.
+The figures/documents remain checkout-only builders. Reinstall the editable package after updating
+entry points: `uv pip install --python .venv/bin/python --no-deps -e .`.
+
+## Future assay inputs: software capability only
+
+```sh
+.venv/bin/nudt5-assay --help
+.venv/bin/nudt5-assay --repository /path/to/evidence-checkout \
+  --manifest /path/to/future-input/manifest.json \
+  --observations /path/to/future-input/observations.csv \
+  --output /existing/output-directory/new-report.json
+.venv/bin/python -m pytest -q tests/test_assay.py
+```
+
+These are argument examples, **not delivered measured inputs**. Read the
+[protocol and unresolved prerequisites](research/assay/PROTOCOL.md) before use. The explicit
+repository supplies `research/assay/contract.json`, `manifest.schema.json` and `requirements.lock`;
+the output parent must exist. Strict package checks precede descriptive bounded curve fitting.
+Technical means do not inflate submitted biological n. Relative midpoint and absolute
+control-normalized 50% crossing are separate; unsupported estimates remain null with reasons.
+
+Synthetic curves are **SOFTWARE TESTS ONLY**, never biological Results or raw measured ledgers.
+No physical experiment, qualification, registration, prospective lock, target validation or
+therapeutic discovery has occurred. Hashes and declared metadata do not authenticate raw-source
+semantics, normalization, blinding or independent preparations. All laboratory gates remain open.
+
+## Bounded PubChem provenance cross-check
+
+[Archived queries and offline audit](research/external/pubchem/README.md) cover 21 assay
+descriptions (12 RNAi, 9 ChEMBL-deposited protein assays). All 26 concise rows across 16 CIDs map
+to existing ChEMBL ledger records, not independent validation. Six ledger values are censored
+and two missing; the concise API omits relation symbols. No evaluation rows or model results change.
+
+```sh
+PYTHONPATH=scripts/scripts .venv/bin/python scripts/build_pubchem_audit.py \
+  --snapshots research/external/pubchem \
+  --ledger research/external/observed_database_rows.csv \
+  --output results/pubchem-audit.json
+cmp results/pubchem-audit.json research/external/pubchem/audit.json
+```
+
+Use an existing output parent and a new filename. This bounded search is not exhaustive.

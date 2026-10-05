@@ -32,3 +32,35 @@ An authoritative ACT-18 graph; original positive-label assay mapping; decoy prov
 ## Lossless repository transport
 
 The two authenticated PDB chemical-component files are stored as deterministic gzip archives in `reference_sources/`; decompressing preserves their original bytes and the SHA-256 values in `reference_structures.csv`. Newly curated CSV copies use LF row terminators; parsed cell values are unchanged. The original `compounds.csv` and `final_hits.csv` remain byte-identical. Imported source attachments remain separate, unchanged evidence. Generated SVG trailing formatting whitespace is normalized without changing the plot.
+
+## Paired-target and future-input integration (5 October 2026)
+
+The selectivity extension retains 23 graphs and 46 endpoint cells from the already-inspected
+Balikci publication. Eight rows have paired target endpoints; training-overlap compounds 10/11
+remain in pharmacology but are excluded from score diagnostics, leaving six. Three ratios are
+points, one is a strict upper bound and two are double-censored with no finite bound. Both frozen
+score scenarios are retained without refitting. `selectivity/provenance.json` records source URLs,
+retrieval times and uncompressed hashes. Integration re-inspected the stored Table 1 value image
+(all 16 target cells), XML Table 1 footnotes, Catalytic Assays sec4.3 and Figure 1 caption; no new
+source retrieval or independent measurement is implied. Conditions and source disagreements
+remain in their separate ledgers. The reciprocal ratio orientation in the older structural
+report is not silently rewritten; this analysis defines R = IC50(NUDT14)/IC50(NUDT5).
+
+The bounded PubChem follow-up in `external/pubchem/README.md` links 26 concise rows/16 CIDs to
+existing ChEMBL ledger rows. Its 21 assay descriptions include 12 genetic-perturbation screens,
+not chemical inhibition experiments. Six matched values are censored and two missing; relation
+symbols come from the existing ledger, not from the concise API. Raw snapshots/manifests and the
+offline join audit preserve this distinction. The earlier search report remains a historical record.
+
+`assay/PROTOCOL.md` and its primary-reference ledger describe future-input requirements. All
+synthetic curves are SOFTWARE TESTS ONLY, generated in isolated test directories, never committed
+as measured data or biological Results. The analyzer checks bytes and declared metadata, not
+vendor semantics, normalization arithmetic, actual blinding, biological independence or scientific
+qualification. All laboratory prerequisites and prospective-lock decisions remain unresolved.
+Installed wheels accept an explicit evidence repository; the assay report hashes the actual installed
+analyzer and writer plus the selected contract/schema/lockfile, not a guessed checkout code path.
+
+Historical analysis and curation manifests remain their original execution-time records. New
+local reruns have separate manifests with their real revision and dirty state. The portable
+`release_manifest.json` inventories final content without pretending historical runs occurred
+post-commit. Original CSVs, source assay ledger and historical numerical JSON remain byte-identical.

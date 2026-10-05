@@ -65,3 +65,60 @@ def test_compressed_authenticated_sources_preserve_original_hashes() -> None:
         name = row["source_url"].rsplit("/", 1)[-1]
         content = gzip.decompress((ROOT / "research/reference_sources" / f"{name}.gz").read_bytes())
         assert hashlib.sha256(content).hexdigest() == row["source_sha256"]
+
+
+def test_paired_table_matches_all_eligible_recorded_endpoints_and_scores() -> None:
+    import math
+
+    result = json.loads((ROOT / "research/results/selectivity.json").read_text())
+    text = (ROOT / "research/manuscript.md").read_text()
+    lines = text.split("Table 3. Same-paper")[1].split("Compound 9 has")[0].splitlines()
+    cells = [
+        [v.strip() for v in line.strip("|").split("|")] for line in lines if line.startswith("| ")
+    ][1:]
+    rows = {r["source_compound"]: r for r in result["rows"]}
+    scores = {(r["source_compound"], r["scenario"]): r for r in result["score_rows"]}
+    scenarios = ["historical_original_graphs", "stored_authenticated_reference_sensitivity"]
+    assert [c[0] for c in cells] == result["summary"]["scenarios"][scenarios[0]]["eligible_ids"]
+    assert len(cells) == 6
+    for name, nudt5, nudt14, ratio, historical, reference in cells:
+        row = rows[name]
+        for target, printed in (("NUDT5", nudt5), ("NUDT14", nudt14)):
+            endpoint = row["endpoints"][target]
+            if endpoint["status"] == "right_censored":
+                assert printed == f">{endpoint['bound']:g}"
+            else:
+                assert float(printed) == endpoint["reported_mean"]
+        value = row["ratio"]
+        if value["status"] == "double_censored":
+            assert ratio == "Not estimable"
+            assert value["point"] is None and value["bound"] is None
+        elif value["status"] == "upper_bound":
+            assert ratio.startswith("<")
+            assert math.isclose(float(ratio[1:]), value["bound"], abs_tol=5e-7)
+        else:
+            assert math.isclose(float(ratio), value["point"], abs_tol=5e-7)
+        for scenario, printed in zip(scenarios, (historical, reference), strict=True):
+            assert math.isclose(
+                float(printed), scores[(name, scenario)]["Equal_mean"], abs_tol=5e-7
+            )
+
+
+def test_new_cli_registration_includes_both_modules() -> None:
+    import tomllib
+
+    config = tomllib.loads((ROOT / "pyproject.toml").read_text())
+    for name in ("selectivity", "assay"):
+        assert config["project"]["scripts"][f"nudt5-{name}"] == f"{name}:main"
+        assert name in config["tool"]["setuptools"]["py-modules"]
+
+
+def test_portable_inventory_excludes_canonical_previous_inventory(tmp_path: Path) -> None:
+    research = tmp_path / "research"
+    research.mkdir()
+    (research / "release_manifest.json").write_text('{"previous": true}')
+    (research / "evidence.md").write_text("Evidence boundaries")
+    first = build_manifest(tmp_path, tmp_path / "inventory-a.json")
+    second = build_manifest(tmp_path, tmp_path / "inventory-b.json")
+    assert first == second
+    assert [row["filename"] for row in first["files"]] == ["research/evidence.md"]

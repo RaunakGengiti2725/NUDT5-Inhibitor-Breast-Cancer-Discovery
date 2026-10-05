@@ -32,10 +32,9 @@ arithmetic, document and figure functions are separately exercised on software-o
 zero/one-eligible-pair fixtures, both one-sided bound directions and equality boundaries.
 Those fixtures never enter biological ledgers or committed analysis outputs.
 
-Run from any working directory using absolute script/input paths. Source-checkout use
-with the README editable install is tested. A wheel entry point/module declaration
-requires the parent's packaging integration; this scoped change does not modify
-`pyproject.toml` or claim that the existing wheel bundles the new CLI.
+Run from any working directory using absolute script/input paths. The integration now registers the `nudt5-selectivity` entry point and bundles its
+module in the wheel. Supply explicit input paths and `--repository` for installed-wheel
+use; research evidence is not bundled. See the root verification ledger for integrated checks.
 
 ## Artifacts and interpretation
 

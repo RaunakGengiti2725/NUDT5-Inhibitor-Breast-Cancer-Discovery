@@ -313,7 +313,12 @@ directory; paths escaping it, including symlinks, fail. The output parent must a
 Input errors are checked before any curve is optimized. A refused curve does not terminate valid
 processing of other submitted curves, but no invalid package is partially analyzed/published.
 
-Reusable typed entry points are `load_package(Path, Path) -> AssayPackage`,
+The installed `nudt5-assay` entry point accepts the same arguments plus optional
+`--repository /absolute/evidence-checkout` (required outside a checkout/wheel installation).
+The repository provides the contract, schema and hash-locked environment record; the report
+hashes actual installed analyzer/writer code. No evidence files are bundled in the wheel.
+
+Reusable typed entry points are `load_package(Path, Path, repository=Path) -> AssayPackage`,
 `analyze(AssayPackage) -> dict`, and existing `pipeline.write_json(Path, value) -> None`. Treat loaded package objects
 as read-only snapshots; do not mutate their nested manifest/observation dictionaries. Numerical
 `fit_response` is a lower-level routine requiring explicit `PilotPolicy` and numerical contract;

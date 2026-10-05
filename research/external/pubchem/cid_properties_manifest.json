@@ -1,0 +1,8 @@
+{
+  "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/3163969,16747388,22346757,24821094,58149659,71226662,71479709,74766102,117602383,121293929,132472992,139475244,177374568,177374569,177374570,177647031/property/IsomericSMILES,CanonicalSMILES,InChIKey,MolecularFormula/JSON",
+  "status": 200,
+  "retrieved_utc": "2026-10-05T04:35:26.689960+00:00",
+  "sha256": "20354997feeb0a8eef5ac40051507b248383c280faf6b45f71adbda208ad1107",
+  "size": 5012,
+  "file": "cid-properties.json"
+}

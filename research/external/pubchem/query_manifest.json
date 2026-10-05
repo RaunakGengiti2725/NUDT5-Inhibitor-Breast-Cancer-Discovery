@@ -1,0 +1,50 @@
+[
+  {
+    "name": "geneid-aids",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/target/geneid/11164/aids/JSON",
+    "final_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/target/geneid/11164/aids/JSON",
+    "status": 200,
+    "content_type": "application/json",
+    "retrieved_utc": "2026-10-05T04:19:37.874230+00:00",
+    "file": "geneid-aids.json",
+    "sha256": "c3437460270152932200429952a963e484a1943c849f2024b57f90ed0041d62b",
+    "size": 236,
+    "aids": [
+      1904,
+      624099,
+      651810,
+      651811,
+      743454,
+      1117281,
+      1117357,
+      1159506,
+      1159578,
+      1159584,
+      1224830,
+      1440791,
+      1508588
+    ]
+  },
+  {
+    "name": "accession-aids",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/target/accession/Q9UKK9/aids/JSON",
+    "final_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/target/accession/Q9UKK9/aids/JSON",
+    "status": 200,
+    "content_type": "application/json",
+    "retrieved_utc": "2026-10-05T04:19:37.890298+00:00",
+    "file": "accession-aids.json",
+    "sha256": "9a4b66d3c48992e8e85c770e496dc46d43a080106dedaac00efc36924d4eb11e",
+    "size": 183,
+    "aids": [
+      1440791,
+      2070370,
+      2070371,
+      2070372,
+      2070373,
+      2070374,
+      2116012,
+      2148899,
+      2200593
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "status": "Scientific specification only; implementation follows; not laboratory qualified or preregistered",
+  "prerequisites": [
+    {
+      "id": "G0-materials",
+      "status": "unresolved",
+      "requires": "Actual compound materials/identity/salts/stereochemistry/purity/solubility/exposure and species/construct/sequence/tag/lot evidence"
+    },
+    {
+      "id": "G1-assay",
+      "status": "unresolved",
+      "requires": "Independent pilot, product/detection linearity, interference/coupling/aggregation checks, orthogonal direct product evidence, normalization and plate/reference QC criteria"
+    },
+    {
+      "id": "pilot-policy",
+      "status": "unresolved",
+      "requires": "Documented justification for min_response_span_pp, max_fit_rms_pp, plateau_tolerance_pp and min_technical_replicates; no measured defaults supplied"
+    },
+    {
+      "id": "independent-units",
+      "status": "unresolved",
+      "requires": "Actual independent-preparation definition, unit hierarchy, pilot variance and repeatability; technical wells never biological n"
+    },
+    {
+      "id": "meaningful-margins",
+      "status": "unresolved",
+      "requires": "Independent scientific justification for any future inferential margin, sample size, stopping, multiplicity and precision; absent here, no power or efficacy claims"
+    },
+    {
+      "id": "G4-lock",
+      "status": "not_completed",
+      "requires": "Custodial opaque IDs, known controls, fixed materials/panel/protocol/design/randomization, analysis code/dependency/input-policy hashes, local UTC timestamp before validation acquisition, pilot exclusion and unblinding rules"
+    }
+  ],
+  "software_tests": "Synthetic-only engineering checks do not resolve any prerequisite",
+  "external_actions": "No physical experiment, registration, submission, deposit or public release performed"
+}

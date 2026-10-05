@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="UTF-8"?><article xml:lang="en" article-type="research-article"><front><journal-meta><journal-id journal-id-type="pmc-domain-id">822</journal-id><journal-id journal-id-type="pmc-domain">acssd</journal-id><journal-title-group><journal-title>Journal of Medicinal Chemistry</journal-title><abbrev-journal-title>J Med Chem</abbrev-journal-title></journal-title-group></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC11089510</article-id><article-id pub-id-type="pmcaid">11089510</article-id><article-id pub-id-type="pmcaiid">11089510</article-id><article-id pub-id-type="pmid">38635563</article-id><article-id pub-id-type="doi">10.1021/acs.jmedchem.4c00072</article-id><title-group><article-title>Unexpected
+Noncovalent
+Off-Target Activity of Clinical
+BTK Inhibitors Leads to Discovery of a Dual NUDT5/14 Antagonist</article-title></title-group><contrib-group content-type="author"><contrib><name name-style="western"><surname>Balıkçı</surname><given-names initials="E">Esra</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Marques</surname><given-names initials="ASMC">Anne-Sophie M C</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Bauer</surname><given-names initials="LG">Ludwig G</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Seupel</surname><given-names initials="R">Raina</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Bennett</surname><given-names initials="J">James</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Raux</surname><given-names initials="B">Brigitt</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Buchan</surname><given-names initials="K">Karly</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Simelis</surname><given-names initials="K">Klemensas</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Singh</surname><given-names initials="U">Usha</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Rogers</surname><given-names initials="C">Catherine</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Ward</surname><given-names initials="J">Jennifer</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Cheng</surname><given-names initials="C">Carol</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Szommer</surname><given-names initials="T">Tamas</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Schützenhofer</surname><given-names initials="K">Kira</given-names></name><xref ref-type="aff" rid="aff4">∥</xref></contrib><contrib><name name-style="western"><surname>Elkins</surname><given-names initials="JM">Jonathan M</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Sloman</surname><given-names initials="DL">David L</given-names></name><xref ref-type="aff" rid="aff5">⊥</xref></contrib><contrib><name name-style="western"><surname>Ahel</surname><given-names initials="I">Ivan</given-names></name><xref ref-type="aff" rid="aff4">∥</xref></contrib><contrib><name name-style="western"><surname>Fedorov</surname><given-names initials="O">Oleg</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Brennan</surname><given-names initials="PE">Paul E</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref><xref ref-type="aff" rid="aff3">§</xref></contrib><contrib><name name-style="western"><surname>Huber</surname><given-names initials="KVM">Kilian V M</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref><xref rid="cor1" ref-type="author-notes">*</xref></contrib></contrib-group><aff id="aff1"><label>†</label>Centre
+for Medicines Discovery, Nuffield Department of Medicine, University of Oxford, Old Road Campus, Roosevelt Drive, Oxford OX3 7FZ, U.K.</aff><aff id="aff2"><label>‡</label>Target
+Discovery Institute, Nuffield Department of Medicine, University of Oxford, Old Road Campus, Roosevelt Drive, Oxford OX3 7FZ, U.K.</aff><aff id="aff3"><label>§</label>Alzheimer’s
+Research UK Oxford Drug Discovery Institute, Nuffield Department of
+Medicine, University of Oxford, Old Road Campus, Roosevelt Drive, Oxford OX3 7FZ, U.K.</aff><aff id="aff4"><label>∥</label>Sir
+William Dunn School of Pathology, University
+of Oxford, South Parks
+Road, Oxford OX1 3RE, U.K.</aff><aff id="aff5"><label>⊥</label>Departments
+of Discovery Chemistry, Merck &amp; Co.
+Inc., 33 Avenue Louis
+Pasteur, Boston, Massachusetts 02115, United States</aff><author-notes><fn id="cor1"><label>*</label><p>Email: <email>kilian.huber@cmd.ox.ac.uk</email>.</p></fn></author-notes><pub-date><day>18</day><month>4</month><year>2024</year></pub-date><volume>67</volume><issue>9</issue><fpage>7245</fpage><page-range>7245–7259</page-range><pub-history><event event-type="pmc-release"><date><day>14</day><month>5</month><year>2024</year></date></event></pub-history><permissions><copyright-statement>© 2024 The Authors. Published by American Chemical Society</copyright-statement><license><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by/4.0/" ext-link-type="uri">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="jm4c00072.pdf" content-type="pmc-pdf"><?cloudpmc-path dcdc/11089510/4487ab19fbdd/jm4c00072.pdf?><?cloudpmc-bucket app?><?size 7808009?></self-uri><abstract id="abstract1"><title>Abstract</title><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="ab-tgr1" xlink:href="jm4c00072_0009.jpg"><?cloudpmc-path blobs/dcdc/11089510/0b3cc7faf99c/jm4c00072_0009.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 638?><?original-width 1250?><?scaled-height 319?><?scaled-width 625?></graphic><p>Cofactor mimicry
+represents an attractive strategy for the development
+of enzyme inhibitors but can lead to off-target effects due to the
+evolutionary conservation of binding sites across the proteome. Here,
+we uncover the ADP-ribose (ADPr) hydrolase NUDT5 as an unexpected,
+noncovalent, off-target of clinical BTK inhibitors. Using a combination
+of biochemical, biophysical, and intact cell NanoBRET assays as well
+as X-ray crystallography, we confirm catalytic inhibition and cellular
+target engagement of NUDT5 and reveal an unusual binding mode that
+is independent of the reactive acrylamide warhead. Further investigation
+of the prototypical BTK inhibitor ibrutinib also revealed potent inhibition
+of the largely unstudied NUDIX hydrolase family member NUDT14. By
+exploring structure–activity relationships (SARs) around the
+core scaffold, we identify a potent, noncovalent, and cell-active
+dual NUDT5/14 inhibitor. Cocrystallization experiments yielded new
+insights into the NUDT14 hydrolase active site architecture and inhibitor
+binding, thus providing a basis for future chemical probe design.</p></abstract><custom-meta-group><custom-meta><meta-name>status</meta-name><meta-value>released</meta-value></custom-meta><custom-meta><meta-name>display-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-in-collection-domain</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-journal-matter</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-scanned</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-retracted</meta-name><meta-value>no</meta-value></custom-meta></custom-meta-group></article-meta><notes notes-type="article-notes"><sec id="historyarticle-meta1" sec-type="history" disp-level="2"><p>Received 2024 Jan 11; Accepted 2024 Mar 25; Revised 2024 Mar 22; Collection date 2024 May 9.</p></sec></notes></front><body><sec id="sec1" disp-level="1"><title>Introduction</title><p>NUDIX
+hydrolases are conserved throughout eukaryotes, bacteria,
+archaea, and viruses. Their name derives from a common substrate structure, <bold>nu</bold>cleoside <bold>di</bold>phosphate linked to another moiety <bold>X</bold>.<sup><xref rid="ref1" ref-type="bibr">1</xref></sup> The characteristic NUDIX box
+is shared between family members and contains a sequence motif “GX<sub>5</sub>EX<sub>5</sub> [UA] XREX<sub>2</sub>EEXGU”, where U
+is usually valine, leucine, or isoleucine and X is any amino acid.
+NUDIX enzymes recognize a wide range of substrates including canonical
+and oxidized forms of (d)NTPs, dinucleoside polyphosphates (NpnN),
+nucleotide sugars, alcohols, and capped RNAs.<sup><xref rid="ref2" ref-type="bibr">2</xref></sup> To date, more than 20 family members have been identified in mammals
+but their distinct biological functions and cellular roles remain
+largely unexplored.<sup><xref rid="ref3" ref-type="bibr">3</xref></sup> In particular, the
+nature of their physiological substrates remains an object for debate,
+e.g., NUDT5 not only predominantly hydrolyzes ADP-ribose (ADPr) to
+AMP and ribose-5′-phosphate but also exhibits activity against
+8-oxo-dGDP, 8-oxo-GDP, 8-oxo-dADP, 2-oxo-dADP, and 5-CHO-dUDP.<sup><xref rid="ref4" ref-type="bibr">4</xref>,<xref rid="ref5" ref-type="bibr">5</xref></sup> Attachment of ADPr to proteins serves as a trigger signal for essential
+biological processes such as DNA repair, gene transcription, protein
+degradation, and cell death.<sup><xref rid="ref6" ref-type="bibr">6</xref>,<xref rid="ref7" ref-type="bibr">7</xref></sup> In cells, free ADPr
+levels are controlled by NUDT5 and NUDT9 to maintain NAD<sup>+</sup> pools after DNA damage<sup><xref rid="ref8" ref-type="bibr">8</xref>,<xref rid="ref9" ref-type="bibr">9</xref></sup> and prevent deleterious
+nonenzymatic ADP-ribosylation of proteins.<sup><xref rid="ref10" ref-type="bibr">10</xref></sup> Notably, NUDT5 has recently been suggested as a key enzyme for nuclear
+ATP synthesis required for progestin-mediated chromatin remodeling,
+transcription, and tumor cell proliferation.<sup><xref rid="ref11" ref-type="bibr">11</xref></sup> Suppression of NUDT5 activity by potent inhibitors was found to
+impair breast cancer cell growth in various model systems in line
+with reports suggesting NUDT5 overexpression as a potential prognostic
+marker for this tumor type.<sup><xref rid="ref12" ref-type="bibr">12</xref>,<xref rid="ref13" ref-type="bibr">13</xref></sup> A recent systematic
+exploration of the NUDIX family confirmed that both NUDT5 and NUDT14
+are able to hydrolyze ADPr and ADP-glucose,<sup><xref rid="ref3" ref-type="bibr">3</xref></sup> yet the function and cellular roles of NUDT14 remain elusive. Given
+the importance of ADPr for cellular signaling, there is a strong need
+for new tool compounds to facilitate further investigation of NUDIX
+proteins in these and other yet-to-be-discovered pathways. Here, by
+screening a small kinase inhibitor library, we identify ibrutinib
+(<bold>1</bold>) as a dual inhibitor of NUDT5 and NUDT14 catalytic
+activities. By investigating structure–activity relationship
+(SAR) around <bold>1</bold>, we discover a potent dual cell-active
+NUDT5/NUDT14 inhibitor, which, together with novel cocrystal structures
+of NUDT5 and NUDT14, should pave the way for future chemical probe
+development.</p></sec><sec id="sec2" disp-level="1"><title>Results and Discussion</title><p>Building
+on previous efforts that identified highly potent and
+selective NUDT1 (MTH1) inhibitors from kinase inhibitor screening,<sup><xref rid="ref14" ref-type="bibr">14</xref>−<xref rid="ref16" ref-type="bibr">16</xref></sup> we hypothesized that this approach could be exploited further for
+the discovery of novel tool compounds for other NUDIX proteins. Structures
+of human NUDT5 bound to ADPr and AMP indicate the importance of the
+adenine moiety for substrate binding, with strong π–π
+stacking interactions observed in the enzymatic pocket.<sup><xref rid="ref17" ref-type="bibr">17</xref></sup> We screened a small set of kinase inhibitors
+in an AMP-Glo assay to monitor the NUDT5-mediated conversion of ADPr
+into AMP and ribose-5-phosphate. Surprisingly, we identified ibrutinib
+(<bold>1</bold>), an irreversible covalent BTK inhibitor, as a hit.
+Ibrutinib (<bold>1</bold>) is an FDA-approved Bruton’s tyrosine
+kinase (BTK) antagonist used for the treatment of various cancers
+including B-cell leukemias and lymphomas.<sup><xref rid="ref18" ref-type="bibr">18</xref></sup> To rationalize this observation and investigate SAR, we extended
+our efforts toward an expanded selection of four commercially available
+BTK inhibitors including acalabrutinib (<bold>2</bold>), branebrutinib
+(<bold>3</bold>), evobrutinib (<bold>4</bold>), and PF-06658607 (<bold>5</bold>) (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>A,B). Among the compounds tested, <bold>1</bold> stood out as the
+most potent inhibitor (IC<sub>50</sub> = 0.837 ± 0.329 μM),
+yet the other two acrylamide-based molecules <bold>4</bold> and <bold>5</bold> also exhibited weak activity (IC<sub>50</sub> &gt; 10 μM).
+Compounds <bold>2</bold> and <bold>3</bold>, both containing ynamide
+moieties, did not show any inhibition at concentrations of up to 50
+μM. We next confirmed direct binding of <bold>1</bold> to NUDT5
+by surface plasmon resonance (SPR) and determined a <italic>K</italic><sub>D</sub> value of approximately 200 nM (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>C). To understand the binding mode of <bold>1</bold>, we solved a cocrystal structure with NUDT5 at a 2 Å
+resolution (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>D). This suggested that no covalent bond was formed between the acrylamide
+warhead and the protein despite the presence of a potentially accessible
+proximal cysteine (C139) due to the acrylamide moiety pointing out
+of the protein toward the solvent. Similar to previously determined
+NUDT5 inhibitor-bound structures,<sup><xref rid="ref12" ref-type="bibr">12</xref></sup> the
+main heterocyclic ring of <bold>1</bold> is stabilized by π–π
+stacking interactions between W46 of chain A and W28 of chain B in
+the active site (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>D). In addition, the aminopyrimidine moiety is stabilized by hydrogen
+bonds with E47 and the phenoxy group protrudes deep into the hydrophobic
+pocket where interactions are mediated with the side chain of R51.</p><fig id="fig1" position="float"><?disp-level 2?><label>Figure 1</label><caption><p>Identification
+and validation of ibrutinib (<bold>1</bold>) as
+a noncovalent NUDT5 inhibitor. (A) Chemical structures of BTK inhibitors.
+(B) NUDT5 catalytic activity assay results (<bold>1</bold>: IC<sub>50</sub> = 0.837 ± 0.329 μM, <bold>4</bold>: IC<sub>50</sub> = 13.9 ± 0.6 μM, <bold>5</bold>: IC<sub>50</sub> = 21.2
+± 1.0 μM). Data are shown as mean ± standard deviation
+(SD) and are based on three technical replicates. Graph is representative
+of two independent biological replicates (<italic>n</italic> = 2).
+Stars indicate Student’s <italic>t</italic> test <italic>p</italic>-value comparing compound activity at the highest concentration against <bold>1</bold> (* &lt; 0.05, *** &lt; 0.001). (C) SPR sensorgram showing
+binding of <bold>1</bold> to NUDT5 (<italic>K</italic><sub>D</sub> ≈ 200 nM). (D) Crystal structure of ibrutinib (<bold>1</bold>) bound to NUDT5 (PDB: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.rcsb.org/structure/8RDZ" ext-link-type="uri">8RDZ</ext-link>). Compound <bold>1</bold> occupies the active site
+of the NUDT5 dimer where it mediates π–π stacking
+interactions with W46 of chain A (teal) and W28 of chain B (pale teal).
+An additional hydrophobic interaction with R51 in chain B and a hydrogen
+bond with the main chain of E47 in chain A can be observed. Compound <bold>1</bold> (salmon) and interacting residues are shown in stick representation.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr2" xlink:href="jm4c00072_0001.jpg"><?cloudpmc-path blobs/dcdc/11089510/e5ced592dd83/jm4c00072_0001.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 2186?><?original-width 2088?><?scaled-height 729?><?scaled-width 696?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="jm4c00072_0001.gif"><?cloudpmc-path blobs/dcdc/11089510/7750df390788/jm4c00072_0001.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>We next asked if <bold>1</bold> is able to engage
+NUDT5 in cells
+and developed an NUDT5 live-cell target engagement (TE) assay based
+on the NanoBRET system (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>).<sup><xref rid="ref19" ref-type="bibr">19</xref></sup> Taking advantage of the cocrystal
+structure published for TH5427 (<bold>6</bold>) bound to NUDT5, we
+designed and synthesized an affinity probe, CBH-003 (<bold>7</bold>), with a free primary amine appended at the solvent-exposed piperazine
+N4-position of <bold>6</bold> (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>A). The functional probe <bold>7</bold> was obtained
+by reacting <bold>6</bold> with <italic>N</italic>-Boc butyl bromide
+in the presence of <italic>N</italic>,<italic>N</italic>-diisopropylethylamine
+(DIPEA) followed by Boc group removal using trifluoroacetic acid (TFA).
+We next confirmed that <bold>7</bold> retained binding to endogenous
+NUDT5 by performing a pull-down experiment followed by Western blotting
+using a specific NUDT5 antibody (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>B). Subsequent chemoproteomics further corroborated
+the strong binding of <bold>7</bold> to NUDT5 (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jmedchem.4c00072/suppl_file/jm4c00072_si_001.pdf" ext-link-type="uri">Figure S1</ext-link>). CBH-004 (<bold>8</bold>), which we envisioned
+as a NanoBRET-compatible energy-transfer probe (ETF) to assess target
+engagement, was prepared from <bold>7</bold> by amide coupling with
+the corresponding BODIPY succinimidyl ester under basic conditions
+(<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>A). Titration
+of <bold>8</bold> against N- and C-terminal NUDT5-NanoLuc fusions
+in the absence or presence of the parent inhibitor <bold>6</bold> in
+HEK293 cells suggested an optimal assay window at 2.5 nM in the case
+of the N-terminal NanoLuc-NUDT5 fusion (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jmedchem.4c00072/suppl_file/jm4c00072_si_001.pdf" ext-link-type="uri">Figure S2</ext-link>). With this assay in hand, we confirmed in-cell NUDT5 target
+engagement by <bold>1</bold> (EC<sub>50</sub> = 1.23 ± 0.10 μM),
+whereas the other BTK inhibitors did not exhibit any significant activity
+(EC<sub>50</sub> &gt; 10 μM) in line with the catalytic assay
+results
+(<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>C).</p><fig id="fig2" position="float"><?disp-level 2?><label>Figure 2</label><caption><p>Live-cell NanoBRET target engagement (TE) assay for NUDT5.
+(A)
+Synthesis of affinity probe CBH-003 (<bold>7</bold>) and energy-transfer
+probe (ETF) CBH-004 (<bold>8</bold>). Reagents and conditions: (a)
+4-(Boc-amino) butyl bromide, DIPEA, dimethyl sulfoxide (DMSO), 80
+°C, 2 h, 31%; (b) TFA, dichloromethane (DCM), rt, overnight,
+quantitative (c) succinimidyl ester, DIPEA, <italic>N</italic>,<italic>N</italic>-dimethylformamide (DMF), rt, 4 h, 15%. (B) Western blot
+using specific NUDT5 antibody confirms enrichment by CBH-003 (<bold>7</bold>) affinity matrix and competition of NUDT5 by <bold>6</bold> (20 μM). (C) NUDT5 NanoBRET TE assay results for compounds <bold>1</bold>–<bold>5</bold> in HEK293 cells. Addition of NUDT5
+inhibitor test compounds leads to displacement of the ETF resulting
+in reduced BRET. Data are shown as mean ± SD and are based on
+three technical replicates. Graph is representative of two independent
+biological replicates (<italic>n</italic> = 2). Stars indicate Student’s <italic>t</italic> test <italic>p</italic>-value comparing compound activity
+at the highest concentration against <bold>1</bold> (*** &lt; 0.001).</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr3" xlink:href="jm4c00072_0002.jpg"><?cloudpmc-path blobs/dcdc/11089510/0b5109062d73/jm4c00072_0002.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1217?><?original-width 2096?><?scaled-height 405?><?scaled-width 698?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="jm4c00072_0002.gif"><?cloudpmc-path blobs/dcdc/11089510/c704f9c03393/jm4c00072_0002.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>Within the NUDIX family, NUDT5 and NUDT14 are closely
+related,
+and consistent with this notion, previous reports have suggested that
+both enzymes are able to hydrolyze ADPr.<sup><xref rid="ref3" ref-type="bibr">3</xref></sup> Thus, we next expressed and purified recombinant human NUDT14 and
+established a catalytic assay to test if <bold>1</bold> exhibited
+any cross-reactivity. Interestingly, results indicated that ibrutinib
+(<bold>1</bold>) also potently suppresses the NUDT14 catalytic activity
+at submicromolar concentrations (IC<sub>50</sub> = 0.990 ± 0.110
+μM) (<xref rid="tbl1" ref-type="table">Table <xref rid="tbl1" ref-type="table">1</xref></xref>).
+We decided to perform an SAR study to investigate the potential of
+this scaffold for the development of new distinct selective chemical
+tools to study NUDT5 and NUDT14 biology. Our primary objectives were
+to improve potency and evaluate the possibility of developing covalent
+NUDT5 inhibitors targeting C139 as suggested by our cocrystal structure.
+Since the main heterocyclic core in <bold>1</bold> appeared essential
+for binding, we focused on modifying the ring at N1-position (compounds <bold>9</bold>–<bold>11</bold>) and placed an electrophilic acrylamide
+at the C3-position, which should position it within a reasonable distance
+of C139 in NUDT5 (compounds <bold>12</bold>–<bold>15</bold>).</p><table-wrap id="tbl1" position="float"><?disp-level 2?><label>Table 1</label><caption><title>NUDT5 and NUDT14 Catalytic Assay Results<xref rid="t1fn1" ref-type="table-fn"><sup>a</sup></xref></title></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="fx1" xlink:href="jm4c00072_0007.jpg"><?cloudpmc-path blobs/dcdc/11089510/8220b88590b5/jm4c00072_0007.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 419?><?original-width 358?><?scaled-height 419?><?scaled-width 358?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="fx2" xlink:href="jm4c00072_0008.jpg"><?cloudpmc-path blobs/dcdc/11089510/a4addcbfe215/jm4c00072_0008.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 3506?><?original-width 2400?><?scaled-height 1183?><?scaled-width 810?></graphic><table-wrap-foot><fn id="t1fn1"><label>a</label><p>IC<sub>50</sub> values and SD were
+calculated from two independent biological replicates (<italic>n</italic> = 2).</p></fn><fn id="t1fn2"><label>b</label><p>NA, not active (IC<sub>50</sub> &gt;
+50 μM).</p></fn></table-wrap-foot></table-wrap><p><xref rid="sch1" ref-type="fig">Scheme <xref rid="sch1" ref-type="fig">1</xref></xref> illustrates
+the synthetic procedure starting with the functionalization of the
+main building block 3-bromo-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-4-amine (<bold>16</bold>). To replace the electrophilic
+acrylamide present in <bold>1</bold>, a methylpiperidin-4-yl moiety
+or a methyl group was added at the N1-position via Mitsunobu or S<sub>N</sub>2 reaction to afford intermediates <bold>17a</bold> and <bold>17b</bold>. A phenoxyphenyl moiety was added at the C3-position using
+the palladium-catalyzed Suzuki–Miyaura coupling, yielding compounds <bold>9</bold> and <bold>10</bold>. The free amine analogue <bold>11</bold> was accessed in the same manner in one step from <bold>16</bold>. To install the acrylamide warhead at the C3-position, intermediate <bold>17a</bold> was reacted with two different boronic esters via the
+Suzuki–Miyaura coupling to afford regioisomers <bold>18a</bold> and <bold>18b</bold>. Under the same reaction conditions, <bold>17a</bold> was treated with 4-[(<italic>N</italic>-Boc-amino)methyl]phenylboronic
+acid to yield <bold>18c</bold>. Subsequent HCl-mediated deprotection
+of the <italic>N</italic>-Boc group in <bold>18a</bold>–<bold>c</bold> followed by amide coupling with acryloyl chloride on the
+crude material afforded the acrylamide-containing products <bold>12</bold>–<bold>14</bold>. Compound <bold>15</bold>, a saturated analogue
+of <bold>12</bold>, was prepared by hydrogenation of <bold>18a</bold> to give intermediate <bold>19</bold> followed by Boc deprotection
+and amide coupling.</p><fig id="sch1" position="float"><?disp-level 2?><label>Scheme 1</label><caption><title>Synthesis of Ibrutinib Analogues</title><p id="s1fn1">Reagents
+and conditions: (a)
+4-hydroxy-1-methylpiperidine, PS–PPh<sub>3</sub>, diisopropyl
+azodicarboxylate (DIAD), tetrahydrofuran (THF), rt, 12 h, 35%; (b)
+MeI, Cs<sub>2</sub>CO<sub>3</sub>, DMF, rt, 12 h, 23%; (c) R-B(OH)<sub>2</sub> or R-BPin, Pd(dppf)Cl<sub>2</sub>·DCM, Na<sub>2</sub>CO<sub>3</sub>, 1,4-dioxane/H<sub>2</sub>O, 80 °C, overnight,
+31–93%; (d) 4 N HCl in 1,4-dioxane/DCM, rt, 2 h; (e) acryloyl
+chloride, NEt<sub>3</sub>, DCM, rt, 30 min, 43–70% over two
+steps; and (f) H<sub>2</sub>, 10% Pd/C, MeOH, 45 °C, overnight,
+93%.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr1" xlink:href="jm4c00072_0006.jpg"><?cloudpmc-path blobs/dcdc/11089510/9d6fcbd337ea/jm4c00072_0006.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 799?><?original-width 842?><?scaled-height 3323?><?scaled-width 3502?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="jm4c00072_0006.gif"><?cloudpmc-path blobs/dcdc/11089510/beb5fdb6aa19/jm4c00072_0006.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>All compounds were tested against NUDT5
+and NUDT14 in their respective
+catalytic assays (<xref rid="tbl1" ref-type="table">Table <xref rid="tbl1" ref-type="table">1</xref></xref>). The <italic>N</italic>-methylpiperidine analogue <bold>9</bold> lacking a reactive warhead exhibited significantly increased potency
+against both NUDT5 (IC<sub>50</sub> = 0.270 ± 0.027 μM)
+and NUDT14 (IC<sub>50</sub> = 0.162 ± 0.005 μM). This observation
+is in line with the cocrystal structure of <bold>1</bold> bound to
+NUDT5, suggesting that the warhead does not contribute to inhibitor
+binding (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>D).
+Replacing the <italic>N</italic>-methylpiperidine by a methyl group
+(compound <bold>10</bold>) or hydrogen atom (compound <bold>11</bold>) led to reduced inhibitory activity for both proteins. Disappointingly,
+none of the compounds with electrophilic warheads exhibited any increased
+potency against NUDT5. This was further corroborated by intact protein
+MS analysis, which indicated that the compounds were not able to engage
+C139 and form covalent adducts with NUDT5 (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jmedchem.4c00072/suppl_file/jm4c00072_si_001.pdf" ext-link-type="uri">Figure S3</ext-link>). Compounds <bold>13</bold> and <bold>14</bold> also exhibited
+NUDT14 activity in the micromolar range (IC<sub>50</sub> = 3.72 ±
+0.190 μM and 1.64 ± 0.140 μM, respectively) but <bold>15</bold> remained inactive. Similar to NUDT5, none of the compounds
+appeared to form any covalent adducts with NUDT14 (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jmedchem.4c00072/suppl_file/jm4c00072_si_001.pdf" ext-link-type="uri">Figure S4</ext-link>).</p><p>Based on these results, <bold>9</bold> appeared
+as the most potent
+dual inhibitor of NUDT5 and NUDT14. We confirmed direct binding of <bold>9</bold> to NUDT5 by SPR (<italic>K</italic><sub>D</sub> ≈
+250 nM; <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>A)
+and solved a cocrystal structure of NUDT5 in complex with <bold>9</bold> at a 2.29 Å resolution, suggesting a similar binding mode as
+observed for compound <bold>1</bold> (<xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>B–D).</p><fig id="fig3" position="float"><?disp-level 2?><label>Figure 3</label><caption><p>Biophysical assay results and cocrystal
+structure of compound <bold>9</bold> bound to NUDT5. (A) SPR results
+for compound <bold>9</bold> indicating a <italic>K</italic><sub>D</sub> value of approximately
+250 nM for NUDT5. Data are from two independent experiments (<italic>n</italic> = 2). (B) Cocrystal structure of NUDT5 bound to compound <bold>9</bold> (PDB: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.rcsb.org/structure/8RIY" ext-link-type="uri">8RIY</ext-link>). Compound <bold>9</bold> occupies the active site of NUDT5 where
+it mediates π–π stacking interactions with W46
+of chain A (dark gray) and W28 of chain B (light gray). An additional
+hydrophobic interaction with R51 in chain B and a hydrogen bond with
+the main chain of E47 in chain A can be observed. Compound <bold>9</bold> (salmon) and interacting residues are shown in stick representation.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr4" xlink:href="jm4c00072_0003.jpg"><?cloudpmc-path blobs/dcdc/11089510/905efce36441/jm4c00072_0003.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 782?><?original-width 2096?><?scaled-height 260?><?scaled-width 698?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="jm4c00072_0003.gif"><?cloudpmc-path blobs/dcdc/11089510/2d90b74da4f8/jm4c00072_0003.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>To explore the potential of <bold>9</bold> as a
+dual inhibitor
+for NUDT5 and NUDT14, we next performed SPR with a purified human
+NUDT14 protein and confirmed potent direct binding (<italic>K</italic><sub>D</sub> ≈ 400 nM; <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>A). Since compound <bold>9</bold> is the first inhibitor
+of human NUDT14 to the best of our knowledge, we attempted cocrystallization
+to gain insights into the binding mode. Extensive crystallization
+trials yielded the first inhibitor-bound structure of NUDT14 in complex
+with <bold>9</bold> at a 1.82 Å resolution. Notably, this structure
+also revealed the hitherto unresolved conformation of the N-terminal
+domain in NUDT14, which consists of β-sheets intertwined with
+the NUDIX domain of the second subunit (<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>B). Similar to NUDT5, compound <bold>9</bold> occupies the active site of NUDT14 where the heterocyclic core is
+involved in π–π stacking interactions with W34
+of chain A and Y17 of chain B (<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>C). In addition, the aminopyrimidine moiety is stabilized
+by hydrogen bonds with D35 and the aromatic ring of the phenoxy substituent
+interacts with L107 via hydrophobic interaction. By contrast, superimposition
+of the NUDT5 and NUDT14 cocrystal structures in complex with <bold>9</bold> (<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>D) revealed some notable differences: although the main π stacking
+residues of NUDT14 (Y17 and W34) appear to be conserved in NUDT5 (Y36
+and W46, <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jmedchem.4c00072/suppl_file/jm4c00072_si_001.pdf" ext-link-type="uri">Figure S5</ext-link>), <bold>9</bold> is
+sandwiched between W46 and W28 in the NUDT5 active site. The hydrogen
+bond to D35 for NUDT14 is retained with E47 in the NUDT5 structure.
+In contrast to NUDT5 where the phenoxy group of the inhibitor engages
+with the hydrophobic side chain of R51, the NUDT14 structure revealed
+an interaction with L107 (<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>D). R51 is not conserved in NUDT14 and seems particularly
+important for the establishment of ligand H-bond interactions in NUDT5
+as shown for ADP-ribose<sup><xref rid="ref17" ref-type="bibr">17</xref></sup> and TH5427 binding.<sup><xref rid="ref12" ref-type="bibr">12</xref></sup> This may also explain the exquisite selectivity
+of TH5427 (<bold>6</bold>) for NUDT5 over NUDT14.</p><fig id="fig4" position="float"><?disp-level 2?><label>Figure 4</label><caption><p>Biophysical assay results
+and cocrystal structure of compound <bold>9</bold> bound to NUDT14.
+(A) SPR results for compound <bold>9</bold> indicating a <italic>K</italic><sub>D</sub> value of approximately
+400 nM for NUDT14. Data are from two independent experiments (<italic>n</italic> = 2). (B) Overall structure of NUDT14 depicting the N-terminal
+domain, the NUDIX domain, and the active site (PDB: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.rcsb.org/structure/8OTV" ext-link-type="uri">8OTV</ext-link>). Chain A (pale
+green) and chain B (green) constitute a dimer. Compound <bold>9</bold> (violet) is located in the catalytic site. (C) Compound <bold>9</bold> binds to NUDT14 at the dimer interface between W34 of chain A and
+Y17 of chain B, enabling π–π stacking interactions.
+The phenoxy substituent engages in a hydrophobic interaction with
+L107 in chain B, whereas the purine core forms hydrogen bonds with
+D35 in chain A. (D) Superposition of NUDT5 and -14 active sites bound
+to compound <bold>9</bold>. NUDT5 in complex with <bold>9</bold> (black)
+is shown in gray tones (chain A—dark gray and chain B—light
+gray), while NUDT14 in complex with compound <bold>9</bold> (dark
+green) is in green tones (chain A—green and chain B—pale
+green).</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr5" xlink:href="jm4c00072_0004.jpg"><?cloudpmc-path blobs/dcdc/11089510/f7ace6e8bf60/jm4c00072_0004.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1655?><?original-width 2096?><?scaled-height 551?><?scaled-width 698?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="jm4c00072_0004.gif"><?cloudpmc-path blobs/dcdc/11089510/fc74efc6fee8/jm4c00072_0004.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>We confirmed compound <bold>9</bold> as a selective
+NUDT5/NUDT14
+inhibitor by extended biophysical SPR screening of the NUDIX family
+(<xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>A and <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jmedchem.4c00072/suppl_file/jm4c00072_si_001.pdf" ext-link-type="uri">Table S1</ext-link>). Importantly, we validated NUDT5 cellular
+target engagement for <bold>9</bold> by NanoBRET (EC<sub>50</sub> =
+1.08 ± 0.07 μM; <xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>B). To interrogate NUDT14 binding in live cells, we
+established a novel NUDT14 HiBiT CETSA (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jmedchem.4c00072/suppl_file/jm4c00072_si_001.pdf" ext-link-type="uri">Figure S6</ext-link>). Compared to DMSO control, <bold>9</bold> led to a strong
+increase in NUDT14 thermal stability (Δ<italic>T</italic><sub>m</sub> = 5.5 ± 0.3; <xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>C). Notably, <bold>9</bold> showed significantly lower
+potency in binding to BTK in cells (EC<sub>50</sub> = 0.377 ±
+0.062 μM) with an approximately 75-fold decrease compared to
+the parent inhibitor ibrutinib (<bold>1</bold>) (EC<sub>50</sub> =
+0.005 ± 0.001 μM; <xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>D). This is consistent with our observation that compound <bold>9</bold> does not affect cell viability of BT-474 cells, which are
+highly sensitive toward <bold>1</bold>.<sup><xref rid="ref20" ref-type="bibr">20</xref></sup> Taken together, these data suggest a suitable window for the development
+of selective NUDT14 chemical probes (<xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>F). Since both NUDT5 and NUDT14 are known
+to hydrolyze free ADP-ribose, we wondered whether <bold>9</bold> could
+affect global protein ADP-ribosylation in cells. We selected human
+osteosarcoma U2OS ARH3 KO cells as an established model<sup><xref rid="ref21" ref-type="bibr">21</xref></sup> and treated them with <bold>9</bold> in the
+absence or presence of a poly(ADP-ribose) glycohydrolase (PARG) inhibitor
+that promotes excessive ADP-ribosylation and allows visualization
+of transient long poly(ADP-ribose) chains on proteins. In both instances,
+we did not observe any significant effect on protein-bound ADP-ribose,
+suggesting that redundant or alternative mechanisms are able to supplement
+this pathway (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jmedchem.4c00072/suppl_file/jm4c00072_si_001.pdf" ext-link-type="uri">Figure S7</ext-link>). This warrants
+further investigation, and we hope our work will thus inspire the
+development of additional tools.</p><fig id="fig5" position="float"><?disp-level 2?><label>Figure 5</label><caption><p>NUDIX selectivity, NUDT5 and NUDT14 cell
+target engagement and
+cell viability assay results. (A) NUDIX selectivity for compound <bold>9</bold> and ibrutinib (<bold>1</bold>) determined by SPR. NB, no
+binding (<italic>K</italic><sub>D</sub> &gt; 100 μM) (<italic>n</italic> = 2). (B) NUDT5 NanoBRET TE assay result for the dual
+NUDT5/NUDT14
+inhibitor <bold>9</bold> (EC<sub>50</sub> = 1.08 ± 0.07 μM).
+(C) Compounds <bold>1</bold> (Δ<italic>T</italic><sub>m</sub> = 1.6 ± 0.3) and <bold>9</bold> (Δ<italic>T</italic><sub>m</sub> = 5.5 ± 0.3) stabilize HiBiT-NUDT14 measured by CETSA
+in intact HEK293 cells upon 30 μM treatment for 1 h. (D) BTK
+NanoBRET TE assay for evaluation of <bold>1</bold> (EC<sub>50</sub> = 0.005 ± 0.001 μM) and <bold>9</bold> (EC<sub>50</sub> = 0.377 ± 0.062 μM). (E) Cell viability assay of <bold>1</bold> (IC<sub>50</sub> = 0.027 ± 0.011 μM) and <bold>9</bold> (&gt;10 μM) in BT-474 cells after 72 h of incubation.
+(F) Radar chart summary of performance of <bold>1</bold> and <bold>9</bold> in different cell-based assays. Cell-based assay data are
+shown as mean ± SD and are based on three technical replicates
+or four technical replicates in the case of the HiBiT-NUDT14 CETSA.
+Graphs are representative of two independent biological replicates
+(<italic>n</italic> = 2).</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr6" xlink:href="jm4c00072_0005.jpg"><?cloudpmc-path blobs/dcdc/11089510/88ca6be5487d/jm4c00072_0005.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1715?><?original-width 2088?><?scaled-height 572?><?scaled-width 696?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="jm4c00072_0005.gif"><?cloudpmc-path blobs/dcdc/11089510/186a2713984f/jm4c00072_0005.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig></sec><sec id="sec3" disp-level="1"><title>Conclusions</title><p>Increasing evidence in recent years suggests
+that, contrary to
+previous perceptions, covalent inhibitors can be optimized into targeted
+pharmacological agents with remarkable selectivity on a proteome-wide
+level.<sup><xref rid="ref22" ref-type="bibr">22</xref>,<xref rid="ref23" ref-type="bibr">23</xref></sup> However, most studies are focused on approaches
+such as activity-based protein profiling (ABPP) interrogating the
+formation of covalent bonds between the inhibitor and its targets.
+Here, we show that noncovalent interactions of such compounds can
+still lead to potentially relevant off-target binding even outside
+of the respective target class. Re-engineering of the FDA-approved
+BTK inhibitor ibrutinib via a small SAR study enabled us to identify
+compound <bold>9</bold> as a new and potent dual NUDT5 and NUDT14
+inhibitor. Using bespoke NanoBRET and HiBiT CETSA assays, we confirm
+inhibitor target engagement in live cells. Our chemoproteomic results
+further suggest that purine-mimetic NUDT5, and possibly NUDT14 inhibitors,
+can be optimized toward potent tool compounds with high selectivity.
+Compound <bold>9</bold> also enabled resolution of the first NUDT14
+cocrystal structure, revealing insights into the so-far unresolved
+N-terminal domain of NUDT14.<sup><xref rid="ref24" ref-type="bibr">24</xref></sup> These results
+explain the strong selectivity observed for previous NUDT5 inhibitors,
+and when taken together with our other data, they should help pave
+the way for future chemical probe development. Importantly, NUDT14
+is frequently expressed at elevated levels in cancer cells<sup><xref rid="ref3" ref-type="bibr">3</xref></sup> and has been described as a challenging protein
+to target primarily due to its smaller and more exposed active site.<sup><xref rid="ref25" ref-type="bibr">25</xref></sup> We anticipate that our work will facilitate
+further research into NUDT14 biology and help elucidate its role in
+physiology and disease.</p></sec><sec id="sec4" disp-level="1"><title>Experimental Section</title><sec id="sec4.1" disp-level="2"><title>Materials
+and Methods</title><p>Commercial reagents and solvents
+were purchased from commercial suppliers and used without further
+purification. All reactions involving moisture-sensitive reagents
+were carried out under a nitrogen atmosphere using standard vacuum
+line techniques and dry solvents. An Elga DV 25 system was used for
+deionizing water. Thin-layer chromatography was performed on aluminum
+plates coated with 60 F254 silica gel. Plates were visualized using
+UV light (254 nm). Flash column chromatography was performed on a
+Biotage Isolera one flash column chromatography platform. <sup>1</sup>H and <sup>13</sup>C NMR spectra were obtained using Bruker NMR spectrometers
+(400 MHz). The proton and carbon chemical shift values are reported
+in parts per million (ppm, δ scale) downfield from tetramethylsilane
+(TMS) and the indicated solvent. NMR spectra were processed and analyzed
+using MestReNova software. Spin multiplicities are given as s (singlet),
+d (doublet), t (triplet), q (quartet), dd (doublet of doublets), dt
+(doublet of triplets), td (triplet of doublets), m (multiplet), and
+b (broad); coupling constants <italic>J</italic> are given in hertz
+(Hz) and signal area integration in natural numbers. LC-MS was performed
+with a Kinetex 5 μm EVO C18 100A 100 × 3.0 mm column on
+a Waters SFO and 515 HPLC pump and Waters Binary Gradient 2545 device
+using linear gradient of solvent A (93% water, 5% acetonitrile, and
+2% of 0.5 M ammonium acetate pH 6.0) and solvent B (18% water, 80%
+acetonitrile, and 2% ammonium acetate pH 6.0), eluting at a flow rate
+of 2 mL/min: 5% B for 0.35 min, 5% B to 95% B for 1 min, 95% to 5%
+B for 0.1 min, and 5% B for 0.8 min. LC-MS was used as a measure of
+compound purity using either UV absorbance (Waters UV/visible Detector
+2489), ELSD signal (Waters ELS Detector 2424), or ESI + TIC (SQ Detector
+2). Preparative HPLC was performed on the same system with a Kinetex
+5 μm EVO C18 100A 150 × 21.2 mm column using a linear gradient
+of solvent A over 20 min from 85 to 10%, eluting at a flow rate of
+20 mL/min. LC-MS was acquired using Waters FractionLynx software and
+processed using MestReNova software. The purity for all final compounds
+was determined to be &gt;95% by HPLC.</p><sec id="sec4.1.1" disp-level="3"><title>3-Bromo-1-(1-methylpiperidin-4-yl)-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-4-amine (<bold>17a</bold>)</title><p>To a solution
+of <bold>16</bold> (1.53 g, 7.13 mmol, 1.0 equiv) in THF (250 mL)
+were added 4-hydroxy-1-methylpiperidine (1.23 g, 10.7 mmol, 1.5 equiv),
+polymer-supported triphenylphosphine (2.30 mmol/g loading, 7.75 g,
+17.8 mmol, 2.5 equiv), and DIAD (3.5 mL, 17.8 mmol, 2.5 equiv). The
+reaction mixture was stirred at rt overnight, then filtered, concentrated,
+and purified by automated flash chromatography (amine column), using
+a gradient elution of 0–10% methanol in DCM to provide <bold>17a</bold> as beige solid (767 mg, 2.47 mmol, 35% yield). <sup>1</sup>H NMR (400 MHz, DMSO-<italic>d</italic><sub>6</sub>) δ 8.19
+(s, 1H), 4.58–4.50 (m, 1H), 2.88–2.85 (m, 2H), 2.20
+(s, 3H), 2.13–2.01 (m, 4H), 1.86–1.81 (m, 2H); <sup>13</sup>C NMR (101 MHz, DMSO-<italic>d</italic><sub>6</sub>) δ
+157.4, 156.5, 153.3, 116.8, 99.5, 54.3 (2C), 54.1, 45.8, 30.9 (2C);
+HPLC: <italic>t</italic><sub>R</sub> = 1.59 min (98.6%); MS (ESI+): <italic>m</italic>/<italic>z</italic> 311.234/313.219 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.2" disp-level="3"><title>1-(1-Methylpiperidin-4-yl)-3-(4-phenoxyphenyl)-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-4-amine (<bold>9</bold>)</title><p>A solution of <bold>17a</bold> (91.6 mg, 0.294 mmol, 1.0
+equiv), 4-phenoxyphenylboronic acid (94.5 mg, 0.442 mmol, 1.5 equiv),
+and sodium carbonate (68.6 mg, 0.648 mmol, 2.2 equiv) in 1,4-dioxane/water
+(21/3 mL) was degassed. After addition of Pd(dppf)Cl<sub>2</sub>·DCM
+(13.2 mg, 0.0162 mmol, 0.055 equiv), the reaction mixture was again
+degassed and stirred overnight with vigorous stirring at 80 °C.
+After cooling to rt, the mixture was diluted in ethyl acetate, filtered
+through a short pad of celite, and concentrated <italic>in vacuo</italic>. The purification of the residue by automated flash chromatography
+(silica column) using a gradient elution of 0–10% methanol
+in DCM afforded <bold>9</bold> as a beige solid (81.0 mg, 0.202 mmol,
+69% yield). <sup>1</sup>H NMR (400 MHz, DMSO-<italic>d</italic><sub>6</sub>) δ 8.23 (s, 1H), 7.65 (d, <italic>J</italic> = 8.5
+Hz, 2H), 7.43 (t, <italic>J</italic> = 7.9 Hz, 2H), 7.20–7.11
+(m, 5H), 4.68–4.60 (m, 1H), 2.92 (d, <italic>J</italic> = 10.5
+Hz, 2H), 2.24 (s, 3H), 2.20–2.09 (m, 4H), 1.89 (d, <italic>J</italic> = 11.4, 2H); <sup>13</sup>C NMR (101 MHz, DMSO-<italic>d</italic><sub>6</sub>) δ 158.2, 157.1, 156.3, 155.5, 153.7,
+142.8, 130.1 (2C), 130.0 (2C), 128.1, 123.8, 118.98 (2C), 118.96 (2C),
+97.5, 54.4 (2C), 53.4, 45.7, 30.9 (2C); HPLC: <italic>t</italic><sub>R</sub> = 1.36 min (96.3%); MS (ESI+): <italic>m</italic>/<italic>z</italic> 401.615 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.3" disp-level="3"><title>1-Methyl-3-(4-phenoxyphenyl)-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-4-amine (<bold>17b</bold>)</title><p>A suspension
+of <bold>16</bold> (895 mg, 4.18 mmol, 1.0 equiv), methyl iodide (286
+μL, 4.6 mmol, 1.1 equiv), and cesium carbonate (3.41 g, 10.5
+mmol, 2.5 equiv) in dry DMF (50 mL) was stirred at rt overnight. After
+filtration, the solvent was removed under reduced pressure. Water
+was added to the reaction mixture followed by dilution with DCM. The
+aqueous layer was extracted with DCM, and the combined organic layers
+were dried over sodium sulfate, filtered, and concentrated <italic>in vacuo</italic>. The crude product was purified by automated flash
+chromatography (amine column), using a gradient elution of 0–10%
+methanol in DCM to afford <bold>17b</bold> as a colorless solid (223
+mg, 0.978 mmol, 23% yield). <sup>1</sup>H NMR (400 MHz, MeOD) δ
+8.20 (s, 1H), 3.93 (s, 3H); <sup>13</sup>C NMR (101 MHz, MeOD) δ
+159.3, 157.7, 155.1, 118.7, 101.2, 34.4; HPLC: <italic>t</italic><sub>R</sub> = 1.09 min (97.1%); MS (ESI+): <italic>m</italic>/<italic>z</italic> 228.152/230.133 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.4" disp-level="3"><title>1-Methyl-3-(4-phenoxyphenyl)-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-4-amine (<bold>10</bold>)</title><p>A solution
+of <bold>17b</bold> (168 mg, 0.737 mmol, 1.0 equiv), 4-phenoxyphenylboronic
+acid (237 mg, 1.11 mmol, 1.5 equiv), and sodium carbonate (171 mg,
+1.62 mmol, 2.2 equiv) in 1,4-dioxane/water (53/7.5 mL) was degassed.
+After addition of Pd(dppf)Cl<sub>2</sub>·DCM (33.1 mg, 0.041
+mmol, 0.055 equiv), the reaction mixture was again degassed and stirred
+overnight with vigorous stirring at 80 °C. After cooling to rt,
+the mixture was diluted in ethyl acetate, filtered through a short
+pad of celite, and concentrated <italic>in vacuo</italic>. The purification
+of the residue by automated flash chromatography (silica column) using
+a gradient elution of 0–10% methanol in DCM afforded compound <bold>10</bold> as a beige solid (173 mg, 0.545 mmol, 74% yield). <sup>1</sup>H NMR (400 MHz, MeOD) δ 8.25 (s, 1H), 7.66–7.63
+(m, 2H), 7.41–7.37 (m, 2H), 7.18–7.07 (m, 5H), 4.00
+(s, 3H); <sup>13</sup>C NMR (101 MHz, MeOD) δ 160.0, 159.9,
+157.9, 156.9, 155.2, 145.7, 131.2 (2C), 131.1 (2C), 128.7, 125.1,
+120.6 (2C), 120.0 (2C), 99.0, 34.1; HPLC: <italic>t</italic><sub>R</sub> = 1.53 min (99.8%); MS (ESI+): <italic>m</italic>/<italic>z</italic> 318.569 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.5" disp-level="3"><title>3-(4-Phenoxyphenyl)-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-4-amine (<bold>11</bold>)</title><p>A solution
+of <bold>16</bold> (770 mg, 3.60 mmol, 1.0 equiv), 4-phenoxyphenylboronic
+acid (1.16 g, 5.40 mmol, 1.5 equiv), and sodium carbonate (840 mg,
+7.92 mmol, 2.2 equiv) in 1,4-dioxane/water (258/36 mL) was degassed.
+After the addition of Pd(dppf)Cl<sub>2</sub>·DCM (162 mg, 0.198
+mmol, 0.055 equiv), the reaction mixture was again degassed and stirred
+for 2 h with vigorous stirring at 80 °C. After cooling to rt,
+the mixture was diluted in ethyl acetate, filtered through a short
+pad of celite, and concentrated <italic>in vacuo</italic>. The crude
+product was purified by preparative HPLC to afford compound <bold>11</bold> as a colorless solid (340 mg, 1.12 mmol, 31% yield). <sup>1</sup>H NMR (400 MHz, DMSO-<italic>d</italic><sub>6</sub>) δ
+13.55 (bs, 1H), 8.21 (s, 1H), 7.68–7.65 (m, 2H), 7.45–7.41
+(m, 2H), 7.21–7.12 (m, 5H); <sup>13</sup>C NMR (101 MHz, DMSO-<italic>d</italic><sub>6</sub>) δ 158.1, 157.0, 156.3, 156.1, 155.8,
+143.9, 130.1 (2C), 130.0 (2C), 128.4, 123.8, 119.0 (2C), 118.9 (2C),
+96.9; HPLC: <italic>t</italic><sub>R</sub> = 1.38 min (97.8%); MS
+(ESI+): <italic>m</italic>/<italic>z</italic> 304.218 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.6" disp-level="3"><title><italic>tert</italic>-Butyl 4-(4-Amino-1-(1-methylpiperidin-4-yl)-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-3-yl)-3,6-dihydropyridine-1(2<italic>H</italic>)-carboxylate (<bold>18a</bold>)</title><p>A solution of <bold>17a</bold> (318 mg, 1.02 mmol, 1.0 equiv), <italic>tert</italic>-butyl
+4-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)-5-6-dihydropyridine-1(2<italic>H</italic>)-carboxylate (474 mg, 1.53 mmol, 1.5 equiv), and sodium
+carbonate (238 mg, 2.25 mmol, 2.2 equiv) in 1,4-dioxane/water (72/10
+mL) was degassed. After the addition of Pd(dppf)Cl<sub>2</sub>·DCM
+(45.9 mg, 0.056 mmol, 0.055 equiv), the reaction mixture was again
+degassed and stirred overnight with vigorous stirring at 80 °C.
+After cooling to rt, the mixture was diluted in ethyl acetate, filtered
+through a short pad of celite, and concentrated <italic>in vacuo</italic>. The purification of the residue by automated flash chromatography
+(silica column) using a gradient elution of 0–10% methanol
+in DCM afforded compound <bold>18a</bold> as a dark brown solid (394
+mg, 0.953 mmol, 93% yield). <sup>1</sup>H NMR (400 MHz, MeOD) δ
+8.19 (s, 1H), 6.12–6.10 (m, 1H), 4.84–4.82 (m, 1H),
+4.16–4.15 (m, 2H), 3.69–3.66 (m, 2H), 3.26–3.21
+(m, 2H), 2.71–2.65 (m, 2H), 2.63–2.59 (m, 2H), 2.55
+(s, 3H), 2.44–2.34 (m, 2H), 2.07–2.02 (m, 2H), 1.50
+(s, 9H); <sup>13</sup>C NMR (101 MHz, MeOD) δ 159.9, 156.6,
+156.4, 154.6, 146.3, 131.9, 127.6, 98.6, 81.4, 55.2 (2C), 53.6, 45.4,
+44.3, 40.8, 31.2 (2C), 28.7 (3C), 28.6; HPLC: <italic>t</italic><sub>R</sub> = 1.21 min (97.2%); MS (ESI+): <italic>m</italic>/<italic>z</italic> 414.404 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.7" disp-level="3"><title>1-(4-(4-Amino-1-(1-methylpiperidin-4-yl)-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-3-yl)-3,6-dihydropyridin-1(2<italic>H</italic>)-yl)prop-2-en-1-one (<bold>12</bold>)</title><p>To a solution
+of <bold>18a</bold> (98.0 mg, 0.237 mmol, 1.0 equiv) in DCM (7 mL)
+was added 4 N hydrochloric acid in 1,4-dioxane (3 mL). The reaction
+mixture was stirred at rt for 2 h and then evaporated <italic>in vacuo</italic>. The residue was dissolved in DCM (15 mL), and then triethylamine
+(0.165 mL, 1.19 mmol, 5.0 equiv) and a solution of acryloyl chloride
+(23 μL, 0.284 mmol, 1.2 equiv) in DCM (1 mL) were added. The
+resulting mixture was stirred for 30 min. After evaporation of the
+solvent, the crude product was purified by automated flash chromatography
+(amine column), using a gradient elution of 0–10% of methanol
+in DCM to afford <bold>12</bold> as a beige solid (37.4 mg, 0.102
+mmol, 43% yield). <sup>1</sup>H NMR for both rotamers (400 MHz, MeOD)
+δ 8.19 (s, 1H), 6.90–6.76 (m, 1H), 6.26 (d, <italic>J</italic> = 16.8 Hz, 1H), 6.14 (d, <italic>J</italic> = 13.9 Hz, 1H), 5.79
+(d, <italic>J</italic> = 10.7 Hz, 1H), 4.73–4.66 (m, 1H), 4.38
+(dd, <italic>J</italic> = 18.1, 3.1 Hz, 2H), 3.92–3. 89 (m,
+2H), 3.02 (d, <italic>J</italic> = 9.3 Hz, 2H), 2.82–2.73 (m,
+2H), 2.34 (s, 3H), 2.30–2.23 (m, 4H), 1.94 (d, <italic>J</italic> = 10.3 Hz, 2H); <sup>1</sup>H NMR for both rotamers (400 MHz, MeOD)
+49 °C δ 8.19 (s, 1H), 6.80 (bs, 1H), 6.25 (dd, <italic>J</italic> = 17.1, 1.9 Hz, 1H), 6.15 (bs, 1H), 5.77 (dd, <italic>J</italic> = 10.7, 1.9 Hz, 1H), 4.73–4.67 (m, 1H), 4.37 (bs,
+2H), 3.90 (t, <italic>J</italic> = 5.6 Hz, 2H), 3.04–3.01 (m,
+2H), 2.79 (bs, 2H), 2.34 (s, 3H), 2.32–2.25 (m, 4H), 1.97–1.94
+(m, 2H); <sup>13</sup>C NMR for the major rotamer (101 MHz, MeOD)
+δ 168.0, 156.3, 154.5, 132.0, 129.1, 128.7, 127.2, 98.5, 55.7
+(2C), 54.8, 46.2, 46.1, 44.0, 43.5, 40.0, 31.9 (2C), 29.3; HPLC: <italic>t</italic><sub>R</sub> = 1.01 min (98.3%); MS (ESI+): <italic>m</italic>/<italic>z</italic> 368.290 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.8" disp-level="3"><title><italic>tert</italic>-Butyl 5-(4-Amino-1-(1-methylpiperidin-4-yl)-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-3-yl)-3,6-dihydropyridine-1(2<italic>H</italic>)-carboxylate (<bold>18b</bold>)</title><p>A solution of <bold>17a</bold> (525 mg, 1.69 mmol, 1.0 equiv), <italic>tert</italic>-butyl
+3-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)-5-6-dihydropyridine-1(2<italic>H</italic>)-carboxylate (783 mg, 2.53 mmol, 1.5 equiv), and sodium
+carbonate (715 mg, 6.75 mmol, 4 equiv) in 1,4-dioxane/water (33/7
+mL) was degassed. After the addition of Pd(dppf)Cl<sub>2</sub>·DCM
+(75.8 mg, 0.093 mmol, 0.055 equiv), the reaction mixture was again
+degassed and stirred overnight with vigorous stirring at 80 °C.
+After cooling to rt, the mixture was diluted in ethyl acetate, filtered
+through a short pad of celite, and concentrated <italic>in vacuo</italic>. The purification of the residue by automated flash chromatography
+(amine column) using a gradient elution of 0–100% ethyl acetate
+in cyclohexane afforded <bold>18b</bold> as a dark brown solid (637
+mg, 1.54 mmol, 91% yield). <sup>1</sup>H NMR (400 MHz, MeOD) δ
+8.20 (s, 1H), 6.29–6.26 (m, 1H), 4.83–4.79 (m, 1H),
+4.39–4.37 (m, 2H), 3.65–3.62 (m, 2H), 3.29–3.26
+(m, 2H), 2.71–2.68 (m, 2H), 2.58 (s, 3H), 2.45–2.35
+(m, 4H), 2.11–2.06 (m, 2H), 1.50 (s, 9H); <sup>13</sup>C NMR
+(101 MHz, MeOD) δ 159.8, 156.7, 156.4, 154.5, 144.8, 131.2,
+129.5, 98.8, 81.4, 55.2 (2C), 53.6, 45.7, 45.3, 41.6, 31.1 (2C), 28.3
+(3C), 26.2; HPLC: <italic>t</italic><sub>R</sub> = 1.21 min (97.2%);
+MS (ESI+): <italic>m</italic>/<italic>z</italic> 414.312 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.9" disp-level="3"><title>1-(5-(4-Amino-1-(1-methylpiperidin-4-yl)-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-3-yl)-3,6-dihydropyridin-1(2<italic>H</italic>)-yl)prop-2-en-1-one (<bold>13</bold>)</title><p>To a solution
+of <bold>18b</bold> (107 mg, 0.259 mmol, 1.0 equiv) in DCM (1.3 mL)
+was added 4 N hydrochloric acid in 1,4-dioxane (0.5 mL). The reaction
+mixture was stirred at rt for 2 h and then evaporated <italic>in vacuo</italic>. The residue was dissolved in DCM (15 mL), and then triethylamine
+(0.180 mL, 1.294 mmol, 5.0 equiv) and a solution of acryloyl chloride
+(25 μL, 0.311 mmol, 1.2 equiv) in DCM (1 mL) were added. The
+resulting mixture was stirred for 30 min. After evaporation of the
+solvent, the crude product was purified by automated flash chromatography
+(amine column), using a gradient elution of 0–10% of methanol
+in DCM to afford compound <bold>13</bold> as a beige solid (49.0 mg,
+0.133 mmol, 52% yield). <sup>1</sup>H NMR for both rotamers (400 MHz,
+MeOD) δ 8.20 (s, 1H), 6.89–6.78 (m, 1H), 6.36–6.28
+(m, 1H), 6.28–6.23 (m, 1H), 5.79 (dt, <italic>J</italic> =
+10.6, 2.0 Hz, 1H), 4.74–4.67 (m, 1H), 4.63–4.58 (m,
+2H), 3.85 (q, <italic>J</italic> = 5.6 Hz, 2H), 3.05–3.00 (m,
+2H), 2.52–2.43 (m, 2H), 2.35 (s, 3H), 2.33–2.25 (m,
+4H), 1.98–1.95 (m, 2H); <sup>13</sup>C NMR for the major rotamer
+(101 MHz, MeOD) δ 168.1, 159.9, 156.3, 154.4, 144.4, 131.0,
+129.9, 129.1, 128.7, 98.8, 55.6 (2C), 54.8, 46.1, 44.9, 43.6, 31.9
+(2C), 27.1; HPLC: <italic>t</italic><sub>R</sub> = 1.12 min (98.5%);
+MS (ESI+): <italic>m</italic>/<italic>z</italic> 368.291 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.10" disp-level="3"><title><italic>tert</italic>-Butyl (4-(4-Amino-1-(1-methylpiperidin-4-yl)-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-3-yl)benzyl)carbamate
+(<bold>18c</bold>)</title><p>A solution of <bold>17a</bold> (385 mg,
+1.24 mmol, 1.0 equiv), 4-[(<italic>N</italic>-Boc-amino)methyl]phenylboronic
+acid (466 mg, 1.86 mmol, 1.5 equiv), and sodium carbonate (289 mg,
+2.72 mmol, 2.2 equiv) in 1,4-dioxane/water (33/7 mL) was degassed.
+After the addition of Pd(dppf)Cl<sub>2</sub>·DCM (55.6 mg, 0.068
+mmol, 0.055 equiv), the reaction mixture was again degassed and stirred
+overnight with vigorous stirring at 80 °C. After cooling to rt,
+the mixture was diluted in ethyl acetate, filtered through a short
+pad of celite, and concentrated <italic>in vacuo</italic>. The purification
+of the residue by automated flash chromatography (silica column) using
+a gradient elution of 0–10% methanol in DCM afforded <bold>18c</bold> as a beige solid (432 mg, 0.987 mmol, 80% yield). <sup>1</sup>H NMR (400 MHz, MeOD) δ 8.23 (s, 1H), 7.64 (d, <italic>J</italic> = 7.8 Hz, 2H), 7.46 (d, <italic>J</italic> = 7.8 Hz, 2H),
+4.79–4.71 (m, 1H), 4.32 (s, 2H), 3.07–3.03 (m, 2H),
+2.45–2.38 (m, 2H), 2.36 (s, 3H), 2.33–2.26 (m, 2H),
+2.03–1.98 (m, 2H), 1.47 (s, 9H); <sup>13</sup>C NMR (101 MHz,
+MeOD) δ 159.8, 158.7, 156.5, 154.7, 145.9, 142.1, 133.1, 129.7
+(2C), 128.9 (2C), 99.3, 80.3, 55.7 (2C), 55.0, 46.1, 44.8, 32.0 (2C),
+28.8 (3C); HPLC: <italic>t</italic><sub>R</sub> = 1.21 min (99.3%);
+MS (ESI+): <italic>m</italic>/<italic>z</italic> 438.308 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.11" disp-level="3"><title><italic>N</italic>-(4-(4-Amino-1-(1-methylpiperidin-4-yl)-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-3-yl)benzyl)acrylamide
+(<bold>14</bold>)</title><p>To a solution of <bold>18c</bold> (77.7
+mg, 0.178 mmol, 1.0 equiv) in DCM (0.9 mL) was added 4 N hydrochloric
+acid in 1,4-dioxane (0.34 mL). The reaction mixture was stirred at
+rt for 2 h and then evaporated <italic>in vacuo</italic>. The residue
+was dissolved in DCM (10 mL); then, triethylamine (0.124 mL, 0.888
+mmol, 5.0 equiv) and a solution of acryloyl chloride (17 μL,
+0.213 mmol, 1.2 equiv) in DCM (1 mL) were added. The resulting mixture
+was stirred for 30 min. After evaporation of the solvent, the crude
+product was purified by preparative HPLC to afford compound <bold>14</bold> as a colorless solid (48.2 mg, 0.123 mmol, 69% yield). <sup>1</sup>H NMR (400 MHz, MeOD) δ 8.25 (s, 1H), 7.65 (d, <italic>J</italic> = 8.0 Hz, 2H), 7.48 (d, <italic>J</italic> = 8.0 Hz, 2H),
+6.37–6.24 (m, 2H), 5.71 (dd, <italic>J</italic> = 9.4, 2.6
+Hz, 1H), 5.01–4.97 (m, 1H), 4.54 (s, 2H), 3.53–3.47
+(m, 2H), 3.07–3.00 (m, 2H), 2.76 (s, 3H), 2.60–2.50
+(m, 2H), 2.23–2.19 (m, 2H); <sup>13</sup>C NMR (101 MHz, MeOD)
+δ 168.2, 159.8, 156.7, 155.0, 146.1, 141.2, 133.1, 131.9, 129.8
+(2C), 129.4 (2C), 127.1, 99.3, 54.4 (2C), 52.6, 44.2, 43.9, 30.2 (2C);
+HPLC: <italic>t</italic><sub>R</sub> = 1.06 min (100%); MS (ESI+): <italic>m</italic>/<italic>z</italic> 392.524 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.12" disp-level="3"><title><italic>tert</italic>-Butyl 4-(4-Amino-1-(1-methylpiperidin-4-yl)-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-3-yl)piperidine-1-carboxylate
+(<bold>19</bold>)</title><p>A solution of <bold>18a</bold> (420 mg,
+1.02 mmol, 1.0 equiv) in methanol (7 mL) was treated with wet 10%
+palladium on carbon (250 mg). The reaction mixture was stirred under
+hydrogen at 45 °C overnight. The mixture was filtered over a
+pad of celite and washed with methanol. The filtrate was concentrated <italic>in vacuo</italic> to provide <bold>19</bold> as a beige solid (391
+mg, 0.941 mmol, 93% yield). <sup>1</sup>H NMR (400 MHz, MeOD) δ
+8.16 (s, 1H), 4.81–4.73 (m, 1H), 4.13–4.07 (m, 2H),
+3.42–3.36 (m, 1H), 3.32–3.27 (m, 2H), 3.09 (bs, 2H),
+2.75–2.68 (m, 2H), 2.60 (s, 3H), 2.47–2.36 (m, 2H),
+2.08–2.03 (m, 2H), 2.00–1.96 (m, 2H), 1.80–1.70
+(m, 2H), 1.47 (s, 9H); <sup>13</sup>C NMR (101 MHz, MeOD) δ
+159.6, 156.4, 156.2, 154.5, 149.6, 99.5, 80.9, 55.1, 53.0, 45.2, 44.8,
+44.2, 36.2, 32.3, 30.9, 28.7; HPLC: <italic>t</italic><sub>R</sub> = 1.19 min (98.7%); MS (ESI+): <italic>m</italic>/<italic>z</italic> 416.343 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.13" disp-level="3"><title>1-(4-(4-Amino-1-(1-methylpiperidin-4-yl)-1<italic>H</italic>-pyrazolo[3,4-<italic>d</italic>]pyrimidin-3-yl)piperidin-1-yl)prop-2-en-1-one
+(<bold>15</bold>)</title><p>To a solution of <bold>19</bold> (82.8
+mg, 199 mmol, 1.0 equiv) in DCM (7 mL) was added 4 N hydrochloric
+acid in 1,4-dioxane (3 mL). The reaction mixture was stirred at rt
+for 2 h and then evaporated <italic>in vacuo</italic>. The residue
+was dissolved in DCM (15 mL), and then triethylamine (0.139 mL, 0.997
+mmol, 5.0 equiv) and a solution of acryloyl chloride (19 μL,
+0.239 mmol, 1.2 equiv) in DCM (1 mL) were added. The resulting mixture
+was stirred for 30 min. After evaporation of the solvent, the crude
+product was purified by preparative HPLC to afford <bold>15</bold> as a colorless solid (51.2 mg, 0.138 mmol, 70% yield). <sup>1</sup>H NMR (400 MHz, MeOD) δ 8.17 (s, 1H), 6.82 (dd, <italic>J</italic> = 16.8, 10.7 Hz, 1H), 6.21 (dd, <italic>J</italic> = 16.8, 2.0 Hz,
+1H), 5.75 (dd, <italic>J</italic> = 10.7, 2.0 Hz, 1H), 4.87–4.80
+(m, 1H), 4.55–4.52 (m, 1H), 4.20–4.17 (m, 1H), 3.52–3.45
+(m, 2H), 3.43–3.39 (m, 2H), 3.13–3.06 (m, 1H), 2.96–2.89
+(m, 2H), 2.70 (s, 3H), 2.50–2.40 (m, 2H), 2.14–2.05
+(m, 4H), 1.88–1.75 (m, 2H); <sup>13</sup>C NMR (101 MHz, MeOD)
+δ 167.5, 159.8, 156.3, 154.7, 149.4, 129.2, 128.4, 99.6, 54.6
+(2C), 52.4, 46.8, 44.4, 43.1, 36.2, 33.1, 32.1, 30.3 (2C); HPLC: <italic>t</italic><sub>R</sub> = 1.01 min (100%); MS (ESI+): <italic>m</italic>/<italic>z</italic> 370.570 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.14" disp-level="3"><title><italic>tert</italic>-Butyl (4-(4-(7-((5-(3,4-Dichlorophenyl)-1,3,4-oxadiazol-2-yl)methyl)-1,3-dimethyl-2,6-dioxo-2,3,6,7-tetrahydro-1<italic>H</italic>-purin-8-yl)piperazin-1-yl)butyl)carbamate</title><p>To
+a mixture of TH5427 (<bold>6</bold>) (35 mg, 0.071 mmol, 1 equiv)
+in DMSO (1.2 mL), 4-(boc-amino) butyl bromide (36 mg, 0.142 mmol,
+2 equiv) and DIPEA (37 μL, 0.214 mmol, 3 equiv) were added.
+The mixture was stirred at 80 °C for 2 h, and then water was
+added. The resulting precipitate was filtered off and then subsequently
+purified by preparative TLC (Si-35, DCM/methanol, 9/1) to afford the
+product as an off-white solid (14.6 mg, 0.022 mmol, 31% yield). <sup>1</sup>H NMR (400 MHz, CDCl<sub>3</sub>) δ 8.09 (d, <italic>J</italic> = 2 Hz, 1H), 7.84 (dd, <italic>J</italic> = 8.4 Hz, 2.0
+Hz, 1H), 7.58 (d, <italic>J</italic> = 8.4 Hz, 1H), 5.63 (s, 2H),
+3.54 (s, 3H), 3.35 (s overlapping with m, 3H + 4H), 3.12–3.10
+(m, 2H), 2.56 (bs, 4H), 2.41 (bs, 2H), 1.53 (bs, 4H), 1.42 (s, 9H).<sup>13</sup>C NMR (101 MHz, CDCl<sub>3</sub>) δ 164.0, 162.2, 156.6,
+156.2, 154.9, 151.7, 148.0, 136.8, 133.9, 131.5, 128.9, 126.1, 123.2,
+104.8, 79.2, 58.0, 52.4 (2C), 50.2, 40.5, 40.3 (2C), 30.0, 28.6 (3C),
+28.0, 27.9, 24.1; HPLC: <italic>t</italic><sub>R</sub> = 1.70 min
+(99.4%), MS (ESI+): <italic>m</italic>/<italic>z</italic> 662.208/664.188
+[M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.15" disp-level="3"><title>4-(4-(7-((5-(3,4-Dichlorophenyl)-1,3,4-oxadiazol-2-yl)methyl)-1,3-dimethyl-2,6-dioxo-2,3,6,7-tetrahydro-1<italic>H</italic>-purin-8-yl)piperazin-1-yl)butan-1-aminium Trifluoroacetate,
+CBH-003 (<bold>7</bold>)</title><p>To a solution of <italic>tert</italic>-butyl (4-(4-(7-((5-(3,4-dichlorophenyl)-1,3,4-oxadiazol-2-yl)methyl)-1,3-dimethyl-2,6-dioxo-2,3,6,7-tetrahydro-1<italic>H</italic>-purin-8-yl)piperazin-1-yl)butyl)carbamate (14.6 mg, 0.022
+mmol, 1 equiv) in DCM (1 mL) at 0 °C, trifluoroacetic acid (51
+μL, 0.661 mmol, 30 equiv) was added and the solution was stirred
+at rt overnight. After concentration under reduced pressure, the expected
+product was obtained as a brown solid (15 mg, 0.022 mmol, quantitative). <sup>1</sup>H NMR (400 MHz, MeOD) δ 8.16 (d, <italic>J</italic> =
+2.0 Hz, 1H), 7.94 (dd, <italic>J</italic> = 8.4 Hz, 2.0 Hz, 1H), 7.74
+(d, <italic>J</italic> = 8.40 Hz, 1H) 5.78 (s, 2H), 3.80–3.59
+(m, 4H), 3.58–3.40 (s overlapping m, 3H + 4H), 3.29–3.24
+(s overlapping m, 3H + 2H), 3.00 (t, <italic>J</italic> = 7.6 Hz,
+2H) 1.92–1.84 (m, 2H), 1.79–1.71 (m, 2H); <sup>13</sup>C NMR (100 MHz, MeOD) δ 165.2, 164.5, 156.2, 156.2, 153.1,
+148.9, 137.5, 134.6, 132.8, 129.7, 127.5, 124.7, 106.4, 57.3, 52.2
+(2C), 48.9 (2C), 41.2, 39.9, 30.2, 28.2, 25.5, 22.0; HPLC: <italic>t</italic><sub>R</sub> = 1.32 min (99.1%); MS (ESI+): <italic>m</italic>/<italic>z</italic> 562.165/564.025 [M + H]<sup>+</sup>.</p></sec><sec id="sec4.1.16" disp-level="3"><title><italic>N</italic>-(4-(4-(7-((5-(3,4-Dichlorophenyl)-1,3,4-oxadiazol-2-yl)methyl)-1,3-dimethyl-2,6-dioxo-2,3,6,7-tetrahydro-1<italic>H</italic>-purin-8-yl)piperazin-1-yl)butyl)-3-(5,5-difluoro-7-(1<italic>H</italic>-pyrrol-2-yl)-5H-5 λ<sup>4</sup>,6 λ<sup>4</sup>-dipyrrolo[1,2-c:2′,1′-<italic>f</italic>][1,3,2]diazaborinin-3-yl)propenamide,
+CBH-004 (<bold>8</bold>)</title><p>To a mixture of CBH-003 (<bold>7</bold>) (10.0 mg, 0.015 mmol, 1.0 equiv) in DMF (2.0 mL), DIPEA (8 μL,
+0.044 mmol, 3.0 equiv) was added and the mixture was stirred for 10
+min at rt. NanoBret 590SE (6.9 mg, 0.016 mmol, 1.1 equiv) was then
+added, and the mixture was stirred for 4 h in the dark at rt. Water
+was added, and the crude was purified by preparative HPLC to afford
+the product as a dark solid (2.3 mg, 0.002 mmol, 15% yield). <sup>1</sup>H NMR (400 MHz, DMSO-<italic>d</italic><sub>6</sub>) δ
+8.15 (d, <italic>J</italic> = 8.2 Hz, 1H), 7.95–7.87 (m, 3H),
+7.43 (bs, 1H), 7.37–7.33 (m, 2H), 7.28–7.27 (m, 1H),
+7.17 (d, <italic>J</italic> = 7.2 Hz, 1H), 7.01 (d, <italic>J</italic> = 7.0 Hz, 1H), 6.35–6.33 (m, 2H), 5.68 (s, 2H), 3.40 (s,
+3H), 3.38–3.37 (m, 2H), 3.27–3.24 (m, 6H), 3.15 (s,
+3H), 3.14–3.11 (2H, m), 3.08–3.07 (2H, m), 2.44–2.42
+(m, 4H), 2.33–2.28 (m, 2H), 1.43–1.39 (m, 2H). HPLC: <italic>t</italic><sub>R</sub> = 1.71 min (98.1%); MS (ESI+): <italic>m</italic>/<italic>z</italic> 874.405/876.345 [M + H]<sup>+</sup>.</p></sec></sec><sec id="sec4.2" disp-level="2"><title>Protein Expression and Purification</title><p>Genes encoding
+NUDT5 (NCBI reference <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.ncbi.nlm.nih.gov/protein/NP_054861" ext-link-type="uri">NP_054861</ext-link>, residues 1-208) and NUDT14 (NCBI
+reference <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.ncbi.nlm.nih.gov/protein/NP_803877" ext-link-type="uri">NP_803877</ext-link>, residues 1-222) were amplified by PCR (primer
+information <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jmedchem.4c00072/suppl_file/jm4c00072_si_001.pdf" ext-link-type="uri">Table S3</ext-link>). The amplified PCR
+products were cloned into expression vector pNIC28-Bsa4<sup><xref rid="ref26" ref-type="bibr">26</xref></sup> by ligation-independent cloning. The resulting
+constructs express the proteins fused with an N-terminal 6× histidine
+tag followed by a TEV protease cleavage site. All plasmids were transformed
+into <italic>Escherichia coli</italic> (DE3), and protein
+expression was induced at a cell density of OD<sub>600</sub> = 0.8
+with 0.3 or 0.5 mM isopropyl-<sc>d</sc>-1-thiogalactopyranoside (IPTG)
+at 18 °C overnight for NUDT14 and NUDT5, respectively. Cell pellets
+were resuspended in lysis buffer containing 20 mM HEPES, 500 mM NaCl,
+5% glycerol, and 0.5 mM TCEP pH 7.5 supplemented with lysozyme, protease
+inhibitor cocktail (Set III, EDTA-free, Calbiochem), and benzonase
+(2 μL of 10,000 U/μL, Merck). Cells were then lysed using
+an ultrasonic cell disruptor Vibra-Cell (Sonics). The clarified supernatant
+was injected into a Ni-NTA affinity chromatography column (HisTrap
+Crude FF GE Healthcare) and eluted with a gradient of increasing imidazole
+concentrations. The affinity-purified proteins were further incubated
+with TEV protease overnight at 4 °C and purified by reverse nickel
+affinity. Proteins were further purified by size-exclusion chromatography
+(16/600 Superdex 75 PG, GE Healthcare) in buffer (20 mM HEPES, pH
+7.5, 500 mM NaCl, 0.5 mM TCEP). Protein purity was analyzed by sodium
+dodecyl sulfate polyacrylamide gel electrophoresis (SDS-PAGE), and
+proteins were concentrated to 20 mg/mL for NUDT14 and 26 mg/mL for
+NUDT5 using 10,000 MWCO Vivaspin concentrators (Vivascience).</p></sec><sec id="sec4.3" disp-level="2"><title>Catalytic
+Assays</title><p>Inhibition activities of the compounds
+were determined using AMP-Glo system (Promega). The compounds were
+diluted from 50 μM to 0 μM in a final reaction containing
+20 mM HEPES, 100 mM NaCl, 0.5 mM TCEP, 1 mM MgCl<sub>2</sub>, and
+0.1% BSA, pH 7.4. The reactions were performed in 1536-well plates
+in a 2 μL reaction volume with 1 nM of NUDT5 or NUDT14, and
+10 μM of ADPr as the substrate. The final DMSO concentration
+was 1% for all reactions. NUDT5 reactions were incubated for 20 min,
+while NUDT14 reactions were carried out for 1 h at rt. The reactions
+were stopped by adding 2 μL of AMP-Glo I. The stop solution
+is supplemented with 25 μM of a compound, PubChem CID 16339098,
+in order to stop enzyme activity completely. The reactions were further
+incubated with 4 μL of the detection solution for 1 h at rt.
+Luminescence signals were then measured in a PHERAstar FSX plate reader.
+Experiments were done in triplicate sets, and data were analyzed by
+GraphPad Prism 9. Inhibitor dose–response data were normalized
+to reactions containing vehicle only (1% v/v DMSO, 100% activity)
+and reactions containing 500 nM TH5427 (<bold>6</bold>) (1% v/v DMSO,
+0% activity). Data are represented as the mean ± SD of two independent
+biological replicates.</p></sec><sec id="sec4.4" disp-level="2"><title>NanoBRET Target Engagement Assay</title><p>NanoBRET Target Engagement
+Assays were done by using the NanoBRET Target Engagement Intracellular
+Kinase Assay kit (Promega) according to the manufacturer’s
+instructions. In brief, 200,000 HEK293 cells/mL were reverse-transfected
+with either N-terminal NanoLuc tagged NUDT5 or C-terminal NanoLuc
+tagged BTK plasmid using FuGENE transfection reagent (Promega). After
+24 h of incubation, cells were trypsinized and adjusted to 200,000
+cells/mL in assay medium (Opti-MEM + 4% FBS). 2.5 nM CBH-004 and 0.5
+μM tracer-05 (Promega) were used for the NUDT5 and BTK assay,
+respectively. Tracers were spiked into the cell suspension, and 40
+μL of cells were seeded into each well of a white PP 384-well
+plate (781207, Greiner) containing the compounds prepared by an Echo
+Liquid Handler. After 2 h of incubation, a mix of substrate and extracellular
+NanoLuc inhibitor in assay medium were added into each well. Donor
+and acceptor signals were measured in a PHERAstar FSX or FS plate
+reader and analyzed by GraphPad Prism (v.9 or v.10). For this, the
+acceptor/donor ratio was calculated and the no tracer background signal
+was subtracted and multiplied by 1000 to yield mBRET units. Data were
+then normalized to DMSO.</p></sec><sec id="sec4.5" disp-level="2"><title>HiBiT Cellular Thermal Shift Assay</title><p>To determine NUDT14
+engagement in intact cells, a HiBiT cellular thermal shift assay was
+set up.<sup><xref rid="ref27" ref-type="bibr">27</xref></sup> The Nano-Glo HiBiT lytic detection
+system was used following the manufacturer’s instructions (Promega).
+In brief, 400,000 HEK293 cells/mL were reverse-transfected with N-terminal
+HiBiT tagged NUDT14 using FuGENE transfection reagent (Promega). After
+24 h of incubation, cells were trypsinized and resuspended at 400,000
+cells/mL in assay medium. The cells were divided into compound and
+untreated (DMSO) groups and treated accordingly. Ten μL of cells
+were seeded into each well in a 384-well white PCR plate and incubated
+for 1 h. After incubation, the samples were heated in a PCR thermocycler
+at the desired temperature gradient. The plate was allowed to stand
+for 5 min at rt, and 10 μL of Nano-Glo HiBiT lytic mix was added
+into each well. The signals were measured in a PHERAstar FSX and analyzed
+by GraphPad Prism (v.9 or v.10).</p></sec><sec id="sec4.6" disp-level="2"><title>Cell Viability Assay</title><p>BT-474 cells were cultivated in
+DMEM containing 10% FBS at 37 °C and 5% CO<sub>2</sub>. Compounds
+were dispensed on a white PP 384-well plate (781207, Greiner) using
+an Echo Liquid Handler. Cells were trypsinized, counted, and diluted
+to 25,000 cells/mL in culture medium. 40 μL of cell suspension
+was seeded to each well, and plates were sealed with a breathable
+film and incubated for 72 h. Cell viability was determined using the
+CellTiter-Glo reagent following the manufacturer’s instructions
+(Promega). Luminescence signals were measured in a PHERAstar FS or
+FSX and analyzed by GraphPad Prism (v.9 or v.10). Data were normalized
+to DMSO.</p></sec><sec id="sec4.7" disp-level="2"><title>Western Blotting</title><p>For the detection of ADP-ribosylation
+changes by Western blotting, the cell deficient in ADP-ribosyl hydrolases
+ARH3 and PARG was used, which provides a sensitized background and
+allows the detection of significant ADP-ribosylation without external
+DNA damage.<sup><xref rid="ref21" ref-type="bibr">21</xref></sup> TH5427 (<bold>6</bold>) and <bold>9</bold> were added at 5 μM. Cells were lysed with Triton X-100
+lysis buffer (50 mM tris-HCl pH 8.0, 100 mM NaCl, 1% Triton X-100)
+supplemented with 5 mM MgCl<sub>2</sub>, protease and phosphatase
+inhibitors (Roche), 1 μM Olaparib (Cayman Chemical), and 1 μM
+PARGi PDD00017273 (Sigma-Aldrich) at 4 °C. The lysates were incubated
+with 0.1% Benzonase (Sigma-Aldrich) for 30 min at 4 °C, centrifuged
+at 15,000 rpm for 15 min, and supernatants were collected. Proteins
+were heated to 90 °C in a 1× NuPAGE LDS sample buffer (Invitrogen)
+with DTT (Sigma-Aldrich) for 5 min. Samples were resolved on NuPAGE
+Novex 4–12% Bis-Tris gels (Invitrogen) and transferred onto
+nitrocellulose membranes (Bio-Rad) using Trans-Blot Turbo Transfer
+System (Bio-Rad). The membranes were blocked in phosphate-buffered
+saline (PBS) buffer with 5% nonfat dried milk and 0.1% Tween-20 for
+1 h at rt and incubated overnight with primary antibodies at 4 °C.
+Primary antibodies were used at the following concentrations: PARP1
+(556494, 1:5000), mono/poly-ADPr (83732, 1:1500), histone H3 (07-690,
+1:50,000), and NUDT5 (ab129172, 1:1000). Membranes were incubated
+with peroxidase-conjugated secondary antibody (antimouse, Agilent,
+1:2000, antirabbit, Agilent, 1:2000) or fluorophore-conjugated secondary
+antibody (Alexa Fluor 680 antirabbit IgG, 1:5000) for 1 h. Blots were
+developed using ECL (Invitrogen) and analyzed by exposing to films
+or imaged by a LI-COR imaging system.</p></sec><sec id="sec4.8" disp-level="2"><title>Binding Affinity Determination</title><p>Surface plasmon resonance
+(SPR) experiments were performed using a Biacore S200 instrument at
+25 °C. Samples were immobilized on a CM5 chip using amine-coupling
+method according to the manufacturer’s instructions using a
+running buffer containing 50 mM HEPES, 150 mM NaCl, 2 mM MgCl<sub>2</sub>, and 0.05% Tween-20, pH 7.5. The binding affinity assay was
+run with 2% DMSO in the running buffer at a flow rate of 30 μL/min
+with a 60 s association and 200 s dissociation times. All of the assays
+were performed twice, and binding affinity was calculated using BIAevaluation
+software.</p></sec><sec id="sec4.9" disp-level="2"><title>Crystallization</title><p>For cocrystallization, NUDT5 (26 mg/mL)
+was mixed with ibrutinib (<bold>1</bold>) at 2.5 mM in the presence
+of 25 mM MgCl<sub>2</sub> and incubated for 1 h on ice prior to crystallization
+trials. Crystallization screens were prepared using the sitting-drop
+method with a precipitant solution (1:1). Cocrystals were grown in
+a buffer containing 0.1 M tris pH 8.0, 33% PEG4000, 0.2 M MgCl<sub>2</sub>. For cocrystallization, NUDT14 (20 mg/mL) was mixed with
+compound <bold>9</bold> at a molar ratio of 1:5 and incubated for
+2 h on ice prior to crystallization trials. Crystallization screens
+were prepared using the sitting-drop method with a precipitant solution
+(1:1). NUDT5 cocrystals with compound <bold>9</bold> were grown in
+a buffer containing 0.2 M ammonium acetate, 0.1 M citrate pH 5.5,
+and 30% PEG4000, while NUDT14 cocrystals with compound <bold>9</bold> were formed in a buffer containing 0.2 M MgCl<sub>2</sub>, 0.1 M
+bis-tris pH 6.5, and 25% PEG3350. Crystallization trials for NUDT5
+and NUDT14 were performed at 18 and 4 °C, respectively. Crystals
+were cryoprotected with the crystallization condition containing 20%
+glycerol and flash-frozen in liquid nitrogen.</p></sec><sec id="sec4.10" disp-level="2"><title>Data Collection, Structure
+Determination, and Refinement</title><p>X-ray data sets were collected
+at Diamond Light Source (Harwell,
+U.K.) on the I03 beamline using an Eiger2 XE 16 M detector or on beamline
+I04-1 using a Pilatus 6 M detector. Data processing and scaling were
+performed in XDS<sup><xref rid="ref28" ref-type="bibr">28</xref></sup> and Aimless.<sup><xref rid="ref29" ref-type="bibr">29</xref></sup> The structures of NUDT5—ibrutinib (<bold>1</bold>), NUDT5—compound <bold>9</bold>, and NUDT14—compound <bold>9</bold> were solved in Molecular replacement in Phaser<sup><xref rid="ref30" ref-type="bibr">30</xref></sup> using PDB <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.rcsb.org/structure/2DSB" ext-link-type="uri">2DSB</ext-link>(<xref rid="ref17" ref-type="bibr">17</xref>) for NUDT5
+and PDB <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.rcsb.org/structure/3Q91" ext-link-type="uri">3Q91</ext-link>(<xref rid="ref24" ref-type="bibr">24</xref>) for NUDT14 as the search models. The
+models were further built in Coot<sup><xref rid="ref31" ref-type="bibr">31</xref></sup> and
+refined in REFMAC5.<sup><xref rid="ref32" ref-type="bibr">32</xref></sup></p></sec><sec id="sec4.11" disp-level="2"><title>RapidFire–Intact
+Protein Mass Spectrometry</title><p>Agilent
+RapidFire High-throughput Mass Spectrometry (RapidFire MS) system
+was used to observe adduct formation with intact proteins. Specifically,
+2 μM of NUDT5 or NUDT14 was incubated with 100 μM of compounds
+for 2 h. 50 μL was injected into an Agilent RapidFire C4 cartridge.
+Pump 1 was placed in mobile solution A that contains 0.1% formic acid
+in water, and Pumps 2 and 3 were in mobile phase B containing 0.1%
+formic acid and 85% acetonitrile. Data analysis was performed using
+Agilent MassHunter Qualitative Analysis B.07.00 software.</p></sec><sec id="sec4.12" disp-level="2"><title>Chemoproteomic
+Pulldowns</title><p>T-47D cells were grown in
+RPMI medium supplemented with 10% FBS and 1× GlutaMAX at 37 °C
+and 5% CO<sub>2</sub>. When reaching about 80% confluency, cells were
+harvested, washed with PBS, and frozen at −80 °C. Lysates
+were generated by adding 3× pellet volume of Buffer A (50 mM
+tris pH 7.5, 0.8% v/v NP-40, 5% v/v glycerol, 1.5 mM MgCl<sub>2</sub>, 100 mM NaCl, 25 mM NaF, 1 mM Na<sub>3</sub>VO<sub>4</sub>, 1 mM
+PMSF, 1 mM DTT, 10 μg/mL TLCK, 1 μg/mL Leupeptin, 1 μg/mL
+Aprotinin, 1 μg/mL soybean trypsin) supplemented with 1 μL/mL
+of benzonase. To facilitate lysis, crude lysate was drawn 10 times
+with a needle and incubated for 30 min on ice before clearing by centrifugation.</p><p>Chemical pulldowns were performed as previously described.<sup><xref rid="ref33" ref-type="bibr">33</xref></sup> In brief, the affinity matrix was generated
+by coupling CBH-003 (<bold>7</bold>) to NHS-activated sepharose beads
+(Cytiva, #17090601) at a final concentration of 0.5 mM. The lysate
+(5 mg in 300 μL per condition) was incubated with 20 μM
+TH5427 (<bold>6</bold>) or DMSO for 30 min at 4 °C before applying
+it to the affinity beads (50 μL per condition) for 2 h at 4
+°C. Affinity matrices were washed 4 times with 1 mL Buffer A,
+and proteins were eluted 2× with 50 μL of 2× Laemmli
+buffer containing 25 mM DTT in PBS for 5 min at 95 °C.</p><p>Eluents (70 μL) were diluted in 0.1 M tris (pH 7.8) to 200
+μL, reduced with DTT (5 mM final concentration) for 30 min at
+rt, and alkylated with iodoacetamide (20 mM final concentration) for
+30 min in the dark. Protein was precipitated by the sequential addition
+of MeOH (600 μL), CHCl<sub>3</sub> (150 μL), and H<sub>2</sub>O (450 μL), pelleted (17,000<italic>g</italic>, 5 min),
+washed with further MeOH (2 × 600 μL), and repelleted.
+Air-dried pellets were resuspended in 6 M urea (pH 7.8, 50 μL)
+by vortexing; the resulting protein solution was diluted with 250
+μL of H<sub>2</sub>O and then incubated with trypsin (1 μg)
+overnight at 37 °C. The digests were acidified with formic acid
+(1% (v/v) final concentration), desalted using SOLA HRP SPE Cartridges
+(Thermo Fisher), eluting with 69% (v/v) MeCN, 0.1% (v/v) formic acid
+in H<sub>2</sub>O (600 μL), and dried <italic>in vacuo</italic>. The dried peptides were stored at −20 °C before resuspension
+in 2% (v/v) MeCN and 0.1% (v/v) formic acid in H<sub>2</sub>O (20
+μL) for LC-MS/MS analysis.</p></sec><sec id="sec4.13" disp-level="2"><title>LC-MS/MS Data Acquisition
+and Analysis</title><p>Digested samples
+were analyzed by nano-UPLC-MS/MS using a Dionex Ultimate 3000 nano-UPLC
+fitted with an EASY spray column (75 μm × 500 mm, 2 μm
+particle size, Thermo Scientific), coupled to an Orbitrap Q Exactive
+instrument. A 60 min gradient of 0.1% (v/v) formic acid in 5% (v/v)
+DMSO to 0.1% (v/v) formic acid with 35% (v/v) acetonitrile in 5% (v/v)
+DMSO at a flow rate of 250 nL·min<sup>–1</sup> was used.
+The instrument was operated in a data-dependent mode, with survey
+scans acquired at a resolution of 70,000 at 200 <italic>m</italic>/<italic>z</italic> and the 15 most abundant precursors selected
+for HCD fragmentation with an AGC target of 1 × 10<sup>5</sup> ions. Raw data were searched in using MSFragger v.3.7<sup><xref rid="ref34" ref-type="bibr">34</xref></sup> IonQuant 1.8.10<sup><xref rid="ref35" ref-type="bibr">35</xref></sup> and Philosopher 4.8.0<sup><xref rid="ref36" ref-type="bibr">36</xref></sup> within Fragpipe
+v.19.1. against the human proteome FASTA file (UniProt <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.uniprot.org/uniprotkb/UP000005640" ext-link-type="uri">UP000005640</ext-link>, downloaded 05.08.21) with added decoy and contaminants. The “LFQ-MBR”
+workflow was enabled for label-free quantification (LFQ) and match
+between runs (MBR) with standard settings for identification and quantification.
+For the <italic>in silico</italic> digest, trypsin was selected, allowing
+2 missed cleavages, and methionine oxidation and cysteine carbamidomethylation
+were kept as variable modifications. Data were further processed using
+Perseus version 2.0.9.0. MaxLFQ intensities were log<sub>2</sub>-transformed,
+experimental replicates were grouped, and proteins were filtered out
+when detected less than 3 out of 4 times. Conditions were normalized
+by median subtraction. Missing values were imputed with a constant
+(−3) and the fold change and Student’s <italic>t</italic> test <italic>p</italic>-value between competition and DMSO group.
+Principal component analysis was performed with the Benjamini–Hochberg
+FDR of 0.05. Plots were created in R studio version 4.1.1.</p></sec></sec><sec id="ack1" sec-type="ack" disp-level="1"><title>Acknowledgments</title><p>The authors
+thank B. Kessler and R. Fischer from the Discovery
+Proteomics Facility, Oxford University, for their support. This project
+received funding from the Innovative Medicines Initiative 2 Joint
+Undertaking (JU) under grant agreement No 875510. The JU receives
+support from the European Union’s Horizon 2020 research and
+innovation program, the European Federation of Pharmaceutical Industries
+and Associations (EFPIA), the Ontario Institute for Cancer Research,
+the Royal Institution for the Advancement of Learning McGill University,
+the KTH Royal Institute of Technology (Kungliga Tekniska Hoegskolan),
+and Diamond Light Source Limited. The work in I. Ahel’s laboratory
+is supported by the Wellcome Trust [210634, 223107], the Biotechnology
+and Biological Sciences Research Council [BB/W016613/1], Ovarian Cancer
+Research Alliance [813369], and Cancer Research United Kingdom [C35050/A22284].</p></sec><sec id="dl1" sec-type="glossary" disp-level="1"><title>Glossary</title><def-list><title>Abbreviations Used</title><def-item><term>DCM</term><def><p>dichloromethane</p></def></def-item><def-item><term>DIAD</term><def><p>diisopropyl azodicarboxylate</p></def></def-item><def-item><term>DIPEA</term><def><p><italic>N</italic>,<italic>N</italic>-diisopropylethylamine</p></def></def-item><def-item><term>DMF</term><def><p><italic>N</italic>,<italic>N</italic>-dimethylformamide</p></def></def-item><def-item><term>DMSO</term><def><p>dimethyl sulfoxide</p></def></def-item><def-item><term>dppf</term><def><p>[1,1′-bis(diphenylphosphino)ferrocene]</p></def></def-item><def-item><term>MS</term><def><p>mass spectrometry</p></def></def-item><def-item><term>Pin</term><def><p>pinacol boronic
+ester</p></def></def-item><def-item><term>PS</term><def><p>polymer-supported</p></def></def-item><def-item><term>THF</term><def><p>tetrahydrofuran</p></def></def-item><def-item><term>TFA</term><def><p>trifluoroacetic
+acid</p></def></def-item></def-list></sec><sec id="notes-2" disp-level="1"><title>Supporting Information Available</title><p>The
+Supporting Information
+is available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.4c00072?goto=supporting-info" ext-link-type="uri">https://pubs.acs.org/doi/10.1021/acs.jmedchem.4c00072</ext-link>.</p><list list-type="simple" id="silist"><list-item><p>Chemical proteomics results;
+NUDT5 NanoBRET TE assay;
+mass spectrometry analysis of ibrutinib analogues with NUDT5; mass
+spectrometry analysis of ibrutinib analogues with NUDT14; multiple
+sequence alignment of NUDT14 and NUDT5; NUDIX selectivity for compound <bold>9</bold> and ibrutinib (<bold>1</bold>) determined by SPR; setup
+of HiBiT-NUDT14 CETSA; assessment of protein ADP-ribosylation; NMR
+spectra and LC-MS chromatograms; X-ray data collection and refinement
+statistics; and primers for cloning (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jmedchem.4c00072/suppl_file/jm4c00072_si_001.pdf" ext-link-type="uri">PDF</ext-link>)</p></list-item><list-item><p>Molecular formula strings (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jmedchem.4c00072/suppl_file/jm4c00072_si_002.csv" ext-link-type="uri">CSV</ext-link>)</p></list-item></list></sec><sec id="notes-1" disp-level="1"><title>Author Contributions</title><p><sup>#</sup> E.B., A.-S.M.C.M., and L.G.B. contributed equally
+to this work.</p></sec><sec id="NOTES-d14e1915-autogenerated" disp-level="1"><p>The authors declare
+no
+competing financial interest.</p></sec><sec id="sec34" disp-level="1"><title>Supplementary Material</title><supplementary-material id="sifile1" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="jm4c00072_si_001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path dcdc/11089510/f9afa4fdd19b/jm4c00072_si_001.pdf?><?cloudpmc-bucket app?><?size 5027015?><caption><p>jm4c00072_si_001.pdf</p></caption></media></supplementary-material><supplementary-material id="sifile2" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="jm4c00072_si_002.csv" mimetype="text" mime-subtype="plain"><?cloudpmc-path dcdc/11089510/03fadd8334f9/jm4c00072_si_002.csv?><?cloudpmc-bucket app?><?size 2089?><caption><p>jm4c00072_si_002.csv</p></caption></media></supplementary-material></sec><sec id="ref-list1" sec-type="ref-list" disp-level="1"><title>References</title><sec id="ref-list1_sec2" disp-level="2"><ref-list><ref id="ref1"><mixed-citation id="cit1"><named-content content-type="citation-string">Bessman M. J.; Frick D. N.; O’Handley S. F.
+The MutT
+proteins or ″Nudix″
+hydrolases, a family of versatile, widely distributed, ″housecleaning″
+enzymes. J. Biol. Chem.
+1996, 271 (41), 25059–25062. 10.1074/jbc.271.41.25059.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1074/jbc.271.41.25059"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="8810257"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Biol. Chem.&amp;title=The MutT proteins or ″Nudix″ hydrolases, a family of versatile, widely distributed, ″housecleaning″ enzymes&amp;author=M. J. Bessman&amp;author=D. N. Frick&amp;author=S. F. O’Handley&amp;volume=271&amp;issue=41&amp;publication_year=1996&amp;pages=25059-25062&amp;pmid=8810257&amp;doi=10.1074/jbc.271.41.25059&amp;"/></mixed-citation></ref><ref id="ref2"><mixed-citation id="cit2"><named-content content-type="citation-string">Mildvan A. S.; Xia Z.; Azurmendi H. F.; Saraswat V.; Legler P. M.; Massiah M. A.; Gabelli S. B.; Bianchet M. A.; Kang L. W.; Amzel L. M.
+Structures
+and mechanisms of Nudix hydrolases. Arch. Biochem.
+Biophys.
+2005, 433 (1), 129–143. 10.1016/j.abb.2004.08.017.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.abb.2004.08.017"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="15581572"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Arch. Biochem. Biophys.&amp;title=Structures and mechanisms of Nudix hydrolases&amp;author=A. S. Mildvan&amp;author=Z. Xia&amp;author=H. F. Azurmendi&amp;author=V. Saraswat&amp;author=P. M. Legler&amp;volume=433&amp;issue=1&amp;publication_year=2005&amp;pages=129-143&amp;pmid=15581572&amp;doi=10.1016/j.abb.2004.08.017&amp;"/></mixed-citation></ref><ref id="ref3"><mixed-citation id="cit3"><named-content content-type="citation-string">Carreras-Puigvert J.; Zitnik M.; Jemth A. S.; Carter M.; Unterlass J. E.; Hallstrom B.; Loseva O.; Karem Z.; Calderon-Montano J. M.; Lindskog C.; et al. A comprehensive structural,
+biochemical and
+biological profiling of the human NUDIX hydrolase family. Nat. Commun.
+2017, 8 (1), 1541 10.1038/s41467-017-01642-w.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41467-017-01642-w"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5688067"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29142246"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Commun.&amp;title=A comprehensive structural, biochemical and biological profiling of the human NUDIX hydrolase family&amp;author=J. Carreras-Puigvert&amp;author=M. Zitnik&amp;author=A. S. Jemth&amp;author=M. Carter&amp;author=J. E. Unterlass&amp;volume=8&amp;issue=1&amp;publication_year=2017&amp;pages=1541&amp;pmid=29142246&amp;doi=10.1038/s41467-017-01642-w&amp;"/></mixed-citation></ref><ref id="ref4"><mixed-citation id="cit4"><named-content content-type="citation-string">Arimori T.; Tamaoki H.; Nakamura T.; Kamiya H.; Ikemizu S.; Takagi Y.; Ishibashi T.; Harashima H.; Sekiguchi M.; Yamagata Y.
+Diverse substrate recognition
+and
+hydrolysis mechanisms of human NUDT5. Nucleic
+Acids Res.
+2011, 39 (20), 8972–8983. 10.1093/nar/gkr575.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/nar/gkr575"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3203587"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21768126"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nucleic Acids Res.&amp;title=Diverse substrate recognition and hydrolysis mechanisms of human NUDT5&amp;author=T. Arimori&amp;author=H. Tamaoki&amp;author=T. Nakamura&amp;author=H. Kamiya&amp;author=S. Ikemizu&amp;volume=39&amp;issue=20&amp;publication_year=2011&amp;pages=8972-8983&amp;pmid=21768126&amp;doi=10.1093/nar/gkr575&amp;"/></mixed-citation></ref><ref id="ref5"><mixed-citation id="cit5"><named-content content-type="citation-string">Ito R.; Sekiguchi M.; Setoyama D.; Nakatsu Y.; Yamagata Y.; Hayakawa H.
+Cleavage of oxidized guanine nucleotide and ADP sugar
+by human NUDT5 protein. J. Biochem.
+2011, 149 (6), 731–738. 10.1093/jb/mvr028.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/jb/mvr028"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21389046"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Biochem.&amp;title=Cleavage of oxidized guanine nucleotide and ADP sugar by human NUDT5 protein&amp;author=R. Ito&amp;author=M. Sekiguchi&amp;author=D. Setoyama&amp;author=Y. Nakatsu&amp;author=Y. Yamagata&amp;volume=149&amp;issue=6&amp;publication_year=2011&amp;pages=731-738&amp;pmid=21389046&amp;doi=10.1093/jb/mvr028&amp;"/></mixed-citation></ref><ref id="ref6"><mixed-citation id="cit6"><named-content content-type="citation-string">Gupte R.; Liu Z.; Kraus W. L.
+PARPs and
+ADP-ribosylation: recent advances linking
+molecular functions to biological outcomes. Genes Dev.
+2017, 31 (2), 101–126. 10.1101/gad.291518.116.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1101/gad.291518.116"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5322727"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28202539"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Genes Dev.&amp;title=PARPs and ADP-ribosylation: recent advances linking molecular functions to biological outcomes&amp;author=R. Gupte&amp;author=Z. Liu&amp;author=W. L. Kraus&amp;volume=31&amp;issue=2&amp;publication_year=2017&amp;pages=101-126&amp;pmid=28202539&amp;doi=10.1101/gad.291518.116&amp;"/></mixed-citation></ref><ref id="ref7"><mixed-citation id="cit7"><named-content content-type="citation-string">Palazzo L.; Mikoc A.; Ahel I.
+ADP-ribosylation: new facets of an
+ancient modification. FEBS J.
+2017, 284 (18), 2932–2946. 10.1111/febs.14078.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/febs.14078"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7163968"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28383827"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=FEBS J.&amp;title=ADP-ribosylation: new facets of an ancient modification&amp;author=L. Palazzo&amp;author=A. Mikoc&amp;author=I. Ahel&amp;volume=284&amp;issue=18&amp;publication_year=2017&amp;pages=2932-2946&amp;pmid=28383827&amp;doi=10.1111/febs.14078&amp;"/></mixed-citation></ref><ref id="ref8"><mixed-citation id="cit8"><named-content content-type="citation-string">Perraud A.
+L.; Shen B.; Dunn C. A.; Rippe K.; Smith M. K.; Bessman M. J.; Stoddard B. L.; Scharenberg A. M.
+NUDT9,
+a member of the Nudix hydrolase family, is an evolutionarily conserved
+mitochondrial ADP-ribose pyrophosphatase. J.
+Biol. Chem.
+2003, 278 (3), 1794–1801. 10.1074/jbc.M205601200.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1074/jbc.M205601200"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="12427752"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Biol. Chem.&amp;title=NUDT9, a member of the Nudix hydrolase family, is an evolutionarily conserved mitochondrial ADP-ribose pyrophosphatase&amp;author=A. L. Perraud&amp;author=B. Shen&amp;author=C. A. Dunn&amp;author=K. Rippe&amp;author=M. K. Smith&amp;volume=278&amp;issue=3&amp;publication_year=2003&amp;pages=1794-1801&amp;pmid=12427752&amp;doi=10.1074/jbc.M205601200&amp;"/></mixed-citation></ref><ref id="ref9"><mixed-citation id="cit9"><named-content content-type="citation-string">Formentini L.; Macchiarulo A.; Cipriani G.; Camaioni E.; Rapizzi E.; Pellicciari R.; Moroni F.; Chiarugi A.
+Poly(ADP-ribose) catabolism
+triggers AMP-dependent mitochondrial energy failure. J. Biol. Chem.
+2009, 284 (26), 17668–17676. 10.1074/jbc.M109.002931.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1074/jbc.M109.002931"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2719406"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19411252"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Biol. Chem.&amp;title=Poly(ADP-ribose) catabolism triggers AMP-dependent mitochondrial energy failure&amp;author=L. Formentini&amp;author=A. Macchiarulo&amp;author=G. Cipriani&amp;author=E. Camaioni&amp;author=E. Rapizzi&amp;volume=284&amp;issue=26&amp;publication_year=2009&amp;pages=17668-17676&amp;pmid=19411252&amp;doi=10.1074/jbc.M109.002931&amp;"/></mixed-citation></ref><ref id="ref10"><mixed-citation id="cit10"><named-content content-type="citation-string">Yang H.; Slupska M. M.; Wei Y. F.; Tai J. H.; Luther W. M.; Xia Y. R.; Shih D. M.; Chiang J. H.; Baikalov C.; Fitz-Gibbon S.; et al. Cloning and characterization of a new member
+of the Nudix hydrolases from human and mouse. J. Biol. Chem.
+2000, 275 (12), 8844–8853. 10.1074/jbc.275.12.8844.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1074/jbc.275.12.8844"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="10722730"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Biol. Chem.&amp;title=Cloning and characterization of a new member of the Nudix hydrolases from human and mouse&amp;author=H. Yang&amp;author=M. M. Slupska&amp;author=Y. F. Wei&amp;author=J. H. Tai&amp;author=W. M. Luther&amp;volume=275&amp;issue=12&amp;publication_year=2000&amp;pages=8844-8853&amp;pmid=10722730&amp;doi=10.1074/jbc.275.12.8844&amp;"/></mixed-citation></ref><ref id="ref11"><mixed-citation id="cit11"><named-content content-type="citation-string">Wright R. H. G.; Lioutas A.; Le Dily F.; Soronellas D.; Pohl A.; Bonet J.; Nacht A. S.; Samino S.; Font-Mateu J.; Vicent G. P.; et al. ADP-ribose-derived
+nuclear
+ATP synthesis by NUDIX5 is required for chromatin remodeling. Science
+2016, 352 (6290), 1221–1225. 10.1126/science.aad9335.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1126/science.aad9335"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27257257"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Science&amp;title=ADP-ribose-derived nuclear ATP synthesis by NUDIX5 is required for chromatin remodeling&amp;author=R. H. G. Wright&amp;author=A. Lioutas&amp;author=F. Le Dily&amp;author=D. Soronellas&amp;author=A. Pohl&amp;volume=352&amp;issue=6290&amp;publication_year=2016&amp;pages=1221-1225&amp;pmid=27257257&amp;doi=10.1126/science.aad9335&amp;"/></mixed-citation></ref><ref id="ref12"><mixed-citation id="cit12"><named-content content-type="citation-string">Page B. D. G.; Valerie N. C. K.; Wright R. H. G.; Wallner O.; Isaksson R.; Carter M.; Rudd S. G.; Loseva O.; Jemth A. S.; Almlof I.; et al. Targeted
+NUDT5 inhibitors
+block hormone signaling in breast cancer cells. Nat. Commun.
+2018, 9 (1), 250 10.1038/s41467-017-02293-7.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41467-017-02293-7"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5772648"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29343827"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Commun.&amp;title=Targeted NUDT5 inhibitors block hormone signaling in breast cancer cells&amp;author=B. D. G. Page&amp;author=N. C. K. Valerie&amp;author=R. H. G. Wright&amp;author=O. Wallner&amp;author=R. Isaksson&amp;volume=9&amp;issue=1&amp;publication_year=2018&amp;pages=250&amp;pmid=29343827&amp;doi=10.1038/s41467-017-02293-7&amp;"/></mixed-citation></ref><ref id="ref13"><mixed-citation id="cit13"><named-content content-type="citation-string">Pickup K. E.; Pardow F.; Carbonell-Caballero J.; Lioutas A.; Villanueva-Canas J. L.; Wright R. H. G.; Beato M.
+Expression
+of Oncogenic Drivers in
+3D Cell Culture Depends on Nuclear ATP Synthesis by NUDT5. Cancers
+2019, 11 (9), 1337. 10.3390/cancers11091337.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3390/cancers11091337"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6770457"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31510016"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cancers&amp;title=Expression of Oncogenic Drivers in 3D Cell Culture Depends on Nuclear ATP Synthesis by NUDT5&amp;author=K. E. Pickup&amp;author=F. Pardow&amp;author=J. Carbonell-Caballero&amp;author=A. Lioutas&amp;author=J. L. Villanueva-Canas&amp;volume=11&amp;issue=9&amp;publication_year=2019&amp;pages=1337&amp;pmid=31510016&amp;doi=10.3390/cancers11091337&amp;"/></mixed-citation></ref><ref id="ref14"><mixed-citation id="cit14"><named-content content-type="citation-string">Huber K. V. M.; Salah E.; Radic B.; Gridling M.; Elkins J. M.; Stukalov A.; Jemth A. S.; Gokturk C.; Sanjiv K.; Stromberg K.; et al. Stereospecific targeting of MTH1 by (S)-crizotinib
+as an anticancer strategy. Nature
+2014, 508 (7495), 222–227. 10.1038/nature13194.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nature13194"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4150021"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24695225"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;title=Stereospecific targeting of MTH1 by (S)-crizotinib as an anticancer strategy&amp;author=K. V. M. Huber&amp;author=E. Salah&amp;author=B. Radic&amp;author=M. Gridling&amp;author=J. M. Elkins&amp;volume=508&amp;issue=7495&amp;publication_year=2014&amp;pages=222-227&amp;pmid=24695225&amp;doi=10.1038/nature13194&amp;"/></mixed-citation></ref><ref id="ref15"><mixed-citation id="cit15"><named-content content-type="citation-string">Hantschel O.
+Unexpected
+off-targets and paradoxical pathway activation by kinase inhibitors. ACS Chem. Biol.
+2015, 10 (1), 234–245. 10.1021/cb500886n.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/cb500886n"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25531586"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Chem. Biol.&amp;title=Unexpected off-targets and paradoxical pathway activation by kinase inhibitors&amp;author=O. Hantschel&amp;volume=10&amp;issue=1&amp;publication_year=2015&amp;pages=234-245&amp;pmid=25531586&amp;doi=10.1021/cb500886n&amp;"/></mixed-citation></ref><ref id="ref16"><mixed-citation id="cit16"><named-content content-type="citation-string">Trapp J.; Jochum A.; Meier R.; Saunders L.; Marshall B.; Kunick C.; Verdin E.; Goekjian P.; Sippl W.; Jung M.
+Adenosine mimetics
+as inhibitors of NAD+-dependent histone deacetylases,
+from kinase to sirtuin inhibition. J. Med. Chem.
+2006, 49 (25), 7307–7316. 10.1021/jm060118b.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/jm060118b"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="17149860"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Med. Chem.&amp;title=Adenosine mimetics as inhibitors of NAD+-dependent histone deacetylases, from kinase to sirtuin inhibition&amp;author=J. Trapp&amp;author=A. Jochum&amp;author=R. Meier&amp;author=L. Saunders&amp;author=B. Marshall&amp;volume=49&amp;issue=25&amp;publication_year=2006&amp;pages=7307-7316&amp;pmid=17149860&amp;doi=10.1021/jm060118b&amp;"/></mixed-citation></ref><ref id="ref17"><mixed-citation id="cit17"><named-content content-type="citation-string">Zha M.; Zhong C.; Peng Y.; Hu H.; Ding J.
+Crystal structures
+of human NUDT5 reveal insights into the structural basis of the substrate
+specificity. J. Mol. Biol.
+2006, 364 (5), 1021–1033. 10.1016/j.jmb.2006.09.078.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.jmb.2006.09.078"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="17052728"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Mol. Biol.&amp;title=Crystal structures of human NUDT5 reveal insights into the structural basis of the substrate specificity&amp;author=M. Zha&amp;author=C. Zhong&amp;author=Y. Peng&amp;author=H. Hu&amp;author=J. Ding&amp;volume=364&amp;issue=5&amp;publication_year=2006&amp;pages=1021-1033&amp;pmid=17052728&amp;doi=10.1016/j.jmb.2006.09.078&amp;"/></mixed-citation></ref><ref id="ref18"><mixed-citation id="cit18"><named-content content-type="citation-string">Food and Drug Administration (FDA) . Highlights of Prescribing Information.
+IMBRUVICA
+TM (ibrutinib) capsules, for oral use. 2019. <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.imbruvica.com/files/prescribing-information.pdf" ext-link-type="uri">https://www.imbruvica.com/files/prescribing-information.pdf</ext-link>.</named-content></mixed-citation></ref><ref id="ref19"><mixed-citation id="cit19"><named-content content-type="citation-string">Dale N. C.; Johnstone E. K.; White C. W.; Pfleger K. D.
+NanoBRET: the bright
+future of proximity-based assays. Front. Bioeng.
+Biotechnol.
+2019, 7, 56. 10.3389/fbioe.2019.00056.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fbioe.2019.00056"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6443706"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30972335"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front. Bioeng. Biotechnol.&amp;title=NanoBRET: the bright future of proximity-based assays&amp;author=N. C. Dale&amp;author=E. K. Johnstone&amp;author=C. W. White&amp;author=K. D. Pfleger&amp;volume=7&amp;publication_year=2019&amp;pages=56&amp;pmid=30972335&amp;doi=10.3389/fbioe.2019.00056&amp;"/></mixed-citation></ref><ref id="ref20"><mixed-citation id="cit20"><named-content content-type="citation-string">Chen J.; Kinoshita T.; Sukbuntherng J.; Chang B. Y.; Elias L.
+Ibrutinib
+Inhibits ERBB Receptor Tyrosine Kinases and HER2-Amplified Breast
+Cancer Cell Growth. Mol. Cancer Ther.
+2016, 15 (12), 2835–2844. 10.1158/1535-7163.MCT-15-0923.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1158/1535-7163.MCT-15-0923"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27678331"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol. Cancer Ther.&amp;title=Ibrutinib Inhibits ERBB Receptor Tyrosine Kinases and HER2-Amplified Breast Cancer Cell Growth&amp;author=J. Chen&amp;author=T. Kinoshita&amp;author=J. Sukbuntherng&amp;author=B. Y. Chang&amp;author=L. Elias&amp;volume=15&amp;issue=12&amp;publication_year=2016&amp;pages=2835-2844&amp;pmid=27678331&amp;doi=10.1158/1535-7163.MCT-15-0923&amp;"/></mixed-citation></ref><ref id="ref21"><mixed-citation id="cit21"><named-content content-type="citation-string">Prokhorova E.; Agnew T.; Wondisford A. R.; Tellier M.; Kaminski N.; Beijer D.; Holder J.; Groslambert J.; Suskiewicz M. J.; Zhu K.; et al. Unrestrained poly-ADP-ribosylation
+provides insights into chromatin regulation and human disease. Mol. Cell
+2021, 81 (12), 2640–2655. e2648. 10.1016/j.molcel.2021.04.028.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.molcel.2021.04.028"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8221567"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34019811"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol. Cell&amp;title=Unrestrained poly-ADP-ribosylation provides insights into chromatin regulation and human disease&amp;author=E. Prokhorova&amp;author=T. Agnew&amp;author=A. R. Wondisford&amp;author=M. Tellier&amp;author=N. Kaminski&amp;volume=81&amp;issue=12&amp;publication_year=2021&amp;pages=2640-2655. e2648&amp;pmid=34019811&amp;doi=10.1016/j.molcel.2021.04.028&amp;"/></mixed-citation></ref><ref id="ref22"><mixed-citation id="cit22"><named-content content-type="citation-string">Martin J. G.; Ward J. A.; Feyertag F.; Zhang L.; Couvertier S.; Guckian K.; Huber K. V. M.; Johnson D. S.
+Chemoproteomic
+Profiling
+of Covalent XPO1 Inhibitors to Assess Target Engagement and Selectivity. ChemBioChem
+2021, 22 (12), 2116–2123. 10.1002/cbic.202100038.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/cbic.202100038"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33887086"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ChemBioChem&amp;title=Chemoproteomic Profiling of Covalent XPO1 Inhibitors to Assess Target Engagement and Selectivity&amp;author=J. G. Martin&amp;author=J. A. Ward&amp;author=F. Feyertag&amp;author=L. Zhang&amp;author=S. Couvertier&amp;volume=22&amp;issue=12&amp;publication_year=2021&amp;pages=2116-2123&amp;pmid=33887086&amp;doi=10.1002/cbic.202100038&amp;"/></mixed-citation></ref><ref id="ref23"><mixed-citation id="cit23"><named-content content-type="citation-string">Gehringer M.; Laufer S. A.
+Emerging and Re-Emerging
+Warheads for Targeted Covalent
+Inhibitors: Applications in Medicinal Chemistry and Chemical Biology. J. Med. Chem.
+2019, 62 (12), 5673–5724. 10.1021/acs.jmedchem.8b01153.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jmedchem.8b01153"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30565923"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Med. Chem.&amp;title=Emerging and Re-Emerging Warheads for Targeted Covalent Inhibitors: Applications in Medicinal Chemistry and Chemical Biology&amp;author=M. Gehringer&amp;author=S. A. Laufer&amp;volume=62&amp;issue=12&amp;publication_year=2019&amp;pages=5673-5724&amp;pmid=30565923&amp;doi=10.1021/acs.jmedchem.8b01153&amp;"/></mixed-citation></ref><ref id="ref24"><mixed-citation id="cit24"><named-content content-type="citation-string">Tresaugues L.; Siponen M. I.; Arrowsmith C. H.; Berglund H.; Bountra C.; Collins R.; Edwards A. M.; Ekblad T.; Flodin S.; Flores A.; Graslund S.; Hammarstrom M.; Johansson I.; Karlberg T.; Kol S.; Kotenyova T.; Kouznetsova E.; Moche M.; Nyman T.; Persson C.; Schuler H.; Schutz P.; Thorsell A. G.; Van Der Berg S.; Wahlberg E.; Weigelt J.; Welin M.; Nordlund P.; Structural Genomics Consortium (SGC) . Crystal Structure of Human Uridine Diphosphate Glucose
+Pyrophosphatase
+(NUDT14). 2011. 10.2210/pdb3q91/pdb.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.2210/pdb3q91/pdb"/></mixed-citation></ref><ref id="ref25"><mixed-citation id="cit25"><named-content content-type="citation-string">Michel M.; Homan E. J.; Wiita E.; Pedersen K.; Almlof I.; Gustavsson A. L.; Lundback T.; Helleday T.; Warpman
+Berglund U.
+In silico Druggability Assessment of the NUDIX Hydrolase
+Protein Family as a Workflow for Target Prioritization. Front Chem.
+2020, 8, 443. 10.3389/fchem.2020.00443.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fchem.2020.00443"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7274155"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32548091"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front Chem.&amp;title=In silico Druggability Assessment of the NUDIX Hydrolase Protein Family as a Workflow for Target Prioritization&amp;author=M. Michel&amp;author=E. J. Homan&amp;author=E. Wiita&amp;author=K. Pedersen&amp;author=I. Almlof&amp;volume=8&amp;publication_year=2020&amp;pages=443&amp;pmid=32548091&amp;doi=10.3389/fchem.2020.00443&amp;"/></mixed-citation></ref><ref id="ref26"><mixed-citation id="cit26"><named-content content-type="citation-string">Savitsky P.; Bray J.; Cooper C. D.; Marsden B. D.; Mahajan P.; Burgess-Brown N. A.; Gileadi O.
+High-throughput production of human
+proteins for crystallization: the SGC experience. J. Struct. Biol.
+2010, 172 (1), 3–13. 10.1016/j.jsb.2010.06.008.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.jsb.2010.06.008"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2938586"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20541610"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Struct. Biol.&amp;title=High-throughput production of human proteins for crystallization: the SGC experience&amp;author=P. Savitsky&amp;author=J. Bray&amp;author=C. D. Cooper&amp;author=B. D. Marsden&amp;author=P. Mahajan&amp;volume=172&amp;issue=1&amp;publication_year=2010&amp;pages=3-13&amp;pmid=20541610&amp;doi=10.1016/j.jsb.2010.06.008&amp;"/></mixed-citation></ref><ref id="ref27"><mixed-citation id="cit27"><named-content content-type="citation-string">Ramachandran S.; Szewczyk M.; Barghout S. H.; Ciulli A.; Barsyte-Lovejoy D.; Vu V.. HiBiT Cellular
+Thermal Shift Assay (HiBiT CETSA). In Chemogenomics:
+Methods and Protocols; Springer, 2023; pp 149–165.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/978-1-0716-3397-7_11"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37558947"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Chemogenomics: Methods and Protocols&amp;publication_year=2023&amp;"/></mixed-citation></ref><ref id="ref28"><mixed-citation id="cit28"><named-content content-type="citation-string">Kabsch W.
+Xds. Acta Crystallogr.,
+Sect. D: Biol. Crystallogr.
+2010, 66 (Pt 2), 125–132. 10.1107/S0907444909047337.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1107/S0907444909047337"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2815665"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20124692"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Acta Crystallogr., Sect. D: Biol. Crystallogr.&amp;title=Xds&amp;author=W. Kabsch&amp;volume=66&amp;issue=Pt 2&amp;publication_year=2010&amp;pages=125-132&amp;pmid=20124692&amp;doi=10.1107/S0907444909047337&amp;"/></mixed-citation></ref><ref id="ref29"><mixed-citation id="cit29"><named-content content-type="citation-string">Evans P. R.; Murshudov G. N.
+How good are my data and what is
+the resolution?. Acta Crystallogr., Sect. D:
+Biol. Crystallogr.
+2013, 69 (Pt 7), 1204–1214. 10.1107/S0907444913000061.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1107/S0907444913000061"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3689523"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="23793146"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Acta Crystallogr., Sect. D: Biol. Crystallogr.&amp;title=How good are my data and what is the resolution?&amp;author=P. R. Evans&amp;author=G. N. Murshudov&amp;volume=69&amp;issue=Pt 7&amp;publication_year=2013&amp;pages=1204-1214&amp;pmid=23793146&amp;doi=10.1107/S0907444913000061&amp;"/></mixed-citation></ref><ref id="ref30"><mixed-citation id="cit30"><named-content content-type="citation-string">McCoy A. J.; Grosse-Kunstleve R. W.; Adams P. D.; Winn M. D.; Storoni L. C.; Read R. J.
+Phaser crystallographic software. J. Appl. Crystallogr.
+2007, 40 (Pt 4), 658–674. 10.1107/S0021889807021206.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1107/S0021889807021206"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2483472"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19461840"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Appl. Crystallogr.&amp;title=Phaser crystallographic software&amp;author=A. J. McCoy&amp;author=R. W. Grosse-Kunstleve&amp;author=P. D. Adams&amp;author=M. D. Winn&amp;author=L. C. Storoni&amp;volume=40&amp;issue=Pt 4&amp;publication_year=2007&amp;pages=658-674&amp;pmid=19461840&amp;doi=10.1107/S0021889807021206&amp;"/></mixed-citation></ref><ref id="ref31"><mixed-citation id="cit31"><named-content content-type="citation-string">Emsley P.; Lohkamp B.; Scott W. G.; Cowtan K.
+Features and
+development
+of Coot. Acta Crystallogr., Sect. D: Biol. Crystallogr.
+2010, 66 (Pt 4), 486–501. 10.1107/S0907444910007493.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1107/S0907444910007493"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2852313"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20383002"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Acta Crystallogr., Sect. D: Biol. Crystallogr.&amp;title=Features and development of Coot&amp;author=P. Emsley&amp;author=B. Lohkamp&amp;author=W. G. Scott&amp;author=K. Cowtan&amp;volume=66&amp;issue=Pt 4&amp;publication_year=2010&amp;pages=486-501&amp;pmid=20383002&amp;doi=10.1107/S0907444910007493&amp;"/></mixed-citation></ref><ref id="ref32"><mixed-citation id="cit32"><named-content content-type="citation-string">Murshudov G. N.; Skubak P.; Lebedev A. A.; Pannu N. S.; Steiner R. A.; Nicholls R. A.; Winn M. D.; Long F.; Vagin A. A.
+REFMAC5
+for the refinement of macromolecular crystal structures. Acta Crystallogr., Sect. D: Biol. Crystallogr.
+2011, 67 (Pt 4), 355–367. 10.1107/S0907444911001314.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1107/S0907444911001314"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3069751"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21460454"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Acta Crystallogr., Sect. D: Biol. Crystallogr.&amp;title=REFMAC5 for the refinement of macromolecular crystal structures&amp;author=G. N. Murshudov&amp;author=P. Skubak&amp;author=A. A. Lebedev&amp;author=N. S. Pannu&amp;author=R. A. Steiner&amp;volume=67&amp;issue=Pt 4&amp;publication_year=2011&amp;pages=355-367&amp;pmid=21460454&amp;doi=10.1107/S0907444911001314&amp;"/></mixed-citation></ref><ref id="ref33"><mixed-citation id="cit33"><named-content content-type="citation-string">Huber K. V. M.; Superti-Furga G.. Profiling
+of small molecules by chemical proteomics. In Proteomics in Systems Biology: Methods and Protocols; Springer: New York, 2016; Vol. 1394, pp 211–218 10.1007/978-1-4939-3341-9_15.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/978-1-4939-3341-9_15"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26700051"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Proteomics in Systems Biology: Methods and Protocols&amp;publication_year=2016&amp;"/></mixed-citation></ref><ref id="ref34"><mixed-citation id="cit34"><named-content content-type="citation-string">Kong A. T.; Leprevost F. V.; Avtonomov D. M.; Mellacheruvu D.; Nesvizhskii A. I.
+MSFragger:
+ultrafast and comprehensive peptide identification
+in mass spectrometry–based proteomics. Nat. Methods
+2017, 14 (5), 513–520. 10.1038/nmeth.4256.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nmeth.4256"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5409104"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28394336"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Methods&amp;title=MSFragger: ultrafast and comprehensive peptide identification in mass spectrometry–based proteomics&amp;author=A. T. Kong&amp;author=F. V. Leprevost&amp;author=D. M. Avtonomov&amp;author=D. Mellacheruvu&amp;author=A. I. Nesvizhskii&amp;volume=14&amp;issue=5&amp;publication_year=2017&amp;pages=513-520&amp;pmid=28394336&amp;doi=10.1038/nmeth.4256&amp;"/></mixed-citation></ref><ref id="ref35"><mixed-citation id="cit35"><named-content content-type="citation-string">Yu F.; Haynes S. E.; Nesvizhskii A. I.
+IonQuant Enables Accurate and Sensitive
+Label-Free Quantification With FDR-Controlled Match-Between-Runs. Mol. Cell. Proteomics
+2021, 20, 100077 10.1016/j.mcpro.2021.100077.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.mcpro.2021.100077"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8131922"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33813065"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol. Cell. Proteomics&amp;title=IonQuant Enables Accurate and Sensitive Label-Free Quantification With FDR-Controlled Match-Between-Runs&amp;author=F. Yu&amp;author=S. E. Haynes&amp;author=A. I. Nesvizhskii&amp;volume=20&amp;publication_year=2021&amp;pages=100077&amp;pmid=33813065&amp;doi=10.1016/j.mcpro.2021.100077&amp;"/></mixed-citation></ref><ref id="ref36"><mixed-citation id="cit36"><named-content content-type="citation-string">da
+Veiga Leprevost F.; Haynes S. E.; Avtonomov D. M.; Chang H.-Y.; Shanmugam A. K.; Mellacheruvu D.; Kong A. T.; Nesvizhskii A. I.
+Philosopher: a versatile toolkit
+for shotgun proteomics data analysis. Nat. Methods
+2020, 17 (9), 869–870. 10.1038/s41592-020-0912-y.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41592-020-0912-y"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7509848"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32669682"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Methods&amp;title=Philosopher: a versatile toolkit for shotgun proteomics data analysis&amp;author=F. da Veiga Leprevost&amp;author=S. E. Haynes&amp;author=D. M. Avtonomov&amp;author=H.-Y. Chang&amp;author=A. K. Shanmugam&amp;volume=17&amp;issue=9&amp;publication_year=2020&amp;pages=869-870&amp;pmid=32669682&amp;doi=10.1038/s41592-020-0912-y&amp;"/></mixed-citation></ref></ref-list></sec></sec><sec id="_ad93_" xml:lang="en" sec-type="associated-data" disp-level="1"><title>Associated Data</title><sec id="_adsm93_" xml:lang="en" sec-type="supplementary-materials" disp-level="2"><title>Supplementary Materials</title><supplementary-material id="db_ds_supplementary-material1_reqid_" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="jm4c00072_si_001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path dcdc/11089510/f9afa4fdd19b/jm4c00072_si_001.pdf?><?cloudpmc-bucket app?><?size 5027015?><caption><p>jm4c00072_si_001.pdf</p></caption></media></supplementary-material><supplementary-material id="db_ds_supplementary-material2_reqid_" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="jm4c00072_si_002.csv" mimetype="text" mime-subtype="plain"><?cloudpmc-path dcdc/11089510/03fadd8334f9/jm4c00072_si_002.csv?><?cloudpmc-bucket app?><?size 2089?><caption><p>jm4c00072_si_002.csv</p></caption></media></supplementary-material></sec></sec></body></article>

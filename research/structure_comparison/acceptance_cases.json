@@ -1,0 +1,361 @@
+{
+  "cases": [
+    {
+      "expected": {
+        "distance_A": 5.0,
+        "minimum_witness_pair_count": 1,
+        "within_radii_3_5_4_0_4_5_5_0": [
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      "fixture": "One ligand C at [0,0,0], protein residue C at [3,4,0]; unit-only typed fixture with no scientific identity claim.",
+      "id": "T01",
+      "layer": "numerical_unit"
+    },
+    {
+      "expected": {
+        "minimum_distances_A": [
+          3.5,
+          4.0,
+          4.5,
+          5.0,
+          5.000001
+        ],
+        "rule": "No pre-rounding; inclusive boundaries.",
+        "within_radii": [
+          [
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            false
+          ]
+        ]
+      },
+      "fixture": "Ligand [0,0,0]. Separate protein residues at [3.5,0,0], [4,0,0], [4.5,0,0], [5,0,0], [5.000001,0,0].",
+      "id": "T02",
+      "layer": "numerical_unit"
+    },
+    {
+      "expected": {
+        "distance_A": 3.0,
+        "minimum_witness_pairs": [
+          [
+            "L1",
+            "P1"
+          ],
+          [
+            "L2",
+            "P2"
+          ]
+        ],
+        "pair_records_within_5A": 4,
+        "residue_rows": 1
+      },
+      "fixture": "Ligand L1=[0,0,0], L2=[0,2,0]; protein atoms P1=[3,0,0], P2=[3,2,0] in same residue, all C occupancy1.",
+      "id": "T03",
+      "layer": "numerical_unit"
+    },
+    {
+      "expected": {
+        "complete_residue_distance_A": null,
+        "distance_A": 6.0,
+        "excluded_atom_ids": [
+          "H",
+          "D",
+          "Czero"
+        ],
+        "geometry_status": "partial_observed",
+        "note": "False describes retained atoms only. Explicit zero atom is partial even if not listed in missingness table.",
+        "within_4_0A": false
+      },
+      "fixture": "Ligand [0,0,0]. Protein atoms H=[0.5,0,0], D=[0.6,0,0], Czero=[1,0,0] occupancy0, C=[6,0,0] occupancy1 in one residue.",
+      "id": "T04",
+      "layer": "selection_unit"
+    },
+    {
+      "expected": {
+        "distance_A": 3.0,
+        "fractional_occupancy": true,
+        "weighted_distance_forbidden": true
+      },
+      "fixture": "One positive protein C at [3,0,0] with occupancy0.5 and ligand at origin.",
+      "id": "T05",
+      "layer": "selection_unit"
+    },
+    {
+      "expected": {
+        "conformer_labels": [
+          "A",
+          "B"
+        ],
+        "distances_A": [
+          3.0,
+          6.0
+        ],
+        "pooled_minimum_or_average_forbidden": true,
+        "within_4_0A": [
+          true,
+          false
+        ]
+      },
+      "fixture": "Dot ligand at origin. Protein local residue has shared dot N=[6,0,0], C altA=[3,0,0] occupancy0.5 and C altB=[8,0,0] occupancy0.5.",
+      "id": "T06",
+      "layer": "conformer_unit"
+    },
+    {
+      "expected": {
+        "assume_matching_A_A_forbidden": true,
+        "numeric_rows": 0,
+        "reason": "unsupported_ligand_protein_altloc_compatibility",
+        "retained_conformer_records": true
+      },
+      "fixture": "Both ligand and protein have nonblank A/B alternatives; no archived primary correlation specification.",
+      "id": "T07",
+      "layer": "conformer_unit"
+    },
+    {
+      "expected": {
+        "affected_geometry_status": "refused",
+        "reason": "unknown_altloc",
+        "unaffected_residue_retained": true
+      },
+      "fixture": "Atom site has altloc ? instead of .; a separate unaffected residue uses .",
+      "id": "T08",
+      "layer": "conformer_unit"
+    },
+    {
+      "expected": {
+        "geometry_status": "refused",
+        "overwrite_one_record_forbidden": true,
+        "reason": "ambiguous_shared_and_alternate_atom"
+      },
+      "fixture": "A protein residue has dot C and altA C with identical atom name; different atom_site IDs.",
+      "id": "T09",
+      "layer": "conformer_unit"
+    },
+    {
+      "expected": {
+        "no_drop_no_imputation": true,
+        "residue2_distance_A": null,
+        "residue2_reason": "unobserved_residue",
+        "residue2_thresholds": null,
+        "residue3_distance_A": null,
+        "residue3_reason": "no_eligible_protein_atoms",
+        "residue_rows": 3
+      },
+      "fixture": "Polymer scheme includes residues 1,2,3. Residue2 is wholly unobserved; residue3 has only zero-occupancy heavy atoms. Valid missingness records.",
+      "id": "T10",
+      "layer": "missingness_unit"
+    },
+    {
+      "expected": {
+        "complete_residue_distance_A": null,
+        "geometry_status": "partial_observed",
+        "no_contact_claim_permitted": false,
+        "observed_min_distance_A": 6.0
+      },
+      "fixture": "One protein residue contains positive atoms with minimum6 A but has a declared missing side-chain atom; separate ligand complete.",
+      "id": "T11",
+      "layer": "missingness_unit"
+    },
+    {
+      "expected": {
+        "distance_A": null,
+        "omitted_atom_name_reported": true,
+        "reason": "incomplete_ligand_heavy_atom_set",
+        "site_conformer_geometry_status": "refused",
+        "site_retained": true
+      },
+      "fixture": "Fresh hash-consistent SOFTWARE TEST ONLY manifest based on an artificial 30-heavy-atom W0O fixture; remove one CCD atom or set it occupancy0; do not mutate/overwrite archived sources.",
+      "id": "T12",
+      "layer": "package_refusal"
+    },
+    {
+      "expected": {
+        "exit_code": 2,
+        "no_output": true,
+        "no_partial_analysis": true
+      },
+      "fixture": "Independent cases: duplicate atom_site.id; different IDs but identical complete atom identity; duplicate CIF tag; ragged loop; two data blocks; malformed quote.",
+      "id": "T13",
+      "layer": "parser_validation"
+    },
+    {
+      "expected": {
+        "invalid_exit_code": 2,
+        "no_output": true,
+        "valid_nonpolymer_label_seq_dot_accepted": true
+      },
+      "fixture": "Independent invalid cases: coordinate NaN/Inf/text/?; occupancy NaN/?/-0.1/1.1; missing type_symbol; W0O atom with wrong element. Preserve . label_seq_id for valid W0O as positive control.",
+      "id": "T14",
+      "layer": "parser_validation"
+    },
+    {
+      "expected": {
+        "exit_code": 2,
+        "no_output": true,
+        "source_bytes_unchanged": true
+      },
+      "fixture": "Independent cases: JSON duplicate key/unknown key/NaN/bool radius; bad SHA; traversal or symlink input; unexpected model/site absent from manifest; target/sequence mismatch.",
+      "id": "T15",
+      "layer": "package_validation"
+    },
+    {
+      "expected": {
+        "both_chain_residues_retained": true,
+        "chainA_within_4_0A": false,
+        "chainB_within_4_0A": true,
+        "no_duplicate_identity_copy": true
+      },
+      "fixture": "Identity ASU dimer: ligand near chainB atom3 A away and chainA atom8 A away; both chains in official assembly.",
+      "id": "T16",
+      "layer": "assembly_unit"
+    },
+    {
+      "expected": {
+        "geometry_status": "refused",
+        "monomer_fallback_forbidden": true,
+        "reason": "unsupported_assembly_policy",
+        "site_retained": true
+      },
+      "fixture": "Valid artificial manifest with nonidentity operation or no uniquely supported relevant dimer; not one of the fixed real sources.",
+      "id": "T17",
+      "layer": "assembly_refusal"
+    },
+    {
+      "expected": {
+        "nonprotein_atoms_in_inventory": true,
+        "protein_min_A": 7.0,
+        "water_bridge_inference_forbidden": true,
+        "within_4_0A": false
+      },
+      "fixture": "Water O, Mg, DMS carbon and second W0O all 1 A from ligand; protein at7 A. Classify by linked entity/polymer types, not record keyword.",
+      "id": "T18",
+      "layer": "classification_unit"
+    },
+    {
+      "expected": {
+        "identifiers_round_trip": true,
+        "insertion_variants_not_merged": true,
+        "models_kept_separate": true,
+        "no_first_model_default": true
+      },
+      "fixture": "Valid artificial fixture with label chainA/authAAA, label residue52/auth51, insertion A; another residue has insertionB. Include distinct model2 in a fixture manifest declaring both.",
+      "id": "T19",
+      "layer": "identifier_unit"
+    },
+    {
+      "expected": {
+        "all_minimum_ties_retained": true,
+        "numeric_and_retained_identity_outputs_identical_after_declared_sort": true
+      },
+      "fixture": "Shuffle input CIF atom/residue loop order and JSON key order without changing semantic identity; rebuild synthetic source hashes. Compare numerical sections (not runtime paths/timestamps/hashes).",
+      "id": "T20",
+      "layer": "determinism"
+    },
+    {
+      "expected": {
+        "concurrent_failures": 1,
+        "concurrent_successes": 1,
+        "existing_destination_unchanged": true,
+        "failed_exit_code": 2,
+        "no_partial_output_or_temp_leak": true
+      },
+      "fixture": "Independent destination tests: existing regular file, empty file, directory, live/dangling symlink; nonexistent parent; concurrent writers to same new destination; forced serialization/link failure.",
+      "id": "T21",
+      "layer": "publication"
+    },
+    {
+      "expected": {
+        "8OTV_B47_conformer_atom_counts": {
+          "A": 8,
+          "B": 8
+        },
+        "8OTV_atom_site_records": 3501,
+        "8OTV_missing_residues": 23,
+        "8OTV_unobserved_atoms": 31,
+        "8RIY_atom_site_records": 3015,
+        "8RIY_missing_residues": 31,
+        "8RIY_unobserved_atoms": 83,
+        "8RIY_zero_atoms": 1,
+        "H_or_D_coordinate_rows": 0,
+        "ligand_atoms": 120,
+        "sites": 4
+      },
+      "fixture": "Parse archived real sources without calculating new proximity results. Cross-check 4 sites/120 W0O atom rows; 418/446 polymer scheme rows; identity matrices; exact four ligand CCD atom sets.",
+      "id": "T22",
+      "layer": "parser_and_inventory_real"
+    },
+    {
+      "expected": {
+        "8OTV_per_site_residue_conformer_rows": 447,
+        "8RIY_per_site_residue_conformer_rows": 418,
+        "all_four_radii_per_eligible_row": true,
+        "all_residue_conformer_rows": 1730,
+        "all_sites_complete_geometry_refused": true,
+        "atom314_never_witness_or_pair": true,
+        "every_missing_residue_retained_with_null": true,
+        "no_pooled_crystal_inference": true
+      },
+      "fixture": "Future implementation on both archived deposits, fixed contract, all sites. Distance values are intentionally NOT prespecified from unperformed calculations.",
+      "id": "T23",
+      "layer": "real_output_acceptance"
+    },
+    {
+      "expected": {
+        "exit_code": 2,
+        "no_output": true,
+        "no_silent_repair": true
+      },
+      "fixture": "Independent contradictions: missingness occupancy_flag0 while matching atom occupancy1; residue declared wholly unobserved yet present; source hash matches manifest but expected entity/chain joins do not.",
+      "id": "T24",
+      "layer": "source_metadata_validation"
+    },
+    {
+      "expected": {
+        "both_local_conformers_flagged_potentially_incomplete": true,
+        "no_guessed_missing_coordinate": true,
+        "observed_maps_separate": true
+      },
+      "fixture": "Missingness table has label_alt_id=? for one protein atom in an A/B alternative residue; both alternatives have other retained atoms.",
+      "id": "T25",
+      "layer": "conformer_missingness_unit"
+    }
+  ],
+  "execution_status": "Not executable tests of an implementation; geometry engine intentionally not delivered in this role. Real inventory assertions T22 checked during curation. Implementer must turn all cases into isolated automated tests.",
+  "fixture_policy": "Unit fixtures test typed atom selection/arithmetic separately from strict fixed-deposit integration validation. Full parser tests must generate explicitly simulated mmCIF/manifest in isolated test directories and bind their actual bytes/hashes. Never relax real W0O identity or real-input hash checks to accept a toy one-atom molecule. Never commit synthetic coordinate files as research observations.",
+  "numeric_assertion_tolerance": {
+    "absolute_A": 1e-12,
+    "relative": 1e-12,
+    "scope": "Assertions on expected arithmetic only, never radius decision epsilon or experimental uncertainty."
+  },
+  "origin": "SOFTWARE TEST SPECIFICATION ONLY",
+  "schema_version": 1
+}

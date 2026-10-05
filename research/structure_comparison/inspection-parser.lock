@@ -1,0 +1,3 @@
+# Inspection-only dependency; install to isolated target, not root environment.
+# CPython 3.12 Linux x86_64 wheel verified against archived official PyPI metadata.
+gemmi==0.7.3 --hash=sha256:d58859b1e32ea996bc52f935c0ed9d55df757db7bb0307123024b9b4550168c5

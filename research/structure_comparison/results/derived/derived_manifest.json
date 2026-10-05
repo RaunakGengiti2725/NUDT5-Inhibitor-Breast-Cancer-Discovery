@@ -1,0 +1,32 @@
+{
+  "artifacts": {
+    "atom_pairs_within_5A.csv": {
+      "sha256": "611d493908174f61bce6ad683cc6a04063be85f30f2cbb88dfe79d2bda1925e4",
+      "size_bytes": 129319
+    },
+    "observed_proximity_map.pdf": {
+      "sha256": "8d3115bab222f11e72c2df48bc1f21af150b0f2204508d13e32e526418964222",
+      "size_bytes": 64213
+    },
+    "observed_proximity_map.png": {
+      "sha256": "980d43f601c9b06420296a60345a0ed8edd1cbefcced757bcc4df9bc705c7322",
+      "size_bytes": 885246
+    },
+    "observed_proximity_map.svg": {
+      "sha256": "7d575f2003156664c635a6ced95eabb7759bd3e749c93b2152048faae3740033",
+      "size_bytes": 94064
+    },
+    "radius_sensitivity.csv": {
+      "sha256": "8a1231be9cc76152e154d43f3b006522c5330d1c11726619282423a44a8df842",
+      "size_bytes": 7271
+    },
+    "residue_proximity.csv": {
+      "sha256": "c3c6b9481323af9692e3737629748ed43b722a6cb39932e5876ea37be1712def",
+      "size_bytes": 301888
+    }
+  },
+  "code_sha256": "f4ec1393dea09ae8bbe933fa34cd1d65e33337e77895933d19536dbd5e4ccf86",
+  "input": "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/structure_comparison/results/observed_proximity.json",
+  "input_sha256": "c4ded0765a28a07fc52e7cebdaf52536d5d3b6fe0d884394e78c951a93c1fffd",
+  "warning": "Retrospective deposited-coordinate proximity only. Missing coordinates are not no-contact evidence. No inferred interaction, affinity, energy, selectivity, causality or clinical claim; crystal copies are not independent samples. No density inspection or coordinate uncertainty propagation. NUDT5 Arg51 and NUDT14 Leu107 are not asserted homologous."
+}

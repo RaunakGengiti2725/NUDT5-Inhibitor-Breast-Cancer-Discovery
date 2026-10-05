@@ -1,0 +1,111 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "68790a8855413e957eed6e534335906fead9a94ba46450c40cba0f36b489baeb",
+      "size_bytes": 12762
+    },
+    {
+      "path": "analysis_contract.json",
+      "sha256": "b01dcc6bb2be97fa684a33b62c77291929833ff3d867a92189b53ae15c7e6e4f",
+      "size_bytes": 9204
+    },
+    {
+      "path": "analysis_contract.md",
+      "sha256": "62e23497ef996a29953e81d5c130ae82e490bbea1001711f87c83229de4a1dda",
+      "size_bytes": 14290
+    },
+    {
+      "path": "assay_conditions.json",
+      "sha256": "360713b14426e39e9945b020e9baa27a21de75c24326ef92d85bb732fbff9b5b",
+      "size_bytes": 5390
+    },
+    {
+      "path": "contract_test_vectors.json",
+      "sha256": "85ccee090ea74ebd4c9da4c088457979d602786c9d103b4d1abf89ad143bb00c",
+      "size_bytes": 5785
+    },
+    {
+      "path": "frozen_scores.csv",
+      "sha256": "80516dc081cdf2008e46e30151870e0d88d5bce1f086c3e857ffe30b03a625e3",
+      "size_bytes": 14775
+    },
+    {
+      "path": "independent_verification.json",
+      "sha256": "e1919a8acf3a8cbf9e1249f5c260be9f9e7767ec6b40473573bffc690e790adc",
+      "size_bytes": 29966
+    },
+    {
+      "path": "paired_evidence.json",
+      "sha256": "2872dd55843e6cc7ac03ece02df2684bb7ab637786df47d95b2cd14626c7aa6f",
+      "size_bytes": 106356
+    },
+    {
+      "path": "paired_evidence.schema.json",
+      "sha256": "167e029f2fbccc47dc7aa78dd4a75ced24f04df8b4bb09df4f498260934d1887",
+      "size_bytes": 25976
+    },
+    {
+      "path": "primary_excerpts.json",
+      "sha256": "fc0b01db2de097ab34baaedcc3c50a8f11d2ab0957386ea0d02556c1ef5c5c5c",
+      "size_bytes": 4949
+    },
+    {
+      "path": "provenance.json",
+      "sha256": "96e60805ad39af96339666e08cfff047cfa8d76c38c3733ccb7514004c17f64c",
+      "size_bytes": 6493
+    },
+    {
+      "path": "source_disagreements.json",
+      "sha256": "28a045e8fc6d1aead6787a9d55fd4b58009203d57c9cf7b58aeed320392e3a8e",
+      "size_bytes": 4102
+    },
+    {
+      "path": "source_verification.csv",
+      "sha256": "17d7345ffd3cc11c9c64ec6ab0d4a983dd79957a378f1ecd17624a0cfbc04ae4",
+      "size_bytes": 2782
+    },
+    {
+      "path": "sources/balikci.xml.gz",
+      "sha256": "c314a1940ec6ee60cb530cb75bcea3b437303653cec1bcb661e955cd8b40627b",
+      "size_bytes": 34096
+    },
+    {
+      "path": "sources/jm4c00072_0007.jpg.gz",
+      "sha256": "92dfc00c9547b4e7b715822f5b6d016a5e2aae76de26c6abf42b50fce3542b6b",
+      "size_bytes": 18604
+    },
+    {
+      "path": "sources/jm4c00072_0008.jpg.gz",
+      "sha256": "eb656f3aeddeb9c1b0b888a75b2f5bcf13555745b3d9dc63a8ec566ac87339a1",
+      "size_bytes": 62698
+    },
+    {
+      "path": "sources/jm4c00072_si_002.csv.gz",
+      "sha256": "a628c90932abb6c9eaac12a6236462248da96cd6e7a855fb4cde28562a5705dd",
+      "size_bytes": 651
+    },
+    {
+      "path": "summary_counts.json",
+      "sha256": "428664709d4d4153f1df7ba2e98682b022519b99cacbefbcd8b7e6ae9f8f2dac",
+      "size_bytes": 1140
+    },
+    {
+      "path": "target_evidence.csv",
+      "sha256": "d38aa5c822e4f3aaa5114853db063ee8d115d1bb53d75442472e37b9c989feae",
+      "size_bytes": 20520
+    },
+    {
+      "path": "verification.md",
+      "sha256": "b5793a46f28dc2a6ef6378826247b06952d75e9bbc662bf1d45efd9b31850e70",
+      "size_bytes": 4903
+    }
+  ],
+  "git_branch": "devin/1791172158-paired-selectivity-evidence",
+  "git_dirty": true,
+  "git_revision": "4f92a9742270a155f470aad5f06369bd76ed3092",
+  "python": "3.12.15",
+  "rdkit": "2025.09.6",
+  "recorded_utc": "2026-10-05T04:13:13.723811+00:00",
+  "scope": "Pre-commit verification inventory; git revision is not claimed to contain these then-uncommitted artifacts"
+}

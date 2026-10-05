@@ -1,0 +1,879 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "description": "Structural schema. Cross-row identity, ratio arithmetic, source hashes and foreign keys require the semantic checks in analysis_contract.json; null never means zero.",
+  "properties": {
+    "evidence_scope": {
+      "type": "string"
+    },
+    "input_revision": {
+      "type": "string"
+    },
+    "ratio_estimand": {
+      "type": "string"
+    },
+    "rdkit_version": {
+      "type": "string"
+    },
+    "rows": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_identity_matches": {
+            "additionalProperties": false,
+            "properties": {
+              "canonical_parent_tautomer": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "canonical_smiles": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "neutral_fragment_parent": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "canonical_smiles",
+              "neutral_fragment_parent",
+              "canonical_parent_tautomer"
+            ],
+            "type": "object"
+          },
+          "endpoints": {
+            "additionalProperties": false,
+            "properties": {
+              "NUDT14": {
+                "additionalProperties": false,
+                "oneOf": [
+                  {
+                    "properties": {
+                      "bound": {
+                        "type": "null"
+                      },
+                      "bound_strict": {
+                        "type": "null"
+                      },
+                      "comparator": {
+                        "const": "="
+                      },
+                      "reported_mean": {
+                        "exclusiveMinimum": 0,
+                        "type": "number"
+                      },
+                      "reported_sd": {
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "status": {
+                        "const": "numeric"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "bound": {
+                        "const": 50.0
+                      },
+                      "bound_strict": {
+                        "const": true
+                      },
+                      "comparator": {
+                        "const": ">"
+                      },
+                      "reported_mean": {
+                        "type": "null"
+                      },
+                      "reported_sd": {
+                        "type": "null"
+                      },
+                      "status": {
+                        "const": "right_censored"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "biological_n_for_reported_sd": {
+                        "type": "null"
+                      },
+                      "bound": {
+                        "type": "null"
+                      },
+                      "bound_strict": {
+                        "type": "null"
+                      },
+                      "comparator": {
+                        "type": "null"
+                      },
+                      "reported_mean": {
+                        "type": "null"
+                      },
+                      "reported_sd": {
+                        "type": "null"
+                      },
+                      "status": {
+                        "const": "untested"
+                      }
+                    }
+                  }
+                ],
+                "properties": {
+                  "author_csv_raw": {
+                    "type": "string"
+                  },
+                  "biological_n_for_reported_sd": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "bound": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "bound_strict": {
+                    "type": [
+                      "boolean",
+                      "null"
+                    ]
+                  },
+                  "comparator": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "conditions_application": {
+                    "type": "string"
+                  },
+                  "conditions_id": {
+                    "type": "string"
+                  },
+                  "discrepancy_ids": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "endpoint": {
+                    "const": "IC50"
+                  },
+                  "endpoint_family": {
+                    "const": "purified_enzyme_catalytic_inhibition"
+                  },
+                  "ledger_text": {
+                    "type": "string"
+                  },
+                  "paired_target_replicates_available": {
+                    "type": "boolean"
+                  },
+                  "raw_replicates_available": {
+                    "type": "boolean"
+                  },
+                  "reported_mean": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "reported_sd": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "source_ids": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "source_locations": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "status": {
+                    "enum": [
+                      "numeric",
+                      "right_censored",
+                      "untested"
+                    ]
+                  },
+                  "table1_text": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "target": {
+                    "enum": [
+                      "NUDT5",
+                      "NUDT14"
+                    ]
+                  },
+                  "uncertainty_definition": {
+                    "type": "string"
+                  },
+                  "unit": {
+                    "const": "uM"
+                  }
+                },
+                "required": [
+                  "author_csv_raw",
+                  "biological_n_for_reported_sd",
+                  "bound",
+                  "bound_strict",
+                  "comparator",
+                  "conditions_application",
+                  "conditions_id",
+                  "discrepancy_ids",
+                  "endpoint",
+                  "endpoint_family",
+                  "ledger_text",
+                  "paired_target_replicates_available",
+                  "raw_replicates_available",
+                  "reported_mean",
+                  "reported_sd",
+                  "source_ids",
+                  "source_locations",
+                  "status",
+                  "table1_text",
+                  "target",
+                  "uncertainty_definition",
+                  "unit"
+                ],
+                "type": "object"
+              },
+              "NUDT5": {
+                "additionalProperties": false,
+                "oneOf": [
+                  {
+                    "properties": {
+                      "bound": {
+                        "type": "null"
+                      },
+                      "bound_strict": {
+                        "type": "null"
+                      },
+                      "comparator": {
+                        "const": "="
+                      },
+                      "reported_mean": {
+                        "exclusiveMinimum": 0,
+                        "type": "number"
+                      },
+                      "reported_sd": {
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "status": {
+                        "const": "numeric"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "bound": {
+                        "const": 50.0
+                      },
+                      "bound_strict": {
+                        "const": true
+                      },
+                      "comparator": {
+                        "const": ">"
+                      },
+                      "reported_mean": {
+                        "type": "null"
+                      },
+                      "reported_sd": {
+                        "type": "null"
+                      },
+                      "status": {
+                        "const": "right_censored"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "biological_n_for_reported_sd": {
+                        "type": "null"
+                      },
+                      "bound": {
+                        "type": "null"
+                      },
+                      "bound_strict": {
+                        "type": "null"
+                      },
+                      "comparator": {
+                        "type": "null"
+                      },
+                      "reported_mean": {
+                        "type": "null"
+                      },
+                      "reported_sd": {
+                        "type": "null"
+                      },
+                      "status": {
+                        "const": "untested"
+                      }
+                    }
+                  }
+                ],
+                "properties": {
+                  "author_csv_raw": {
+                    "type": "string"
+                  },
+                  "biological_n_for_reported_sd": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "bound": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "bound_strict": {
+                    "type": [
+                      "boolean",
+                      "null"
+                    ]
+                  },
+                  "comparator": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "conditions_application": {
+                    "type": "string"
+                  },
+                  "conditions_id": {
+                    "type": "string"
+                  },
+                  "discrepancy_ids": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "endpoint": {
+                    "const": "IC50"
+                  },
+                  "endpoint_family": {
+                    "const": "purified_enzyme_catalytic_inhibition"
+                  },
+                  "ledger_text": {
+                    "type": "string"
+                  },
+                  "paired_target_replicates_available": {
+                    "type": "boolean"
+                  },
+                  "raw_replicates_available": {
+                    "type": "boolean"
+                  },
+                  "reported_mean": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "reported_sd": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "source_ids": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "source_locations": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "status": {
+                    "enum": [
+                      "numeric",
+                      "right_censored",
+                      "untested"
+                    ]
+                  },
+                  "table1_text": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "target": {
+                    "enum": [
+                      "NUDT5",
+                      "NUDT14"
+                    ]
+                  },
+                  "uncertainty_definition": {
+                    "type": "string"
+                  },
+                  "unit": {
+                    "const": "uM"
+                  }
+                },
+                "required": [
+                  "author_csv_raw",
+                  "biological_n_for_reported_sd",
+                  "bound",
+                  "bound_strict",
+                  "comparator",
+                  "conditions_application",
+                  "conditions_id",
+                  "discrepancy_ids",
+                  "endpoint",
+                  "endpoint_family",
+                  "ledger_text",
+                  "paired_target_replicates_available",
+                  "raw_replicates_available",
+                  "reported_mean",
+                  "reported_sd",
+                  "source_ids",
+                  "source_locations",
+                  "status",
+                  "table1_text",
+                  "target",
+                  "uncertainty_definition",
+                  "unit"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "NUDT5",
+              "NUDT14"
+            ],
+            "type": "object"
+          },
+          "historical_training_matches": {
+            "additionalProperties": false,
+            "properties": {
+              "canonical_parent_tautomer": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "canonical_smiles": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "neutral_fragment_parent": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "canonical_smiles",
+              "neutral_fragment_parent",
+              "canonical_parent_tautomer"
+            ],
+            "type": "object"
+          },
+          "identity": {
+            "additionalProperties": false,
+            "properties": {
+              "canonical_parent_tautomer": {
+                "type": "string"
+              },
+              "canonical_smiles": {
+                "type": "string"
+              },
+              "formal_charge": {
+                "type": "integer"
+              },
+              "formula": {
+                "type": "string"
+              },
+              "fragment_count": {
+                "type": "integer"
+              },
+              "inchi": {
+                "type": "string"
+              },
+              "inchikey": {
+                "type": "string"
+              },
+              "neutral_fragment_parent": {
+                "type": "string"
+              },
+              "scaffold": {
+                "type": "string"
+              },
+              "unspecified_tetrahedral_centers": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "canonical_parent_tautomer",
+              "canonical_smiles",
+              "formal_charge",
+              "formula",
+              "fragment_count",
+              "inchi",
+              "inchikey",
+              "neutral_fragment_parent",
+              "scaffold",
+              "unspecified_tetrahedral_centers"
+            ],
+            "type": "object"
+          },
+          "identity_verification": {
+            "type": "string"
+          },
+          "known_source_role": {
+            "type": "string"
+          },
+          "model_diagnostic_eligible": {
+            "type": "boolean"
+          },
+          "model_exclusion_reasons": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "ratio": {
+            "additionalProperties": false,
+            "oneOf": [
+              {
+                "properties": {
+                  "bound": {
+                    "type": "null"
+                  },
+                  "bound_strict": {
+                    "const": null
+                  },
+                  "comparator": {
+                    "const": "="
+                  },
+                  "log10_bound": {
+                    "type": "null"
+                  },
+                  "log10_point": {
+                    "type": "number"
+                  },
+                  "non_estimability_reason": {
+                    "type": "null"
+                  },
+                  "point": {
+                    "exclusiveMinimum": 0,
+                    "type": "number"
+                  },
+                  "status": {
+                    "const": "point"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "bound": {
+                    "exclusiveMinimum": 0,
+                    "type": "number"
+                  },
+                  "bound_strict": {
+                    "const": true
+                  },
+                  "comparator": {
+                    "const": "<"
+                  },
+                  "log10_bound": {
+                    "type": "number"
+                  },
+                  "log10_point": {
+                    "type": "null"
+                  },
+                  "non_estimability_reason": {
+                    "type": "null"
+                  },
+                  "point": {
+                    "type": "null"
+                  },
+                  "status": {
+                    "const": "upper_bound"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "bound": {
+                    "exclusiveMinimum": 0,
+                    "type": "number"
+                  },
+                  "bound_strict": {
+                    "const": true
+                  },
+                  "comparator": {
+                    "const": ">"
+                  },
+                  "log10_bound": {
+                    "type": "number"
+                  },
+                  "log10_point": {
+                    "type": "null"
+                  },
+                  "non_estimability_reason": {
+                    "type": "null"
+                  },
+                  "point": {
+                    "type": "null"
+                  },
+                  "status": {
+                    "const": "lower_bound"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "bound": {
+                    "type": "null"
+                  },
+                  "bound_strict": {
+                    "const": null
+                  },
+                  "comparator": {
+                    "const": null
+                  },
+                  "log10_bound": {
+                    "type": "null"
+                  },
+                  "log10_point": {
+                    "type": "null"
+                  },
+                  "non_estimability_reason": {
+                    "type": "string"
+                  },
+                  "point": {
+                    "type": "null"
+                  },
+                  "status": {
+                    "const": "double_censored"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "bound": {
+                    "type": "null"
+                  },
+                  "bound_strict": {
+                    "const": null
+                  },
+                  "comparator": {
+                    "const": null
+                  },
+                  "log10_bound": {
+                    "type": "null"
+                  },
+                  "log10_point": {
+                    "type": "null"
+                  },
+                  "non_estimability_reason": {
+                    "type": "string"
+                  },
+                  "point": {
+                    "type": "null"
+                  },
+                  "status": {
+                    "const": "missing_endpoint"
+                  }
+                }
+              }
+            ],
+            "properties": {
+              "bound": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "bound_strict": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "comparator": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "definition": {
+                "type": "string"
+              },
+              "log10_bound": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "log10_point": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "non_estimability_reason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "point": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "point",
+                  "upper_bound",
+                  "lower_bound",
+                  "double_censored",
+                  "missing_endpoint"
+                ]
+              },
+              "unit": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "bound",
+              "bound_strict",
+              "comparator",
+              "definition",
+              "log10_bound",
+              "log10_point",
+              "non_estimability_reason",
+              "point",
+              "status",
+              "unit"
+            ],
+            "type": "object"
+          },
+          "ratio_informative": {
+            "type": "boolean"
+          },
+          "reference_sensitivity_training_matches": {
+            "additionalProperties": false,
+            "properties": {
+              "canonical_parent_tautomer": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "canonical_smiles": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "neutral_fragment_parent": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "canonical_smiles",
+              "neutral_fragment_parent",
+              "canonical_parent_tautomer"
+            ],
+            "type": "object"
+          },
+          "source_compound": {
+            "type": "string"
+          },
+          "source_csv_line": {
+            "type": "integer"
+          },
+          "source_doi": {
+            "type": "string"
+          },
+          "source_pair_has_both_endpoints": {
+            "type": "boolean"
+          },
+          "source_smiles": {
+            "type": "string"
+          },
+          "table1_verified": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "candidate_identity_matches",
+          "endpoints",
+          "historical_training_matches",
+          "identity",
+          "identity_verification",
+          "known_source_role",
+          "model_diagnostic_eligible",
+          "model_exclusion_reasons",
+          "ratio",
+          "ratio_informative",
+          "reference_sensitivity_training_matches",
+          "source_compound",
+          "source_csv_line",
+          "source_doi",
+          "source_pair_has_both_endpoints",
+          "source_smiles",
+          "table1_verified"
+        ],
+        "type": "object"
+      },
+      "maxItems": 23,
+      "minItems": 23,
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "source_doi": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "evidence_scope",
+    "input_revision",
+    "ratio_estimand",
+    "rdkit_version",
+    "schema_version",
+    "source_doi",
+    "rows"
+  ],
+  "title": "Curated Balikci2024 paired catalytic evidence v1 (fixed 23-row release)",
+  "type": "object"
+}

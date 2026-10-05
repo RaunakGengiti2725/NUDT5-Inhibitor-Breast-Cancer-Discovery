@@ -1,0 +1,146 @@
+{
+  "historical_run_provenance": "transfer-manifest.json is retained unchanged; its git revision/dirty status describe the original run, not this curation checkout",
+  "input_revision": "4f92a9742270a155f470aad5f06369bd76ed3092",
+  "inputs": [
+    {
+      "path": "compounds.csv",
+      "sha256": "d628a0fa1926c1e44c9b2a79adf92b444959e80153cf9019ef5e56b4747c3576",
+      "size_bytes": 4055
+    },
+    {
+      "path": "final_hits.csv",
+      "sha256": "38c8d5266ce127b1fd5babde0c895190d0b382e3c9e3dae7581e320766745100",
+      "size_bytes": 2149
+    },
+    {
+      "path": "requirements.lock",
+      "sha256": "be23dbecaf88d46dcd0a985949c015a8d75676f76ed00115c7b9c754fb62bd0c",
+      "size_bytes": 98701
+    },
+    {
+      "path": "research/source_assays.csv",
+      "sha256": "5bd0f9e201135d0ae2c5786887a5a514d6e6516e7e791bb4cdf1ae45286f573e",
+      "size_bytes": 7582
+    },
+    {
+      "path": "research/results/source-assay-provenance.json",
+      "sha256": "788645a68ee6e87e1be9528283d9a821246395ce0a1fcfe673545706e0774b56",
+      "size_bytes": 736
+    },
+    {
+      "path": "research/results/transfer.json",
+      "sha256": "df6b544a2c5b8aca0ab3007f016133f8fd012629210e375bd34d0fdbad32e50a",
+      "size_bytes": 413591
+    },
+    {
+      "path": "research/results/transfer-manifest.json",
+      "sha256": "cb60e86c60aa1d51d804020ba2790427f2db5f0ef3a6ca0de06d8ec3455f5b7e",
+      "size_bytes": 2249
+    },
+    {
+      "path": "research/reference_structures.csv",
+      "sha256": "db8f9c3d748c75b0d14895f30080ce105e57f47d88597b5db3ea2a3d060b2d2f",
+      "size_bytes": 755
+    },
+    {
+      "path": "scripts/scripts/transfer.py",
+      "sha256": "e592d095678369c08ff0b4574ba867cfced70c0baebf4776df7257380e6676fa",
+      "size_bytes": 19614
+    }
+  ],
+  "primary_citation": "Balikci E et al. Unexpected Noncovalent Off-Target Activity of Clinical BTK Inhibitors Leads to Discovery of a Dual NUDT5/14 Antagonist. J Med Chem 67,7245-7259 (2024). DOI 10.1021/acs.jmedchem.4c00072; PMC11089510.",
+  "primary_license_as_inspected": "\u00a9 2024 The Authors; ACS publication; article permissions specify CC BY 4.0. Archived source bytes are unmodified; derived transcriptions are identified separately.",
+  "schema_version": "1.0.0",
+  "source_package_download": {
+    "bytes": 5798869,
+    "retrieved_utc": "2026-10-05T03:50:32.517062+00:00",
+    "sha256": "1181de982f576870fb66526fa0343564cd5d6cc7c7f0a44ec12070fd9a885cb4",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/supplementaryFiles"
+  },
+  "sources": [
+    {
+      "access_status": "retrieved_and_inspected",
+      "encoding": "XML declaration UTF-8",
+      "inspected_locations": [
+        "tbl1/t1fn1",
+        "tbl1/t1fn2",
+        "sec4.2",
+        "sec4.3",
+        "fig1/caption",
+        "sec2/p[1]",
+        "sec2/p[4]",
+        "sec2/p[5]",
+        "sec2/p[7]"
+      ],
+      "retrieved_utc": "2026-10-05T03:49:46.449676+00:00",
+      "sha256_stored": "c314a1940ec6ee60cb530cb75bcea3b437303653cec1bcb661e955cd8b40627b",
+      "sha256_uncompressed": "0710da1ebedd4accde6e6cddf8cfe9a2d350c062890fbcfd03bf94bd6f316df0",
+      "size_bytes_uncompressed": 130787,
+      "source_id": "balikci_xml",
+      "source_member": null,
+      "stored_path": "sources/balikci.xml.gz",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML"
+    },
+    {
+      "access_status": "retrieved_and_inspected",
+      "encoding": "Latin-1",
+      "inspected_locations": [
+        "header and all 23 data rows (lines 2-24)"
+      ],
+      "retrieved_utc": "2026-10-05T03:50:32.517062+00:00",
+      "sha256_stored": "a628c90932abb6c9eaac12a6236462248da96cd6e7a855fb4cde28562a5705dd",
+      "sha256_uncompressed": "17ef0e3770d49db8b7575a18fd1cdb4623fd83db0c928ba7ade75d951f7d7533",
+      "size_bytes_uncompressed": 2089,
+      "source_id": "balikci_csv",
+      "source_member": "jm4c00072_si_002.csv",
+      "stored_path": "sources/jm4c00072_si_002.csv.gz",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/supplementaryFiles"
+    },
+    {
+      "access_status": "retrieved_and_inspected",
+      "encoding": "JPEG",
+      "inspected_locations": [
+        "tbl1/fx1; scaffold only"
+      ],
+      "retrieved_utc": "2026-10-05T03:50:32.517062+00:00",
+      "sha256_stored": "92dfc00c9547b4e7b715822f5b6d016a5e2aae76de26c6abf42b50fce3542b6b",
+      "sha256_uncompressed": "dae7572f3d20892ce6dc86e15fb0a3f2722a9881510fcf92ff4ef64d42f218b5",
+      "size_bytes_uncompressed": 20516,
+      "source_id": "table1_scaffold",
+      "source_member": "jm4c00072_0007.jpg",
+      "stored_path": "sources/jm4c00072_0007.jpg.gz",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/supplementaryFiles"
+    },
+    {
+      "access_status": "retrieved_and_inspected",
+      "encoding": "JPEG",
+      "inspected_locations": [
+        "tbl1/fx2; all eight compounds and both endpoint columns"
+      ],
+      "retrieved_utc": "2026-10-05T03:50:32.517062+00:00",
+      "sha256_stored": "eb656f3aeddeb9c1b0b888a75b2f5bcf13555745b3d9dc63a8ec566ac87339a1",
+      "sha256_uncompressed": "fdfc9e95b92fe83bf84fc870c9d7188b3f5d45ed9162dace5640c281ef8b437a",
+      "size_bytes_uncompressed": 76610,
+      "source_id": "table1_values",
+      "source_member": "jm4c00072_0008.jpg",
+      "stored_path": "sources/jm4c00072_0008.jpg.gz",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/supplementaryFiles"
+    }
+  ],
+  "transforms": [
+    "Lossless gzip of primary snapshots with mtime=0",
+    "Decode author CSV Latin-1; preserve raw text including trailing whitespace; derived UTF-8 CSVs use LF records",
+    "Verify all Table1 cells against manual image transcription and footnotes; preserve other source representations separately",
+    "Recompute exact isomeric, neutral parent and canonical parent tautomer identity; do not mutate source graphs or infer biological equivalence",
+    "Join stored scores by compound ID plus exact source/canonical identity; no fitting/scoring calls",
+    "Derive ratios from reported means and strict bounds only; do not propagate SD into ratios"
+  ],
+  "workflow": {
+    "interpretation": "Two-stage independent read-only source verification then censoring/identity-contract review; software/source checking, not fresh biological evidence",
+    "run_id": "wfr-0225de3594f2447397d548a22043f292",
+    "stages": [
+      "devin-0720e88b21654dcd9b7fffcf1caa0fa5",
+      "devin-57c9a99afb7045629d6cbc150978929b"
+    ]
+  }
+}

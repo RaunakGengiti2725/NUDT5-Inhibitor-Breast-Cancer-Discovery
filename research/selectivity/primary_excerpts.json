@@ -1,0 +1,26 @@
+{
+  "excerpts": [
+    {
+      "label": "Table1 footnotes",
+      "location": ".//table-wrap[@id=\"tbl1\"]/table-wrap-foot",
+      "text": "aIC50 values and SD were\ncalculated from two independent biological replicates (n = 2).bNA, not active (IC50 >\n50 \u03bcM)."
+    },
+    {
+      "label": "Protein Expression and Purification",
+      "location": ".//sec[@id=\"sec4.2\"]",
+      "text": "Protein Expression and PurificationGenes encoding\nNUDT5 (NCBI reference NP_054861, residues 1-208) and NUDT14 (NCBI\nreference NP_803877, residues 1-222) were amplified by PCR (primer\ninformation Table S3). The amplified PCR\nproducts were cloned into expression vector pNIC28-Bsa426 by ligation-independent cloning. The resulting\nconstructs express the proteins fused with an N-terminal 6\u00d7 histidine\ntag followed by a TEV protease cleavage site. All plasmids were transformed\ninto Escherichia coli (DE3), and protein\nexpression was induced at a cell density of OD600 = 0.8\nwith 0.3 or 0.5 mM isopropyl-d-1-thiogalactopyranoside (IPTG)\nat 18 \u00b0C overnight for NUDT14 and NUDT5, respectively. Cell pellets\nwere resuspended in lysis buffer containing 20 mM HEPES, 500 mM NaCl,\n5% glycerol, and 0.5 mM TCEP pH 7.5 supplemented with lysozyme, protease\ninhibitor cocktail (Set III, EDTA-free, Calbiochem), and benzonase\n(2 \u03bcL of 10,000 U/\u03bcL, Merck). Cells were then lysed using\nan ultrasonic cell disruptor Vibra-Cell (Sonics). The clarified supernatant\nwas injected into a Ni-NTA affinity chromatography column (HisTrap\nCrude FF GE Healthcare) and eluted with a gradient of increasing imidazole\nconcentrations. The affinity-purified proteins were further incubated\nwith TEV protease overnight at 4 \u00b0C and purified by reverse nickel\naffinity. Proteins were further purified by size-exclusion chromatography\n(16/600 Superdex 75 PG, GE Healthcare) in buffer (20 mM HEPES, pH\n7.5, 500 mM NaCl, 0.5 mM TCEP). Protein purity was analyzed by sodium\ndodecyl sulfate polyacrylamide gel electrophoresis (SDS-PAGE), and\nproteins were concentrated to 20 mg/mL for NUDT14 and 26 mg/mL for\nNUDT5 using 10,000 MWCO Vivaspin concentrators (Vivascience)."
+    },
+    {
+      "label": "Catalytic Assays",
+      "location": ".//sec[@id=\"sec4.3\"]",
+      "text": "Catalytic\nAssaysInhibition activities of the compounds\nwere determined using AMP-Glo system (Promega). The compounds were\ndiluted from 50 \u03bcM to 0 \u03bcM in a final reaction containing\n20 mM HEPES, 100 mM NaCl, 0.5 mM TCEP, 1 mM MgCl2, and\n0.1% BSA, pH 7.4. The reactions were performed in 1536-well plates\nin a 2 \u03bcL reaction volume with 1 nM of NUDT5 or NUDT14, and\n10 \u03bcM of ADPr as the substrate. The final DMSO concentration\nwas 1% for all reactions. NUDT5 reactions were incubated for 20 min,\nwhile NUDT14 reactions were carried out for 1 h at rt. The reactions\nwere stopped by adding 2 \u03bcL of AMP-Glo I. The stop solution\nis supplemented with 25 \u03bcM of a compound, PubChem CID 16339098,\nin order to stop enzyme activity completely. The reactions were further\nincubated with 4 \u03bcL of the detection solution for 1 h at rt.\nLuminescence signals were then measured in a PHERAstar FSX plate reader.\nExperiments were done in triplicate sets, and data were analyzed by\nGraphPad Prism 9. Inhibitor dose\u2013response data were normalized\nto reactions containing vehicle only (1% v/v DMSO, 100% activity)\nand reactions containing 500 nM TH5427 (6) (1% v/v DMSO,\n0% activity). Data are represented as the mean \u00b1 SD of two independent\nbiological replicates."
+    },
+    {
+      "label": "Figure1 caption",
+      "location": ".//fig[@id=\"fig1\"]/caption",
+      "text": "Identification\nand validation of ibrutinib (1) as\na noncovalent NUDT5 inhibitor. (A) Chemical structures of BTK inhibitors.\n(B) NUDT5 catalytic activity assay results (1: IC50 = 0.837 \u00b1 0.329 \u03bcM, 4: IC50 = 13.9 \u00b1 0.6 \u03bcM, 5: IC50 = 21.2\n\u00b1 1.0 \u03bcM). Data are shown as mean \u00b1 standard deviation\n(SD) and are based on three technical replicates. Graph is representative\nof two independent biological replicates (n = 2).\nStars indicate Student\u2019s t test p-value comparing compound activity at the highest concentration against 1 (* < 0.05, *** < 0.001). (C) SPR sensorgram showing\nbinding of 1 to NUDT5 (KD \u2248 200 nM). (D) Crystal structure of ibrutinib (1) bound to NUDT5 (PDB: 8RDZ). Compound 1 occupies the active site\nof the NUDT5 dimer where it mediates \u03c0\u2013\u03c0 stacking\ninteractions with W46 of chain A (teal) and W28 of chain B (pale teal).\nAn additional hydrophobic interaction with R51 in chain B and a hydrogen\nbond with the main chain of E47 in chain A can be observed. Compound 1 (salmon) and interacting residues are shown in stick representation."
+    }
+  ],
+  "source_id": "balikci_xml",
+  "source_sha256": "0710da1ebedd4accde6e6cddf8cfe9a2d350c062890fbcfd03bf94bd6f316df0"
+}

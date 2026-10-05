@@ -1,0 +1,125 @@
+{
+  "items": [
+    {
+      "compounds": [
+        "4",
+        "5"
+      ],
+      "id": "D1",
+      "kind": "source_numeric_reporting_difference",
+      "locations": [
+        "jm4c00072_si_002.csv:lines 5-6",
+        "fig1/caption:panel B"
+      ],
+      "representations": [
+        {
+          "caption_mean": 13.9,
+          "caption_sd": 0.6,
+          "compound": "4",
+          "csv_mean": 13.9,
+          "csv_sd": 0.62,
+          "unit": "uM"
+        },
+        {
+          "caption_mean": 21.2,
+          "caption_sd": 1.0,
+          "compound": "5",
+          "csv_mean": 21.2,
+          "csv_sd": 1.02,
+          "unit": "uM"
+        }
+      ],
+      "resolution": "Unresolved reporting precision; compatible with rounding, not silently reconciled. Both representations preserved. No effect on paired ratios because NUDT14 untested.",
+      "sources": [
+        "balikci_csv",
+        "balikci_xml"
+      ],
+      "target": "NUDT5"
+    },
+    {
+      "compounds": [
+        "4",
+        "5"
+      ],
+      "id": "D2",
+      "kind": "lexical_provenance_difference",
+      "locations": [
+        "author CSV lines 5-6; trailing spaces",
+        "repository provenance transform field"
+      ],
+      "resolution": "Ledger trims one trailing space in each NUDT5 cell. Digits/status preserved; historical claim parsed cell values unchanged is not literally true for whitespace. Original files unchanged; raw strings retained here.",
+      "sources": [
+        "balikci_csv",
+        "research/source_assays.csv",
+        "research/results/source-assay-provenance.json"
+      ]
+    },
+    {
+      "compounds": [
+        "6"
+      ],
+      "id": "D3",
+      "kind": "unresolved_normalization_control_scope",
+      "locations": [
+        "sec4.3",
+        "sec2/p[7]",
+        "author CSV line 7"
+      ],
+      "resolution": "Combined NUDT5/NUDT14 Methods claims 500 nM TH5427 = 0% activity without a target-specific exception; Results describes NUDT5 selectivity over NUDT14. Target-specific control efficacy cannot be reconstructed. No assumption that NUDT14 was validly zeroed; no claim of demonstrated assay failure. Compound6 not-tested means no IC50 estimate in this CSV, not absence of control use.",
+      "sources": [
+        "balikci_xml",
+        "balikci_csv"
+      ]
+    },
+    {
+      "compounds": [],
+      "id": "D4",
+      "kind": "coverage_scope_ambiguity",
+      "locations": [
+        "sec2/p[5]:All compounds were tested",
+        "author CSV all 23 rows; 26 untested cells"
+      ],
+      "resolution": "Phrase occurs in SAR/Table1 context. Preserve explicit CSV missingness outside eight Table1 rows; do not expand all to all23 or import other endpoints.",
+      "sources": [
+        "balikci_xml",
+        "balikci_csv"
+      ]
+    },
+    {
+      "compounds": [
+        "13"
+      ],
+      "id": "D5",
+      "kind": "ratio_orientation_in_existing_report",
+      "locations": [
+        "structural report section3 panel: nominal ratio >13.4",
+        "tbl1/fx2 compound13"
+      ],
+      "resolution": "Existing number is reciprocal NUDT5/NUDT14 orientation. Here R=NUDT14/NUDT5 is strictly <0.0744. Source values agree; explicitly convert orientation, do not edit existing report or copy >13.4 as R.",
+      "sources": [
+        "research/structural/structural_selectivity_report.md",
+        "table1_values"
+      ]
+    },
+    {
+      "compounds": [
+        "1",
+        "4",
+        "5"
+      ],
+      "id": "D6",
+      "kind": "replication_level_ambiguity",
+      "locations": [
+        "tbl1/t1fn1",
+        "sec4.3",
+        "fig1/caption"
+      ],
+      "resolution": "Table1 defines IC50 SD over n=2 biological replicates. Methods says triplicate sets; Figure1 describes plotted technical-triplicate mean/SD representative of two biological repeats. Full nesting/IC50 aggregation unspecified; no n=6, covariance, paired raw replicates or ratio CI inferred. Compound4/5 uncertainty definition is not uniquely established by Table1.",
+      "sources": [
+        "balikci_xml"
+      ]
+    }
+  ],
+  "paired_table1_value_disagreements": 0,
+  "schema_version": "1.0.0"
+}

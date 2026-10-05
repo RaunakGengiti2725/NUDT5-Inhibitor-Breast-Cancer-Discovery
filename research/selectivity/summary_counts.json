@@ -1,0 +1,66 @@
+{
+  "endpoint_cells": 46,
+  "endpoint_status_counts": {
+    "NUDT14": {
+      "numeric": 6,
+      "right_censored": 2,
+      "untested": 15
+    },
+    "NUDT5": {
+      "numeric": 7,
+      "right_censored": 5,
+      "untested": 11
+    }
+  },
+  "frozen_score_rows": 46,
+  "historical_overlap_ids": [
+    "10",
+    "11"
+  ],
+  "model_methods": [
+    "RF",
+    "GBT",
+    "SVM_RBF",
+    "Nearest_active",
+    "Property_LR",
+    "Equal_mean"
+  ],
+  "no_models_fitted": true,
+  "no_physical_experiments": true,
+  "nonoverlap_paired_ids": [
+    "1",
+    "9",
+    "12",
+    "13",
+    "14",
+    "15"
+  ],
+  "nonoverlap_point_n": 3,
+  "nonoverlap_ratio_informative_n": 4,
+  "nonoverlap_ratio_status_counts": {
+    "double_censored": 2,
+    "point": 3,
+    "upper_bound": 1
+  },
+  "score_scenarios": [
+    "historical_original_graphs",
+    "stored_authenticated_reference_sensitivity"
+  ],
+  "source_graphs": 23,
+  "source_paired_ids": [
+    "1",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15"
+  ],
+  "source_ratio_status_counts": {
+    "double_censored": 2,
+    "missing_endpoint": 15,
+    "point": 5,
+    "upper_bound": 1
+  }
+}

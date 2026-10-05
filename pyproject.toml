@@ -15,13 +15,14 @@ nudt5-controls = "controls:main"
 nudt5-transfer = "transfer:main"
 nudt5-selectivity = "selectivity:main"
 nudt5-assay = "assay:main"
+nudt5-structure = "structure_comparison:main"
 
 [tool.setuptools]
-py-modules = ["pipeline", "controls", "transfer", "selectivity", "assay"]
+py-modules = ["pipeline", "controls", "transfer", "selectivity", "assay", "structure_comparison"]
 package-dir = {"" = "scripts/scripts"}
 
 [tool.setuptools.dynamic]
-dependencies = {file = ["requirements.txt"]}
+dependencies = {file = ["requirements.txt", "requirements-structure.txt"]}
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

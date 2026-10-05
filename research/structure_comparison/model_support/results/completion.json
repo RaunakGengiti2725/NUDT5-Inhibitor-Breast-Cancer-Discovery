@@ -1,0 +1,25 @@
+{
+  "meaning": "Software extraction completed; not biological or independent density validation",
+  "outputs": {
+    "8OTV_C_A_301_slices.png": "ad12f79d22365679d1a246114bfda74fdfe19ba9e77a3b2f13106dbfac88943b",
+    "8OTV_F_B_302_slices.png": "280b340e2c773928bb51d90fabb5381dc4e6cfd27e999d995ec0506400d3a39d",
+    "8RIY_A_AAA_51_slices.png": "be765ffd0ae17e507c7aeccda279eb430857be0d79a8129229ccc91d86743f10",
+    "8RIY_B_BBB_51_slices.png": "2853ed96a5863c77da0755b81c4f9d68e4bbaf6aafef0ed4901d435cfef4c87c",
+    "8RIY_C_AAA_301_slices.png": "f34aeababd44dfeb6c8a29f31b37071961744a85f32983a4b1b413505a3758f2",
+    "8RIY_D_BBB_301_slices.png": "45c4527e100cd11673a5246d18ad4547635e2a502bc7cde1592af6e87ea0ad67",
+    "local_atom_samples.csv": "76211d7a314a789321ae9b545b635c0d2a3116a323b81f6db19a4067fd1973b4",
+    "model_support.json": "1657783dc230e5a1b98e6c0413e0782f4b9c95c0c2adb68c94ad1af7da52f38a",
+    "residue_availability.csv": "d5ca21c3470ac9996735f0f8c7ce831cf784e3bca37d8c9f4352d10e0497aa1a",
+    "site_availability.csv": "f73bf7a796723a3b330a614895ccba37a50e26716b43b2d2457b8f16c6577bdf",
+    "summary.md": "4b5cd751134575e124cc6f004885a909aaec48faee88d65334041a11f2fddb76"
+  },
+  "scope": "Fixed retrospective model-support assessment v1",
+  "script_sha256": "1f4f0627cd0e5b227777308bedc71df1791e06224521e4b2198b150411242595",
+  "source_manifest_sha256": "c9f6db8ef6fabfa5bfd2a6d412738d6ba1730757dea8ec7d2b77107700de844b",
+  "source_notes_sha256": "770e37126c2c8f168329ba61aadc24e66ae78561355db90abf5b051b18eb91b3",
+  "versions": {
+    "gemmi": "0.7.3",
+    "matplotlib": "3.10.3",
+    "numpy": "2.2.6"
+  }
+}

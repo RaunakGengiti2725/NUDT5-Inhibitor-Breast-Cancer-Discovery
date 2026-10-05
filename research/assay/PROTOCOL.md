@@ -2,12 +2,12 @@
 
 **Future-input analysis contract and methods specification—not an experiment, qualified assay,
 completed analysis lock, preregistration, independent validation or inhibitor discovery.**
-This handoff contains specifications only. A dedicated subsequent stage must implement the analyzer
-and executable tests; no production analyzer, generator or test suite is delivered here. All tool
-behavior below is a normative requirement, not a claim of shipped functionality.
+The descriptive analyzer is implemented in `scripts/scripts/assay.py`, with executable deterministic
+SOFTWARE TESTS ONLY cases in `tests/test_assay.py`. This implementation checks the declared contract;
+it does not supply actual laboratory inputs or resolve any scientific prerequisite.
 
-No new physical samples, plates or biological outcomes exist in this deliverable. Future synthetic
-curves must be explicitly **SOFTWARE TESTS ONLY**. Do not put them in the measured-source ledger,
+No new physical samples, plates or biological outcomes exist in this deliverable. Synthetic
+curves are explicitly **SOFTWARE TESTS ONLY**. Do not put them in the measured-source ledger,
 biological Results, or an efficacy/power argument. Previously inspected Balikci and MRK outcomes
 remain retrospective even if remeasured. Original CSVs and numerical JSON remain untouched.
 
@@ -256,10 +256,8 @@ pilot separation and protocol content; timestamps/hashes alone do not prove hist
 
 ## 6. Implementation handoff and acceptance
 
-Implement separately using the repository's existing **Python 3.12 hash-locked environment** and
-pinned NumPy 2.2.6 / SciPy 1.15.3; no new dependency is required by this design. Do not introduce a
-second analyzer here. Suggested CLI arguments are `--manifest`, `--observations` and `--output`,
-with the final entry-point name chosen by the implementation stage. Resolve code/contract paths
+The implementation uses the repository's existing **Python 3.12 hash-locked environment** and
+pinned NumPy 2.2.6 / SciPy 1.15.3; no new dependency is required by this design. The checkout CLI requires `--manifest`, `--observations` and `--output`; see the supported invocation below. Resolve code/contract paths
 relative to the installed module or checkout, never the caller's current working directory.
 
 Required order: parse and validate all bytes/metadata; reconcile every planned well; evaluate
@@ -275,20 +273,69 @@ results or symlinks. The parent output directory must already exist. Exit 0 mean
 written**, possibly entirely refusals; exit 2 means invalid input/provenance or output failure.
 Inspect per-curve states, not exit code alone. No figures or biological Results are required.
 
-`stress_matrix.json` is the deterministic acceptance specification. Implement every case with
+`stress_matrix.json` is the deterministic acceptance specification, with executable test mappings. Every case has
 exact fixture mutations and independent assertions for preserved observations, grouping,
 estimand identity and refusal states; do not just assert that a command ran. The fixture policy
 is artificial software-test input, not measured laboratory defaults. Numeric equality assertions
 use the declared tolerances; hashes bind exact input/provenance bytes, not cross-machine floating
 point output. These tests do not establish statistical coverage, assay performance or error rates.
 
-The downstream implementation must run both existing and new tests explicitly. The root
+Run both existing and new tests explicitly. The root
 pytest/mypy configuration currently excludes `research/assay`; add its path when invoking checks
 without changing root files in this handoff. Existing package builds do not package this directory.
-The implementation stage must document its supported invocation rather than imply that the
-current wheel provides an assay command. Record Ruff, strict type checks, full tests, compilation,
+The current wheel does not package the assay module or its contract and does not provide an assay command.
+Use the checkout invocation below; packaging and root README integration belong to the parent stage. Record Ruff, strict type checks, full tests, compilation,
 build and dependency-audit outcomes against the actual delivered implementation revision.
 
 This contract chooses refusal over inferred censor bounds, residual-based exclusions or an
 elaborate uncertainty model. G0/G1/G4 qualification and lock evidence remain human prerequisites.
 It is ready for engineering implementation, **not** laboratory execution or biological validation.
+
+
+## 7. Supported checkout invocation and qualified-use boundary
+
+Use the README's Python 3.12 hash-locked installation. From the checkout:
+
+```sh
+.venv/bin/python scripts/scripts/assay.py --help
+.venv/bin/python scripts/scripts/assay.py \
+  --manifest /absolute/future-input/manifest.json \
+  --observations /absolute/future-input/observations.csv \
+  --output /absolute/existing-output-directory/new-report.json
+.venv/bin/python -m pytest tests/test_assay.py
+```
+
+The input paths above are argument examples, not delivered measured files. For another current
+working directory, use absolute paths to the checkout's Python executable and script as well.
+The analyzer never generates assay rows, creates an unblinding key, computes normalization from
+vendor data, or imports compound structures. Relative artifact paths resolve against the manifest's
+directory; paths escaping it, including symlinks, fail. The output parent must already exist.
+Input errors are checked before any curve is optimized. A refused curve does not terminate valid
+processing of other submitted curves, but no invalid package is partially analyzed/published.
+
+Reusable typed entry points are `load_package(Path, Path) -> AssayPackage`,
+`analyze(AssayPackage) -> dict`, and existing `pipeline.write_json(Path, value) -> None`. Treat loaded package objects
+as read-only snapshots; do not mutate their nested manifest/observation dictionaries. Numerical
+`fit_response` is a lower-level routine requiring explicit `PilotPolicy` and numerical contract;
+it cannot check assay qualification, normalization, physical identity or biological independence.
+`plan_projection` and `canonical_hash` expose the specified pre-acquisition digest, but do not
+create a lock or authenticate timestamps. The tool does not backdate, auto-lock or auto-unblind.
+
+All synthetic rows are created only in isolated test directories, with simulated origin,
+software-test phase/statuses and conspicuous software-only names. Measured-shaped lock tests are
+parser-only objects: they never run `analyze` to publish measured reports and never enter a
+measured ledger. No synthetic CSV, fitted numerical report, figure, screenshot, or cache is
+committed as scientific evidence. The test factory follows the predeclared algebra without random
+seeds; artificial offsets and policy are not calibrated biological noise or laboratory defaults.
+
+Review every report's origin, phase, warning, observation states, compound roles, provenance,
+curve refusal reasons and `absolute_50_status`. Fitted parameters and both potency fields are null
+on refusal. Valid relative midpoints can coexist with unavailable absolute C50. Technical means/SD
+remain descriptive, raw censored limits are retained, and no covariance-derived precision is
+reported. Experiment counts describe submitted IDs, not authenticated independent preparations.
+
+The software verifies bytes and declared metadata, not vendor-row semantics, raw-signal conversion,
+substantive evidence quality, actual historical blinding, or a custodian's truthful origin labels.
+Normalization, qualification and QC approval remain independently reviewed human attestations.
+A syntactically valid package or passing software test is not experiment-ready qualification.
+`handoff_requirements.json` remains unresolved in full.

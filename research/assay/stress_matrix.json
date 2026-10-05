@@ -1,6 +1,6 @@
 {
   "status": "SOFTWARE TESTS ONLY; deterministic specification, no measured evidence, power or efficacy",
-  "generator": "Required future fixture recipe, not delivered executable code: no randomness or seed; use response=(bottom+(top-bottom)/(1+(concentration_M/midpoint_M)**hill))+technical_offset_pp",
+  "generator": "Executable fixture recipe in tests/test_assay.py:software_fixture; no randomness or seed; response=(bottom+(top-bottom)/(1+(concentration_M/midpoint_M)**hill))+technical_offset_pp. Stable algebra avoids overflow in hill=100 stress case.",
   "base": {
     "concentrations_M": "10**linspace(-9,-3,13)",
     "replicates": [
@@ -34,130 +34,219 @@
     {
       "id": "full",
       "change": "none",
-      "expect": "relative midpoint=1e-6 M and absolute C50=1e-6 M; conditional point estimates only"
+      "expect": "relative midpoint=1e-6 M and absolute C50=1e-6 M; conditional point estimates only",
+      "test_functions": [
+        "test_full_and_partial_estimands"
+      ]
     },
     {
       "id": "partial_above_50",
       "change": "bottom=65,top=100",
-      "expect": "relative midpoint=1e-6 M; absolute crossing null"
+      "expect": "relative midpoint=1e-6 M; absolute crossing null",
+      "test_functions": [
+        "test_full_and_partial_estimands"
+      ]
     },
     {
       "id": "partial_crossing_50",
       "change": "bottom=20,top=100",
-      "expect": "relative midpoint=1e-6 M; absolute C50=1e-6*50/30 M, not equal"
+      "expect": "relative midpoint=1e-6 M; absolute C50=1e-6*50/30 M, not equal",
+      "test_functions": [
+        "test_full_and_partial_estimands"
+      ]
     },
     {
       "id": "noise_outside_0_100",
       "change": "default offset noise or bottom=-3,top=103",
-      "expect": "all responses preserved, never clipped"
+      "expect": "all responses preserved, never clipped",
+      "test_functions": [
+        "test_both_response_range_ends_are_preserved",
+        "test_exact_response_zero_and_hundred_not_clipped"
+      ]
     },
     {
       "id": "flat",
       "change": "bottom=100,top=100",
-      "expect": "refusal; both concentrations null"
+      "expect": "refusal; both concentrations null",
+      "test_functions": [
+        "test_unsupported_curves"
+      ]
     },
     {
       "id": "inverted",
       "change": "bottom=100,top=0",
-      "expect": "refusal"
+      "expect": "refusal",
+      "test_functions": [
+        "test_unsupported_curves"
+      ]
     },
     {
       "id": "unbracketed",
       "change": "midpoint=1 M",
-      "expect": "refusal"
+      "expect": "refusal",
+      "test_functions": [
+        "test_unsupported_curves",
+        "test_model_misfit_and_midpoint_extrapolation_refuse"
+      ]
     },
     {
       "id": "steep_ill_supported",
       "change": "hill=100",
-      "expect": "refusal, not a slope-bound potency"
+      "expect": "refusal, not a slope-bound potency",
+      "test_functions": [
+        "test_unsupported_curves"
+      ]
     },
     {
       "id": "shallow_ill_supported",
       "change": "hill=0.01",
-      "expect": "refusal"
+      "expect": "refusal",
+      "test_functions": [
+        "test_unsupported_curves"
+      ]
     },
     {
       "id": "undersampled",
       "change": "doses=[1e-8,1e-7,1e-6,1e-5] M",
-      "expect": "refusal"
+      "expect": "refusal",
+      "test_functions": [
+        "test_unsupported_curves"
+      ]
     },
     {
       "id": "narrow_support",
       "change": "doses=10**linspace(-6.001,-5.999,8) M",
-      "expect": "refusal"
+      "expect": "refusal",
+      "test_functions": [
+        "test_unsupported_curves"
+      ]
     },
     {
       "id": "no_plateaus",
       "change": "doses=10**linspace(-7,-5,9) M",
-      "expect": "refusal"
+      "expect": "refusal",
+      "test_functions": [
+        "test_unsupported_curves"
+      ]
     },
     {
       "id": "absent_failed_untested",
       "change": "one explicit nonnumeric row, each status separately",
-      "expect": "preserved row; whole curve refuses, no imputation"
+      "expect": "preserved row; whole curve refuses, no imputation",
+      "test_functions": [
+        "test_missing_and_censored_rows_refuse_whole_curve",
+        "test_entirely_absent_curve_has_null_aggregates"
+      ]
     },
     {
       "id": "censored",
       "change": "one >70 or <=5 percent row",
-      "expect": "preserve relation/limit; whole curve refuses, never replace with limit"
+      "expect": "preserve relation/limit; whole curve refuses, never replace with limit",
+      "test_functions": [
+        "test_missing_and_censored_rows_refuse_whole_curve"
+      ]
     },
     {
       "id": "omitted",
       "change": "delete planned row entirely",
-      "expect": "input error; must encode absent explicitly"
+      "expect": "input error; must encode absent explicitly",
+      "test_functions": [
+        "test_omitted_or_duplicate_identity_fails",
+        "test_all_planned_curves_validated_before_any_fitting"
+      ]
     },
     {
       "id": "duplicates",
       "change": "duplicate observation ID, physical well, technical ID, source bytehash+row; separately",
-      "expect": "input errors, not extra replication"
+      "expect": "input errors, not extra replication",
+      "test_functions": [
+        "test_omitted_or_duplicate_identity_fails"
+      ]
     },
     {
       "id": "units",
       "change": "M,nM,uM equivalent supported; mg/mL and Unicode aliases invalid",
-      "expect": "exact normalized dose keys; ambiguous units rejected"
+      "expect": "exact normalized dose keys; ambiguous units rejected",
+      "test_functions": [
+        "test_equivalent_units",
+        "test_ambiguous_units_fail"
+      ]
     },
     {
       "id": "nonfinite",
       "change": "NaN,inf,underflow,overflow,negative/zero dose",
-      "expect": "input errors; no JSON NaN"
+      "expect": "input errors; no JSON NaN",
+      "test_functions": [
+        "test_nonfinite_missing_and_numeric_support",
+        "test_molar_conversion_underflow_and_float_aliases"
+      ]
     },
     {
       "id": "conditions_shift",
       "change": "second plate, R2 but same E1; midpoint=1e-5 M and different reaction minutes",
-      "expect": "two separate fits, E count remains 1, no pooling"
+      "expect": "two separate fits, E count remains 1, no pooling",
+      "test_functions": [
+        "test_grouped_runs_and_condition_shift",
+        "test_technical_counts_never_inflate_biological_n",
+        "test_plate_hierarchy_and_control_roles_remain_separate"
+      ]
     },
     {
       "id": "schema_provenance",
       "change": "ragged/duplicate header, duplicate JSON keys, mixed endpoint/origin, tampered hashes/paths",
-      "expect": "input errors"
+      "expect": "input errors",
+      "test_functions": [
+        "test_schema_and_provenance_errors",
+        "test_metadata_semantics_fail_closed"
+      ]
     },
     {
       "id": "qualification_pending",
       "change": "policy/species/condition record absent",
-      "expect": "retain input and refuse fit"
+      "expect": "retain input and refuse fit",
+      "test_functions": [
+        "test_pending_qualification_retains_rows_without_solver",
+        "test_qc_and_conversion_review_abstain",
+        "test_pending_assay_and_too_few_technical_wells"
+      ]
     },
     {
       "id": "lock_tamper",
       "change": "synthetic parser test exercises measured/locked branch; alter policy or timestamp",
-      "expect": "reject lock inconsistency; no measured-source outputs"
+      "expect": "reject lock inconsistency; no measured-source outputs",
+      "test_functions": [
+        "test_software_parser_only_lock_tampering",
+        "test_software_parser_only_valid_lock_and_projection",
+        "test_software_parser_only_measured_lock_prerequisites"
+      ]
     },
     {
       "id": "optimizer_failure",
       "change": "inject deterministic solver ValueError",
-      "expect": "refusal and null parameters"
+      "expect": "refusal and null parameters",
+      "test_functions": [
+        "test_optimizer_failure_and_identifiability_refuse"
+      ]
     },
     {
       "id": "io",
       "change": "different cwd, existing result, injected hardlink failure",
-      "expect": "cwd independence, no overwrite, no partial result"
+      "expect": "cwd independence, no overwrite, no partial result",
+      "test_functions": [
+        "test_cli_from_different_cwd_and_no_overwrite",
+        "test_io_failure_never_publishes_partial_output"
+      ]
     },
     {
       "id": "determinism",
       "change": "reverse CSV row order",
-      "expect": "same curve results; provenance input hash changes"
+      "expect": "same curve results; provenance input hash changes",
+      "test_functions": [
+        "test_determinism_row_order_and_provenance"
+      ]
     }
   ],
-  "execution_status": "Acceptance specification for the subsequent implementation stage; no production analyzer or executable tests shipped in this handoff",
+  "execution_status": "Executable SOFTWARE TESTS ONLY coverage in tests/test_assay.py; no measured evidence, biological error rate, statistical coverage or completed assay qualification.",
   "assertion_tolerances": {
     "relative_midpoint_relative_error": 1e-06,
     "absolute_C50_relative_error": 1e-06,

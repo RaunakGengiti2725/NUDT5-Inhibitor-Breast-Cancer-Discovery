@@ -105,7 +105,7 @@
     "0": "valid input and report published, including curve refusals",
     "2": "invalid input, provenance mismatch or output publication failure; no result replaced"
   },
-  "delivery_status": "Specification only; production analyzer and executable tests belong to the subsequent implementation stage",
+  "delivery_status": "Implemented descriptive checkout analyzer in scripts/scripts/assay.py; executable synthetic tests in tests/test_assay.py. Not laboratory-qualified, preregistered, or experimental evidence.",
   "solver": {
     "library": "scipy.optimize.least_squares",
     "method": "trf",

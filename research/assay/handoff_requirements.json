@@ -1,5 +1,5 @@
 {
-  "status": "Scientific specification only; implementation follows; not laboratory qualified or preregistered",
+  "status": "Scientific contract with implemented descriptive software; not laboratory qualified or preregistered",
   "prerequisites": [
     {
       "id": "G0-materials",

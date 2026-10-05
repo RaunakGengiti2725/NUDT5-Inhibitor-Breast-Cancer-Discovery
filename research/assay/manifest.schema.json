@@ -1,0 +1,374 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "origin",
+    "phase",
+    "endpoint",
+    "target",
+    "artifacts",
+    "compounds",
+    "plates",
+    "design",
+    "qualification",
+    "lock"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "nudt5-assay-v1"
+      ]
+    },
+    "origin": {
+      "enum": [
+        "simulated",
+        "measured"
+      ]
+    },
+    "phase": {
+      "enum": [
+        "software_test",
+        "pilot",
+        "validation"
+      ]
+    },
+    "endpoint": {
+      "enum": [
+        "biochemical_ADPr_hydrolysis_percent_activity"
+      ]
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "name",
+        "species",
+        "construct_id",
+        "construct_artifact_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "enum": [
+            "NUDT5"
+          ]
+        },
+        "species": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "construct_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "construct_artifact_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "path",
+          "sha256",
+          "role",
+          "origin"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "role": {
+            "enum": [
+              "construct",
+              "qualification",
+              "conditions",
+              "normalization",
+              "plate_qc",
+              "raw_controls",
+              "raw_observations",
+              "analysis_lock"
+            ]
+          },
+          "origin": {
+            "enum": [
+              "simulated",
+              "measured"
+            ]
+          }
+        }
+      }
+    },
+    "compounds": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^BLD-[A-Z0-9]{4,}$"
+      },
+      "additionalProperties": {
+        "enum": [
+          "candidate",
+          "known_control",
+          "synthetic_test"
+        ]
+      }
+    },
+    "plates": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "run_id",
+          "independent_experiment_id",
+          "conditions_artifact_id",
+          "normalization_id",
+          "normalization_artifact_id",
+          "normalization_formula",
+          "normalization_reviewed",
+          "qc_status",
+          "qc_artifact_id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "independent_experiment_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "conditions_artifact_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "normalization_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "normalization_artifact_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "normalization_formula": {
+            "enum": [
+              "100*(signal-blank)/(vehicle-blank)"
+            ]
+          },
+          "normalization_reviewed": {
+            "type": "boolean"
+          },
+          "qc_status": {
+            "enum": [
+              "pending",
+              "pass",
+              "fail",
+              "software_test_only"
+            ]
+          },
+          "qc_artifact_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "design": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "blinded_compound_id",
+          "plate_id",
+          "concentrations_M",
+          "technical_replicate_ids"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "blinded_compound_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "plate_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "concentrations_M": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "uniqueItems": true
+          },
+          "technical_replicate_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "qualification": {
+      "type": "object",
+      "required": [
+        "status",
+        "evidence_artifact_id",
+        "reviewer",
+        "policy"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "qualified",
+            "software_test_only"
+          ]
+        },
+        "evidence_artifact_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "policy": {
+          "anyOf": [
+            {
+              "type": "object",
+              "required": [
+                "min_response_span_pp",
+                "max_fit_rms_pp",
+                "plateau_tolerance_pp",
+                "min_technical_replicates"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "min_response_span_pp": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "max_fit_rms_pp": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "plateau_tolerance_pp": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "min_technical_replicates": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "lock": {
+      "type": "object",
+      "required": [
+        "status",
+        "locked_at_utc",
+        "first_validation_acquisition_utc",
+        "artifact_id",
+        "analysis_code_sha256",
+        "contract_sha256",
+        "environment_lock_sha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "locked",
+            "software_test_only"
+          ]
+        },
+        "locked_at_utc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "first_validation_acquisition_utc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "artifact_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "analysis_code_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "contract_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "environment_lock_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NUDT5 future-input manifest v1",
+  "description": "Structural schema only. The future implementation must additionally enforce byte hashes, row/design identity, origin coherence, artifact documents, timestamp and lock commitments. JSON duplicate keys/nonfinite values are invalid. This schema does not qualify an assay."
+}

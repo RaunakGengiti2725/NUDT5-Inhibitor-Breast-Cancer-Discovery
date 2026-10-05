@@ -1,0 +1,219 @@
+{
+  "version": "nudt5-assay-v1",
+  "scope": "Future qualified normalized ADP-ribose hydrolysis percent activity; not binding, ATP synthesis, reporter signal alone or viability",
+  "csv_columns": [
+    "observation_id",
+    "origin",
+    "blinded_compound_id",
+    "target",
+    "independent_experiment_id",
+    "run_id",
+    "plate_id",
+    "well_id",
+    "technical_replicate_id",
+    "concentration",
+    "concentration_unit",
+    "response_percent_activity",
+    "observation_status",
+    "response_relation",
+    "status_reason",
+    "normalization_id",
+    "source_id",
+    "source_row"
+  ],
+  "origins": [
+    "simulated",
+    "measured"
+  ],
+  "statuses": [
+    "observed",
+    "censored",
+    "failed",
+    "absent",
+    "untested"
+  ],
+  "units_to_M": {
+    "M": "1",
+    "mM": "0.001",
+    "uM": "0.000001",
+    "nM": "0.000000001",
+    "pM": "0.000000000001"
+  },
+  "curve_key": [
+    "blinded_compound_id",
+    "independent_experiment_id",
+    "run_id",
+    "plate_id"
+  ],
+  "aggregation": "Arithmetic technical-replicate mean per concentration within curve; equal concentration weights; never pool plates/runs",
+  "model": "activity = bottom + amplitude/(1 + 10**(hill*(log10(concentration_M)-log10_midpoint_M))); amplitude>0, hill>0; top=bottom+amplitude",
+  "parameters": [
+    "bottom_percent",
+    "ln_amplitude",
+    "log10_midpoint_M",
+    "ln_hill"
+  ],
+  "numeric_policy": {
+    "min_concentrations": 8,
+    "min_each_side_of_midpoint": 2,
+    "plateau_points_each_end": 2,
+    "bottom_bounds": [
+      -1000000,
+      1000000
+    ],
+    "amplitude_bounds": [
+      1e-06,
+      1000000
+    ],
+    "hill_bounds": [
+      0.05,
+      20
+    ],
+    "midpoint_search_extension_log10": 2,
+    "start_midpoint_fractions": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "start_hills": [
+      0.5,
+      1,
+      2
+    ],
+    "max_nfev": 4000,
+    "solver_tolerance": 1e-10,
+    "max_column_scaled_jacobian_condition": 1000000,
+    "near_optimal_sse_relative_tolerance": 1e-06,
+    "near_optimal_sse_absolute_tolerance": 1e-08,
+    "max_near_optimal_midpoint_disagreement_log10": 0.01,
+    "response_absolute_limit_exclusive_pp": 1000000.0
+  },
+  "numeric_policy_interpretation": "Declared software support envelope, not lab QC or scientific identifiability proof. Bound-active, plateau-unsupported, ill-conditioned or inconsistent optimization results abstain. No CI is computed.",
+  "required_pilot_policy": [
+    "min_response_span_pp",
+    "max_fit_rms_pp",
+    "plateau_tolerance_pp",
+    "min_technical_replicates"
+  ],
+  "pilot_policy_defaults": null,
+  "unsupported_observations": "Preserve all raw CSV strings; any non-observed planned well causes the entire curve to abstain. No dropping, imputation, censor-limit substitution or concentration extrapolation.",
+  "absolute_50_rule": "Report only if qualified normalization anchors 100% vehicle and 0% blank, bottom < 50 < top, observed concentration means bracket 50, and fitted crossing is strictly within tested concentrations. It is distinct from fitted relative midpoint.",
+  "absolute_50_formula": "log10_C50 = log10_midpoint_M + log10((top-50)/(50-bottom))/hill",
+  "uncertainty": "No confidence intervals, p-values, Ki, efficacy or power. Technical SD is descriptive only; independent experiment IDs are counts of submitted units, not verified independence.",
+  "output": "One atomic non-overwriting JSON containing original rows, input metadata, input/code/dependency-lock hashes, per-curve states, descriptive aggregates and conditional point estimates. No measured-source ledger mutation.",
+  "exit_codes": {
+    "0": "valid input and report published, including curve refusals",
+    "2": "invalid input, provenance mismatch or output publication failure; no result replaced"
+  },
+  "delivery_status": "Implemented descriptive checkout analyzer in scripts/scripts/assay.py; executable synthetic tests in tests/test_assay.py. Not laboratory-qualified, preregistered, or experimental evidence.",
+  "solver": {
+    "library": "scipy.optimize.least_squares",
+    "method": "trf",
+    "loss": "linear",
+    "x_scale": "jac",
+    "evaluation": "bottom + exp(ln_amplitude)*scipy.special.expit(-exp(ln_hill)*ln(10)*(log10_dose-log10_midpoint))",
+    "parameter_order": [
+      "bottom_percent",
+      "ln_amplitude",
+      "log10_midpoint_M",
+      "ln_hill"
+    ],
+    "start_bottom": "Mean of last two sorted dose means",
+    "start_amplitude": "Mean of first two dose means minus start_bottom; refuse invalid numeric support, never clip"
+  },
+  "output_states": {
+    "curve_status": [
+      "estimated",
+      "refused"
+    ],
+    "refusal_invariant": "parameters, relative_midpoint_M and absolute_50_vehicle_M must all be null; preserve reasons and descriptive technical aggregates",
+    "uncertainty": "not_estimated",
+    "absolute_50_status": [
+      "not_estimated",
+      "no_finite_crossing_in_fitted_asymptotes",
+      "observations_do_not_bracket_50",
+      "crossing_outside_tested_range",
+      "estimated_condition_specific_apparent_IC50"
+    ],
+    "input_error": "Reject package before optimization; no result file",
+    "qualified_estimate": "Only after all prerequisites and numerical/plateau/bracketing checks; simulated estimates always explicitly software-only"
+  },
+  "report_required_fields": [
+    "schema_version",
+    "origin",
+    "warning",
+    "input_manifest",
+    "observations",
+    "curves",
+    "n_submitted_independent_experiments",
+    "provenance",
+    "analysis_contract"
+  ],
+  "curve_required_fields": [
+    "blinded_compound_id",
+    "compound_role",
+    "plate_id",
+    "run_id",
+    "independent_experiment_id",
+    "n_submitted_independent_experiments",
+    "observation_states",
+    "aggregates",
+    "fit"
+  ],
+  "aggregate_required_fields": [
+    "concentration_M",
+    "n_technical_observed",
+    "mean_percent_activity",
+    "technical_sd_pp"
+  ],
+  "fit_required_fields": [
+    "status",
+    "reason",
+    "parameters",
+    "relative_midpoint_M",
+    "absolute_50_vehicle_M",
+    "absolute_50_status",
+    "uncertainty",
+    "diagnostics"
+  ],
+  "provenance_required": "SHA256 of manifest, observation CSV, analysis code, contract, environment lock; Python/NumPy/SciPy versions and UTC generation time; retain manifest artifact hashes. Runtime time/hash changes are not numeric nondeterminism.",
+  "refusal_reasons": [
+    "qualification_evidence_or_policy_pending",
+    "species_or_construct_pending",
+    "conditions_normalization_or_qc_pending",
+    "assay_qualification_pending",
+    "plate_qc_not_passed",
+    "validation_lock_pending",
+    "incomplete_or_censored_curve",
+    "insufficient_technical_replicates",
+    "undersampled",
+    "flat_or_insufficient_response_span",
+    "inverted_or_non_decreasing",
+    "outside_numeric_support",
+    "optimizer_failure",
+    "numeric_bound_active",
+    "nonidentifiable",
+    "ill_conditioned",
+    "nonunique_midpoint",
+    "model_misfit",
+    "relative_midpoint_unbracketed",
+    "plateaus_unsupported"
+  ],
+  "lock_plan_projection": {
+    "serialization": "json.dumps(plan, sort_keys=True, separators=(comma,colon), ensure_ascii=True, allow_nan=False).encode(UTF-8); SHA256 lowercase hex",
+    "copy_manifest_fields": [
+      "schema_version",
+      "origin",
+      "phase",
+      "endpoint",
+      "target",
+      "compounds",
+      "design",
+      "qualification"
+    ],
+    "qualification_evidence_sha256": "SHA256 referenced by qualification.evidence_artifact_id, else null",
+    "construct_sha256": "SHA256 referenced by target.construct_artifact_id, else null",
+    "plates": "Object keyed by plate_id; each value has run_id, independent_experiment_id, conditions_sha256, normalization_id, normalization_formula. conditions_sha256 comes from conditions_artifact_id, else null.",
+    "exclusions": "Exclude artifact registry as a whole, future raw/control/QC outcomes and lock itself; include selected pre-acquisition hashes above, so no circular or future-data commitment."
+  }
+}

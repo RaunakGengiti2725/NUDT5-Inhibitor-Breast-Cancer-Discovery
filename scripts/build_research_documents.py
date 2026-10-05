@@ -7,11 +7,14 @@ import html
 import importlib
 import json
 import re
+import tempfile
 from pathlib import Path
 from typing import Any
 
+from build_selectivity_figures import FIGURE_NAMES, load_recorded, render
 from docx import Document
 from docx.shared import Inches, Pt
+from selectivity import artifacts, json_bytes, publish, run_manifest
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -103,7 +106,9 @@ def diagnostic_figure(results: Path, output: Path) -> Path:
     return path
 
 
-def build(manuscript: Path, results: Path, output: Path) -> tuple[Path, Path]:
+def _build(
+    manuscript: Path, results: Path, output: Path, paired: dict[str, Any] | None
+) -> tuple[Path, Path]:
     if output.exists() and (not output.is_dir() or any(output.iterdir())):
         raise ValueError("Document output must be a new or empty directory")
     blocks = read_blocks(manuscript.read_text())
@@ -118,6 +123,32 @@ def build(manuscript: Path, results: Path, output: Path) -> tuple[Path, Path]:
     extension_figures = importlib.import_module("build_extension_figures")
     extension = extension_figures.build_figures(results, output)
     extension_figures.write_tables(results, output)
+    if paired is not None:
+        for name, content in {**render(paired), **artifacts(paired)}.items():
+            (output / name).write_bytes(content)
+        for scenario, name in zip(paired["summary"]["scenarios"], FIGURE_NAMES, strict=True):
+            n = paired["summary"]["scenarios"][scenario]["n"]
+            extension.append(
+                (
+                    output / f"{name}.png",
+                    f"Retrospective paired-target evidence ({scenario}; n={n} nonoverlap pairs). "
+                    "R = reported mean catalytic IC50(NUDT14)/IC50(NUDT5), dimensionless; "
+                    "target IC50 values in µM and source SDs are retained in pharmacology.csv. "
+                    "Arrows are strict censoring bounds, not confidence intervals; crosses have "
+                    "no finite ratio bound. Frozen Equal_mean is an uncalibrated label score. "
+                    "Reaction times and control/replication ambiguities limit comparison. "
+                    + ("No eligible pairs. " if not n else "")
+                    + paired["warning"],
+                )
+            )
+    else:
+        blocks.append(
+            (
+                "paragraph",
+                "Paired-target results unavailable: no selectivity figure or table was generated. "
+                "Unavailable measurements are not zero; legacy diagnostic results remain separate.",
+            )
+        )
     flow = importlib.import_module("reportlab.platypus")
     styles_module = importlib.import_module("reportlab.lib.styles")
     colours = importlib.import_module("reportlab.lib.colors")
@@ -246,13 +277,65 @@ def build(manuscript: Path, results: Path, output: Path) -> tuple[Path, Path]:
     return pdf, word
 
 
+def build(
+    manuscript: Path, results: Path, output: Path, *, require_selectivity: bool = False
+) -> tuple[Path, Path]:
+    """Stage complete documents before non-overwriting, completion-last publication."""
+    if output.is_symlink() or (output.exists() and (not output.is_dir() or any(output.iterdir()))):
+        raise ValueError("Document output must be a new or empty directory, not a symlink")
+    if not read_blocks(manuscript.read_text()):
+        raise ValueError("Manuscript is empty")
+    inputs = [manuscript]
+    for name in ("benchmark.json", "controls.json", "transfer.json"):
+        path = results / name
+        if not path.is_file():
+            raise ValueError(f"Recorded {name} is required; results are never fabricated")
+        inputs.append(path)
+    source, manifest = results / "selectivity.json", results / "selectivity-manifest.json"
+    paired = None
+    if source.exists() or manifest.exists() or require_selectivity:
+        if not source.is_file() or not manifest.is_file():
+            raise ValueError("Recorded selectivity.json and selectivity-manifest.json are required")
+        paired = load_recorded(source, manifest)
+        inputs.extend([source, manifest])
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix=".nudt5-documents-", dir=output.parent) as directory:
+        staging = Path(directory)
+        pdf, word = _build(manuscript, results, staging, paired)
+        payloads = {path.name: path.read_bytes() for path in staging.iterdir()}
+        inputs.extend(
+            [
+                Path(__file__),
+                Path(__file__).with_name("build_extension_figures.py"),
+                Path(__file__).with_name("build_selectivity_figures.py"),
+                Path(__file__).parent / "scripts/selectivity.py",
+                Path(__file__).parent / "scripts/pipeline.py",
+            ]
+        )
+        record = run_manifest(inputs, {"require_selectivity": require_selectivity}, payloads)
+        record["selectivity_status"] = "recorded" if paired is not None else "unavailable"
+        payloads["documents-manifest.json"] = json_bytes(record)
+        publish(output, payloads, "documents-manifest.json")
+        return output / pdf.name, output / word.name
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manuscript", type=Path, default=ROOT / "research/manuscript.md")
     parser.add_argument("--results", type=Path, default=ROOT / "research/results")
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--allow-missing-selectivity",
+        action="store_true",
+        help="Legacy results only: explicitly annotate absent paired-target results",
+    )
     args = parser.parse_args()
-    for path in build(args.manuscript, args.results, args.output):
+    for path in build(
+        args.manuscript,
+        args.results,
+        args.output,
+        require_selectivity=not args.allow_missing_selectivity,
+    ):
         print(path)
 
 

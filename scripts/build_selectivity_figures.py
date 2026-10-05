@@ -8,7 +8,7 @@ import io
 import sys
 from collections.abc import Sequence
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from selectivity import (
     SCENARIOS,
@@ -213,6 +213,19 @@ def render(result: dict[str, Any]) -> dict[str, bytes]:
     return payloads
 
 
+def load_recorded(source: Path, manifest_path: Path) -> dict[str, Any]:
+    """Verify recorded bytes and semantics before rendering or document publication."""
+    result = read_json(source)
+    manifest = read_json(manifest_path)
+    entry = manifest["artifacts"]["selectivity.json"]
+    require(
+        sha256(source) == entry["sha256"] and source.stat().st_size == entry["size_bytes"],
+        "Recorded result hash mismatch",
+    )
+    validate_result(result)
+    return cast(dict[str, Any], result)
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, required=True, help="Recorded selectivity.json")
@@ -222,14 +235,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--output", type=Path, required=True, help="New or empty directory")
     args = parser.parse_args(argv)
     try:
-        result = read_json(args.input)
-        manifest = read_json(args.manifest)
-        entry = manifest["artifacts"]["selectivity.json"]
-        require(
-            sha256(args.input) == entry["sha256"]
-            and args.input.stat().st_size == entry["size_bytes"],
-            "Recorded result hash mismatch",
-        )
+        result = load_recorded(args.input, args.manifest)
         payloads = render(result)
         figure_manifest = run_manifest(
             [

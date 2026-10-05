@@ -13,9 +13,11 @@ dynamic = ["dependencies"]
 nudt5-audit = "pipeline:main"
 nudt5-controls = "controls:main"
 nudt5-transfer = "transfer:main"
+nudt5-selectivity = "selectivity:main"
+nudt5-assay = "assay:main"
 
 [tool.setuptools]
-py-modules = ["pipeline", "controls", "transfer"]
+py-modules = ["pipeline", "controls", "transfer", "selectivity", "assay"]
 package-dir = {"" = "scripts/scripts"}
 
 [tool.setuptools.dynamic]

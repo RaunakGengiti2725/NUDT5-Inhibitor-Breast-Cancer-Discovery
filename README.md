@@ -1,4 +1,37 @@
-# NUDT5 chemical-data and reproducibility audit
+# Deposited NUDT5/NUDT14 structural pharmacology reanalysis
+
+## Current Path B author-review package
+
+The current manuscript leads with all-site 8RIY/8OTV W0O geometry and bounded published catalytic measurements. This is a descriptive/methodological reanalysis, not a new inhibitor, energetic mechanism, selectivity predictor or biological experiment. Official report extraction and fixed PDBe map sampling/slices are limited model-support inspection, not independent density validation. Crystal copies are nonindependent. The exact author sheet and current closure register are in `research/path_b/`; author declarations and laboratory gates remain unresolved.
+
+The historical 18,412-compound library must not be reconstructed. NC5-02 is ACT-19/known compound 11. Original-label performance is diagnostic only: unmatched, unassayed presumed negatives and largely unauthenticated positive labels do not establish target recognition. The old audit/manuscript is preserved verbatim under `research/path_b/audit_archive/`, with immutable baseline/hash and correction provenance. Original audit routes are historical; current closure state is separate.
+
+After the locked installation below, build the explicit **Path B** profile into a fresh external directory:
+
+```sh
+.venv/bin/python scripts/build_research_documents.py --profile path-b \
+  --output "$HOME/nudt5-path-b-documents"
+```
+
+This validates the committed manuscript's abstract/quantitative blocks against frozen inputs, independently recomputes the same-split control AUCs from stored predictions, reconstructs all structural scientific fields and regenerates the model-support extraction. Changed or self-consistent-but-untrusted evidence fails closed; a numerical input change requires a reviewed versioned lock and manuscript update. No fitting occurs. Figures 1–3 are structural; diagnostic figures are S1 onward in a separate PDF/DOCX. Table 1 gives all W0O report mappings, Table 2 all eight paired compounds including training overlaps, and Table 3 all comparable same-split controls including seven single descriptors, descriptor LR, nearest neighbours, constants/prevalence and current consensus. Full score pointers, CSVs, figures and completion-last manifest accompany the documents. Generated binaries stay outside Git.
+
+The default `legacy` profile preserves the former builder behavior for historical/custom manuscripts. To reproduce the archived manuscript layout, pass `--profile legacy --manuscript research/path_b/audit_archive/baseline_manuscript.md`. Use Path B for the current manuscript; do not append the legacy diagnostic-first figure ordering to it.
+
+Reproduce numerical evidence without fitting models (each output must be new):
+
+```sh
+.venv/bin/python scripts/build_structure_model_support.py \
+  --output "$HOME/nudt5-path-b-model-support"
+.venv/bin/nudt5-selectivity --source research/selectivity/paired_evidence.json \
+  --predictions research/results/transfer.json --repository . \
+  --output "$HOME/nudt5-path-b-paired"
+PYTHONPATH=scripts/scripts:scripts .venv/bin/python \
+  research/path_b/source_checks/regenerate_identity.py --repository "$PWD" \
+  --output "$HOME/nudt5-path-b-identity.json"
+```
+
+The geometry command sequence below accepts a fresh result and separate derived manifest; add `--profile path-b` to its document command. Compare scientific fields and normalized source hashes, not new runtime timestamps/paths/Git state. Historical manifests are never restamped. Run `.venv/bin/python -m pytest tests research/path_b/source_checks` to include both the full repository and upstream source-witness tests. Path B regression tests cover ordering, quantitative drift, source lock, corruption, no-fitting and atomic refusal. Dependency auditing may explicitly skip the local non-PyPI package; that is not an audited package claim.
+
 
 **These records do not establish a new NUDT5 inhibitor or a breast-cancer treatment.**
 This revision preserves the original CSVs and replaces an unreliable screening demonstration with explicit chemical-data audits and exploratory label diagnostics.

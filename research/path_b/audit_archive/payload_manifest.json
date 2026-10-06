@@ -1,0 +1,188 @@
+{
+  "baseline": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+  "manuscript_sha256": "5ee7257be5a09c9862c2ead2f98416e1e8d1b2fa875624ca009df5cb95934bbb",
+  "commands": "commands_run.md",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2538,
+      "sha256": "8796efcfb3af58d399c59e759f5abfe64581288a72ac7ace75c8e5cdc92a6df3"
+    },
+    {
+      "path": "annotated_current_methods.csv",
+      "bytes": 114337,
+      "sha256": "0effaf07eeed4492c53bceff3c808526289b1dcc77b3ccd95b69efe5c359a816"
+    },
+    {
+      "path": "annotated_historical_methods.csv",
+      "bytes": 316065,
+      "sha256": "f578decc1a87f6d86e987b2d1f5ad662ec9597cbea9c44a67d6c587a0479f991"
+    },
+    {
+      "path": "annotated_requested_component_checklist.csv",
+      "bytes": 20663,
+      "sha256": "05b53a6e24f24977ca102e207abc7fd467d4c479320d411d714c3a3cafe7cf0a"
+    },
+    {
+      "path": "audit_scripts/add_caption_audit.py",
+      "bytes": 8039,
+      "sha256": "db360c76a17d3cb6979dde3d42b2da1bdf206c34695daa3b390c05b038e22b01"
+    },
+    {
+      "path": "audit_scripts/build_brief.py",
+      "bytes": 23776,
+      "sha256": "dd7e24fd0a2d7df4609daa2626f11482a3e999f5f6a8b5432deee91dac705722"
+    },
+    {
+      "path": "audit_scripts/build_claims.py",
+      "bytes": 9138,
+      "sha256": "4d97f33946c59409cdc7f319dcf27e1b81d9262ff40b8af41c6c860e09a66382"
+    },
+    {
+      "path": "audit_scripts/build_gaps.py",
+      "bytes": 25337,
+      "sha256": "11c675e6cd265f31dd1361e698733bb9cf5ba5ef1d032bb57e3ab074913f0859"
+    },
+    {
+      "path": "audit_scripts/build_methods_summary.py",
+      "bytes": 5442,
+      "sha256": "756aad867703fb06d6408a9005884d2aca4a7378cf7eb10c8d43a215c52b4d8d"
+    },
+    {
+      "path": "audit_scripts/build_package.py",
+      "bytes": 17151,
+      "sha256": "a2ef217505780c0cf2662e5070de7171435071693643ce0d2b1059ccb168efaa"
+    },
+    {
+      "path": "audit_scripts/inspect_inputs.py",
+      "bytes": 3692,
+      "sha256": "006bafb39edc346c9be1b52eb14c48163e2283adda1adbf9e1e622ad939afe21"
+    },
+    {
+      "path": "audit_scripts/validate_final.py",
+      "bytes": 5512,
+      "sha256": "1feb67a6bcccc47093b59ee26d3bbb8ea7c59a9f906e02ab9521db6afa345470"
+    },
+    {
+      "path": "audit_scripts/validate_sources.py",
+      "bytes": 9473,
+      "sha256": "05560686cad14d45f29e417e5e2d1646ff7018b8775d4744ca22772c557a3528"
+    },
+    {
+      "path": "caption_coverage.json",
+      "bytes": 19060,
+      "sha256": "6b998f6f2011fad0c9835b328783cf55d6238fb8bcd31b420a36b9766e9ebf29"
+    },
+    {
+      "path": "commands_run.md",
+      "bytes": 2953,
+      "sha256": "af6f8f4c11d415977c8c71d6a1475915b6407f889a7054f7a275cbf5210bf6eb"
+    },
+    {
+      "path": "coverage_integrity_report.json",
+      "bytes": 5765,
+      "sha256": "92a62b3163ca45be27fbad5bd39ec0ad2cc7e8ffcad87bdaba71b5d98fbee44d"
+    },
+    {
+      "path": "final_validation.json",
+      "bytes": 1356,
+      "sha256": "90f1c0bb6de77222c1117e80b10c716eb2a504e28c1a10486a59c46415078605"
+    },
+    {
+      "path": "initial_integrity.json",
+      "bytes": 1487,
+      "sha256": "2c8c503da2036625de3c4939172f75dda08fe2d4b88519b6a96c0a7a6de23d2a"
+    },
+    {
+      "path": "input_manifest.json",
+      "bytes": 110204,
+      "sha256": "fd595b3b5f75d72de32405db17e47719ec96172f2421e360b6e530733e785e2d"
+    },
+    {
+      "path": "material_gap_register.csv",
+      "bytes": 30380,
+      "sha256": "6fb9f7cab064cd777bc316e6db52fb9d30a72a1c5b3469f7993fd4456a171fea"
+    },
+    {
+      "path": "material_gap_register.md",
+      "bytes": 32281,
+      "sha256": "80100cd492f1ba57f5fde9ddff241701df07b136ed054eb1340d358159288919"
+    },
+    {
+      "path": "methods_code_audit_summary.md",
+      "bytes": 259949,
+      "sha256": "33ccc703e74510782dd96b811719fbf0db7b96a0327b27cfc4dafebdec75b2e9"
+    },
+    {
+      "path": "owner_lab_experiment_specification.md",
+      "bytes": 10504,
+      "sha256": "0edcdf6d5074fd6db506eda52c92825af775808996db5d013482bd7dbb33d35c"
+    },
+    {
+      "path": "path_b_rewrite_execution_brief.md",
+      "bytes": 10574,
+      "sha256": "26443d3fa2e94f5c1613b0d4a5c6f78b761daa6ccb25c1dc023d4cb15d9a0735"
+    },
+    {
+      "path": "path_resolution.md",
+      "bytes": 2064,
+      "sha256": "b22f8d52e98b3007b36a73067ce574b97c736f8faabbfee8391e9f542591912a"
+    },
+    {
+      "path": "reconciliation_log.csv",
+      "bytes": 9143,
+      "sha256": "8eaa5c5d08e8f442081072987a8b495a9987c9ee79c5cfeb188716fb90d6c51b"
+    },
+    {
+      "path": "reconciliation_log.md",
+      "bytes": 8123,
+      "sha256": "092654346dc9ab35edf43a03eeefba036f67a57435e9e49b3823385a4f3ea204"
+    },
+    {
+      "path": "source_validation.json",
+      "bytes": 86603,
+      "sha256": "c525b6adb520ac8f4394b0cdce18cbea488567965b3e3ce722006a24f5bf00c7"
+    },
+    {
+      "path": "unified_claim_table.csv",
+      "bytes": 1275773,
+      "sha256": "c0ddc26bf9272c61f9aff455dc9a3ba3a9b8bd13d40ffa1e8911034ac3cf3915"
+    },
+    {
+      "path": "unified_claim_table.md",
+      "bytes": 863218,
+      "sha256": "f55b79ca76f1734ed43798e044b43896bc861c815f58c8a414d18b15af2ba6b1"
+    },
+    {
+      "path": "unsent_collaboration_inquiry.md",
+      "bytes": 2185,
+      "sha256": "894b21a3f37aa883477ba6839882279f4e3af8671503f293cc02e743f44a7f42"
+    },
+    {
+      "path": "upstream_audit_reports/P2_gap_notes.md",
+      "bytes": 16484,
+      "sha256": "6b26b8a8ed65ec54b4f06bd40af987caa5e14431c87e34821443d39c3fc2069c"
+    },
+    {
+      "path": "upstream_audit_reports/p1_audit_notes.md",
+      "bytes": 16854,
+      "sha256": "009f31f8295f61583b85a387c2a5953c84a3901c421c012c3ffb8099e9276187"
+    },
+    {
+      "path": "upstream_audit_reports/p3_coverage_and_gaps.md",
+      "bytes": 93192,
+      "sha256": "18a9e20a6248e74c9eba4c16e50b9ccc1439a32bdab869f6c30b6b2730d31edb"
+    },
+    {
+      "path": "upstream_audit_reports/priority0_report.md",
+      "bytes": 26801,
+      "sha256": "596f94d150cd66c77b1d71a02addbc804136c412d3db2c11b23b88163458f0c7"
+    },
+    {
+      "path": "verified_line_coverage.json",
+      "bytes": 54987,
+      "sha256": "684ba8289cca95c32870df1e7ef8215562c8198cf170d306e8be3e4742ded1fe"
+    }
+  ],
+  "excludes": "Raw papers, historical original manuscripts, all raw XML/PDF/DOCX/image/source archives; bytecode caches; this manifest itself."
+}

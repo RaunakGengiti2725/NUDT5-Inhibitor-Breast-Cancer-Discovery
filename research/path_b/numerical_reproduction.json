@@ -1,0 +1,56 @@
+{
+  "meaning": "Numerical/identity reproduction only; no new model fit or experiment.",
+  "comparisons": [
+    {
+      "source": "research/structure_comparison/model_support/results/model_support.json",
+      "fresh": "model-support-reproduction/model_support.json",
+      "byte_identical": true,
+      "sha256": "1657783dc230e5a1b98e6c0413e0782f4b9c95c0c2adb68c94ad1af7da52f38a"
+    },
+    {
+      "source": "research/results/selectivity.json",
+      "fresh": "paired-reproduction/selectivity.json",
+      "byte_identical": true,
+      "sha256": "380f193ec8c895397bac0aea0c802acd1d2c6d483de0cd732b2868431b57aedd"
+    },
+    {
+      "source": "research/path_b/source_checks/identity_summary.json",
+      "fresh": "identity_summary.json",
+      "byte_identical": true,
+      "sha256": "eb979a133d8f3fd6e84eda0b7c3ae90ac17dbd443b83eb78fe7e17d0d253fe50"
+    },
+    {
+      "source": "research/results/audit.json",
+      "fresh": "original-audit/audit.json",
+      "byte_identical": true,
+      "sha256": "f62ffa50147b3d8ba6d73fd141172b3ffc728fbadda5b2889d6c634ad0403654"
+    },
+    {
+      "source": "research/external/pubchem/audit.json",
+      "fresh": "pubchem-audit.json",
+      "byte_identical": true,
+      "sha256": "8b025840a564ec6858857be3ecb43969df716bb240490bf73914b2d589329dcd"
+    }
+  ],
+  "geometry": {
+    "scientific_fields_identical": true,
+    "runtime_provenance_distinct": true,
+    "checked_fields": [
+      "atom_pairs_within_5A",
+      "contract_id",
+      "excluded_atoms",
+      "limitations",
+      "missingness",
+      "nonprotein_inventory",
+      "origin",
+      "primary_radius_A",
+      "radii_A",
+      "refusals",
+      "residue_proximity",
+      "schema_version",
+      "sites",
+      "structures",
+      "warning"
+    ]
+  }
+}

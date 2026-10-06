@@ -1,0 +1,2445 @@
+{
+  "immutable_repository": {
+    "repo": "RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery",
+    "revision": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+    "original_five_file_release": "8c2a1b6990df1e140e15ab5a0eabea69b70eee14",
+    "manuscript": {
+      "path": "research/manuscript.md",
+      "sha256": "5ee7257be5a09c9862c2ead2f98416e1e8d1b2fa875624ca009df5cb95934bbb",
+      "physical_lines": 286,
+      "nonblank_lines": 174
+    },
+    "tracked_status_porcelain": "",
+    "shallow": false
+  },
+  "supplied_attachments": [
+    {
+      "name": "original-manuscript.txt",
+      "sha256": "b418a07c87ee931e2c50721e1ffa2516b6985aa9f0b728519e16c2cabf2b6beb",
+      "bytes": 45822,
+      "role": "raw primary/historical source (EXCLUDED from the distributed ZIP)"
+    },
+    {
+      "name": "P2_evidence_bundle.zip",
+      "sha256": "5b772547518da828e250c254b1bd22d176ae0295e4fe8fd1ec5b14fcf0aa22c3",
+      "bytes": 466826,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "p3_claim_dispositions.csv",
+      "sha256": "c6c87f58c02250e8cdbbda0c4c6ef36ec6306e53ca92d7d659bfea9c6686156f",
+      "bytes": 137738,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "original-paper.txt",
+      "sha256": "b2b136ad66d9ee9ac98d82f056247abd4e296d306892da09d4dfa1a149351c7d",
+      "bytes": 650,
+      "role": "raw primary/historical source (EXCLUDED from the distributed ZIP)"
+    },
+    {
+      "name": "p1_claim_audit.csv",
+      "sha256": "8deef8b13c277e2e8ab0b9eb110ef9ab736716fbf33ba3eed829d79a0997a19f",
+      "bytes": 230042,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "partitions.json",
+      "sha256": "6a569a0728085a5617ce3f0988073f717da868a2ac9034cc359cf608842cf2ad",
+      "bytes": 14133,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "archive_validation.json",
+      "sha256": "bd30a96c04860206f4e94b6b7b7621920d05b794f28b2b85ff624399f33d6b37",
+      "bytes": 228,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "claim_inventory.csv",
+      "sha256": "4bd925b8bbd287d943149ec0a704b54d02064d28fa060d7e471132eb77be0cbf",
+      "bytes": 763594,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "commands_run.md",
+      "sha256": "33d613583d2f5cad5e74cf71bbe4835fb4bbdbe4cb33ff0f2e5d7233dc1f37dd",
+      "bytes": 4749,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "P2_inventory_context.csv",
+      "sha256": "dfb62b0f1936147534732b1fd407ffe7cf6d0528e5a29ab4221159a0eba54b1d",
+      "bytes": 246276,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "historical_methods.csv",
+      "sha256": "48ac351437d5f6a337314961d50255f58a89a1d464e55fbdb70db9afcdefb54b",
+      "bytes": 252357,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "input_hashes.json",
+      "sha256": "2d444e1e2fc587c2020b0bca3a74a8bdb7e1de01f320e5117b48dc4c46a9fec9",
+      "bytes": 1973,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "priority0_report.md",
+      "sha256": "596f94d150cd66c77b1d71a02addbc804136c412d3db2c11b23b88163458f0c7",
+      "bytes": 26801,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "P2_provenance.json",
+      "sha256": "c7adf03993fa3ed8d34831da475bf53b67770af973b51605c1e695b16c3da436",
+      "bytes": 15974,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "NUDT5_Finished_Paper_1.docx",
+      "sha256": "11ef96824597f47daa1e6152caea8dc87cb3ebd6d78fd41be3baad14d31cca35",
+      "bytes": 1475563,
+      "role": "raw primary/historical source (EXCLUDED from the distributed ZIP)"
+    },
+    {
+      "name": "p3_audit_evidence.zip",
+      "sha256": "f2ef4cd7af4c1b7b9013b1e15e710fe927d47846948f67724ddca1b5ba204407",
+      "bytes": 28394159,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "P2_coverage_supplements.json",
+      "sha256": "6b90f61e73fc3b19e405749687e38e2ad6a1db43b50df6e5ed1d0cda639d13bf",
+      "bytes": 58918,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "requested_component_checklist.csv",
+      "sha256": "f5ee5cbcb377816114f36a0a37ec2210b6ca8235e000500b6b104ce754b5ec30",
+      "bytes": 15190,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "current_methods.csv",
+      "sha256": "70a604c9bede215f0e3c154aa02a9677e7936eb6d4acea74bbeb7012606e71c2",
+      "bytes": 90048,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "path_b_priority0_final_handoff.zip",
+      "sha256": "d8651da42780f6bb564c0bfcfd9efcf079c338aba774d95777a362e3f73a9d50",
+      "bytes": 1832659,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "NUDT5_path_decision_memo.md",
+      "sha256": "5683dc2d1165aaa5a87dc0a0e1427402419e4c9c475fdb0f0c45ffb393ca25ce",
+      "bytes": 24818,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "handoff_validation.json",
+      "sha256": "9d77a499721452b0db4032eb449327f8e77bb93951268c23d3e6551038181eb2",
+      "bytes": 1406,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "current_methods_coverage.csv",
+      "sha256": "450f1c79d75769d06f181ce449702869edc678bcf35d4344d4df2a4959f7a4de",
+      "bytes": 7202,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "P2_gap_notes.md",
+      "sha256": "6b26b8a8ed65ec54b4f06bd40af987caa5e14431c87e34821443d39c3fc2069c",
+      "bytes": 16484,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "P2_validation.json",
+      "sha256": "010bd2bfc7b0b54b43e2ce6876eec2fdefe08a47c7d96d6bf4cfeb33cf57bee0",
+      "bytes": 6515,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "historical_methods_coverage.csv",
+      "sha256": "8867164ba35d91eae21807785c09af086ababf0af0bf11aebc3e9b79a4fb109c",
+      "bytes": 63430,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "artifact_manifest.json",
+      "sha256": "b3dcc2bf7f3822d64890b06a6093b4557e3b680a2b25a5c29100a9bd2a6fb52e",
+      "bytes": 7163,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "P2_claim_dispositions.csv",
+      "sha256": "f77619b0549d8d6b84633b2b459967a4746c7aab2f358cdc4a4975884e875a3f",
+      "bytes": 280794,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "p3_coverage_and_gaps.md",
+      "sha256": "18a9e20a6248e74c9eba4c16e50b9ccc1439a32bdab869f6c30b6b2730d31edb",
+      "bytes": 93192,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "line_coverage_ledger.csv",
+      "sha256": "29b9a05bfc768232d1076d5c17d4647438dffee2b51a73021e3e466adba0466c",
+      "bytes": 83182,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "p1_audit_notes.md",
+      "sha256": "009f31f8295f61583b85a387c2a5953c84a3901c421c012c3ffb8099e9276187",
+      "bytes": 16854,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "audit_provenance.json",
+      "sha256": "e7794c8eb6f08894d182f8820f34763eeb22efc86517932cdf591b90ffc118d9",
+      "bytes": 5931,
+      "role": "upstream audit handoff"
+    },
+    {
+      "name": "p1_audit_evidence.zip",
+      "sha256": "a5803796f65c119ff548d31da6b05393053b196787e2b7ba046220bfe2683300",
+      "bytes": 246624,
+      "role": "upstream audit handoff"
+    }
+  ],
+  "repository_files_hash_verified": {
+    "p1_audit_evidence": {
+      "checked": 51,
+      "unresolved_path_aliases": []
+    },
+    "P2_evidence_bundle": {
+      "checked": 72,
+      "unresolved_path_aliases": []
+    },
+    "p3_audit_evidence": {
+      "checked": 48,
+      "unresolved_path_aliases": []
+    }
+  },
+  "upstream_archives": {
+    "p1_audit_evidence.zip": {
+      "members": 28,
+      "sha256": "a5803796f65c119ff548d31da6b05393053b196787e2b7ba046220bfe2683300",
+      "crc_ok": true
+    },
+    "path_b_priority0_final_handoff.zip": {
+      "members": 41,
+      "sha256": "d8651da42780f6bb564c0bfcfd9efcf079c338aba774d95777a362e3f73a9d50",
+      "crc_ok": true
+    },
+    "P2_evidence_bundle.zip": {
+      "members": 40,
+      "sha256": "5b772547518da828e250c254b1bd22d176ae0295e4fe8fd1ec5b14fcf0aa22c3",
+      "crc_ok": true
+    },
+    "p3_audit_evidence.zip": {
+      "members": 46,
+      "sha256": "f2ef4cd7af4c1b7b9013b1e15e710fe927d47846948f67724ddca1b5ba204407",
+      "crc_ok": true
+    }
+  },
+  "upstream_archive_manifests": [
+    {
+      "archive": "path_b_priority0_final_handoff",
+      "checked_entries": 40,
+      "all_match": true
+    },
+    {
+      "archive": "p1_audit_evidence",
+      "checked_entries": 27,
+      "all_match": true
+    },
+    {
+      "archive": "p3_audit_evidence",
+      "checked_entries": 45,
+      "all_match": true
+    }
+  ],
+  "upstream_files": [
+    {
+      "namespace": "P2_evidence_bundle/P2_claim_dispositions.csv",
+      "sha256": "f77619b0549d8d6b84633b2b459967a4746c7aab2f358cdc4a4975884e875a3f",
+      "bytes": 280794,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/P2_coverage_supplements.json",
+      "sha256": "6b90f61e73fc3b19e405749687e38e2ad6a1db43b50df6e5ed1d0cda639d13bf",
+      "bytes": 58918,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/P2_gap_notes.md",
+      "sha256": "6b26b8a8ed65ec54b4f06bd40af987caa5e14431c87e34821443d39c3fc2069c",
+      "bytes": 16484,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/P2_inventory_context.csv",
+      "sha256": "dfb62b0f1936147534732b1fd407ffe7cf6d0528e5a29ab4221159a0eba54b1d",
+      "bytes": 246276,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/P2_provenance.json",
+      "sha256": "c7adf03993fa3ed8d34831da475bf53b67770af973b51605c1e695b16c3da436",
+      "bytes": 15974,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/P2_validation.json",
+      "sha256": "010bd2bfc7b0b54b43e2ce6876eec2fdefe08a47c7d96d6bf4cfeb33cf57bee0",
+      "bytes": 6515,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/build.log",
+      "sha256": "17775c9c74d1b639a195460e56b9d8516d86c4d9e97b453bcd1337ac4a1e46bf",
+      "bytes": 7562,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/build_claims.py",
+      "sha256": "64d84ed5e69695bc558075dc4db1049cc82aff9387273ea85c49a20799880e95",
+      "bytes": 58661,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/build_notes.py",
+      "sha256": "852ac0c1ee59a325e6362ef7c11e9d44f44942ae0615f83a3e6d87d4ee75c3ce",
+      "bytes": 33866,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/concise_notes.py",
+      "sha256": "525fd26dcfd841ae26b2f9948dd313c2b0b2a63e87f3acdc66a084156659863e",
+      "bytes": 15409,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/descriptor_2023_verification.json",
+      "sha256": "d303c7d17dfcd396eb4f8279c3859151d5aa2e0c1d92847ae5251259da109ef0",
+      "bytes": 246,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/disposition_summary.json",
+      "sha256": "d9386c126e75d11730f4177f9490d9fad432e389f7afb5849cf741327b5f8b09",
+      "bytes": 552,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/extra_verification.json",
+      "sha256": "a5fe863df1265a86332597bb8b720ca1b4d186a50312a979aea24d8f6e2b81ee",
+      "bytes": 7283,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/extra_verification.log",
+      "sha256": "9d31855369c1826d9239022f28df08a52886ba4282ea2c0621590854f150c6af",
+      "bytes": 4475,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/format.log",
+      "sha256": "19c2e88957b1c3c58a4a7ed24fc196278e5a0541d48dc9f317a488583e59f74e",
+      "bytes": 27,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/mypy.log",
+      "sha256": "fa935e779fe5886f2480e415c7e46616bdedad407f9da1cca28e7d341d95f4d7",
+      "bytes": 44,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/numeric_verification.json",
+      "sha256": "3e3405e50e929f696de4ed041bdb0602740d1447c5abe3ab1d810d41d99cd9cc",
+      "bytes": 74678,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/numeric_verification.log",
+      "sha256": "a8ce9ed55d25e787f4cf3c52ea6261663b9a3d35ec2f3a3a227cd7792b4c77c9",
+      "bytes": 7791,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/package_validation.log",
+      "sha256": "ca8df3a52e1257c3537bbfeeeb40da14ae40c5986e409d545b5ae4553c98ea00",
+      "bytes": 6516,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/pip-audit-corrected.log",
+      "sha256": "79d30422388543b2563e1dde76bb7e7857d7ef0c6fdf05c8c71598633ca07e1e",
+      "bytes": 265,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/primary_passages.txt",
+      "sha256": "3a4f3cac3038547b73fea1dfb1307447e21f84c8aaeba8b8703ed78e90b7e14a",
+      "bytes": 23136,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/pytest.log",
+      "sha256": "31d86ae0928db4c489805ed5bb487547071ee0f0d2a34f8fe6026c9da128848c",
+      "bytes": 2906,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/ruff.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/scratch_lint.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/sources/958.cif",
+      "sha256": "c1c904b5715a2ccf2f9411995d79291129f29fe77a28d14e8500e84482f77255",
+      "bytes": 10582,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/sources/9CH.cif",
+      "sha256": "e1791b0bdfe51ae1475dae195bccba78a76e7bd430b027e7986da3d1f6a1ad5a",
+      "bytes": 10046,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/sources/balikci_table1_a.jpg",
+      "sha256": "dae7572f3d20892ce6dc86e15fb0a3f2722a9881510fcf92ff4ef64d42f218b5",
+      "bytes": 20516,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/sources/balikci_table1_b.jpg",
+      "sha256": "fdfc9e95b92fe83bf84fc870c9d7188b3f5d45ed9162dace5640c281ef8b437a",
+      "bytes": 76610,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/sources/page.xml",
+      "sha256": "bc7c46fc4d464adb0cb2d5ec1ce56c4accc781f94c23f1c8744441d2b045a071",
+      "bytes": 152176,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/sources/retrieval.json",
+      "sha256": "e38a4d16b89ef04c7ea1052eb67421004b0601edcc91452adedf4d66171105a0",
+      "bytes": 1144,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/sources/sgc.html",
+      "sha256": "0b9d32c7bb8fd26074278780e3512258e176c8fb5c91f4b14e7c97d868de9d37",
+      "bytes": 59934,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/sources/sgc.txt",
+      "sha256": "d587b17bb7dd1608a46792e248e37f45e68179bd59b4e295a143c25e022b2cc7",
+      "bytes": 27018,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/sources/sgc_curves.png",
+      "sha256": "cb584602546df68dd53394b8978ff88f1f47c235ce949143dbc68a218ec23857",
+      "bytes": 118249,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/sources/sgc_readable.txt",
+      "sha256": "7aaf51fe5002abe825b45857d80363d60a24edb782aab8b1f2c750641e52d5c5",
+      "bytes": 3592,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/sources/sgc_spr.png",
+      "sha256": "1f2a6ee5d197b6a0cdaf5319c014c6616d10e203e497551c76d3b72f7f08effa",
+      "bytes": 60173,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/validate_package.py",
+      "sha256": "3ff3fefb1167cab3b113a641910c039169e4770aa01f3d3f158054baa752d4ae",
+      "bytes": 8004,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/verify_descriptors.py",
+      "sha256": "95775705ef58c30720c57e5606d9142499869eb92338a68f62521f7157ac40b1",
+      "bytes": 622,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/verify_extra.py",
+      "sha256": "c7429578b00c8efabb1e9e8bb2749b3ea3beb2bf1e0e5c16765b110292f4e90a",
+      "bytes": 5486,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "P2_evidence_bundle/verify_numbers.py",
+      "sha256": "4bab52608ffb1cb977a56f75afe8de87beaf14b493f5e75631e8e47127102cea",
+      "bytes": 8972,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/build_p1.py",
+      "sha256": "7e9965b52fefc862bf61b211fe1a9489c62ad55c1fb6eadb82d83e35d137c19c",
+      "bytes": 59299,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/finalize_handoff.py",
+      "sha256": "4c68980f0eeb03b8dacb5a41447098d16ce9e0e56f53c2d83e752be04cb11d7d",
+      "bytes": 4705,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/geometry_log.txt",
+      "sha256": "fed61068247ea357f50d637c4d42a11475cfead9427c8bf9c7eeb2dabe29e989",
+      "bytes": 3216,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/geometry_verification.json",
+      "sha256": "5834376a861e89efcde05a14f1542e9823d1b9af70e9a4295789cc658cdde703",
+      "bytes": 3215,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/input_hashes.json",
+      "sha256": "4927cd6fa36eed7204556a3613412a9fe3aa0cfe63feae0d7a17d0737fec5377",
+      "bytes": 2082,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/lint_log.txt",
+      "sha256": "37dc78a31c2c6302c13c320761185eba7a1442152937c8518213c3361068d5f1",
+      "bytes": 46,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/numeric_log.txt",
+      "sha256": "b55e491a987e3f5450d1b5bf722fa3afcdea6c1ceb54ffd21c3f8a2d57a1de56",
+      "bytes": 4456,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/numeric_verification.json",
+      "sha256": "98dacc22afd3c0a9e8181d1d25dcc33d0a36af13793d044ca71ff50a6967b737",
+      "bytes": 4200,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/original_pipeline.py",
+      "sha256": "ec928841ca78c0adb93e846145d6a9e0872eefa0f666c32c8d8c9040979af7e1",
+      "bytes": 14057,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/p1_audit_notes.md",
+      "sha256": "009f31f8295f61583b85a387c2a5953c84a3901c421c012c3ffb8099e9276187",
+      "bytes": 16854,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/p1_claim_audit.csv",
+      "sha256": "8deef8b13c277e2e8ab0b9eb110ef9ab736716fbf33ba3eed829d79a0997a19f",
+      "bytes": 230042,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/p1_commands.md",
+      "sha256": "c799e1958fb78f3e2f8c4641acc57b839b11f9c8e228880a66748f89a979f07e",
+      "bytes": 5636,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/p1_evidence_manifest.json",
+      "sha256": "c71003a4875419898e744d4ae1a7d3ac17cddf6af81f6080c4c36286018fa74c",
+      "bytes": 10982,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/p1_inventory_context.csv",
+      "sha256": "d17cc003e6b64b6528e9a5a88abea70a981ae544668062e8eb9bd3b13b1202ec",
+      "bytes": 266915,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/p1_package_manifest.json",
+      "sha256": "bcfcf2f314dbd7e2cee0c63edd29bb743cd758a8bdefb0cb6832e1c53c6c33cc",
+      "bytes": 4248,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/p1_validation.json",
+      "sha256": "1c711ad940242b10ec09914c178e3c7028d667fedcc315e2f89fad7a2e4ab859",
+      "bytes": 778,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/primary/inspected_passages.json",
+      "sha256": "3295a16a69f7505cf5e9d58e39fa8f502e79cc5e97c3a407bf3a8a165d3a2d8d",
+      "bytes": 9788,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/primary/nguyen_metadata.json",
+      "sha256": "57341f10bfd4accb7c12b2d7ec5ec66d84ca171b727208d59293e17828743cb7",
+      "bytes": 24121,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/primary/retrieval.json",
+      "sha256": "9e960b4579acb3531feb3637247ea31cfb24f8219d211015daa740eeb47e0fb3",
+      "bytes": 2044,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/primary/retrieval_extra.json",
+      "sha256": "ec185db530145a82b9fa82076113a6f05d33ce64c495cbc76e4656f17ec8365f",
+      "bytes": 1675,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/primary/sgc_curves.png",
+      "sha256": "cb584602546df68dd53394b8978ff88f1f47c235ce949143dbc68a218ec23857",
+      "bytes": 118249,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/pubchem_recomputed.json",
+      "sha256": "8b025840a564ec6858857be3ecb43969df716bb240490bf73914b2d589329dcd",
+      "bytes": 18231,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/runtime_versions.json",
+      "sha256": "2e4315b33623a89fe57b994da89456af9c8a7dc43f2e18a719eb82ffeb963416",
+      "bytes": 293,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/test_log.txt",
+      "sha256": "eb941b0ba6ec3f41aefeb380d39dc813818f94dac8260d5cd0610fe3840c9243",
+      "bytes": 3967,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/typecheck_log.txt",
+      "sha256": "fa935e779fe5886f2480e415c7e46616bdedad407f9da1cca28e7d341d95f4d7",
+      "bytes": 44,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/verify_geometry.py",
+      "sha256": "127360fb5ca8619b1fea7aa24db329eb09966ba341867e063cc743e3746994de",
+      "bytes": 3571,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/verify_numeric.py",
+      "sha256": "a6a846d70a709905e09f77ca9e1859ac9e2ecb0a9d69e30cd8e14b477a180274",
+      "bytes": 3955,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p1_audit_evidence/write_handoff.py",
+      "sha256": "4fdd8b9ca10f817029ce4e6c0cf429abb27214e617bcffaf986a5c2b3d35cc23",
+      "bytes": 26908,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/arg51_occupancy.json",
+      "sha256": "727bac26c5683dcfc81dc020c79e83cdc5afbf4118bd14eb664fc58452b6476a",
+      "bytes": 3139,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/artifact_manifest.json",
+      "sha256": "6df53eff4890b6ad3a6d32dd9922e1cdaba51ae0af1977b452ea42df35a65a00",
+      "bytes": 7613,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/build_notes.py",
+      "sha256": "c8b8191e33ef46ccd3da5630a80644064a853a43bb447853ddaa414f2d1f403f",
+      "bytes": 41689,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/build_p3.py",
+      "sha256": "b919941b7e120a45c355b7a799107b15afaaf67291638eb43e9c6f99c1d5af47",
+      "bytes": 63936,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/coverage_counts.json",
+      "sha256": "d9cbc8f4df1d49e9703908a6fce3739127b4f334e016cd40fde9f1e688e05473",
+      "bytes": 628,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/fetch_followup.py",
+      "sha256": "29b734e5c3e2afcd73571b0eb47bccaa98febdb97fe3e8dc3a6ee65a8a4ac7a5",
+      "bytes": 1248,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/fetch_sources.py",
+      "sha256": "3cef5451047d77bf02671801bf67087ccc432d7360418d9db33d39bf2e388959",
+      "bytes": 1857,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/final_numeric_log.txt",
+      "sha256": "082a82024a8fbc225e25a8b028a05c2311f5d27d7eed45480301da0a7c94de67",
+      "bytes": 6129,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/final_primary_checks.json",
+      "sha256": "3001ce911bbd0b3d0ec6fd869c2a0d84d054d8880c1c5915b8fc250f346f053f",
+      "bytes": 6360,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/inputs/claim_inventory.csv",
+      "sha256": "4bd925b8bbd287d943149ec0a704b54d02064d28fa060d7e471132eb77be0cbf",
+      "bytes": 763594,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/inputs/priority0_report.md",
+      "sha256": "596f94d150cd66c77b1d71a02addbc804136c412d3db2c11b23b88163458f0c7",
+      "bytes": 26801,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/metadata_verification.json",
+      "sha256": "a28195cecac784993969d772b5c8aad41dbb73725598378c666019e95252d053",
+      "bytes": 3404,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/numeric_verification.json",
+      "sha256": "ff6f5c7abcd31c8931045fad96594ed7015c310a93bc996d06bec362bea6751f",
+      "bytes": 19302,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/p3_claim_dispositions.csv",
+      "sha256": "c6c87f58c02250e8cdbbda0c4c6ef36ec6306e53ca92d7d659bfea9c6686156f",
+      "bytes": 137738,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/p3_coverage_and_gaps.md",
+      "sha256": "18a9e20a6248e74c9eba4c16e50b9ccc1439a32bdab869f6c30b6b2730d31edb",
+      "bytes": 93192,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/package_artifacts.py",
+      "sha256": "46a2ff5561694240bfd4c2811cd0bb016222dec5ba1e689ddc3d0e4b189b7eec",
+      "bytes": 2599,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/primary_excerpts_p3.json",
+      "sha256": "85796c059f5ddc1629a2592f0a55c85e9c03dc515a4f4422878e4fafb97346f2",
+      "bytes": 101591,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/quality_checks_log.txt",
+      "sha256": "f81fc6827740bd7d521afd1d3f52bc416a6ab6e7c2d4511e6ce344b833fe0fba",
+      "bytes": 90,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/repository_evidence_hashes.json",
+      "sha256": "27aa5dcd6946d30b64bb9c467fe0e8756b4da8ab2aa8a4f4d6883792893776c7",
+      "bytes": 8362,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/retrieval_manifest.json",
+      "sha256": "9e9f54bf6737de70089db1722773eaa4dd524f802f3947ed6cd70eb113c49651",
+      "bytes": 6789,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/selected_primary_excerpts.json",
+      "sha256": "a2c5e2eff7ec7a12680868ab04ea4750714ea5fcf630c61d9022e5eec0dee7c4",
+      "bytes": 27699,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/source_text_checks.json",
+      "sha256": "c588412204056beaf728098f94ddf6b943396ce4a621d9fa7ee8cb6c1d3c0a80",
+      "bytes": 11606,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/41467_2017_2293_MOESM1_ESM.pdf",
+      "sha256": "490c6658a4089c122d0e69897c6ea5ebb9809fb350f2c72b7d16e784b76e1ea9",
+      "bytes": 29188722,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/balikci-crossref.json",
+      "sha256": "1c290e6922ffd79cd568dca0d3a2b1ae6e8b0b4177ba2de0667337f7bf54a814",
+      "bytes": 17072,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/marques-crossref.json",
+      "sha256": "2699b60a325a8b6cf9ce1bac688d3c77b6f21f102c73d170d14bad372ec9c45d",
+      "bytes": 27212,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/marques-preprint-crossref.json",
+      "sha256": "17906c0e35b0595618d5bd41da58c373ee996e6083df094729bd1551870d1071",
+      "bytes": 12664,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/marques.xml",
+      "sha256": "410d0bb126d04581d8a02a94ae1b444790ddefaa38eaa640ebc512b49421b7d5",
+      "bytes": 138253,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/nguyen-crossref.json",
+      "sha256": "f63cbe11d1ea5b647d74133195c58ff8d71285de45d25d6a699e5637fd72a6a4",
+      "bytes": 26905,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/nguyen.html",
+      "sha256": "c996c0469ef05ff6fdd1f7cefbc3f7e109bb21969de42fcf591498a828a7ad5f",
+      "bytes": 134,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/nguyen.xml",
+      "sha256": "0e886599b6af43f6c590a4150a0297e5da15827dcc125ddc28c7b4293b7ea8b2",
+      "bytes": 150,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/page.xml",
+      "sha256": "bc7c46fc4d464adb0cb2d5ec1ce56c4accc781f94c23f1c8744441d2b045a071",
+      "bytes": 152176,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/phipson-crossref.json",
+      "sha256": "b7acbb810a4eb0c2c91c53659bc52f0ff832c14abb40862b4ab0a8100c782fea",
+      "bytes": 3587,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/qian-correction-search.json",
+      "sha256": "2e0f567c730a0b4742229f960ffa267c4409cd1af7533e8902ee2864c6ce6f10",
+      "bytes": 6936,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/qian-correction.xml",
+      "sha256": "8574ad061c965cc61c3b38fa963115d49c8382a94bf9723b6cfc92990dbf249a",
+      "bytes": 10338,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/qian-search.json",
+      "sha256": "f0c125d4e4b8aaa35f4f3062e03bb515cc54b4455801aa7c55b440ec3a7ac817",
+      "bytes": 11377,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/qian.xml",
+      "sha256": "11f62f9b3be5e9a76b3c41e07861d120f0d8f1d19370169bc9ce0fdf74cd59fa",
+      "bytes": 130536,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/sgc-curves.png",
+      "sha256": "cb584602546df68dd53394b8978ff88f1f47c235ce949143dbc68a218ec23857",
+      "bytes": 118249,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/sgc-selectivity.png",
+      "sha256": "1f2a6ee5d197b6a0cdaf5319c014c6616d10e203e497551c76d3b72f7f08effa",
+      "bytes": 60173,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/sgc.html",
+      "sha256": "0b9d32c7bb8fd26074278780e3512258e176c8fb5c91f4b14e7c97d868de9d37",
+      "bytes": 59934,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/sources/wu-crossref.json",
+      "sha256": "0b04d6b7d4b2a20dad0d7e73500378cedf32f4bc92cf82369c4cb4c8f5291e20",
+      "bytes": 25537,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/supplemental_register.json",
+      "sha256": "0b244895357fe4961c66285286d1b5c12fc5976e99000a8afab284a941e67254",
+      "bytes": 116273,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/test_log.txt",
+      "sha256": "1ea38905db35f3c53c791d9ce1337eee726e5194b1c4cc14762e8371f0703621",
+      "bytes": 3967,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/validate_p3.py",
+      "sha256": "18f22dcfb8f5072177547f5afbdffaa70333a9b372d3f8e6e6fa839ce9f3992d",
+      "bytes": 5110,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/validation.json",
+      "sha256": "bb53ddeeb1c39aa792f4fc8dc550a94b325c445b6cdec4bced4eb5d5f67ce73e",
+      "bytes": 1828,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/validation_log.txt",
+      "sha256": "5c264c0834b1c5dc5b75659ae02873215e1421d429595177f0d3960f9eaa43f2",
+      "bytes": 1829,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "p3_audit_evidence/verify_numeric.py",
+      "sha256": "cdd24650b2201f89ed0c21684be487759c4639d2200bcc608f8709c34e454fa1",
+      "bytes": 6748,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/README_handoff.md",
+      "sha256": "d5749769f6030c4a5a619ab1d10412aaa572e0cca3eb28654c1b31f6f95f5381",
+      "bytes": 1591,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/artifact_manifest.json",
+      "sha256": "b3dcc2bf7f3822d64890b06a6093b4557e3b680a2b25a5c29100a9bd2a6fb52e",
+      "bytes": 7163,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/audit_provenance.json",
+      "sha256": "e7794c8eb6f08894d182f8820f34763eeb22efc86517932cdf591b90ffc118d9",
+      "bytes": 5931,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/build_inventory.py",
+      "sha256": "c7f6e607290779cceff6ccbc88ab6e09e2d6d593f825eebdd44c6dd9d1f93f46",
+      "bytes": 14327,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/build_priority0.py",
+      "sha256": "5889eff0645c85970af8bbee91e567e004501807cece8cf1350aecd5302a3c87",
+      "bytes": 24799,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/claim_inventory.csv",
+      "sha256": "4bd925b8bbd287d943149ec0a704b54d02064d28fa060d7e471132eb77be0cbf",
+      "bytes": 763594,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/commands_run.md",
+      "sha256": "33d613583d2f5cad5e74cf71bbe4835fb4bbdbe4cb33ff0f2e5d7233dc1f37dd",
+      "bytes": 4749,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/current_methods.csv",
+      "sha256": "70a604c9bede215f0e3c154aa02a9677e7936eb6d4acea74bbeb7012606e71c2",
+      "bytes": 90048,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/current_methods_coverage.csv",
+      "sha256": "450f1c79d75769d06f181ce449702869edc678bcf35d4344d4df2a4959f7a4de",
+      "bytes": 7202,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/docx_blocks.json",
+      "sha256": "52476f670412e3f7ab9258b95e7e8b41d2ad71a989b7db7b288b131a1ea97984",
+      "bytes": 153808,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/docx_blocks.txt",
+      "sha256": "dd73198138f9766652be0f1a7ce90ae03a6fb524406d22b2937b0223d624bf75",
+      "bytes": 67641,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/docx_document.xml",
+      "sha256": "8d9cfca5d5895a4fe77730fcf5021186d867ecaeab025c1022f58cc01d9da038",
+      "bytes": 1420622,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/estimator_parameters.json",
+      "sha256": "c4690297871cbae56175e4188a0280e84315ad286ffd2017ca2b805ec409c587",
+      "bytes": 2239,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/final_test_log.txt",
+      "sha256": "92db1f47a8c3261313c5ab6b2877159492e98e100434daf32b4454efca6965cf",
+      "bytes": 3983,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/finalize_handoff.py",
+      "sha256": "dc4ff6e88ebdc2dbca8fba6cbf051e15841623cfdf5862de1fbeca226b3924b1",
+      "bytes": 14939,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/full_test_log.txt",
+      "sha256": "51629838f8fd000563e643ace0d3b03f0e242acfc69922ad79324dba64377edc",
+      "bytes": 34336,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/function_index.json",
+      "sha256": "5177d7d9bc109caea8f4f82e62a39bc31393fea8130f544db64bb33b1e3ab029",
+      "bytes": 74092,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/handoff_validation.json",
+      "sha256": "9d77a499721452b0db4032eb449327f8e77bb93951268c23d3e6551038181eb2",
+      "bytes": 1406,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/historical_methods.csv",
+      "sha256": "48ac351437d5f6a337314961d50255f58a89a1d464e55fbdb70db9afcdefb54b",
+      "bytes": 252357,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/historical_methods_coverage.csv",
+      "sha256": "8867164ba35d91eae21807785c09af086ababf0af0bf11aebc3e9b79a4fb109c",
+      "bytes": 63430,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/input_hashes.json",
+      "sha256": "2d444e1e2fc587c2020b0bca3a74a8bdb7e1de01f320e5117b48dc4c46a9fec9",
+      "bytes": 1973,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/inputs/NUDT5_Finished_Paper_1.docx",
+      "sha256": "11ef96824597f47daa1e6152caea8dc87cb3ebd6d78fd41be3baad14d31cca35",
+      "bytes": 1475563,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/inputs/NUDT5_path_decision_memo.md",
+      "sha256": "5683dc2d1165aaa5a87dc0a0e1427402419e4c9c475fdb0f0c45ffb393ca25ce",
+      "bytes": 24818,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/inputs/manuscript.md",
+      "sha256": "5ee7257be5a09c9862c2ead2f98416e1e8d1b2fa875624ca009df5cb95934bbb",
+      "bytes": 55815,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/inputs/original-manuscript.txt",
+      "sha256": "b418a07c87ee931e2c50721e1ffa2516b6985aa9f0b728519e16c2cabf2b6beb",
+      "bytes": 45822,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/inputs/original-paper.txt",
+      "sha256": "b2b136ad66d9ee9ac98d82f056247abd4e296d306892da09d4dfa1a149351c7d",
+      "bytes": 650,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/inventory_validation.json",
+      "sha256": "cce799f6dcd1ffdbeb7d83b10074e7151a9d8166c801c40cbbe55783787f9e75",
+      "bytes": 1249,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/line_coverage_ledger.csv",
+      "sha256": "29b9a05bfc768232d1076d5c17d4647438dffee2b51a73021e3e466adba0466c",
+      "bytes": 83182,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/original_release/README.md",
+      "sha256": "f70b868fd02c0ad3871110f081a647c0e1f3bc88f45ea96169668f266feb152e",
+      "bytes": 947,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/original_release/compounds.csv",
+      "sha256": "d628a0fa1926c1e44c9b2a79adf92b444959e80153cf9019ef5e56b4747c3576",
+      "bytes": 4055,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/original_release/final_hits.csv",
+      "sha256": "38c8d5266ce127b1fd5babde0c895190d0b382e3c9e3dae7581e320766745100",
+      "bytes": 2149,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/original_release/requirements.txt",
+      "sha256": "aa8c3259b86f94906d6397edead4b04645840e54e974ba65ad6100cc5b0a376a",
+      "bytes": 82,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/original_release/scripts/scripts/pipeline.py",
+      "sha256": "ec928841ca78c0adb93e846145d6a9e0872eefa0f666c32c8d8c9040979af7e1",
+      "bytes": 14057,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/package_handoff.py",
+      "sha256": "40532260105152f57dfbac105070a7844a4861cd460f6ba9a5ffb1be63274de9",
+      "bytes": 2306,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/partitions.json",
+      "sha256": "6a569a0728085a5617ce3f0988073f717da868a2ac9034cc359cf608842cf2ad",
+      "bytes": 14133,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/priority0_report.md",
+      "sha256": "596f94d150cd66c77b1d71a02addbc804136c412d3db2c11b23b88163458f0c7",
+      "bytes": 26801,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/requested_component_checklist.csv",
+      "sha256": "f5ee5cbcb377816114f36a0a37ec2210b6ca8235e000500b6b104ce754b5ec30",
+      "bytes": 15190,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/source_file_inventory.json",
+      "sha256": "4e14aa64c9d8f135b9a68ce6f95ee5ee1822ad5c4925039e5f505f245e5c4668",
+      "bytes": 53400,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/test_log.txt",
+      "sha256": "bb9fa3242c9186ba6024b7436b6741173a3c80a5e2f40f3fc1a740e1c87b5154",
+      "bytes": 929,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/validate_handoff.py",
+      "sha256": "114c211d297173606ad42e3d2fdd8310bad052451ba51483bad9d93ac9010ca4",
+      "bytes": 6100,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    },
+    {
+      "namespace": "path_b_priority0_final_handoff/validation_command_output.txt",
+      "sha256": "d414affa1de040da67e18d3c19cf439f986e44c0d78ae283bcb0d10dd6e746b0",
+      "bytes": 1407,
+      "inspection": "Hash/provenance enumeration only; does not claim every proposition independently verified"
+    }
+  ],
+  "repository_files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "332342083934ef529936661f3625bc7047d654e2cc1f1864c5d3b01da6d106d0",
+      "bytes": 1460,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "4c4f6a6b754bd759be05b5ca41b0c89a885fe51090038eb332f47e2a986c1977",
+      "bytes": 130,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "README.md",
+      "sha256": "18bfdad19a677ef6b386f81d1ec729e4bd27d58eb7460d6e41282eb8b1af0fb3",
+      "bytes": 21217,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "compounds.csv",
+      "sha256": "d628a0fa1926c1e44c9b2a79adf92b444959e80153cf9019ef5e56b4747c3576",
+      "bytes": 4055,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "final_hits.csv",
+      "sha256": "38c8d5266ce127b1fd5babde0c895190d0b382e3c9e3dae7581e320766745100",
+      "bytes": 2149,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "0534ac1515f30810239875ccb9852097d06796973b7a07b3bf70e210a5119bd7",
+      "bytes": 1162,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "sha256": "2bc4fac45e3322a50370d3c615b2203386351933010d27e075bf0345a504111a",
+      "bytes": 189,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "requirements-structure.lock",
+      "sha256": "3cfbc6569618490698d97977f36ec0300aeac9cfe4ffe2e19748af266f81daa6",
+      "bytes": 3410,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "requirements-structure.txt",
+      "sha256": "1902887c80d3ec10deed82c33eac89273aba0acd820849680745b97e9b8794b5",
+      "bytes": 13,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "requirements.lock",
+      "sha256": "be23dbecaf88d46dcd0a985949c015a8d75676f76ed00115c7b9c754fb62bd0c",
+      "bytes": 98701,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "216a8777906d6bae699bfff1fbb436cafdfa7fd89f1cc6de2aa525452793d7af",
+      "bytes": 82,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/assay/PROTOCOL.md",
+      "sha256": "03df61abb964903e37e433b61933e5325b20aac15d95c70c5572988f19203dad",
+      "bytes": 29293,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/assay/contract.json",
+      "sha256": "25fe1487252da246f2c0eac56f3dd43bd36c81dca1ad2105922dff481665236c",
+      "bytes": 7969,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/assay/handoff_requirements.json",
+      "sha256": "e2bde924ede92aa722ae95db4b43ba67e2a896f4eaad28a1f998e951eec4c620",
+      "bytes": 1864,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/assay/manifest.schema.json",
+      "sha256": "56cb115b64bff3c65ef7970048d5eaec4cb2d19ddd7fca4aaca168e8fc3b0c79",
+      "bytes": 8463,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/assay/references.json",
+      "sha256": "74defb27d1890e27b2bc55b3ea30ae5ceb1d34f5f736cb0fe2ab1198f63e8be0",
+      "bytes": 44006,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/assay/stress_matrix.json",
+      "sha256": "b851cd791a83ef79cc2b381aa6361500ebdf0dc87bff9fccc0fd552c41c9cfdb",
+      "bytes": 9392,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/audit.md",
+      "sha256": "356a0e0d7744ef8c6a9f2434dd25a44573dc0e1f6ca0de346ce851a85de6894d",
+      "bytes": 16405,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/claim_ledger.csv",
+      "sha256": "e25afa0315419f6e41a0735e2ec05745bee6e24aef1388f4ea37ae94e4e5d5bf",
+      "bytes": 35405,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/conclusion_categories.csv",
+      "sha256": "fe7f0823e0150e19aabfce5c9651f7cf3382e0f40f67b4edb4a65f90b46ff026",
+      "bytes": 7469,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/deposit_correction.md",
+      "sha256": "d99d27920ab275f2cb2b93ca3b3d4e23293bb2d06367bf4258b5c9a1a683ffdb",
+      "bytes": 2750,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/extension_design.md",
+      "sha256": "f3fc896ed889688d1731d6f4175d1ca1b2832e5bfedbf252281c56f7809dec42",
+      "bytes": 6053,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/NUDT5_external_evidence_report.md",
+      "sha256": "4a979762256737fcd39e8a9a6176531a86e92cceddef1c9fb3615a16fc2591e5",
+      "bytes": 11099,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/artifact_sources.json",
+      "sha256": "5a1bc67c0959308cf2c80e2c03562fe18289a5534ad82e9d9795f021b50b3bfe",
+      "bytes": 6110,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/ic50_ledger.csv",
+      "sha256": "dc40f1328a2977c330037815c04922891a20e677abbe56cad709eb79595abb47",
+      "bytes": 6345,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/kd_ledger.csv",
+      "sha256": "128aa61f61e2c905f677f593eec62cf57ccdced2200c044fe1ded9bae5522eb7",
+      "bytes": 6332,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/nudt5_measured_ledger.csv",
+      "sha256": "6eb8553db17eea6e08ad8769ecdad4d72fb9d5bbc388746d21906646a76881ea",
+      "bytes": 11981,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/nudt5_measured_ledger.json",
+      "sha256": "c6fb54a1c4ceef325b907b40336b0bd7f9e835d8661a27d97a444a22ba11225a",
+      "bytes": 20340,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/observed_database_rows.csv",
+      "sha256": "1d29500847c5e038005c81ded55edc1032561b2c4003aa678517e9e6a2f9b3f1",
+      "bytes": 25844,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/observed_source_overlap.csv",
+      "sha256": "c17fbacd20e3df6ff29f1c7db094bd77afa2c22e4984fdd4dea778074b6320b5",
+      "bytes": 1464,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/pubchem/README.md",
+      "sha256": "d619807bb318b423ccf810d3329419dfea740f9a01404f582cc8326155d1f9be",
+      "bytes": 5449,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/pubchem/accession-aids.json",
+      "sha256": "9a4b66d3c48992e8e85c770e496dc46d43a080106dedaac00efc36924d4eb11e",
+      "bytes": 183,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/pubchem/assay-descriptions.json",
+      "sha256": "426d7ae34c8f69a2721f598632672e36223a2f00e2764ecf3fd185a8c662ca5e",
+      "bytes": 159078,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/pubchem/audit.json",
+      "sha256": "8b025840a564ec6858857be3ecb43969df716bb240490bf73914b2d589329dcd",
+      "bytes": 18231,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/pubchem/cid-properties.json",
+      "sha256": "20354997feeb0a8eef5ac40051507b248383c280faf6b45f71adbda208ad1107",
+      "bytes": 5012,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/pubchem/cid_properties_manifest.json",
+      "sha256": "47bc61f2424862dea8e775a4067e2ccf6f8bf77ed84888db999a5a28898e0c39",
+      "bytes": 493,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/pubchem/concise-activities.json",
+      "sha256": "3b87fc9f30939eca6283a2f7977e09899314c076f93974feea733b4a39a9d586",
+      "bytes": 12358,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/pubchem/concise_manifest.json",
+      "sha256": "cb8e929816435bdfa813331bd40189f30541255764f528b55023bdf79b0163f0",
+      "bytes": 342,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/pubchem/description_manifest.json",
+      "sha256": "a2c9104c4219c57a591c09059ab872a1b9a1910b435eb2597c423d7bb3d15659",
+      "bytes": 490,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/pubchem/geneid-aids.json",
+      "sha256": "c3437460270152932200429952a963e484a1943c849f2024b57f90ed0041d62b",
+      "bytes": 236,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/pubchem/query_manifest.json",
+      "sha256": "72c9446e9b02893e3db66bb19652c4a3e39c072950f60c632c6182453d36201e",
+      "bytes": 1324,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/snapshot_manifest.json",
+      "sha256": "36a3c62b43bc6daa0c17139f67c72decf6b47b6e86be05ca15347126133a5847",
+      "bytes": 19377,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/external/summary_counts.json",
+      "sha256": "92c5b12103c628354e81f6d6ad1aa2ffade6d1c48bf033681b8bdfc7d2799868",
+      "bytes": 2690,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/all_metrics.csv",
+      "sha256": "355b2d20d302ebea63c05500c3465da4ec39d3baa110fec5917c9c982edae59e",
+      "bytes": 31656,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/candidate_axes.csv",
+      "sha256": "85318bc35641190c73af87ca4764d2dcca46d6ba8da041514053c51385da4e77",
+      "bytes": 2839,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/diagnostics.png",
+      "sha256": "6303eb28bddeec56d06182d94896f737bb87299e79c2dd4b21dd21435674a2d4",
+      "bytes": 118958,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/property_controls.pdf",
+      "sha256": "b088f6cf5230f3748ee9a7100b8125bdd72d081444150178a96e2781540464ac",
+      "bytes": 18986,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/property_controls.png",
+      "sha256": "049b3c022f7fa5c9526a3369a1262541f1e81be4b780f5659d4ae679aa1e0fc7",
+      "bytes": 101122,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/property_controls.svg",
+      "sha256": "11ee633caade76545f344162756cb9fdf37bda5de25eeff7d2bbf86b894b1463",
+      "bytes": 24711,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/reliability_domain.pdf",
+      "sha256": "f8444b243a66486d9a1b22b2e0f46e98f14cfa641bda3a4e3e9aa84ed55955ba",
+      "bytes": 20286,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/reliability_domain.png",
+      "sha256": "5d7a63ebf7f0aae1071fbb2cf6a1170f781b7651a629670d18a59fab67a37bd9",
+      "bytes": 216051,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/reliability_domain.svg",
+      "sha256": "f1390114e3ab3e22d61ddfe4c1d9baf402ea068a8a149854466d3c28c6b466de",
+      "bytes": 27334,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/selectivity_figures_manifest.json",
+      "sha256": "7cda0c25410139b388c421cbd790fab7f76f7469d670802331ae6579133c58de",
+      "bytes": 2871,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/selectivity_historical.pdf",
+      "sha256": "a75c700a833ced2ba98d6ddae1ddecd3a6e158df3ab107007bf6487a47cb954a",
+      "bytes": 22691,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/selectivity_historical.png",
+      "sha256": "a2817737013d4884a92efd4317ffa0bfa5396bbb5353900283a36e77b7b110a0",
+      "bytes": 226764,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/selectivity_historical.svg",
+      "sha256": "1cc408891a9fb68b2dc6739412c289f3c6e9140e25843ea9de12d8a897ec354c",
+      "bytes": 16840,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/selectivity_reference_sensitivity.pdf",
+      "sha256": "af99a8ad7d37e54009e5957c91a4b3d17f200848a62d765775837571d1910ec8",
+      "bytes": 22525,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/selectivity_reference_sensitivity.png",
+      "sha256": "1edd9a159fb5207c8caa9f68c9844060c4e3a183f9b1551a6663503aada6d126",
+      "bytes": 232092,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/selectivity_reference_sensitivity.svg",
+      "sha256": "b6d61ddcbe8f70ce8a5a2651574fd10abc4dd1bf019fb32eb55d66794c3492b5",
+      "bytes": 16853,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/source_cutoff_status.csv",
+      "sha256": "34696cd299a0dd977e6d1a3ddb026897ab0de5edcdbbd976b88c0dbb6779ee53",
+      "bytes": 361,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/source_transfer.pdf",
+      "sha256": "d41ade920dc8143268004f5967d95101380d3e898703cd6a19a7f3fe13819ed5",
+      "bytes": 20425,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/source_transfer.png",
+      "sha256": "d91d424399a7b22e2c23c3b166970f64df6df1dd06e842d06a4b87d7ec674264",
+      "bytes": 143233,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/source_transfer.svg",
+      "sha256": "1f521b8656777dcfc16faaa07ec928dad19cdc98de5bae513c0aa5d83d0daa16",
+      "bytes": 24574,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/figures/supplementary_results.md",
+      "sha256": "1afe9a6c02f503c2e3c2809e7b665215ee2bcde0709a2ded74e743417479e404",
+      "bytes": 15515,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/manuscript.md",
+      "sha256": "5ee7257be5a09c9862c2ead2f98416e1e8d1b2fa875624ca009df5cb95934bbb",
+      "bytes": 55815,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/original_inventory.json",
+      "sha256": "87ecfe39ac5fea2029c680b0e186cf2523a63a4567bcd76640aea9d2c57c10ae",
+      "bytes": 4244,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/provenance.md",
+      "sha256": "7c30fd12abd3e2c7447152b13abca0c67d16ff6e459251be8813387383a3c4bc",
+      "bytes": 11579,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/publication_strategy.md",
+      "sha256": "4521fb99e920901a20ef8ab8427b3dfa671cc1aa38415194d9f39de7934bb125",
+      "bytes": 8488,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/reference_sources/958.cif.gz",
+      "sha256": "decc78f688dc1943ed8faaba165805ba6808402b967b230123383835a3619b39",
+      "bytes": 3249,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/reference_sources/9CH.cif.gz",
+      "sha256": "d93e17484d537759d928cbd6f02daada3278981e05f4c6ddb1e2cd4de28eec45",
+      "bytes": 3267,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/reference_structures.csv",
+      "sha256": "db8f9c3d748c75b0d14895f30080ce105e57f47d88597b5db3ea2a3d060b2d2f",
+      "bytes": 755,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/release_manifest.json",
+      "sha256": "37b3f27d858d822d7a17b465014fee9cf67fb54b496452ab6fa519612ab5b2a8",
+      "bytes": 101474,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/results/audit.json",
+      "sha256": "f62ffa50147b3d8ba6d73fd141172b3ffc728fbadda5b2889d6c634ad0403654",
+      "bytes": 16991,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/results/benchmark.json",
+      "sha256": "e143831e4c56e32f7f26c6ebe194e478c0828e2b4a17c1da1157fc04dccd5c65",
+      "bytes": 155899,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/results/controls-manifest.json",
+      "sha256": "37988ad857c29fb2bc62added04f63612bfd483d9b569d767e48d0297f142c58",
+      "bytes": 1454,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/results/controls.json",
+      "sha256": "6593a34bbf9f75b64216af68b4a23d539026d284b102a63f2d234c3ae0d040a6",
+      "bytes": 1609244,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/results/descriptors-rdkit-2023.json",
+      "sha256": "95d7f8be64c185705cc1359458c3b1b52faec1f4d071008e13ca2edaa2ffeae7",
+      "bytes": 887,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/results/descriptors-rdkit-2025.json",
+      "sha256": "b70b5636c4c109e057923bbd2231fbe021483d2f25f26bf62dd16a0268a1be90",
+      "bytes": 886,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/results/manifest.json",
+      "sha256": "11dd44252c626966830d430c46b079c7ef74f53911c7041c52a3252582586ec6",
+      "bytes": 1750,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/results/selectivity-manifest.json",
+      "sha256": "2056dee7040fdc58a04da95b71b17fa489108a112e41ec2729e03f608ffe273d",
+      "bytes": 7372,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/results/selectivity.json",
+      "sha256": "380f193ec8c895397bac0aea0c802acd1d2c6d483de0cd732b2868431b57aedd",
+      "bytes": 190079,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/results/source-assay-provenance.json",
+      "sha256": "788645a68ee6e87e1be9528283d9a821246395ce0a1fcfe673545706e0774b56",
+      "bytes": 736,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/results/transfer-manifest.json",
+      "sha256": "cb60e86c60aa1d51d804020ba2790427f2db5f0ef3a6ca0de06d8ec3455f5b7e",
+      "bytes": 2249,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/results/transfer.json",
+      "sha256": "df6b544a2c5b8aca0ab3007f016133f8fd012629210e375bd34d0fdbad32e50a",
+      "bytes": 413591,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/results/zenodo-record.json",
+      "sha256": "14b01c39ac1da9d7dcc6fa1d58bab6aea2e696eb18fbb4b0d486ce33858defa9",
+      "bytes": 6846,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/reviewer_simulation.md",
+      "sha256": "008358839f108187c1a4462ef23af6621c93cf8ad7bdddc77e06771b051ddea4",
+      "bytes": 7134,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/reviews/code-baseline.md",
+      "sha256": "21549d14dc6a599cb3da850c939f433f53b3c63539854b9ac232e6ebd56860b9",
+      "bytes": 6644,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/reviews/code-extension.md",
+      "sha256": "b4c4452e192d921b590f58f5e533ae46b9cd1c3745764cac5c932fda8ea4a45c",
+      "bytes": 8168,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/reviews/initial_workflow_results.json",
+      "sha256": "4e507589684bee33b39637a3e45b061beacf20111fc301c09ad1a99b9390df26",
+      "bytes": 75604,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/reviews/public_evidence_workflow_results.json",
+      "sha256": "a095cea3f4b4de15ad98e24e0ba147cd51df21a73db3bb6f8e1405c8df8adaf2",
+      "bytes": 30491,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/reviews/scientific-baseline.md",
+      "sha256": "d689eae412af4d607cb45e6226097e6cd5c548b7d3bb92da7c5fc0d6292c9327",
+      "bytes": 10750,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/reviews/scientific-extension.md",
+      "sha256": "36841a5be4b6043610f92e3443203745195de82db51f53b3a09003568fa84a36",
+      "bytes": 9394,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/README.md",
+      "sha256": "68790a8855413e957eed6e534335906fead9a94ba46450c40cba0f36b489baeb",
+      "bytes": 12762,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/analysis/diagnostic_scores.csv",
+      "sha256": "417b0210046864bad588b3fa20eb16d16a30581de5470472459dd008906a7593",
+      "bytes": 17081,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/analysis/pharmacology.csv",
+      "sha256": "7efbe79ffe1142d22d7003dc6ae38206223dc7155c1c999fc62db85bde0cbb0a",
+      "bytes": 12043,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/analysis/selectivity.md",
+      "sha256": "e37061e9a6143747faa2ac87876c287467a6ccb4fb60c04a574dcb3a8c4b9a56",
+      "bytes": 8299,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/analysis/target_endpoints.csv",
+      "sha256": "d38aa5c822e4f3aaa5114853db063ee8d115d1bb53d75442472e37b9c989feae",
+      "bytes": 20520,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/analysis_contract.json",
+      "sha256": "b01dcc6bb2be97fa684a33b62c77291929833ff3d867a92189b53ae15c7e6e4f",
+      "bytes": 9204,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/analysis_contract.md",
+      "sha256": "62e23497ef996a29953e81d5c130ae82e490bbea1001711f87c83229de4a1dda",
+      "bytes": 14290,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/artifact_manifest.json",
+      "sha256": "6754924b9eb5be2b21d255113c6cb373d029a2ef5f123cd20c8eb3ca135643d1",
+      "bytes": 3638,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/assay_conditions.json",
+      "sha256": "360713b14426e39e9945b020e9baa27a21de75c24326ef92d85bb732fbff9b5b",
+      "bytes": 5390,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/contract_test_vectors.json",
+      "sha256": "85ccee090ea74ebd4c9da4c088457979d602786c9d103b4d1abf89ad143bb00c",
+      "bytes": 5785,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/frozen_scores.csv",
+      "sha256": "80516dc081cdf2008e46e30151870e0d88d5bce1f086c3e857ffe30b03a625e3",
+      "bytes": 14775,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/implementation.md",
+      "sha256": "3919f07958dd898584d4f804db2e8c8fab6adcb6e76a8b5d0f8b45f7782fcd14",
+      "bytes": 10944,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/independent_verification.json",
+      "sha256": "e1919a8acf3a8cbf9e1249f5c260be9f9e7767ec6b40473573bffc690e790adc",
+      "bytes": 29966,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/paired_evidence.json",
+      "sha256": "2872dd55843e6cc7ac03ece02df2684bb7ab637786df47d95b2cd14626c7aa6f",
+      "bytes": 106356,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/paired_evidence.schema.json",
+      "sha256": "167e029f2fbccc47dc7aa78dd4a75ced24f04df8b4bb09df4f498260934d1887",
+      "bytes": 25976,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/primary_excerpts.json",
+      "sha256": "fc0b01db2de097ab34baaedcc3c50a8f11d2ab0957386ea0d02556c1ef5c5c5c",
+      "bytes": 4949,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/provenance.json",
+      "sha256": "96e60805ad39af96339666e08cfff047cfa8d76c38c3733ccb7514004c17f64c",
+      "bytes": 6493,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/source_disagreements.json",
+      "sha256": "28a045e8fc6d1aead6787a9d55fd4b58009203d57c9cf7b58aeed320392e3a8e",
+      "bytes": 4102,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/source_verification.csv",
+      "sha256": "17d7345ffd3cc11c9c64ec6ab0d4a983dd79957a378f1ecd17624a0cfbc04ae4",
+      "bytes": 2782,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/sources/balikci.xml.gz",
+      "sha256": "c314a1940ec6ee60cb530cb75bcea3b437303653cec1bcb661e955cd8b40627b",
+      "bytes": 34096,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/sources/jm4c00072_0007.jpg.gz",
+      "sha256": "92dfc00c9547b4e7b715822f5b6d016a5e2aae76de26c6abf42b50fce3542b6b",
+      "bytes": 18604,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/sources/jm4c00072_0008.jpg.gz",
+      "sha256": "eb656f3aeddeb9c1b0b888a75b2f5bcf13555745b3d9dc63a8ec566ac87339a1",
+      "bytes": 62698,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/sources/jm4c00072_si_002.csv.gz",
+      "sha256": "a628c90932abb6c9eaac12a6236462248da96cd6e7a855fb4cde28562a5705dd",
+      "bytes": 651,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/summary_counts.json",
+      "sha256": "428664709d4d4153f1df7ba2e98682b022519b99cacbefbcd8b7e6ae9f8f2dac",
+      "bytes": 1140,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/target_evidence.csv",
+      "sha256": "d38aa5c822e4f3aaa5114853db063ee8d115d1bb53d75442472e37b9c989feae",
+      "bytes": 20520,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/selectivity/verification.md",
+      "sha256": "b5793a46f28dc2a6ef6378826247b06952d75e9bbc662bf1d45efd9b31850e70",
+      "bytes": 4903,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/source_assays.csv",
+      "sha256": "5bd0f9e201135d0ae2c5786887a5a514d6e6516e7e791bb4cdf1ae45286f573e",
+      "bytes": 7582,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structural/artifact_sources.json",
+      "sha256": "3f3558d857821bbf33b7631c5515966ea163ce49411242a9065b531ced93e22d",
+      "bytes": 3796,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structural/compound_control_panel.csv",
+      "sha256": "1fa35a8e5cdac30bd16b4bb91bfec2698331139e9a8a0eda26277d5be9a1fe61",
+      "bytes": 4611,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structural/evidence_ledger.json",
+      "sha256": "fcf96c425a1cbbd76be88432c2ed8fc2e4a348d23baf2698da26ef4b03d76bea",
+      "bytes": 193147,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structural/experimental_plan.csv",
+      "sha256": "a931a9f20f42398389ff082fe64810bbffeab8a24f95d391778e285548fc8851",
+      "bytes": 7516,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structural/structural_metadata.csv",
+      "sha256": "c20d4f8e07eeda95beaff78107560cfac2170c2139f233b49d78353a45f75e00",
+      "bytes": 3551,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structural/structural_selectivity_report.md",
+      "sha256": "d25a8d18f45094cb9eca7ac06279d3a2432915edb35edc2a581a9855924138e6",
+      "bytes": 14654,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/README.md",
+      "sha256": "c5f41216dd996d4744e7e9f40607bc6fe61137ec75eb7f412a49fd4b249531e6",
+      "bytes": 9835,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/acceptance_cases.json",
+      "sha256": "7e04399122330bc14a0caf574130a81f8f16dfb24f2fb0d512234281010ddde5",
+      "bytes": 12707,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/artifact_manifest.json",
+      "sha256": "fcdd9ac4f17ede6b56a51f5a790dcecb83c74bd13fd6f8b316ddc979a46b5ff7",
+      "bytes": 6745,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/caveats.csv",
+      "sha256": "58c64a72dc9163f89cb27d2b32cd405e0d7407e2afead5b4f05d4becc69f6c6b",
+      "bytes": 3757,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/flagged_atoms.csv",
+      "sha256": "c41054da1c8f374c589a055fcc161ab1cc97c1eb97bddb51f633ae456f801dbf",
+      "bytes": 2729,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/geometry_contract.json",
+      "sha256": "1e6a696ee2420ee2bdb7a3fe4ae82c949b3c69c289157764e61780a608670fef",
+      "bytes": 15376,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/handoff_sources.json",
+      "sha256": "5f0298911e1a858296a97d30b4243b4a92f27e3c67473f042d68d3666eb231ce",
+      "bytes": 8034,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/hypotheses_controls.csv",
+      "sha256": "21b6a2b68335154c14a182fd6025e912d110c3de581750e8a0dfffc45273ae61",
+      "bytes": 4573,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/input_manifest.json",
+      "sha256": "cad97467261b7c45be03fdfd54ac532a8a585a75d7a410f049f428e98b253b96",
+      "bytes": 4339,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/inspection-parser.lock",
+      "sha256": "58208fb9d3b3a5de2bf0a6ff284dc7a8aaabc2deaa1ef712b71d4e2ce871044b",
+      "bytes": 256,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/inspection_provenance.json",
+      "sha256": "bae6c5c0340e09f6394caa261b6b18521aea79135c657061f68638a6aa554e2b",
+      "bytes": 2384,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/lab_handoff.md",
+      "sha256": "8521057e5ccb0c12a668aeb273f6feb2ad6b4cbaeec58f061c3f48b92527b1bd",
+      "bytes": 10520,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/ligand_atoms.csv",
+      "sha256": "fceec4bf0ce7a7cad1e608c3a1e07278a870d39f57fbcf4b42ebc2d85e7ae832",
+      "bytes": 11134,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/ligand_identity.json",
+      "sha256": "ad036d5df5603ae7b71f088927ae9112f21082fe204491580f48d0c785ca88ea",
+      "bytes": 54092,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/ligand_sites.json",
+      "sha256": "5745188775e042a32e48ae5056b30b9e0f1361b8fd09a4851b54d0149d08dd7e",
+      "bytes": 7124,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/polymer_residue_inventory.csv",
+      "sha256": "70df63c5836bba2513d2fb628f5f047860212758952daee11e1318df524541bb",
+      "bytes": 114043,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/primary_excerpts.json",
+      "sha256": "9b26214a5fa8d4eff02b58aae0b373ea059411a140125f72ca1bbd4465581407",
+      "bytes": 10284,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/primary_exclusions.csv",
+      "sha256": "bb06c25a64c98e76edaac6334bf02aef02fee67a0f782cbf10bb854bfa275733",
+      "bytes": 45071,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/results/VERIFICATION.md",
+      "sha256": "cb1a99ae5a096156b0e01af3574cca9c14d90d4db5f5a65bc07f0805787995a2",
+      "bytes": 5093,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/results/derived/atom_pairs_within_5A.csv",
+      "sha256": "611d493908174f61bce6ad683cc6a04063be85f30f2cbb88dfe79d2bda1925e4",
+      "bytes": 129319,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/results/derived/derived_manifest.json",
+      "sha256": "2925b6dc9bffbc2dd990ae8dd91720b7aec1685fbfbca4ecdcbc52f05f114388",
+      "bytes": 1604,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/results/derived/observed_proximity_map.pdf",
+      "sha256": "8d3115bab222f11e72c2df48bc1f21af150b0f2204508d13e32e526418964222",
+      "bytes": 64213,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/results/derived/observed_proximity_map.png",
+      "sha256": "980d43f601c9b06420296a60345a0ed8edd1cbefcced757bcc4df9bc705c7322",
+      "bytes": 885246,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/results/derived/observed_proximity_map.svg",
+      "sha256": "7d575f2003156664c635a6ced95eabb7759bd3e749c93b2152048faae3740033",
+      "bytes": 94064,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/results/derived/radius_sensitivity.csv",
+      "sha256": "8a1231be9cc76152e154d43f3b006522c5330d1c11726619282423a44a8df842",
+      "bytes": 7271,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/results/derived/residue_proximity.csv",
+      "sha256": "c3c6b9481323af9692e3737629748ed43b722a6cb39932e5876ea37be1712def",
+      "bytes": 301888,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/results/observed_proximity.json",
+      "sha256": "c4ded0765a28a07fc52e7cebdaf52536d5d3b6fe0d884394e78c951a93c1fffd",
+      "bytes": 9040843,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/results/run_provenance.json",
+      "sha256": "938f8a0114016f09d777f3f432af9a13c54bbd079bd1ebd0b67e33e60485bfd5",
+      "bytes": 5476,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/retrieval_manifest.json",
+      "sha256": "5bacd32e69f9f1b0964ac6de45b29d32b6fe8f2e97e5a7fbb84e60655b350a5b",
+      "bytes": 7344,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/runtime_input_manifest.json",
+      "sha256": "efc6b47b984e8bd938596d42cb831bacddac9e1f155478057571ad79d37fb901",
+      "bytes": 4724,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/8OTV-assembly-1.json",
+      "sha256": "bab298ee79a6d9b7585ad1bdbd1dcb41f971d96b7cc631d2c03ebcd2376aa85c",
+      "bytes": 3183,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/8OTV-entry.json",
+      "sha256": "197a7ebc3e79b6caac1241fc41943800d7cc55ac2e4ccc9ed6a00fd679cb008c",
+      "bytes": 11354,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/8OTV-polymer-1.json",
+      "sha256": "eda23bf9aa132209792ca31ff9731a7d10040c3fe7ce84b37c27c9f4925e0e02",
+      "bytes": 21769,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/8OTV.cif",
+      "sha256": "de0634d63fa910036a789617e78a2919d0e2767c3ea36c5c3c97d86abbdd4cd8",
+      "bytes": 711733,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/8RIY-assembly-1.json",
+      "sha256": "089305782788027e238debdc4219cf6f59553b94b50ecf8bd7d363a1ea116cc5",
+      "bytes": 3220,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/8RIY-entry.json",
+      "sha256": "04974f83dcb5cda67cfc8ffc2ebbdc06fef0d9488051929c5cdae0ea313d31d5",
+      "bytes": 14342,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/8RIY-polymer-1.json",
+      "sha256": "3962cd16e86c8146d639bd29f0513557d1a46fd5651a2da85aaa233f6bd5e481",
+      "bytes": 29612,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/8RIY.cif",
+      "sha256": "39267e781393f99681d7f154d2def2a271c8a10ae9a2bc6fe819cbf78d9c5047",
+      "bytes": 394679,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/PMC11089510.xml",
+      "sha256": "0710da1ebedd4accde6e6cddf8cfe9a2d350c062890fbcfd03bf94bd6f316df0",
+      "bytes": 130787,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/W0O-chemcomp.json",
+      "sha256": "91dd68bc6343e6430a1ec7fd4d36f5fe6c2241ed883f12dc795e1063c7208d17",
+      "bytes": 3262,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/W0O.cif",
+      "sha256": "e4ba053ac961bc92dcb9db34fcbee43d58a08e2b153c8f2e85a2934adfdc38dc",
+      "bytes": 10425,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/gemmi-0.7.3-cif-docs.rst",
+      "sha256": "4f55da8227e66d3e2f8c1cc3a52324ccf6b5eb335c80159e330023894f1ebdd2",
+      "bytes": 84699,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/gemmi-0.7.3-pypi.json",
+      "sha256": "e01bbb5bdc1203f8acc0ecbb04308a30b7bd244d45f5831a2cfe58c1e6df2616",
+      "bytes": 34514,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/occupancy-flag-atoms.html",
+      "sha256": "080a5ecfd364a3d5e4293d08f54aee662eab38ddcf5521809fd026a3692ba3e0",
+      "bytes": 15448,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/sources/occupancy-flag-residues.html",
+      "sha256": "a4acff5615b29f3d950151427d801daf105c72ea22132ad475137c0bc03f5d02",
+      "bytes": 15488,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/structure_metadata.json",
+      "sha256": "5cabcd6feded5575ec9db9ea30667a784c805e4f8f0ff2cbb805d56ceb2f464a",
+      "bytes": 47434,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/unobserved_or_zero_occupancy_atoms.csv",
+      "sha256": "75387303098499a277fe8b951bcd0d820c63c8c482d572c51a4edf17c972d1c8",
+      "bytes": 5458,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/unobserved_or_zero_occupancy_residues.csv",
+      "sha256": "c0459e2a8aaa0e3b0ecc661477ab1ca01e52b62a59e7b84ef87c4d119c94bea0",
+      "bytes": 2077,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/verification.json",
+      "sha256": "f21107173eb99115d1db8780a14557e2e942e7242ba5d6d52c14a5df123bd9aa",
+      "bytes": 2858,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/structure_comparison/verification.md",
+      "sha256": "381e0e517f653e7ebd77146665756f1dece7abf3265ac9831316dd600ff80309",
+      "bytes": 2288,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/study/NUDT5_extension_report.md",
+      "sha256": "ec2e2a048fc01f9921f83a84e1424ffc5e52b014ce5c99d3462414e7c8e0e836",
+      "bytes": 18652,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/study/artifact_sources.json",
+      "sha256": "6ea016e20567008e21f4ec3069f6aaaa024b1d5bbfa72a0a56d013ef6d43bd2c",
+      "bytes": 4905,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/study/artifact_validation.json",
+      "sha256": "66808c2e12119782c80ee60a85525de66d82bf3e70153bd6c939b93f5847dd3b",
+      "bytes": 875,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/study/evidence_categories.json",
+      "sha256": "3ec664bd0855740fbe391bc0d6332e2164f3776d9683ad17dfe659dc1c86af54",
+      "bytes": 24390,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/study/hypotheses_falsification.csv",
+      "sha256": "9e77964ce1b1f769137e822c9a65b2597e3b096d9258310a67c78c1a46357c23",
+      "bytes": 5623,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/study/source_register.json",
+      "sha256": "cba942a0ec284e3b6023f21b48eff0488bcafc2db3fb05d349d9962fe39590dd",
+      "bytes": 12322,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/study/validation_and_gates.json",
+      "sha256": "b7ab91cf7b41e12e51d6efebaf2e402a9a449469af2ca5be67e3ee335dd3b499",
+      "bytes": 9932,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "research/verification.md",
+      "sha256": "238a2deba77b257816fb07ab30db91e31a73f5edb0bc719c5d13466725d0dcfd",
+      "bytes": 17626,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "scripts/build_extension_figures.py",
+      "sha256": "87cf68f00a2d717a152ab5a5ebaec9319a74ecad2500b793c31c0f1b08a5d617",
+      "bytes": 14850,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "scripts/build_pubchem_audit.py",
+      "sha256": "2314dd6b63fd50e6772744fbb5074ba0926519c04127d12af6a5f5c82561f611",
+      "bytes": 7187,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "scripts/build_release_manifest.py",
+      "sha256": "867d9e88e59c8559a69b6b3f4994944b2136993dc3ab8a01df2f9833a28d17eb",
+      "bytes": 4187,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "scripts/build_research_documents.py",
+      "sha256": "5e3c463733e59fee61dd8167c0a1075536870423ce5ff834f3928bf77b90c22e",
+      "bytes": 21377,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "scripts/build_selectivity_figures.py",
+      "sha256": "06732972b46b42fd831dc4e11fd87f2466b4f30fb861dff9b918417301f0673f",
+      "bytes": 11244,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "scripts/build_structure_comparison_figures.py",
+      "sha256": "c70a55f4642f63b163ae3c8c7a9f5ce7def226da84088a3ad0eeaf3953059ce5",
+      "bytes": 28041,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "scripts/scripts/assay.py",
+      "sha256": "a76354b6636db2dcb7bde2c0db11b73aed268247af1e01903eeefa7e35de2d1b",
+      "bytes": 40033,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "scripts/scripts/controls.py",
+      "sha256": "c9ce53b4c3141c9b3f9dbb999c256b59cde0d67688efab4d1dbaef15ad0b8aaa",
+      "bytes": 30415,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "scripts/scripts/pipeline.py",
+      "sha256": "03f3755abcbbb15a90c71ae837f16e8377b521b4b8151c1fe71306e96317bc38",
+      "bytes": 33715,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "scripts/scripts/selectivity.py",
+      "sha256": "ea68091d0602c8f423865f7556eea421c8c43758b510aa0b96f8a7aef5f01d85",
+      "bytes": 45317,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "scripts/scripts/structure_comparison.py",
+      "sha256": "95e1a5d136a29977691ea5adae4a2bb75c50a074d29472f9775b1a229255e448",
+      "bytes": 42766,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "scripts/scripts/transfer.py",
+      "sha256": "e592d095678369c08ff0b4574ba867cfced70c0baebf4776df7257380e6676fa",
+      "bytes": 19614,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "tests/test_assay.py",
+      "sha256": "e665ad9920e0917f4079874343527d9b4fb65c297fd23c3042415585932b6751",
+      "bytes": 44377,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "tests/test_controls.py",
+      "sha256": "85223ccd98b9c61f12f5c1c3584094406fa1372de8f2a4b0239252ad6fa7ecf8",
+      "bytes": 7171,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "tests/test_documents.py",
+      "sha256": "ebf87ef3cb2674d4121605cd033f31e92cb795cdf124b603650a5001c31aa338",
+      "bytes": 16457,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "tests/test_extension_figures.py",
+      "sha256": "facb9f51a0f49352265bee0e79f20330b074ffb26ff63561b5adcc01957dde3c",
+      "bytes": 2615,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "tests/test_pipeline.py",
+      "sha256": "fc635f98224f68dbbf2d68bb60615c97b5804ffe332abcce47115f80b767caf0",
+      "bytes": 15418,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "tests/test_pubchem_audit.py",
+      "sha256": "3fddfb8d65b18bbb3fd3ef755d912c440adca208fdec98dd159c6de235a00fe1",
+      "bytes": 3051,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "tests/test_release.py",
+      "sha256": "97724e31ca804d94d8ea3c5568b2b5747cec97661114a2d64db4f2bfbccb44af",
+      "bytes": 10207,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "tests/test_selectivity.py",
+      "sha256": "e71db773fc4421474505d86186f08c3e9bcaee103a5d9a45c6d942595fd08115",
+      "bytes": 21221,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "tests/test_selectivity_figures.py",
+      "sha256": "2ce2d57759e259718828cf98447d4f10e682392ceb7b85b5a6a947641b23660f",
+      "bytes": 5853,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "tests/test_structure_comparison.py",
+      "sha256": "7fb7672983de8364fdf23a65864cb2b1d831135c9d8f7bc7942ef5433c55aea4",
+      "bytes": 30867,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "tests/test_structure_comparison_figures.py",
+      "sha256": "e5aacda43306584d4b27764bbe967a25abe091d7efa18338a53d68ef68e73c94",
+      "bytes": 17516,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    },
+    {
+      "path": "tests/test_transfer.py",
+      "sha256": "ff6955484af06316d93978fae9b84593ae89c299e9f388323fa2b4318f91a81b",
+      "bytes": 6999,
+      "inspection": "Hash-only enumeration; inspected evidence delimited in audit reports"
+    }
+  ],
+  "commands": "commands_run.md"
+}

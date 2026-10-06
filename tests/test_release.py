@@ -41,20 +41,24 @@ def test_claim_ledger_uses_requested_status_vocabulary() -> None:
     assert {r["verification_status"] for r in rows} <= allowed
 
 
-def test_source_auc_table_matches_recorded_metrics() -> None:
+def test_source_auc_table_matches_recorded_metrics(tmp_path: Path) -> None:
+    import csv
+
+    from build_extension_figures import write_tables
+
     transfer = json.loads((ROOT / "research/results/transfer.json").read_text())
-    text = (ROOT / "research/manuscript.md").read_text()
-    lines = text.split("Table 2.")[1].split("The ordering")[0].splitlines()
-    data = [line for line in lines if line.startswith("| ")][1:]
-    methods = ["Property_LR", "RF", "SVM_RBF", "Nearest_active", "Equal_mean", "GBT"]
-    assert len(data) == len(methods)
-    for line, method in zip(data, methods, strict=True):
-        values = [float(v.strip()) for v in line.split("|")[3:-1]]
-        for value, cutoff in zip(values, ["1.0", "10.0", "50.0"], strict=True):
-            recorded = transfer["measured_source_challenge"]["threshold_sensitivity_uM"][cutoff][
-                "metrics"
-            ][method]["auc"]
-            assert abs(value - recorded) <= 0.0005
+    write_tables(ROOT / "research/results", tmp_path)
+    rows = list(csv.DictReader((tmp_path / "all_metrics.csv").open()))
+    for cutoff, evaluation in transfer["measured_source_challenge"][
+        "threshold_sensitivity_uM"
+    ].items():
+        for method, metrics in (evaluation["metrics"] or {}).items():
+            row = next(
+                r
+                for r in rows
+                if r["design"] == f"measured_source_below_{cutoff}_uM" and r["method"] == method
+            )
+            assert float(row["auc"]) == metrics["auc"]
 
 
 def test_compressed_authenticated_sources_preserve_original_hashes() -> None:
@@ -70,38 +74,35 @@ def test_compressed_authenticated_sources_preserve_original_hashes() -> None:
 def test_paired_table_matches_all_eligible_recorded_endpoints_and_scores() -> None:
     import math
 
+    from build_research_documents import read_blocks
+
     result = json.loads((ROOT / "research/results/selectivity.json").read_text())
     text = (ROOT / "research/manuscript.md").read_text()
-    lines = text.split("Table 3. Same-paper")[1].split("Compound 9 has")[0].splitlines()
-    cells = [
-        [v.strip() for v in line.strip("|").split("|")] for line in lines if line.startswith("| ")
-    ][1:]
-    rows = {r["source_compound"]: r for r in result["rows"]}
-    scores = {(r["source_compound"], r["scenario"]): r for r in result["score_rows"]}
-    scenarios = ["historical_original_graphs", "stored_authenticated_reference_sensitivity"]
-    assert [c[0] for c in cells] == result["summary"]["scenarios"][scenarios[0]]["eligible_ids"]
-    assert len(cells) == 6
-    for name, nudt5, nudt14, ratio, historical, reference in cells:
+    table = text.split("<!-- path-b:paired:start -->")[1].split("<!-- path-b:paired:end -->")[0]
+    cells = read_blocks(table)[0][1][1:]
+    rows = {r["source_compound"]: r for r in result["rows"] if r["source_pair_has_both_endpoints"]}
+    assert [c[0] for c in cells] == list(rows)
+    assert len(cells) == 8
+    for name, nudt5, nudt14, ratio in cells:
         row = rows[name]
         for target, printed in (("NUDT5", nudt5), ("NUDT14", nudt14)):
             endpoint = row["endpoints"][target]
             if endpoint["status"] == "right_censored":
                 assert printed == f">{endpoint['bound']:g}"
             else:
-                assert float(printed) == endpoint["reported_mean"]
+                assert printed == endpoint["table1_text"]
+                mean, sd = map(float, printed.split("±"))
+                assert mean == endpoint["reported_mean"]
+                assert sd == endpoint["reported_sd"]
         value = row["ratio"]
         if value["status"] == "double_censored":
-            assert ratio == "Not estimable"
+            assert ratio == "No finite bound"
             assert value["point"] is None and value["bound"] is None
         elif value["status"] == "upper_bound":
             assert ratio.startswith("<")
             assert math.isclose(float(ratio[1:]), value["bound"], abs_tol=5e-7)
         else:
             assert math.isclose(float(ratio), value["point"], abs_tol=5e-7)
-        for scenario, printed in zip(scenarios, (historical, reference), strict=True):
-            assert math.isclose(
-                float(printed), scores[(name, scenario)]["Equal_mean"], abs_tol=5e-7
-            )
 
 
 def test_new_cli_registration_includes_both_modules() -> None:
@@ -173,7 +174,8 @@ def test_handoff_arg51_and_manuscript_track_recorded_geometry() -> None:
     abstract = paper.split("## Abstract")[1].split("## 1.")[0]
     assert len(abstract.split()) <= 245
     assert "three questions" not in paper
-    assert paper.index("### 4.11") > paper.index("### 4.10 Observed")
+    assert paper.index("### 3.1 All-site") < paper.index("### 3.2 Paired")
+    assert paper.index("### 3.2 Paired") < paper.index("### 3.3 Source-label")
     assert "guanidinium" in paper and "historical" in paper.lower()
 
 
@@ -220,8 +222,9 @@ def test_manuscript_defines_requested_abbreviations_and_uses_micromolar_symbol()
     assert len(abstract.split()) < 250
     definitions = {
         "NUDT5": "Nudix hydrolase 5 (NUDT5)",
-        "ROC-AUC": "area under the receiver operating characteristic curve (ROC-AUC)",
-        "TPSA": "topological polar surface area (TPSA)",
+        "RSCC": "real-space correlation coefficient (RSCC)",
+        "RSR": "real-space R (RSR)",
+        "IC50": "half-maximal inhibitory concentration (IC50)",
     }
     for abbreviation, definition in definitions.items():
         assert definition in abstract
@@ -229,6 +232,8 @@ def test_manuscript_defines_requested_abbreviations_and_uses_micromolar_symbol()
             abbreviation
         )
     definitions = {
+        "ROC-AUC": "area under the receiver operating characteristic curve (ROC-AUC)",
+        "TPSA": "topological polar surface area (TPSA)",
         "HBD": "hydrogen-bond donor count (HBD)",
         "HBA": "hydrogen-bond acceptor count (HBA)",
         "Fsp3": "fraction of sp3-hybridized carbon atoms (Fsp3)",

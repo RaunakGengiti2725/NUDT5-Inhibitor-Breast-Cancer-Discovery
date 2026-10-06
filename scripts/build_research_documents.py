@@ -14,6 +14,7 @@ from typing import Any
 import build_structure_comparison_figures as structure_figures
 from build_selectivity_figures import FIGURE_NAMES, load_recorded, render
 from docx import Document
+from docx.oxml import OxmlElement
 from docx.shared import Inches, Pt
 from selectivity import artifacts, json_bytes, publish, run_manifest
 
@@ -39,6 +40,9 @@ def read_blocks(text: str) -> list[tuple[str, Any]]:
     index = 0
     while index < len(lines):
         line = lines[index].strip()
+        if line.startswith("<!--") and line.endswith("-->"):
+            index += 1
+            continue
         if not line:
             if paragraph:
                 blocks.append(("paragraph", " ".join(paragraph)))
@@ -208,6 +212,31 @@ def _build(
                 "zero proximity or no contact; no geometry claim is supplied by this build.",
             )
         )
+    caption = (
+        "Figure 1. Newly computed diagnostics, not historical or prospective validation. "
+        "A: seed-42 pooled scores; series pooling mixes differently trained models. "
+        "B: all five specified seeds. No interval denotes population uncertainty. "
+        "Descriptor performance is compatible with confounding but does not establish "
+        "its causal contribution."
+    )
+    figures = [("Diagnostic figure", figure, caption)]
+    figures.extend(
+        (structural_headings.get(path, f"Figure {index}"), path, caption)
+        for index, (path, caption) in enumerate(extension, start=2)
+    )
+    return render_document(blocks, output, figures)
+
+
+def render_document(
+    blocks: list[tuple[str, Any]],
+    output: Path,
+    figures: list[tuple[str, Path, str]],
+    *,
+    path_b_layout: bool = False,
+    stem: str = "NUDT5_evidence_bounded_revision",
+    title: str = "NUDT5 reproducibility and chemical-identity controls",
+) -> tuple[Path, Path]:
+    """Render explicit content/figure order; no implicit diagnostic appendices."""
     flow = importlib.import_module("reportlab.platypus")
     styles_module = importlib.import_module("reportlab.lib.styles")
     colours = importlib.import_module("reportlab.lib.colors")
@@ -230,7 +259,10 @@ def _build(
         styles[name].leading = 13 if name in ["BodyText", "Normal"] else styles[name].leading
         styles[name].spaceAfter = 7
     table_style = styles_module.ParagraphStyle(
-        "TableBody", parent=styles["BodyText"], fontSize=7, leading=10
+        "TableBody",
+        parent=styles["BodyText"],
+        fontSize=8 if path_b_layout else 7,
+        leading=11 if path_b_layout else 10,
     )
     for name in ("Title", "Heading1", "Heading2", "Heading3"):
         styles[name].keepWithNext = True
@@ -239,6 +271,10 @@ def _build(
     doc.sections[0].right_margin = Inches(1)
     doc.styles["Normal"].font.name = "Calibri"
     doc.styles["Normal"].font.size = Pt(10)
+    if path_b_layout:
+        section = doc.sections[0]
+        section.left_margin = section.right_margin = Inches(0.75)
+        section.top_margin = section.bottom_margin = Inches(0.75)
     story = []
     for kind, value in blocks:
         if kind == "heading":
@@ -261,13 +297,40 @@ def _build(
             for row in value[1:]:
                 for cell, text in zip(table.add_row().cells, row, strict=True):
                     cell.text = plain(text)
+            widths = [168.0] + [312 / (len(value[0]) - 1)] * (len(value[0]) - 1)
+            if path_b_layout:
+                column_widths: dict[int, list[float]] = {
+                    2: [300, 180],
+                    4: [60, 140, 140, 140],
+                    5: [145, 65, 65, 95, 110],
+                    6: [35, 45, 180, 65, 65, 90],
+                    7: [160, 100, 30, 48, 48, 47, 47],
+                }
+                widths = column_widths.get(len(value[0]), [480 / len(value[0])] * len(value[0]))
+                table.style = "Table Grid"
+                table.autofit = False
+                table.rows[0]._tr.get_or_add_trPr().append(OxmlElement("w:tblHeader"))
+                for column, width in zip(table.columns, widths, strict=True):
+                    column.width = Pt(width)
+                for row_index, word_row in enumerate(table.rows):
+                    word_row._tr.get_or_add_trPr().append(OxmlElement("w:cantSplit"))
+                    for word_cell, width in zip(word_row.cells, widths, strict=True):
+                        word_cell.width = Pt(width)
+                        for paragraph in word_cell.paragraphs:
+                            paragraph.paragraph_format.space_after = Pt(2)
+                            paragraph.paragraph_format.keep_with_next = (
+                                len(value) < 25 and row_index < len(value) - 1
+                            )
+                            for run in paragraph.runs:
+                                run.font.size = Pt(8)
+                                run.bold = row_index == 0
             pdf_rows = [
                 [flow.Paragraph(html.escape(plain(cell)), table_style) for cell in row]
                 for row in value
             ]
             pdf_table = flow.Table(
                 pdf_rows,
-                colWidths=[168] + [312 / (len(value[0]) - 1)] * (len(value[0]) - 1),
+                colWidths=widths,
                 repeatRows=1,
             )
             pdf_table.setStyle(
@@ -281,32 +344,32 @@ def _build(
                 )
             )
             story.extend([pdf_table, flow.Spacer(1, 10)])
-    caption = (
-        "Figure 1. Newly computed diagnostics, not historical or prospective validation. "
-        "A: seed-42 pooled scores; series pooling mixes differently trained models. "
-        "B: all five specified seeds. No interval denotes population uncertainty. "
-        "Descriptor performance is compatible with confounding but does not establish "
-        "its causal contribution."
-    )
-    doc.add_heading("Diagnostic figure", level=1).paragraph_format.page_break_before = True
-    doc.add_picture(str(figure), width=Inches(6.4))
-    doc.add_paragraph(caption)
-    story.extend(
-        [
-            flow.PageBreak(),
-            flow.Paragraph("Diagnostic figure", styles["Heading1"]),
-            flow.Image(str(figure), width=490, height=210),
-            flow.Paragraph(caption, styles["BodyText"]),
-        ]
-    )
-    for index, (path, figure_caption) in enumerate(extension, start=2):
-        heading = structural_headings.get(path, f"Figure {index}")
+    for heading, path, figure_caption in figures:
         doc.add_heading(heading, level=1).paragraph_format.page_break_before = True
-        doc.add_picture(str(path), width=Inches(6.4))
-        doc.add_paragraph(figure_caption)
         image = flow.Image(str(path))
-        image.drawHeight *= 490 / image.drawWidth
-        image.drawWidth = 490
+        scale = (
+            min(480 / image.drawWidth, 500 / image.drawHeight)
+            if path_b_layout
+            else (490 / image.drawWidth)
+        )
+        image.drawWidth *= scale
+        image.drawHeight *= scale
+        if not path_b_layout and heading == "Diagnostic figure":
+            image.drawHeight = 210
+        if path_b_layout:
+            doc.add_picture(str(path), width=Pt(image.drawWidth), height=Pt(image.drawHeight))
+            picture_format = doc.paragraphs[-1].paragraph_format
+            picture_format.keep_with_next = True
+            picture_format.line_spacing = 1
+            picture_format.space_after = Pt(6)
+        else:
+            doc.add_picture(str(path), width=Inches(6.4))
+        caption_paragraph = doc.add_paragraph(figure_caption)
+        if path_b_layout:
+            caption_paragraph.paragraph_format.keep_together = True
+            caption_paragraph.paragraph_format.line_spacing = 1
+            for run in caption_paragraph.runs:
+                run.font.size = Pt(9)
         story.extend(
             [
                 flow.PageBreak(),
@@ -315,8 +378,8 @@ def _build(
                 flow.Paragraph(figure_caption, styles["BodyText"]),
             ]
         )
-    pdf = output / "NUDT5_evidence_bounded_revision.pdf"
-    word = output / "NUDT5_evidence_bounded_revision.docx"
+    pdf = output / f"{stem}.pdf"
+    word = output / f"{stem}.docx"
     doc.save(str(word))
     template = flow.SimpleDocTemplate(
         str(pdf),
@@ -325,7 +388,7 @@ def _build(
         rightMargin=54,
         topMargin=48,
         bottomMargin=48,
-        title="NUDT5 reproducibility and chemical-identity controls",
+        title=title,
     )
 
     def footer(canvas: Any, document: Any) -> None:
@@ -349,12 +412,17 @@ def build(
     require_structure: bool = False,
     repository: Path = ROOT,
     handoff_directory: Path = ROOT / "research/structure_comparison",
+    profile: str = "legacy",
 ) -> tuple[Path, Path]:
     """Stage complete documents before non-overwriting, completion-last publication."""
     if output.is_symlink() or (output.exists() and (not output.is_dir() or any(output.iterdir()))):
         raise ValueError("Document output must be a new or empty directory, not a symlink")
     if not read_blocks(manuscript.read_text()):
         raise ValueError("Manuscript is empty")
+    if profile not in {"legacy", "path-b"}:
+        raise ValueError("Unknown document profile")
+    if profile == "path-b":
+        require_structure = require_selectivity = True
     inputs = [manuscript]
     for name in ("benchmark.json", "controls.json", "transfer.json"):
         path = results / name
@@ -391,7 +459,14 @@ def build(
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=".nudt5-documents-", dir=output.parent) as directory:
         staging = Path(directory)
-        pdf, word = _build(manuscript, results, staging, paired, structural, handoff)
+        if profile == "path-b":
+            path_b = importlib.import_module("build_path_b_documents")
+            pdf, word, extra_inputs = path_b.build(
+                manuscript, results, staging, paired, structural, repository
+            )
+            inputs.extend(extra_inputs)
+        else:
+            pdf, word = _build(manuscript, results, staging, paired, structural, handoff)
         payloads = {path.name: path.read_bytes() for path in staging.iterdir()}
         inputs.extend(
             [
@@ -406,7 +481,11 @@ def build(
         )
         record = run_manifest(
             inputs,
-            {"require_selectivity": require_selectivity, "require_structure": require_structure},
+            {
+                "require_selectivity": require_selectivity,
+                "require_structure": require_structure,
+                "profile": profile,
+            },
             payloads,
         )
         record["structure_status"] = "recorded" if structural is not None else "unavailable"
@@ -418,6 +497,7 @@ def build(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--profile", choices=("legacy", "path-b"), default="legacy")
     parser.add_argument("--manuscript", type=Path, default=ROOT / "research/manuscript.md")
     parser.add_argument("--results", type=Path, default=ROOT / "research/results")
     parser.add_argument("--output", type=Path, required=True)
@@ -458,6 +538,7 @@ def main() -> None:
         require_structure=not args.allow_missing_structure,
         handoff_directory=args.handoff_directory,
         repository=args.repository,
+        profile=args.profile,
     ):
         print(path)
 

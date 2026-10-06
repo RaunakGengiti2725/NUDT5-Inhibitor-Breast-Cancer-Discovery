@@ -452,7 +452,9 @@ def notes(result: dict[str, Any]) -> list[str]:
     return lines
 
 
-def render(result: dict[str, Any], *, target: str | None = None) -> dict[str, bytes]:
+def render(
+    result: dict[str, Any], *, target: str | None = None, document_layout: bool = False
+) -> dict[str, bytes]:
     if target is not None:
         structures = [s for s in result["structures"] if s["target"] == target]
         require(len(structures) == 1, "Target panel requires one recorded structure")
@@ -586,16 +588,18 @@ def render(result: dict[str, Any], *, target: str | None = None) -> dict[str, by
                 fontsize=10 if target else 13,
                 y=0.97,
             )
+            legend = (
+                "Inclusive radii 3.5, 4.0 (primary), 4.5, 5.0 Å. Grey cells: >5.0 Å. "
+                "† partial residue (declared missing or zero-occupancy atom); "
+                "* positive fractional occupancy, unweighted; alt = separate local conformer."
+            )
             fig.text(
                 0.03,
-                0.87 if target else 0.915,
-                (
-                    "Inclusive radii 3.5, 4.0 (primary), 4.5, 5.0 Å. Grey cells: >5.0 Å. "
-                    "† partial residue (declared missing or zero-occupancy atom); "
-                    "* positive fractional occupancy, unweighted; alt = separate local conformer."
-                ),
+                0.935 if document_layout else 0.87 if target else 0.915,
+                "\n".join(textwrap.wrap(legend, 83)) if document_layout else legend,
                 fontsize=8.5,
-                wrap=True,
+                va="top" if document_layout else "baseline",
+                wrap=not document_layout,
             )
             fig.text(
                 0.03,

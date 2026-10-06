@@ -1,0 +1,60 @@
+{
+  "baseline": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+  "manuscript_sha256": "5ee7257be5a09c9862c2ead2f98416e1e8d1b2fa875624ca009df5cb95934bbb",
+  "commands": "commands_run.md",
+  "details": {
+    "baseline": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+    "manuscript_sha256": "5ee7257be5a09c9862c2ead2f98416e1e8d1b2fa875624ca009df5cb95934bbb",
+    "physical_lines": 286,
+    "nonblank_lines": 174,
+    "inventory_count": 874,
+    "uncovered_substantive_characters": [],
+    "partitions": {
+      "P1": {
+        "count": 292,
+        "types": {
+          "interpretation": 50,
+          "demonstrated": 235,
+          "hypothesis": 3,
+          "unsupported": 4
+        },
+        "statuses": {
+          "needs qualification": 61,
+          "survives": 229,
+          "must be cut": 2
+        }
+      },
+      "P2": {
+        "count": 291,
+        "types": {
+          "demonstrated": 215,
+          "interpretation": 74,
+          "unsupported": 2
+        },
+        "statuses": {
+          "survives": 270,
+          "needs qualification": 19,
+          "must be cut": 2
+        }
+      },
+      "P3": {
+        "count": 291,
+        "types": {
+          "demonstrated": 196,
+          "interpretation": 77,
+          "hypothesis": 6,
+          "projection": 11,
+          "unsupported": 1
+        },
+        "statuses": {
+          "needs qualification": 19,
+          "survives": 272
+        }
+      }
+    },
+    "supplements": {
+      "P2": 44,
+      "P3": 113
+    }
+  }
+}

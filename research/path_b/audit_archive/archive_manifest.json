@@ -1,0 +1,33 @@
+{
+  "baseline": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+  "scope": "Unchanged top-level consolidated audit payloads and exact baseline manuscript. Original audit scripts and partition reports remain in the supplied full ZIP; archived payload_manifest.json describes that full upstream package, not this subset. Counts are audit units, not scientific discoveries.",
+  "full_archive_url": "https://la-hacks-rttothemoon.devinenterprise.com/attachments/6db3a646-e017-4d97-9a32-8794a10064a9/path_b_audit_consolidation.zip",
+  "full_archive_sha256": "dd80c85372b0f59ec24d89bddf5a2dde24ba4b5850744a80acfc98ffc214e348",
+  "files": {
+    "README.md": "8796efcfb3af58d399c59e759f5abfe64581288a72ac7ace75c8e5cdc92a6df3",
+    "annotated_current_methods.csv": "0effaf07eeed4492c53bceff3c808526289b1dcc77b3ccd95b69efe5c359a816",
+    "annotated_historical_methods.csv": "f578decc1a87f6d86e987b2d1f5ad662ec9597cbea9c44a67d6c587a0479f991",
+    "annotated_requested_component_checklist.csv": "05b53a6e24f24977ca102e207abc7fd467d4c479320d411d714c3a3cafe7cf0a",
+    "baseline_manuscript.md": "5ee7257be5a09c9862c2ead2f98416e1e8d1b2fa875624ca009df5cb95934bbb",
+    "caption_coverage.json": "6b998f6f2011fad0c9835b328783cf55d6238fb8bcd31b420a36b9766e9ebf29",
+    "commands_run.md": "af6f8f4c11d415977c8c71d6a1475915b6407f889a7054f7a275cbf5210bf6eb",
+    "coverage_integrity_report.json": "92a62b3163ca45be27fbad5bd39ec0ad2cc7e8ffcad87bdaba71b5d98fbee44d",
+    "final_validation.json": "90f1c0bb6de77222c1117e80b10c716eb2a504e28c1a10486a59c46415078605",
+    "initial_integrity.json": "2c8c503da2036625de3c4939172f75dda08fe2d4b88519b6a96c0a7a6de23d2a",
+    "input_manifest.json": "fd595b3b5f75d72de32405db17e47719ec96172f2421e360b6e530733e785e2d",
+    "material_gap_register.csv": "6fb9f7cab064cd777bc316e6db52fb9d30a72a1c5b3469f7993fd4456a171fea",
+    "material_gap_register.md": "80100cd492f1ba57f5fde9ddff241701df07b136ed054eb1340d358159288919",
+    "methods_code_audit_summary.md": "33ccc703e74510782dd96b811719fbf0db7b96a0327b27cfc4dafebdec75b2e9",
+    "owner_lab_experiment_specification.md": "0edcdf6d5074fd6db506eda52c92825af775808996db5d013482bd7dbb33d35c",
+    "path_b_rewrite_execution_brief.md": "26443d3fa2e94f5c1613b0d4a5c6f78b761daa6ccb25c1dc023d4cb15d9a0735",
+    "path_resolution.md": "b22f8d52e98b3007b36a73067ce574b97c736f8faabbfee8391e9f542591912a",
+    "payload_manifest.json": "57650a1dbc3adfa2f617537703e2594224b15dc77d86ec034085a1f31a7e64ab",
+    "reconciliation_log.csv": "8eaa5c5d08e8f442081072987a8b495a9987c9ee79c5cfeb188716fb90d6c51b",
+    "reconciliation_log.md": "092654346dc9ab35edf43a03eeefba036f67a57435e9e49b3823385a4f3ea204",
+    "source_validation.json": "c525b6adb520ac8f4394b0cdce18cbea488567965b3e3ce722006a24f5bf00c7",
+    "unified_claim_table.csv": "c0ddc26bf9272c61f9aff455dc9a3ba3a9b8bd13d40ffa1e8911034ac3cf3915",
+    "unified_claim_table.md": "f55b79ca76f1734ed43798e044b43896bc861c815f58c8a414d18b15af2ba6b1",
+    "unsent_collaboration_inquiry.md": "894b21a3f37aa883477ba6839882279f4e3af8671503f293cc02e743f44a7f42",
+    "verified_line_coverage.json": "684ba8289cca95c32870df1e7ef8215562c8198cf170d306e8be3e4742ded1fe"
+  }
+}

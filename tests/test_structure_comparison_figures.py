@@ -454,3 +454,23 @@ def test_publication_requires_trusted_source_package(
                 out.write(b"\n# SOFTWARE TEST ONLY changed source\n")
     with pytest.raises(ValueError):
         figures.validate(result, repository=repository)
+
+
+@pytest.mark.parametrize("target", ["NUDT5", "NUDT14"])
+def test_document_panel_legend_clears_axis_title(
+    result: dict[str, Any], target: str, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    from matplotlib.figure import Figure
+
+    original = Figure.savefig
+
+    def inspect(figure: Any, *args: Any, **kwargs: Any) -> Any:
+        figure.canvas.draw()
+        renderer = figure.canvas.get_renderer()
+        legend = figure.texts[1].get_window_extent(renderer)
+        title = figure.axes[0].title.get_window_extent(renderer)
+        assert legend.y0 > title.y1
+        return original(figure, *args, **kwargs)
+
+    monkeypatch.setattr(Figure, "savefig", inspect)
+    assert figures.render(result, target=target, document_layout=True)

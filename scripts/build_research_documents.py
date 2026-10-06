@@ -112,7 +112,7 @@ def diagnostic_figure(results: Path, output: Path) -> Path:
     axes[1].axhline(0.5, color="#888888", linestyle=":", linewidth=1)
     axes[1].set_xlabel("Seed; no best-seed selection")
     axes[1].set_ylabel("Pooled series-holdout ROC-AUC")
-    axes[1].set_title("B  Sensitivity to decoy partitions", fontsize=10)
+    axes[1].set_title("B  Series-holdout seed sensitivity", fontsize=10)
     axes[1].set_xticks(sorted({row["seed"] for row in data["seed_sensitivity"]}))
     axes[1].legend(frameon=False, fontsize=8, loc="center right")
     for ax in axes:

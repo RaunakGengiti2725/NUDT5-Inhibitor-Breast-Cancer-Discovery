@@ -1,0 +1,27 @@
+{
+  "ediascorer": {
+    "url": "https://www.zbh.uni-hamburg.de/en/forschung/amd/software/ediascorer.html",
+    "retrieved_utc": "2026-10-06T00:59:00.036107+00:00",
+    "sha256": "810f5e1bc65467cb29878db8bd0acbd401e4447a915e141a3a5e19e0b8580213",
+    "archive": "ediascorer.html.gz",
+    "archive_sha256": "ddd7b97359614bdad946fa315e491de8576502fc0a2a68baeb70d902e411abf1"
+  },
+  "edia-dictionary": {
+    "url": "https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_vrpt.dic/Items/_pdbx_vrpt_model_instance_density.EDIAm.html",
+    "retrieved_utc": "2026-10-06T00:59:00.136624+00:00",
+    "sha256": "737b0937a6a7e67341c82940055ce2fd4ca7968db597fb5dd14bca6fc7ee9fa6",
+    "archive": "edia-dictionary.html.gz",
+    "archive_sha256": "b4072b49cfcfb475b7ca3be460a0b96ccd40e15d1f8b786db2b6ea5f79f59350"
+  },
+  "opia-dictionary": {
+    "url": "https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_vrpt.dic/Items/_pdbx_vrpt_model_instance_density.OPIA.html",
+    "retrieved_utc": "2026-10-06T00:59:00.345597+00:00",
+    "sha256": "320b109d1c8d8652eaf770e99d5e7dac092b620e98a73aadae82a2979ba6e7af",
+    "archive": "opia-dictionary.html.gz",
+    "archive_sha256": "0e2f84f8b11a4aa470690158cfe22a416e032a0e80277f541b8e645b82a179c9"
+  },
+  "method_article_access": {
+    "url": "https://pubs.acs.org/doi/10.1021/acs.jcim.7b00391",
+    "status": "403 via webfetch; no full-text inspection; cite author documentation and wwPDB field definitions instead"
+  }
+}

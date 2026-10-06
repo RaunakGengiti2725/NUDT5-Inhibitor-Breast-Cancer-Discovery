@@ -156,6 +156,22 @@ def test_path_b_separates_figures_and_records_all_inputs_without_fitting(
     assert "frozen_inputs.json" in json.dumps(manifest["files"])
     for name, artifact in manifest["artifacts"].items():
         assert hashlib.sha256((output / name).read_bytes()).hexdigest() == artifact["sha256"]
+    for name in (
+        "repair-response.md",
+        "repair-reviews_manifest.json",
+        "diagnostic_reexpressions.json",
+        "arg51_functional_group_minima.json",
+        "withdrawn_historical_assertions.json",
+        "final_hits.csv",
+    ):
+        assert name in manifest["artifacts"]
+    assert (output / "repair-AI-R1-review.md").read_bytes() == (
+        PACKAGE / "repair/AI-R1-review.md"
+    ).read_bytes()
+    assert (output / "final_hits.csv").read_bytes() == (ROOT / "final_hits.csv").read_bytes()
+    assert "AAA CZ (occupancy 0) is outside all three" in main
+    assert "Observed source-label inclusion" in supplement
+    assert "Pairs pooled / within" in main
     scores = json.loads((output / "diagnostic_control_sources.json").read_text())
     assert len(scores["rows"]) == 45 and len(scores["methods"]) == 16
     assert (output / "laboratory_specification.md").read_bytes() == (

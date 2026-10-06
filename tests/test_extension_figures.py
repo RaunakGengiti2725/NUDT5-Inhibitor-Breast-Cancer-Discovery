@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 import pytest
-from build_extension_figures import build_figures, write_tables
+from build_extension_figures import build_figures, source_cutoff_caption, write_tables
 from pipeline import ROOT
 
 RESULTS = ROOT / "research/results"
@@ -59,3 +59,25 @@ def test_missing_results_fail_rather_than_fabricate(tmp_path: Path) -> None:
         build_figures(tmp_path, tmp_path / "out")
     with pytest.raises(FileNotFoundError):
         write_tables(tmp_path, tmp_path / "out")
+
+
+def test_source_cutoff_caption_tracks_recorded_data_not_hardcoded_auc() -> None:
+    transfer = json.loads((RESULTS / "transfer.json").read_text())
+    challenge = transfer["measured_source_challenge"]
+    text = source_cutoff_caption(challenge)
+    assert "At 1 uM, 2 of 10 are threshold-positive" in text
+    assert "Property_LR 0.5625" in text
+    challenge["threshold_sensitivity_uM"]["1.0"]["metrics"]["Property_LR"]["auc"] = 0.75
+    assert "Property_LR 0.7500" in source_cutoff_caption(challenge)
+
+
+def test_source_cutoff_caption_does_not_invent_metrics_for_empty_cohort() -> None:
+    challenge = {
+        "threshold_sensitivity_uM": {
+            str(cutoff): {"n": 0, "positives": 0, "metrics": None} for cutoff in (1.0, 10.0)
+        }
+    }
+    text = source_cutoff_caption(challenge)
+    assert text.count("0 of 0") == 2
+    assert text.count("ROC-AUC is unavailable") == 2
+    assert "1.0000" not in text

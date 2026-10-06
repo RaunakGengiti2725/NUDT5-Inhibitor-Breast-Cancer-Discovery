@@ -1,0 +1,30 @@
+{
+  "review_type": "Independent AI reviews, not human peer review; preserved verbatim",
+  "reviewed_commit": "22830642f7d33ca3319872b5ba4c513baff50154",
+  "files": {
+    "AI-R1-review.md": {
+      "provided_filename": "Path_B_adversarial_AI_review.md",
+      "sha256": "58348dc217a3ad3c939201dd095ca819a2959c4ca6f10f0f8849d7d777961bee"
+    },
+    "AI-R1-objections.json": {
+      "provided_filename": "Path_B_objections.json",
+      "sha256": "a3708cc0d7efb4a9f09a901dc6b28d07bc77113827c811c1cb31a1dfb29343c9"
+    },
+    "AI-R2-review.md": {
+      "provided_filename": "Path_B_AI_structural_review.md",
+      "sha256": "3a35a95e5400b093e4ce25bf81a2dba0ab90cd4b41747cd66942e9e5c7f49a76"
+    },
+    "AI-R2-objections.json": {
+      "provided_filename": "Path_B_AI_structural_objections.json",
+      "sha256": "0cfaf406d22f99591acce36f17c7cc2e51d4adcaeceec76e2dd6ded8027633bd"
+    },
+    "AI-R3-review.md": {
+      "provided_filename": "AI_adversarial_review.md",
+      "sha256": "ad837f145d2c26cd0ff244ad4776dadc987bab9e73de0ceb9adc4e505939d091"
+    },
+    "AI-R3-objections.json": {
+      "provided_filename": "AI_adversarial_objections.json",
+      "sha256": "61c5f502bdcdec6de07d00e4fe13ef72284a396d65a47a2913e680b899a9ce4d"
+    }
+  }
+}

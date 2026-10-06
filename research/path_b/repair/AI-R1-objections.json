@@ -1,0 +1,358 @@
+{
+  "artifact_type": "adversarial_ai_review_objections",
+  "disclaimer": "AI review, not human peer review. Not an editorial decision and not a crystallographic expert assessment.",
+  "reviewed": {
+    "repository": "RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery",
+    "commit": "22830642f7d33ca3319872b5ba4c513baff50154",
+    "tree": "da847ec8c141598974bd81f9daffd37f96d7d0b9",
+    "branch_named_by_request": "devin/1791243628-path-b-manuscript",
+    "baseline": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+    "review_package_sha256": "63a8c1f1fde68b51f0544129dda997ad3a7618b0c1043428b7a1206aed91f517",
+    "release_manifest_hashes_verified": 136,
+    "read_only": true
+  },
+  "venue": "Journal of Molecular Graphics and Modelling (conditional specialist target)",
+  "recommendation": "reject",
+  "recommendation_basis": "No arithmetic, structural or source-quotation error was found; every recomputed quantity matched. Rejection is for insufficient genuinely new scientific insight relative to the already-published compound, deposited complexes and chain-specific Arg51 interpretation, which the official JMGM scope excludes explicitly.",
+  "killer_objection_id": "O1",
+  "actual_errors_found": [],
+  "independent_recomputations_that_matched": [
+    "All 16 Table 3 pooled ROC-AUC values from stored out-of-fold scores (research/results/controls.json).",
+    "Equal_mean as the exact 0.25-weight mean of RF, GBT, SVM_RBF, Nearest_active (max abs deviation 1.1e-16).",
+    "Descriptive expected calibration error for Equal_mean: 0.06271533468760267, identical to stored.",
+    "Four W0O sites with 30 positive-occupancy heavy atoms each, from archived 8RIY/8OTV coordinates via Gemmi.",
+    "8RIY AAA Arg51 N to W0O C20 3.7556 A at occupancy 1.00; BBB Arg51 CD to C18 3.2513 A at occupancy 0.78.",
+    "AAA Arg51 CZ deposited at occupancy 0.000; report lists 3 bond, 3 angle, 1 plane outlier and 8 clashes for AAA only.",
+    "1730 residue-conformer rows, 1564 observed, 58 partial, 108 refused, 1278 atom pairs within 5 A.",
+    "Site RSCC 0.928-0.952 and RSR 0.076-0.097 from official wwPDB validation XML.",
+    "All eight paired catalytic rows and ratios, including compound 9 ratio 0.600000.",
+    "Source challenge eligibility n=10 after 11 untested and 2 overlap exclusions; censoring and cutoff AUCs.",
+    "NC5-02 = ACT-19 = Balikci compound 11; ACT-01 and ACT-02 graphs differ from authenticated TH5427/TH1713.",
+    "identity_summary.json reproduced byte-for-byte with the repository driver; 32 source-check/document tests passed."
+  ],
+  "objections": [
+    {
+      "id": "O1",
+      "title": "No demonstrated new scientific insight beyond a more careful description of a published result",
+      "category": "significance_risk",
+      "severity": "critical",
+      "killer": true,
+      "locations": [
+        "research/manuscript.md:8",
+        "research/manuscript.md:15",
+        "research/manuscript.md:17",
+        "research/manuscript.md:130",
+        "research/manuscript.md:144",
+        "research/structure_comparison/sources/PMC11089510.xml (Figure 3 caption)"
+      ],
+      "evidence": "The source publication already reports compound 9 as a dual antagonist, deposits 8RIY/8OTV, reports the paired catalytic IC50 values and states the chain-B R51 hydrophobic interaction. The revision adds all-site coverage, atom witnesses, occupancy bookkeeping, extracted RSCC/RSR and fixed map slices, and correctly declines to draw any new conclusion from them.",
+      "answerability": "nothing_currently_available",
+      "venue_consequence": "Terminal for JMGM, whose official scope excludes routine application with little new scientific insight. A data-descriptor or technical-note venue would not be blocked by it."
+    },
+    {
+      "id": "O2",
+      "title": "Label task is separable by molecular weight alone, making the diagnostic panel a property detector",
+      "category": "significance_risk",
+      "severity": "critical",
+      "locations": [
+        "research/manuscript.md:95-120",
+        "research/path_b/diagnostic_supplement.md:11",
+        "research/results/controls.json"
+      ],
+      "evidence": "Independent recomputation from compounds.csv over 45 valid unique records: source-positive MW 303.3-491.3, decoy MW 206.3-291.7, non-overlapping. Raw MW AUC 1.000; HBA and TPSA 0.998. Reported out-of-fold single-descriptor AUCs mw 0.9879, hba 0.9960, tpsa 0.9960 versus Equal_mean 0.9312.",
+      "answerability": "existing_evidence",
+      "requested_action": "State the single-descriptor separability fact in the main text instead of the weaker 'compatible with dataset composition effects' wording.",
+      "venue_consequence": "Removes any possibility of target-recognition interpretation; stating it plainly strengthens the case against publication."
+    },
+    {
+      "id": "O3",
+      "title": "Written decoy-matching criteria are contradicted by the retained data for most decoys",
+      "category": "disclosure_asymmetry",
+      "severity": "major",
+      "locations": [
+        "research/path_b/diagnostic_supplement.md:11",
+        "compounds.csv"
+      ],
+      "evidence": "Applying the historical DOCX criteria (abs dMW<50, abs dcLogP<1.0, Morgan r2/2048 Tanimoto<0.3) over retained valid graphs: only 9 of 26 decoys satisfy them against any valid source-positive, and the only positives ever matched are ACT-19 and ACT-20.",
+      "answerability": "existing_evidence",
+      "requested_action": "Report the 9-of-26 result rather than only the absence of an executed matching check.",
+      "venue_consequence": "Converts an 'unverified provenance' statement into an actively negative finding about the historical design."
+    },
+    {
+      "id": "O4",
+      "title": "Property-matched subset does not repair imbalance and should not read as a balance control",
+      "category": "significance_risk",
+      "severity": "minor",
+      "locations": [
+        "research/path_b/diagnostic_supplement.md:43",
+        "supplement Figure S2",
+        "research/figures/supplementary_results.md (nearest_property_subset)"
+      ],
+      "evidence": "On nearest_property_subset, Property_LR rises to 0.9945 while Equal_mean is 0.9280; the supplement concedes matching did not remove the imbalance.",
+      "answerability": "existing_evidence",
+      "requested_action": "Label the subset explicitly as a demonstration that the bias survives matching.",
+      "venue_consequence": "Presentation only; does not change the verdict."
+    },
+    {
+      "id": "O5",
+      "title": "Exact-scaffold grouping leaves heavy analogue leakage and severely unbalanced folds",
+      "category": "significance_risk",
+      "severity": "major",
+      "locations": [
+        "research/path_b/diagnostic_supplement.md:25",
+        "scripts/scripts/pipeline.py:410-492",
+        "research/results/controls.json"
+      ],
+      "evidence": "From stored fold assignments: 16 of 19 source-positives have Tanimoto >= 0.70 to a positive in another fold. Fold 0 holds 11 of 19 positives; other folds hold 1-3. Within-fold AUC is 1.000 for Property_LR in all five folds and for Equal_mean in four of five.",
+      "answerability": "existing_evidence",
+      "requested_action": "Quantify cross-fold analogue leakage and fold imbalance beside Table 3.",
+      "venue_consequence": "Explains method saturation and removes the split's value as a generalization probe."
+    },
+    {
+      "id": "O6",
+      "title": "Consensus collapses to chance under the only split that breaks series structure",
+      "category": "significance_risk",
+      "severity": "critical",
+      "locations": [
+        "research/results/benchmark.json (series)",
+        "supplement Figure S1A",
+        "research/path_b/diagnostic_supplement.md:25"
+      ],
+      "evidence": "Recomputed series-holdout: Equal_mean 0.5628, Nearest_active 0.3289, Property_LR 0.9980.",
+      "answerability": "existing_evidence",
+      "requested_action": "State that the consensus never outperforms the descriptor baseline in any retained design.",
+      "venue_consequence": "Eliminates any methodological-contribution argument for the consensus score."
+    },
+    {
+      "id": "O7",
+      "title": "The retrospective counterexample rests on one compound whose score is a near-neighbour artifact",
+      "category": "significance_risk",
+      "severity": "major",
+      "locations": [
+        "research/manuscript.md:93",
+        "research/results/transfer.json",
+        "research/results/selectivity.json"
+      ],
+      "evidence": "Compound 9 does have the top stored Equal_mean among six eligible non-overlapping paired compounds in both scenarios and its ratio is 0.600, but its nearest retained training compound is ACT-20 at Tanimoto 0.660, and ACT-20 is source compound 10 from the same paper. Only three of the six eligible rows have finite ratios.",
+      "answerability": "existing_evidence",
+      "requested_action": "Report the nearest-training-neighbour similarity and cohort size alongside the counterexample.",
+      "venue_consequence": "Weakens the only result the paper uses argumentatively in Section 3.2."
+    },
+    {
+      "id": "O8",
+      "title": "Source challenge is an exposed same-paper analogue set whose perfect scores track nearest-neighbour similarity",
+      "category": "significance_risk",
+      "severity": "major",
+      "locations": [
+        "research/manuscript.md:74-93",
+        "research/path_b/diagnostic_supplement.md:47-49",
+        "scripts/scripts/transfer.py:136-196",
+        "supplement Figure S4A"
+      ],
+      "evidence": "Of 23 scored source structures, 11 excluded as untested and 2 as training identity/parent overlap, leaving n=10. At 1 uM and 10 uM only 2 are threshold-positive; at 50 uM, 5. Equal_mean, Nearest_active, RF and SVM_RBF all give AUC 1.000 at every cutoff while Property_LR falls to 0.5625 at the tighter cutoffs.",
+      "answerability": "existing_evidence",
+      "requested_action": "Narrow the 'stress tests without tuning' caption to the frozen implementation and report the two-positive cohort composition in the figure.",
+      "venue_consequence": "Removes the transfer section as evidence of target recognition or generalization."
+    },
+    {
+      "id": "O9",
+      "title": "Identity and overlap conclusions are correct and remove the discovery narrative",
+      "category": "no_error",
+      "severity": "informational",
+      "locations": [
+        "research/path_b/diagnostic_supplement.md:13-15",
+        "research/path_b/source_checks/identity_summary.json",
+        "final_hits.csv"
+      ],
+      "evidence": "Independent canonicalization confirms NC5-02 = ACT-19 = compound 11 (C17H13N5O) as the only candidate overlapping the training pool, ACT-01 (C19H18Cl2N8O3, 32 heavy atoms) is not authenticated TH5427 (C20H20Cl2N8O3, 33), ACT-02 (C19H19ClN8O3) is not authenticated TH1713 (C19H21N7O3), and ACT-18 remains unparseable and unrepaired.",
+      "answerability": "existing_evidence",
+      "requested_action": "Consider marking final_hits.csv rows explicitly as withdrawn historical assertions.",
+      "venue_consequence": "None adverse; this work is a strength, and it is also why no discovery claim survives."
+    },
+    {
+      "id": "O10",
+      "title": "Identical AUCs understate per-compound instability under the authenticated-reference substitution",
+      "category": "disclosure_asymmetry",
+      "severity": "major",
+      "locations": [
+        "research/path_b/diagnostic_supplement.md:15",
+        "research/results/transfer.json (reference_sensitivity)",
+        "scripts/scripts/transfer.py:293-358"
+      ],
+      "evidence": "Scaffold-split Equal_mean AUC is 0.9311740890688259 in both scenarios, but recomputation from stored predictions shows 13 compounds change fold, ACT-02's Equal_mean moves by -0.207, and DEC-19 crosses the 0.5 threshold.",
+      "answerability": "existing_evidence",
+      "requested_action": "Report fold changes, the maximum per-compound score change and threshold crossings next to the unchanged AUC.",
+      "venue_consequence": "Unaddressed, it overstates robustness to the pipeline's own corrected inputs."
+    },
+    {
+      "id": "O11",
+      "title": "Pooled Table 3 omits the conditional interval the package already computed",
+      "category": "disclosure_asymmetry",
+      "severity": "minor",
+      "locations": [
+        "research/manuscript.md:95-120",
+        "research/results/controls.json (paired_auc_difference)"
+      ],
+      "evidence": "Stored paired conditional interval for Equal_mean minus Property_LR is [-0.2464, 0.0000], point difference -0.0486, 1000 draws, no refitting.",
+      "answerability": "existing_evidence",
+      "requested_action": "Report the interval in the main text with its stated non-population caveat.",
+      "venue_consequence": "Presentation only."
+    },
+    {
+      "id": "O12",
+      "title": "Descriptive ECE and grouped conformal output remain presentationally suggestive of calibration and coverage",
+      "category": "disclosure_asymmetry",
+      "severity": "minor",
+      "locations": [
+        "research/path_b/diagnostic_supplement.md:35",
+        "research/path_b/diagnostic_supplement.md:41",
+        "scripts/scripts/controls.py:179-202"
+      ],
+      "evidence": "Verified that calibration_bins computes only a descriptive bin-weighted ECE (0.0627 for Equal_mean, reproduced) with no trained fused-score calibration; the text states this, but reliability and nominal-versus-empirical coverage displays invite the disclaimed inference on 45 unverified-label molecules.",
+      "answerability": "existing_evidence",
+      "requested_action": "Retitle the displays to descriptive terms or move them to numerical files only.",
+      "venue_consequence": "Presentation only."
+    },
+    {
+      "id": "O13",
+      "title": "Favourable report metrics are interpreted while the unfavourable per-atom fields from the same report row are set aside as undefined",
+      "category": "disclosure_asymmetry",
+      "severity": "major",
+      "locations": [
+        "research/manuscript.md:8",
+        "research/manuscript.md:29-31",
+        "research/structure_comparison/model_support/README.md:93-99",
+        "research/structure_comparison/model_support/README.md:172"
+      ],
+      "evidence": "Read directly from official validation XML: W0O EDIAm/OPIA are 0.412/16.67 (8RIY AAA 301), 0.410/26.67 (8RIY BBB 301), 0.804/83.33 (8OTV A 301), 0.728/60.00 (8OTV B 302). Arg51 residues: EDIAm 0.199 / OPIA 18.18 with RSCC 0.894 (AAA) and EDIAm 0.413 / OPIA 45.45 with RSCC 0.901 (BBB). The abstract and supplement table report only RSCC 0.928-0.952 and RSR 0.076-0.097; the values appear unreduced only in the repository README.",
+      "answerability": "specified_new_analysis",
+      "specified_new_analysis": "Retrieve and cite the published EDIA/EDIAm and OPIA definitions from the primary methods literature, then report all four report fields for all four W0O sites and both Arg51 residues in the manuscript, or drop all report-derived metrics and rely only on coordinates. No new computation on the structures is required.",
+      "venue_consequence": "Left unaddressed, an honest asymmetry reads to referees as selective reporting on exactly the local-support question the paper is about."
+    },
+    {
+      "id": "O14",
+      "title": "Chain-specific structural claims are accurate and withstood independent recomputation",
+      "category": "no_error",
+      "severity": "informational",
+      "locations": [
+        "research/manuscript.md:8",
+        "research/manuscript.md:49-72",
+        "research/manuscript.md:59"
+      ],
+      "evidence": "Independent Gemmi recomputation and direct validation-XML reading confirm the four sites, both Arg51 witnesses and occupancies, cross-chain minima above 14 A, AAA CZ occupancy 0.000, the AAA-only outlier and clash listing, the absence of BBB Arg51 outliers, and that neither witness is a guanidinium atom.",
+      "answerability": "existing_evidence",
+      "venue_consequence": "None adverse."
+    },
+    {
+      "id": "O15",
+      "title": "Site-selection rule is retrospective and unregistered",
+      "category": "significance_risk",
+      "severity": "major",
+      "locations": [
+        "research/manuscript.md:29",
+        "research/path_b/diagnostic_supplement.md:29"
+      ],
+      "evidence": "The rule was set after inspecting reports and was not preregistered; extension_design.md is explicitly not external preregistration, and code inspection cannot certify the absence of earlier exploration.",
+      "answerability": "nothing_currently_available",
+      "venue_consequence": "No artifact can retire this for the present dataset; it permanently limits the model-support section. Its absence is not treated as evidence of misconduct."
+    },
+    {
+      "id": "O16",
+      "title": "Map work is bounded below the threshold of a modelling contribution",
+      "category": "significance_risk",
+      "severity": "critical",
+      "locations": [
+        "research/manuscript.md:31",
+        "research/manuscript.md:134",
+        "supplement Figures S7-S10",
+        "gap item G-S4"
+      ],
+      "evidence": "Precomputed model-dependent PDBe maps, fixed slices, trilinear sampling, no omit or polder maps, no rerefinement, no expert 3-D review, no independent placement validation, no recorded map-generation version. Disclosures are complete and correct.",
+      "answerability": "specified_new_analysis",
+      "specified_new_analysis": "Omit or polder map computation at the four W0O sites with local rerefinement and independent placement assessment, plus the symmetric EDIAm/OPIA reporting of O13. This is a crystallographic reanalysis of public data, not the Path A rebuild and not a laboratory experiment.",
+      "venue_consequence": "Without it the structural section cannot be presented as a modelling contribution at this venue."
+    },
+    {
+      "id": "O17",
+      "title": "Paired-ratio section is correct, correctly limited, and scientifically close to empty",
+      "category": "significance_risk",
+      "severity": "major",
+      "locations": [
+        "research/manuscript.md:33-37",
+        "research/manuscript.md:74-93",
+        "research/manuscript.md:136"
+      ],
+      "evidence": "All eight rows and the 0.600 ratio reproduce. Archived source text confirms 20-minute NUDT5 and 60-minute NUDT14 protocols, shared 500 nM TH5427 normalization, and the unresolved triplicate-sets versus two-biological-replicates wording. Raw replicate data are unavailable, so no ratio interval or covariance can exist.",
+      "answerability": "nothing_currently_available",
+      "venue_consequence": "Only the authors' raw replicate data or new measurements could change this; the section remains an annotated restatement of a published table."
+    },
+    {
+      "id": "O18",
+      "title": "Endpoint separation is handled correctly",
+      "category": "no_error",
+      "severity": "informational",
+      "locations": [
+        "research/path_b/diagnostic_supplement.md:53",
+        "research/path_b/source_checks/source_claims.json"
+      ],
+      "evidence": "Catalytic IC50, SPR KD (approximately 250 nM NUDT5 and 400 nM NUDT14 for compound 9, verified in the source figure captions), cellular engagement EC50, Kinobead apparent affinity and viability are kept distinct; NUDT14 Leu107 is not mapped onto NUDT5 Arg51.",
+      "answerability": "existing_evidence",
+      "venue_consequence": "None adverse."
+    },
+    {
+      "id": "O19",
+      "title": "Software and provenance verification is extensive and carries no biological weight",
+      "category": "disclosure_asymmetry",
+      "severity": "minor",
+      "locations": [
+        "research/manuscript.md:45",
+        "research/path_b/diagnostic_supplement.md:59",
+        "revision summary verified list"
+      ],
+      "evidence": "Reproduced identity_summary.json byte-for-byte, verified 136 release hashes and the package SHA256, and ran 32 source-check and document tests, all passing. The manuscript already states tests verify computational behaviour only.",
+      "answerability": "existing_evidence",
+      "venue_consequence": "Given no weight in the recommendation; a package of this size can create an unearned impression of validation."
+    },
+    {
+      "id": "O20",
+      "title": "Unresolved author-owned and journal-specific items make the revision non-submittable independently of its science",
+      "category": "significance_risk",
+      "severity": "major",
+      "locations": [
+        "research/manuscript.md:3",
+        "research/manuscript.md:140",
+        "research/path_b/diagnostic_supplement.md:63"
+      ],
+      "evidence": "Affiliation, funding, COI, CRediT, approvals, rights, prior-version and submission history, acknowledgments, reviewer conflicts, complete AI disclosure and Nikhil Srinivasan's retained contributions and authorship remain open and are correctly marked author-owned. The JMGM author guide returned 403 under bounded access.",
+      "answerability": "nothing_currently_available",
+      "venue_consequence": "Prevents submission regardless of the scientific verdict. Inaccessibility of the guide or of the Nguyen full text is not treated as evidence against any publication."
+    }
+  ],
+  "counts": {
+    "objections_total": 20,
+    "by_category": {
+      "disclosure_asymmetry": 6,
+      "no_error": 3,
+      "significance_risk": 11
+    },
+    "by_answerability": {
+      "existing_evidence": 14,
+      "nothing_currently_available": 4,
+      "specified_new_analysis": 2
+    }
+  },
+  "not_requested_of_authors": [
+    "Path A rebuild, new library, replacement decoy cohort, docking, molecular dynamics, deep learning.",
+    "Reconstruction of the unavailable historical 18,412-compound library.",
+    "Any new biological experiment or prospective validation as a condition of fixing this paper.",
+    "Statistics treating crystal copies as independent replicates."
+  ],
+  "reviewer_limitations": [
+    "No expert 3-D map review, rerefinement or independent crystallographic placement assessment was performed.",
+    "EDIAm/OPIA definitions were not re-derived from primary methods literature.",
+    "JMGM author guide and Nguyen full text were not accessible; access failure is not treated as disproof.",
+    "A 32-test subset was run, not the full suite; all test results are software evidence only.",
+    "No model was fitted at any point in this review.",
+    "Editorial fit is inferred from the official published scope, not an editorial decision."
+  ]
+}

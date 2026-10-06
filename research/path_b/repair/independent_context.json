@@ -1,0 +1,158 @@
+{
+  "scope": "Frozen evidence arithmetic and graph checks, not biological validation or new fitting.",
+  "w0o_smiles_descriptors_matched": 4,
+  "source_graph": "CN1CCC(n2nc(-c3ccc(Oc4ccccc4)cc3)c3c(N)ncnc32)CC1",
+  "site_checks": [
+    {
+      "pdb": "8RIY",
+      "label_chain": "C",
+      "author_chain": "AAA",
+      "author_residue": "301",
+      "heavy_atom_name_element_match": true,
+      "heavy_atom_count": 30,
+      "all_occupancy_one": true,
+      "alternate": "."
+    },
+    {
+      "pdb": "8RIY",
+      "label_chain": "D",
+      "author_chain": "BBB",
+      "author_residue": "301",
+      "heavy_atom_name_element_match": true,
+      "heavy_atom_count": 30,
+      "all_occupancy_one": true,
+      "alternate": "."
+    },
+    {
+      "pdb": "8OTV",
+      "label_chain": "C",
+      "author_chain": "A",
+      "author_residue": "301",
+      "heavy_atom_name_element_match": true,
+      "heavy_atom_count": 30,
+      "all_occupancy_one": true,
+      "alternate": "."
+    },
+    {
+      "pdb": "8OTV",
+      "label_chain": "F",
+      "author_chain": "B",
+      "author_residue": "302",
+      "heavy_atom_name_element_match": true,
+      "heavy_atom_count": 30,
+      "all_occupancy_one": true,
+      "alternate": "."
+    }
+  ],
+  "full_valid_set_n": 45,
+  "positive_source_labels": 19,
+  "frozen_auc_checks": [
+    {
+      "name": "Constant_0_5",
+      "independent_pair_count_auc": 0.5,
+      "stored_auc": 0.5
+    },
+    {
+      "name": "Equal_mean",
+      "independent_pair_count_auc": 0.9311740890688259,
+      "stored_auc": 0.9311740890688259
+    },
+    {
+      "name": "Fingerprint_LR",
+      "independent_pair_count_auc": 0.917004048582996,
+      "stored_auc": 0.917004048582996
+    },
+    {
+      "name": "GBT",
+      "independent_pair_count_auc": 0.8431174089068826,
+      "stored_auc": 0.8431174089068826
+    },
+    {
+      "name": "Mean_without_GBT",
+      "independent_pair_count_auc": 0.9311740890688259,
+      "stored_auc": 0.9311740890688259
+    },
+    {
+      "name": "Mean_without_Nearest_active",
+      "independent_pair_count_auc": 0.9473684210526315,
+      "stored_auc": 0.9473684210526315
+    },
+    {
+      "name": "Mean_without_RF",
+      "independent_pair_count_auc": 0.9230769230769231,
+      "stored_auc": 0.923076923076923
+    },
+    {
+      "name": "Mean_without_SVM_RBF",
+      "independent_pair_count_auc": 0.9271255060728745,
+      "stored_auc": 0.9271255060728745
+    },
+    {
+      "name": "Nearest_active",
+      "independent_pair_count_auc": 0.9129554655870445,
+      "stored_auc": 0.9129554655870445
+    },
+    {
+      "name": "Property_LR",
+      "independent_pair_count_auc": 0.979757085020243,
+      "stored_auc": 0.979757085020243
+    },
+    {
+      "name": "RF",
+      "independent_pair_count_auc": 0.9412955465587044,
+      "stored_auc": 0.9412955465587044
+    },
+    {
+      "name": "SVM_RBF",
+      "independent_pair_count_auc": 0.9595141700404858,
+      "stored_auc": 0.9595141700404859
+    },
+    {
+      "name": "Tanimoto_kNN",
+      "independent_pair_count_auc": 0.9331983805668016,
+      "stored_auc": 0.9331983805668017
+    },
+    {
+      "name": "Train_prevalence",
+      "independent_pair_count_auc": 0.24595141700404857,
+      "stored_auc": 0.24595141700404857
+    },
+    {
+      "name": "clogp_only_lr",
+      "independent_pair_count_auc": 0.7894736842105263,
+      "stored_auc": 0.7894736842105264
+    },
+    {
+      "name": "fsp3_only_lr",
+      "independent_pair_count_auc": 0.7510121457489879,
+      "stored_auc": 0.7510121457489879
+    },
+    {
+      "name": "hba_only_lr",
+      "independent_pair_count_auc": 0.9959514170040485,
+      "stored_auc": 0.9959514170040485
+    },
+    {
+      "name": "hbd_only_lr",
+      "independent_pair_count_auc": 0.7176113360323887,
+      "stored_auc": 0.7176113360323887
+    },
+    {
+      "name": "mw_only_lr",
+      "independent_pair_count_auc": 0.9878542510121457,
+      "stored_auc": 0.9878542510121457
+    },
+    {
+      "name": "nrb_only_lr",
+      "independent_pair_count_auc": 0.8704453441295547,
+      "stored_auc": 0.8704453441295547
+    },
+    {
+      "name": "tpsa_only_lr",
+      "independent_pair_count_auc": 0.9959514170040485,
+      "stored_auc": 0.9959514170040487
+    }
+  ],
+  "equal_mean_component_arithmetic_all_45": true,
+  "compound9_ratio_of_reported_means": 0.6
+}

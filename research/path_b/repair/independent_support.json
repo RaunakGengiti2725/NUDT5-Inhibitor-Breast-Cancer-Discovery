@@ -1,0 +1,947 @@
+{
+  "map_checks": [
+    {
+      "pdb": "8OTV",
+      "kind": "EDS",
+      "samples": 274,
+      "maximum_abs_standardized_discrepancy": 2.4235252293891563e-07,
+      "mean_matches": true,
+      "sd_matches": true,
+      "grid_dimensions": [
+        60,
+        100,
+        120
+      ],
+      "cell_axes_A_per_grid_interval": [
+        0.8541666666666666,
+        0.90967,
+        0.900825
+      ]
+    },
+    {
+      "pdb": "8OTV",
+      "kind": "difference",
+      "samples": 274,
+      "maximum_abs_standardized_discrepancy": 1.3000200782542493e-07,
+      "mean_matches": true,
+      "sd_matches": true,
+      "grid_dimensions": [
+        60,
+        100,
+        120
+      ],
+      "cell_axes_A_per_grid_interval": [
+        0.8541666666666666,
+        0.90967,
+        0.900825
+      ]
+    },
+    {
+      "pdb": "8RIY",
+      "kind": "EDS",
+      "samples": 362,
+      "maximum_abs_standardized_discrepancy": 2.540568391218301e-07,
+      "mean_matches": true,
+      "sd_matches": true,
+      "grid_dimensions": [
+        48,
+        48,
+        450
+      ],
+      "cell_axes_A_per_grid_interval": [
+        1.2626041666666665,
+        1.2626041666666665,
+        1.1169066666666667
+      ]
+    },
+    {
+      "pdb": "8RIY",
+      "kind": "difference",
+      "samples": 362,
+      "maximum_abs_standardized_discrepancy": 1.681542749487619e-07,
+      "mean_matches": true,
+      "sd_matches": true,
+      "grid_dimensions": [
+        48,
+        48,
+        450
+      ],
+      "cell_axes_A_per_grid_interval": [
+        1.2626041666666665,
+        1.2626041666666665,
+        1.1169066666666667
+      ]
+    }
+  ],
+  "focus_atoms": [
+    {
+      "chain": "AAA",
+      "atom": "N",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 2.4318834812711345,
+      "archived_fullcell_sd_value": 2.4318834984425948
+    },
+    {
+      "chain": "AAA",
+      "atom": "CA",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 2.5287719658028793,
+      "archived_fullcell_sd_value": 2.5287719670707625
+    },
+    {
+      "chain": "AAA",
+      "atom": "C",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 2.7120040060117256,
+      "archived_fullcell_sd_value": 2.7120040265772127
+    },
+    {
+      "chain": "AAA",
+      "atom": "O",
+      "occupancy": 0.77,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 1.8356411691339476,
+      "archived_fullcell_sd_value": 1.8356410367762084
+    },
+    {
+      "chain": "AAA",
+      "atom": "CB",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 1.7668553148551547,
+      "archived_fullcell_sd_value": 1.7668553317568965
+    },
+    {
+      "chain": "AAA",
+      "atom": "CG",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 1.2996889485951701,
+      "archived_fullcell_sd_value": 1.2996889705732342
+    },
+    {
+      "chain": "AAA",
+      "atom": "CD",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 1.7421953289006025,
+      "archived_fullcell_sd_value": 1.7421953699916466
+    },
+    {
+      "chain": "AAA",
+      "atom": "NE",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 1.5573075455701109,
+      "archived_fullcell_sd_value": 1.5573076294914194
+    },
+    {
+      "chain": "AAA",
+      "atom": "NH1",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 1.3205350521301498,
+      "archived_fullcell_sd_value": 1.3205351587958898
+    },
+    {
+      "chain": "AAA",
+      "atom": "NH2",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 0.15788840276232297,
+      "archived_fullcell_sd_value": 0.15788841592140776
+    },
+    {
+      "chain": "BBB",
+      "atom": "N",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 3.2839493467541,
+      "archived_fullcell_sd_value": 3.283949571431633
+    },
+    {
+      "chain": "BBB",
+      "atom": "CA",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 2.8400755095752515,
+      "archived_fullcell_sd_value": 2.840075448072505
+    },
+    {
+      "chain": "BBB",
+      "atom": "C",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 2.898937886989322,
+      "archived_fullcell_sd_value": 2.8989380204504935
+    },
+    {
+      "chain": "BBB",
+      "atom": "O",
+      "occupancy": 0.97,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 1.6586791482510537,
+      "archived_fullcell_sd_value": 1.6586791772449718
+    },
+    {
+      "chain": "BBB",
+      "atom": "CB",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 2.085308916815764,
+      "archived_fullcell_sd_value": 2.085308881507095
+    },
+    {
+      "chain": "BBB",
+      "atom": "CG",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 1.6872956507093857,
+      "archived_fullcell_sd_value": 1.687295738098153
+    },
+    {
+      "chain": "BBB",
+      "atom": "CD",
+      "occupancy": 0.78,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 1.2705808177317413,
+      "archived_fullcell_sd_value": 1.27058095148635
+    },
+    {
+      "chain": "BBB",
+      "atom": "NE",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 1.970141800435621,
+      "archived_fullcell_sd_value": 1.970141769651409
+    },
+    {
+      "chain": "BBB",
+      "atom": "CZ",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 2.155975354803441,
+      "archived_fullcell_sd_value": 2.1559753870982026
+    },
+    {
+      "chain": "BBB",
+      "atom": "NH1",
+      "occupancy": 1.0,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 1.1134196295214,
+      "archived_fullcell_sd_value": 1.1134196703579702
+    },
+    {
+      "chain": "BBB",
+      "atom": "NH2",
+      "occupancy": 0.99,
+      "map": "EDS",
+      "manual_fullcell_sd_value": 0.29964638121594794,
+      "archived_fullcell_sd_value": 0.2996463727347294
+    },
+    {
+      "chain": "AAA",
+      "atom": "N",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.014713281720645618,
+      "archived_fullcell_sd_value": 0.01471328113622759
+    },
+    {
+      "chain": "AAA",
+      "atom": "CA",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.4801033312689942,
+      "archived_fullcell_sd_value": 0.4801033382234838
+    },
+    {
+      "chain": "AAA",
+      "atom": "C",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.7810501657643084,
+      "archived_fullcell_sd_value": 0.7810501506440453
+    },
+    {
+      "chain": "AAA",
+      "atom": "O",
+      "occupancy": 0.77,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.5876989441480607,
+      "archived_fullcell_sd_value": 0.5876989463807744
+    },
+    {
+      "chain": "AAA",
+      "atom": "CB",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 1.1790529664937703,
+      "archived_fullcell_sd_value": 1.1790529708475312
+    },
+    {
+      "chain": "AAA",
+      "atom": "CG",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.597157339320535,
+      "archived_fullcell_sd_value": 0.5971573311436658
+    },
+    {
+      "chain": "AAA",
+      "atom": "CD",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.49431850402074584,
+      "archived_fullcell_sd_value": 0.4943185093132101
+    },
+    {
+      "chain": "AAA",
+      "atom": "NE",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.21520076696782914,
+      "archived_fullcell_sd_value": 0.21520077144747024
+    },
+    {
+      "chain": "AAA",
+      "atom": "NH1",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 2.051766462239872,
+      "archived_fullcell_sd_value": 2.0517664433807927
+    },
+    {
+      "chain": "AAA",
+      "atom": "NH2",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.1554418522435577,
+      "archived_fullcell_sd_value": 0.15544185306535727
+    },
+    {
+      "chain": "BBB",
+      "atom": "N",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 2.4658212578346324,
+      "archived_fullcell_sd_value": 2.4658212668729496
+    },
+    {
+      "chain": "BBB",
+      "atom": "CA",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 1.7037529795837685,
+      "archived_fullcell_sd_value": 1.7037529385549435
+    },
+    {
+      "chain": "BBB",
+      "atom": "C",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.7456807815680304,
+      "archived_fullcell_sd_value": 0.7456808128710494
+    },
+    {
+      "chain": "BBB",
+      "atom": "O",
+      "occupancy": 0.97,
+      "map": "difference",
+      "manual_fullcell_sd_value": -0.5600606911548853,
+      "archived_fullcell_sd_value": -0.5600606796772859
+    },
+    {
+      "chain": "BBB",
+      "atom": "CB",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 1.9674965962178843,
+      "archived_fullcell_sd_value": 1.967496535795644
+    },
+    {
+      "chain": "BBB",
+      "atom": "CG",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.7344843470172668,
+      "archived_fullcell_sd_value": 0.7344843431541982
+    },
+    {
+      "chain": "BBB",
+      "atom": "CD",
+      "occupancy": 0.78,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.4709777332507589,
+      "archived_fullcell_sd_value": 0.4709777488330492
+    },
+    {
+      "chain": "BBB",
+      "atom": "NE",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.5889845301030832,
+      "archived_fullcell_sd_value": 0.5889845192251139
+    },
+    {
+      "chain": "BBB",
+      "atom": "CZ",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.1775405702435647,
+      "archived_fullcell_sd_value": 0.177540576226417
+    },
+    {
+      "chain": "BBB",
+      "atom": "NH1",
+      "occupancy": 1.0,
+      "map": "difference",
+      "manual_fullcell_sd_value": 0.7505971874754418,
+      "archived_fullcell_sd_value": 0.7505971579701863
+    },
+    {
+      "chain": "BBB",
+      "atom": "NH2",
+      "occupancy": 0.99,
+      "map": "difference",
+      "manual_fullcell_sd_value": -1.272612771780309,
+      "archived_fullcell_sd_value": -1.2726128406138961
+    }
+  ],
+  "slice_visibility": [
+    {
+      "chain": "AAA",
+      "atom": "N",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 1.1755999999999958,
+        "XZ": 2.860000000000001,
+        "XY": 0.46359999999999957
+      },
+      "visible_planes": [
+        "XY"
+      ]
+    },
+    {
+      "chain": "AAA",
+      "atom": "CA",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 0.42559999999999576,
+        "XZ": 1.8130000000000006,
+        "XY": 1.1985999999999999
+      },
+      "visible_planes": [
+        "YZ"
+      ]
+    },
+    {
+      "chain": "AAA",
+      "atom": "C",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 1.4176000000000002,
+        "XZ": 1.1260000000000012,
+        "XY": 2.1465999999999994
+      },
+      "visible_planes": []
+    },
+    {
+      "chain": "AAA",
+      "atom": "O",
+      "occupancy": 0.77,
+      "abs_plane_offsets_A": {
+        "YZ": 2.607599999999998,
+        "XZ": 1.0170000000000012,
+        "XY": 1.7895999999999992
+      },
+      "visible_planes": []
+    },
+    {
+      "chain": "AAA",
+      "atom": "CB",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 0.30040000000000333,
+        "XZ": 0.8800000000000008,
+        "XY": 0.2275999999999998
+      },
+      "visible_planes": [
+        "YZ",
+        "XY"
+      ]
+    },
+    {
+      "chain": "AAA",
+      "atom": "CG",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 0.6006,
+        "XZ": 0.09700000000000131,
+        "XY": 0.7164000000000001
+      },
+      "visible_planes": [
+        "YZ",
+        "XZ",
+        "XY"
+      ]
+    },
+    {
+      "chain": "AAA",
+      "atom": "CD",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 0.186399999999999,
+        "XZ": 0.7959999999999985,
+        "XY": 1.6623999999999999
+      },
+      "visible_planes": [
+        "YZ"
+      ]
+    },
+    {
+      "chain": "AAA",
+      "atom": "NE",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 1.2653999999999996,
+        "XZ": 1.5429999999999984,
+        "XY": 1.0324000000000009
+      },
+      "visible_planes": []
+    },
+    {
+      "chain": "AAA",
+      "atom": "CZ",
+      "occupancy": 0.0,
+      "abs_plane_offsets_A": {
+        "YZ": 1.8034000000000034,
+        "XZ": 2.360999999999999,
+        "XY": 0.9374000000000002
+      },
+      "visible_planes": []
+    },
+    {
+      "chain": "AAA",
+      "atom": "NH1",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 1.5523999999999987,
+        "XZ": 3.0109999999999983,
+        "XY": 2.7683999999999997
+      },
+      "visible_planes": []
+    },
+    {
+      "chain": "AAA",
+      "atom": "NH2",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 2.922400000000003,
+        "XZ": 2.4429999999999987,
+        "XY": 0.35359999999999925
+      },
+      "visible_planes": [
+        "XY"
+      ]
+    },
+    {
+      "chain": "BBB",
+      "atom": "N",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 0.28845454545454885,
+        "XZ": 2.818999999999999,
+        "XY": 1.805090909090909
+      },
+      "visible_planes": [
+        "YZ"
+      ]
+    },
+    {
+      "chain": "BBB",
+      "atom": "CA",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 0.6755454545454498,
+        "XZ": 1.6950000000000003,
+        "XY": 1.8310909090909089
+      },
+      "visible_planes": [
+        "YZ"
+      ]
+    },
+    {
+      "chain": "BBB",
+      "atom": "C",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 0.776545454545456,
+        "XZ": 1.1759999999999984,
+        "XY": 3.261090909090909
+      },
+      "visible_planes": []
+    },
+    {
+      "chain": "BBB",
+      "atom": "O",
+      "occupancy": 0.97,
+      "abs_plane_offsets_A": {
+        "YZ": 0.2514545454545498,
+        "XZ": 1.1879999999999988,
+        "XY": 3.974090909090909
+      },
+      "visible_planes": [
+        "YZ"
+      ]
+    },
+    {
+      "chain": "BBB",
+      "atom": "CB",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 0.23554545454545206,
+        "XZ": 0.5990000000000002,
+        "XY": 0.858090909090909
+      },
+      "visible_planes": [
+        "YZ",
+        "XZ"
+      ]
+    },
+    {
+      "chain": "BBB",
+      "atom": "CG",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 0.42754545454545223,
+        "XZ": 1.006999999999998,
+        "XY": 0.5909090909090908
+      },
+      "visible_planes": [
+        "YZ",
+        "XY"
+      ]
+    },
+    {
+      "chain": "BBB",
+      "atom": "CD",
+      "occupancy": 0.78,
+      "abs_plane_offsets_A": {
+        "YZ": 0.3534545454545466,
+        "XZ": 0.1559999999999988,
+        "XY": 1.5639090909090907
+      },
+      "visible_planes": [
+        "YZ",
+        "XZ"
+      ]
+    },
+    {
+      "chain": "BBB",
+      "atom": "NE",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 0.1295454545454504,
+        "XZ": 1.211000000000002,
+        "XY": 1.5689090909090906
+      },
+      "visible_planes": [
+        "YZ"
+      ]
+    },
+    {
+      "chain": "BBB",
+      "atom": "CZ",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 0.3044545454545471,
+        "XZ": 2.1590000000000025,
+        "XY": 2.394909090909091
+      },
+      "visible_planes": [
+        "YZ"
+      ]
+    },
+    {
+      "chain": "BBB",
+      "atom": "NH1",
+      "occupancy": 1.0,
+      "abs_plane_offsets_A": {
+        "YZ": 1.247454545454545,
+        "XZ": 1.8880000000000017,
+        "XY": 3.2819090909090916
+      },
+      "visible_planes": []
+    },
+    {
+      "chain": "BBB",
+      "atom": "NH2",
+      "occupancy": 0.99,
+      "abs_plane_offsets_A": {
+        "YZ": 0.20054545454545547,
+        "XZ": 3.381999999999998,
+        "XY": 2.3289090909090913
+      },
+      "visible_planes": [
+        "YZ"
+      ]
+    }
+  ],
+  "radius_sensitivity": [
+    {
+      "site": "8OTV:model1:C:A:301",
+      "radius_A": 3.5,
+      "shared_rows": 4,
+      "alternate_rows": 0,
+      "partial_rows": 0,
+      "arg51_rows": []
+    },
+    {
+      "site": "8OTV:model1:C:A:301",
+      "radius_A": 4.0,
+      "shared_rows": 11,
+      "alternate_rows": 0,
+      "partial_rows": 0,
+      "arg51_rows": []
+    },
+    {
+      "site": "8OTV:model1:C:A:301",
+      "radius_A": 4.5,
+      "shared_rows": 13,
+      "alternate_rows": 0,
+      "partial_rows": 0,
+      "arg51_rows": []
+    },
+    {
+      "site": "8OTV:model1:C:A:301",
+      "radius_A": 5.0,
+      "shared_rows": 15,
+      "alternate_rows": 0,
+      "partial_rows": 0,
+      "arg51_rows": []
+    },
+    {
+      "site": "8OTV:model1:F:B:302",
+      "radius_A": 3.5,
+      "shared_rows": 4,
+      "alternate_rows": 0,
+      "partial_rows": 0,
+      "arg51_rows": []
+    },
+    {
+      "site": "8OTV:model1:F:B:302",
+      "radius_A": 4.0,
+      "shared_rows": 8,
+      "alternate_rows": 0,
+      "partial_rows": 0,
+      "arg51_rows": []
+    },
+    {
+      "site": "8OTV:model1:F:B:302",
+      "radius_A": 4.5,
+      "shared_rows": 11,
+      "alternate_rows": 0,
+      "partial_rows": 0,
+      "arg51_rows": []
+    },
+    {
+      "site": "8OTV:model1:F:B:302",
+      "radius_A": 5.0,
+      "shared_rows": 12,
+      "alternate_rows": 0,
+      "partial_rows": 0,
+      "arg51_rows": []
+    },
+    {
+      "site": "8RIY:model1:C:AAA:301",
+      "radius_A": 3.5,
+      "shared_rows": 7,
+      "alternate_rows": 0,
+      "partial_rows": 0,
+      "arg51_rows": []
+    },
+    {
+      "site": "8RIY:model1:C:AAA:301",
+      "radius_A": 4.0,
+      "shared_rows": 9,
+      "alternate_rows": 0,
+      "partial_rows": 1,
+      "arg51_rows": [
+        {
+          "chain": "AAA",
+          "distance_A": 3.7555613428620767
+        }
+      ]
+    },
+    {
+      "site": "8RIY:model1:C:AAA:301",
+      "radius_A": 4.5,
+      "shared_rows": 14,
+      "alternate_rows": 0,
+      "partial_rows": 1,
+      "arg51_rows": [
+        {
+          "chain": "AAA",
+          "distance_A": 3.7555613428620767
+        }
+      ]
+    },
+    {
+      "site": "8RIY:model1:C:AAA:301",
+      "radius_A": 5.0,
+      "shared_rows": 15,
+      "alternate_rows": 0,
+      "partial_rows": 1,
+      "arg51_rows": [
+        {
+          "chain": "AAA",
+          "distance_A": 3.7555613428620767
+        }
+      ]
+    },
+    {
+      "site": "8RIY:model1:D:BBB:301",
+      "radius_A": 3.5,
+      "shared_rows": 8,
+      "alternate_rows": 0,
+      "partial_rows": 0,
+      "arg51_rows": [
+        {
+          "chain": "BBB",
+          "distance_A": 3.2512725201065518
+        }
+      ]
+    },
+    {
+      "site": "8RIY:model1:D:BBB:301",
+      "radius_A": 4.0,
+      "shared_rows": 12,
+      "alternate_rows": 0,
+      "partial_rows": 0,
+      "arg51_rows": [
+        {
+          "chain": "BBB",
+          "distance_A": 3.2512725201065518
+        }
+      ]
+    },
+    {
+      "site": "8RIY:model1:D:BBB:301",
+      "radius_A": 4.5,
+      "shared_rows": 15,
+      "alternate_rows": 0,
+      "partial_rows": 0,
+      "arg51_rows": [
+        {
+          "chain": "BBB",
+          "distance_A": 3.2512725201065518
+        }
+      ]
+    },
+    {
+      "site": "8RIY:model1:D:BBB:301",
+      "radius_A": 5.0,
+      "shared_rows": 16,
+      "alternate_rows": 0,
+      "partial_rows": 0,
+      "arg51_rows": [
+        {
+          "chain": "BBB",
+          "distance_A": 3.2512725201065518
+        }
+      ]
+    }
+  ],
+  "alternate_residue_minima": [
+    {
+      "site": "8OTV:model1:C:A:301",
+      "chain": "B",
+      "label_seq": "48",
+      "auth_seq": "47",
+      "conformer": "A",
+      "distance_A": 14.19471750335314
+    },
+    {
+      "site": "8OTV:model1:C:A:301",
+      "chain": "B",
+      "label_seq": "48",
+      "auth_seq": "47",
+      "conformer": "B",
+      "distance_A": 13.231358735972659
+    },
+    {
+      "site": "8OTV:model1:F:B:302",
+      "chain": "B",
+      "label_seq": "48",
+      "auth_seq": "47",
+      "conformer": "A",
+      "distance_A": 27.481561909760515
+    },
+    {
+      "site": "8OTV:model1:F:B:302",
+      "chain": "B",
+      "label_seq": "48",
+      "auth_seq": "47",
+      "conformer": "B",
+      "distance_A": 27.48407646256283
+    }
+  ],
+  "leu107": [
+    {
+      "site": "8OTV:model1:C:A:301",
+      "chain": "A",
+      "residue": "LEU",
+      "label_seq": "108",
+      "distance_A": 17.27001661840544,
+      "witnesses": [
+        [
+          "CD2",
+          "C21"
+        ]
+      ]
+    },
+    {
+      "site": "8OTV:model1:C:A:301",
+      "chain": "B",
+      "residue": "LEU",
+      "label_seq": "108",
+      "distance_A": 3.609411586394658,
+      "witnesses": [
+        [
+          "CD2",
+          "C15"
+        ]
+      ]
+    },
+    {
+      "site": "8OTV:model1:F:B:302",
+      "chain": "A",
+      "residue": "LEU",
+      "label_seq": "108",
+      "distance_A": 3.7805418923746905,
+      "witnesses": [
+        [
+          "CG",
+          "C17"
+        ]
+      ]
+    },
+    {
+      "site": "8OTV:model1:F:B:302",
+      "chain": "B",
+      "residue": "LEU",
+      "label_seq": "108",
+      "distance_A": 18.592730138417004,
+      "witnesses": [
+        [
+          "CD2",
+          "C21"
+        ]
+      ]
+    }
+  ]
+}

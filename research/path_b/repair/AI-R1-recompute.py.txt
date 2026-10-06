@@ -1,0 +1,463 @@
+"""Independent read-only arithmetic and chemical-identity review; no fitting."""
+
+import argparse
+import csv
+import gzip
+import json
+import math
+import xml.etree.ElementTree as ET
+from collections import Counter
+from importlib.metadata import version
+from pathlib import Path
+from typing import Any
+
+import gemmi
+import numpy as np
+from rdkit import Chem, DataStructs
+from rdkit.Chem import Descriptors, rdFingerprintGenerator, rdMolDescriptors
+from sklearn.metrics import roc_auc_score
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--repository", required=True, type=Path)
+parser.add_argument("--output-dir", required=True, type=Path)
+args = parser.parse_args()
+ROOT: Path = args.repository.resolve()
+OUT: Path = args.output_dir.resolve()
+if not OUT.is_dir():
+    parser.error("output-dir must be an existing directory")
+rdkit_version = version("rdkit")
+gemmi_version = version("gemmi")
+
+
+def load(name: str) -> Any:
+    return json.loads((ROOT / name).read_text())
+
+
+def auc(rows: list[dict[str, Any]], name: str) -> float:
+    return float(
+        roc_auc_score(
+            [x["label"] for x in rows], [x.get("scores", x)[name] for x in rows]
+        )
+    )
+
+
+c = load("research/results/controls.json")
+f = c["evaluations"]["full_valid_set"]
+pred = sorted(f["predictions"], key=lambda x: x["index"])
+result: dict[str, Any] = {
+    "versions": {"rdkit": rdkit_version, "gemmi": gemmi_version},
+    "no_model_fitting": True,
+}
+result["table3"] = {
+    name: auc(pred, name)
+    for name in [
+        "Constant_0_5",
+        "Train_prevalence",
+        "Property_LR",
+        "Nearest_active",
+        "Tanimoto_kNN",
+        "RF",
+        "GBT",
+        "SVM_RBF",
+        "Equal_mean",
+    ]
+}
+for name, v in f["ablations"].items():
+    if name.endswith("_only_lr"):
+        result["table3"][name] = float(
+            roc_auc_score([p["label"] for p in pred], v["scores"])
+        )
+result["equal_mean_max_absolute_error"] = max(
+    abs(
+        p["scores"]["Equal_mean"]
+        - sum(p["scores"][k] for k in ["RF", "GBT", "SVM_RBF", "Nearest_active"]) / 4
+    )
+    for p in pred
+)
+result["folds"] = []
+for fold in sorted({p["fold"] for p in pred}):
+    test = [p for p in pred if p["fold"] == fold]
+    train = [p for p in pred if p["fold"] != fold]
+    result["folds"].append(
+        {
+            "fold": fold,
+            "test_n": len(test),
+            "test_positive_n": sum(p["label"] for p in test),
+            "train_prevalence": sum(p["label"] for p in train) / len(train),
+            "exact_scaffold_overlap": sorted(
+                {p["scaffold"] for p in train} & {p["scaffold"] for p in test}
+            ),
+            "within_fold_auc": {
+                name: auc(test, name) if len({p["label"] for p in test}) == 2 else None
+                for name in ["Equal_mean", "Property_LR", "Train_prevalence"]
+            },
+        }
+    )
+y = np.array([p["label"] for p in pred])
+scores = np.array([p["scores"]["Equal_mean"] for p in pred])
+ece = 0.0
+for i in range(5):
+    lower, upper = np.linspace(0, 1, 6)[i : i + 2]
+    mask = (scores >= lower) & ((scores <= upper) if i == 4 else (scores < upper))
+    if mask.any():
+        ece += float(mask.mean() * abs(scores[mask].mean() - y[mask].mean()))
+result["Equal_mean_ECE"] = {
+    "independent": ece,
+    "stored": f["calibration"]["Equal_mean"]["expected_calibration_error"],
+}
+rows = list(csv.DictReader((ROOT / "compounds.csv").open()))
+valid = []
+invalid: list[str] = []
+generator = rdFingerprintGenerator.GetMorganGenerator(
+    radius=2, fpSize=2048, includeChirality=False
+)
+for row in rows:
+    mol = Chem.MolFromSmiles(row["smiles"])
+    if mol is None:
+        invalid.append(row["id"])
+        continue
+    valid.append(
+        {
+            **row,
+            "label": int(row["label"]),
+            "mol": mol,
+            "fp": generator.GetFingerprint(mol),
+            "canonical": Chem.MolToSmiles(mol),
+            "mw": getattr(Descriptors, "MolWt")(mol),
+            "clogp": getattr(Descriptors, "MolLogP")(mol),
+            "hba": rdMolDescriptors.CalcNumHBA(mol),
+            "tpsa": rdMolDescriptors.CalcTPSA(mol),
+        }
+    )
+positive = [r for r in valid if r["label"] == 1]
+decoys = [r for r in valid if r["label"] == 0]
+result["input_counts"] = {
+    "rows": len(rows),
+    "valid": len(valid),
+    "positive": len(positive),
+    "decoy": len(decoys),
+    "invalid_ids": invalid,
+    "canonical_unique": len({r["canonical"] for r in valid}),
+}
+result["raw_property_ranges"] = {
+    prop: {
+        name: [min(r[prop] for r in cohort), max(r[prop] for r in cohort)]
+        for name, cohort in [("source_positive", positive), ("decoy", decoys)]
+    }
+    for prop in ["mw", "hba", "tpsa"]
+}
+result["raw_property_auc_not_oof"] = {
+    prop: float(roc_auc_score([r["label"] for r in valid], [r[prop] for r in valid]))
+    for prop in ["mw", "hba", "tpsa"]
+}
+matches = {
+    d["id"]: [
+        a["id"]
+        for a in positive
+        if abs(d["mw"] - a["mw"]) < 50
+        and abs(d["clogp"] - a["clogp"]) < 1
+        and DataStructs.TanimotoSimilarity(d["fp"], a["fp"]) < 0.3
+    ]
+    for d in decoys
+}
+result["historical_strict_tolerance_recheck"] = {
+    "definition": (
+        "MW difference <50; cLogP difference <1; Morgan radius2/2048 "
+        "no-chirality Tanimoto <0.3; retained valid original graphs"
+    ),
+    "matched_decoy_n": sum(bool(v) for v in matches.values()),
+    "matching_positive_ids": sorted({a for v in matches.values() for a in v}),
+    "matches": matches,
+}
+byid = {r["id"]: r for r in valid}
+simcheck = []
+for p in pred:
+    eligible = [x for x in pred if x["fold"] != p["fold"] and x["label"] == 1]
+    a = max(
+        eligible,
+        key=lambda x: DataStructs.TanimotoSimilarity(
+            byid[p["id"]]["fp"], byid[x["id"]]["fp"]
+        ),
+    )
+    sim = DataStructs.TanimotoSimilarity(byid[p["id"]]["fp"], byid[a["id"]]["fp"])
+    assert math.isclose(sim, p["max_active_tanimoto"], abs_tol=1e-14)
+    simcheck.append(
+        {
+            "id": p["id"],
+            "label": p["label"],
+            "nearest_training_positive": a["id"],
+            "Tanimoto": sim,
+        }
+    )
+result["positive_crossfold_similarity"] = [v for v in simcheck if v["label"] == 1]
+result["positive_crossfold_ge_0_7_n"] = sum(
+    v["label"] == 1 and v["Tanimoto"] >= 0.7 for v in simcheck
+)
+source = list(csv.DictReader((ROOT / "research/source_assays.csv").open()))
+source_canon = {
+    x["source_compound"]: Chem.MolToSmiles(Chem.MolFromSmiles(x["source_smiles"]))
+    for x in source
+}
+hits = list(csv.DictReader((ROOT / "final_hits.csv").open()))
+result["candidate_exact_overlap"] = []
+for hit in hits:
+    can = Chem.MolToSmiles(Chem.MolFromSmiles(hit["smiles"]))
+    result["candidate_exact_overlap"].append(
+        {
+            "id": hit["id"],
+            "training": [r["id"] for r in valid if r["canonical"] == can],
+            "Balikci_source_compounds": [
+                k for k, v in source_canon.items() if v == can
+            ],
+        }
+    )
+result["reference_graphs"] = []
+for r in csv.DictReader((ROOT / "research/reference_structures.csv").open()):
+    orig: Any = byid[r["training_id"]]["mol"]
+    auth: Any = Chem.MolFromSmiles(r["source_smiles"])
+    result["reference_graphs"].append(
+        {
+            "id": r["training_id"],
+            "name": r["reference_name"],
+            "original_formula": rdMolDescriptors.CalcMolFormula(orig),
+            "authenticated_formula": rdMolDescriptors.CalcMolFormula(auth),
+            "original_heavy_atoms": orig.GetNumHeavyAtoms(),
+            "authenticated_heavy_atoms": auth.GetNumHeavyAtoms(),
+            "exact_equal": Chem.MolToSmiles(orig) == Chem.MolToSmiles(auth),
+        }
+    )
+t = load("research/results/transfer.json")
+b = load("research/results/benchmark.json")
+result["reference_sensitivity"] = {}
+for split, ref in t["reference_sensitivity"]["evaluations"].items():
+    old = b[split]
+    oldfold = {v["id"]: v["fold"] for v in old["assignments"]}
+    newfold = {v["id"]: v["fold"] for v in ref["assignments"]}
+    result["reference_sensitivity"][split] = {
+        "fold_changes": [k for k in oldfold if oldfold[k] != newfold[k]],
+        "AUC": {
+            method: {
+                "original": auc(old["predictions"], method),
+                "reference_scenario": auc(ref["predictions"], method),
+            }
+            for method in [
+                "Equal_mean",
+                "Property_LR",
+                "Nearest_active",
+                "RF",
+                "GBT",
+                "SVM_RBF",
+            ]
+        },
+    }
+result["source_challenges"] = {}
+for name, challenge in [
+    ("original", t["measured_source_challenge"]),
+    ("reference_scenario", t["reference_sensitivity"]["measured_source_challenge"]),
+]:
+    eligible = [r for r in challenge["rows"] if r["exclusion_reason"] is None]
+    vals = {}
+    for cutoff in [1.0, 10.0, 50.0]:
+        labels = [
+            int(r["ic50_uM"] is not None and r["ic50_uM"] < cutoff) for r in eligible
+        ]
+        vals[str(cutoff)] = {
+            "positive_n": sum(labels),
+            "n": len(labels),
+            "auc": {
+                method: float(
+                    roc_auc_score(labels, [r["scores"][method] for r in eligible])
+                )
+                for method in eligible[0]["scores"]
+            },
+        }
+    result["source_challenges"][name] = {
+        "eligible_ids": [r["id"] for r in eligible],
+        "assay_status": dict(Counter(r["assay_status"] for r in eligible)),
+        "excluded": {
+            r["id"]: r["exclusion_reason"]
+            for r in challenge["rows"]
+            if r["exclusion_reason"] is not None
+        },
+        "cutoffs": vals,
+        "compound_9_nearest_training": next(
+            {
+                k: r[k]
+                for k in [
+                    "nearest_training_id",
+                    "max_training_tanimoto",
+                    "training_matches",
+                    "training_scaffold_matches",
+                ]
+            }
+            for r in eligible
+            if r["id"] == "9"
+        ),
+    }
+s = load("research/results/selectivity.json")
+result["paired_compounds"] = []
+for r in s["rows"]:
+    if not r["source_pair_has_both_endpoints"]:
+        continue
+    n5 = r["endpoints"]["NUDT5"]
+    n14 = r["endpoints"]["NUDT14"]
+    independent = None
+    if n5["status"] == n14["status"] == "numeric":
+        independent = n14["reported_mean"] / n5["reported_mean"]
+        assert math.isclose(independent, r["ratio"]["point"])
+    result["paired_compounds"].append(
+        {
+            "compound": r["source_compound"],
+            "independent_ratio": independent,
+            "stored_ratio": r["ratio"],
+            "eligible": r["model_diagnostic_eligible"],
+            "overlap": r["historical_training_matches"],
+        }
+    )
+result["paired_Equal_mean_order"] = {
+    scenario: [
+        r["source_compound"]
+        for r in sorted(
+            [
+                r
+                for r in s["score_rows"]
+                if r["scenario"] == scenario and r["paired_diagnostic_eligible"]
+            ],
+            key=lambda r: -r["Equal_mean"],
+        )
+    ]
+    for scenario in {r["scenario"] for r in s["score_rows"]}
+}
+result["raw_coordinate_sites"] = []
+result["raw_Arg51_minima"] = []
+for pdb in ["8RIY", "8OTV"]:
+    atom = (
+        gemmi.cif.read_file(
+            str(ROOT / f"research/structure_comparison/sources/{pdb}.cif")
+        )
+        .sole_block()
+        .get_mmcif_category("_atom_site.")
+    )
+    rows = [
+        dict(zip(atom, values, strict=True))
+        for values in zip(*atom.values(), strict=True)
+    ]
+    sites = sorted(
+        {
+            (a["label_asym_id"], a["auth_asym_id"], a["auth_seq_id"])
+            for a in rows
+            if a["label_comp_id"] == "W0O"
+        }
+    )
+    for label, auth, seq in sites:
+        lig = [
+            a
+            for a in rows
+            if a["label_comp_id"] == "W0O"
+            and a["label_asym_id"] == label
+            and a["type_symbol"] not in ["H", "D"]
+            and float(a["occupancy"]) > 0
+        ]
+        result["raw_coordinate_sites"].append(
+            {
+                "pdb": pdb,
+                "label": label,
+                "auth": auth,
+                "auth_seq": seq,
+                "positive_occupancy_heavy_atoms": len(lig),
+            }
+        )
+        if pdb != "8RIY":
+            continue
+        for chain in ["AAA", "BBB"]:
+            arg = [
+                a
+                for a in rows
+                if a["auth_asym_id"] == chain
+                and a["auth_seq_id"] == "51"
+                and a["label_comp_id"] == "ARG"
+                and a["type_symbol"] not in ["H", "D"]
+                and float(a["occupancy"]) > 0
+            ]
+            pairs = [
+                (
+                    math.sqrt(
+                        sum(
+                            (float(a[k]) - float(ligand_atom[k])) ** 2
+                            for k in ["Cartn_x", "Cartn_y", "Cartn_z"]
+                        )
+                    ),
+                    a,
+                    ligand_atom,
+                )
+                for a in arg
+                for ligand_atom in lig
+            ]
+            dist, a, ligand_atom = min(pairs, key=lambda x: x[0])
+            result["raw_Arg51_minima"].append(
+                {
+                    "site": label,
+                    "site_auth": auth,
+                    "protein_auth": chain,
+                    "distance_A": dist,
+                    "protein_atom": a["label_atom_id"],
+                    "ligand_atom": ligand_atom["label_atom_id"],
+                    "protein_occupancy": float(a["occupancy"]),
+                }
+            )
+result["stored_conditional_difference"] = f["paired_auc_difference"]
+old = {row["id"]: row for row in b["scaffold"]["predictions"]}
+new = {
+    row["id"]: row["scores"]
+    for row in t["reference_sensitivity"]["evaluations"]["scaffold"]["predictions"]
+}
+deltas = {key: new[key]["Equal_mean"] - row["Equal_mean"] for key, row in old.items()}
+result["reference_sensitivity"]["scaffold"]["Equal_mean_score_changes"] = deltas
+result["reference_sensitivity"]["scaffold"]["Equal_mean_threshold_0_5_changes"] = [
+    key
+    for key in old
+    if (old[key]["Equal_mean"] >= 0.5) != (new[key]["Equal_mean"] >= 0.5)
+]
+result["official_report_ligand_rows"] = {}
+for pdb in ["8riy", "8otv"]:
+    xml = ET.fromstring(
+        gzip.decompress(
+            (
+                ROOT
+                / f"research/structure_comparison/model_support/sources/{pdb}_validation.xml.gz"
+            ).read_bytes()
+        )
+    )
+    result["official_report_ligand_rows"][pdb] = [
+        element.attrib
+        for element in xml.iter("ModelledSubgroup")
+        if element.get("resname") == "W0O"
+    ]
+(OUT / "recomputed_evidence.json").write_text(
+    json.dumps(result, indent=2, allow_nan=False) + "\n"
+)
+print(
+    json.dumps(
+        {
+            k: v
+            for k, v in result.items()
+            if k
+            not in [
+                "positive_crossfold_similarity",
+                "candidate_exact_overlap",
+                "historical_strict_tolerance_recheck",
+                "source_challenges",
+                "paired_compounds",
+            ]
+        },
+        indent=2,
+    )
+)
+print(
+    "strict matching decoy n",
+    result["historical_strict_tolerance_recheck"]["matched_decoy_n"],
+)
+print(
+    "source challenge cutoffs",
+    {k: v["cutoffs"] for k, v in result["source_challenges"].items()},
+)

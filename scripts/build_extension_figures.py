@@ -8,6 +8,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from path_b_diagnostics import diagnostic_reexpressions
+
 METHODS = ["Property_LR", "RF", "SVM_RBF", "GBT", "Nearest_active", "Equal_mean"]
 LABELS = ["Property LR", "RF", "RBF-SVM", "GBT", "Nearest active", "Equal mean"]
 BLUE, ORANGE, GREEN = "#0072B2", "#D55E00", "#009E73"
@@ -22,6 +24,26 @@ def save_figure(fig: Any, output: Path, name: str) -> Path:
                 "\n".join(line.rstrip() for line in path.read_text().splitlines()) + "\n"
             )
     return output / f"{name}.png"
+
+
+def source_cutoff_caption(challenge: dict[str, Any]) -> str:
+    descriptions = []
+    for cutoff in (1.0, 10.0):
+        row = challenge["threshold_sensitivity_uM"][str(cutoff)]
+        description = f"At {cutoff:g} uM, {row['positives']} of {row['n']} are threshold-positive; "
+        if row["metrics"] is None:
+            description += "ROC-AUC is unavailable."
+        else:
+            description += (
+                "ROC-AUC: "
+                + ", ".join(
+                    f"{name} {row['metrics'][name]['auc']:.4f}"
+                    for name in ("Equal_mean", "Nearest_active", "Property_LR")
+                )
+                + "."
+            )
+        descriptions.append(description)
+    return " ".join(descriptions)
 
 
 def build_figures(results: Path, output: Path) -> list[tuple[Path, str]]:
@@ -97,7 +119,7 @@ def build_figures(results: Path, output: Path) -> list[tuple[Path, str]]:
         ylim=(0, 1.05),
         xlabel="Mean OOF score within occupied bin",
         ylabel="Observed positive-label fraction",
-        title="A  Reliability against repository labels",
+        title="A  Score-bin source-label frequencies",
     )
     axes[0].legend(fontsize=8, frameon=False, loc="upper left")
     groups = full["similarity_generalization"]["all_training"]["Equal_mean"]
@@ -123,7 +145,8 @@ def build_figures(results: Path, output: Path) -> list[tuple[Path, str]]:
         (
             save_figure(fig, output, "reliability_domain"),
             (
-                "Figure 3. Reliability and applicability-domain diagnostics under exact-scaffold "
+                "Figure 3. Score-bin source-label frequencies and similarity-bin counts "
+                "under exact-scaffold "
                 "splitting. Five fixed equal-width score bins; unoccupied bins are omitted, not "
                 "imputed. Curves describe source labels, not verified activity probabilities. B "
                 "shows class support in fixed similarity intervals; one-class-bin AUC is "
@@ -188,11 +211,13 @@ def build_figures(results: Path, output: Path) -> list[tuple[Path, str]]:
         (
             save_figure(fig, output, "source_transfer"),
             (
-                "Figure 4. Retrospective source-transfer stress tests without tuning. A: "
+                "Figure 4. Retrospective source-transfer diagnostics of the frozen implementation. "
+                "No tuning in this regeneration; earlier outcome exposure is not excluded. A: "
                 f"Repository OOF discrimination (n={full['methods']['Property_LR']['n']}) versus "
                 f"the measured-source challenge after eligibility/identity exclusions "
                 f"(n={measured['n']}; {measured['positives']} threshold-positive and "
                 f"{measured['n'] - measured['positives']} threshold-negative at IC50 <50 uM). "
+                f"{source_cutoff_caption(transfer['measured_source_challenge'])} "
                 "Source ROC-AUC is unavailable unless both classes are present. "
                 "Different sample sizes, labels and fitting regimes preclude a controlled "
                 "performance-drop estimate. B: scores for one externally sourced, already-known "
@@ -276,7 +301,8 @@ def write_tables(results: Path, output: Path) -> Path:
         (
             "These are exploratory diagnostics. AP and trapezoidal PR-AUC are distinct. Threshold "
             "0.5 is arbitrary. No measured activity probabilities or prospective error rates are "
-            "claimed."
+            "claimed. MCC follows sklearn's zero convention when its denominator is zero; "
+            "this is not an estimated correlation in a constant-prediction row."
         ),
         "",
         "| Design | Method | n | ROC-AUC | AP | Brier | MCC |",
@@ -325,14 +351,15 @@ def write_tables(results: Path, output: Path) -> Path:
     lines.extend(
         [
             "",
-            "## Conformal stress test",
+            "## Sparse-calibration prediction-set diagnostics",
             "",
             (
                 "No coverage guarantee under scaffold shift. Classwise coverage, class counts, "
                 "p-values and all prediction sets are in controls.json."
             ),
             "",
-            "| Cohort | Nominal coverage | Empirical coverage | Mean set size | Singleton rate |",
+            "| Cohort | 1 minus alpha (reference only) | Observed source-label inclusion "
+            "| Mean set size | Singleton rate |",
             "|---|---:|---:|---:|---:|",
         ]
     )
@@ -342,6 +369,49 @@ def write_tables(results: Path, output: Path) -> Path:
                 f"| {design} | {level['nominal_coverage']:.2f} | "
                 f"{level['empirical_coverage']:.3f} | {level['mean_set_size']:.3f} | "
                 f"{level['singleton_rate']:.3f} |"
+            )
+    diagnostics = diagnostic_reexpressions(controls)
+    for design in controls["evaluations"]:
+        result = diagnostics[design]
+        lines += [
+            "",
+            f"### {design}: calibration sparsity",
+            "",
+            "| Outer fold | Class 0 n | Class 1 n | Class 0 p-min | Class 1 p-min |",
+            "|---|---:|---:|---:|---:|",
+        ]
+        for row in result["conformal"]["calibration"]:
+            lines.append(
+                f"| {row['fold']} | {row['counts']['0']} | {row['counts']['1']} | "
+                f"{row['minimum_pvalue']['0']:.4f} | {row['minimum_pvalue']['1']:.4f} |"
+            )
+        lines += [
+            "",
+            "| Alpha | Empty | Singleton | Both labels | Forced class 0 "
+            "| Forced class 1 | Both forced |",
+            "|---|---:|---:|---:|---:|---:|---:|",
+        ]
+        for row in result["conformal"]["levels"]:
+            counts, forced = row["set_size_counts"], row["forced_inclusion"]
+            lines.append(
+                f"| {row['alpha']} | {counts['0']} | {counts['1']} | {counts['2']} | "
+                f"{forced['0']} | {forced['1']} | {row['both_forced']} |"
+            )
+        lines += [
+            "",
+            f"### {design}: AUC estimands",
+            "",
+            "| Method | Pooled | Within fold | Pooled pairs | Within-fold pairs |",
+            "|---|---:|---:|---:|---:|",
+        ]
+        for name, row in result["methods"].items():
+            pooled = "Undefined" if row["pooled_auc"] is None else f"{row['pooled_auc']:.4f}"
+            within = (
+                "Undefined" if row["within_fold_auc"] is None else f"{row['within_fold_auc']:.4f}"
+            )
+            lines.append(
+                f"| {name} | {pooled} | {within} | "
+                f"{row['pooled_pairs']} | {row['within_fold_pairs']} |"
             )
     path = output / "supplementary_results.md"
     path.write_text("\n".join(lines) + "\n")

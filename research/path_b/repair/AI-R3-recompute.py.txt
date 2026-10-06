@@ -1,0 +1,373 @@
+"""Read-only AI review: recompute summaries from frozen predictions, no fitting."""
+
+import argparse
+import collections
+import csv
+import gzip
+import hashlib
+import io
+import json
+from pathlib import Path
+from typing import Any
+
+import gemmi
+import numpy as np
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--repo", type=Path, required=True)
+parser.add_argument("--output", type=Path, required=True)
+options = parser.parse_args()
+ROOT = options.repo.resolve()
+OUT = options.output.resolve()
+assert OUT.is_dir() and ROOT.is_dir()
+assert not OUT.is_relative_to(ROOT), "Write review outputs outside the repository"
+
+
+def auc(y: Any, s: Any) -> float | None:
+    y, s = np.asarray(y), np.asarray(s)
+    p, n = s[y == 1], s[y == 0]
+    if not len(p) or not len(n):
+        return None
+    return float(
+        ((p[:, None] > n).sum() + 0.5 * (p[:, None] == n).sum()) / (len(p) * len(n))
+    )
+
+
+def calibration(y: Any, s: Any, bins: int) -> dict[str, Any]:
+    edges = np.linspace(0, 1, bins + 1)
+    rows: list[dict[str, Any]] = []
+    for i, (lo, hi) in enumerate(zip(edges[:-1], edges[1:])):
+        mask = (s >= lo) & ((s <= hi) if i == bins - 1 else (s < hi))
+        if mask.any():
+            rows.append(
+                {
+                    "n": int(mask.sum()),
+                    "mean_score": float(s[mask].mean()),
+                    "positive_rate": float(y[mask].mean()),
+                    "lower": float(lo),
+                    "upper": float(hi),
+                }
+            )
+    ece = sum(r["n"] * abs(r["mean_score"] - r["positive_rate"]) for r in rows) / len(y)
+    return {"ece": ece, "bins": rows}
+
+
+controls = json.loads((ROOT / "research/results/controls.json").read_text())
+result: dict[str, Any] = {
+    "review_type": "AI review, not human peer review",
+    "commit": "22830642f7d33ca3319872b5ba4c513baff50154",
+    "evaluations": {},
+}
+for name, e in controls["evaluations"].items():
+    rows = sorted(e["predictions"], key=lambda r: r["index"])
+    y = np.array([r["label"] for r in rows])
+    folds = np.array([r["fold"] for r in rows])
+    groups = np.array([r["scaffold"] for r in rows])
+    identities = np.unique(groups)
+    scores = {k: np.array([r["scores"][k] for r in rows]) for k in rows[0]["scores"]}
+    ev: dict[str, Any] = {
+        "n_records": len(y),
+        "positive_labels": int(y.sum()),
+        "scaffold_groups": len(identities),
+        "evaluation_groups": len(set(r["group"] for r in rows)),
+        "positive_scaffold_groups": len(set(groups[y == 1])),
+        "negative_scaffold_groups": len(set(groups[y == 0])),
+        "largest_scaffold_sizes": sorted(
+            collections.Counter(groups).values(), reverse=True
+        )[:6],
+        "metrics": {},
+        "folds": [],
+    }
+    for k, s in scores.items():
+        within_num = 0.0
+        within_den = 0
+        for f in np.unique(folds):
+            m = folds == f
+            pairs = int(y[m].sum() * (len(y[m]) - y[m].sum()))
+            if pairs:
+                fold_auc = auc(y[m], s[m])
+                assert fold_auc is not None
+                within_num += fold_auc * pairs
+                within_den += pairs
+        ev["metrics"][k] = {
+            "pooled_auc": auc(y, s),
+            "within_fold_pair_weighted_auc": within_num / within_den,
+            "within_fold_comparable_pairs": within_den,
+            "total_pooled_pairs": int(y.sum() * (len(y) - y.sum())),
+            "brier": float(np.mean((y - s) ** 2)),
+            "five_bin_ece": calibration(y, s, 5),
+        }
+        pooled = auc(y, s)
+        assert pooled is not None
+        assert np.isclose(pooled, e["methods"][k]["auc"])
+        assert np.isclose(
+            calibration(y, s, 5)["ece"],
+            e["calibration"][k]["expected_calibration_error"],
+        )
+    for f in np.unique(folds):
+        m = folds == f
+        ev["folds"].append(
+            {
+                "fold": int(f),
+                "n": int(m.sum()),
+                "positive": int(y[m].sum()),
+                "scaffolds": len(set(groups[m])),
+                "aucs": {
+                    k: auc(y[m], scores[k][m])
+                    for k in ["Equal_mean", "Property_LR", "Train_prevalence"]
+                },
+            }
+        )
+    ev["ablation_aucs"] = {
+        k: auc(y, np.array(v["scores"])) for k, v in e["ablations"].items()
+    }
+    for k, v in ev["ablation_aucs"].items():
+        assert np.isclose(v, e["ablations"][k]["metrics"]["auc"])
+    ev["binning_sensitivity"] = {
+        k: {str(b): calibration(y, scores[k], b)["ece"] for b in [3, 5, 10]}
+        for k in ["Equal_mean", "Property_LR", "RF"]
+    }
+    combined = np.mean(
+        [scores[k] for k in ["RF", "GBT", "SVM_RBF", "Nearest_active"]], axis=0
+    )
+    ev["raw_equal_mean_max_abs_difference"] = float(
+        np.max(np.abs(combined - scores["Equal_mean"]))
+    )
+    assert ev["raw_equal_mean_max_abs_difference"] < 1e-14
+    members = [np.flatnonzero(groups == g) for g in identities]
+    rng = np.random.default_rng(42)
+    draws: dict[str, list[float]] = {
+        "Equal_mean": [],
+        "Property_LR": [],
+        "difference": [],
+    }
+    invalid = 0
+    for _ in range(1000):
+        idx = np.concatenate(
+            [members[j] for j in rng.integers(0, len(members), len(members))]
+        )
+        if len(np.unique(y[idx])) < 2:
+            invalid += 1
+            continue
+        left = auc(y[idx], scores["Equal_mean"][idx])
+        right = auc(y[idx], scores["Property_LR"][idx])
+        assert left is not None and right is not None
+        draws["Equal_mean"].append(left)
+        draws["Property_LR"].append(right)
+        draws["difference"].append(left - right)
+    ev["fixed_score_bootstrap"] = {
+        "valid_draws": 1000 - invalid,
+        "single_class_draws": invalid,
+        "intervals": {
+            k: np.quantile(v, [0.025, 0.975]).tolist() for k, v in draws.items()
+        },
+    }
+    for k in ["Equal_mean", "Property_LR"]:
+        assert np.allclose(
+            ev["fixed_score_bootstrap"]["intervals"][k],
+            e["conditional_intervals"][k]["conditional_auc_percentile_95"],
+        )
+    assert np.allclose(
+        ev["fixed_score_bootstrap"]["intervals"]["difference"],
+        e["paired_auc_difference"]["conditional_percentile_95"],
+    )
+    co = e["conformal"]
+    ev["conformal"] = {
+        "calibration_counts": [
+            {
+                "fold": a["outer_fold"],
+                "counts": a["calibration_class_counts"],
+                "p_min": a["minimum_pvalue"],
+            }
+            for a in co["assignments"]
+        ],
+        "levels": [],
+    }
+    for alpha in [0.1, 0.2]:
+        pr = co["predictions"]
+        sets = [[i for i, p in enumerate(r["pvalues"]) if p > alpha] for r in pr]
+        assert all(s == r["sets"][str(alpha)] for s, r in zip(sets, pr))
+        level = {
+            "alpha": alpha,
+            "n": len(pr),
+            "coverage": sum(r["label"] in s for r, s in zip(pr, sets)) / len(pr),
+            "set_size_counts": dict(collections.Counter(map(len, sets))),
+            "classwise_coverage": {
+                str(c): sum(c in s for r, s in zip(pr, sets) if r["label"] == c)
+                / sum(r["label"] == c for r in pr)
+                for c in [0, 1]
+            },
+            "forced_class_inclusion_by_p_min": {
+                str(c): sum(
+                    len(a["test_indices"])
+                    for a in co["assignments"]
+                    if a["minimum_pvalue"][str(c)] > alpha
+                )
+                for c in [0, 1]
+            },
+            "both_labels_forced_by_p_min": sum(
+                len(a["test_indices"])
+                for a in co["assignments"]
+                if all(p > alpha for p in a["minimum_pvalue"].values())
+            ),
+        }
+        ev["conformal"]["levels"].append(level)
+    ev["constant_mcc_check"] = {
+        "constant_predictions_have_zero_MCC_denominator": True,
+        "recorded_mcc": e["methods"]["Constant_0_5"]["mcc_at_0_5"],
+    }
+    result["evaluations"][name] = ev
+
+source_bytes = gzip.decompress(
+    (ROOT / "research/selectivity/sources/jm4c00072_si_002.csv.gz").read_bytes()
+)
+source = list(csv.DictReader(io.StringIO(source_bytes.decode("latin1"))))
+result["source_csv_columns"] = list(source[0])
+print("CSV COLUMNS", list(source[0]))
+ledger = json.loads((ROOT / "research/selectivity/paired_evidence.json").read_text())
+ratios: list[dict[str, Any]] = []
+for r in ledger["rows"]:
+    if not r["source_pair_has_both_endpoints"]:
+        continue
+    a, b = r["endpoints"]["NUDT5"], r["endpoints"]["NUDT14"]
+    if a["status"] == b["status"] == "numeric":
+        value = b["reported_mean"] / a["reported_mean"]
+        typ = "point"
+    elif a["status"] == b["status"] == "right_censored":
+        value = None
+        typ = "double_censored"
+    elif a["status"] == "right_censored":
+        value = b["reported_mean"] / a["bound"]
+        typ = "upper_bound"
+    else:
+        value = b["bound"] / a["reported_mean"]
+        typ = "lower_bound"
+    assert typ == r["ratio"]["status"]
+    if value is not None:
+        assert np.isclose(
+            value, r["ratio"]["point"] if typ == "point" else r["ratio"]["bound"]
+        )
+    ratios.append(
+        {
+            "compound": r["source_compound"],
+            "NUDT5": a["author_csv_raw"],
+            "NUDT14": b["author_csv_raw"],
+            "status": typ,
+            "value": value,
+            "n_as_source_reported": 2,
+            "ratio_CI": None,
+        }
+    )
+result["paired_ratios"] = ratios
+tr = json.loads((ROOT / "research/results/transfer.json").read_text())
+result["source_challenge"] = {}
+for scenario, challenge in [
+    ("original", tr["measured_source_challenge"]),
+    ("authenticated", tr["reference_sensitivity"]["measured_source_challenge"]),
+]:
+    eligible = [r for r in challenge["rows"] if r["id"] in challenge["eligible_ids"]]
+    levels = {}
+    for cutoff in [1, 10, 50]:
+        ys = [int(r["ic50_uM"] is not None and r["ic50_uM"] < cutoff) for r in eligible]
+        levels[str(cutoff)] = {
+            "ids": [r["id"] for r in eligible],
+            "labels": ys,
+            "positives": sum(ys),
+            "n": len(ys),
+            "auc": {
+                k: auc(ys, [r["scores"][k] for r in eligible])
+                for k in eligible[0]["scores"]
+            },
+        }
+    result["source_challenge"][scenario] = levels
+
+# Independent raw-CIF distance calculation, without repository extraction functions.
+block = gemmi.cif.read(
+    str(ROOT / "research/structure_comparison/sources/8RIY.cif")
+).sole_block()
+tab = block.find_mmcif_category("_atom_site.")
+atoms = [dict(zip([t.split(".", 1)[1] for t in tab.tags], row)) for row in tab]
+
+
+def xyz(a: Any) -> Any:
+    return np.array([float(a[k]) for k in ["Cartn_x", "Cartn_y", "Cartn_z"]])
+
+
+valid = [
+    a
+    for a in atoms
+    if a["pdbx_PDB_model_num"] == "1"
+    and float(a["occupancy"]) > 0
+    and a["type_symbol"] not in ["H", "D"]
+]
+result["independent_Arg51_minima"] = []
+for chain in ["AAA", "BBB"]:
+    arg_atoms = [
+        a
+        for a in valid
+        if a["auth_asym_id"] == chain
+        and a["auth_seq_id"] == "51"
+        and a["label_comp_id"] == "ARG"
+    ]
+    ligs = [a for a in valid if a["label_comp_id"] == "W0O"]
+    distance_pairs = sorted(
+        (
+            float(np.linalg.norm(xyz(a) - xyz(ligand))),
+            a["label_atom_id"],
+            ligand["label_atom_id"],
+            ligand["label_asym_id"],
+            a["occupancy"],
+        )
+        for a in arg_atoms
+        for ligand in ligs
+    )
+    result["independent_Arg51_minima"].append(
+        {
+            "auth_chain": chain,
+            "distance_A": distance_pairs[0][0],
+            "protein_atom": distance_pairs[0][1],
+            "ligand_atom": distance_pairs[0][2],
+            "ligand_chain": distance_pairs[0][3],
+            "protein_occupancy": distance_pairs[0][4],
+        }
+    )
+result["input_sha256"] = {
+    f: hashlib.sha256((ROOT / f).read_bytes()).hexdigest()
+    for f in [
+        "research/results/controls.json",
+        "research/results/benchmark.json",
+        "research/results/transfer.json",
+        "research/selectivity/paired_evidence.json",
+        "research/selectivity/sources/jm4c00072_si_002.csv.gz",
+        "research/structure_comparison/sources/8RIY.cif",
+    ]
+}
+(OUT / "recomputed_statistics.json").write_text(
+    json.dumps(result, indent=2, sort_keys=True) + "\n"
+)
+print("PAIRED", ratios)
+for name, e in result["evaluations"].items():
+    print(
+        "EVALUATION",
+        name,
+        {
+            k: e[k]
+            for k in [
+                "n_records",
+                "positive_labels",
+                "scaffold_groups",
+                "evaluation_groups",
+                "positive_scaffold_groups",
+                "negative_scaffold_groups",
+                "largest_scaffold_sizes",
+            ]
+        },
+    )
+    print("FOLDS", e["folds"])
+    print("CALIBRATION", e["binning_sensitivity"])
+    print("BOOTSTRAP", e["fixed_score_bootstrap"])
+    print("CONFORMAL", e["conformal"]["levels"])
+    for k in ["Equal_mean", "Property_LR", "Train_prevalence", "RF"]:
+        print(k, {t: v for t, v in e["metrics"][k].items() if t != "five_bin_ece"})
+print("ARG51", result["independent_Arg51_minima"])
+print("All arithmetic comparisons passed; no model fitting or tracked-file writes.")

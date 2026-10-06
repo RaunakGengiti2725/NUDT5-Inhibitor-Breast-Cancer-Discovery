@@ -1,0 +1,86 @@
+"""Independent source-cell and fixed-score grouping checks; never fits models."""
+
+import argparse
+import csv
+import gzip
+import io
+import json
+from pathlib import Path
+
+import numpy as np
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--repo", type=Path, required=True)
+parser.add_argument("--output", type=Path, required=True)
+args = parser.parse_args()
+repo, out = args.repo.resolve(), args.output.resolve()
+assert repo.is_dir() and out.is_dir() and not out.is_relative_to(repo)
+source = list(
+    csv.DictReader(
+        io.StringIO(
+            gzip.decompress(
+                (
+                    repo / "research/selectivity/sources/jm4c00072_si_002.csv.gz"
+                ).read_bytes()
+            ).decode("latin1")
+        )
+    )
+)
+by_compound = {row["Compound"]: row for row in source}
+ledger = json.loads((repo / "research/selectivity/paired_evidence.json").read_text())
+checks = []
+for row in ledger["rows"]:
+    for target, column in [
+        ("NUDT5", "NUDT5 IC50 (µM)"),
+        ("NUDT14", "NUDT14 IC50  (µM)"),
+    ]:
+        raw = by_compound[row["source_compound"]][column]
+        expected = row["endpoints"][target]["author_csv_raw"]
+        checks.append(
+            dict(
+                compound=row["source_compound"],
+                target=target,
+                raw=raw,
+                ledger=expected,
+                exact_match=raw == expected,
+            )
+        )
+assert all(row["exact_match"] for row in checks)
+(out / "source_cell_checks.json").write_text(json.dumps(checks, indent=2) + "\n")
+controls = json.loads((repo / "research/results/controls.json").read_text())
+rows = controls["evaluations"]["similarity_component_split"]["predictions"]
+y = np.array([row["label"] for row in rows])
+scores = np.array([row["scores"]["Equal_mean"] for row in rows])
+groups = np.array([row["group"] for row in rows])
+identities = np.unique(groups)
+members = [np.flatnonzero(groups == group) for group in identities]
+rng = np.random.default_rng(42)
+aucs = []
+invalid = 0
+for _ in range(1000):
+    idx = np.concatenate(
+        [members[i] for i in rng.integers(0, len(members), len(members))]
+    )
+    if len(np.unique(y[idx])) < 2:
+        invalid += 1
+        continue
+    positives, negatives = scores[idx][y[idx] == 1], scores[idx][y[idx] == 0]
+    value = (positives[:, None] > negatives).sum() + 0.5 * (
+        positives[:, None] == negatives
+    ).sum()
+    aucs.append(float(value / (len(positives) * len(negatives))))
+result = {
+    "interpretation": "Sensitivity diagnostic only, same frozen scores; not a population confidence interval",
+    "grouping": "stored Tanimoto connected components",
+    "seed": 42,
+    "groups": len(identities),
+    "positive_groups": len(set(groups[y == 1])),
+    "interval": np.quantile(aucs, [0.025, 0.975]).tolist(),
+    "valid_draws": len(aucs),
+    "single_class_draws": invalid,
+}
+(out / "component_bootstrap_sensitivity.json").write_text(
+    json.dumps(result, indent=2) + "\n"
+)
+print("Source cells exactly matched:", len(checks))
+print(json.dumps(result))

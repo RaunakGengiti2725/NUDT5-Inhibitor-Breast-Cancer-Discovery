@@ -1,0 +1,13 @@
+site,chain,group,protein_atom,ligand_atom,distance_A,occupancy
+C,A,backbone,N,C20,3.7555613428620767,1.0
+C,A,sidechain,CD,C18,4.001089476630085,1.0
+C,A,guanidinium,NE,C18,4.761739703091718,1.0
+C,B,backbone,N,N5,14.329326327500535,1.0
+C,B,sidechain,CG,C21,15.805042075236624,1.0
+C,B,guanidinium,NE,C21,17.888605395614274,1.0
+D,A,backbone,N,N5,14.29582019332924,1.0
+D,A,sidechain,CB,C21,15.77996593785931,1.0
+D,A,guanidinium,NE,C21,17.868996250489285,1.0
+D,B,backbone,N,C20,3.946537343038831,1.0
+D,B,sidechain,CD,C18,3.2512725201065518,0.78
+D,B,guanidinium,NE,C18,4.606398376171997,1.0

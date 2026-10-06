@@ -1,0 +1,61 @@
+{
+  "reviews_are": "AI reviews, not human peer review",
+  "objections": [
+    {
+      "ids": [
+        "AI-R1 O1",
+        "AI-R2 AI-S01",
+        "AI-R3 O1",
+        "AI-R3 U1"
+      ],
+      "status": "unresolved",
+      "issue": "No demonstrated incremental mechanistic, energetic, biological or general-method contribution supporting JMGM primary research.",
+      "disposition": "Not answerable by the present deposited coordinates, published summary endpoints or software/provenance checks."
+    },
+    {
+      "ids": [
+        "AI-R1 O15"
+      ],
+      "status": "unresolved, disclosed",
+      "issue": "Retrospective site selection is not preregistered; no independent evidence of pre-outcome timing.",
+      "disposition": "Disclose; no retroactive registration claim."
+    },
+    {
+      "ids": [
+        "AI-R1 O16",
+        "AI-R2 AI-S04"
+      ],
+      "status": "unresolved",
+      "issue": "No omit/polder maps, local rerefinement, expert full-3D assessment or independent ligand-placement validation.",
+      "disposition": "Separate authorization and feasibility assessment would be required; no such computation performed."
+    },
+    {
+      "ids": [
+        "AI-R1 O17 (data limitation)",
+        "AI-R2 AI-S06",
+        "AI-R3 U2"
+      ],
+      "status": "unresolved",
+      "issue": "No raw paired replicates/covariance, complete nesting or protocol-matched cross-target comparability.",
+      "disposition": "Reported-mean ratios remain descriptive; no ratio confidence interval, affinity or selectivity inference."
+    },
+    {
+      "ids": [
+        "AI-R2 AI-S07"
+      ],
+      "status": "presentation repaired; significance unresolved",
+      "issue": "Condensing the legacy-score detour does not create a structural modelling contribution.",
+      "disposition": "Two main-text paragraphs; full diagnostic audit preserved in the supplement."
+    },
+    {
+      "ids": [
+        "AI-R1 O20",
+        "AI-R2 AI-S08",
+        "AI-R3 U3"
+      ],
+      "status": "author-owned/open",
+      "issue": "Final byline/contributions, affiliations, funding, COI, approvals, rights, prior-version history, reviewer conflicts and complete AI disclosure remain unconfirmed; journal author guide inaccessible.",
+      "disposition": "Author-review-only; no final declarations, sole-authorship claim, cover letter, reviewer list, submission or deposit changes."
+    }
+  ]
+}

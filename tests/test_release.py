@@ -72,8 +72,6 @@ def test_compressed_authenticated_sources_preserve_original_hashes() -> None:
 
 
 def test_paired_table_matches_all_eligible_recorded_endpoints_and_scores() -> None:
-    import math
-
     from build_research_documents import read_blocks
 
     result = json.loads((ROOT / "research/results/selectivity.json").read_text())
@@ -99,10 +97,9 @@ def test_paired_table_matches_all_eligible_recorded_endpoints_and_scores() -> No
             assert ratio == "No finite bound"
             assert value["point"] is None and value["bound"] is None
         elif value["status"] == "upper_bound":
-            assert ratio.startswith("<")
-            assert math.isclose(float(ratio[1:]), value["bound"], abs_tol=5e-7)
+            assert ratio == f"<{value['bound']:.3g}"
         else:
-            assert math.isclose(float(ratio), value["point"], abs_tol=5e-7)
+            assert ratio == f"{value['point']:.3g}"
 
 
 def test_new_cli_registration_includes_both_modules() -> None:

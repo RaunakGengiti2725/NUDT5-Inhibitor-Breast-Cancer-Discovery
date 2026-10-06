@@ -1,0 +1,92 @@
+{
+  "non_destructive": "final_hits.csv is retained byte for byte; no historical row, value or line ending is edited.",
+  "not_implied": [
+    "Withdrawal does not assert that the historical work never happened.",
+    "Withdrawal is not a measurement, an inactivity finding or a retraction of any published source compound."
+  ],
+  "purpose": "Marks every candidate row in final_hits.csv as a withdrawn historical assertion.",
+  "rows": [
+    {
+      "id": "NC5-01",
+      "regenerated": false,
+      "retained_as": "input provenance record only",
+      "status": "withdrawn_historical_assertion",
+      "validated": false
+    },
+    {
+      "id": "NC5-07",
+      "regenerated": false,
+      "retained_as": "input provenance record only",
+      "status": "withdrawn_historical_assertion",
+      "validated": false
+    },
+    {
+      "id": "NC5-04",
+      "regenerated": false,
+      "retained_as": "input provenance record only",
+      "status": "withdrawn_historical_assertion",
+      "validated": false
+    },
+    {
+      "id": "NC5-02",
+      "regenerated": false,
+      "retained_as": "input provenance record only",
+      "status": "withdrawn_historical_assertion",
+      "validated": false
+    },
+    {
+      "id": "NC5-06",
+      "regenerated": false,
+      "retained_as": "input provenance record only",
+      "status": "withdrawn_historical_assertion",
+      "validated": false
+    },
+    {
+      "id": "NC5-08",
+      "regenerated": false,
+      "retained_as": "input provenance record only",
+      "status": "withdrawn_historical_assertion",
+      "validated": false
+    },
+    {
+      "id": "NC5-03",
+      "regenerated": false,
+      "retained_as": "input provenance record only",
+      "status": "withdrawn_historical_assertion",
+      "validated": false
+    },
+    {
+      "id": "NC5-10",
+      "regenerated": false,
+      "retained_as": "input provenance record only",
+      "status": "withdrawn_historical_assertion",
+      "validated": false
+    },
+    {
+      "id": "NC5-09",
+      "regenerated": false,
+      "retained_as": "input provenance record only",
+      "status": "withdrawn_historical_assertion",
+      "validated": false
+    },
+    {
+      "id": "NC5-05",
+      "regenerated": false,
+      "retained_as": "input provenance record only",
+      "status": "withdrawn_historical_assertion",
+      "validated": false
+    }
+  ],
+  "source_file": {
+    "path": "final_hits.csv",
+    "rows": 10,
+    "sha256": "38c8d5266ce127b1fd5babde0c895190d0b382e3c9e3dae7581e320766745100"
+  },
+  "status_for_every_row": "withdrawn_historical_assertion",
+  "withdrawal_basis": [
+    "The 18,412-compound library these scores were ranked against is unavailable and will not be recreated.",
+    "The stored scores are not reproducible from the released code and inputs.",
+    "NC5-02 is ACT-19 and published compound 11 in Balikci et al., so it is known chemistry rather than a discovery.",
+    "Stored descriptor and applicability-domain columns disagree with the repository's own recomputation for some rows."
+  ]
+}

@@ -48,7 +48,9 @@ The final functional revision passed:
 - `.venv/bin/python -m compileall -q scripts tests`
 - `.venv/bin/python -m build` (sdist and wheel, outside Git)
 - `.venv/bin/pip-audit` (no known vulnerabilities in audited dependencies; local non-PyPI package explicitly unaudited)
-- `git diff --check`
+- `git diff --check` for authored tracked edits; full baseline comparison used `git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --check 40b9b0708d888a015abe5043bb273c3c6ee601ae HEAD` to recognize preserved CRLF CSV line endings.
+
+The initial unstaged-only diff check did not inspect new archive files. The expanded default baseline-to-commit check flags 3,851 lines in nine exact-byte historical/upstream CSVs. Every flagged line was checked to contain only CR before LF, not trailing spaces/tabs. The CRLF-aware check passes with the remaining whitespace checks enabled. No source bytes, repository Git configuration or merge policy were changed to silence this. diff_verification.json records the affected paths.
 
 Regression coverage includes frozen-source drift and forged-lock rejection, malformed/truncated structural data, both-chain/all-site retention, numeric-block/abstract drift, same-split score alignment, no-fitting guards, exact audit archive hashes, atomic late-render failure, separate main/supplement figures, supplementary caption numbering, Word table header/row controls and non-overlapping structural figure headers. No active pre-commit hook or configured hook system was found. Remote CI was not observed and is not claimed.
 

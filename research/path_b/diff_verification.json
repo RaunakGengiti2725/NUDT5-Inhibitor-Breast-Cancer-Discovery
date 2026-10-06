@@ -1,0 +1,16 @@
+{
+  "raw_diff_check": "3851 CRLF-only line-ending warnings in nine byte-preserved CSV files",
+  "files": [
+    "research/path_b/audit_archive/annotated_current_methods.csv",
+    "research/path_b/audit_archive/annotated_historical_methods.csv",
+    "research/path_b/audit_archive/annotated_requested_component_checklist.csv",
+    "research/path_b/audit_archive/material_gap_register.csv",
+    "research/path_b/audit_archive/reconciliation_log.csv",
+    "research/path_b/audit_archive/unified_claim_table.csv",
+    "research/structure_comparison/model_support/results/local_atom_samples.csv",
+    "research/structure_comparison/model_support/results/residue_availability.csv",
+    "research/structure_comparison/model_support/results/site_availability.csv"
+  ],
+  "all_flagged_lines_have_only_CR_before_LF": true,
+  "checked_new_source_files": 41
+}

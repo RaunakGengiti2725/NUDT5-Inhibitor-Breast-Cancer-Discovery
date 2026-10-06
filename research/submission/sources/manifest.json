@@ -1,0 +1,72 @@
+{
+  "bmc-note-guide.txt.gz": {
+    "sha256": "631430714d2ab2d71c65d9e0dbfe2793e96038a455d4c154721d3d57c2097374",
+    "retrieved_utc_date": "2026-10-06",
+    "url": "https://link.springer.com/journal/13104/submission-guidelines/research-note",
+    "decoded_sha256": "bfe3c8132492e692f1599e1a5a41f705a823745b7b61c612a8863cf793ba7be2",
+    "encoding": "gzip of exact UTF-8 tool capture"
+  },
+  "bmc-policies.txt.gz": {
+    "sha256": "3f17b9dbdae2adc79e05a37a3e502bd81319968f4daf1e7891a7c0885241c07f",
+    "retrieved_utc_date": "2026-10-06",
+    "url": "https://bmcresnotes.biomedcentral.com/submission-guidelines",
+    "decoded_sha256": "3a2cecd336ee480e39c3c6edb5f04d4bfb09350466d0e24858b85ede89cf3a72",
+    "encoding": "gzip of exact UTF-8 tool capture"
+  },
+  "bmc-editorial.txt.gz": {
+    "sha256": "be87dd2e828590709ed70e7d8cf7c2780f75963df5e495c819703b991d178366",
+    "retrieved_utc_date": "2026-10-06",
+    "url": "https://link.springer.com/brands/bmc/editorial-policies",
+    "decoded_sha256": "450d6c0c65cc19e27a026b11869f52bc71c2f6d0d42a17a25be390865b5d358b",
+    "encoding": "gzip of exact UTF-8 tool capture"
+  },
+  "bmc-charges.txt.gz": {
+    "sha256": "aab5b956c39bb48ad494bb2d90b4b896ed69c9c01c6784a183e2aefede57c442",
+    "retrieved_utc_date": "2026-10-06",
+    "url": "https://bmcresnotes.biomedcentral.com/submission-guidelines/fees-and-funding",
+    "decoded_sha256": "1e35e6ab2aff2d845405e33745a5a18ee0808b61165c134c7d16f1639c13dec9",
+    "encoding": "gzip of exact UTF-8 tool capture"
+  },
+  "bmc-read-profile.txt.gz": {
+    "sha256": "31ec68db1c610f4d215ad62460a65ab584aac385cc2ea66002c149db60238071",
+    "retrieved_utc_date": "2026-10-06",
+    "url": "https://www.medschl.cam.ac.uk/randy-read",
+    "decoded_sha256": "b135a56e9123a24e748e5b33c3d3ca3bd5cb3136cdbbcda21025ed4958ccae08",
+    "encoding": "gzip of exact UTF-8 tool capture"
+  },
+  "bmc-richardson-profile.txt.gz": {
+    "sha256": "4e6a674e0aa6f1e2c9407b41dcdb66395e1297e149d9f65038b2773b597bc035",
+    "retrieved_utc_date": "2026-10-06",
+    "url": "https://scholars.duke.edu/person/jsr",
+    "decoded_sha256": "6b08c3e5c6ae8bfc99ce85ff40fb7a2801ad671cb780eab051f2532882980865",
+    "encoding": "gzip of exact UTF-8 tool capture"
+  },
+  "bmc-chodera-profile.txt.gz": {
+    "sha256": "c217a7b87bd917428701b53160eb706b3f0d79af7756d8c887b3f3665948b303",
+    "retrieved_utc_date": "2026-10-06",
+    "url": "https://www.mskcc.org/research/ski/labs/john-chodera",
+    "decoded_sha256": "ad1f3a525faafc4ef9b7c6f0aa46ccb6a7b6c26ffa3560cc1edba1d686374ffe",
+    "encoding": "gzip of exact UTF-8 tool capture"
+  },
+  "bmc-shoichet-profile.txt.gz": {
+    "sha256": "dd3b1bd676f157a75899c105aa3dcada3562743605f5d2d99c223d7df350803f",
+    "retrieved_utc_date": "2026-10-06",
+    "url": "https://profiles.ucsf.edu/Brian.Shoichet",
+    "decoded_sha256": "62e062324764584f3982de3fad9ef4527aa76db4e5135f7d6eec31e322388ec5",
+    "encoding": "gzip of exact UTF-8 tool capture"
+  },
+  "bmc-8riy-profile.txt.gz": {
+    "sha256": "21e0ac7c72a5bf31190d7fec70e569df31e472879775f77a97348dc551268aa5",
+    "retrieved_utc_date": "2026-10-06",
+    "url": "https://www.rcsb.org/structure/8RIY",
+    "decoded_sha256": "2a32fc779dbf3fd717fbcbc0f107953fb61b1310b58a33ba8b85b33a82863fde",
+    "encoding": "gzip of exact UTF-8 tool capture"
+  },
+  "bmc-8otv-profile.txt.gz": {
+    "sha256": "7e688d7ef003bea4eee0df77dd0fc3172ac04f84a6c26ae9ace7067b265ac91a",
+    "retrieved_utc_date": "2026-10-06",
+    "url": "https://www.rcsb.org/structure/8OTV",
+    "decoded_sha256": "3f7832bc49405588a06aca7086e0cfbf82dcb5dba9df7d297cd2fc0e71a4b4d4",
+    "encoding": "gzip of exact UTF-8 tool capture"
+  }
+}

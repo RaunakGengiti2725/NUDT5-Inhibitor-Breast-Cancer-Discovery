@@ -233,6 +233,7 @@ def render_document(
     figures: list[tuple[str, Path, str]],
     *,
     path_b_layout: bool = False,
+    table_width_overrides: dict[str, list[float]] | None = None,
     stem: str = "NUDT5_evidence_bounded_revision",
     title: str = "NUDT5 reproducibility and chemical-identity controls",
 ) -> tuple[Path, Path]:
@@ -307,6 +308,10 @@ def render_document(
                     7: [160, 100, 30, 48, 48, 47, 47],
                 }
                 widths = column_widths.get(len(value[0]), [480 / len(value[0])] * len(value[0]))
+                if table_width_overrides and value[0][0] in table_width_overrides:
+                    widths = table_width_overrides[value[0][0]]
+                    if len(widths) != len(value[0]) or any(w <= 0 for w in widths):
+                        raise ValueError("Invalid table column widths")
                 table.style = "Table Grid"
                 table.autofit = False
                 table.rows[0]._tr.get_or_add_trPr().append(OxmlElement("w:tblHeader"))

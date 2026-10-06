@@ -955,7 +955,44 @@ def load_package(
     )
 
 
+def verified_source_inventory(repository: Path) -> dict[str, str]:
+    """Check a portable snapshot without inventing Git history or authenticating its author."""
+    inventory_path = repository / "SHA256SUMS.json"
+    require(not inventory_path.is_symlink(), "Source inventory symlink refused")
+    inventory = read_json(inventory_path)
+    require(isinstance(inventory, dict) and bool(inventory), "Invalid source inventory")
+    verified: dict[str, str] = {}
+    for name, expected in inventory.items():
+        require(isinstance(name, str) and bool(name), "Invalid source inventory path")
+        relative = Path(name)
+        require(
+            not relative.is_absolute() and ".." not in relative.parts,
+            "Unsafe source inventory path",
+        )
+        path = repository / relative
+        require(
+            not any(p.is_symlink() for p in (path, *path.parents)),
+            "Source inventory symlink refused",
+        )
+        require(path.is_file(), f"Missing source inventory file: {name}")
+        require(
+            isinstance(expected, str) and digest(path.read_bytes()) == expected,
+            f"Source inventory mismatch: {name}",
+        )
+        verified[name] = expected
+    return verified
+
+
 def git_state(repository: Path) -> dict[str, Any]:
+    if not (repository / ".git").exists() and (repository / "SHA256SUMS.json").exists():
+        verified_source_inventory(repository)
+        return {
+            "revision": None,
+            "worktree_porcelain": None,
+            "availability": "source_archive_without_git_history",
+            "source_inventory_sha256": digest((repository / "SHA256SUMS.json").read_bytes()),
+        }
+
     def run(*args: str) -> str:
         result = subprocess.run(
             ["git", "-C", str(repository), *args], capture_output=True, text=True, check=False

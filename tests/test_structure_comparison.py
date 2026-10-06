@@ -815,3 +815,28 @@ def test_copy_mutation_does_not_change_source() -> None:
     copied = copy.deepcopy(data)
     copied["origin"] = "not original"
     assert mod.read_json(MANIFEST) == data
+
+
+@pytest.mark.parametrize("mutation", ["none", "changed", "missing", "traversal", "symlink"])
+def test_portable_source_inventory_never_invents_git_history(tmp_path: Path, mutation: str) -> None:
+    source = tmp_path / "evidence.txt"
+    source.write_bytes(b"software fixture")
+    inventory = {"evidence.txt": mod.digest(source.read_bytes())}
+    if mutation == "changed":
+        source.write_bytes(b"changed")
+    elif mutation == "missing":
+        source.unlink()
+    elif mutation == "traversal":
+        inventory = {"../outside": "0" * 64}
+    elif mutation == "symlink":
+        source.unlink()
+        source.symlink_to(tmp_path / "elsewhere")
+    (tmp_path / "SHA256SUMS.json").write_text(json.dumps(inventory))
+    if mutation == "none":
+        provenance = mod.git_state(tmp_path)
+        assert provenance["revision"] is None
+        assert provenance["worktree_porcelain"] is None
+        assert provenance["availability"] == "source_archive_without_git_history"
+    else:
+        with pytest.raises(mod.ValidationError):
+            mod.git_state(tmp_path)

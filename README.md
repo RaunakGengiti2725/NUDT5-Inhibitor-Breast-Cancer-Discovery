@@ -291,3 +291,27 @@ figures/documents are checkout-only builders. Compare numerical content excludin
 recorded provenance, not runtime timestamps/paths. The original structure-package README and
 manifests describe the earlier curation stage; [the run record](research/structure_comparison/results/VERIFICATION.md)
 and this section describe the implemented stage without rewriting historical provenance.
+
+## BMC Research Notes preparation
+
+The narrower Research Note is `research/submission/manuscript.md`. It retains three
+source-generated main tables, an Objective/Results abstract, named limitations and the
+complete diagnostic supplement. Journal instructions and reviewer identity sources are
+archived with hashes. The longer Path B manuscript and prior AI reviews remain unchanged.
+
+```sh
+.venv/bin/python scripts/build_bmc_submission.py --output results/bmc-note
+```
+
+This rebuilds the underlying Path B evidence first, enforces the journal word/display/file
+limits, and creates a double-spaced, line/page-numbered editable DOCX, reading-proof PDF,
+250-word cover-letter core, supplement and two source archives. Restore both source ZIPs
+into one directory to reproduce without Git. Each additional file is limited to 20 MB.
+The generated archive inventory covers both source parts.
+
+Author statements are deliberately null in `research/submission/author_confirmation.json`.
+Use `--require-author-confirmation` to enforce release; it fails until the author supplies
+all factual statements and approvals. Read `research/submission/author_actions.md` first.
+Do not infer no funding, no conflicts, exclusive submission, sole authorship, permissions
+or human verification. Machine checks cannot authenticate an author's declaration.
+No external submission, public deposit, payment, laboratory contact or PR merge occurs.

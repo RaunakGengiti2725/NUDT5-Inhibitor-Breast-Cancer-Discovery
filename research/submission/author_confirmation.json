@@ -1,0 +1,25 @@
+{
+  "status": "author_answers_required",
+  "statements": {
+    "final_byline_and_addresses": null,
+    "ethics_approval_and_consent": null,
+    "consent_for_publication": null,
+    "competing_interests": null,
+    "funding": null,
+    "author_contributions": null,
+    "acknowledgements": null,
+    "ai_assistance_disclosure": null,
+    "prior_publication_and_submission_history": null,
+    "label_and_decoy_provenance_disposition": null,
+    "rights_permissions_and_code_license": null
+  },
+  "confirmations": {
+    "contributor_history_resolved": false,
+    "all_authors_approve_and_accept_accountability": false,
+    "no_concurrent_submission": false,
+    "all_retained_material_reuse_cleared": false,
+    "source_provenance_disposition_approved": false,
+    "human_review_of_ai_assisted_work_complete": false,
+    "journal_fees_and_license_terms_reviewed": false
+  }
+}

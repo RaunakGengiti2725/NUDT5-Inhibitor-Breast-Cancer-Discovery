@@ -87,19 +87,11 @@ def read_source_csv(path: Path, required: Sequence[str] = ()) -> list[dict[str, 
 
 
 def potency(value: str) -> tuple[str, float | None]:
-    """Return only the mean; validate a supplied SD but do not propagate uncertainty."""
     if value == "not tested":
         return "untested", None
     if value == "not active":
         return "inactive_gt50_uM", None
-    parts = value.split("±")
-    if len(parts) > 2:
-        raise ValueError("Expected a mean and at most one SD")
-    if len(parts) == 2:
-        uncertainty = float(parts[1].strip())
-        if not np.isfinite(uncertainty) or uncertainty < 0:
-            raise ValueError("Finite nonnegative SD required")
-    numeric = float(parts[0].strip())
+    numeric = float(value.split("±")[0].strip())
     if not np.isfinite(numeric) or numeric <= 0:
         raise ValueError("Positive finite potency required")
     return "numeric_ic50_uM", numeric

@@ -1,0 +1,8 @@
+{
+  "files": {
+    "research/submission/manuscript.template.md": "dc8514455aa727ffe39c25e94b83c3027395f0f2df85aaf91017c1e9aa33fc0d",
+    "research/manuscript.md": "913133f92ebe3150806858bb0d730ea88fa09ece8c2a75d54fbc9c960c9e4d2d",
+    "research/path_b/diagnostic_supplement.md": "97e3259941e03ccb487a5325f0b07da21074189b219eb5bc264dfbb326bef44e"
+  },
+  "policy": "Reviewed prose and numerical tokens; editorial changes require deliberate lock review, not automatic restamping."
+}

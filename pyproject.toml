@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "nudt5-evidence-audit"
 version = "0.1.0"
 description = "Reproducibility and chemical-data diagnostics; not a validated inhibitor predictor"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dynamic = ["dependencies"]
 
 [project.scripts]
@@ -30,14 +30,14 @@ pythonpath = ["scripts/scripts", "scripts"]
 addopts = "-ra --strict-config --strict-markers"
 
 [tool.ruff]
-target-version = "py311"
+target-version = "py312"
 line-length = 100
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP", "SIM", "EXE"]
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.12"
 files = ["scripts", "tests"]
 strict = true
 follow_untyped_imports = true

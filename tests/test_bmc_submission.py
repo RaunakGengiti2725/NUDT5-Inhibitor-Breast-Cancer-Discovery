@@ -5,6 +5,9 @@ import gzip
 import hashlib
 import io
 import json
+import os
+import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 from xml.etree import ElementTree
@@ -152,7 +155,9 @@ def test_official_source_captures_match_hashes() -> None:
         )
 
 
-def test_source_archive_without_git_and_missing_map_part(tmp_path: Path) -> None:
+def test_source_archive_without_git_and_missing_map_part(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     root = tmp_path / "source"
     for name in ("scripts/build_bmc_submission.py", "tests/test_bmc_submission.py", "a.ccp4.gz"):
         path = root / name
@@ -163,6 +168,26 @@ def test_source_archive_without_git_and_missing_map_part(tmp_path: Path) -> None
         for p in root.rglob("*")
         if p.is_file()
     }
+    import submission_archive
+
+    allowlist = root / submission_archive.ALLOWLIST
+    allowlist.parent.mkdir(parents=True)
+    names = [*inventory, str(submission_archive.ALLOWLIST)]
+    allowlist.write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "files": {name: {"sha256": None, "rights_class": "fixture"} for name in names},
+                "generated_files": [],
+            }
+        )
+    )
+    monkeypatch.setattr(
+        submission_archive, "PUBLIC_LOCK_SHA256", hashlib.sha256(allowlist.read_bytes()).hexdigest()
+    )
+    inventory[str(submission_archive.ALLOWLIST)] = hashlib.sha256(
+        allowlist.read_bytes()
+    ).hexdigest()
     (root / "SHA256SUMS.json").write_text(json.dumps(inventory))
     generated = tmp_path / "generated"
     generated.mkdir()
@@ -201,13 +226,16 @@ def test_full_package_build(tmp_path: Path) -> None:
         assert b"AUTHOR-REVIEW DRAFT" in xml
         assert b"lnNumType" in xml
     extracted = tmp_path / "extracted"
-    for name in ("Additional_file_2.zip", "Additional_file_3.zip"):
+    for name in ("Additional_file_2.zip", "Additional_file_3.zip", "Private_audit_provenance.zip"):
         with ZipFile(output / name) as archive:
             archive.extractall(extracted)
     source = extracted / "source"
     inventory = json.loads((source / "SHA256SUMS.json").read_text())
     for name, digest in inventory.items():
         assert hashlib.sha256((source / name).read_bytes()).hexdigest() == digest
+    assert not (source / PACKAGE / "reviewer_candidates.md").exists()
+    assert not (source / PACKAGE / "author_confirmation.json").exists()
+    assert not (source / PACKAGE / "sources").exists()
     supplement = (output / "Additional_file_1.md").read_text()
     assert "## Extended structural and endpoint methods" in supplement
     assert "## Supplementary references" in supplement
@@ -217,8 +245,180 @@ def test_full_package_build(tmp_path: Path) -> None:
     assert doc.tables[2].columns[0].width.pt == 155
     assert len(Document(str(output / "Additional_file_1.docx")).inline_shapes) == 10
     rebuilt = tmp_path / "rebuilt_without_git"
-    second_manifest = json.loads(build(source, rebuilt).read_text())
+    subprocess.run(
+        [
+            sys.executable,
+            str(source / "scripts/build_bmc_submission.py"),
+            "--repository",
+            str(source),
+            "--output",
+            str(rebuilt),
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+        env={**os.environ, "PYTHONPATH": str(source / "scripts/scripts")},
+    )
+    second_manifest = json.loads((rebuilt / "submission-manifest.json").read_text())
     assert second_manifest["article_checks"] == manifest["article_checks"]
     assert (rebuilt / "BMC_research_note.md").read_bytes() == (
         output / "BMC_research_note.md"
     ).read_bytes()
+    candidate = source / PACKAGE / "manuscript.md"
+    candidate.write_text(candidate.read_text().replace("3.756", "9.999", 1))
+    with pytest.raises(ValueError, match="drift"):
+        build(source, tmp_path / "mutated-strict", require_author_confirmation=True)
+    assert not (tmp_path / "mutated-strict").exists()
+
+
+@pytest.mark.parametrize(
+    "bad",
+    [
+        "\u200b",
+        "TODO",
+        "[ MISSING ]",
+        "ＴＢＤ",
+        "T\u200bBD",
+        r"\g<0>",
+        "Text with TODO inside",
+        "\u2800",
+        "\u034f",
+        "\u3164",
+        "Text\n## References",
+        "Text\u2028| New | Table |",
+    ],
+)
+def test_adversarial_author_statements_fail_closed(bad: str) -> None:
+    record = approved_fixture()
+    record["statements"]["funding"] = bad
+    assert "funding" in release_gaps(record)
+
+
+@pytest.mark.parametrize(
+    "payload",
+    [
+        "[]",
+        "null",
+        '"text"',
+        '{"status":"author_confirmed","status":"author_answers_required"}',
+        '{"statements":{"funding":"a","funding":"b"}}',
+    ],
+)
+def test_malformed_author_json_refused(tmp_path: Path, payload: str) -> None:
+    from author_release import read_record
+
+    path = tmp_path / "record.json"
+    path.write_text(payload)
+    with pytest.raises(ValueError):
+        release_gaps(read_record(path))
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "",
+        "C:/outside",
+        "a\\..\\outside",
+        "./a",
+        "a//b",
+        "/absolute",
+        "../escape",
+        "CON",
+        "dir/NUL.txt",
+        "a.",
+        "a ",
+        "a\x00b",
+        "a?b",
+    ],
+)
+def test_portable_archive_path_refusal(name: str) -> None:
+    with pytest.raises(ValueError, match="Unsafe"):
+        zip_payload({name: b"no"})
+
+
+def test_literal_author_text_rendering(tmp_path: Path) -> None:
+    from build_research_documents import read_blocks, render_document
+
+    text = "Actual *asterisks* and `backticks`, <angle brackets> & ampersand."
+    _, path = render_document(read_blocks(text), tmp_path, [], literal_paragraphs=frozenset({text}))
+    assert text in [p.text for p in Document(str(path)).paragraphs]
+
+
+@pytest.mark.parametrize(
+    "before,after",
+    [
+        ("3.756", "9.999"),
+        ("0.600", "9.999"),
+        ("0.9960", "0.5000"),
+        ("All four", "All five"),
+        ("46 rows", "47 rows"),
+        ("20 versus 60", "20 versus 20"),
+    ],
+)
+def test_prose_drift_refused_outside_tables(before: str, after: str) -> None:
+    from bmc_prose import validate_prose
+
+    inputs = [
+        json.loads((ROOT / name).read_text())
+        for name in (
+            "research/structure_comparison/results/observed_proximity.json",
+            "research/results/selectivity.json",
+            "research/structure_comparison/model_support/results/model_support.json",
+            "research/results/controls.json",
+        )
+    ]
+    text = (ROOT / PACKAGE / "manuscript.md").read_text()
+    validate_prose(ROOT, text, inputs)
+    assert before in text
+    with pytest.raises(ValueError, match="drift"):
+        validate_prose(ROOT, text.replace(before, after, 1), inputs)
+
+
+def test_public_inventory_excludes_private_material() -> None:
+    from submission_archive import distribution_gaps, public_inventory
+
+    names = public_inventory(ROOT)["files"]
+    assert not any(
+        "reviewer" in n or "author_confirmation" in n or "submission/sources" in n or "AI-R" in n
+        for n in names
+    )
+    assert distribution_gaps(ROOT)
+    assert (
+        len(release_gaps(json.loads((ROOT / PACKAGE / "author_confirmation.json").read_text())))
+        == 19
+    )
+
+
+def test_final_extra_table_anywhere_refused() -> None:
+    text = (ROOT / PACKAGE / "manuscript.md").read_text()
+    with pytest.raises(ValueError):
+        article_checks(text + "\n| Extra | Table |\n| --- | --- |\n| a | b |\n")
+
+
+def test_archive_refuses_linked_sources(tmp_path: Path) -> None:
+    import os
+
+    from submission_archive import source_bytes
+
+    original = tmp_path / "original"
+    original.write_bytes(b"data")
+    (tmp_path / "symlink").symlink_to(original)
+    with pytest.raises(ValueError, match="Symlink"):
+        source_bytes(tmp_path, "symlink")
+    (tmp_path / "dirlink").symlink_to(tmp_path, target_is_directory=True)
+    with pytest.raises(ValueError, match="Symlink"):
+        source_bytes(tmp_path, "dirlink/original")
+    os.link(original, tmp_path / "hardlink")
+    with pytest.raises(ValueError, match="single-link"):
+        source_bytes(tmp_path, "hardlink")
+
+
+def test_author_schema_rejects_unknown_and_missing_keys() -> None:
+    record = approved_fixture()
+    record["unknown"] = True
+    with pytest.raises(ValueError, match="schema"):
+        release_gaps(record)
+    record = approved_fixture()
+    del record["statements"]["funding"]
+    with pytest.raises(ValueError, match="fields"):
+        release_gaps(record)

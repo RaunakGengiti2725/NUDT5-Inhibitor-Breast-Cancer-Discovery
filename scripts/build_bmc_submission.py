@@ -4,67 +4,35 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import io
 import json
+import os
+import platform
 import re
-import subprocess
 import tempfile
+from importlib.metadata import version
 from pathlib import Path
 from typing import Any
-from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 import build_path_b_documents as path_b
 import build_research_documents as documents
+import numpy as np
+from author_release import CONFIRMATIONS as CONFIRMATIONS
+from author_release import STATEMENTS as STATEMENTS
+from author_release import blank_record, read_record
+from author_release import release_gaps as release_gaps
+from bmc_prose import validate_prose
 from docx import Document
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Pt, RGBColor
 from selectivity import json_bytes, publish
-from structure_comparison import verified_source_inventory
+from submission_archive import code_access, distribution_gaps, source_bytes
+from submission_archive import source_archives as source_archives
+from submission_archive import zip_payload as zip_payload
+from threadpoolctl import threadpool_info
 
 PACKAGE = Path("research/submission")
-STATEMENTS = (
-    "final_byline_and_addresses",
-    "ethics_approval_and_consent",
-    "consent_for_publication",
-    "competing_interests",
-    "funding",
-    "author_contributions",
-    "acknowledgements",
-    "ai_assistance_disclosure",
-    "prior_publication_and_submission_history",
-    "label_and_decoy_provenance_disposition",
-    "rights_permissions_and_code_license",
-)
-CONFIRMATIONS = (
-    "contributor_history_resolved",
-    "all_authors_approve_and_accept_accountability",
-    "no_concurrent_submission",
-    "all_retained_material_reuse_cleared",
-    "source_provenance_disposition_approved",
-    "human_review_of_ai_assisted_work_complete",
-    "journal_fees_and_license_terms_reviewed",
-)
 MAX_ADDITIONAL_BYTES = 20_000_000
-
-
-def release_gaps(record: dict[str, Any]) -> list[str]:
-    gaps = []
-    if record.get("status") != "author_confirmed":
-        gaps.append("status: author confirmation required")
-    statements, confirmations = record.get("statements", {}), record.get("confirmations", {})
-    if not isinstance(statements, dict) or not isinstance(confirmations, dict):
-        raise ValueError("Author statements and confirmations must be objects")
-    for name in STATEMENTS:
-        value = statements.get(name)
-        if (
-            not isinstance(value, str)
-            or not value.strip()
-            or re.search(r"\[(?:MISSING|OWNER|TODO|INSERT)|\bTBD\b", value, re.IGNORECASE)
-        ):
-            gaps.append(name)
-    gaps.extend(name for name in CONFIRMATIONS if confirmations.get(name) is not True)
-    return gaps
 
 
 def article_checks(text: str) -> dict[str, Any]:
@@ -92,15 +60,26 @@ def article_checks(text: str) -> dict[str, Any]:
         raise ValueError("Abstract must not contain reference citations")
     body = text.split("## Introduction\n")[1].split("## List of abbreviations\n")[0]
     prose = "\n".join(line for line in body.splitlines() if not line.startswith(("|", "<!--")))
-    abstract_words, body_words = len(abstract.split()), len(prose.split())
+    abstract_words, body_words = (
+        len(re.sub(r"(?m)^#{1,6}\s+", "", documents.plain(abstract)).split()),
+        len(re.sub(r"(?m)^#{1,6}\s+", "", documents.plain(prose)).split()),
+    )
     keywords = text.split("## Keywords\n")[1].split("## Introduction\n")[0].strip().split(";")
-    tables = [b for b in documents.read_blocks(body) if b[0] == "table"]
+    tables = [b for b in documents.read_blocks(text) if b[0] == "table"]
     if abstract_words > 200 or body_words > 2000 or not 3 <= len(keywords) <= 10:
         raise ValueError("Journal word or keyword limit exceeded")
     if len(tables) != 3 or re.search(r"^Figure \d", text, re.MULTILINE):
         raise ValueError("This note requires exactly three tables and no main figures")
+    citations = re.findall(r"Table ([1-3])(?!\.)", body)
+    if list(dict.fromkeys(citations)) != ["1", "2", "3"]:
+        raise ValueError("Tables must be cited in order")
     for number in range(1, 4):
-        match = re.search(rf"^Table {number}\. (.*?)\n\n(.*?)\n\n<!--", text, re.S | re.M)
+        match = re.search(
+            rf"^Table {number}\. ([^\n]+)\n\n<!-- path-b:[^\n]+:start -->"
+            r"\n.*?\n<!-- path-b:[^\n]+:end -->\n\n([^\n]+)",
+            text,
+            re.S | re.M,
+        )
         if not match or len(match[1].split()) > 15 or len(match[2].split()) > 300:
             raise ValueError("Invalid table title or legend")
     return {
@@ -141,57 +120,9 @@ def format_journal_docx(path: Path) -> None:
     doc.save(str(path))
 
 
-def zip_payload(files: dict[str, bytes]) -> bytes:
-    buffer = io.BytesIO()
-    with ZipFile(buffer, "w", ZIP_DEFLATED, compresslevel=9) as archive:
-        for name, payload in sorted(files.items()):
-            if Path(name).is_absolute() or ".." in Path(name).parts:
-                raise ValueError("Unsafe archive path")
-            info = ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
-            info.compress_type = ZIP_DEFLATED
-            info.external_attr = 0o100644 << 16
-            archive.writestr(info, payload)
-    return buffer.getvalue()
-
-
-def source_archives(repository: Path, generated: Path) -> tuple[bytes, bytes]:
-    if (repository / ".git").exists():
-        names = set(
-            subprocess.check_output(["git", "ls-files", "-z"], cwd=repository).decode().split("\0")
-        ) - {""}
-    else:
-        names = set(verified_source_inventory(repository))
-    names.update(
-        str(p.relative_to(repository)) for p in (repository / PACKAGE).rglob("*") if p.is_file()
-    )
-    names.update({"scripts/build_bmc_submission.py", "tests/test_bmc_submission.py"})
-    groups: list[dict[str, bytes]] = [{}, {}]
-    hashes: dict[str, str] = {}
-    for name in sorted(names):
-        path = repository / name
-        if path.is_symlink() or any(p.is_symlink() for p in path.parents):
-            raise ValueError(f"Symlink refused in source archive: {name}")
-        payload = path.read_bytes()
-        hashes[name] = hashlib.sha256(payload).hexdigest()
-        group = int(name.endswith((".ccp4.gz", "-sf.cif.gz")))
-        groups[group][f"source/{name}"] = payload
-    groups[0]["source/SHA256SUMS.json"] = json_bytes(hashes)
-    for path in sorted(generated.iterdir()):
-        groups[0][f"generated/path_b/{path.name}"] = path.read_bytes()
-    groups[0]["REPRODUCE.txt"] = (
-        b"Extract Additional_file_2.zip and Additional_file_3.zip into the same directory.\n"
-        b"The source/ directory contains the checkout; SHA256SUMS.json covers both archives.\n"
-        b"From source/: follow README.md to install the pinned Python environment, then run\n"
-        b".venv/bin/python scripts/build_bmc_submission.py --output ../reproduced-note\n"
-        b"Use a new output directory. No training, download, submission or public deposit occurs.\n"
-        b"Historical manuscripts, claims, AI reviews and manifests are provenance.\n"
-        b"The reading proof and internal author/policy files are not manuscript uploads.\n"
-        b"Rights and author confirmations remain prerequisites to external distribution.\n"
-    )
-    return zip_payload(groups[0]), zip_payload(groups[1])
-
-
-def declarations(record: dict[str, Any], archive_hashes: dict[str, str]) -> str:
+def declarations(
+    record: dict[str, Any], archive_hashes: dict[str, str], access: dict[str, Any] | None = None
+) -> str:
     statement = record["statements"]
     pairs = (
         ("Ethics approval and consent to participate", statement["ethics_approval_and_consent"]),
@@ -201,7 +132,14 @@ def declarations(record: dict[str, Any], archive_hashes: dict[str, str]) -> str:
             "The source snapshots, code and recorded results "
             "supporting this reanalysis accompany Additional files 2 and 3. The historical "
             "18,412-compound library and raw catalytic replicate vectors are unavailable. "
-            + " ".join(f"{name} SHA-256: {digest}." for name, digest in archive_hashes.items()),
+            + " ".join(f"{name} SHA-256: {digest}." for name, digest in archive_hashes.items())
+            + (
+                " Code access and requirements: " + json.dumps(access, ensure_ascii=False)
+                if access
+                else ""
+            )
+            + " Rights/license statement: "
+            + str(statement["rights_permissions_and_code_license"]),
         ),
         ("Competing interests", statement["competing_interests"]),
         ("Funding", statement["funding"]),
@@ -227,19 +165,41 @@ def build(repository: Path, output: Path, *, require_author_confirmation: bool =
             "research/results/controls.json",
         )
     ]
-    blocks = path_b.quantitative_blocks(*(json.loads(p.read_text()) for p in inputs))
+    data = [json.loads(p.read_text()) for p in inputs]
+    validate_prose(repository, text, data)
+    blocks = path_b.quantitative_blocks(*data)
     path_b.synchronize(text, {k: blocks[k] for k in ("sites", "paired", "controls")})
     checks = article_checks(text)
-    record = json.loads((package / "author_confirmation.json").read_text())
+    record = (
+        read_record(package / "author_confirmation.json")
+        if (package / "author_confirmation.json").exists()
+        else blank_record()
+    )
     gaps = release_gaps(record)
-    if require_author_confirmation and gaps:
-        raise ValueError("Author release blocked: " + ", ".join(gaps))
-    cover = (package / "cover_letter.md").read_text()
+    rights_gaps = distribution_gaps(repository)
+    access = code_access(repository)
+    if require_author_confirmation and (gaps or rights_gaps):
+        raise ValueError("Author release blocked: " + ", ".join(gaps + rights_gaps))
+    cover_path = package / "cover_letter.md"
+    if not cover_path.exists():
+        cover_path = package / "cover_letter_core.md"
+    cover = cover_path.read_text()
     if len(cover.split("Dear Editors,\n", 1)[1].split()) != 250:
         raise ValueError("Cover-letter scientific core must be 250 words")
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=".bmc-note-", dir=output.parent) as folder:
         staging = Path(folder)
+        private_source = repository
+        if not (repository / ".git").exists() and (repository / "SHA256SUMS.json").exists():
+            private_source = repository.parent / "private/source"
+        private_manifest = json.loads((package / "private_archive.json").read_text())
+        private_files = {}
+        for name, expected in private_manifest["files"].items():
+            payload = source_bytes(private_source, name)
+            if hashlib.sha256(payload).hexdigest() != expected:
+                raise ValueError(f"Private provenance changed: {name}")
+            private_files[f"private/source/{name}"] = payload
+        (staging / "Private_audit_provenance.zip").write_bytes(zip_payload(private_files))
         baseline = staging / "path_b"
         documents.build(
             repository / "research/manuscript.md",
@@ -287,10 +247,10 @@ def build(repository: Path, output: Path, *, require_author_confirmation: bool =
         archives = {"Additional_file_2.zip": first, "Additional_file_3.zip": second}
         for name, payload in archives.items():
             (staging / name).write_bytes(payload)
-        if not gaps:
+        if not gaps and not rights_gaps:
             text = re.sub(
                 r"^AUTHOR-REVIEW DRAFT\..*?$",
-                record["statements"]["final_byline_and_addresses"],
+                lambda _: record["statements"]["final_byline_and_addresses"],
                 text,
                 flags=re.M,
             )
@@ -302,6 +262,7 @@ def build(repository: Path, output: Path, *, require_author_confirmation: bool =
                         name: hashlib.sha256(payload).hexdigest()
                         for name, payload in archives.items()
                     },
+                    access,
                 )
                 + "## References\n",
             )
@@ -315,6 +276,7 @@ def build(repository: Path, output: Path, *, require_author_confirmation: bool =
                 "\n\nAll authors have approved this manuscript and accept accountability. "
                 "No concurrent submission is active.\n"
             )
+        checks = article_checks(text)
         (staging / "BMC_research_note.md").write_text(text)
         (staging / "Cover_letter.md").write_text(cover)
         for stem, content in (("BMC_research_note", text), ("Cover_letter", cover)):
@@ -325,6 +287,15 @@ def build(repository: Path, output: Path, *, require_author_confirmation: bool =
                 path_b_layout=True,
                 stem=stem,
                 title="BMC Research Notes preparation",
+                literal_paragraphs=frozenset(
+                    b[1]
+                    for b in documents.read_blocks(content)
+                    if b[0] == "paragraph"
+                    and any(
+                        isinstance(value, str) and value in b[1]
+                        for value in record["statements"].values()
+                    )
+                ),
                 table_width_overrides={
                     "Control / method": [155, 105, 110, 110],
                     "PDB": [40, 45, 115, 44, 44, 48, 74, 70],
@@ -338,7 +309,8 @@ def build(repository: Path, output: Path, *, require_author_confirmation: bool =
             "claim_traceability.md",
             "author_confirmation.json",
         ):
-            (staging / name).write_bytes((package / name).read_bytes())
+            if (package / name).exists():
+                (staging / name).write_bytes((package / name).read_bytes())
         for name in ("Additional_file_1.pdf", *archives):
             if (staging / name).stat().st_size > MAX_ADDITIONAL_BYTES:
                 raise ValueError(f"Additional file exceeds 20 MB: {name}")
@@ -347,7 +319,34 @@ def build(repository: Path, output: Path, *, require_author_confirmation: bool =
             "journal": "BMC Research Notes",
             "article_type": "Research note",
             "author_release_checks_complete": not gaps,
-            "submission_ready": not gaps,
+            "submission_ready": not gaps and not rights_gaps,
+            "distribution_gaps": rights_gaps,
+            "code_access": access,
+            "runtime": {
+                "python": platform.python_version(),
+                "platform": platform.platform(),
+                "versions": {
+                    name: version(name)
+                    for name in ("numpy", "scipy", "scikit-learn", "rdkit", "gemmi")
+                },
+                "numpy_build": np.show_config(mode="dicts"),
+                "threadpools": [
+                    {k: v for k, v in pool.items() if k != "filepath"} for pool in threadpool_info()
+                ],
+                "thread_environment": {
+                    name: os.environ.get(name)
+                    for name in (
+                        "OMP_NUM_THREADS",
+                        "OPENBLAS_NUM_THREADS",
+                        "MKL_NUM_THREADS",
+                        "NPY_DISABLE_CPU_FEATURES",
+                    )
+                },
+                "scope": (
+                    "Current rendering/check environment, not historical model-fit provenance "
+                    "or cross-platform equivalence"
+                ),
+            },
             "submitted": False,
             "biological_validation": False,
             "author_owned_gaps": gaps,

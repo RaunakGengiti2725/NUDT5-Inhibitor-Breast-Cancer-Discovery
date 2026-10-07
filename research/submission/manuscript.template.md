@@ -10,7 +10,7 @@ This descriptive reanalysis asks what atom-specific inspection adds to published
 
 ### Results
 
-All four deposited ligand sites in 8RIY and 8OTV were retained. The nearest positive-occupancy Arg51 witnesses in the two NUDT5 sites were backbone N at 3.756 Å and side-chain CD at 3.251 Å. The first site contains a zero-occupancy CZ atom and report-listed geometry problems; the second witness has fractional occupancy. Whole-ligand real-space correlation coefficients of 0.928–0.952 coexist with less favourable atom-level density summaries. Compound 9's reported NUDT14/NUDT5 catalytic half-maximal inhibitory concentration ratio is 0.600, under different reaction durations and without recoverable ratio uncertainty. Simple descriptor controls expose source-label separation in the screening benchmark. These observations support site-specific description and caution against interpreting proximity or screening scores as binding energetics or selectivity. No new inhibitor, biological experiment or prospective validation is reported. The structures, maps and validation reports share experimental and model dependencies.
+All four deposited ligand sites in 8RIY and 8OTV were retained. The nearest positive-occupancy Arg51 witnesses in the two NUDT5 sites were backbone N at {{aaa_distance}} Å and side-chain CD at {{bbb_distance}} Å. The first site contains a zero-occupancy CZ atom and report-listed geometry problems; the second witness has fractional occupancy. Whole-ligand real-space correlation coefficients of {{rscc_range}} coexist with less favourable atom-level density summaries. Compound 9's reported NUDT14/NUDT5 catalytic half-maximal inhibitory concentration ratio is {{compound9_ratio}}, under different reaction durations and without recoverable ratio uncertainty. Simple descriptor controls expose source-label separation in the screening benchmark. These observations support site-specific description and caution against interpreting proximity or screening scores as binding energetics or selectivity. No new inhibitor, biological experiment or prospective validation is reported. The structures, maps and validation reports share experimental and model dependencies.
 
 ## Keywords
 
@@ -42,69 +42,36 @@ The control analysis reports pooled receiver-operating-characteristic area under
 
 ### Site-specific observations
 
-8RIY has nominal resolution approximately 2.288 Å and no modeled Mg; 8OTV has resolution approximately 1.82 Å and one Mg. 8RIY refinement completeness is 35.535%, distinct from the deposited reflections completeness of 85.8%; direction-dependent incompleteness limits interpreting nominal resolution as uniform precision. All four W0O sites map exactly to report rows (Table 1). In NUDT5 author chain AAA, the nearest retained Arg51 witness is backbone N at 3.756 Å; CZ has zero occupancy and is excluded. Official reports list local bond, angle and clash problems. In BBB, the witness is side-chain CD at 3.251 Å with occupancy 0.78, and no Arg51 outlier is listed in the inspected report. Neither witness is a guanidinium atom. Absence of a listed outlier does not establish that BBB is correct.
+8RIY has nominal resolution approximately 2.288 Å and no modeled Mg; 8OTV has resolution approximately 1.82 Å and one Mg. 8RIY refinement completeness is 35.535%, distinct from the deposited reflections completeness of 85.8%; direction-dependent incompleteness limits interpreting nominal resolution as uniform precision. All four W0O sites map exactly to report rows (Table 1). In NUDT5 author chain AAA, the nearest retained Arg51 witness is backbone N at {{aaa_distance}} Å; CZ has zero occupancy and is excluded. Official reports list local bond, angle and clash problems. In BBB, the witness is side-chain CD at {{bbb_distance}} Å with occupancy 0.78, and no Arg51 outlier is listed in the inspected report. Neither witness is a guanidinium atom. Absence of a listed outlier does not establish that BBB is correct.
 
-Whole-ligand RSCC spans 0.928–0.952 and RSR spans 0.076–0.097. EDIAm spans 0.410–0.804 and OPIA spans 16.67–83.33%. Arg51 EDIAm is 0.199 in AAA and 0.413 in BBB. These less favourable atom-level summaries limit interpretation of the nearest-atom difference. Leu47 alternate conformers in 8OTV remain separate. NUDT14 residue 51 is serine; no equivalence to NUDT5 Arg51 is asserted.
+Whole-ligand RSCC spans {{rscc_range}} and RSR spans 0.076–0.097. EDIAm spans 0.410–0.804 and OPIA spans 16.67–83.33%. Arg51 EDIAm is 0.199 in AAA and 0.413 in BBB. These less favourable atom-level summaries limit interpretation of the nearest-atom difference. Leu47 alternate conformers in 8OTV remain separate. NUDT14 residue 51 is serine; no equivalence to NUDT5 Arg51 is asserted.
 
 Table 1. Deposited ligand and Arg51 model-support summaries
 
 <!-- path-b:sites:start -->
-| PDB | Target | Site label / auth / residue | RSCC | RSR | EDIAm | OPIA (%) | Report atoms |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 8OTV | NUDT14 | C / A / 301 | 0.952 | 0.076 | 0.804 | 83.330 | 30 |
-| 8OTV | NUDT14 | F / B / 302 | 0.928 | 0.097 | 0.728 | 60.000 | 30 |
-| 8RIY | NUDT5 | C / AAA / 301 | 0.931 | 0.094 | 0.412 | 16.670 | 30 |
-| 8RIY | NUDT5 | D / BBB / 301 | 0.940 | 0.091 | 0.410 | 26.670 | 30 |
-| 8RIY | NUDT5 | Arg51 A / AAA / 51 | 0.894 | 0.103 | 0.199 | 18.180 | 11 |
-| 8RIY | NUDT5 | Arg51 B / BBB / 51 | 0.901 | 0.143 | 0.413 | 45.450 | 11 |
+
 <!-- path-b:sites:end -->
 
 Site identifiers are label chain / author chain / author residue number. The first four rows are W0O; the last two are Arg51. Report atoms are those included in source density analysis. RSCC, RSR, EDIAm and OPIA describe the same deposited models and do not independently validate ligand placement or interaction energy.
 
 ### Catalytic endpoints and screening controls
 
-Table 2 retains every paired-endpoint compound, including training-overlap compounds 10 and 11. Compound 9 has R = 0.600 and the highest stored Equal_mean among eligible nonoverlapping paired compounds in both frozen score scenarios. Only three of the six eligible compounds have finite ratios. Its nearest retained training neighbour is ACT-20, source compound 10, at Tanimoto similarity 0.660. This is descriptive discordance between a source-label score and source-reported catalytic ordering. It does not test general selectivity prediction.
+Table 2 retains every paired-endpoint compound, including training-overlap compounds 10 and 11. Compound 9 has R = {{compound9_ratio}} and the highest stored Equal_mean among eligible nonoverlapping paired compounds in both frozen score scenarios. Only three of the six eligible compounds have finite ratios. Its nearest retained training neighbour is ACT-20, source compound 10, at Tanimoto similarity 0.660. This is descriptive discordance between a source-label score and source-reported catalytic ordering. It does not test general selectivity prediction.
 
 Table 2. Reported catalytic endpoints and source-bound ratios
 
 <!-- path-b:paired:start -->
-| Compound | NUDT5 IC50, µM (mean ± SD or bound) | NUDT14 IC50, µM (mean ± SD or bound) | R or strict bound |
-| --- | --- | --- | --- |
-| 1 | 0.837 ± 0.329 | 0.990 ± 0.110 | 1.18 |
-| 9 | 0.270 ± 0.027 | 0.162 ± 0.005 | 0.6 |
-| 10 | 0.487 ± 0.010 | 0.263 ± 0.031 | 0.54 |
-| 11 | 2.04 ± 0.240 | 0.519 ± 0.084 | 0.254 |
-| 12 | >50 | >50 | No finite bound |
-| 13 | >50 | 3.72 ± 0.190 | <0.0744 |
-| 14 | 13.8 ± 0.900 | 1.64 ± 0.140 | 0.119 |
-| 15 | >50 | >50 | No finite bound |
+
 <!-- path-b:paired:end -->
 
 IC50 values are reported means ± SD or bounds in µM [2]. R = NUDT14/NUDT5 is dimensionless. Endpoint SDs are not ratio uncertainty. Unequal reaction durations, shared normalization and unresolved replicate pairing apply to every row. An upper bound is strict. Displayed ratio precision is arithmetic precision, not measurement precision.
 
-Table 3 shows that high original-label discrimination is available to simple descriptors. TPSA-only and HBA-only logistic regression both reach pooled ROC-AUC 0.9960, compared with 0.9312 for Equal_mean. No positive/decoy pair meets the fixed seven-descriptor, 0.5 full-cohort-standard-deviation caliper. Nine of 26 decoys meet all three historical written tolerances, and only ACT-19 and ACT-20 have any matched decoys in the available records. These findings expose benchmark construction; they establish no target-specific recognition. Prevalence-score pooled ROC-AUC differs from its within-fold value because fold prevalences order observations across fitted models.
+Table 3 shows that high original-label discrimination is available to simple descriptors. TPSA-only and HBA-only logistic regression both reach pooled ROC-AUC {{descriptor_auc}}, compared with {{consensus_auc}} for Equal_mean. No positive/decoy pair meets the fixed seven-descriptor, 0.5 full-cohort-standard-deviation caliper. Nine of 26 decoys meet all three historical written tolerances, and only ACT-19 and ACT-20 have any matched decoys in the available records. These findings expose benchmark construction; they establish no target-specific recognition. Prevalence-score pooled ROC-AUC differs from its within-fold value because fold prevalences order observations across fitted models.
 
 Table 3. Same-split source-label controls
 
 <!-- path-b:controls:start -->
-| Control / method | Pooled ROC-AUC | Within-fold ROC-AUC | Pairs pooled / within |
-| --- | --- | --- | --- |
-| Constant_0_5 | 0.5000 | 0.5000 | 494 / 87 |
-| Train_prevalence | 0.2460 | 0.5000 | 494 / 87 |
-| Property_LR | 0.9798 | 1.0000 | 494 / 87 |
-| Nearest_active | 0.9130 | 0.9655 | 494 / 87 |
-| Tanimoto_kNN | 0.9332 | 0.9425 | 494 / 87 |
-| RF | 0.9413 | 0.9713 | 494 / 87 |
-| GBT | 0.8431 | 0.9368 | 494 / 87 |
-| SVM_RBF | 0.9595 | 0.9770 | 494 / 87 |
-| Equal_mean | 0.9312 | 0.9655 | 494 / 87 |
-| clogp_only_lr | 0.7895 | 0.8161 | 494 / 87 |
-| fsp3_only_lr | 0.7510 | 0.8161 | 494 / 87 |
-| hba_only_lr | 0.9960 | 1.0000 | 494 / 87 |
-| hbd_only_lr | 0.7176 | 0.7874 | 494 / 87 |
-| mw_only_lr | 0.9879 | 1.0000 | 494 / 87 |
-| nrb_only_lr | 0.8704 | 0.9655 | 494 / 87 |
-| tpsa_only_lr | 0.9960 | 1.0000 | 494 / 87 |
+
 <!-- path-b:controls:end -->
 
 All rows reuse full-valid-set, seed-42, exact-scaffold five-fold predictions. The pooled estimand compares 494 positive/negative pairs; 87 occur within folds. Within-fold ROC-AUC weights concordance by valid pairs. Descriptor suffix only_lr denotes single-descriptor logistic regression. No row establishes measured inactivity, target-specific recognition or model superiority.

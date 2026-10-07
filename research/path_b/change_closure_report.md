@@ -1,5 +1,7 @@
 # Path B implementation and closure report
 
+Current-status note: this records an earlier Path B build, not the stress-repair commit. Historical commands and manifests remain unmodified. The current candidate is BMC Research Notes, not an approved submission.
+
 ## Verdict and scope
 
 The rewritten manuscript is an author-review-only, descriptive structural pharmacology reanalysis. It gives an all-site, atom-specific account of deposited compound-9 geometry and reports paired catalytic measurements within their source protocols. The model-support inspection qualifies a chain-specific reading of the published Arg51 account; it neither refutes the source authors nor tests energetic dependence. Distance recalculation alone does not establish a sufficient scientific contribution for a particular journal. No biological experiment, prospective validation or new scientific model-fitting run was performed for this rewrite. Software tests exercise code, including fitting on test fixtures; they are not scientific validation.
@@ -60,9 +62,9 @@ Headless LibreOffice and Poppler were used, without UI testing. The main PDF and
 
 - Author affiliation, funding, COI, CRediT/contributions, authorship, all contributor approvals, rights, acknowledgments, applicable approvals, prior versions/submissions, reviewer conflicts and full AI-assistance disclosure remain unresolved. No final declarations, cover letter or reviewer list exists.
 - The original label/decoy ledger and ACT-18 authoritative structure remain unresolved. Finite graph identity is neither exhaustive chemical novelty nor physical-lot identity.
-- No expert 3-D map review, omit/polder map, rerefinement, independent ligand-placement validation, coordinate-error propagation, inferential crystal-copy statistics or energetic test was performed. EDIAm/OPIA remain uninterpreted; the map-generation version is unrecorded.
+- No expert 3-D map review, omit/polder map, rerefinement, independent ligand-placement validation, coordinate-error propagation, inferential crystal-copy statistics or energetic test was performed. EDIAm/OPIA definitions were subsequently retrieved and are now interpreted only as model-support summaries; the map-generation version remains unrecorded.
 - Catalytic IC50, direct KD, engagement and viability remain distinct. Unequal protocols, common normalization and unresolved replicate hierarchy/covariance prevent ratio uncertainty or general selectivity inference.
 - Qualified laboratory leadership/materials, pilot variance, independent-unit design, prospective lock, budget, schedule and execution approval remain open. The proposed laboratory panel may yield inconclusive results.
-- Nguyen full text and the journal-specific author guide remain inaccessible under bounded checks. General topical scope and readability do not establish publication fit, sufficient incremental contribution or submission readiness.
+- Nguyen full text remains inaccessible under bounded checks. The historical JMGM guide failure is retained in source records; current BMC Research Notes guidance and limits are documented in research/submission/. General topical scope and readability do not establish publication fit, sufficient incremental contribution or submission readiness.
 
 A verified environment setup was proposed through approval-gated Devin settings for future sessions. Acceptance was not observed; present verification does not depend on it. The review package is the deliverable, not an authorization to submit or publish.

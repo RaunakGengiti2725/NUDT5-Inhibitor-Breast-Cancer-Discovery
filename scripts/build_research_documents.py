@@ -234,6 +234,7 @@ def render_document(
     *,
     path_b_layout: bool = False,
     table_width_overrides: dict[str, list[float]] | None = None,
+    literal_paragraphs: frozenset[str] = frozenset(),
     stem: str = "NUDT5_evidence_bounded_revision",
     title: str = "NUDT5 reproducibility and chemical-identity controls",
 ) -> tuple[Path, Path]:
@@ -288,8 +289,9 @@ def render_document(
                 )
             )
         elif kind == "paragraph":
-            doc.add_paragraph(plain(value))
-            story.append(flow.Paragraph(html.escape(plain(value)), styles["BodyText"]))
+            rendered = value if value in literal_paragraphs else plain(value)
+            doc.add_paragraph(rendered)
+            story.append(flow.Paragraph(html.escape(rendered), styles["BodyText"]))
         elif kind == "table":
             table = doc.add_table(rows=1, cols=len(value[0]))
             table.style = "Light Shading Accent 1"

@@ -49,6 +49,10 @@ in `source_notes.json`.
   coordinates and experimental density. These are model-dependent summary indicators. They are
   not interaction, energy, or occupancy evidence.
 
+## Flag semantics
+
+Site-level fractional occupancy means any relevant retained local atom, not ligand occupancy. For 8OTV this includes chain-B Leu47; all W0O report average occupancies are 1.000. Residue-level flags include any atom in that residue; AAA Arg51 includes O at 0.77, while its nearest N witness has occupancy 1.0. Witness flags refer only to the distance-defining pair. Map medians are rounded once from raw samples (8OTV F median 2.094931263829655 → 2.09). These distinct fields cannot substitute for each other.
+
 ## Findings
 
 ### Whole-entry report fields
@@ -80,7 +84,7 @@ entity). Each site has 30 modelled atoms and NatomsEDS 30.
 | 8RIY C / AAA 301 | 1.000 | 0.931 | 0.094 | 3 angle, 5 torsion | 0.68 / 1.99 / 3.61 | −1.11 / 1.46 |
 | 8RIY D / BBB 301 | 1.000 | 0.940 | 0.091 | 3 angle | 0.29 / 2.32 / 3.93 | −1.31 / 1.34 |
 | 8OTV C / A 301 | 1.000 | 0.952 | 0.076 | 1 torsion | 0.53 / 2.70 / 4.41 | −1.17 / 1.63 |
-| 8OTV F / B 302 | 1.000 | 0.928 | 0.097 | 1 angle, 2 torsion | 1.00 / 2.10 / 3.75 | −2.01 / 0.94 |
+| 8OTV F / B 302 | 1.000 | 0.928 | 0.097 | 1 angle, 2 torsion | 1.00 / 2.09 / 3.75 | −2.01 / 0.94 |
 
 How to read the sampled map values:
 
@@ -169,7 +173,7 @@ discovery, and they do not by themselves establish publishable novelty.
   - Any independent ligand-placement validation.
 - **G-M7** is closed only as an assessment: the contribution is methodological and
   qualifying.
-- `EDIAm`/`OPIA` definitions and the map-generation version remain unrecorded.
+- `EDIAm`/`OPIA` definitions were retrieved in `research/path_b/repair/definitions_sources.json`. The map-generation version remains unrecorded.
 
 ## Writer instructions
 

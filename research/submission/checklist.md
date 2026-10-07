@@ -47,3 +47,17 @@ Exact fetched URLs (including redirects), capture dates and hashes are in source
 6. Enter identity-verified reviewer suggestions only if conflict screening is complete. Do not upload internal author forms, policy captures, AI reviews or the checklist as manuscript supplements in isolation.
 
 The portable archive also includes the reading proof, author action sheet and verification manifest for the author's use. Those internal files are not submission uploads. Rights review applies to the source archives as a whole, including retained historical and third-party records.
+
+## Stress-repair release boundaries
+
+The public candidate inventory is public_archive.json, with pinned immutable input hashes and explicit generated-file membership. Reviewer lists, author records, policy HTML/IP captures and AI reviews are private provenance, excluded from supporting archives. The full author-review package retains internal materials separately and is not a journal upload.
+
+The project has no approved code license. rights_review.json and item-to-source-class assignments remain unapproved; even syntactically valid author statements cannot clear that independent distribution hold. A software gate cannot establish truthful declarations or legal permission.
+
+Manifest code_access gives current repository, immutable Git commit archive and unique revision identifier, language, verified platform, locked requirements and unresolved license. Final author/legal approval and anonymous link-access checks remain necessary. A commit URL is not a preservation guarantee or a newly minted DOI.
+
+Current source hashes describe exact packaged bytes; generated PDF/DOCX/SVG metadata can vary on rebuild. Scientific/source reproducibility is distinct from bitwise rendering. Older release manifests are historical and must not be restamped.
+
+Calibration bins retain NumPy linspace floating-point edges, left-closed/right-open except the final bin includes one. Thus decimal 0.6 lies below the emitted 0.6000000000000001 edge. Original frozen ECE values are unchanged.
+
+Full author-review reproduction additionally requires `Private_audit_provenance.zip`, extracted beside `source/`. It preserves mandatory original AI-review hash checks without putting the internal reports in journal supporting ZIPs. This private companion is not an additional file and must not be uploaded to a journal. Missing or changed private review bytes still refuse the full audit build; no source lock is bypassed.

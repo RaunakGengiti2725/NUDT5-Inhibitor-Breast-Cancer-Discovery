@@ -529,6 +529,8 @@ def proximity(
     *,
     supported_assembly: bool = True,
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    require(all(a.protein for a in protein.atoms), "Receptor conformer requires protein atoms")
+    require(all(a.protein for a in residue.atoms), "Receptor residue requires protein atoms")
     la = [a for a in ligand.atoms if a.eligible]
     pa = [a for a in protein.atoms if a.eligible]
     reasons = list(ligand.reasons + protein.reasons)
@@ -966,7 +968,10 @@ def verified_source_inventory(repository: Path) -> dict[str, str]:
         require(isinstance(name, str) and bool(name), "Invalid source inventory path")
         relative = Path(name)
         require(
-            not relative.is_absolute() and ".." not in relative.parts,
+            not relative.is_absolute()
+            and "\\" not in name
+            and ":" not in name
+            and all(part not in ("", ".", "..") for part in name.split("/")),
             "Unsafe source inventory path",
         )
         path = repository / relative

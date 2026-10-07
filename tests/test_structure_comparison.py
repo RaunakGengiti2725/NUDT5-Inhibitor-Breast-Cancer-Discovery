@@ -840,3 +840,14 @@ def test_portable_source_inventory_never_invents_git_history(tmp_path: Path, mut
     else:
         with pytest.raises(mod.ValidationError):
             mod.git_state(tmp_path)
+
+
+def test_low_positive_occupancy_has_unweighted_distance() -> None:
+    row, _ = measure([atom("fractional", (3, 0, 0), occupancy=0.25), atom("full", (6, 0, 0))])[0]
+    assert row["observed_min_distance_A"] == 3
+    assert row["minimum_witness_pairs"][0]["protein_atom"]["occupancy"] == 0.25
+
+
+def test_nonprotein_receptor_refused() -> None:
+    with pytest.raises(mod.ValidationError, match="protein atoms"):
+        measure([atom("not_protein", (3, 0, 0), protein=False)])

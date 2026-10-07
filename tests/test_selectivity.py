@@ -578,3 +578,15 @@ def test_output_symlink_refused(tmp_path: Path) -> None:
     with pytest.raises(ValueError, match="symlink"):
         mod.publish(link, {"done.json": b"{}"}, "done.json")
     assert not list(target.iterdir())
+
+
+@pytest.mark.parametrize("name", ["scripts/scripts/transfer.py", mod.HISTORICAL_TRANSFER])
+def test_repaired_runtime_preserves_both_code_hash_gates(
+    name: str, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    original = mod.sha256
+    monkeypatch.setattr(
+        mod, "sha256", lambda path: "0" * 64 if path == ROOT / name else original(path)
+    )
+    with pytest.raises(ValueError, match="Unreviewed transfer runtime|Stale/incompatible original"):
+        mod.verify_inputs(SOURCE, PREDICTIONS, ROOT)

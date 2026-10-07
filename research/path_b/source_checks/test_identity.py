@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import shutil
 from pathlib import Path
@@ -94,7 +95,23 @@ def test_existing_audit_and_fresh_summary_agree(evidence: dict[str, Any]) -> Non
     audit = json.loads((ROOT / "research/results/audit.json").read_text())
     assert [r["original_candidate_audit"] for r in evidence["candidates"]] == audit["candidates"]
     assert evidence["invalid_training"] == audit["invalid_records"]
-    summary = json.loads((Path(__file__).parent / "identity_summary.json").read_text())
+    summary_path = Path(__file__).parent / "identity_summary_stress_repair.json"
+    assert (
+        hashlib.sha256(summary_path.read_bytes()).hexdigest()
+        == "a7aae3883d3f43eb8430fb97f0b392ac27b25680bfea12e37a1581e3e5c6ddb0"
+    )
+    summary = json.loads(summary_path.read_text())
+    historical = json.loads((Path(__file__).parent / "identity_summary.json").read_text())
+    assert {k: v for k, v in summary.items() if k != "input_sha256"} == {
+        k: v for k, v in historical.items() if k != "input_sha256"
+    }
+    assert {
+        k for k, v in summary["input_sha256"].items() if historical["input_sha256"][k] != v
+    } == {
+        "scripts/scripts/pipeline.py",
+        "scripts/scripts/transfer.py",
+        "scripts/scripts/controls.py",
+    }
     assert evidence == summary
     assert evidence["pubchem_linkage"] == json.loads(
         (ROOT / "research/external/pubchem/audit.json").read_text()

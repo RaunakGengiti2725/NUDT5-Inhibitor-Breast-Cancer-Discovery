@@ -27,6 +27,8 @@ from transfer import identity, identity_matches, substitute_references
 METHODS = ("RF", "GBT", "SVM_RBF", "Nearest_active", "Property_LR", "Equal_mean")
 SCENARIOS = ("historical_original_graphs", "stored_authenticated_reference_sensitivity")
 TARGETS = ("NUDT5", "NUDT14")
+REPAIRED_TRANSFER_SHA256 = "1971318a6db928a920ed54ea5566e100a53a569b7e730eb6fd415c3a490f022a"
+HISTORICAL_TRANSFER = "research/runtime_history/transfer-aa5febd.py.txt"
 RATIO_DEFINITION = "IC50_NUDT14 / IC50_NUDT5"
 WARNING = (
     "Previously inspected single-publication retrospective evidence; not fresh external or "
@@ -417,6 +419,13 @@ def verify_inputs(
             if entry["path"] == "research/results/transfer.json"
             else safe_child(repository, entry["path"])
         )
+        if entry["path"] == "scripts/scripts/transfer.py":
+            require(
+                sha256(path) == REPAIRED_TRANSFER_SHA256,
+                "Unreviewed transfer runtime: expected pinned stress repair",
+            )
+            paths.append(path)
+            path = safe_child(repository, HISTORICAL_TRANSFER)
         require(
             sha256(path) == entry["sha256"] and path.stat().st_size == entry["size_bytes"],
             f"Stale/incompatible original input: {path}",

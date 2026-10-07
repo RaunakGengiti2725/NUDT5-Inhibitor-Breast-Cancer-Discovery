@@ -217,7 +217,14 @@ def bedroc(y_true: ArrayLike, y_scores: ArrayLike, alpha: float = 20.0) -> float
         raise ValueError("BEDROC alpha must be finite and positive")
     labels, _ = ranking_inputs(y_true, y_scores)
     ranked = expected_rank_labels(y_true, y_scores)
-    weights = np.exp(-alpha * np.arange(len(labels), dtype=np.float64) / len(labels))
+    weights = np.exp(-alpha * (np.arange(len(labels), dtype=np.float64) / len(labels)))
+    if alpha < np.finfo(np.float64).eps:
+        weights = -np.arange(len(labels), dtype=np.float64) / len(labels)
+    elif alpha < 0.01:
+        # Remove the common constant before summing; expm1 retains tiny-alpha differences.
+        weights = (
+            np.expm1(-alpha * (np.arange(len(labels), dtype=np.float64) / len(labels))) / alpha
+        )
     active = int(labels.sum())
     best, worst = weights[:active].sum(), weights[-active:].sum()
     if best == worst:
@@ -249,9 +256,15 @@ def consensus_scores(
         if set(weights) != set(names):
             raise ValueError("Weight names must exactly match score names")
         coefficients = np.asarray([weights[name] for name in names], dtype=np.float64)
-    if not np.isfinite(coefficients).all() or (coefficients < 0).any() or coefficients.sum() <= 0:
+    if not np.isfinite(coefficients).all() or (coefficients < 0).any() or coefficients.max() <= 0:
         raise ValueError("Weights must be finite, nonnegative, and have positive total")
-    return np.asarray(np.average(np.stack(arrays), axis=0, weights=coefficients), dtype=np.float64)
+    coefficients = coefficients / coefficients.max()
+    result = np.asarray(
+        np.average(np.stack(arrays), axis=0, weights=coefficients), dtype=np.float64
+    )
+    if not np.isfinite(result).all():
+        raise ValueError("Nonfinite consensus arithmetic")
+    return result
 
 
 def permutation_pvalue(observed: float, null_scores: ArrayLike) -> float:

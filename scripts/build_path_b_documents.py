@@ -524,8 +524,11 @@ def build(
         json_bytes(arg51_group_minima(structural))
     )
     repair = package / "repair"
+    review_source = repair
+    if not (repository / ".git").exists() and (repository / "SHA256SUMS.json").exists():
+        review_source = repository.parent / "private/source/research/path_b/repair"
     for name, record in json.loads((repair / "reviews_manifest.json").read_text())["files"].items():
-        if hashlib.sha256((repair / name).read_bytes()).hexdigest() != record["sha256"]:
+        if hashlib.sha256((review_source / name).read_bytes()).hexdigest() != record["sha256"]:
             raise ValueError(f"Archived AI review changed: {name}")
     withdrawal = package / "withdrawn_historical_assertions.json"
     historical = repository / "final_hits.csv"
@@ -542,6 +545,12 @@ def build(
         (output / name).write_bytes(path.read_bytes())
     for name in ("author_requests.md", "laboratory_specification.md", "current_gaps.md"):
         path = package / name
+        if (
+            name == "author_requests.md"
+            and not (repository / ".git").exists()
+            and (repository / "SHA256SUMS.json").exists()
+        ):
+            path = repository.parent / "private/source/research/path_b" / name
         if not path.read_bytes().strip():
             raise ValueError(f"Empty Path B handoff: {name}")
         inputs.append(path)

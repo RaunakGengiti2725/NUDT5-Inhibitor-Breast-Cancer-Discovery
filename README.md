@@ -145,7 +145,7 @@ The baseline verification passed 87 tests; the integrated release adds paired-ta
 
 The committed run manifests preserve their real execution-time revision, dirty-worktree state, paths and command arguments. A fresh run on another checkout should produce its own manifest; those runtime records are **not** expected to be byte-identical. The reported byte-identical reruns refer to numerical audit/benchmark/control/transfer JSON, not runtime metadata. Compare source/input content hashes and settings, and use the separate relative-path release inventory for the portable bundle. Do not rewrite historical provenance to resemble a post-commit run.
 
-Source cutoffs lacking both classes remain explicit in `source_cutoff_status.csv` and supplementary feasibility tables. Undefined ROC-AUC is never displayed as zero; the source-comparison figure annotates an unavailable 50 µM comparison instead of fabricating bars.
+Source cutoffs lacking both classes remain explicit in `source_cutoff_status.csv` and supplementary feasibility tables. Undefined ROC-AUC is never displayed as zero; the 50 µM comparison contains both classes and is reported. Other one-class cutoffs remain unavailable; no bars are fabricated.
 
 ## Descriptive paired-target analysis (not a selectivity predictor)
 

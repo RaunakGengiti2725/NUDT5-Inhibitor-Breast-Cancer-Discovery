@@ -177,8 +177,14 @@ def extended_metrics(labels: IntArray, scores: FloatArray) -> dict[str, float | 
 
 
 def calibration_bins(labels: IntArray, scores: FloatArray, bins: int = 5) -> dict[str, Any]:
+    """Use emitted NumPy linspace float edges, left-closed; the last bin includes 1."""
     labels, scores = ranking_inputs(labels, scores)
-    if bins < 1 or np.any((scores < 0) | (scores > 1)):
+    if (
+        isinstance(bins, bool)
+        or not isinstance(bins, int)
+        or bins < 1
+        or np.any((scores < 0) | (scores > 1))
+    ):
         raise ValueError("Positive bins and bounded scores required")
     edges = np.linspace(0.0, 1.0, bins + 1)
     rows = []
@@ -206,8 +212,13 @@ def similarity_bins(
     labels: IntArray, scores: FloatArray, similarity: FloatArray
 ) -> list[dict[str, Any]]:
     """Fixed similarity intervals; one-class bins have undefined AUC, not zero."""
-    if len(similarity) != len(labels) or not np.isfinite(similarity).all():
-        raise ValueError("Aligned finite similarities required")
+    labels, scores = ranking_inputs(labels, scores)
+    if (
+        similarity.shape != labels.shape
+        or not np.isfinite(similarity).all()
+        or np.any((similarity < 0) | (similarity > 1))
+    ):
+        raise ValueError("Aligned finite similarities in [0, 1] required")
     rows = []
     for lower, upper in zip(SIMILARITY_EDGES[:-1], SIMILARITY_EDGES[1:], strict=True):
         mask = (similarity >= lower) & (similarity < upper)

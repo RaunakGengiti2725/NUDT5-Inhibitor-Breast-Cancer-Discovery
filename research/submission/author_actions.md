@@ -17,3 +17,10 @@ Complete the corresponding statements and confirmations in author_confirmation.j
 ## Laboratory ownership, separate from this note
 
 Laboratory access is not required to report the narrow reanalysis. The conditional specification in research/path_b/laboratory_specification.md remains OWNER-LAB for binding, mutant qualification and functional claims. Nothing has been measured, ordered or scheduled, and no laboratory has been contacted. Lack of new experiments restricts the conclusion; it is not filled by author confirmation.
+
+## Explicit release holds after stress repair
+
+- Funding: provide the actual funder role, if applicable, in design, collection, analysis, interpretation, publication decision and writing; do not infer noninvolvement.
+- Publication history: assess the registered TWCS++ version, DOI https://doi.org/10.26434/chemrxiv.15001750/v1, Crossref posted-content date 8 April 2026. Supply legitimate full text and the exact relationship to this candidate, prior submissions and deposits. Metadata alone establishes neither duplicate publication nor plagiarism.
+- Complete item-level rights review in rights_review.json, choose a lawful project code license, confirm attribution and anonymous access to current and immutable code URLs. No permission is inferred from an open download or author-text syntax.
+- Decide whether this bounded case adds sufficient scientific insight for BMC Research Notes. Reproducible arithmetic and software checks do not decide significance.

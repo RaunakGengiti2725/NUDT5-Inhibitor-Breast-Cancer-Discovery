@@ -155,6 +155,9 @@ def test_extended_oof_matches_original_and_contains_reproducible_assignments(
     for row in full_evaluation["predictions"]:
         assert row["max_training_tanimoto"] >= row["max_active_tanimoto"]
     for fold in full_evaluation["folds"]:
+        assert sorted(
+            r["index"] for r in full_evaluation["predictions"] if r["fold"] == fold["fold"]
+        ) == sorted(fold["test_indices"])
         assert not fold["group_overlap"]
         assert not fold["scaffold_overlap"]
 

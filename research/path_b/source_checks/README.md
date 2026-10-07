@@ -1,5 +1,7 @@
 # Path B source and identity handoff
 
+Current venue: BMC Research Notes candidate; see `research/submission/checklist.md`. JMGM access checks below are historical, not the current venue gate. No author or editorial clearance follows.
+
 Checked 5 October 2026 UTC against immutable baseline `40b9b0708d888a015abe5043bb273c3c6ee601ae`. This is a scoped evidence handoff, not a manuscript rewrite, human peer review, journal-fit certification or biological validation. All branch changes are under this directory. No training, new cohort, screening, library/decoy rebuild, docking, MD, experiment, external contact, deposit change or PR is part of this work.
 
 ## Writer instructions first
@@ -80,7 +82,7 @@ This is a bounded check of retained sources and corrections, not a systematic li
 
 Both are **unmatched known comparators**, not a matched molecular pair or newly discovered candidates. Do not populate vendor/catalogue/stock/price/lot fields without actual supply evidence. No vendor or laboratory was contacted and nothing was purchased. Any future lot requires graph/salt/solvate and concentration authentication, identity and purity checks, solubility/aggregation assessment, and the protein/assay qualification gates already specified in the conditional OWNER-LAB document. Mutant feasibility, independent-preparation variance, orthogonal binding, sample size, cost and timetable remain laboratory-owned and unmeasured.
 
-## 4. Current JMGM check, not guideline certification
+## 4. Historical JMGM check, not current BMC certification
 
 The [official Elsevier journal scope](https://shop.elsevier.com/journals/journal-of-molecular-graphics-and-modelling/1093-3263) includes computational investigations of molecular structure, function and interactions. It emphasizes reproducibility and machine-readable supplementary data, and explicitly excludes routine applications with little new insight. **Inference, not editorial assurance:** Path B is broadly topical, but its incremental contribution over the published structures/interpretation is a serious unresolved fit risk. Tests and a complete provenance package do not settle novelty or acceptance.
 

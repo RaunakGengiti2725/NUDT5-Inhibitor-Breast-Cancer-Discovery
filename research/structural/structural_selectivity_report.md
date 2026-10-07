@@ -13,7 +13,7 @@ All five deposits are X-ray structures of **human proteins expressed in E. coli*
 |---|---|---:|---|---|
 | [5NWH](https://www.rcsb.org/structure/5NWH) | TH5427, **9CH**, two copies | 2.60 Å | NUDT5, 219-residue sequence; A/B dimer | Water; no modeled metal; 50 residues absent across two chains |
 | [5NQR](https://www.rcsb.org/structure/5NQR) | TH1713, **958** | 2.20 Å | NUDT5, 219-residue sequence; A/B dimer | Water; no modeled metal; 48 absent residues |
-| [8RDZ](https://www.rcsb.org/structure/8RDZ) | Ibrutinib / compound 1, **A1H14**, four copies | 2.02 Å | NUDT5, 219-residue sequence; **A/C and B/D dimers**, not a biological tetramer | Eight Mg ions, seven ethylene glycols, water; 115 absent residues across four chains |
+| [8RDZ](https://www.rcsb.org/structure/8RDZ) | Ibrutinib-related / compound 1 connectivity only, **A1H14**, four copies | 2.02 Å | NUDT5, 219-residue sequence; **A/C and B/D dimers**, not a biological tetramer | Eight Mg ions, seven ethylene glycols, water; 115 absent residues across four chains |
 | [8RIY](https://www.rcsb.org/structure/8RIY) | Compound 9, **W0O**, two copies | 2.288 Å | NUDT5 residues 1–208 + Ser0; dimer, author chains AAA/BBB (label A/B) | Water; no modeled metal; 31 absent residues |
 | [8OTV](https://www.rcsb.org/structure/8OTV) | Compound 9, **W0O**, two copies | 1.82 Å | NUDT14 residues 1–222 + Ser0; A/B dimer | One Mg ion, one DMSO, water; 23 absent residues |
 
@@ -80,3 +80,7 @@ contact-calculation recommendation, not this report's historical scope. They ret
 missingness and occupancy, including a backbone Arg51 minimum at one NUDT5 site. They do not
 establish the published Arg51 rationale, energetics, selectivity or experiment readiness.
 No earlier source inspection or runtime provenance is retroactively claimed.
+
+## Ancillary stereochemistry qualification
+
+A1H14 in 8RDZ and source compound 1 match connectivity only. Pinned RDKit assigns A1H14 S (InChIKey XYFPWWZEPKGCCK-SFHVURJKSA-N) versus source compound 1 R (XYFPWWZEPKGCCK-GOSISDBHSA-N). This unresolved source-record conflict does not identify the physical sample stereoisomer and does not affect central W0O/compound-9 results. The original graphs and ledger remain unchanged; authoritative depositor/author resolution is required before claiming stereochemical identity.

@@ -261,9 +261,12 @@ def test_full_package_build(tmp_path: Path) -> None:
     )
     second_manifest = json.loads((rebuilt / "submission-manifest.json").read_text())
     assert second_manifest["article_checks"] == manifest["article_checks"]
-    assert (rebuilt / "BMC_research_note.md").read_bytes() == (
-        output / "BMC_research_note.md"
-    ).read_bytes()
+    for name in ("BMC_research_note.md", "Additional_file_1.md", "Cover_letter.md"):
+        assert (rebuilt / name).read_bytes() == (output / name).read_bytes()
+    for package in (output, rebuilt):
+        cover_paragraphs = [p.text for p in Document(str(package / "Cover_letter.docx")).paragraphs]
+        assert any(p.startswith("AUTHOR-REVIEW DRAFT.") for p in cover_paragraphs)
+        assert not any("All authors have approved" in p for p in cover_paragraphs)
     candidate = source / PACKAGE / "manuscript.md"
     candidate.write_text(candidate.read_text().replace("3.756", "9.999", 1))
     with pytest.raises(ValueError, match="drift"):

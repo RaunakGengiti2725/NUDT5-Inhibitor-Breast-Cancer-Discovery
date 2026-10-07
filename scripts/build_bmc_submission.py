@@ -286,6 +286,15 @@ def build(
                 "\n\nAll authors have approved this manuscript and accept accountability. "
                 "No concurrent submission is active.\n"
             )
+        else:
+            cover = (
+                "# Cover-letter scientific core\n\n"
+                "AUTHOR-REVIEW DRAFT. The text below is not a complete submission letter. "
+                "Required statements about competing interests, author approval and "
+                "publication/submission history must come from the author. "
+                "No statement of exclusivity or approval is implied.\n\n"
+                "Dear Editors,\n" + cover.split("Dear Editors,\n", 1)[1]
+            )
         checks = article_checks(text)
         (staging / "BMC_research_note.md").write_text(text)
         (staging / "Cover_letter.md").write_text(cover)

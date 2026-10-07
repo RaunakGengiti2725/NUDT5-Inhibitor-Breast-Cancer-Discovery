@@ -1,0 +1,69 @@
+{
+  "baseline_commit": "8c2a1b6990df1e140e15ab5a0eabea69b70eee14",
+  "preservation": "Original attachments are not overwritten or redistributed into Git; raw CSVs and original predictions remain byte-identical. All new analyses are separately labelled.",
+  "files": [
+    {
+      "filename": "README.md",
+      "purpose": "Original released input or implementation",
+      "provenance": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/8c2a1b6990df1e140e15ab5a0eabea69b70eee14/README.md",
+      "size_bytes": 947,
+      "sha256": "f70b868fd02c0ad3871110f081a647c0e1f3bc88f45ea96169668f266feb152e",
+      "manuscript_dependency": "Materials \u00a72.1 and historical audit findings",
+      "reproducibility_status": "Preserved in immutable baseline Git revision; original CSV bytes unmodified"
+    },
+    {
+      "filename": "compounds.csv",
+      "purpose": "Original released input or implementation",
+      "provenance": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/8c2a1b6990df1e140e15ab5a0eabea69b70eee14/compounds.csv",
+      "size_bytes": 4055,
+      "sha256": "d628a0fa1926c1e44c9b2a79adf92b444959e80153cf9019ef5e56b4747c3576",
+      "manuscript_dependency": "Materials \u00a72.1 and historical audit findings",
+      "reproducibility_status": "Preserved in immutable baseline Git revision; original CSV bytes unmodified"
+    },
+    {
+      "filename": "final_hits.csv",
+      "purpose": "Original released input or implementation",
+      "provenance": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/8c2a1b6990df1e140e15ab5a0eabea69b70eee14/final_hits.csv",
+      "size_bytes": 2149,
+      "sha256": "38c8d5266ce127b1fd5babde0c895190d0b382e3c9e3dae7581e320766745100",
+      "manuscript_dependency": "Materials \u00a72.1 and historical audit findings",
+      "reproducibility_status": "Preserved in immutable baseline Git revision; original CSV bytes unmodified"
+    },
+    {
+      "filename": "requirements.txt",
+      "purpose": "Original released input or implementation",
+      "provenance": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/8c2a1b6990df1e140e15ab5a0eabea69b70eee14/requirements.txt",
+      "size_bytes": 82,
+      "sha256": "aa8c3259b86f94906d6397edead4b04645840e54e974ba65ad6100cc5b0a376a",
+      "manuscript_dependency": "Materials \u00a72.1 and historical audit findings",
+      "reproducibility_status": "Preserved in immutable baseline Git revision; original CSV bytes unmodified"
+    },
+    {
+      "filename": "scripts/scripts/pipeline.py",
+      "purpose": "Original released input or implementation",
+      "provenance": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/8c2a1b6990df1e140e15ab5a0eabea69b70eee14/scripts/scripts/pipeline.py",
+      "size_bytes": 14057,
+      "sha256": "ec928841ca78c0adb93e846145d6a9e0872eefa0f666c32c8d8c9040979af7e1",
+      "manuscript_dependency": "Materials \u00a72.1 and historical audit findings",
+      "reproducibility_status": "Preserved in immutable baseline Git revision; original CSV bytes unmodified"
+    },
+    {
+      "filename": "NUDT5_Finished_Paper_1.docx",
+      "purpose": "Original readable author manuscript",
+      "provenance": "https://la-hacks-rttothemoon.devinenterprise.com/attachments/21bbb158-18c0-478c-89bc-cbef6e91b282/NUDT5_Finished_Paper_1.docx",
+      "size_bytes": 1475563,
+      "sha256": "11ef96824597f47daa1e6152caea8dc87cb3ebd6d78fd41be3baad14d31cca35",
+      "manuscript_dependency": "Original claims, figures and tables are preserved in the attachment",
+      "reproducibility_status": "Readable DOCX"
+    },
+    {
+      "filename": "NUDT5_Finished_Paper.pdf",
+      "purpose": "Original damaged PDF",
+      "provenance": "https://la-hacks-rttothemoon.devinenterprise.com/attachments/cefbc7ab-219b-4b43-909e-e4b328764c19/NUDT5_Finished_Paper.pdf",
+      "size_bytes": 3941603,
+      "sha256": "749f97da86f7a06cf41aacb92370ce997b10a27d6652bbf83e0aaf2030fd5a93",
+      "manuscript_dependency": "Original claims, figures and tables are preserved in the attachment",
+      "reproducibility_status": "Damaged compressed streams; not reliably readable"
+    }
+  ]
+}

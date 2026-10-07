@@ -1,0 +1,9 @@
+{
+  "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1904,624099,651810,651811,743454,1117281,1117357,1159506,1159578,1159584,1224830,1440791,1508588,2070370,2070371,2070372,2070373,2070374,2116012,2148899,2200593/description/JSON",
+  "status": 200,
+  "content_type": "application/json",
+  "retrieved_utc": "2026-10-05T04:21:20.792460+00:00",
+  "sha256": "426d7ae34c8f69a2721f598632672e36223a2f00e2764ecf3fd185a8c662ca5e",
+  "size": 159078,
+  "file": "assay-descriptions.json"
+}

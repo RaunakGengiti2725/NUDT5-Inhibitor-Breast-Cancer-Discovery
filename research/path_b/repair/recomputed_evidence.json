@@ -1,0 +1,1089 @@
+{
+  "versions": {
+    "rdkit": "2025.9.6",
+    "gemmi": "0.7.3"
+  },
+  "no_model_fitting": true,
+  "table3": {
+    "Constant_0_5": 0.5,
+    "Train_prevalence": 0.24595141700404857,
+    "Property_LR": 0.979757085020243,
+    "Nearest_active": 0.9129554655870445,
+    "Tanimoto_kNN": 0.9331983805668017,
+    "RF": 0.9412955465587044,
+    "GBT": 0.8431174089068826,
+    "SVM_RBF": 0.9595141700404859,
+    "Equal_mean": 0.9311740890688259,
+    "clogp_only_lr": 0.7894736842105264,
+    "fsp3_only_lr": 0.7510121457489879,
+    "hba_only_lr": 0.9959514170040485,
+    "hbd_only_lr": 0.7176113360323887,
+    "mw_only_lr": 0.9878542510121457,
+    "nrb_only_lr": 0.8704453441295547,
+    "tpsa_only_lr": 0.9959514170040487
+  },
+  "equal_mean_max_absolute_error": 1.1102230246251565e-16,
+  "folds": [
+    {
+      "fold": 0,
+      "test_n": 15,
+      "test_positive_n": 11,
+      "train_prevalence": 0.26666666666666666,
+      "exact_scaffold_overlap": [],
+      "within_fold_auc": {
+        "Equal_mean": 0.9318181818181819,
+        "Property_LR": 1.0,
+        "Train_prevalence": 0.5
+      }
+    },
+    {
+      "fold": 1,
+      "test_n": 8,
+      "test_positive_n": 3,
+      "train_prevalence": 0.43243243243243246,
+      "exact_scaffold_overlap": [],
+      "within_fold_auc": {
+        "Equal_mean": 1.0,
+        "Property_LR": 1.0,
+        "Train_prevalence": 0.5
+      }
+    },
+    {
+      "fold": 2,
+      "test_n": 8,
+      "test_positive_n": 2,
+      "train_prevalence": 0.4594594594594595,
+      "exact_scaffold_overlap": [],
+      "within_fold_auc": {
+        "Equal_mean": 1.0,
+        "Property_LR": 1.0,
+        "Train_prevalence": 0.5
+      }
+    },
+    {
+      "fold": 3,
+      "test_n": 7,
+      "test_positive_n": 1,
+      "train_prevalence": 0.47368421052631576,
+      "exact_scaffold_overlap": [],
+      "within_fold_auc": {
+        "Equal_mean": 1.0,
+        "Property_LR": 1.0,
+        "Train_prevalence": 0.5
+      }
+    },
+    {
+      "fold": 4,
+      "test_n": 7,
+      "test_positive_n": 2,
+      "train_prevalence": 0.4473684210526316,
+      "exact_scaffold_overlap": [],
+      "within_fold_auc": {
+        "Equal_mean": 1.0,
+        "Property_LR": 1.0,
+        "Train_prevalence": 0.5
+      }
+    }
+  ],
+  "Equal_mean_ECE": {
+    "independent": 0.06271533468760267,
+    "stored": 0.06271533468760267
+  },
+  "input_counts": {
+    "rows": 46,
+    "valid": 45,
+    "positive": 19,
+    "decoy": 26,
+    "invalid_ids": [
+      "ACT-18"
+    ],
+    "canonical_unique": 45
+  },
+  "raw_property_ranges": {
+    "mw": {
+      "source_positive": [
+        303.32500000000005,
+        491.3390000000003
+      ],
+      "decoy": [
+        206.28499999999997,
+        291.73400000000004
+      ]
+    },
+    "hba": {
+      "source_positive": [
+        5,
+        9
+      ],
+      "decoy": [
+        1,
+        5
+      ]
+    },
+    "tpsa": {
+      "source_positive": [
+        78.85,
+        139.76
+      ],
+      "decoy": [
+        17.82,
+        89.25999999999999
+      ]
+    }
+  },
+  "raw_property_auc_not_oof": {
+    "mw": 1.0,
+    "hba": 0.9979757085020243,
+    "tpsa": 0.9979757085020243
+  },
+  "historical_strict_tolerance_recheck": {
+    "definition": "MW difference <50; cLogP difference <1; Morgan radius2/2048 no-chirality Tanimoto <0.3; retained valid original graphs",
+    "matched_decoy_n": 9,
+    "matching_positive_ids": [
+      "ACT-19",
+      "ACT-20"
+    ],
+    "matches": {
+      "DEC-01": [
+        "ACT-19"
+      ],
+      "DEC-02": [],
+      "DEC-03": [
+        "ACT-19"
+      ],
+      "DEC-04": [],
+      "DEC-05": [],
+      "DEC-06": [],
+      "DEC-07": [],
+      "DEC-08": [],
+      "DEC-09": [],
+      "DEC-10": [
+        "ACT-19",
+        "ACT-20"
+      ],
+      "DEC-11": [
+        "ACT-19",
+        "ACT-20"
+      ],
+      "DEC-12": [],
+      "DEC-13": [],
+      "DEC-14": [],
+      "DEC-15": [],
+      "DEC-16": [
+        "ACT-19",
+        "ACT-20"
+      ],
+      "DEC-17": [
+        "ACT-19"
+      ],
+      "DEC-18": [],
+      "DEC-19": [
+        "ACT-19"
+      ],
+      "DEC-20": [
+        "ACT-19"
+      ],
+      "DEC-21": [],
+      "DEC-22": [],
+      "DEC-23": [],
+      "DEC-24": [
+        "ACT-19",
+        "ACT-20"
+      ],
+      "DEC-25": [],
+      "DEC-26": []
+    }
+  },
+  "positive_crossfold_similarity": [
+    {
+      "id": "ACT-01",
+      "label": 1,
+      "nearest_training_positive": "ACT-11",
+      "Tanimoto": 0.873015873015873
+    },
+    {
+      "id": "ACT-02",
+      "label": 1,
+      "nearest_training_positive": "ACT-10",
+      "Tanimoto": 0.8225806451612904
+    },
+    {
+      "id": "ACT-03",
+      "label": 1,
+      "nearest_training_positive": "ACT-10",
+      "Tanimoto": 0.85
+    },
+    {
+      "id": "ACT-04",
+      "label": 1,
+      "nearest_training_positive": "ACT-10",
+      "Tanimoto": 0.8225806451612904
+    },
+    {
+      "id": "ACT-05",
+      "label": 1,
+      "nearest_training_positive": "ACT-10",
+      "Tanimoto": 0.8360655737704918
+    },
+    {
+      "id": "ACT-06",
+      "label": 1,
+      "nearest_training_positive": "ACT-10",
+      "Tanimoto": 0.746268656716418
+    },
+    {
+      "id": "ACT-07",
+      "label": 1,
+      "nearest_training_positive": "ACT-10",
+      "Tanimoto": 0.796875
+    },
+    {
+      "id": "ACT-08",
+      "label": 1,
+      "nearest_training_positive": "ACT-10",
+      "Tanimoto": 0.8225806451612904
+    },
+    {
+      "id": "ACT-09",
+      "label": 1,
+      "nearest_training_positive": "ACT-03",
+      "Tanimoto": 0.7538461538461538
+    },
+    {
+      "id": "ACT-10",
+      "label": 1,
+      "nearest_training_positive": "ACT-03",
+      "Tanimoto": 0.85
+    },
+    {
+      "id": "ACT-11",
+      "label": 1,
+      "nearest_training_positive": "ACT-12",
+      "Tanimoto": 0.8870967741935484
+    },
+    {
+      "id": "ACT-12",
+      "label": 1,
+      "nearest_training_positive": "ACT-11",
+      "Tanimoto": 0.8870967741935484
+    },
+    {
+      "id": "ACT-13",
+      "label": 1,
+      "nearest_training_positive": "ACT-15",
+      "Tanimoto": 0.7536231884057971
+    },
+    {
+      "id": "ACT-14",
+      "label": 1,
+      "nearest_training_positive": "ACT-11",
+      "Tanimoto": 0.873015873015873
+    },
+    {
+      "id": "ACT-15",
+      "label": 1,
+      "nearest_training_positive": "ACT-13",
+      "Tanimoto": 0.7536231884057971
+    },
+    {
+      "id": "ACT-16",
+      "label": 1,
+      "nearest_training_positive": "ACT-11",
+      "Tanimoto": 0.7272727272727273
+    },
+    {
+      "id": "ACT-17",
+      "label": 1,
+      "nearest_training_positive": "ACT-11",
+      "Tanimoto": 0.6417910447761194
+    },
+    {
+      "id": "ACT-19",
+      "label": 1,
+      "nearest_training_positive": "ACT-17",
+      "Tanimoto": 0.1
+    },
+    {
+      "id": "ACT-20",
+      "label": 1,
+      "nearest_training_positive": "ACT-17",
+      "Tanimoto": 0.1375
+    }
+  ],
+  "positive_crossfold_ge_0_7_n": 16,
+  "candidate_exact_overlap": [
+    {
+      "id": "NC5-01",
+      "training": [],
+      "Balikci_source_compounds": []
+    },
+    {
+      "id": "NC5-07",
+      "training": [],
+      "Balikci_source_compounds": []
+    },
+    {
+      "id": "NC5-04",
+      "training": [],
+      "Balikci_source_compounds": []
+    },
+    {
+      "id": "NC5-02",
+      "training": [
+        "ACT-19"
+      ],
+      "Balikci_source_compounds": [
+        "11"
+      ]
+    },
+    {
+      "id": "NC5-06",
+      "training": [],
+      "Balikci_source_compounds": []
+    },
+    {
+      "id": "NC5-08",
+      "training": [],
+      "Balikci_source_compounds": []
+    },
+    {
+      "id": "NC5-03",
+      "training": [],
+      "Balikci_source_compounds": []
+    },
+    {
+      "id": "NC5-10",
+      "training": [],
+      "Balikci_source_compounds": []
+    },
+    {
+      "id": "NC5-09",
+      "training": [],
+      "Balikci_source_compounds": []
+    },
+    {
+      "id": "NC5-05",
+      "training": [],
+      "Balikci_source_compounds": []
+    }
+  ],
+  "reference_graphs": [
+    {
+      "id": "ACT-01",
+      "name": "TH5427",
+      "original_formula": "C19H18Cl2N8O3",
+      "authenticated_formula": "C20H20Cl2N8O3",
+      "original_heavy_atoms": 32,
+      "authenticated_heavy_atoms": 33,
+      "exact_equal": false
+    },
+    {
+      "id": "ACT-02",
+      "name": "TH1713",
+      "original_formula": "C19H19ClN8O3",
+      "authenticated_formula": "C19H21N7O3",
+      "original_heavy_atoms": 31,
+      "authenticated_heavy_atoms": 29,
+      "exact_equal": false
+    }
+  ],
+  "reference_sensitivity": {
+    "molecule": {
+      "fold_changes": [],
+      "AUC": {
+        "Equal_mean": {
+          "original": 0.9979757085020243,
+          "reference_scenario": 0.9979757085020243
+        },
+        "Property_LR": {
+          "original": 0.9959514170040487,
+          "reference_scenario": 0.9939271255060729
+        },
+        "Nearest_active": {
+          "original": 1.0,
+          "reference_scenario": 1.0
+        },
+        "RF": {
+          "original": 1.0,
+          "reference_scenario": 1.0
+        },
+        "GBT": {
+          "original": 0.9291497975708501,
+          "reference_scenario": 0.930161943319838
+        },
+        "SVM_RBF": {
+          "original": 1.0,
+          "reference_scenario": 1.0
+        }
+      }
+    },
+    "scaffold": {
+      "fold_changes": [
+        "ACT-02",
+        "ACT-11",
+        "DEC-01",
+        "DEC-02",
+        "DEC-07",
+        "DEC-13",
+        "DEC-15",
+        "DEC-16",
+        "DEC-17",
+        "DEC-22",
+        "DEC-24",
+        "DEC-25",
+        "DEC-26"
+      ],
+      "AUC": {
+        "Equal_mean": {
+          "original": 0.9311740890688259,
+          "reference_scenario": 0.9311740890688259
+        },
+        "Property_LR": {
+          "original": 0.979757085020243,
+          "reference_scenario": 0.979757085020243
+        },
+        "Nearest_active": {
+          "original": 0.9129554655870445,
+          "reference_scenario": 0.9149797570850202
+        },
+        "RF": {
+          "original": 0.9412955465587044,
+          "reference_scenario": 0.9240890688259109
+        },
+        "GBT": {
+          "original": 0.8431174089068826,
+          "reference_scenario": 0.8461538461538463
+        },
+        "SVM_RBF": {
+          "original": 0.9595141700404859,
+          "reference_scenario": 0.9696356275303644
+        }
+      },
+      "Equal_mean_score_changes": {
+        "ACT-01": -0.09952990986242694,
+        "ACT-02": -0.20704312889885523,
+        "ACT-03": 0.03160958044526041,
+        "ACT-04": 0.025656744017539257,
+        "ACT-05": 0.026104966755458703,
+        "ACT-06": 0.023283663035073565,
+        "ACT-07": 0.02690010145256494,
+        "ACT-08": 0.025552714511960173,
+        "ACT-09": -0.0005333043589712538,
+        "ACT-10": -0.0015954761851431076,
+        "ACT-11": 0.0009486707973392905,
+        "ACT-12": 0.005292075786137329,
+        "ACT-13": 0.005738796671260538,
+        "ACT-14": -0.00693903877383284,
+        "ACT-15": 0.003844832652187158,
+        "ACT-16": 0.0046169690189947765,
+        "ACT-17": 0.011725309649915916,
+        "ACT-19": -0.0005235383193767512,
+        "ACT-20": -0.0021302173350362455,
+        "DEC-01": 0.0006630340788712358,
+        "DEC-02": -0.00985601698196692,
+        "DEC-03": 0.0020681030467488287,
+        "DEC-04": 0.005664843537633621,
+        "DEC-05": 0.01715666822937248,
+        "DEC-06": 0.0021969051162926134,
+        "DEC-07": -0.004397242495540604,
+        "DEC-08": 0.003127484541437249,
+        "DEC-09": -0.002491968784547584,
+        "DEC-10": 0.0035332555582886505,
+        "DEC-11": -0.005371369801973967,
+        "DEC-12": 0.017206191216800226,
+        "DEC-13": 0.00967985620937483,
+        "DEC-14": -0.0017273791869229643,
+        "DEC-15": 0.013041402016292808,
+        "DEC-16": -0.010034816720860047,
+        "DEC-17": -0.001739838141030195,
+        "DEC-18": -0.005249791853542712,
+        "DEC-19": 0.02398375332756081,
+        "DEC-20": 0.0033636721611500775,
+        "DEC-21": 0.004157151940598881,
+        "DEC-22": 0.02371518143035302,
+        "DEC-23": -0.0026563454193397062,
+        "DEC-24": -0.010122596568593045,
+        "DEC-25": -0.0029293614346007774,
+        "DEC-26": -0.0032419747514420283
+      },
+      "Equal_mean_threshold_0_5_changes": [
+        "DEC-19"
+      ]
+    },
+    "series": {
+      "fold_changes": [],
+      "AUC": {
+        "Equal_mean": {
+          "original": 0.562753036437247,
+          "reference_scenario": 0.5850202429149798
+        },
+        "Property_LR": {
+          "original": 0.9979757085020243,
+          "reference_scenario": 0.9959514170040487
+        },
+        "Nearest_active": {
+          "original": 0.32894736842105265,
+          "reference_scenario": 0.3502024291497976
+        },
+        "RF": {
+          "original": 0.638663967611336,
+          "reference_scenario": 0.6417004048582996
+        },
+        "GBT": {
+          "original": 0.291497975708502,
+          "reference_scenario": 0.28947368421052627
+        },
+        "SVM_RBF": {
+          "original": 0.8117408906882592,
+          "reference_scenario": 0.7449392712550608
+        }
+      }
+    }
+  },
+  "source_challenges": {
+    "original": {
+      "eligible_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "9",
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "assay_status": {
+        "numeric_ic50_uM": 5,
+        "inactive_gt50_uM": 5
+      },
+      "excluded": {
+        "6": "untested",
+        "7": "untested",
+        "8": "untested",
+        "10": "training_identity_or_parent_overlap",
+        "11": "training_identity_or_parent_overlap",
+        "16": "untested",
+        "17a": "untested",
+        "17b": "untested",
+        "18a": "untested",
+        "18b": "untested",
+        "18c": "untested",
+        "19": "untested",
+        "N-Boc-protected 7": "untested"
+      },
+      "cutoffs": {
+        "1.0": {
+          "positive_n": 2,
+          "n": 10,
+          "auc": {
+            "Equal_mean": 1.0,
+            "GBT": 0.9375,
+            "Nearest_active": 1.0,
+            "Property_LR": 0.5625,
+            "RF": 1.0,
+            "SVM_RBF": 1.0
+          }
+        },
+        "10.0": {
+          "positive_n": 2,
+          "n": 10,
+          "auc": {
+            "Equal_mean": 1.0,
+            "GBT": 0.9375,
+            "Nearest_active": 1.0,
+            "Property_LR": 0.5625,
+            "RF": 1.0,
+            "SVM_RBF": 1.0
+          }
+        },
+        "50.0": {
+          "positive_n": 5,
+          "n": 10,
+          "auc": {
+            "Equal_mean": 1.0,
+            "GBT": 0.9400000000000001,
+            "Nearest_active": 1.0,
+            "Property_LR": 0.8,
+            "RF": 1.0,
+            "SVM_RBF": 1.0
+          }
+        }
+      },
+      "compound_9_nearest_training": {
+        "nearest_training_id": "ACT-20",
+        "max_training_tanimoto": 0.660377358490566,
+        "training_matches": {
+          "canonical_parent_tautomer": [],
+          "canonical_smiles": [],
+          "neutral_fragment_parent": []
+        },
+        "training_scaffold_matches": []
+      }
+    },
+    "reference_scenario": {
+      "eligible_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "9",
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "assay_status": {
+        "numeric_ic50_uM": 5,
+        "inactive_gt50_uM": 5
+      },
+      "excluded": {
+        "6": "training_identity_or_parent_overlap",
+        "7": "untested",
+        "8": "untested",
+        "10": "training_identity_or_parent_overlap",
+        "11": "training_identity_or_parent_overlap",
+        "16": "untested",
+        "17a": "untested",
+        "17b": "untested",
+        "18a": "untested",
+        "18b": "untested",
+        "18c": "untested",
+        "19": "untested",
+        "N-Boc-protected 7": "untested"
+      },
+      "cutoffs": {
+        "1.0": {
+          "positive_n": 2,
+          "n": 10,
+          "auc": {
+            "Equal_mean": 1.0,
+            "GBT": 0.9375,
+            "Nearest_active": 1.0,
+            "Property_LR": 0.5625,
+            "RF": 0.96875,
+            "SVM_RBF": 1.0
+          }
+        },
+        "10.0": {
+          "positive_n": 2,
+          "n": 10,
+          "auc": {
+            "Equal_mean": 1.0,
+            "GBT": 0.9375,
+            "Nearest_active": 1.0,
+            "Property_LR": 0.5625,
+            "RF": 0.96875,
+            "SVM_RBF": 1.0
+          }
+        },
+        "50.0": {
+          "positive_n": 5,
+          "n": 10,
+          "auc": {
+            "Equal_mean": 1.0,
+            "GBT": 0.9400000000000001,
+            "Nearest_active": 1.0,
+            "Property_LR": 0.8,
+            "RF": 1.0,
+            "SVM_RBF": 1.0
+          }
+        }
+      },
+      "compound_9_nearest_training": {
+        "nearest_training_id": "ACT-20",
+        "max_training_tanimoto": 0.660377358490566,
+        "training_matches": {
+          "canonical_parent_tautomer": [],
+          "canonical_smiles": [],
+          "neutral_fragment_parent": []
+        },
+        "training_scaffold_matches": []
+      }
+    }
+  },
+  "paired_compounds": [
+    {
+      "compound": "1",
+      "independent_ratio": 1.1827956989247312,
+      "stored_ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": "=",
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": 0.07290973660428995,
+        "non_estimability_reason": null,
+        "point": 1.1827956989247312,
+        "status": "point",
+        "unit": "dimensionless"
+      },
+      "eligible": true,
+      "overlap": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      }
+    },
+    {
+      "compound": "9",
+      "independent_ratio": 0.6,
+      "stored_ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": "=",
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": -0.22184874961635637,
+        "non_estimability_reason": null,
+        "point": 0.6,
+        "status": "point",
+        "unit": "dimensionless"
+      },
+      "eligible": true,
+      "overlap": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      }
+    },
+    {
+      "compound": "10",
+      "independent_ratio": 0.540041067761807,
+      "stored_ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": "=",
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": -0.26757321272487644,
+        "non_estimability_reason": null,
+        "point": 0.540041067761807,
+        "status": "point",
+        "unit": "dimensionless"
+      },
+      "eligible": false,
+      "overlap": {
+        "canonical_parent_tautomer": [
+          "ACT-20"
+        ],
+        "canonical_smiles": [
+          "ACT-20"
+        ],
+        "neutral_fragment_parent": [
+          "ACT-20"
+        ]
+      }
+    },
+    {
+      "compound": "11",
+      "independent_ratio": 0.25441176470588234,
+      "stored_ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": "=",
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": -0.5944628095774409,
+        "non_estimability_reason": null,
+        "point": 0.25441176470588234,
+        "status": "point",
+        "unit": "dimensionless"
+      },
+      "eligible": false,
+      "overlap": {
+        "canonical_parent_tautomer": [
+          "ACT-19"
+        ],
+        "canonical_smiles": [
+          "ACT-19"
+        ],
+        "neutral_fragment_parent": [
+          "ACT-19"
+        ]
+      }
+    },
+    {
+      "compound": "12",
+      "independent_ratio": null,
+      "stored_ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "Both IC50 >50 uM permit any positive ratio; no informative finite bound or direction",
+        "point": null,
+        "status": "double_censored",
+        "unit": "dimensionless"
+      },
+      "eligible": true,
+      "overlap": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      }
+    },
+    {
+      "compound": "13",
+      "independent_ratio": null,
+      "stored_ratio": {
+        "bound": 0.07440000000000001,
+        "bound_strict": true,
+        "comparator": "<",
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": -1.1284270644541212,
+        "log10_point": null,
+        "non_estimability_reason": null,
+        "point": null,
+        "status": "upper_bound",
+        "unit": "dimensionless"
+      },
+      "eligible": true,
+      "overlap": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      }
+    },
+    {
+      "compound": "14",
+      "independent_ratio": 0.11884057971014492,
+      "stored_ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": "=",
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": -0.9250352383535386,
+        "non_estimability_reason": null,
+        "point": 0.11884057971014492,
+        "status": "point",
+        "unit": "dimensionless"
+      },
+      "eligible": true,
+      "overlap": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      }
+    },
+    {
+      "compound": "15",
+      "independent_ratio": null,
+      "stored_ratio": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "definition": "IC50_NUDT14 / IC50_NUDT5",
+        "log10_bound": null,
+        "log10_point": null,
+        "non_estimability_reason": "Both IC50 >50 uM permit any positive ratio; no informative finite bound or direction",
+        "point": null,
+        "status": "double_censored",
+        "unit": "dimensionless"
+      },
+      "eligible": true,
+      "overlap": {
+        "canonical_parent_tautomer": [],
+        "canonical_smiles": [],
+        "neutral_fragment_parent": []
+      }
+    }
+  ],
+  "paired_Equal_mean_order": {
+    "stored_authenticated_reference_sensitivity": [
+      "9",
+      "1",
+      "14",
+      "12",
+      "13",
+      "15"
+    ],
+    "historical_original_graphs": [
+      "9",
+      "1",
+      "14",
+      "12",
+      "13",
+      "15"
+    ]
+  },
+  "raw_coordinate_sites": [
+    {
+      "pdb": "8RIY",
+      "label": "C",
+      "auth": "AAA",
+      "auth_seq": "301",
+      "positive_occupancy_heavy_atoms": 30
+    },
+    {
+      "pdb": "8RIY",
+      "label": "D",
+      "auth": "BBB",
+      "auth_seq": "301",
+      "positive_occupancy_heavy_atoms": 30
+    },
+    {
+      "pdb": "8OTV",
+      "label": "C",
+      "auth": "A",
+      "auth_seq": "301",
+      "positive_occupancy_heavy_atoms": 30
+    },
+    {
+      "pdb": "8OTV",
+      "label": "F",
+      "auth": "B",
+      "auth_seq": "302",
+      "positive_occupancy_heavy_atoms": 30
+    }
+  ],
+  "raw_Arg51_minima": [
+    {
+      "site": "C",
+      "site_auth": "AAA",
+      "protein_auth": "AAA",
+      "distance_A": 3.7555613428620767,
+      "protein_atom": "N",
+      "ligand_atom": "C20",
+      "protein_occupancy": 1.0
+    },
+    {
+      "site": "C",
+      "site_auth": "AAA",
+      "protein_auth": "BBB",
+      "distance_A": 14.329326327500535,
+      "protein_atom": "N",
+      "ligand_atom": "N5",
+      "protein_occupancy": 1.0
+    },
+    {
+      "site": "D",
+      "site_auth": "BBB",
+      "protein_auth": "AAA",
+      "distance_A": 14.29582019332924,
+      "protein_atom": "N",
+      "ligand_atom": "N5",
+      "protein_occupancy": 1.0
+    },
+    {
+      "site": "D",
+      "site_auth": "BBB",
+      "protein_auth": "BBB",
+      "distance_A": 3.2512725201065518,
+      "protein_atom": "CD",
+      "ligand_atom": "C18",
+      "protein_occupancy": 0.78
+    }
+  ],
+  "stored_conditional_difference": {
+    "auc_difference": -0.04858299595141702,
+    "conditional_percentile_95": [
+      -0.24637860082304516,
+      0.0
+    ],
+    "contrast": "Equal_mean minus Property_LR",
+    "draws": 1000,
+    "model_refitted": false,
+    "unit": "exact Murcko scaffold",
+    "valid_draws": 1000
+  },
+  "official_report_ligand_rows": {
+    "8riy": [
+      {
+        "rscc": "0.931",
+        "rsr": "0.094",
+        "EDIAm": "0.412",
+        "OPIA": "16.670",
+        "owab": "49.720",
+        "avgoccu": "1.000",
+        "NatomsEDS": "30",
+        "mogul_bonds_rmsz": "0.43",
+        "mogul_rmsz_numbonds": "34",
+        "mogul_angles_rmsz": "1.02",
+        "mogul_rmsz_numangles": "48",
+        "model": "1",
+        "chain": "AAA",
+        "resnum": "301",
+        "said": "C",
+        "ent": "2",
+        "seq": ".",
+        "icode": " ",
+        "resname": "W0O",
+        "altcode": " "
+      },
+      {
+        "rscc": "0.940",
+        "rsr": "0.091",
+        "EDIAm": "0.410",
+        "OPIA": "26.670",
+        "owab": "42.620",
+        "avgoccu": "1.000",
+        "NatomsEDS": "30",
+        "mogul_bonds_rmsz": "0.52",
+        "mogul_rmsz_numbonds": "34",
+        "mogul_angles_rmsz": "1.08",
+        "mogul_rmsz_numangles": "48",
+        "model": "1",
+        "chain": "BBB",
+        "resnum": "301",
+        "said": "D",
+        "ent": "2",
+        "seq": ".",
+        "icode": " ",
+        "resname": "W0O",
+        "altcode": " "
+      }
+    ],
+    "8otv": [
+      {
+        "rscc": "0.952",
+        "rsr": "0.076",
+        "EDIAm": "0.804",
+        "OPIA": "83.330",
+        "owab": "37.510",
+        "avgoccu": "1.000",
+        "NatomsEDS": "30",
+        "mogul_bonds_rmsz": "0.38",
+        "mogul_rmsz_numbonds": "34",
+        "mogul_angles_rmsz": "0.72",
+        "mogul_rmsz_numangles": "48",
+        "model": "1",
+        "chain": "A",
+        "resnum": "301",
+        "said": "C",
+        "ent": "2",
+        "seq": ".",
+        "icode": " ",
+        "resname": "W0O",
+        "altcode": " "
+      },
+      {
+        "rscc": "0.928",
+        "rsr": "0.097",
+        "EDIAm": "0.728",
+        "OPIA": "60.000",
+        "owab": "47.470",
+        "avgoccu": "1.000",
+        "NatomsEDS": "30",
+        "mogul_bonds_rmsz": "0.39",
+        "mogul_rmsz_numbonds": "34",
+        "mogul_angles_rmsz": "0.74",
+        "mogul_rmsz_numangles": "48",
+        "model": "1",
+        "chain": "B",
+        "resnum": "302",
+        "said": "F",
+        "ent": "2",
+        "seq": ".",
+        "icode": " ",
+        "resname": "W0O",
+        "altcode": " "
+      }
+    ]
+  }
+}

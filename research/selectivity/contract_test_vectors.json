@@ -1,0 +1,227 @@
+{
+  "cases": [
+    {
+      "case_id": "SOFTWARE_ONLY_point_orientation",
+      "expected": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": "=",
+        "log10_bound": null,
+        "log10_point": 0.6989700043360189,
+        "point": 5,
+        "status": "point"
+      },
+      "input_NUDT14": {
+        "bound": null,
+        "reported_mean": 10,
+        "reported_sd": 0.1,
+        "status": "numeric"
+      },
+      "input_NUDT5": {
+        "bound": null,
+        "reported_mean": 2,
+        "reported_sd": 0.1,
+        "status": "numeric"
+      }
+    },
+    {
+      "case_id": "SOFTWARE_ONLY_upper_strict",
+      "expected": {
+        "bound": 0.0744,
+        "bound_strict": true,
+        "comparator": "<",
+        "log10_bound": -1.1284270644541214,
+        "log10_point": null,
+        "point": null,
+        "status": "upper_bound"
+      },
+      "input_NUDT14": {
+        "bound": null,
+        "reported_mean": 3.72,
+        "reported_sd": 0.1,
+        "status": "numeric"
+      },
+      "input_NUDT5": {
+        "bound": 50,
+        "bound_strict": true,
+        "comparator": ">",
+        "reported_mean": null,
+        "reported_sd": null,
+        "status": "right_censored"
+      }
+    },
+    {
+      "case_id": "SOFTWARE_ONLY_lower_strict",
+      "expected": {
+        "bound": 25,
+        "bound_strict": true,
+        "comparator": ">",
+        "log10_bound": 1.3979400086720377,
+        "log10_point": null,
+        "point": null,
+        "status": "lower_bound"
+      },
+      "input_NUDT14": {
+        "bound": 50,
+        "bound_strict": true,
+        "comparator": ">",
+        "reported_mean": null,
+        "reported_sd": null,
+        "status": "right_censored"
+      },
+      "input_NUDT5": {
+        "bound": null,
+        "reported_mean": 2,
+        "reported_sd": 0.1,
+        "status": "numeric"
+      }
+    },
+    {
+      "case_id": "SOFTWARE_ONLY_both_gt50",
+      "expected": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "log10_bound": null,
+        "log10_point": null,
+        "point": null,
+        "status": "double_censored"
+      },
+      "input_NUDT14": {
+        "bound": 50,
+        "bound_strict": true,
+        "comparator": ">",
+        "reported_mean": null,
+        "reported_sd": null,
+        "status": "right_censored"
+      },
+      "input_NUDT5": {
+        "bound": 50,
+        "bound_strict": true,
+        "comparator": ">",
+        "reported_mean": null,
+        "reported_sd": null,
+        "status": "right_censored"
+      }
+    },
+    {
+      "case_id": "SOFTWARE_ONLY_missing_numerator",
+      "expected": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "log10_bound": null,
+        "log10_point": null,
+        "point": null,
+        "status": "missing_endpoint"
+      },
+      "input_NUDT14": {
+        "bound": null,
+        "reported_mean": null,
+        "reported_sd": null,
+        "status": "untested"
+      },
+      "input_NUDT5": {
+        "bound": null,
+        "reported_mean": 2,
+        "reported_sd": 0.1,
+        "status": "numeric"
+      }
+    },
+    {
+      "case_id": "SOFTWARE_ONLY_missing_denominator",
+      "expected": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": null,
+        "log10_bound": null,
+        "log10_point": null,
+        "point": null,
+        "status": "missing_endpoint"
+      },
+      "input_NUDT14": {
+        "bound": null,
+        "reported_mean": 2,
+        "reported_sd": 0.1,
+        "status": "numeric"
+      },
+      "input_NUDT5": {
+        "bound": null,
+        "reported_mean": null,
+        "reported_sd": null,
+        "status": "untested"
+      }
+    },
+    {
+      "case_id": "SOFTWARE_ONLY_equal_means_not_validated_selectivity",
+      "expected": {
+        "bound": null,
+        "bound_strict": null,
+        "comparator": "=",
+        "log10_bound": null,
+        "log10_point": 0.0,
+        "point": 1,
+        "status": "point"
+      },
+      "input_NUDT14": {
+        "bound": null,
+        "reported_mean": 2,
+        "reported_sd": 0.1,
+        "status": "numeric"
+      },
+      "input_NUDT5": {
+        "bound": null,
+        "reported_mean": 2,
+        "reported_sd": 0.1,
+        "status": "numeric"
+      }
+    }
+  ],
+  "invalid_cases": [
+    {
+      "defect": "zero or negative mean",
+      "expected": "raise ValueError before any publication"
+    },
+    {
+      "defect": "NaN or infinity",
+      "expected": "raise ValueError before any publication"
+    },
+    {
+      "defect": "negative SD",
+      "expected": "raise ValueError before any publication"
+    },
+    {
+      "defect": "right-censored row with fabricated mean50",
+      "expected": "raise ValueError before any publication"
+    },
+    {
+      "defect": "untested row with numerical value",
+      "expected": "raise ValueError before any publication"
+    },
+    {
+      "defect": "unknown comparator >= for a source > cell",
+      "expected": "raise ValueError before any publication"
+    },
+    {
+      "defect": "duplicate compound ID or graph",
+      "expected": "raise ValueError before any publication"
+    },
+    {
+      "defect": "score source graph/ID mismatch",
+      "expected": "raise ValueError before any publication"
+    },
+    {
+      "defect": "mixed IC50 and KD/EC50",
+      "expected": "raise ValueError before any publication"
+    },
+    {
+      "defect": "both >50 assigned R=1",
+      "expected": "raise ValueError before any publication"
+    },
+    {
+      "defect": "output destination already nonempty",
+      "expected": "raise ValueError before any publication"
+    }
+  ],
+  "kind": "SOFTWARE TESTS ONLY; artificial arithmetic examples, not dose-response curves, measured-source evidence or biological Results"
+}

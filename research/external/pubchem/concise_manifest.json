@@ -1,0 +1,8 @@
+{
+  "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1440791,2070371,2070373,2070374,2116012,2148899,2200593/concise/JSON",
+  "status": 200,
+  "retrieved_utc": "2026-10-05T04:25:28.520682+00:00",
+  "sha256": "3b87fc9f30939eca6283a2f7977e09899314c076f93974feea733b4a39a9d586",
+  "size": 12358,
+  "file": "concise-activities.json"
+}

@@ -1,0 +1,30 @@
+{
+  "base_revision": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+  "attachment_urls": [
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/6db3a646-e017-4d97-9a32-8794a10064a9/path_b_audit_consolidation.zip",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/c9908527-1f02-4512-8ac7-5219e3ad860d/Path_B_author_requests.md"
+  ],
+  "input_sha256": {
+    "reconciliation_log.md": "092654346dc9ab35edf43a03eeefba036f67a57435e9e49b3823385a4f3ea204",
+    "methods_code_audit_summary.md": "33ccc703e74510782dd96b811719fbf0db7b96a0327b27cfc4dafebdec75b2e9",
+    "unified_claim_table.csv": "c0ddc26bf9272c61f9aff455dc9a3ba3a9b8bd13d40ffa1e8911034ac3cf3915",
+    "material_gap_register.md": "80100cd492f1ba57f5fde9ddff241701df07b136ed054eb1340d358159288919",
+    "path_b_rewrite_execution_brief.md": "26443d3fa2e94f5c1613b0d4a5c6f78b761daa6ccb25c1dc023d4cb15d9a0735",
+    "owner_lab_experiment_specification.md": "0edcdf6d5074fd6db506eda52c92825af775808996db5d013482bd7dbb33d35c",
+    "coverage_integrity_report.json": "92a62b3163ca45be27fbad5bd39ec0ad2cc7e8ffcad87bdaba71b5d98fbee44d",
+    "input_manifest.json": "fd595b3b5f75d72de32405db17e47719ec96172f2421e360b6e530733e785e2d",
+    "Path_B_author_requests.md": "edcda0bf92010f8af3900ad9795dd9e372472934b13f7c82c823fdebfa1cb72a"
+  },
+  "parent_verified_counts": {
+    "original_quote_slices": 874,
+    "unique_audit_units": 1041,
+    "payload_hashes": 36
+  },
+  "count_attribution": "Parent verification supplied in task; not independently repeated here and not scientific discoveries.",
+  "corrections_retained": [
+    "Diagnostic ECE exists; fused-score trained calibration does not.",
+    "Current Equal_mean is raw 0.25 each RF/GBT/RBF-SVM/nearest-active Tanimoto; Property_LR is separate. Historical normalized TWCS differed.",
+    "Historical DOCX states strict decoy tolerances; no matching provenance proves execution.",
+    "Path B supersedes Path A. No library rebuild, training or new experiment."
+  ]
+}

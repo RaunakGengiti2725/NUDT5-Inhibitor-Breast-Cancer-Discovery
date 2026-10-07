@@ -1,0 +1,39 @@
+{
+  "source_session_role": "structural",
+  "sources": [
+    "https://doi.org/10.1038/s41467-017-02293-7",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/supplementaryFiles",
+    "https://doi.org/10.1021/acs.jmedchem.4c00072",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/supplementaryFiles",
+    "https://files.rcsb.org/download/5NWH.cif",
+    "https://files.rcsb.org/download/5NQR.cif",
+    "https://files.rcsb.org/download/8RDZ.cif",
+    "https://files.rcsb.org/download/8RIY.cif",
+    "https://files.rcsb.org/download/8OTV.cif",
+    "https://data.rcsb.org/rest/v1/core/chemcomp/9CH",
+    "https://data.rcsb.org/rest/v1/core/chemcomp/958",
+    "https://data.rcsb.org/rest/v1/core/chemcomp/W0O",
+    "https://data.rcsb.org/rest/v1/core/chemcomp/A1H14",
+    "https://data.rcsb.org/rest/v1/core/assembly/8RDZ/1",
+    "https://data.rcsb.org/rest/v1/core/assembly/8RDZ/2"
+  ],
+  "artifacts": [
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/835676c8-c47a-45a8-9551-ff7acf74a54d/structural_selectivity_report.md",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/8b7d9398-20bf-4c15-b287-60161eaf4c08/structural_metadata.csv",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/3d8a9506-4253-4e65-9419-a7235b5270f1/compound_control_panel.csv",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/28f187ad-3103-4859-9215-0dd096f73af4/experimental_plan.csv",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/cfd7c77c-c27b-435e-ab86-873e50924578/evidence_ledger.json",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/1f1eee21-03b3-45fc-b006-3d7df4f3d8b4/structural_research_evidence_bundle.zip"
+  ],
+  "limits": [
+    "No repositories were inspected or modified; no commits, pushes, PRs, sessions, contacts or deposit changes were made. Dataset counts and project mappings NC5-02=ACT-19=compound 11 and ACT-20=compound 10 were accepted from the brief, not independently re-audited.",
+    "Investigation was limited to two targeted literature searches, Page/Balikci primary articles and selected supplements, five structural deposits, six assemblies and four CCD identities. Exhaustive later literature, patents, all PDB entries and compound availability were not searched. Wright's earlier nuclear-ATP paper was not independently read.",
+    "Balikci source data were used only as existing evidence for experimental design, not presented as newly discovered external data. Reported cross-target IC50 ratios are provisional: the original enzyme reactions used different incubation times, and ratios are not KD/Ki or statistical confidence bounds.",
+    "No docking, MD, new contact-distance calculation, structure-factor analysis, electron-density re-refinement or experimental testing was performed. Proposed mutants and catalytic-dead rescue constructs require independent validation.",
+    "Missing modeled metal does not establish metal-independent catalysis; deposited assemblies do not alone prove solution oligomer equilibria; missing residues, occupancy issues and construct discrepancies limit atom-level interpretation.",
+    "Structure analysis alone cannot establish cellular selectivity, dose-dependent occupancy, protein degradation, noncatalytic protein functions, permeability, efficacy or clinical relevance. Neither compound 9 nor compound 13 should be treated as an unqualified target-specific cellular control.",
+    "The experimental plan is falsifiable but untested. No manufactured biological results, efficacy claims, novelty guarantees or acceptance guarantees are provided."
+  ]
+}

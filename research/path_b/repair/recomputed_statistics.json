@@ -1,0 +1,2548 @@
+{
+  "commit": "22830642f7d33ca3319872b5ba4c513baff50154",
+  "evaluations": {
+    "full_valid_set": {
+      "ablation_aucs": {
+        "clogp_only_lr": 0.7894736842105263,
+        "ecfp4_plus_properties_rf": 0.9281376518218624,
+        "ecfp4_rf": 0.9412955465587044,
+        "fsp3_only_lr": 0.7510121457489879,
+        "hba_only_lr": 0.9959514170040485,
+        "hbd_only_lr": 0.7176113360323887,
+        "mw_only_lr": 0.9878542510121457,
+        "nrb_only_lr": 0.8704453441295547,
+        "properties_lr": 0.979757085020243,
+        "tpsa_only_lr": 0.9959514170040485,
+        "without_clogp_lr": 0.9838056680161943,
+        "without_fsp3_lr": 0.9838056680161943,
+        "without_hba_lr": 0.9676113360323887,
+        "without_hbd_lr": 0.9838056680161943,
+        "without_mw_lr": 0.979757085020243,
+        "without_nrb_lr": 0.9817813765182186,
+        "without_tpsa_lr": 0.979757085020243
+      },
+      "binning_sensitivity": {
+        "Equal_mean": {
+          "10": 0.06731665550869102,
+          "3": 0.06271533468760268,
+          "5": 0.06271533468760267
+        },
+        "Property_LR": {
+          "10": 0.07936037156253024,
+          "3": 0.03634277147525835,
+          "5": 0.05000138662461103
+        },
+        "RF": {
+          "10": 0.07488888888888887,
+          "3": 0.045999999999999965,
+          "5": 0.06022222222222219
+        }
+      },
+      "conformal": {
+        "calibration_counts": [
+          {
+            "counts": {
+              "0": 10,
+              "1": 5
+            },
+            "fold": 0,
+            "p_min": {
+              "0": 0.09090909090909091,
+              "1": 0.16666666666666666
+            }
+          },
+          {
+            "counts": {
+              "0": 7,
+              "1": 13
+            },
+            "fold": 1,
+            "p_min": {
+              "0": 0.125,
+              "1": 0.07142857142857142
+            }
+          },
+          {
+            "counts": {
+              "0": 8,
+              "1": 6
+            },
+            "fold": 2,
+            "p_min": {
+              "0": 0.1111111111111111,
+              "1": 0.14285714285714285
+            }
+          },
+          {
+            "counts": {
+              "0": 7,
+              "1": 7
+            },
+            "fold": 3,
+            "p_min": {
+              "0": 0.125,
+              "1": 0.125
+            }
+          },
+          {
+            "counts": {
+              "0": 7,
+              "1": 7
+            },
+            "fold": 4,
+            "p_min": {
+              "0": 0.125,
+              "1": 0.125
+            }
+          }
+        ],
+        "levels": [
+          {
+            "alpha": 0.1,
+            "both_labels_forced_by_p_min": 22,
+            "classwise_coverage": {
+              "0": 0.9615384615384616,
+              "1": 1.0
+            },
+            "coverage": 0.9777777777777777,
+            "forced_class_inclusion_by_p_min": {
+              "0": 30,
+              "1": 37
+            },
+            "n": 45,
+            "set_size_counts": {
+              "1": 10,
+              "2": 35
+            }
+          },
+          {
+            "alpha": 0.2,
+            "both_labels_forced_by_p_min": 0,
+            "classwise_coverage": {
+              "0": 0.8076923076923077,
+              "1": 0.8947368421052632
+            },
+            "coverage": 0.8444444444444444,
+            "forced_class_inclusion_by_p_min": {
+              "0": 0,
+              "1": 0
+            },
+            "n": 45,
+            "set_size_counts": {
+              "0": 1,
+              "1": 39,
+              "2": 5
+            }
+          }
+        ]
+      },
+      "constant_mcc_check": {
+        "constant_predictions_have_zero_MCC_denominator": true,
+        "recorded_mcc": 0.0
+      },
+      "evaluation_groups": 34,
+      "fixed_score_bootstrap": {
+        "intervals": {
+          "Equal_mean": [
+            0.6849400599400599,
+            1.0
+          ],
+          "Property_LR": [
+            0.9081603330987568,
+            1.0
+          ],
+          "difference": [
+            -0.24637860082304527,
+            0.0
+          ]
+        },
+        "single_class_draws": 0,
+        "valid_draws": 1000
+      },
+      "folds": [
+        {
+          "aucs": {
+            "Equal_mean": 0.9318181818181818,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 0,
+          "n": 15,
+          "positive": 11,
+          "scaffolds": 6
+        },
+        {
+          "aucs": {
+            "Equal_mean": 1.0,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 1,
+          "n": 8,
+          "positive": 3,
+          "scaffolds": 6
+        },
+        {
+          "aucs": {
+            "Equal_mean": 1.0,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 2,
+          "n": 8,
+          "positive": 2,
+          "scaffolds": 8
+        },
+        {
+          "aucs": {
+            "Equal_mean": 1.0,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 3,
+          "n": 7,
+          "positive": 1,
+          "scaffolds": 7
+        },
+        {
+          "aucs": {
+            "Equal_mean": 1.0,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 4,
+          "n": 7,
+          "positive": 2,
+          "scaffolds": 7
+        }
+      ],
+      "largest_scaffold_sizes": [
+        9,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "metrics": {
+        "Constant_0_5": {
+          "brier": 0.25,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.4,
+                "mean_score": 0.5,
+                "n": 45,
+                "positive_rate": 0.4222222222222222,
+                "upper": 0.6000000000000001
+              }
+            ],
+            "ece": 0.07777777777777778
+          },
+          "pooled_auc": 0.5,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 0.5
+        },
+        "Equal_mean": {
+          "brier": 0.05407498033966117,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.05940828655557056,
+                "n": 26,
+                "positive_rate": 0.07692307692307693,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.37439916200099266,
+                "n": 1,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.48875127670118784,
+                "n": 1,
+                "positive_rate": 0.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.7964299131389105,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9187446883860197,
+                "n": 16,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.06271533468760267
+          },
+          "pooled_auc": 0.9311740890688259,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 0.9655172413793104
+        },
+        "Fingerprint_LR": {
+          "brier": 0.04603516675109907,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.026235044278372636,
+                "n": 27,
+                "positive_rate": 0.07407407407407407,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.2694444956392402,
+                "n": 1,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9673027356853697,
+                "n": 17,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.047043373188264306
+          },
+          "pooled_auc": 0.917004048582996,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 0.9655172413793104
+        },
+        "GBT": {
+          "brier": 0.08888616004074092,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 1.8112089447781422e-05,
+                "n": 26,
+                "positive_rate": 0.07692307692307693,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9997448783000507,
+                "n": 19,
+                "positive_rate": 0.8947368421052632,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.08877070607500712
+          },
+          "pooled_auc": 0.8431174089068826,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 0.9367816091954023
+        },
+        "Mean_without_GBT": {
+          "brier": 0.05146290866637115,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.08241494474250144,
+                "n": 27,
+                "positive_rate": 0.07407407407407407,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.31834305726484735,
+                "n": 1,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.7300243135239609,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.8916688964023608,
+                "n": 16,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.05659599798557006
+          },
+          "pooled_auc": 0.9311740890688259,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 0.9655172413793104
+        },
+        "Mean_without_Nearest_active": {
+          "brier": 0.05421993747621498,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.029108314399831806,
+                "n": 26,
+                "positive_rate": 0.07692307692307693,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.47462239619613056,
+                "n": 2,
+                "positive_rate": 0.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9468244499247978,
+                "n": 17,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.06880917709500162
+          },
+          "pooled_auc": 0.9473684210526315,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 0.9770114942528736
+        },
+        "Mean_without_RF": {
+          "brier": 0.05619759121988898,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.06549310002281203,
+                "n": 26,
+                "positive_rate": 0.07692307692307693,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.49376695913478696,
+                "n": 2,
+                "positive_rate": 0.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9140270531227628,
+                "n": 17,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.06102785365754431
+          },
+          "pooled_auc": 0.9230769230769231,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 0.9655172413793104
+        },
+        "Mean_without_SVM_RBF": {
+          "brier": 0.05852637784974782,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.06382672042202693,
+                "n": 26,
+                "positive_rate": 0.07692307692307693,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.5158033873261998,
+                "n": 2,
+                "positive_rate": 0.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.7958125855866262,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9098978072440009,
+                "n": 16,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.06706521204864574
+          },
+          "pooled_auc": 0.9271255060728745,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 0.9655172413793104
+        },
+        "Nearest_active": {
+          "brier": 0.06784821186960696,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.14021188792688144,
+                "n": 23,
+                "positive_rate": 0.08695652173913043,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.25760144678122465,
+                "n": 5,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.7390428513461446,
+                "n": 7,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.8524032803673206,
+                "n": 10,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.12923439762507063
+          },
+          "pooled_auc": 0.9129554655870445,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 0.9655172413793104
+        },
+        "Property_LR": {
+          "brier": 0.043643098262856325,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.051823759839377107,
+                "n": 25,
+                "positive_rate": 0.08,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.33284184801142497,
+                "n": 3,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.96781583234955,
+                "n": 17,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.05000138662461103
+          },
+          "pooled_auc": 0.979757085020243,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 1.0
+        },
+        "RF": {
+          "brier": 0.051331111111111105,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.04592592592592593,
+                "n": 27,
+                "positive_rate": 0.07407407407407407,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.32,
+                "n": 1,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.75,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9137500000000001,
+                "n": 16,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.06022222222222219
+          },
+          "pooled_auc": 0.9412955465587044,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 0.9712643678160919
+        },
+        "SVM_RBF": {
+          "brier": 0.045196483019389964,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.0474526086650354,
+                "n": 27,
+                "positive_rate": 0.07407407407407407,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.27653860575680633,
+                "n": 1,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.7982818957957635,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9452853318120763,
+                "n": 16,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.04605491037804147
+          },
+          "pooled_auc": 0.9595141700404858,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 0.9770114942528736
+        },
+        "Tanimoto_kNN": {
+          "brier": 0.06577777777777778,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.0,
+                "n": 21,
+                "positive_rate": 0.09523809523809523,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.20000000000000004,
+                "n": 3,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.44999999999999996,
+                "n": 4,
+                "positive_rate": 0.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 1.0,
+                "n": 17,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.09777777777777778
+          },
+          "pooled_auc": 0.9331983805668016,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 0.9425287356321839
+        },
+        "Train_prevalence": {
+          "brier": 0.29304752307896736,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.2,
+                "mean_score": 0.26666666666666666,
+                "n": 15,
+                "positive_rate": 0.7333333333333333,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.45275011853959224,
+                "n": 30,
+                "positive_rate": 0.26666666666666666,
+                "upper": 0.6000000000000001
+              }
+            ],
+            "ece": 0.2796111901375059
+          },
+          "pooled_auc": 0.24595141700404857,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 87,
+          "within_fold_pair_weighted_auc": 0.5
+        }
+      },
+      "n_records": 45,
+      "negative_scaffold_groups": 26,
+      "positive_labels": 19,
+      "positive_scaffold_groups": 8,
+      "raw_equal_mean_max_abs_difference": 0.0,
+      "scaffold_groups": 34
+    },
+    "nearest_property_subset": {
+      "ablation_aucs": {
+        "clogp_only_lr": 0.7229916897506925,
+        "ecfp4_plus_properties_rf": 0.9293628808864266,
+        "ecfp4_rf": 0.9182825484764543,
+        "fsp3_only_lr": 0.7742382271468145,
+        "hba_only_lr": 0.997229916897507,
+        "hbd_only_lr": 0.6814404432132964,
+        "mw_only_lr": 1.0,
+        "nrb_only_lr": 0.8739612188365651,
+        "properties_lr": 0.9944598337950139,
+        "tpsa_only_lr": 0.9944598337950139,
+        "without_clogp_lr": 0.9944598337950139,
+        "without_fsp3_lr": 0.9944598337950139,
+        "without_hba_lr": 0.9833795013850416,
+        "without_hbd_lr": 0.9944598337950139,
+        "without_mw_lr": 0.9861495844875346,
+        "without_nrb_lr": 0.9944598337950139,
+        "without_tpsa_lr": 0.9750692520775623
+      },
+      "binning_sensitivity": {
+        "Equal_mean": {
+          "10": 0.0959423972636309,
+          "3": 0.07829543757293474,
+          "5": 0.07829543757293474
+        },
+        "Property_LR": {
+          "10": 0.07002253640995008,
+          "3": 0.0365365321291139,
+          "5": 0.0365365321291139
+        },
+        "RF": {
+          "10": 0.09078947368421053,
+          "3": 0.04710526315789472,
+          "5": 0.07499999999999997
+        }
+      },
+      "conformal": {
+        "calibration_counts": [
+          {
+            "counts": {
+              "0": 8,
+              "1": 3
+            },
+            "fold": 0,
+            "p_min": {
+              "0": 0.1111111111111111,
+              "1": 0.25
+            }
+          },
+          {
+            "counts": {
+              "0": 6,
+              "1": 4
+            },
+            "fold": 1,
+            "p_min": {
+              "0": 0.14285714285714285,
+              "1": 0.2
+            }
+          },
+          {
+            "counts": {
+              "0": 6,
+              "1": 10
+            },
+            "fold": 2,
+            "p_min": {
+              "0": 0.14285714285714285,
+              "1": 0.09090909090909091
+            }
+          },
+          {
+            "counts": {
+              "0": 5,
+              "1": 7
+            },
+            "fold": 3,
+            "p_min": {
+              "0": 0.16666666666666666,
+              "1": 0.125
+            }
+          },
+          {
+            "counts": {
+              "0": 7,
+              "1": 1
+            },
+            "fold": 4,
+            "p_min": {
+              "0": 0.125,
+              "1": 0.5
+            }
+          }
+        ],
+        "levels": [
+          {
+            "alpha": 0.1,
+            "both_labels_forced_by_p_min": 32,
+            "classwise_coverage": {
+              "0": 1.0,
+              "1": 1.0
+            },
+            "coverage": 1.0,
+            "forced_class_inclusion_by_p_min": {
+              "0": 38,
+              "1": 32
+            },
+            "n": 38,
+            "set_size_counts": {
+              "1": 5,
+              "2": 33
+            }
+          },
+          {
+            "alpha": 0.2,
+            "both_labels_forced_by_p_min": 0,
+            "classwise_coverage": {
+              "0": 0.8947368421052632,
+              "1": 0.9473684210526315
+            },
+            "coverage": 0.9210526315789473,
+            "forced_class_inclusion_by_p_min": {
+              "0": 0,
+              "1": 20
+            },
+            "n": 38,
+            "set_size_counts": {
+              "0": 1,
+              "1": 24,
+              "2": 13
+            }
+          }
+        ]
+      },
+      "constant_mcc_check": {
+        "constant_predictions_have_zero_MCC_denominator": true,
+        "recorded_mcc": 0.0
+      },
+      "evaluation_groups": 27,
+      "fixed_score_bootstrap": {
+        "intervals": {
+          "Equal_mean": [
+            0.6719924812030076,
+            1.0
+          ],
+          "Property_LR": [
+            0.9618767507002801,
+            1.0
+          ],
+          "difference": [
+            -0.3060275019098549,
+            0.0
+          ]
+        },
+        "single_class_draws": 0,
+        "valid_draws": 1000
+      },
+      "folds": [
+        {
+          "aucs": {
+            "Equal_mean": 1.0,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 0,
+          "n": 12,
+          "positive": 9,
+          "scaffolds": 4
+        },
+        {
+          "aucs": {
+            "Equal_mean": 1.0,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 1,
+          "n": 7,
+          "positive": 4,
+          "scaffolds": 5
+        },
+        {
+          "aucs": {
+            "Equal_mean": 1.0,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 2,
+          "n": 6,
+          "positive": 1,
+          "scaffolds": 6
+        },
+        {
+          "aucs": {
+            "Equal_mean": 1.0,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 3,
+          "n": 5,
+          "positive": 1,
+          "scaffolds": 5
+        },
+        {
+          "aucs": {
+            "Equal_mean": 0.6875,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 4,
+          "n": 8,
+          "positive": 4,
+          "scaffolds": 7
+        }
+      ],
+      "largest_scaffold_sizes": [
+        9,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "metrics": {
+        "Constant_0_5": {
+          "brier": 0.25,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.4,
+                "mean_score": 0.5,
+                "n": 38,
+                "positive_rate": 0.5,
+                "upper": 0.6000000000000001
+              }
+            ],
+            "ece": 0.0
+          },
+          "pooled_auc": 0.5,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 0.5
+        },
+        "Equal_mean": {
+          "brier": 0.06336684215087938,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.06947407478715269,
+                "n": 19,
+                "positive_rate": 0.10526315789473684,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.37374620095372607,
+                "n": 1,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.5077600984619667,
+                "n": 1,
+                "positive_rate": 0.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9168395441581336,
+                "n": 17,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.07829543757293474
+          },
+          "pooled_auc": 0.9279778393351801,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 0.921875
+        },
+        "Fingerprint_LR": {
+          "brier": 0.05692577693436653,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.04328255328696611,
+                "n": 20,
+                "positive_rate": 0.1,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.40547920632736495,
+                "n": 1,
+                "positive_rate": 0.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9726082877610838,
+                "n": 17,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.05277598022762155
+          },
+          "pooled_auc": 0.9196675900277008,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 0.9375
+        },
+        "GBT": {
+          "brier": 0.10525870309965608,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.00012236830371050234,
+                "n": 19,
+                "positive_rate": 0.10526315789473684,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9999722036895045,
+                "n": 19,
+                "positive_rate": 0.8947368421052632,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.10518807558763382
+          },
+          "pooled_auc": 0.8490304709141274,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 0.8828125
+        },
+        "Mean_without_GBT": {
+          "brier": 0.05965480788974348,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.09621186765006297,
+                "n": 20,
+                "positive_rate": 0.1,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.34368679858924894,
+                "n": 1,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.7456419572681261,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.8980968477040099,
+                "n": 16,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.06063836644883436
+          },
+          "pooled_auc": 0.9279778393351801,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 0.921875
+        },
+        "Mean_without_Nearest_active": {
+          "brier": 0.06461493571254655,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.039836272536953786,
+                "n": 19,
+                "positive_rate": 0.10526315789473684,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.4941386548203887,
+                "n": 2,
+                "positive_rate": 0.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9542754737270879,
+                "n": 17,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.07917644942310952
+          },
+          "pooled_auc": 0.925207756232687,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 0.921875
+        },
+        "Mean_without_RF": {
+          "brier": 0.06561130855230432,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.07315841550567728,
+                "n": 19,
+                "positive_rate": 0.10526315789473684,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.4993375329437951,
+                "n": 2,
+                "positive_rate": 0.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9171586078971194,
+                "n": 17,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.07939391676391293
+          },
+          "pooled_auc": 0.9362880886426593,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 0.921875
+        },
+        "Mean_without_SVM_RBF": {
+          "brier": 0.06812788256799651,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.07231030082434631,
+                "n": 19,
+                "positive_rate": 0.10526315789473684,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.5151917829474648,
+                "n": 2,
+                "positive_rate": 0.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.90679518203584,
+                "n": 17,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.08528867777955447
+          },
+          "pooled_auc": 0.9168975069252078,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 0.890625
+        },
+        "Nearest_active": {
+          "brier": 0.07521826014396722,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.14506544209863875,
+                "n": 16,
+                "positive_rate": 0.125,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.24990166887589157,
+                "n": 5,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.7361438627140569,
+                "n": 7,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.8524032803673206,
+                "n": 10,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.128776725665423
+          },
+          "pooled_auc": 0.9279778393351801,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 0.921875
+        },
+        "Property_LR": {
+          "brier": 0.042514270116559096,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.07495707273655602,
+                "n": 20,
+                "positive_rate": 0.1,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.33982063981653265,
+                "n": 1,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9677818214222991,
+                "n": 17,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.0365365321291139
+          },
+          "pooled_auc": 0.9944598337950139,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 1.0
+        },
+        "RF": {
+          "brier": 0.05998157894736842,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.05842105263157895,
+                "n": 19,
+                "positive_rate": 0.10526315789473684,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.265,
+                "n": 2,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.79,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9237500000000001,
+                "n": 16,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.07499999999999997
+          },
+          "pooled_auc": 0.9182825484764543,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 0.90625
+        },
+        "SVM_RBF": {
+          "brier": 0.05388292148418535,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.062032360354191816,
+                "n": 20,
+                "positive_rate": 0.1,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.35256982973001116,
+                "n": 1,
+                "positive_rate": 0.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9469726305250148,
+                "n": 17,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.052983892203182205
+          },
+          "pooled_auc": 0.9556786703601108,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 0.9375
+        },
+        "Tanimoto_kNN": {
+          "brier": 0.09473684210526316,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.0,
+                "n": 13,
+                "positive_rate": 0.07692307692307693,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.2,
+                "n": 5,
+                "positive_rate": 0.2,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.4,
+                "n": 1,
+                "positive_rate": 0.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9894736842105264,
+                "n": 19,
+                "positive_rate": 0.8947368421052632,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.08421052631578951
+          },
+          "pooled_auc": 0.9265927977839336,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 0.9453125
+        },
+        "Train_prevalence": {
+          "brier": 0.28395138875848236,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.2,
+                "mean_score": 0.38461538461538464,
+                "n": 12,
+                "positive_rate": 0.75,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.518821903902549,
+                "n": 26,
+                "positive_rate": 0.38461538461538464,
+                "upper": 0.6000000000000001
+              }
+            ],
+            "ece": 0.20721012858109625
+          },
+          "pooled_auc": 0.2548476454293629,
+          "total_pooled_pairs": 361,
+          "within_fold_comparable_pairs": 64,
+          "within_fold_pair_weighted_auc": 0.5
+        }
+      },
+      "n_records": 38,
+      "negative_scaffold_groups": 19,
+      "positive_labels": 19,
+      "positive_scaffold_groups": 8,
+      "raw_equal_mean_max_abs_difference": 0.0,
+      "scaffold_groups": 27
+    },
+    "similarity_component_split": {
+      "ablation_aucs": {
+        "clogp_only_lr": 0.0931174089068826,
+        "ecfp4_plus_properties_rf": 1.0,
+        "ecfp4_rf": 1.0,
+        "fsp3_only_lr": 0.08097165991902834,
+        "hba_only_lr": 0.9969635627530364,
+        "hbd_only_lr": 0.3714574898785425,
+        "mw_only_lr": 1.0,
+        "nrb_only_lr": 0.7580971659919028,
+        "properties_lr": 1.0,
+        "tpsa_only_lr": 0.9979757085020243,
+        "without_clogp_lr": 1.0,
+        "without_fsp3_lr": 1.0,
+        "without_hba_lr": 0.9959514170040485,
+        "without_hbd_lr": 1.0,
+        "without_mw_lr": 0.9979757085020243,
+        "without_nrb_lr": 1.0,
+        "without_tpsa_lr": 0.9959514170040485
+      },
+      "binning_sensitivity": {
+        "Equal_mean": {
+          "10": 0.2296226531140616,
+          "3": 0.1501103221979155,
+          "5": 0.2296226531140616
+        },
+        "Property_LR": {
+          "10": 0.06668521439391634,
+          "3": 0.03677267103230724,
+          "5": 0.03677267103230725
+        },
+        "RF": {
+          "10": 0.2782222222222222,
+          "3": 0.21155555555555555,
+          "5": 0.26755555555555555
+        }
+      },
+      "conformal": {
+        "calibration_counts": [
+          {
+            "counts": {
+              "0": 9,
+              "1": 2
+            },
+            "fold": 0,
+            "p_min": {
+              "0": 0.1,
+              "1": 0.3333333333333333
+            }
+          },
+          {
+            "counts": {
+              "0": 10,
+              "1": 2
+            },
+            "fold": 1,
+            "p_min": {
+              "0": 0.09090909090909091,
+              "1": 0.3333333333333333
+            }
+          },
+          {
+            "counts": {
+              "0": 9,
+              "1": 2
+            },
+            "fold": 2,
+            "p_min": {
+              "0": 0.1,
+              "1": 0.3333333333333333
+            }
+          },
+          {
+            "counts": {
+              "0": 9,
+              "1": 2
+            },
+            "fold": 3,
+            "p_min": {
+              "0": 0.1,
+              "1": 0.3333333333333333
+            }
+          },
+          {
+            "counts": {
+              "0": 9,
+              "1": 2
+            },
+            "fold": 4,
+            "p_min": {
+              "0": 0.1,
+              "1": 0.3333333333333333
+            }
+          }
+        ],
+        "levels": [
+          {
+            "alpha": 0.1,
+            "both_labels_forced_by_p_min": 0,
+            "classwise_coverage": {
+              "0": 0.9615384615384616,
+              "1": 1.0
+            },
+            "coverage": 0.9777777777777777,
+            "forced_class_inclusion_by_p_min": {
+              "0": 0,
+              "1": 45
+            },
+            "n": 45,
+            "set_size_counts": {
+              "1": 2,
+              "2": 43
+            }
+          },
+          {
+            "alpha": 0.2,
+            "both_labels_forced_by_p_min": 0,
+            "classwise_coverage": {
+              "0": 0.9230769230769231,
+              "1": 1.0
+            },
+            "coverage": 0.9555555555555556,
+            "forced_class_inclusion_by_p_min": {
+              "0": 0,
+              "1": 45
+            },
+            "n": 45,
+            "set_size_counts": {
+              "1": 3,
+              "2": 42
+            }
+          }
+        ]
+      },
+      "constant_mcc_check": {
+        "constant_predictions_have_zero_MCC_denominator": true,
+        "recorded_mcc": 0.0
+      },
+      "evaluation_groups": 30,
+      "fixed_score_bootstrap": {
+        "intervals": {
+          "Equal_mean": [
+            0.933870523415978,
+            1.0
+          ],
+          "Property_LR": [
+            1.0,
+            1.0
+          ],
+          "difference": [
+            -0.06612947658402205,
+            0.0
+          ]
+        },
+        "single_class_draws": 0,
+        "valid_draws": 1000
+      },
+      "folds": [
+        {
+          "aucs": {
+            "Equal_mean": null,
+            "Property_LR": null,
+            "Train_prevalence": null
+          },
+          "fold": 0,
+          "n": 6,
+          "positive": 0,
+          "scaffolds": 6
+        },
+        {
+          "aucs": {
+            "Equal_mean": 1.0,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 1,
+          "n": 21,
+          "positive": 16,
+          "scaffolds": 12
+        },
+        {
+          "aucs": {
+            "Equal_mean": 1.0,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 2,
+          "n": 6,
+          "positive": 1,
+          "scaffolds": 6
+        },
+        {
+          "aucs": {
+            "Equal_mean": 1.0,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 3,
+          "n": 6,
+          "positive": 1,
+          "scaffolds": 6
+        },
+        {
+          "aucs": {
+            "Equal_mean": 1.0,
+            "Property_LR": 1.0,
+            "Train_prevalence": 0.5
+          },
+          "fold": 4,
+          "n": 6,
+          "positive": 1,
+          "scaffolds": 6
+        }
+      ],
+      "largest_scaffold_sizes": [
+        9,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "metrics": {
+        "Constant_0_5": {
+          "brier": 0.25,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.4,
+                "mean_score": 0.5,
+                "n": 45,
+                "positive_rate": 0.4222222222222222,
+                "upper": 0.6000000000000001
+              }
+            ],
+            "ece": 0.07777777777777778
+          },
+          "pooled_auc": 0.5,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 0.5
+        },
+        "Equal_mean": {
+          "brier": 0.11605112482540964,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.07156109782453149,
+                "n": 25,
+                "positive_rate": 0.0,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.3379410296289587,
+                "n": 10,
+                "positive_rate": 0.9,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.5055612161506173,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.715785955993358,
+                "n": 8,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.844748895093446,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.2296226531140616
+          },
+          "pooled_auc": 0.9817813765182186,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 1.0
+        },
+        "Fingerprint_LR": {
+          "brier": 0.126582257816296,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.03499275043654828,
+                "n": 26,
+                "positive_rate": 0.0,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.32123334129881953,
+                "n": 9,
+                "positive_rate": 1.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.5089967747797695,
+                "n": 2,
+                "positive_rate": 1.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.6284377420116927,
+                "n": 7,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9305189941661484,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.2371363267078521
+          },
+          "pooled_auc": 1.0,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 1.0
+        },
+        "GBT": {
+          "brier": 0.19578065717413012,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.021066338661620748,
+                "n": 34,
+                "positive_rate": 0.2647058823529412,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.6788545210163511,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9931046582366856,
+                "n": 10,
+                "positive_rate": 0.9,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.2119097010412311
+          },
+          "pooled_auc": 0.9321862348178138,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 0.9736842105263158
+        },
+        "Mean_without_GBT": {
+          "brier": 0.10725717983333333,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.09269110106310333,
+                "n": 25,
+                "positive_rate": 0.0,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.34315685362441956,
+                "n": 4,
+                "positive_rate": 0.75,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.47160402600362133,
+                "n": 9,
+                "positive_rate": 1.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.6595696124368257,
+                "n": 7,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              }
+            ],
+            "ece": 0.24629392424421184
+          },
+          "pooled_auc": 1.0,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 1.0
+        },
+        "Mean_without_Nearest_active": {
+          "brier": 0.12310724396933978,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.04195598375827258,
+                "n": 25,
+                "positive_rate": 0.0,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.2910039677262577,
+                "n": 9,
+                "positive_rate": 1.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.46879646762207966,
+                "n": 2,
+                "positive_rate": 0.5,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.7465821579201108,
+                "n": 8,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9058190396117741,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.2136398810267483
+          },
+          "pooled_auc": 0.9817813765182186,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 1.0
+        },
+        "Mean_without_RF": {
+          "brier": 0.11012166631522109,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.07768146376604199,
+                "n": 25,
+                "positive_rate": 0.0,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.33125512322855477,
+                "n": 9,
+                "positive_rate": 1.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.5043329537649731,
+                "n": 2,
+                "positive_rate": 0.5,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.7770652477261051,
+                "n": 4,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.8252908799631987,
+                "n": 5,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.21632646670896863
+          },
+          "pooled_auc": 0.9817813765182186,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 1.0
+        },
+        "Mean_without_SVM_RBF": {
+          "brier": 0.13153443105504364,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.07170275182105165,
+                "n": 25,
+                "positive_rate": 0.0,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.2912867158170725,
+                "n": 9,
+                "positive_rate": 1.0,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.4886751675558051,
+                "n": 2,
+                "positive_rate": 0.5,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.6938052386949275,
+                "n": 8,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.8361535164902453,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.24015650204469696
+          },
+          "pooled_auc": 0.9817813765182186,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 1.0
+        },
+        "Nearest_active": {
+          "brier": 0.10928923836458873,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.13968274129923777,
+                "n": 19,
+                "positive_rate": 0.0,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.24866446593642388,
+                "n": 8,
+                "positive_rate": 0.125,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.4890640349914781,
+                "n": 11,
+                "positive_rate": 1.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.6435908831660253,
+                "n": 7,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              }
+            ],
+            "ece": 0.2612988276690772
+          },
+          "pooled_auc": 1.0,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 1.0
+        },
+        "Property_LR": {
+          "brier": 0.02266744148557576,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.03598393127150275,
+                "n": 23,
+                "positive_rate": 0.0,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.2507179380376964,
+                "n": 4,
+                "positive_rate": 0.25,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.4239638310481192,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.9853981261113767,
+                "n": 17,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.03677267103230725
+          },
+          "pooled_auc": 1.0,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 1.0
+        },
+        "RF": {
+          "brier": 0.1516622222222222,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.0504,
+                "n": 25,
+                "positive_rate": 0.0,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.3309090909090909,
+                "n": 11,
+                "positive_rate": 0.9090909090909091,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.46625,
+                "n": 8,
+                "positive_rate": 1.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.85,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.26755555555555555
+          },
+          "pooled_auc": 1.0,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 1.0
+        },
+        "SVM_RBF": {
+          "brier": 0.07781657838239052,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.06717152043196335,
+                "n": 25,
+                "positive_rate": 0.0,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.2780628546061616,
+                "n": 2,
+                "positive_rate": 0.5,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.4762314881364329,
+                "n": 9,
+                "positive_rate": 1.0,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.6000000000000001,
+                "mean_score": 0.7523808455165909,
+                "n": 5,
+                "positive_rate": 1.0,
+                "upper": 0.8
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 0.840613916607323,
+                "n": 4,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.1936159780965915
+          },
+          "pooled_auc": 1.0,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 1.0
+        },
+        "Tanimoto_kNN": {
+          "brier": 0.27022222222222225,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.0,
+                "n": 18,
+                "positive_rate": 0.0,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.2,
+                "mean_score": 0.20000000000000004,
+                "n": 20,
+                "positive_rate": 0.8,
+                "upper": 0.4
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.4666666666666666,
+                "n": 6,
+                "positive_rate": 0.3333333333333333,
+                "upper": 0.6000000000000001
+              },
+              {
+                "lower": 0.8,
+                "mean_score": 1.0,
+                "n": 1,
+                "positive_rate": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "ece": 0.28444444444444444
+          },
+          "pooled_auc": 0.7935222672064778,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 0.8894736842105263
+        },
+        "Train_prevalence": {
+          "brier": 0.3959394860837167,
+          "five_bin_ece": {
+            "bins": [
+              {
+                "lower": 0.0,
+                "mean_score": 0.125,
+                "n": 21,
+                "positive_rate": 0.7619047619047619,
+                "upper": 0.2
+              },
+              {
+                "lower": 0.4,
+                "mean_score": 0.4679487179487179,
+                "n": 24,
+                "positive_rate": 0.125,
+                "upper": 0.6000000000000001
+              }
+            ],
+            "ece": 0.4801282051282051
+          },
+          "pooled_auc": 0.15688259109311742,
+          "total_pooled_pairs": 494,
+          "within_fold_comparable_pairs": 95,
+          "within_fold_pair_weighted_auc": 0.5
+        }
+      },
+      "n_records": 45,
+      "negative_scaffold_groups": 26,
+      "positive_labels": 19,
+      "positive_scaffold_groups": 8,
+      "raw_equal_mean_max_abs_difference": 0.0,
+      "scaffold_groups": 34
+    }
+  },
+  "independent_Arg51_minima": [
+    {
+      "auth_chain": "AAA",
+      "distance_A": 3.7555613428620767,
+      "ligand_atom": "C20",
+      "ligand_chain": "C",
+      "protein_atom": "N",
+      "protein_occupancy": "1.000"
+    },
+    {
+      "auth_chain": "BBB",
+      "distance_A": 3.2512725201065518,
+      "ligand_atom": "C18",
+      "ligand_chain": "D",
+      "protein_atom": "CD",
+      "protein_occupancy": "0.780"
+    }
+  ],
+  "input_sha256": {
+    "research/results/benchmark.json": "e143831e4c56e32f7f26c6ebe194e478c0828e2b4a17c1da1157fc04dccd5c65",
+    "research/results/controls.json": "6593a34bbf9f75b64216af68b4a23d539026d284b102a63f2d234c3ae0d040a6",
+    "research/results/transfer.json": "df6b544a2c5b8aca0ab3007f016133f8fd012629210e375bd34d0fdbad32e50a",
+    "research/selectivity/paired_evidence.json": "2872dd55843e6cc7ac03ece02df2684bb7ab637786df47d95b2cd14626c7aa6f",
+    "research/selectivity/sources/jm4c00072_si_002.csv.gz": "a628c90932abb6c9eaac12a6236462248da96cd6e7a855fb4cde28562a5705dd",
+    "research/structure_comparison/sources/8RIY.cif": "39267e781393f99681d7f154d2def2a271c8a10ae9a2bc6fe819cbf78d9c5047"
+  },
+  "paired_ratios": [
+    {
+      "NUDT14": "0.990 \u00b1 0.110",
+      "NUDT5": "0.837 \u00b1 0.329",
+      "compound": "1",
+      "n_as_source_reported": 2,
+      "ratio_CI": null,
+      "status": "point",
+      "value": 1.1827956989247312
+    },
+    {
+      "NUDT14": "0.162 \u00b1 0.005",
+      "NUDT5": "0.270 \u00b1 0.027",
+      "compound": "9",
+      "n_as_source_reported": 2,
+      "ratio_CI": null,
+      "status": "point",
+      "value": 0.6
+    },
+    {
+      "NUDT14": "0.263 \u00b1 0.031",
+      "NUDT5": "0.487 \u00b1 0.010",
+      "compound": "10",
+      "n_as_source_reported": 2,
+      "ratio_CI": null,
+      "status": "point",
+      "value": 0.540041067761807
+    },
+    {
+      "NUDT14": "0.519 \u00b1 0.084",
+      "NUDT5": "2.04 \u00b1 0.240",
+      "compound": "11",
+      "n_as_source_reported": 2,
+      "ratio_CI": null,
+      "status": "point",
+      "value": 0.25441176470588234
+    },
+    {
+      "NUDT14": "not active",
+      "NUDT5": "not active",
+      "compound": "12",
+      "n_as_source_reported": 2,
+      "ratio_CI": null,
+      "status": "double_censored",
+      "value": null
+    },
+    {
+      "NUDT14": "3.72 \u00b1 0.190",
+      "NUDT5": "not active",
+      "compound": "13",
+      "n_as_source_reported": 2,
+      "ratio_CI": null,
+      "status": "upper_bound",
+      "value": 0.07440000000000001
+    },
+    {
+      "NUDT14": "1.64 \u00b1 0.140",
+      "NUDT5": "13.8 \u00b1 0.900",
+      "compound": "14",
+      "n_as_source_reported": 2,
+      "ratio_CI": null,
+      "status": "point",
+      "value": 0.11884057971014492
+    },
+    {
+      "NUDT14": "not active",
+      "NUDT5": "not active",
+      "compound": "15",
+      "n_as_source_reported": 2,
+      "ratio_CI": null,
+      "status": "double_censored",
+      "value": null
+    }
+  ],
+  "review_type": "AI review, not human peer review",
+  "source_challenge": {
+    "authenticated": {
+      "1": {
+        "auc": {
+          "Equal_mean": 1.0,
+          "GBT": 0.9375,
+          "Nearest_active": 1.0,
+          "Property_LR": 0.5625,
+          "RF": 0.96875,
+          "SVM_RBF": 1.0
+        },
+        "ids": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "9",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "labels": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n": 10,
+        "positives": 2
+      },
+      "10": {
+        "auc": {
+          "Equal_mean": 1.0,
+          "GBT": 0.9375,
+          "Nearest_active": 1.0,
+          "Property_LR": 0.5625,
+          "RF": 0.96875,
+          "SVM_RBF": 1.0
+        },
+        "ids": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "9",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "labels": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n": 10,
+        "positives": 2
+      },
+      "50": {
+        "auc": {
+          "Equal_mean": 1.0,
+          "GBT": 0.94,
+          "Nearest_active": 1.0,
+          "Property_LR": 0.8,
+          "RF": 1.0,
+          "SVM_RBF": 1.0
+        },
+        "ids": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "9",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "labels": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "n": 10,
+        "positives": 5
+      }
+    },
+    "original": {
+      "1": {
+        "auc": {
+          "Equal_mean": 1.0,
+          "GBT": 0.9375,
+          "Nearest_active": 1.0,
+          "Property_LR": 0.5625,
+          "RF": 1.0,
+          "SVM_RBF": 1.0
+        },
+        "ids": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "9",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "labels": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n": 10,
+        "positives": 2
+      },
+      "10": {
+        "auc": {
+          "Equal_mean": 1.0,
+          "GBT": 0.9375,
+          "Nearest_active": 1.0,
+          "Property_LR": 0.5625,
+          "RF": 1.0,
+          "SVM_RBF": 1.0
+        },
+        "ids": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "9",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "labels": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n": 10,
+        "positives": 2
+      },
+      "50": {
+        "auc": {
+          "Equal_mean": 1.0,
+          "GBT": 0.94,
+          "Nearest_active": 1.0,
+          "Property_LR": 0.8,
+          "RF": 1.0,
+          "SVM_RBF": 1.0
+        },
+        "ids": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "9",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "labels": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "n": 10,
+        "positives": 5
+      }
+    }
+  },
+  "source_csv_columns": [
+    "Compound",
+    "SMILES",
+    "NUDT5 IC50 (\u00b5M)",
+    "NUDT14 IC50  (\u00b5M)"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "source_session_role": "external",
+  "sources": [
+    "https://www.ebi.ac.uk/chembl/api/data/target/search.json?q=NUDT5&limit=20",
+    "https://www.ebi.ac.uk/chembl/api/data/activity.json?target_chembl_id=CHEMBL4105713&limit=1000",
+    "https://www.ebi.ac.uk/chembl/api/data/document.json?document_chembl_id__in=CHEMBL4007403,CHEMBL5506016,CHEMBL5579821,CHEMBL5649169,CHEMBL5723035",
+    "https://www.ebi.ac.uk/chembl/api/data/status.json",
+    "https://www.bindingdb.org/rest/getLigandsByUniprots?uniprot=Q9UKK9&response=application/json",
+    "https://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=50236118",
+    "https://rest.uniprot.org/uniprotkb/Q9UKK9.json",
+    "https://www.thesgc.org/chemical-probes/mrk-952",
+    "https://www.thesgc.org/chem-detail-export/9850?page&_format=csv",
+    "https://www.thesgc.org/sites/default/files/inline-images/download_17.png",
+    "https://www.thesgc.org/sites/default/files/inline-images/download%20%281%29_13.png",
+    "https://www.nature.com/articles/s41467-017-02293-7",
+    "https://media.springernature.com/original/springer-static/esm/art%3A10.1038/s41467-017-02293-7/MediaObjects/41467_2017_2293_MOESM1_ESM.pdf",
+    "https://data.rcsb.org/rest/v1/core/entry/5NWH",
+    "https://data.rcsb.org/rest/v1/core/chemcomp/9CH",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE_ABS:NUDT5%20AND%20(INHIBITOR%20OR%20INHIBITORS)&format=json&pageSize=100&resultType=core",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+    "https://pubs.acs.org/doi/10.1021/acs.jmedchem.6b01786",
+    "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cmdc.201800398"
+  ],
+  "artifacts": [
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/7ba87084-14c3-48f4-a9fb-efa8469e7db0/NUDT5_external_evidence_report.md",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/ccf14bb0-e7be-45d7-ae5b-bf465070ae3c/nudt5_measured_ledger.csv",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/af191d33-b127-499f-ae72-5e965fedc71d/nudt5_measured_ledger.json",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/9c36cc73-bf06-4bb6-adff-4512b80aa30a/ic50_ledger.csv",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/7222e100-2a91-4d90-b8da-f5b0f10a5699/kd_ledger.csv",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/ced8c836-f917-4eef-81a5-affbe2502b10/observed_database_rows.csv",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/818de210-9548-4cc4-a5c5-8fceb529d940/observed_source_overlap.csv",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/b5c2cfb9-0138-4da0-bec6-0e0e997287f2/snapshot_manifest.json",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/3fbada91-98e9-453a-a164-8c23194011f2/summary_counts.json",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/54c1c063-da0d-42d8-81c6-c07fab04e343/nudt5_raw_snapshots.tar.gz"
+  ],
+  "limits": [
+    "Zero records found meet the strict bar of being simultaneously new, human-species-confirmed, purified-enzyme and primary-value-inspected. Every ledger row is marked strict_new_biochemical_holdout_eligible = 'no'.",
+    "The MRK-952 dossier does not state the assay species or protein construct, so those records cannot enter a species-confirmed holdout until confirmed from a primary source. This is an explicit blocking condition in the evaluation design.",
+    "The SGC dossier is direct producer evidence, not a peer-reviewed dedicated MRK-952 assay publication; the 2026 degrader paper describes that work as forthcoming.",
+    "The SGC page's prose 'IC50' and its figure's 'EC50' labels disagree; both are recorded separately and must not be treated as two independent observations.",
+    "MRK-952-NC must not be used as an inactive decoy: it is a weak inhibitor, and its stereochemistry is explicitly 'assumed' by the source.",
+    "Publisher paywalls blocked full text and supporting information for 10.1021/acs.jmedchem.6b01786 and 10.1002/cmdc.201800398, including the latter's Table_1.xlsx / Table_2.xlsx proteomics tables that would resolve the Kinobead measurements. These are access limits, not evidence of absence; those rows remain database-supported and primary-value-not-inspected.",
+    "Two Europe PMC full-text fetches returned HTTP 500 and one ACS supplement returned an HTTP 202 reCAPTCHA interstitial; these were worked around via Europe PMC XML or publisher pages where possible.",
+    "Not searched at all: patents, PubChem BioAssay deposits, thesis repositories, non-English literature, vendor screening-library data, and 533 of the 633 broad Europe PMC hits. Any may contain further records.",
+    "The targeted Europe PMC query (58 hits, all 58 retrieved) is bounded, not an exhaustive census of public NUDT5 literature.",
+    "Novelty/overlap was computed only against the 14 unique Balikci ChEMBL graphs retrieved here. It was NOT computed against the repository's 45 structures or the original 23-compound source CSV, because no repository file was inspected; repository_overlap is recorded as 'not assessed' and must be recomputed before any external-test claim.",
+    "The primary proposed test is a single disjoint pair, so it can falsify a potency-discrimination claim but cannot confirm one (coin-flip probability 0.5). The design cannot estimate AUC, enrichment, precision, calibration or generalization.",
+    "Source independence is not the same as scaffold independence or never-before-inspected data; TH5427 and the EUbOPEN row are explicitly flagged as pre-inspected reference context rather than new evidence.",
+    "Cell-viability IC50 values from the docking/MD literature (2020, 2022, 2025 papers) are deliberately excluded; importing them as biochemical labels would inflate apparent external validation.",
+    "No repository was read or edited, no commit/PR/session/deposit/outreach occurred, no model was trained, and no data selection was optimized. Nothing here supports any claim about acceptance, publication, or prospective success."
+  ]
+}

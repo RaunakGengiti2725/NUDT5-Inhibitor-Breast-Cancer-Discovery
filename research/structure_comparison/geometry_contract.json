@@ -1,0 +1,216 @@
+{
+  "atom_retention": {
+    "B_factor": "Preserve B_iso_or_equiv, including distinct missing tokens; finite nonnegative when supplied. No uncertainty estimate or exclusion based on B factors.",
+    "element": "Exclude H and D by type_symbol, not atom-name prefix. Retain original element. Unknown/missing elements fail validation; no atom-name inference.",
+    "exclusion_ledger": "Record full source atom identity, original row values and every reason. Nonprotein rows are excluded from receptor set; W0O is used only as the query ligand at its own site. primary_exclusions.csv is this distinction, not a claim W0O never enters a distance.",
+    "ligand_completeness": "For each ligand conformer, require exactly all 30 CCD heavy-atom names/elements at positive occupancy. A missing/excluded atom gives retained site/conformer refusal with null numerical output; never calculate a misleading complete-ligand minimum. Keep excluded H/D explicit, but absence of CCD H does not cause heavy-atom incompleteness.",
+    "occupancy": "Required finite numeric 0<=occupancy<=1. Exclude 0 with full row/reason. Retain 0<occupancy<1 with a flag at atom, pair, residue and site levels; never weight distances by occupancy. No missing occupancy default to 1."
+  },
+  "conformers": {
+    "actual_data": "8RIY: all altloc .; four positive fractional atoms on R51 across AAA/BBB plus AAA R51 CZ occupancy 0. 8OTV: only B/auth47 LEU (label48) has A/B, eight heavy atoms each at 0.50; every W0O atom has . and occupancy 1.",
+    "blank_dot": "Raw . means no alternate label. It is included as shared atoms in each explicitly labeled local conformer. A blank and nonblank row for the same atom name in one local conformer is ambiguous and refused, not overwritten.",
+    "definition": "Within a residue/site/model, if no nonblank altloc exists use the sole . conformer; otherwise one separate conformer per nonblank label, each union its own label plus unambiguous shared . atoms. Never average or union A/B alternatives into one atom set.",
+    "pairing": "Current W0O ligands have no alternatives. Compare each . ligand with every local protein conformer separately. If only ligand has alternatives, each is separately compared with a . protein residue. If BOTH ligand and residue have nonblank alternatives, pairwise compatibility is unsupported in v1: retain conformer records and refuse paired numeric distances unless a separately versioned, primary-supported correlation policy is provided. Do not infer A-A compatibility across residues or enumerate joint conformations as if observed.",
+    "policy": "local_residue_conformers_no_global_cooccurrence_assumption",
+    "site_summary": "No single pooled site contact count across mutually incompatible local alternatives. Present per-residue/conformer map and retain alternate rows even outside all four radii.",
+    "unknown_question_mark": "Raw ? for atom_site.label_alt_id is unknown, not silently blank; retain affected site/residue with unknown_altloc refusal. In insertion-code fields, preserve ? as deposited unspecified insertion, not a new residue or numeric zero."
+  },
+  "contract_id": "W0O-8RIY-8OTV-observed-proximity-v1",
+  "estimand": {
+    "computation": "IEEE-754 float64 Euclidean distance on deposited Cartesian A coordinates; no preprocessing, rounding, minimization, protonation, occupancy weighting, superposition or normalization before comparison. Nonfinite arithmetic fails.",
+    "definition": "For each deposited site/model, each eligible ligand conformer, and each local protein residue conformer on BOTH official dimer members, d=min sqrt((Lx-Px)^2+(Ly-Py)^2+(Lz-Pz)^2) over the retained atom sets. Preserve the minimum witness pair(s) and all atom pairs at <=5.0 A. Do not infer chemical interaction type.",
+    "name": "minimum_observed_heavy_atom_ligand_to_protein_residue_distance",
+    "presentation": "Keep full numerical precision in JSON; if rounded for display, do not recompute bins and annotate that coordinate/model uncertainty is not propagated.",
+    "primary_radius_A": 4.0,
+    "radius_meaning": "fixed descriptive proximity convention, not chemistry/affinity/energy threshold",
+    "sensitivity_radii_A": [
+      3.5,
+      4.5,
+      5.0
+    ],
+    "ties": "All atom pairs whose computed distance exactly equals the computed minimum; deterministic atom-ID ordering. No outcome-dependent epsilon.",
+    "unit": "angstrom",
+    "within_radius_operator": "<="
+  },
+  "forbidden_outputs": [
+    "affinity/energy estimate",
+    "hydrogen-bond/aromatic-stacking proof from proximity",
+    "causal/selectivity/clinical claims",
+    "new inhibitor or first Arg51 rationale",
+    "crystal-copy inferential statistics",
+    "trained model or tuned threshold",
+    "new experimental or pilot qualification",
+    "density inspection/refinement claim",
+    "superposition/RMSD with inferred residue correspondence"
+  ],
+  "ligand_component": "W0O",
+  "missingness": {
+    "completeness_limit": "No-deposited-missingness flag is not density certainty or independent proof that every protein atom was modeled. Do not manufacture missing atoms/loops or add CCD ideal/model coordinates to a deposit.",
+    "occupancy_flag_dictionary": {
+      "0": "coordinates have zero occupancy",
+      "1": "unobserved"
+    },
+    "partial_residue": "If positive-occupancy atoms remain, compute only observed minimum with status=partial_observed; list every declared missing/zero atom and keep complete_residue_distance=null. A within-radius observed pair is descriptive evidence of modeled proximity; a larger observed minimum cannot exclude closer absent atoms.",
+    "source_categories": [
+      "_pdbx_unobs_or_zero_occ_residues.",
+      "_pdbx_unobs_or_zero_occ_atoms.",
+      "_pdbx_poly_seq_scheme.",
+      "_atom_site."
+    ],
+    "unobserved_residue": "Retain row with distance=null, threshold flags=null, reason=unobserved_residue. Do not substitute infinity/zero or conclude no contact.",
+    "unspecified_missing_atom_altloc": "A missingness row with altloc ? flags every local conformer of that residue as potentially incomplete; it does not invent or select a conformer.",
+    "whole_site": "All four real sites retain complete_site_geometry_status=refused for complete-pocket geometry because dimer residues/atoms are missing. Observed-coordinate maps remain eligible. Site complete_geometry_refusal_reason must accompany each map. This is not a refusal of every usable coordinate pair.",
+    "zero_only_residue": "If no eligible protein heavy atoms remain, distance=null and reason=no_eligible_protein_atoms."
+  },
+  "origin": "retrospective_deposited_coordinates",
+  "output": {
+    "atom_identity_fields": [
+      "pdb_id",
+      "assembly_id",
+      "operation_id",
+      "model_id",
+      "atom_site_id",
+      "label_entity_id",
+      "label_asym_id",
+      "auth_asym_id",
+      "label_seq_id",
+      "auth_seq_id",
+      "insertion_code_raw",
+      "label_comp_id",
+      "auth_comp_id",
+      "label_atom_id",
+      "auth_atom_id",
+      "label_alt_id",
+      "type_symbol"
+    ],
+    "atomic_publication": "Require existing output parent. Reject existing path including empty file, directory and dangling symlink. Serialize entirely before staging; write same-directory temp, flush+fsync, hardlink to new destination (no overwrite), remove staging in finally. Concurrent writers: only one succeeds. Never overwrite or partially publish.",
+    "complete_residue_distance_status": "Always not_estimated in v1, including unflagged residues: primary estimand is observed geometry, not complete biological geometry. complete_residue_distance_A=null.",
+    "exit_codes": {
+      "0": "valid report atomically written, possibly with refusals",
+      "2": "invalid package, parse/validation/computation/output failure; no result published"
+    },
+    "format": "Single strict JSON result, allow_nan=False; no generated CSV/PDF required",
+    "geometry_status_enum": [
+      "observed",
+      "partial_observed",
+      "refused"
+    ],
+    "provenance": "Record exact command/absolute resolved inputs, source/contract/code/dependency hashes, parser/Python/numerical versions, actual UTC time, actual Git revision/worktree state. Keep numerical data deterministic independent of input row order. Do not rewrite old manifests after commits.",
+    "required_top_level_fields": [
+      "schema_version",
+      "contract_id",
+      "origin",
+      "warning",
+      "provenance",
+      "structures",
+      "sites",
+      "residue_proximity",
+      "atom_pairs_within_5A",
+      "excluded_atoms",
+      "nonprotein_inventory",
+      "missingness",
+      "refusals",
+      "limitations"
+    ],
+    "residue_proximity_fields": [
+      "site_id",
+      "ligand_conformer_id",
+      "residue_identity",
+      "protein_conformer_id",
+      "observed_min_distance_A",
+      "minimum_witness_pairs",
+      "within_3_5A",
+      "within_4_0A",
+      "within_4_5A",
+      "within_5_0A",
+      "geometry_status",
+      "missing_or_excluded_atoms",
+      "fractional_occupancy",
+      "complete_residue_distance_A",
+      "complete_residue_distance_status",
+      "reasons"
+    ],
+    "site_required_fields": [
+      "site_identity",
+      "all_deposited_ligand_atoms",
+      "ligand_conformers",
+      "observed_geometry_status",
+      "complete_site_geometry_status",
+      "complete_site_refusal_reason",
+      "receptor_members",
+      "warnings",
+      "refusals"
+    ],
+    "sorting": "Sort entry, model ID, site full identity, ligand conformer, protein label_asym_id, integer label_seq_id, insertion token, component, protein conformer, then atom full identity lexicographically; never rely on source loop order.",
+    "threshold_values": "Boolean only for eligible observed minimum; null on refusal. False means no retained observed pair at that radius, never a missing-geometry no-contact claim."
+  },
+  "parser_requirement": "Mature CIF parser, no homemade parser. Gemmi 0.7.3 generic CIF DOM was verified for inspection only in isolated target with archived official docs/PyPI metadata and hash/audit. Implementer must reverify version/API/advisories and lock runtime dependency if adopted without changing root package pins. High-level parsers that silently select disorder/first model/author-chain conventions are unacceptable.",
+  "schema_version": 1,
+  "scope": {
+    "assembly": "Official assembly 1 is identity operation 1 over all ASU members in both structures. Keep protein label chains A and B for EVERY site. Validate matrix and translation before use; no extra symmetry copies or lattice contacts. Unsupported nonidentity/multiple assembly policy retains site with assembly refusal, not a one-chain fallback.",
+    "expected_real_residue_conformer_rows": {
+      "8OTV_per_site": 447,
+      "8RIY_per_site": 418,
+      "all_four_sites": 1730
+    },
+    "independence": "Four crystal sites are descriptive copies, not biological n. No CI, p-value, bootstrap, SEM, population SD or averaged target-level distance claimed as independent evidence.",
+    "models": "Enumerate all deposited model IDs and all W0O sites; fixed source package expects model 1 only. Changed content needs a separately versioned input package, never best-model selection.",
+    "other_entities": "Water, ions, DMS, other W0O sites and any nonprotein polymer are not protein receptor atoms. Inventory all separately. Do not add water-mediated contacts or compare absence of metal as an energetic effect.",
+    "protein_membership": "Resolve _struct_asym.entity_id -> _entity.type=polymer and _entity_poly.type=polypeptide(L); do not classify by ATOM/HETATM alone. Require expected entity 1, label A/B and auth-chain mappings.",
+    "residue_correspondence": "None inferred. Report two target-specific maps. R51/NUDT5 and L107/NUDT14 are paper-assigned ligand-region environments, not sequence-homologous residues. No optional RMSD/superposition in v1.",
+    "residue_universe": "All _pdbx_poly_seq_scheme rows on both protein chains per model/site, including unobserved residues; label_seq_id is the sequence key, not auth_seq_id. Retain label/auth identities and insertion codes."
+  },
+  "source_compound": "9",
+  "source_doi": "10.1021/acs.jmedchem.4c00072",
+  "status": "fixed_before_new_distance_calculations_not_blinded_or_preregistered",
+  "structures": [
+    "8RIY",
+    "8OTV"
+  ],
+  "validation": {
+    "accepted_CIF_nulls": "Preserve raw . and ? distinctly; semantic null handling is field-specific. W0O label_seq_id=. is expected nonpolymer not a parser failure. Missing author residue numbers in unobserved _pdbx_poly_seq_scheme rows are preserved and recovered only through explicit deposited cross-reference, never by guessing.",
+    "known_valid_missingness": "Missing residues/atoms declared in deposited categories, zero occupancy, fractional occupancy and explicit alternate conformers are retained scientific limitations, not silently discarded package errors. Known complete-ligand refusal states are tested with separately hash-consistent synthetic inputs, not by bypassing real-input hashes.",
+    "optional_columns": "Preserve additional source fields verbatim without interpreting them (e.g. 8RIY calc_flag); unknown metadata does not authorize relaxed required-field validation.",
+    "order": [
+      "Resolve explicit repository/manifest/contract/source paths",
+      "Validate manifest JSON structure, required keys, unknown keys, duplicate keys and hashes",
+      "Parse all mmCIF with mature parser and strict syntax checks; validate categories and cross-record invariants",
+      "Reconcile exact entry/target/species/sequence/assembly/site and atom inventories",
+      "Determine exclusions/conformers/refusals for all sites and residues",
+      "Calculate eligible observed distances only",
+      "Serialize finite deterministic result",
+      "Atomically publish a new result or leave no result"
+    ],
+    "package_errors": [
+      "duplicate JSON keys; NaN/Inf; unknown manifest/contract fields; Boolean in numeric field",
+      "path traversal, absolute artifact path, symlink escape, symlink input/output or missing input; changed hash; mismatched entry ID",
+      "empty/malformed/multiple CIF blocks; duplicate tags; ragged/empty mandatory loops; missing mandatory categories/columns",
+      "duplicate atom_site.id or duplicate full atom identity (including model/asym/seq/component/insertion/atom/altloc)",
+      "nonfinite/nonnumeric coordinates or occupancy; occupancy outside [0,1]; missing element; inconsistent atom name/element against W0O CCD",
+      "unresolved entity/chain/sequence joins; mismatched label/auth mapping; protein residue present and also declared wholly unobserved; flag0 zero-atom ledger contradicts positive atom occupancy",
+      "silently missing/unexpected W0O site or model relative to manifest; undisclosed source version; inconsistent target/species/construct/assembly metadata"
+    ],
+    "required_atom_columns": [
+      "group_PDB",
+      "id",
+      "type_symbol",
+      "label_atom_id",
+      "label_alt_id",
+      "label_comp_id",
+      "label_asym_id",
+      "label_entity_id",
+      "label_seq_id",
+      "pdbx_PDB_ins_code",
+      "Cartn_x",
+      "Cartn_y",
+      "Cartn_z",
+      "occupancy",
+      "B_iso_or_equiv",
+      "auth_seq_id",
+      "auth_comp_id",
+      "auth_asym_id",
+      "auth_atom_id",
+      "pdbx_PDB_model_num"
+    ]
+  }
+}

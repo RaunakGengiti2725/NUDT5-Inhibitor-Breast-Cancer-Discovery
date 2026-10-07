@@ -1,0 +1,65 @@
+{
+  "citation": "Balikci et al. J Med Chem 67, 7245\u20137259 (2024). DOI 10.1021/acs.jmedchem.4c00072. PMC11089510. \u00a9 2024 The Authors, CC BY 4.0.",
+  "excerpts": [
+    {
+      "claim_category": "published_primary_text",
+      "claim_id": "C01",
+      "interpretation_limit": "Compound 9 named synthetic structure; matches CCD W0O name.",
+      "text_exact_itertext": "1-(1-Methylpiperidin-4-yl)-3-(4-phenoxyphenyl)-1H-pyrazolo[3,4-d]pyrimidin-4-amine (9)",
+      "xpath": "//sec[@id=\"sec4.1.2\"]/title"
+    },
+    {
+      "claim_category": "published_primary_text",
+      "claim_id": "C02",
+      "interpretation_limit": "Published NUDT5/W0O binding assignment and author interaction descriptions, not newly calculated chemistry.",
+      "text_exact_itertext": "Biophysical assay results and cocrystal\nstructure of compound 9 bound to NUDT5. (A) SPR results\nfor compound 9 indicating a KD value of approximately\n250 nM for NUDT5. Data are from two independent experiments (n = 2). (B) Cocrystal structure of NUDT5 bound to compound 9 (PDB: 8RIY). Compound 9 occupies the active site of NUDT5 where\nit mediates \u03c0\u2013\u03c0 stacking interactions with W46\nof chain A (dark gray) and W28 of chain B (light gray). An additional\nhydrophobic interaction with R51 in chain B and a hydrogen bond with\nthe main chain of E47 in chain A can be observed. Compound 9 (salmon) and interacting residues are shown in stick representation.",
+      "xpath": "//fig[@id=\"fig3\"]/caption"
+    },
+    {
+      "claim_category": "published_primary_text",
+      "claim_id": "C03",
+      "interpretation_limit": "Published NUDT14/W0O/dimer assignment. Same ligand-region assignments are not sequence equivalence.",
+      "text_exact_itertext": "Biophysical assay results\nand cocrystal structure of compound 9 bound to NUDT14.\n(A) SPR results for compound 9 indicating a KD value of approximately\n400 nM for NUDT14. Data are from two independent experiments (n = 2). (B) Overall structure of NUDT14 depicting the N-terminal\ndomain, the NUDIX domain, and the active site (PDB: 8OTV). Chain A (pale\ngreen) and chain B (green) constitute a dimer. Compound 9 (violet) is located in the catalytic site. (C) Compound 9 binds to NUDT14 at the dimer interface between W34 of chain A and\nY17 of chain B, enabling \u03c0\u2013\u03c0 stacking interactions.\nThe phenoxy substituent engages in a hydrophobic interaction with\nL107 in chain B, whereas the purine core forms hydrogen bonds with\nD35 in chain A. (D) Superposition of NUDT5 and -14 active sites bound\nto compound 9. NUDT5 in complex with 9 (black)\nis shown in gray tones (chain A\u2014dark gray and chain B\u2014light\ngray), while NUDT14 in complex with compound 9 (dark\ngreen) is in green tones (chain A\u2014green and chain B\u2014pale\ngreen).",
+      "xpath": "//fig[@id=\"fig4\"]/caption"
+    },
+    {
+      "claim_category": "published_primary_text",
+      "claim_id": "C04",
+      "interpretation_limit": "Published Arg51 rationale and NUDT14 binding; hypothesis predates this project. Authors descriptions are not our hydrogen-bond proof.",
+      "text_exact_itertext": "To explore the potential of 9 as a\ndual inhibitor\nfor NUDT5 and NUDT14, we next performed SPR with a purified human\nNUDT14 protein and confirmed potent direct binding (KD \u2248 400 nM; Figure 4A). Since compound 9 is the first inhibitor\nof human NUDT14 to the best of our knowledge, we attempted cocrystallization\nto gain insights into the binding mode. Extensive crystallization\ntrials yielded the first inhibitor-bound structure of NUDT14 in complex\nwith 9 at a 1.82 \u00c5 resolution. Notably, this structure\nalso revealed the hitherto unresolved conformation of the N-terminal\ndomain in NUDT14, which consists of \u03b2-sheets intertwined with\nthe NUDIX domain of the second subunit (Figure 4B). Similar to NUDT5, compound 9 occupies the active site of NUDT14 where the heterocyclic core is\ninvolved in \u03c0\u2013\u03c0 stacking interactions with W34\nof chain A and Y17 of chain B (Figure 4C). In addition, the aminopyrimidine moiety is stabilized\nby hydrogen bonds with D35 and the aromatic ring of the phenoxy substituent\ninteracts with L107 via hydrophobic interaction. By contrast, superimposition\nof the NUDT5 and NUDT14 cocrystal structures in complex with 9 (Figure 4D) revealed some notable differences: although the main \u03c0 stacking\nresidues of NUDT14 (Y17 and W34) appear to be conserved in NUDT5 (Y36\nand W46, Figure S5), 9 is\nsandwiched between W46 and W28 in the NUDT5 active site. The hydrogen\nbond to D35 for NUDT14 is retained with E47 in the NUDT5 structure.\nIn contrast to NUDT5 where the phenoxy group of the inhibitor engages\nwith the hydrophobic side chain of R51, the NUDT14 structure revealed\nan interaction with L107 (Figure 4D). R51 is not conserved in NUDT14 and seems particularly\nimportant for the establishment of ligand H-bond interactions in NUDT5\nas shown for ADP-ribose17 and TH5427 binding.12 This may also explain the exquisite selectivity\nof TH5427 (6) for NUDT5 over NUDT14.",
+      "xpath": "//sec[@id=\"sec2\"]/p[7]"
+    },
+    {
+      "claim_category": "published_primary_text",
+      "claim_id": "C05",
+      "interpretation_limit": "Human-protein construct spans/tag cleavage; deposited residual Ser0 independently recorded in mmCIF.",
+      "text_exact_itertext": "Protein Expression and PurificationGenes encoding\nNUDT5 (NCBI reference NP_054861, residues 1-208) and NUDT14 (NCBI\nreference NP_803877, residues 1-222) were amplified by PCR (primer\ninformation Table S3). The amplified PCR\nproducts were cloned into expression vector pNIC28-Bsa426 by ligation-independent cloning. The resulting\nconstructs express the proteins fused with an N-terminal 6\u00d7 histidine\ntag followed by a TEV protease cleavage site. All plasmids were transformed\ninto Escherichia coli (DE3), and protein\nexpression was induced at a cell density of OD600 = 0.8\nwith 0.3 or 0.5 mM isopropyl-d-1-thiogalactopyranoside (IPTG)\nat 18 \u00b0C overnight for NUDT14 and NUDT5, respectively. Cell pellets\nwere resuspended in lysis buffer containing 20 mM HEPES, 500 mM NaCl,\n5% glycerol, and 0.5 mM TCEP pH 7.5 supplemented with lysozyme, protease\ninhibitor cocktail (Set III, EDTA-free, Calbiochem), and benzonase\n(2 \u03bcL of 10,000 U/\u03bcL, Merck). Cells were then lysed using\nan ultrasonic cell disruptor Vibra-Cell (Sonics). The clarified supernatant\nwas injected into a Ni-NTA affinity chromatography column (HisTrap\nCrude FF GE Healthcare) and eluted with a gradient of increasing imidazole\nconcentrations. The affinity-purified proteins were further incubated\nwith TEV protease overnight at 4 \u00b0C and purified by reverse nickel\naffinity. Proteins were further purified by size-exclusion chromatography\n(16/600 Superdex 75 PG, GE Healthcare) in buffer (20 mM HEPES, pH\n7.5, 500 mM NaCl, 0.5 mM TCEP). Protein purity was analyzed by sodium\ndodecyl sulfate polyacrylamide gel electrophoresis (SDS-PAGE), and\nproteins were concentrated to 20 mg/mL for NUDT14 and 26 mg/mL for\nNUDT5 using 10,000 MWCO Vivaspin concentrators (Vivascience).",
+      "xpath": "//sec[@id=\"sec4.2\"]"
+    },
+    {
+      "claim_category": "published_primary_text",
+      "claim_id": "C06",
+      "interpretation_limit": "Different reported crystallization buffers and temperatures; not matched biochemical conditions.",
+      "text_exact_itertext": "CrystallizationFor cocrystallization, NUDT5 (26 mg/mL)\nwas mixed with ibrutinib (1) at 2.5 mM in the presence\nof 25 mM MgCl2 and incubated for 1 h on ice prior to crystallization\ntrials. Crystallization screens were prepared using the sitting-drop\nmethod with a precipitant solution (1:1). Cocrystals were grown in\na buffer containing 0.1 M tris pH 8.0, 33% PEG4000, 0.2 M MgCl2. For cocrystallization, NUDT14 (20 mg/mL) was mixed with\ncompound 9 at a molar ratio of 1:5 and incubated for\n2 h on ice prior to crystallization trials. Crystallization screens\nwere prepared using the sitting-drop method with a precipitant solution\n(1:1). NUDT5 cocrystals with compound 9 were grown in\na buffer containing 0.2 M ammonium acetate, 0.1 M citrate pH 5.5,\nand 30% PEG4000, while NUDT14 cocrystals with compound 9 were formed in a buffer containing 0.2 M MgCl2, 0.1 M\nbis-tris pH 6.5, and 25% PEG3350. Crystallization trials for NUDT5\nand NUDT14 were performed at 18 and 4 \u00b0C, respectively. Crystals\nwere cryoprotected with the crystallization condition containing 20%\nglycerol and flash-frozen in liquid nitrogen.",
+      "xpath": "//sec[@id=\"sec4.9\"]"
+    },
+    {
+      "claim_category": "published_primary_text",
+      "claim_id": "C07",
+      "interpretation_limit": "Published processing/refinement description; not our refinement. Compare deposit software fields without overwriting either.",
+      "text_exact_itertext": "Data Collection, Structure\nDetermination, and RefinementX-ray data sets were collected\nat Diamond Light Source (Harwell,\nU.K.) on the I03 beamline using an Eiger2 XE 16 M detector or on beamline\nI04-1 using a Pilatus 6 M detector. Data processing and scaling were\nperformed in XDS28 and Aimless.29 The structures of NUDT5\u2014ibrutinib (1), NUDT5\u2014compound 9, and NUDT14\u2014compound 9 were solved in Molecular replacement in Phaser30 using PDB 2DSB(17) for NUDT5\nand PDB 3Q91(24) for NUDT14 as the search models. The\nmodels were further built in Coot31 and\nrefined in REFMAC5.32",
+      "xpath": "//sec[@id=\"sec4.10\"]"
+    },
+    {
+      "claim_category": "published_primary_text",
+      "claim_id": "C08",
+      "interpretation_limit": "CC BY 4.0 with author attribution/integrity.",
+      "text_exact_itertext": "\u00a9 2024 The Authors. Published by American Chemical SocietyPermits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (https://creativecommons.org/licenses/by/4.0/).",
+      "xpath": "//permissions"
+    }
+  ],
+  "extraction": "Exact concatenation of XML node itertext, preserving text whitespace; no invented page numbers.",
+  "schema_version": 1,
+  "source_path": "sources/PMC11089510.xml",
+  "source_sha256": "0710da1ebedd4accde6e6cddf8cfe9a2d350c062890fbcfd03bf94bd6f316df0"
+}

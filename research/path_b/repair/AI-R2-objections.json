@@ -1,0 +1,1093 @@
+{
+  "review_type": "AI review, not human peer review",
+  "review_date_utc": "2026-10-06T00:49:23.459486+00:00",
+  "reviewer": "Devin (AI), read-only structural-specialty adversarial review",
+  "repository": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery",
+  "branch": "devin/1791243628-path-b-manuscript",
+  "commit": "22830642f7d33ca3319872b5ba4c513baff50154",
+  "immutable_baseline": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+  "review_package_sha256": "63a8c1f1fde68b51f0544129dda997ad3a7618b0c1043428b7a1206aed91f517",
+  "recommendation": "reject",
+  "target": "Conditional JMGM primary research article",
+  "killer_objection_id": "AI-S01",
+  "bottom_line": "The checked geometry and bounded processing are reproducible; the current package does not establish sufficient incremental scientific insight beyond Balikci. This is a scientific-contribution rejection, not an accusation of fabricated distances or disproven source experiments.",
+  "evidence_status_definition": "Exactly one per objection: existing evidence; specified new analysis; nothing currently available. Status identifies the evidence route for that objection, not whether a limitation was disclosed honestly. Nothing currently available means absent from the reviewed record, not impossible to obtain.",
+  "verified": {
+    "revision": {
+      "commit": "22830642f7d33ca3319872b5ba4c513baff50154",
+      "release_files_checked": 136,
+      "release_mismatches": [],
+      "tracked_files": 294,
+      "tar_files": 294,
+      "tar_mismatches": [],
+      "missing_in_tar": [],
+      "initial_status": ""
+    },
+    "independent_geometry": {
+      "rows_recomputed": 1730,
+      "row_keys_agree": true,
+      "row_comparison_errors": [],
+      "pairs_recomputed": 1278,
+      "pair_keys_agree": true,
+      "max_pair_error_A": 0.0,
+      "site_summary": [
+        {
+          "pdb": "8RIY",
+          "ligand_label": "C",
+          "ligand_auth": "AAA",
+          "ligand_auth_seq": "301",
+          "heavy_atoms": 30,
+          "occupancies": [
+            "1.000"
+          ],
+          "alternates": [
+            "."
+          ],
+          "refused": 31,
+          "observed": 365,
+          "partial_observed": 22
+        },
+        {
+          "pdb": "8RIY",
+          "ligand_label": "D",
+          "ligand_auth": "BBB",
+          "ligand_auth_seq": "301",
+          "heavy_atoms": 30,
+          "occupancies": [
+            "1.000"
+          ],
+          "alternates": [
+            "."
+          ],
+          "refused": 31,
+          "observed": 365,
+          "partial_observed": 22
+        },
+        {
+          "pdb": "8OTV",
+          "ligand_label": "C",
+          "ligand_auth": "A",
+          "ligand_auth_seq": "301",
+          "heavy_atoms": 30,
+          "occupancies": [
+            "1.00"
+          ],
+          "alternates": [
+            "."
+          ],
+          "observed": 417,
+          "partial_observed": 7,
+          "refused": 23
+        },
+        {
+          "pdb": "8OTV",
+          "ligand_label": "F",
+          "ligand_auth": "B",
+          "ligand_auth_seq": "302",
+          "heavy_atoms": 30,
+          "occupancies": [
+            "1.00"
+          ],
+          "alternates": [
+            "."
+          ],
+          "observed": 417,
+          "partial_observed": 7,
+          "refused": 23
+        }
+      ]
+    },
+    "model_support_reproduction": {
+      "local_atom_samples.csv": true,
+      "model_support.json": true,
+      "8RIY_B_BBB_51_slices.png": true,
+      "residue_availability.csv": true,
+      "8RIY_A_AAA_51_slices.png": true,
+      "8RIY_D_BBB_301_slices.png": true,
+      "site_availability.csv": true,
+      "8OTV_C_A_301_slices.png": true,
+      "summary.md": true,
+      "completion.json": true,
+      "8RIY_C_AAA_301_slices.png": true,
+      "8OTV_F_B_302_slices.png": true
+    },
+    "manual_map_interpolation_checks": [
+      {
+        "pdb": "8OTV",
+        "kind": "EDS",
+        "samples": 274,
+        "maximum_abs_standardized_discrepancy": 2.4235252293891563e-07,
+        "mean_matches": true,
+        "sd_matches": true,
+        "grid_dimensions": [
+          60,
+          100,
+          120
+        ],
+        "cell_axes_A_per_grid_interval": [
+          0.8541666666666666,
+          0.90967,
+          0.900825
+        ]
+      },
+      {
+        "pdb": "8OTV",
+        "kind": "difference",
+        "samples": 274,
+        "maximum_abs_standardized_discrepancy": 1.3000200782542493e-07,
+        "mean_matches": true,
+        "sd_matches": true,
+        "grid_dimensions": [
+          60,
+          100,
+          120
+        ],
+        "cell_axes_A_per_grid_interval": [
+          0.8541666666666666,
+          0.90967,
+          0.900825
+        ]
+      },
+      {
+        "pdb": "8RIY",
+        "kind": "EDS",
+        "samples": 362,
+        "maximum_abs_standardized_discrepancy": 2.540568391218301e-07,
+        "mean_matches": true,
+        "sd_matches": true,
+        "grid_dimensions": [
+          48,
+          48,
+          450
+        ],
+        "cell_axes_A_per_grid_interval": [
+          1.2626041666666665,
+          1.2626041666666665,
+          1.1169066666666667
+        ]
+      },
+      {
+        "pdb": "8RIY",
+        "kind": "difference",
+        "samples": 362,
+        "maximum_abs_standardized_discrepancy": 1.681542749487619e-07,
+        "mean_matches": true,
+        "sd_matches": true,
+        "grid_dimensions": [
+          48,
+          48,
+          450
+        ],
+        "cell_axes_A_per_grid_interval": [
+          1.2626041666666665,
+          1.2626041666666665,
+          1.1169066666666667
+        ]
+      }
+    ],
+    "independent_context_checks": {
+      "scope": "Frozen evidence arithmetic and graph checks, not biological validation or new fitting.",
+      "w0o_smiles_descriptors_matched": 4,
+      "source_graph": "CN1CCC(n2nc(-c3ccc(Oc4ccccc4)cc3)c3c(N)ncnc32)CC1",
+      "site_checks": [
+        {
+          "pdb": "8RIY",
+          "label_chain": "C",
+          "author_chain": "AAA",
+          "author_residue": "301",
+          "heavy_atom_name_element_match": true,
+          "heavy_atom_count": 30,
+          "all_occupancy_one": true,
+          "alternate": "."
+        },
+        {
+          "pdb": "8RIY",
+          "label_chain": "D",
+          "author_chain": "BBB",
+          "author_residue": "301",
+          "heavy_atom_name_element_match": true,
+          "heavy_atom_count": 30,
+          "all_occupancy_one": true,
+          "alternate": "."
+        },
+        {
+          "pdb": "8OTV",
+          "label_chain": "C",
+          "author_chain": "A",
+          "author_residue": "301",
+          "heavy_atom_name_element_match": true,
+          "heavy_atom_count": 30,
+          "all_occupancy_one": true,
+          "alternate": "."
+        },
+        {
+          "pdb": "8OTV",
+          "label_chain": "F",
+          "author_chain": "B",
+          "author_residue": "302",
+          "heavy_atom_name_element_match": true,
+          "heavy_atom_count": 30,
+          "all_occupancy_one": true,
+          "alternate": "."
+        }
+      ],
+      "full_valid_set_n": 45,
+      "positive_source_labels": 19,
+      "frozen_auc_checks": [
+        {
+          "name": "Constant_0_5",
+          "independent_pair_count_auc": 0.5,
+          "stored_auc": 0.5
+        },
+        {
+          "name": "Equal_mean",
+          "independent_pair_count_auc": 0.9311740890688259,
+          "stored_auc": 0.9311740890688259
+        },
+        {
+          "name": "Fingerprint_LR",
+          "independent_pair_count_auc": 0.917004048582996,
+          "stored_auc": 0.917004048582996
+        },
+        {
+          "name": "GBT",
+          "independent_pair_count_auc": 0.8431174089068826,
+          "stored_auc": 0.8431174089068826
+        },
+        {
+          "name": "Mean_without_GBT",
+          "independent_pair_count_auc": 0.9311740890688259,
+          "stored_auc": 0.9311740890688259
+        },
+        {
+          "name": "Mean_without_Nearest_active",
+          "independent_pair_count_auc": 0.9473684210526315,
+          "stored_auc": 0.9473684210526315
+        },
+        {
+          "name": "Mean_without_RF",
+          "independent_pair_count_auc": 0.9230769230769231,
+          "stored_auc": 0.923076923076923
+        },
+        {
+          "name": "Mean_without_SVM_RBF",
+          "independent_pair_count_auc": 0.9271255060728745,
+          "stored_auc": 0.9271255060728745
+        },
+        {
+          "name": "Nearest_active",
+          "independent_pair_count_auc": 0.9129554655870445,
+          "stored_auc": 0.9129554655870445
+        },
+        {
+          "name": "Property_LR",
+          "independent_pair_count_auc": 0.979757085020243,
+          "stored_auc": 0.979757085020243
+        },
+        {
+          "name": "RF",
+          "independent_pair_count_auc": 0.9412955465587044,
+          "stored_auc": 0.9412955465587044
+        },
+        {
+          "name": "SVM_RBF",
+          "independent_pair_count_auc": 0.9595141700404858,
+          "stored_auc": 0.9595141700404859
+        },
+        {
+          "name": "Tanimoto_kNN",
+          "independent_pair_count_auc": 0.9331983805668016,
+          "stored_auc": 0.9331983805668017
+        },
+        {
+          "name": "Train_prevalence",
+          "independent_pair_count_auc": 0.24595141700404857,
+          "stored_auc": 0.24595141700404857
+        },
+        {
+          "name": "clogp_only_lr",
+          "independent_pair_count_auc": 0.7894736842105263,
+          "stored_auc": 0.7894736842105264
+        },
+        {
+          "name": "fsp3_only_lr",
+          "independent_pair_count_auc": 0.7510121457489879,
+          "stored_auc": 0.7510121457489879
+        },
+        {
+          "name": "hba_only_lr",
+          "independent_pair_count_auc": 0.9959514170040485,
+          "stored_auc": 0.9959514170040485
+        },
+        {
+          "name": "hbd_only_lr",
+          "independent_pair_count_auc": 0.7176113360323887,
+          "stored_auc": 0.7176113360323887
+        },
+        {
+          "name": "mw_only_lr",
+          "independent_pair_count_auc": 0.9878542510121457,
+          "stored_auc": 0.9878542510121457
+        },
+        {
+          "name": "nrb_only_lr",
+          "independent_pair_count_auc": 0.8704453441295547,
+          "stored_auc": 0.8704453441295547
+        },
+        {
+          "name": "tpsa_only_lr",
+          "independent_pair_count_auc": 0.9959514170040485,
+          "stored_auc": 0.9959514170040487
+        }
+      ],
+      "equal_mean_component_arithmetic_all_45": true,
+      "compound9_ratio_of_reported_means": 0.6
+    },
+    "arg51_group_minima": [
+      {
+        "site": "C",
+        "chain": "A",
+        "group": "backbone",
+        "protein_atom": "N",
+        "ligand_atom": "C20",
+        "distance_A": 3.7555613428620767,
+        "occupancy": 1.0
+      },
+      {
+        "site": "C",
+        "chain": "A",
+        "group": "sidechain",
+        "protein_atom": "CD",
+        "ligand_atom": "C18",
+        "distance_A": 4.001089476630085,
+        "occupancy": 1.0
+      },
+      {
+        "site": "C",
+        "chain": "A",
+        "group": "guanidinium",
+        "protein_atom": "NE",
+        "ligand_atom": "C18",
+        "distance_A": 4.761739703091718,
+        "occupancy": 1.0
+      },
+      {
+        "site": "C",
+        "chain": "B",
+        "group": "backbone",
+        "protein_atom": "N",
+        "ligand_atom": "N5",
+        "distance_A": 14.329326327500535,
+        "occupancy": 1.0
+      },
+      {
+        "site": "C",
+        "chain": "B",
+        "group": "sidechain",
+        "protein_atom": "CG",
+        "ligand_atom": "C21",
+        "distance_A": 15.805042075236624,
+        "occupancy": 1.0
+      },
+      {
+        "site": "C",
+        "chain": "B",
+        "group": "guanidinium",
+        "protein_atom": "NE",
+        "ligand_atom": "C21",
+        "distance_A": 17.888605395614274,
+        "occupancy": 1.0
+      },
+      {
+        "site": "D",
+        "chain": "A",
+        "group": "backbone",
+        "protein_atom": "N",
+        "ligand_atom": "N5",
+        "distance_A": 14.29582019332924,
+        "occupancy": 1.0
+      },
+      {
+        "site": "D",
+        "chain": "A",
+        "group": "sidechain",
+        "protein_atom": "CB",
+        "ligand_atom": "C21",
+        "distance_A": 15.77996593785931,
+        "occupancy": 1.0
+      },
+      {
+        "site": "D",
+        "chain": "A",
+        "group": "guanidinium",
+        "protein_atom": "NE",
+        "ligand_atom": "C21",
+        "distance_A": 17.868996250489285,
+        "occupancy": 1.0
+      },
+      {
+        "site": "D",
+        "chain": "B",
+        "group": "backbone",
+        "protein_atom": "N",
+        "ligand_atom": "C20",
+        "distance_A": 3.946537343038831,
+        "occupancy": 1.0
+      },
+      {
+        "site": "D",
+        "chain": "B",
+        "group": "sidechain",
+        "protein_atom": "CD",
+        "ligand_atom": "C18",
+        "distance_A": 3.2512725201065518,
+        "occupancy": 0.78
+      },
+      {
+        "site": "D",
+        "chain": "B",
+        "group": "guanidinium",
+        "protein_atom": "NE",
+        "ligand_atom": "C18",
+        "distance_A": 4.606398376171997,
+        "occupancy": 1.0
+      }
+    ],
+    "radius_sensitivity": [
+      {
+        "site": "8OTV:model1:C:A:301",
+        "radius_A": 3.5,
+        "shared_rows": 4,
+        "alternate_rows": 0,
+        "partial_rows": 0,
+        "arg51_rows": []
+      },
+      {
+        "site": "8OTV:model1:C:A:301",
+        "radius_A": 4.0,
+        "shared_rows": 11,
+        "alternate_rows": 0,
+        "partial_rows": 0,
+        "arg51_rows": []
+      },
+      {
+        "site": "8OTV:model1:C:A:301",
+        "radius_A": 4.5,
+        "shared_rows": 13,
+        "alternate_rows": 0,
+        "partial_rows": 0,
+        "arg51_rows": []
+      },
+      {
+        "site": "8OTV:model1:C:A:301",
+        "radius_A": 5.0,
+        "shared_rows": 15,
+        "alternate_rows": 0,
+        "partial_rows": 0,
+        "arg51_rows": []
+      },
+      {
+        "site": "8OTV:model1:F:B:302",
+        "radius_A": 3.5,
+        "shared_rows": 4,
+        "alternate_rows": 0,
+        "partial_rows": 0,
+        "arg51_rows": []
+      },
+      {
+        "site": "8OTV:model1:F:B:302",
+        "radius_A": 4.0,
+        "shared_rows": 8,
+        "alternate_rows": 0,
+        "partial_rows": 0,
+        "arg51_rows": []
+      },
+      {
+        "site": "8OTV:model1:F:B:302",
+        "radius_A": 4.5,
+        "shared_rows": 11,
+        "alternate_rows": 0,
+        "partial_rows": 0,
+        "arg51_rows": []
+      },
+      {
+        "site": "8OTV:model1:F:B:302",
+        "radius_A": 5.0,
+        "shared_rows": 12,
+        "alternate_rows": 0,
+        "partial_rows": 0,
+        "arg51_rows": []
+      },
+      {
+        "site": "8RIY:model1:C:AAA:301",
+        "radius_A": 3.5,
+        "shared_rows": 7,
+        "alternate_rows": 0,
+        "partial_rows": 0,
+        "arg51_rows": []
+      },
+      {
+        "site": "8RIY:model1:C:AAA:301",
+        "radius_A": 4.0,
+        "shared_rows": 9,
+        "alternate_rows": 0,
+        "partial_rows": 1,
+        "arg51_rows": [
+          {
+            "chain": "AAA",
+            "distance_A": 3.7555613428620767
+          }
+        ]
+      },
+      {
+        "site": "8RIY:model1:C:AAA:301",
+        "radius_A": 4.5,
+        "shared_rows": 14,
+        "alternate_rows": 0,
+        "partial_rows": 1,
+        "arg51_rows": [
+          {
+            "chain": "AAA",
+            "distance_A": 3.7555613428620767
+          }
+        ]
+      },
+      {
+        "site": "8RIY:model1:C:AAA:301",
+        "radius_A": 5.0,
+        "shared_rows": 15,
+        "alternate_rows": 0,
+        "partial_rows": 1,
+        "arg51_rows": [
+          {
+            "chain": "AAA",
+            "distance_A": 3.7555613428620767
+          }
+        ]
+      },
+      {
+        "site": "8RIY:model1:D:BBB:301",
+        "radius_A": 3.5,
+        "shared_rows": 8,
+        "alternate_rows": 0,
+        "partial_rows": 0,
+        "arg51_rows": [
+          {
+            "chain": "BBB",
+            "distance_A": 3.2512725201065518
+          }
+        ]
+      },
+      {
+        "site": "8RIY:model1:D:BBB:301",
+        "radius_A": 4.0,
+        "shared_rows": 12,
+        "alternate_rows": 0,
+        "partial_rows": 0,
+        "arg51_rows": [
+          {
+            "chain": "BBB",
+            "distance_A": 3.2512725201065518
+          }
+        ]
+      },
+      {
+        "site": "8RIY:model1:D:BBB:301",
+        "radius_A": 4.5,
+        "shared_rows": 15,
+        "alternate_rows": 0,
+        "partial_rows": 0,
+        "arg51_rows": [
+          {
+            "chain": "BBB",
+            "distance_A": 3.2512725201065518
+          }
+        ]
+      },
+      {
+        "site": "8RIY:model1:D:BBB:301",
+        "radius_A": 5.0,
+        "shared_rows": 16,
+        "alternate_rows": 0,
+        "partial_rows": 0,
+        "arg51_rows": [
+          {
+            "chain": "BBB",
+            "distance_A": 3.2512725201065518
+          }
+        ]
+      }
+    ],
+    "leu107_witnesses": [
+      {
+        "site": "8OTV:model1:C:A:301",
+        "chain": "A",
+        "residue": "LEU",
+        "label_seq": "108",
+        "distance_A": 17.27001661840544,
+        "witnesses": [
+          [
+            "CD2",
+            "C21"
+          ]
+        ]
+      },
+      {
+        "site": "8OTV:model1:C:A:301",
+        "chain": "B",
+        "residue": "LEU",
+        "label_seq": "108",
+        "distance_A": 3.609411586394658,
+        "witnesses": [
+          [
+            "CD2",
+            "C15"
+          ]
+        ]
+      },
+      {
+        "site": "8OTV:model1:F:B:302",
+        "chain": "A",
+        "residue": "LEU",
+        "label_seq": "108",
+        "distance_A": 3.7805418923746905,
+        "witnesses": [
+          [
+            "CG",
+            "C17"
+          ]
+        ]
+      },
+      {
+        "site": "8OTV:model1:F:B:302",
+        "chain": "B",
+        "residue": "LEU",
+        "label_seq": "108",
+        "distance_A": 18.592730138417004,
+        "witnesses": [
+          [
+            "CD2",
+            "C21"
+          ]
+        ]
+      }
+    ],
+    "final_repository_state": {
+      "commit": "22830642f7d33ca3319872b5ba4c513baff50154",
+      "porcelain": "",
+      "tracked_diff_empty": true
+    }
+  },
+  "objections": [
+    {
+      "number": 1,
+      "id": "AI-S01",
+      "severity": "critical",
+      "classification": "publication-significance risk, not a demonstrated numerical error",
+      "title": "The added granularity does not establish enough incremental scientific insight for JMGM",
+      "evidence_status": "nothing currently available",
+      "is_killer_objection": true,
+      "locations": [
+        {
+          "path": "research/manuscript.md",
+          "lines": "8-17",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L8-L17"
+        },
+        {
+          "path": "research/manuscript.md",
+          "lines": "124-144",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L124-L144"
+        },
+        {
+          "path": "research/path_b/source_checks/sources/jmgm_scope_excerpts.txt",
+          "lines": "1-15",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/path_b/source_checks/sources/jmgm_scope_excerpts.txt#L1-L15"
+        },
+        {
+          "path": "research/structure_comparison/sources/PMC11089510.xml",
+          "lines": null,
+          "selector": "fig[@id='fig3']/caption; Results paragraph discussing Figure 4D",
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/structure_comparison/sources/PMC11089510.xml"
+        }
+      ],
+      "manuscript_excerpt": "The contribution is descriptive and methodological.",
+      "finding": "Balikci already reported compound 9, both target complexes, paired catalytic results and the chain-B hydrophobic Arg51 description. The new result is a reproducible census of deposited coordinates, missingness and report/map metadata. Showing that the closest atom is N in one copy and CD in another refines that account but does not establish a different binding mechanism, a new biological consequence or a demonstrated new analysis method. The manuscript itself says it neither tests nor refutes the energetic interpretation. The conjunction of accurate limitations, archived sources and many checks is valuable audit work; it is not itself the scientific advance required by a primary molecular-modelling research paper.",
+      "evidence": "The source Figure 3 caption explicitly describes a hydrophobic R51 contact in chain B for compound 9. The source discussion of Figure 4D already contrasts the compound-9 R51 and L107 environments and separately speculates about TH5427 selectivity. Independently reproduced nearest-atom values are compatible with this context. The official JMGM scope explicitly excludes routine standard modelling with only very limited new scientific insight.",
+      "requested_resolution": "Identify a substantive, evidence-supported scientific question that this reanalysis actually resolves, beyond more complete reporting of known coordinates. Do not manufacture a refutation or new method. No such result is demonstrated in the reviewed package; prose revision alone cannot supply it. A tightly framed reproducibility/critical-commentary output is a different publication proposition, not an established JMGM article category or a promised acceptance route.",
+      "venue_consequence": "Reject the present revision as a JMGM primary research article. Even complete repair of every presentation and administrative issue below would not on its own change this recommendation. A major-revision verdict would imply a credible incremental route to the missing contribution that this package does not presently establish."
+    },
+    {
+      "number": 2,
+      "id": "AI-S02",
+      "severity": "major",
+      "classification": "source-attribution imprecision and argument framing; not a fabricated source contradiction",
+      "title": "Separate the compound-9 hydrophobic account from the TH5427 hydrogen-bond/selectivity conjecture",
+      "evidence_status": "existing evidence",
+      "is_killer_objection": false,
+      "locations": [
+        {
+          "path": "research/manuscript.md",
+          "lines": "15-17",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L15-L17"
+        },
+        {
+          "path": "research/manuscript.md",
+          "lines": "59-61",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L59-L61"
+        },
+        {
+          "path": "research/manuscript.md",
+          "lines": "124-128",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L124-L128"
+        },
+        {
+          "path": "research/structure_comparison/sources/PMC11089510.xml",
+          "lines": null,
+          "selector": "fig[@id='fig3']/caption; Results paragraph beginning 'To explore the potential of 9'",
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/structure_comparison/sources/PMC11089510.xml"
+        }
+      ],
+      "manuscript_excerpt": "They do not test the energetic rationale proposed for compound 9 [2].",
+      "finding": "This wording is too unspecific about which source proposition is being qualified. The inspected source describes a hydrophobic compound-9/R51 contact, and its explicit subsequent speculation about R51-mediated H-bonding/selectivity concerns ADP-ribose/TH5427, not a requirement that compound 9 contact a guanidinium atom in every copy. A carbon witness is compatible with the stated hydrophobic account. The revision correctly says it does not contradict the source; that restraint must govern the premise and prominence of the result, not merely its disclaimer.",
+      "evidence": "Source Figure 3: “An additional hydrophobic interaction with R51 in chain B”. In the following NUDT14 comparison paragraph, the source describes the phenoxy group engaging the hydrophobic side chain of R51, then discusses H-bond interactions shown for ADP-ribose and TH5427, ending with a proposed explanation for TH5427 selectivity. These are distinct propositions; the review does not allege that the source claimed a guanidinium-mediated compound-9 interaction.",
+      "requested_resolution": "Name the exact source proposition. For example: Balikci depicts a hydrophobic compound-9/R51 contact and separately proposes R51-mediated H-bonding as one explanation for TH5427 selectivity; this study tests neither. Do not use the non-guanidinium minimum to imply a mechanistic correction of the first or a test of the second.",
+      "venue_consequence": "Repairable by source-accurate wording. The repair makes the lack of mechanistic novelty clearer rather than curing AI-S01."
+    },
+    {
+      "number": 3,
+      "id": "AI-S03",
+      "severity": "major",
+      "classification": "incomplete scientific presentation of a correct calculation; fixed-threshold interpretation risk",
+      "title": "A residue minimum and a non-guanidinium witness are not a functional-group exclusion test",
+      "evidence_status": "existing evidence",
+      "is_killer_objection": false,
+      "locations": [
+        {
+          "path": "research/manuscript.md",
+          "lines": "23-25",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L23-L25"
+        },
+        {
+          "path": "research/manuscript.md",
+          "lines": "54-61",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L54-L61"
+        },
+        {
+          "path": "research/structure_comparison/geometry_contract.json",
+          "lines": "19-33",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/structure_comparison/geometry_contract.json#L19-L33"
+        },
+        {
+          "path": "research/structure_comparison/results/observed_proximity.json",
+          "lines": null,
+          "selector": "/atom_pairs_within_5A; /residue_proximity, 8RIY Arg51",
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/structure_comparison/results/observed_proximity.json"
+        },
+        {
+          "path": "research/structure_comparison/results/derived/radius_sensitivity.csv",
+          "lines": null,
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/structure_comparison/results/derived/radius_sensitivity.csv"
+        }
+      ],
+      "manuscript_excerpt": "Neither is a guanidinium atom.",
+      "finding": "The sentence is true, but the selection of one minimum conceals the closest competitors. In AAA the side-chain CD–C18 separation is 4.001089 Å, only 0.001089 Å beyond the primary 4.0 Å convention. The retained guanidinium-group NE–C18 minima are 4.761740 Å in AAA and 4.606398 Å in BBB: outside 4.5 Å but inside 5 Å. BBB also has a backbone N–C20 pair at 3.946537 Å. Thus nearest-atom identity is not synonymous with the only nearby atom, the absence of a side-chain environment, or functional-group noninvolvement. Existing sensitivity output is useful but this central example should be explained next to the claim.",
+      "evidence": "Independent raw-CIF calculation gives AAA backbone/side-chain/retained guanidinium minima 3.755561/4.001089/4.761740 Å and BBB 3.946537/3.251273/4.606398 Å. AAA CZ has occupancy zero and is excluded; its missing contribution prevents a complete-group conclusion. At 3.5 Å only the BBB residue minimum qualifies; at 4.0, 4.5 and 5.0 Å both qualify. These are exact deposited-coordinate conventions, not uncertainty or energy thresholds.",
+      "requested_resolution": "Add the small atom-group table and explicit radius classifications supplied in this review, with group definitions, witnesses and occupancies. Preserve positive fractional atoms without inventing occupancy weights. State the radii as retrospective descriptive choices; do not treat the last decimal around 4.0 Å as a chemically resolved boundary or claim prospective preregistration.",
+      "venue_consequence": "Repairable from already available coordinates and pair tables, without a new experiment or changed structure. It improves transparency but supplies no affinity, energy or new inhibitor claim."
+    },
+    {
+      "number": 4,
+      "id": "AI-S04",
+      "severity": "major",
+      "classification": "acknowledged model-support limitation and conditional evidence gap, not an incorrect distance or mandatory validation for as-deposited reporting",
+      "title": "Precomputed maps and whole-ligand report scores cannot establish the significance of the local copy difference",
+      "evidence_status": "specified new analysis",
+      "is_killer_objection": false,
+      "locations": [
+        {
+          "path": "research/manuscript.md",
+          "lines": "29-31",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L29-L31"
+        },
+        {
+          "path": "research/manuscript.md",
+          "lines": "59-71",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L59-L71"
+        },
+        {
+          "path": "research/manuscript.md",
+          "lines": "124-134",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L124-L134"
+        },
+        {
+          "path": "research/path_b/diagnostic_supplement.md",
+          "lines": "61-61",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/path_b/diagnostic_supplement.md#L61-L61"
+        },
+        {
+          "path": "research/structure_comparison/model_support/results/model_support.json",
+          "lines": null,
+          "selector": "/local_residue_reports; /sites; /structures; /policy",
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/structure_comparison/model_support/results/model_support.json"
+        },
+        {
+          "path": "scripts/build_structure_model_support.py",
+          "lines": "268-323",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/scripts/build_structure_model_support.py#L268-L323"
+        }
+      ],
+      "manuscript_excerpt": "No rerefinement, expert three-dimensional map review or independent ligand-placement validation was performed.",
+      "finding": "This limitation is honestly disclosed and remains consequential. Ligand RSCC 0.928–0.952 is not an atom-specific validation of Arg51 N, CD or the guanidinium group. The maps are model-dependent; sampling a precomputed map at a model coordinate is not an independent test of that coordinate. Different report/map software dates, unknown map-generation version and non-equivalent map sampling across the entries prevent treating their standardized values as a calibrated cross-target support scale. Reproduction of the processing does not remove those dependencies.",
+      "evidence": "The archived 8RIY AAA Arg51 record has RSCC 0.894, RSR 0.103 and 15 listed outlier records (8 clash, 3 bond, 3 angle, 1 plane); BBB has RSCC 0.901, RSR 0.143 and no listed local Arg51 outlier. These are report records, not independent failures, and do not prove BBB correct or AAA incorrectly placed. All 12 regenerated model-support files match byte-for-byte; manual trilinear interpolation agrees within 2.55e-7 full-cell SD units. These checks verify implementation, not local crystallographic correctness.",
+      "requested_resolution": "If the paper seeks stronger structural significance than as-deposited bookkeeping, perform and document expert full-3D assessment of all four ligand sites and both Arg51 environments using the deposited diffraction data, reports and surrounding model. Examine the relevant atoms jointly with the ligand, inspect appropriate maps, and where justified assess alternate/restraint/occupancy choices or explicitly versioned omit-map/rerefinement analyses. Report whether the descriptive contrast survives those justified choices. No such work was done in this review; even it would not establish interaction energy. It is not necessary merely to report the present coordinates with the existing limits.",
+      "venue_consequence": "Without that analysis, the work must remain bounded to the deposited model. This is not a newly discovered hidden overclaim: the manuscript already accepts the restriction. Removing the restriction rhetorically would be unacceptable, and retaining it leaves the significance problem unresolved."
+    },
+    {
+      "number": 5,
+      "id": "AI-S05",
+      "severity": "minor",
+      "classification": "reproducible figure-communication defect, not evidence of a wrong model",
+      "title": "The highlighted zero-occupancy CZ is invisible in every central Figure 3A slice",
+      "evidence_status": "existing evidence",
+      "is_killer_objection": false,
+      "locations": [
+        {
+          "path": "research/manuscript.md",
+          "lines": "59-59",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L59-L59"
+        },
+        {
+          "path": "scripts/build_structure_model_support.py",
+          "lines": "625-681",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/scripts/build_structure_model_support.py#L625-L681"
+        },
+        {
+          "path": "scripts/build_path_b_documents.py",
+          "lines": "303-310",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/scripts/build_path_b_documents.py#L303-L310"
+        },
+        {
+          "path": "research/structure_comparison/model_support/results/8RIY_A_AAA_51_slices.png",
+          "lines": null,
+          "selector": "Figure 3A; all three panels",
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/structure_comparison/model_support/results/8RIY_A_AAA_51_slices.png"
+        }
+      ],
+      "manuscript_excerpt": "Figures 3A–B expose the fixed map slices for these local contexts",
+      "finding": "The generated caption explains that zero-occupancy atoms would use red crosses, but the zero-occupancy AAA CZ falls outside all three 0.75 Å plotting slabs and no red CZ marker appears. Its absolute offsets are 0.9374 Å from the XY plane, 2.3610 Å from XZ and 1.8034 Å from YZ. Also, a projected marker can be as far as 0.75 Å off the sampled plane, so the contour directly under it need not be the density at that atom. The central visual evidence therefore cannot show the particular excluded atom emphasized in the abstract and Results.",
+      "evidence": "The filter is explicit at build_structure_model_support.py lines 657–659. The reviewed image and independent centroid calculation agree. This is not suppression of raw data: coordinates, sampling tables and the exclusion remain available. No absence of density is inferred from absence of the marker.",
+      "requested_resolution": "Annotate that CZ is omitted by the slab filter, or add an explicitly labelled atom-centred view with ligand context and a small atom/report table. State any off-plane projection. Retain the warning that no rendered zero-occupancy coordinate enters distance calculations and that these maps do not validate it independently.",
+      "venue_consequence": "A minor presentation repair from existing evidence. It cannot remedy AI-S01 or turn slices into independent validation."
+    },
+    {
+      "number": 6,
+      "id": "AI-S06",
+      "severity": "major",
+      "classification": "acknowledged inferential ceiling and publication-significance risk, not an error in the reported ratio",
+      "title": "The catalytic ratio cannot connect the structural description to a cross-target energetic result",
+      "evidence_status": "nothing currently available",
+      "is_killer_objection": false,
+      "locations": [
+        {
+          "path": "research/manuscript.md",
+          "lines": "35-37",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L35-L37"
+        },
+        {
+          "path": "research/manuscript.md",
+          "lines": "76-93",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L76-L93"
+        },
+        {
+          "path": "research/manuscript.md",
+          "lines": "126-136",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L126-L136"
+        },
+        {
+          "path": "research/structure_comparison/sources/PMC11089510.xml",
+          "lines": null,
+          "selector": "NUDT5/NUDT14 Activity Assay Methods paragraph; tbl1",
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/structure_comparison/sources/PMC11089510.xml"
+        },
+        {
+          "path": "research/selectivity/paired_evidence.json",
+          "lines": null,
+          "selector": "/rows/8/endpoints; /rows/8/ratio",
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/selectivity/paired_evidence.json"
+        }
+      ],
+      "manuscript_excerpt": "No replicate covariance, ratio confidence interval or inferential ratio comparison is available.",
+      "finding": "The arithmetic 0.162/0.270 = 0.600 is correct. It is not an independent confirmation of a structural hypothesis. The source describes 20-minute versus 1-hour reactions and a shared 500 nM TH5427 zero anchor; the package lacks raw paired replicate information and a fully resolved nesting/covariance structure. These limitations neither prove that the original experiments failed nor establish a general selectivity magnitude. The counterexample to interpreting a source-label score as selectivity is narrowly legitimate, but it does not supply the missing structural-to-function result.",
+      "evidence": "The source assay paragraph explicitly supplies both durations and the normalization anchors. The reviewed ledger preserves the two reported means, their endpoint SDs, two reported biological replicates and unavailable paired raw replicates. Catalytic IC50 is not KD; the source also reports direct-binding experiments that must not be conflated with this ratio.",
+      "requested_resolution": "Keep the endpoint-specific contextual claim and no ratio CI. A stronger inference would require authenticated raw data and design/normalization information, and an appropriately comparable or independently qualified analysis/measurement design. These materials are not present; a conditional laboratory plan is not their substitute. Do not invent covariance, convert endpoint SDs into a selectivity interval, assume control failure, or perform an unauthorized experiment.",
+      "venue_consequence": "No presently available calculation repairs the missing structural-to-functional bridge. This does not invalidate the descriptive table, but it cannot rescue JMGM significance. Treat the ratios as context or remove claims that require a stronger interpretation."
+    },
+    {
+      "number": 7,
+      "id": "AI-S07",
+      "severity": "minor",
+      "classification": "editorial coherence and scope concern, not a demonstrated calibration/AUC error",
+      "title": "The extensive legacy-score story does not establish a structural modelling contribution",
+      "evidence_status": "existing evidence",
+      "is_killer_objection": false,
+      "locations": [
+        {
+          "path": "research/manuscript.md",
+          "lines": "39-45",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L39-L45"
+        },
+        {
+          "path": "research/manuscript.md",
+          "lines": "93-120",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L93-L120"
+        },
+        {
+          "path": "research/path_b/diagnostic_supplement.md",
+          "lines": "17-43",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/path_b/diagnostic_supplement.md#L17-L43"
+        },
+        {
+          "path": "research/path_b/diagnostic_supplement.md",
+          "lines": "55-67",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/path_b/diagnostic_supplement.md#L55-L67"
+        }
+      ],
+      "manuscript_excerpt": "Source-label controls do not establish target recognition",
+      "finding": "The revision correctly bounds the scores to unauthenticated source labels versus unmatched unassayed presumed negatives. That correction should not be counted as biological evidence or as the novelty missing from the structural paper. The long diagnostic story makes this read partly as a forensic correction of a previous screening submission rather than a coherent new structural investigation. ECE is implemented; its presence is not trained fused-score calibration. Conformal outputs are empirical and do not guarantee shifted-population coverage.",
+      "evidence": "Main Section 2.4 and supplement Sections S2–S3 explicitly distinguish the raw four-score Equal_mean from Property_LR, historical normalized consensus and descriptive ECE. The supplement also explicitly withdraws missing-library claims and corrects the historical written decoy-tolerance denial. These are appropriate corrections, not new experimental validation.",
+      "requested_resolution": "Retain the full audit and score evidence as provenance, but reduce the main-text detour to the necessary correction and why a selectivity reading is unwarranted. Make any retained structural manuscript stand on its structural result. Do not rebuild the historical library or replace the decoys to manufacture a new benchmark.",
+      "venue_consequence": "Repairable by reorganizing existing material. A cleaner paper is not necessarily a sufficiently novel paper; AI-S01 remains."
+    },
+    {
+      "number": 8,
+      "id": "AI-S08",
+      "severity": "critical administrative",
+      "classification": "submission-readiness blocker, separate from scientific merit",
+      "title": "The author-owned byline and declarations are unresolved",
+      "evidence_status": "nothing currently available",
+      "is_killer_objection": false,
+      "locations": [
+        {
+          "path": "research/manuscript.md",
+          "lines": "3-3",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L3-L3"
+        },
+        {
+          "path": "research/manuscript.md",
+          "lines": "140-148",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/manuscript.md#L140-L148"
+        },
+        {
+          "path": "research/path_b/diagnostic_supplement.md",
+          "lines": "63-63",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/path_b/diagnostic_supplement.md#L63-L63"
+        },
+        {
+          "path": "research/path_b/author_requests.md",
+          "lines": "3-25",
+          "selector": null,
+          "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/path_b/author_requests.md#L3-L25"
+        }
+      ],
+      "manuscript_excerpt": "The final author list, retained contributions, affiliations and declarations require author confirmation.",
+      "finding": "The package explicitly remains author-review-only. Retained qualifying contributions and authorship involving Nikhil Srinivasan, affiliations, funding, COI, approvals/accountability, rights, acknowledgments, prior versions/submissions, reviewer conflicts and complete AI disclosure cannot be certified from the supplied materials. This is not an allegation of misconduct or an invitation to infer declarations from public profiles. The author-guide access limitation also prevents certification of journal-specific compliance.",
+      "evidence": "The manuscript and exact author request sheet identify the unresolved items and expressly prohibit assumed sole authorship or blank/assumed declarations. Raunak Gengiti and the correspondence email are already confirmed and are not being requested again.",
+      "requested_resolution": "Obtain the author-owned factual records and approvals through the existing request sheet; preserve unknowns as unknowns. Resolve the historical coauthor’s qualifying contribution explicitly. Verify the current journal-specific instructions through authorized access before any separately authorized submission. No declaration was drafted or supplied by this review.",
+      "venue_consequence": "Do not submit this revision, regardless of scientific recommendation. Author confirmation can remove the administrative block but cannot remove AI-S01. Nothing in the presently supplied record settles these matters."
+    }
+  ],
+  "scope_limits": [
+    "No tracked-file edits, commits, pushes, PRs, child sessions, workflows, external contacts or submissions.",
+    "Independent numerical checks use the same pinned Gemmi/NumPy ecosystem but do not import the repository geometry engine. Independence here is algorithmic cross-checking, not independent measurement or a second human reviewer.",
+    "No expert full-3D crystallographic validation, map recalculation, omit/polder maps, rerefinement, coordinate uncertainty model or energetic calculation.",
+    "No new library, decoy generation, model fitting, docking, MD or biological experiment.",
+    "Reviewed manuscript/supplement source and generated DOCX text, supplied render sheets, structural proximity figures and all six fixed-slice images. No claim of independent clinical/biological or exhaustive literature validation.",
+    "Frozen-score arithmetic was checked, not model training histories, assay authenticity or every supplementary statistical implementation.",
+    "Nguyen full text, author declarations, complete journal-specific author instructions and raw replicate covariance are not certified; access failure is not evidence against a publication.",
+    "The reported 689-test run was package provenance, not independently rerun here and never treated as scientific validation."
+  ],
+  "scientific_errors_confirmed": [],
+  "precision_note": "No numerical error was found in the checked geometry, local interpolation, identity mapping or frozen-score arithmetic. AI-S02 is a source-attribution precision concern and AI-S05 a reproducible communication defect; neither establishes a false experimental result.",
+  "source_evidence_ledger": [
+    {
+      "claim": "Compound-9 chain-B R51 account is hydrophobic",
+      "status": "verified",
+      "location": {
+        "path": "research/structure_comparison/sources/PMC11089510.xml",
+        "lines": null,
+        "selector": "fig[@id='fig3']/caption",
+        "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/structure_comparison/sources/PMC11089510.xml"
+      },
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11089510/",
+      "passage": "An additional hydrophobic interaction with R51 in chain B",
+      "limit": "A published structural interpretation, not direct energetic measurement."
+    },
+    {
+      "claim": "Subsequent R51 H-bond/selectivity conjecture concerns TH5427",
+      "status": "verified",
+      "location": {
+        "path": "research/structure_comparison/sources/PMC11089510.xml",
+        "lines": null,
+        "selector": "Results paragraph beginning 'To explore the potential of 9'",
+        "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/structure_comparison/sources/PMC11089510.xml"
+      },
+      "source_url": "https://doi.org/10.1021/acs.jmedchem.4c00072",
+      "passage": "This may also explain the exquisite selectivity of TH5427 (6) for NUDT5 over NUDT14.",
+      "limit": "Does not establish a compound-9 guanidinium requirement."
+    },
+    {
+      "claim": "Reported catalytic protocols differ and share the stated zero anchor",
+      "status": "verified",
+      "location": {
+        "path": "research/structure_comparison/sources/PMC11089510.xml",
+        "lines": null,
+        "selector": "NUDT5/NUDT14 Activity Assay Methods paragraph",
+        "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/structure_comparison/sources/PMC11089510.xml"
+      },
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11089510/",
+      "passage": "NUDT5 reactions were incubated for 20 min, while NUDT14 reactions were carried out for 1 h at rt.",
+      "limit": "Does not itself demonstrate failed normalization or invalidate source IC50 measurements."
+    },
+    {
+      "claim": "JMGM excludes routine modelling with very limited new insight",
+      "status": "verified",
+      "location": {
+        "path": "research/path_b/source_checks/sources/jmgm_scope_excerpts.txt",
+        "lines": "1-15",
+        "selector": null,
+        "immutable_url": "https://github.com/RaunakGengiti2725/NUDT5-Inhibitor-Breast-Cancer-Discovery/blob/22830642f7d33ca3319872b5ba4c513baff50154/research/path_b/source_checks/sources/jmgm_scope_excerpts.txt#L1-L15"
+      },
+      "source_url": "https://shop.elsevier.com/journals/journal-of-molecular-graphics-and-modelling/1093-3263",
+      "passage": "Routine applications of standard modelling approaches, providing only very limited new scientific insight, will not meet our criteria for publication.",
+      "limit": "Scope supports a conditional fit assessment, not a prediction of an actual editor decision or proof of author-guide compliance."
+    }
+  ]
+}

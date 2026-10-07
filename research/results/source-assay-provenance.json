@@ -1,0 +1,13 @@
+{
+  "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/supplementaryFiles",
+  "source_member": "jm4c00072_si_002.csv",
+  "original_member_sha256": "17ef0e3770d49db8b7575a18fd1cdb4623fd83db0c928ba7ade75d951f7d7533",
+  "source_encoding": "Latin-1",
+  "derived_encoding": "UTF-8, LF record terminators; parsed cell values unchanged",
+  "rdkit": "2025.09.6",
+  "transform": "Preserve author compound IDs, SMILES and reported values; canonicalize isomeric SMILES; match the unchanged repository CSVs by canonical identity; attach Table 1 assay/uncertainty context. No assay values imputed; no training rows changed.",
+  "records": 23,
+  "nudt5_numeric": 7,
+  "nudt5_reported_inactive": 5,
+  "nudt5_not_tested": 11
+}

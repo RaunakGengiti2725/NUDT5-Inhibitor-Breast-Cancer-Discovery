@@ -1,0 +1,181 @@
+"""Independent map interpolation and focused structural-review diagnostics."""
+
+import itertools
+import json
+from collections import Counter
+from pathlib import Path
+from typing import Any
+
+import gemmi
+import numpy as np
+
+ROOT = Path("/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery")
+BASE = ROOT / "research/structure_comparison"
+OUT = Path("/home/ubuntu/structural-review")
+support = json.loads((BASE / "model_support/results/model_support.json").read_text())
+geometry = json.loads((BASE / "results/observed_proximity.json").read_text())
+result: dict[str, list[dict[str, Any]]] = {
+    "map_checks": [],
+    "focus_atoms": [],
+    "slice_visibility": [],
+    "radius_sensitivity": [],
+    "alternate_residue_minima": [],
+    "leu107": [],
+}
+for pdb, structure in support["structures"].items():
+    for kind, suffix in [("EDS", ""), ("difference", "_diff")]:
+        m = gemmi.read_ccp4_map(
+            str(BASE / "model_support/sources" / f"{pdb.lower()}{suffix}.ccp4.gz")
+        )
+        m.setup(float("nan"))
+        arr = np.asarray(m.grid.array, dtype=np.float64)
+        sd = float(arr.std())
+        mean = float(arr.mean())
+        errors = []
+        for rec in support["local_atoms"]:
+            if rec["pdb_id"] != pdb or rec["sampling"]["maps"] is None:
+                continue
+            a = rec["source_atom_row"]
+            v = np.array([float(a["Cartn_" + k]) for k in "xyz"])
+            frac = np.asarray(m.grid.unit_cell.frac.mat) @ v
+            pos = (frac % 1) * np.array(arr.shape)
+            lo = np.floor(pos).astype(int)
+            w = pos - lo
+            raw = 0.0
+            for corner_tuple in itertools.product([0, 1], repeat=3):
+                corner = np.array(corner_tuple)
+                weight = np.prod(np.where(corner == 1, w, 1 - w))
+                raw += float(arr[tuple((lo + corner) % np.array(arr.shape))]) * float(weight)
+            z = (raw - mean) / sd
+            archived = rec["sampling"]["maps"][kind]["standardized_value"]
+            errors.append(abs(z - archived))
+            if pdb == "8RIY" and a["label_comp_id"] == "ARG" and a["auth_seq_id"] == "51":
+                result["focus_atoms"].append(
+                    {
+                        "chain": a["auth_asym_id"],
+                        "atom": a["label_atom_id"],
+                        "occupancy": float(a["occupancy"]),
+                        "map": kind,
+                        "manual_fullcell_sd_value": z,
+                        "archived_fullcell_sd_value": archived,
+                    }
+                )
+        result["map_checks"].append(
+            {
+                "pdb": pdb,
+                "kind": kind,
+                "samples": len(errors),
+                "maximum_abs_standardized_discrepancy": max(errors),
+                "mean_matches": mean == structure["maps"][kind]["full_cell_mean"],
+                "sd_matches": sd == structure["maps"][kind]["full_cell_population_sd"],
+                "grid_dimensions": list(arr.shape),
+                "cell_axes_A_per_grid_interval": [
+                    m.grid.unit_cell.a / arr.shape[0],
+                    m.grid.unit_cell.b / arr.shape[1],
+                    m.grid.unit_cell.c / arr.shape[2],
+                ],
+            }
+        )
+for chain in ["AAA", "BBB"]:
+    rs = [
+        x["source_atom_row"]
+        for x in support["local_atoms"]
+        if x["pdb_id"] == "8RIY"
+        and x["source_atom_row"]["auth_asym_id"] == chain
+        and x["source_atom_row"]["auth_seq_id"] == "51"
+    ]
+    xyz = np.array([[float(a["Cartn_" + k]) for k in "xyz"] for a in rs])
+    center = xyz[[float(a["occupancy"]) > 0 for a in rs]].mean(axis=0)
+    for row, v in zip(rs, xyz, strict=True):
+        result["slice_visibility"].append(
+            {
+                "chain": chain,
+                "atom": row["label_atom_id"],
+                "occupancy": float(row["occupancy"]),
+                "abs_plane_offsets_A": dict(
+                    zip(["YZ", "XZ", "XY"], np.abs(v - center).tolist(), strict=True)
+                ),
+                "visible_planes": [
+                    name
+                    for name, offset in zip(["YZ", "XZ", "XY"], np.abs(v - center), strict=True)
+                    if offset <= 0.75
+                ],
+            }
+        )
+for site in geometry["sites"]:
+    s = site["site_identity"]["site_id"]
+    rs = [r for r in geometry["residue_proximity"] if r["site_id"] == s]
+    for radius in [3.5, 4.0, 4.5, 5.0]:
+        matched = [
+            r
+            for r in rs
+            if r["observed_min_distance_A"] is not None and r["observed_min_distance_A"] <= radius
+        ]
+        result["radius_sensitivity"].append(
+            {
+                "site": s,
+                "radius_A": radius,
+                "shared_rows": sum(r["protein_conformer_id"] == "." for r in matched),
+                "alternate_rows": sum(r["protein_conformer_id"] != "." for r in matched),
+                "partial_rows": sum(r["geometry_status"] == "partial_observed" for r in matched),
+                "arg51_rows": [
+                    {
+                        "chain": r["residue_identity"]["auth_asym_id"],
+                        "distance_A": r["observed_min_distance_A"],
+                    }
+                    for r in matched
+                    if r["residue_identity"]["label_comp_id"] == "ARG"
+                    and r["residue_identity"]["auth_seq_id"] == "51"
+                ],
+            }
+        )
+for r in geometry["residue_proximity"]:
+    if r["protein_conformer_id"] != ".":
+        result["alternate_residue_minima"].append(
+            {
+                "site": r["site_id"],
+                "chain": r["residue_identity"]["auth_asym_id"],
+                "label_seq": r["residue_identity"]["label_seq_id"],
+                "auth_seq": r["residue_identity"]["auth_seq_id"],
+                "conformer": r["protein_conformer_id"],
+                "distance_A": r["observed_min_distance_A"],
+            }
+        )
+    if r["residue_identity"]["pdb_id"] == "8OTV" and r["residue_identity"]["auth_seq_id"] == "107":
+        result["leu107"].append(
+            {
+                "site": r["site_id"],
+                "chain": r["residue_identity"]["auth_asym_id"],
+                "residue": r["residue_identity"]["label_comp_id"],
+                "label_seq": r["residue_identity"]["label_seq_id"],
+                "distance_A": r["observed_min_distance_A"],
+                "witnesses": [
+                    (
+                        p["protein_atom"]["label_atom_id"],
+                        p["ligand_atom"]["label_atom_id"],
+                    )
+                    for p in r["minimum_witness_pairs"]
+                ],
+            }
+        )
+(OUT / "independent_support.json").write_text(json.dumps(result, indent=2))
+print("MAP CHECKS", json.dumps(result["map_checks"], indent=2))
+print(
+    "AAA CZ VISIBILITY",
+    [r for r in result["slice_visibility"] if r["chain"] == "AAA" and r["atom"] == "CZ"],
+)
+print("RADII", json.dumps(result["radius_sensitivity"], indent=2))
+print("ALTERNATES", result["alternate_residue_minima"])
+print("LEU107", result["leu107"])
+ind = json.loads((OUT / "independent_geometry.json").read_text())
+for rec in ind["validation_records"]:
+    at = rec["attributes"]
+    print(
+        "REPORT",
+        rec["pdb"],
+        at["resname"],
+        at["chain"],
+        Counter(r["kind"] for r in rec["outliers"]),
+    )
+    if at["resname"] == "W0O":
+        print(rec["outliers"])

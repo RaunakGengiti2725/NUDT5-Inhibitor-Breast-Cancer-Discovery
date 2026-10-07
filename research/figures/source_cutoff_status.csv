@@ -1,0 +1,7 @@
+design,n,positives,negatives,status
+measured_source_below_1.0_uM,10,2,8,available
+measured_source_below_10.0_uM,10,2,8,available
+measured_source_below_50.0_uM,10,5,5,available
+authenticated_reference_source_below_1.0_uM,10,2,8,available
+authenticated_reference_source_below_10.0_uM,10,2,8,available
+authenticated_reference_source_below_50.0_uM,10,5,5,available

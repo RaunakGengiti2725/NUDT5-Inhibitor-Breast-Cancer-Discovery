@@ -1,0 +1,104 @@
+{
+  "scope": "Read-only consolidation of the Priority 0, P1, P2 and P3 audits at one immutable baseline. No model fitting, no coordinate recomputation, no experiment, no tracked-file change.",
+  "baseline": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+  "manuscript_sha256": "5ee7257be5a09c9862c2ead2f98416e1e8d1b2fa875624ca009df5cb95934bbb",
+  "is_human_peer_review": false,
+  "is_biological_validation": false,
+  "is_publication_readiness_certification": false,
+  "claim_coverage": {
+    "exact_inventory_units": 874,
+    "supplemental_units": 167,
+    "total_audit_units": 1041,
+    "statuses": {
+      "needs qualification": 112,
+      "survives": 925,
+      "must be cut": 4
+    },
+    "types": {
+      "interpretation": 219,
+      "demonstrated": 776,
+      "hypothesis": 9,
+      "unsupported": 10,
+      "projection": 27
+    },
+    "whole_row_cuts": [
+      "C-0100",
+      "C-0167",
+      "C-0327",
+      "C-0471"
+    ],
+    "duplicate_or_missing_ids": 0,
+    "uncovered_substantive_characters": 0,
+    "lines_checked": 286,
+    "note": "Unit counts are audit units, not independent scientific findings; headings, references, table cells and whole-row conjunctions each count."
+  },
+  "independent_checks_performed": [
+    "git HEAD, clean porcelain status and non-shallow history re-verified",
+    "manuscript SHA256 re-verified",
+    "all five original-release files byte-compared against the archived copies",
+    "every claim locator re-sliced from the immutable manuscript; exact text and context matched",
+    "97 current Methods quotations re-sliced by line and column with no uncovered nonwhitespace in the Methods span",
+    "264 historical Methods quotations re-extracted independently from word/document.xml paragraph and table markers",
+    "all 157 upstream supplemental units re-validated: Markdown slices matched exactly; Python caption supplements reproduced by AST string extraction",
+    "archived primary XML re-parsed: Balikci sec4.3, tbl1 and fig1 and all eight primary_excerpts entries matched byte-for-byte on itertext",
+    "Nguyen Crossref title and abstract re-read from the archived JSON; full text remains inaccessible",
+    "frozen observed_proximity.json re-inspected for site inventory, status counts, retained pairs and the cited Arg51 and Leu107 witness rows",
+    "171 manifest entries (51+72+48; overlapping file sets, not 171 unique files) re-verified across the three upstream manifests",
+    "all upstream ZIP archives CRC-tested and their internal manifests re-hashed"
+  ],
+  "consolidation_caption_checks": {
+    "count": 10,
+    "details": "caption_coverage.json; exact AST strings and frozen SVG notes; no rendering/model execution"
+  },
+  "explicitly_not_performed": [
+    "No model refitting, retraining or permutation run",
+    "No coordinate recomputation from mmCIF",
+    "No repository model suite, lint or type-check rerun; upstream results are attributed. Scratch audit scripts receive syntax and consistency validation only.",
+    "No electron density, map or structure-factor inspection",
+    "No new structural observation, molecule, decoy or library",
+    "No experiment, measurement, purchase, submission or external contact",
+    "No manuscript, tracked-file, deposit, branch or PR change"
+  ],
+  "errata_raised_against_upstream_audits": [
+    {
+      "ids": [
+        "CM-047",
+        "CM-048",
+        "CM-049",
+        "CL-12"
+      ],
+      "finding": "Upstream states ECE is not computed. scripts/scripts/controls.py calibration_bins lines 179-202 computes a descriptive expected_calibration_error stored throughout research/results/controls.json. The accurate limitation is that no trained calibration of the fused score exists.",
+      "resolution": "Corrected in annotated_current_methods.csv, annotated_requested_component_checklist.csv and reconciliation_log.csv; implementation statuses otherwise unchanged."
+    },
+    {
+      "ids": [
+        "C-0704",
+        "C-0705"
+      ],
+      "finding": "Framed only as an unknown, which reads as a recoverable artifact.",
+      "resolution": "Status moved to needs qualification with the user-confirmed nonexistence recorded; original status preserved in the Upstream status column."
+    }
+  ],
+  "cosmetic_differences_not_errors": [
+    {
+      "finding": "Upstream historical Methods quotes for Table 3 numeric cells carry a trailing space from python-docx paragraph joining (HM-109, HM-110, HM-117, HM-118, HM-125, HM-126, HM-133, and the T03R06C04 row).",
+      "resolution": "Independent extraction matched after applying the same cell-join rule. No numeric or semantic difference."
+    },
+    {
+      "finding": "Two attachment files share basenames with unrelated files in other upstream bundles (input_hashes.json, artifact_manifest.json).",
+      "resolution": "Different namespaces, not mismatched artifacts; recorded in source_validation.json warnings and path_resolution.md."
+    }
+  ],
+  "unresolved": [
+    "Authoritative ACT-18 graph",
+    "Decoy provenance and any measured inactivity",
+    "Raw paired replicates and covariance for the published catalytic data",
+    "Nguyen full text and the asserted primary-author-manuscript inspection",
+    "Live public deposit state and two subscription-restricted DataPort PDFs",
+    "Local electron-density support for the deposited models",
+    "All author declarations, contributor roles and authorship resolution",
+    "JMGM author-guide compliance and journal readiness",
+    "Incremental-contribution judgement, which is a reviewer matter"
+  ],
+  "package_excludes": "Raw copyrighted primary and historical sources (the publisher XML, the historical DOCX and the long historical text) are excluded from the distributed ZIP. They are identified by SHA256 in input_manifest.json."
+}

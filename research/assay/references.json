@@ -1,0 +1,576 @@
+{
+  "status": "Reference inspection only; no experiments, no completed qualification",
+  "workflow_run_id": "wfr-ccb7d430f5e84ab3af7640157fe644d3",
+  "reader_session": "https://la-hacks-rttothemoon.devinenterprise.com/sessions/639852257c6540c7a4c9be8bc59a090e",
+  "references": [
+    {
+      "type": "reference",
+      "reference_id": "P2018",
+      "title": "Targeted NUDT5 inhibitors block hormone signaling in breast cancer cells",
+      "authors": "Page et al.",
+      "year": 2018,
+      "pmcid": "PMC5772648",
+      "doi": "10.1038/s41467-017-02293-7",
+      "download_records": [
+        {
+          "url_accessed": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5772648/",
+          "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5772648/",
+          "retrieval_utc": "2026-10-05T03:51:09.757629+00:00",
+          "http_status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "byte_count": 21308,
+          "sha256_downloaded_bytes": "d09b32da204ea2ce8ee95740b086959977ad22087fc4a62613b50e611406d7c7",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "HTTP 200 browser-challenge HTML (Checking your browser - reCAPTCHA), not the requested article/chapter/PDF; not used as substantive evidence."
+        },
+        {
+          "url_accessed": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+          "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+          "retrieval_utc": "2026-10-05T03:53:09.551482+00:00",
+          "http_status": 200,
+          "content_type": "application/xml",
+          "byte_count": 152176,
+          "sha256_downloaded_bytes": "bc7c46fc4d464adb0cb2d5ec1ce56c4accc781f94c23f1c8744441d2b045a071",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "full source retrieved"
+        },
+        {
+          "url_accessed": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/supplementaryFiles",
+          "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/supplementaryFiles",
+          "retrieval_utc": "2026-10-05T03:55:29.997640+00:00",
+          "http_status": 200,
+          "content_type": "application/zip",
+          "byte_count": 29171520,
+          "sha256_downloaded_bytes": "f6893f15a9d1c85d9858322f2f24e4273f38ed16134f9ce7b8d90e2716cbe9e1",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "Full supplementary ZIP retrieved; named Supplementary Information PDF extracted."
+        }
+      ],
+      "supplement_pdf": {
+        "archive_member": "41467_2017_2293_MOESM1_ESM.pdf",
+        "bytes": 29188722,
+        "sha256_extracted_member_bytes": "490c6658a4089c122d0e69897c6ea5ebb9809fb350f2c72b7d16e784b76e1ea9",
+        "transformation": "Lossless ZIP decompression of the named member; not a direct PDF download.",
+        "pdf_pages": 45,
+        "text_transformation": "PDF text extracted with pypdf 5.9.0, with one-based PDF-page markers; no OCR. This is a derived representation, not original downloaded bytes.",
+        "sha256_derived_text": "f9477bdc7e39015a81cd43a7388df3f436aa236e0aaf9e085bcfe960275c4dbb"
+      },
+      "inspected_locations": [
+        {
+          "document": "Full-text XML",
+          "sections": [
+            "Results: Small molecule screening campaign for NUDT5 inhibitors (Sec4)",
+            "Results: Preliminary optimization of hit compounds (Sec5)",
+            "Results: NUDT5 target engagement by DARTS (Sec9), relevant paragraph",
+            "Methods: Protein purification (Sec15)",
+            "Methods: In vitro analysis of substrate hydrolysis (Sec16)",
+            "Methods: Small molecule screening campaign (Sec24)",
+            "Methods: Selectivity assays for TH5427 (Sec29)",
+            "Methods: Biochemical conversion of ADPR to ATP by NUDT5 (Sec31)",
+            "Methods: Statistical analyses (Sec36), to avoid conflating CETSA curve fitting with biochemical IC50 fitting"
+          ]
+        },
+        {
+          "document": "Supplementary Information PDF",
+          "sections": [
+            "Supplementary Table 1, Small molecule screening information, PDF page 2",
+            "Supplementary Figure 3 caption, PDF page 5",
+            "Supplementary Figure 9 caption, PDF page 14",
+            "Supplementary Methods: Small molecule library composition; Enzymatic assay applied for screening and hit confirmation, PDF pages 22–24"
+          ],
+          "page_number_convention": "One-based PDF viewer page numbers, not asserted printed page numbers."
+        }
+      ],
+      "short_excerpts": [
+        {
+          "locator": "Methods Sec16",
+          "excerpt": "Absorbance at 630 nm was read after 15 min incubation with shaking using a Hidex Sense plate reader.",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        },
+        {
+          "locator": "Supplementary Methods, PDF page 24",
+          "excerpt": "Synthetic NUDT5 inhibitors were evaluated in the MG assay using the screening conditions from the first campaign.",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        },
+        {
+          "locator": "Supplementary Methods, PDF page 24",
+          "excerpt": "Experiments were run in duplicate and confirmed in two independent experiments.",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        }
+      ],
+      "published_method_conditions": {
+        "protein": {
+          "target": "Human recombinant NUDT5; bacterial expression construct pNIC28 supplied by SGC Stockholm; N-terminal His tag, E. coli BL21 (DE3) R3 pRARE2, 18 degrees C expression; HisTrap followed by Superdex 75 purification; SDS-PAGE and mass spectrometry checks are reported.",
+          "construct_residue_range": "Not stated in the inspected NUDT5 purification paragraph; do not borrow the 2024 residue range."
+        },
+        "readout_principle": "NUDT5 hydrolyzes ADP-ribose to AMP plus ribose-5-phosphate. Alkaline phosphatase processes the ribose-5-phosphate product; inorganic phosphate is detected with malachite green at 630 nm. This is a coupled product assay, not reporter-free direct NUDT5 detection.",
+        "general_substrate_hydrolysis_Methods_Sec16": {
+          "buffer": "100 mM Tris acetate pH 7.5, 40 mM NaCl, 10 mM magnesium acetate",
+          "temperature": "22 degrees C",
+          "ADPR_coupling_enzyme": "Bovine intestinal alkaline phosphatase, 10 U/mL",
+          "incubation": "30 minutes with shaking, then malachite-green reagent; read after 15 additional minutes with shaking",
+          "instrument": "Hidex Sense; absorbance 630 nm",
+          "scope": "General substrate assay; not silently substituted for the distinct inhibitor-screening protocol."
+        },
+        "MG_screen_campaign_1": {
+          "buffer": "10 mM Tris acetate pH 8.0, 40 mM NaCl, 10 mM magnesium acetate, 0.005% Tween-20, 1 mM DTT",
+          "NUDT5": "1.5 nM",
+          "ADPR": "50 micromolar",
+          "alkaline_phosphatase": "5 U/mL calf intestinal alkaline phosphatase"
+        },
+        "MG_screen_campaign_2": {
+          "buffer": "1 mM Tris acetate pH 8.0, 4 mM NaCl, 1 mM magnesium acetate, 0.005% Tween-20, 1 mM DTT",
+          "NUDT5": "1 nM",
+          "ADPR": "25 micromolar",
+          "alkaline_phosphatase": "0.25 U/mL bovine intestinal alkaline phosphatase"
+        },
+        "MG_screen_shared_conditions": {
+          "plate": "384-well Nunc 242757",
+          "reaction_volume": "40 microliters: 10 microliters enzyme solution plus 30 microliters substrate solution",
+          "screen_compound": "10 micromolar; 0.1% final DMSO reported for screening wells",
+          "incubation": "1 hour at room temperature, then addition of malachite-green reagent to terminate/develop; vigorous shaking for at least 8 minutes",
+          "readout": "Victor 3, 630-nm filter, 0.1 second/well",
+          "normalization": "Column 23 enzyme plus substrate without compound = 0% inhibition; column 24 enzyme solution replaced by buffer = 100% inhibition; per-plate control means used.",
+          "MG_reagent_addition_volume": "Not specified in this inspected screening Methods passage."
+        },
+        "hit_confirmation_and_inhibitor_curves": {
+          "confirmation_concentrations": "2.5, 10, 20 micromolar",
+          "chemically_synthesized_inhibitor_curves": "First-campaign MG conditions; 100 micromolar to 1.7 nM, threefold dilution steps; duplicate measurements, confirmed in two independent experiments. Chemically synthesized compounds are not synthetic datasets.",
+          "curve_fitting_evidence": "Supplementary Figure 3 specifically reports a sigmoidal dose-response variable-slope fit in GraphPad Prism 7 for TH1167. This does not establish the constraints, weighting or estimand for every reported biochemical IC50.",
+          "DMSO_limitation": "Screen DMSO is stated; final DMSO for every full dose-response dilution is not separately restated in the inspected passage."
+        },
+        "HPLC_product_analysis_not_AMP_Glo": {
+          "scope": "Orthogonal analytical evidence of substrate turnover/AMP production; not a reported AMP-Glo assay or a substitute claim that every inhibitor potency was remeasured by HPLC.",
+          "substrate_and_enzyme": "50 micromolar ADPR or 8-oxo-dGDP with or without 6 nM NUDT5",
+          "buffer": "100 mM Tris-HCl pH 7.4, 40 mM NaCl, 10 mM MgCl2, 1 mM DTT, 0.005% Tween-20",
+          "incubation": "30 minutes at 37 degrees C",
+          "quench": "40 microliters reaction plus 60 microliters cold methanol at minus 20 degrees C; further cooled to minus 72 degrees C, clarified, dried, resuspended in water",
+          "chromatography": "Agilent 1100; 5-micrometer C18 column, 4 x 125 mm; UV absorbance at 260 nm; retention times checked using standards. Gradient 40% A/60% B to 100% B over 10 minutes, 2 minutes at 100% B, then 3-minute re-equilibration. A: 10 mM KH2PO4, 10 mM tetrabutylammonium hydroxide, pH 6.9, water. B: 50 mM KH2PO4, 5.6 mM tetrabutylammonium hydroxide, pH 7.0, water/30% methanol."
+        },
+        "separate_ATP_production_experiment_Methods_Sec31": {
+          "starting_material": "Purified radiolabeled 32P-PAR, recombinant bovine PARG",
+          "buffer": "10 mM HEPES pH 7.5, 150 mM KCl, 10 mM MgCl2",
+          "sequence": "PARG reaction in 10 microliters for 1 hour at 25 degrees C; recombinant NUDT5, pyrophosphate and/or 0.6 micromolar TH5427 added as indicated; incubate another hour; terminate at 95 degrees C for 2 minutes.",
+          "readout": "PEI-cellulose TLC, 0.3 M KH2PO4 pH 3.5; phosphoscreen/Typhoon Trio",
+          "limits": "NUDT5 and pyrophosphate amounts are not supplied in that Methods paragraph. This distinct experiment cannot be inferred from AMP/Pi hydrolysis measurements alone."
+        }
+      },
+      "critical_interpretation": [
+        "Attribution correction: AMP-Glo and Promega do not occur in normalized full-text XML or extracted Supplementary Information text. No Page AMP-Glo conditions can responsibly be supplied. The actual published AMP-Glo example below is Balikci 2024.",
+        "The one explicit orthogonal-assay designation in Page XML refers to DARTS (target engagement), not AMP-Glo. HPLC provides a different biochemical detection method; engagement, hydrolysis, and ATP production remain distinct endpoints.",
+        "Main-text substrate assay and the two screening campaigns have different buffer, enzyme, substrate, coupling-enzyme and time conditions. Preserve these variants rather than manufacture a composite protocol.",
+        "Supplementary Table 1 reports source-study QC (including mean Z-prime values 0.87 and 0.85). These are historical achieved values, not acceptance criteria or qualification achieved for a future laboratory."
+      ],
+      "access_and_evidence_limits": [
+        "PMC HTML was a challenge page; Europe PMC XML and supplementary ZIP were genuine full text.",
+        "PDF extraction emitted recoverable object-offset warnings; assay Methods text was extracted and inspected. No exhaustive visual/OCR audit of every image, synthesis page or raw dataset is claimed.",
+        "Absence of AMP-Glo is bounded to the retrieved XML and searchable extracted supplement text; it does not assert that the authors never used that technology elsewhere.",
+        "Supplementary Table 1 and narrative Methods contain differing reagent catalog numbers (ADPR and alkaline phosphatase); these were not reconciled against vendors and should not be copied as a procurement specification.",
+        "Published conditions and published QC are not a locally qualified SOP, and no raw biochemical curves were re-fitted here."
+      ]
+    },
+    {
+      "type": "reference",
+      "reference_id": "B2024",
+      "title": "Unexpected Noncovalent Off-Target Activity of Clinical BTK Inhibitors Leads to Discovery of a Dual NUDT5/14 Antagonist",
+      "authors": "Balıkçı et al.",
+      "year": 2024,
+      "pmcid": "PMC11089510",
+      "doi": "10.1021/acs.jmedchem.4c00072",
+      "download_records": [
+        {
+          "url_accessed": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11089510/",
+          "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11089510/",
+          "retrieval_utc": "2026-10-05T03:51:10.403009+00:00",
+          "http_status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "byte_count": 21309,
+          "sha256_downloaded_bytes": "95c2aa09f4ad160a67782d805240b2cba60989792b7be6fc7168284a8f875d30",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "HTTP 200 browser-challenge HTML (Checking your browser - reCAPTCHA), not the requested article/chapter/PDF; not used as substantive evidence."
+        },
+        {
+          "url_accessed": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+          "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+          "retrieval_utc": "2026-10-05T03:53:09.241931+00:00",
+          "http_status": 200,
+          "content_type": "application/xml",
+          "byte_count": 130787,
+          "sha256_downloaded_bytes": "0710da1ebedd4accde6e6cddf8cfe9a2d350c062890fbcfd03bf94bd6f316df0",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "full source retrieved"
+        }
+      ],
+      "inspected_locations": [
+        "Experimental Section > Protein Expression and Purification (XML sec4.2)",
+        "Experimental Section > Catalytic Assays (XML sec4.3), entire subsection",
+        "Table 1: NUDT5 and NUDT14 Catalytic Assay Results (tbl1), title and footnotes a/b only; graphic table cells were not visually re-audited",
+        "Results and Discussion, opening AMP-Glo screening/SPR paragraph"
+      ],
+      "text_transformation": "XML parsed with Python ElementTree; inline markup flattened and whitespace normalized for inspection. SHA256 is of original XML bytes, not flattened text.",
+      "short_excerpts": [
+        {
+          "locator": "Catalytic Assays, sec4.3",
+          "excerpt": "Inhibition activities of the compounds were determined using AMP-Glo system (Promega).",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        },
+        {
+          "locator": "Catalytic Assays, sec4.3",
+          "excerpt": "NUDT5 reactions were incubated for 20 min, while NUDT14 reactions were carried out for 1 h at rt.",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        },
+        {
+          "locator": "Catalytic Assays, sec4.3",
+          "excerpt": "Data are represented as the mean ± SD of two independent biological replicates.",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        },
+        {
+          "locator": "Table 1, footnote b",
+          "excerpt": "NA, not active (IC50 > 50 μM).",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        }
+      ],
+      "published_method_conditions": {
+        "protein_identity": "NUDT5 NCBI reference NP_054861, residues 1–208; NUDT14 NP_803877, residues 1–222. pNIC28-Bsa4 constructs with N-terminal 6xHis/TEV site; TEV cleavage and reverse-nickel purification followed by Superdex 75 are reported.",
+        "expression": "E. coli (DE3), induction at OD600 0.8; 18 degrees C overnight; IPTG 0.5 mM for NUDT5 and 0.3 mM for NUDT14.",
+        "readout": "AMP-Glo (Promega), measuring NUDT5-mediated ADPr conversion to AMP and ribose-5-phosphate via a coupled luminescence detection system.",
+        "compound_range": "50 micromolar to 0 micromolar; dilution factor and exact number of concentrations not specified in this subsection.",
+        "reaction_buffer": "20 mM HEPES, 100 mM NaCl, 0.5 mM TCEP, 1 mM MgCl2, 0.1% BSA, pH 7.4",
+        "plate_and_volume": "1536-well plates; 2 microliters initial reaction",
+        "enzyme": "1 nM NUDT5 or NUDT14",
+        "substrate": "10 micromolar ADPr",
+        "DMSO": "1% final for all reactions",
+        "reaction_times": "NUDT5 20 minutes; NUDT14 1 hour; room temperature, not an assigned numeric Celsius value.",
+        "stop": "Add 2 microliters AMP-Glo I. The stop solution is supplemented with 25 micromolar PubChem CID 16339098 to stop enzyme activity completely, as reported. The text does not call this 25 micromolar final concentration after all additions.",
+        "detection": "Further incubation with 4 microliters detection solution for 1 hour at room temperature; PHERAstar FSX luminescence reader.",
+        "normalization": "Vehicle-only 1% v/v DMSO reactions = 100% activity; 500 nM TH5427 (compound 6) with 1% DMSO = 0% activity.",
+        "replication_and_analysis": "Triplicate sets; GraphPad Prism 9; mean ± SD of two independent biological replicates. Technical triplicates must not be re-described as three independent experiments.",
+        "reported_censoring": "Table 1 footnote b defines NA/not active as IC50 >50 micromolar. This is a source-report convention and bound, not an exact 50-micromolar observation or proof of universal inactivity.",
+        "fitting_details_not_reported_here": [
+          "Relative versus absolute IC50 designation",
+          "Equation and top/bottom constraints",
+          "Weighting",
+          "Numerical acceptance criteria",
+          "Exact dilution series and dose count"
+        ]
+      },
+      "critical_interpretation": [
+        "This is the verified published AMP-Glo method. It offers different detection chemistry from Page MG, but the publications do not constitute a matched, locally qualified orthogonal assay pair.",
+        "The 500 nM TH5427 anchor is a published normalization convention, not evidence that it achieves complete inhibition for every construct, enzyme, or future assay condition. Its suitability requires independent verification.",
+        "Normalization to 0% and 100% controls does not establish whether a fitted IC50 is a free-top/free-bottom relative midpoint or the absolute control-defined 50%-activity crossing.",
+        "NUDT5 and NUDT14 reaction times differ. Reported IC50 ratios are not automatically matched-kinetic selectivity estimates, binding KD, or thermodynamic selectivity.",
+        "A fall in AMP-Glo luminescence can reflect reporter/coupling interference; AMP-Glo needs detection-only controls and independently interpretable product or binding evidence."
+      ],
+      "access_and_evidence_limits": [
+        "PMC HTML returned a browser challenge; Europe PMC XML succeeded.",
+        "Table cells are embedded images; only table title and textual footnotes were inspected in this retrieval. Previously curated repository CSV values were read but the 2024 supplement and table images were not independently re-downloaded/re-audited.",
+        "No raw curves, qualified detection window, or repeat measurements were produced in this session."
+      ]
+    },
+    {
+      "type": "reference",
+      "reference_id": "GP_REL",
+      "title": "Relative vs. absolute IC50",
+      "publisher": "GraphPad Software",
+      "identifier": "Knowledgebase FAQ 1566",
+      "download_records": [
+        {
+          "url_accessed": "https://www.graphpad.com/support/faq/relative-vs-absolute-ic50/",
+          "final_url": "https://www.graphpad.com/support/faq/relative-vs-absolute-ic50/",
+          "retrieval_utc": "2026-10-05T03:53:08.315627+00:00",
+          "http_status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "byte_count": 44767,
+          "sha256_downloaded_bytes": "b7a0a81b0b0959249c4a3fb68224345d3bd1f6db062c604aa8b73294f7c82a94",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "full source retrieved"
+        }
+      ],
+      "inspected_locations": [
+        "The difference between the relative and absolute IC50",
+        "Relative IC50",
+        "Absolute IC50",
+        "When are the relative and absolute IC50s the same?",
+        "Fitting a dose-response curve to find the absolute IC50"
+      ],
+      "short_excerpts": [
+        {
+          "locator": "Relative IC50",
+          "excerpt": "It is the concentration required to bring the curve down to point halfway between the top and bottom plateaus of the curve.",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        },
+        {
+          "locator": "Absolute IC50",
+          "excerpt": "The absolute IC50 requires that the inhibitor brings the binding or response down to less than 50%.",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        },
+        {
+          "locator": "Fitting a dose-response curve to find the absolute IC50",
+          "excerpt": "Bottom is the Y value of the bottom plateau of the curve itself.",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        }
+      ],
+      "guidance_observed": [
+        "Relative IC50 is the concentration at the midpoint of the fitted Top and Bottom. It need not coincide with 50% on an independently control-normalized activity axis.",
+        "Absolute IC50 denotes a control-defined halfway response; GraphPad notes this terminology is not entirely standard. Baseline defining 0% and the fitted Bottom are different quantities.",
+        "If the dose-response stays above the control-defined 50% level, the absolute IC50 is undefined even if the relative midpoint can be estimated.",
+        "The page provides absolute-IC50 fitting equations, distinguishes Bottom from Baseline, and advises fixing Baseline using control measurements; it also discusses Top constraints."
+      ],
+      "actual_method_conditions": "Statistical guidance, not a NUDT5 experimental protocol. No enzyme, buffer, incubation, reporter-validation or potency acceptance thresholds are supplied for this project.",
+      "application_to_this_task": "Prespecify the potency estimand and response normalization, document whether Top/Bottom are fitted or constrained, retain maximum effect and uncertainty, and label an undefined/unbracketed absolute endpoint instead of substituting a relative midpoint or a fitted extrapolation.",
+      "access_and_evidence_limits": [
+        "Full HTML text was retrieved; figures/linked Prism example file were not separately downloaded.",
+        "Guidance cannot reveal the unstated fitting settings used in the two publications or validate any new assay."
+      ]
+    },
+    {
+      "type": "reference",
+      "reference_id": "GP_INC",
+      "title": "Incomplete dose-respone curves",
+      "publisher": "GraphPad Software",
+      "edition_observed": "Prism 11 Curve Fitting Guide; title spelling is as served.",
+      "download_records": [
+        {
+          "url_accessed": "https://www.graphpad.com/guides/prism/latest/curve-fitting/reg_incomplete_dose-respone_curves.htm",
+          "final_url": "https://www.graphpad.com/guides/prism/latest/curve-fitting/reg_incomplete_dose-respone_curves.htm",
+          "retrieval_utc": "2026-10-05T03:53:08.264280+00:00",
+          "http_status": 200,
+          "content_type": "text/html",
+          "byte_count": 41985,
+          "sha256_downloaded_bytes": "706cea96c2333a5f788396f107f96fe885e32304d88b80ae2c845894d51af88c",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "full source retrieved"
+        }
+      ],
+      "inspected_locations": [
+        "REGRESSION WITH PRISM 11 > Nonlinear regression with Prism > Models (equations) built-in to Prism > Dose-response - Key concepts > Incomplete dose-respone curves; full explanatory text"
+      ],
+      "short_excerpts": [
+        {
+          "locator": "Opening explanation",
+          "excerpt": "If data haven't defined 100 or 0, then 50 is undefined too, as is the IC50.",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        },
+        {
+          "locator": "Control-constrained fit discussion",
+          "excerpt": "That is an assumption that can't be tested with the data at hand.",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        }
+      ],
+      "guidance_observed": [
+        "When dose-response data do not establish plateaus, software may still return a fit with meaningless IC50 and a very wide confidence interval.",
+        "Independent controls can constrain a fit, but assuming that higher inhibitor concentrations would reach the nonspecific-control level is a substantive assumption, not evidence supplied by incomplete data.",
+        "The page also discusses incorporating control observations into fits rather than treating their means as exact constraints; this is not an instruction to invent doses or control observations."
+      ],
+      "actual_method_conditions": "Illustrative curve-fitting guidance only; no NUDT5 assay conditions or universal concentration/count/precision thresholds.",
+      "application_to_this_task": "Distinguish fit success from identifiable potency. Lock how partial, flat, nonmonotonic, censored or failed curves will be reported, based on independent qualification; do not turn a control-anchored extrapolation into a measured potency claim.",
+      "access_and_evidence_limits": [
+        "The /latest/ URL is mutable; recorded retrieval, observed Prism 11 title and raw hash identify the inspected version.",
+        "Full HTML prose was inspected; diagrams and cited papers were not separately audited."
+      ]
+    },
+    {
+      "type": "reference",
+      "reference_id": "AGM_LUC",
+      "title": "Interferences with Luciferase Reporter Enzymes",
+      "authors": "Douglas S. Auld and James Inglese",
+      "publication": "Assay Guidance Manual; Eli Lilly & Company and National Center for Advancing Translational Sciences (NCATS), Bethesda (MD)",
+      "chapter_created": "2016-07-01",
+      "chapter_version_inspected": "Updated 2018-07-01; the book front matter also says Last Updated July 1, 2018.",
+      "canonical_url": "https://www.ncbi.nlm.nih.gov/books/NBK374281/",
+      "download_records": [
+        {
+          "url_accessed": "https://www.ncbi.nlm.nih.gov/books/NBK374281/",
+          "final_url": "https://www.ncbi.nlm.nih.gov/books/NBK374281/",
+          "retrieval_utc": "2026-10-05T03:53:08.067433+00:00",
+          "http_status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "byte_count": 21289,
+          "sha256_downloaded_bytes": "ac11919ae07a447c55f719dc294a5f7f990497d7bad507f66a643f7fce3d4bea",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "HTTP 200 browser-challenge HTML (Checking your browser - reCAPTCHA), not the requested article/chapter/PDF; not used as substantive evidence."
+        },
+        {
+          "url_accessed": "https://www.ncbi.nlm.nih.gov/books/NBK374281/?report=printable",
+          "final_url": "https://www.ncbi.nlm.nih.gov/books/NBK374281/?report=printable",
+          "retrieval_utc": "2026-10-05T03:54:10.253043+00:00",
+          "http_status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "byte_count": 21389,
+          "sha256_downloaded_bytes": "6c2982f3f8b5128dcb71e1dd7f61a8abd242f02af39f56bae28f3b82a407f708",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "HTTP 200 browser-challenge HTML (Checking your browser - reCAPTCHA), not the requested article/chapter/PDF; not used as substantive evidence."
+        },
+        {
+          "url_accessed": "https://www.ncbi.nlm.nih.gov/books/NBK374281/?report=reader",
+          "final_url": "https://www.ncbi.nlm.nih.gov/books/NBK374281/?report=reader",
+          "retrieval_utc": "2026-10-05T03:54:10.261838+00:00",
+          "http_status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "byte_count": 21372,
+          "sha256_downloaded_bytes": "cf400f9970dc5ab9e06e5453b71f888510e5e7fd11bf3d8452f35bba71c9375b",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "HTTP 200 browser-challenge HTML (Checking your browser - reCAPTCHA), not the requested article/chapter/PDF; not used as substantive evidence."
+        },
+        {
+          "url_accessed": "https://www.ncbi.nlm.nih.gov/books/NBK374281/pdf/Bookshelf_NBK374281.pdf",
+          "final_url": "https://www.ncbi.nlm.nih.gov/books/NBK374281/pdf/Bookshelf_NBK374281.pdf",
+          "retrieval_utc": "2026-10-05T03:54:10.250644+00:00",
+          "http_status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "byte_count": 21358,
+          "sha256_downloaded_bytes": "a975845a30fbe037f438f8474bd0d08f38ee838ba4affd47e47546e1dbcb5e63",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "HTTP 200 browser-challenge HTML (Checking your browser - reCAPTCHA), not the requested article/chapter/PDF; not used as substantive evidence."
+        },
+        {
+          "url_accessed": "https://www.ncbi.nlm.nih.gov/books/n/assayguide/ilre/",
+          "final_url": "https://www.ncbi.nlm.nih.gov/books/n/assayguide/ilre/",
+          "retrieval_utc": "2026-10-05T03:55:10.565993+00:00",
+          "http_status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "byte_count": 21311,
+          "sha256_downloaded_bytes": "4636b1c592f101cdbf11271b41a20b628add3bae63692d922cd68b942e9c5e68",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "HTTP 200 browser-challenge HTML (Checking your browser - reCAPTCHA), not the requested article/chapter/PDF; not used as substantive evidence."
+        },
+        {
+          "url_accessed": "https://ncbi.nlm.nih.gov/books/NBK374281/",
+          "final_url": "https://ncbi.nlm.nih.gov/books/NBK374281/",
+          "retrieval_utc": "2026-10-05T03:55:10.936290+00:00",
+          "http_status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "byte_count": 21270,
+          "sha256_downloaded_bytes": "b2d40f3062a33bd1995042b85004c12e41467b87fa9cf73e585c7f0207598cf6",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "HTTP 200 browser-challenge HTML (Checking your browser - reCAPTCHA), not the requested article/chapter/PDF; not used as substantive evidence."
+        },
+        {
+          "url_accessed": "https://bpb-us-w2.wpmucdn.com/u.osu.edu/dist/2/113446/files/2022/01/Assay-Guidance-Manual-2018.pdf",
+          "final_url": "https://bpb-us-w2.wpmucdn.com/u.osu.edu/dist/2/113446/files/2022/01/Assay-Guidance-Manual-2018.pdf",
+          "retrieval_utc": "2026-10-05T03:55:10.995327+00:00",
+          "http_status": 200,
+          "content_type": "application/pdf",
+          "byte_count": 48575765,
+          "sha256_downloaded_bytes": "97025683b4db9db121bfada968b0ee345ac9e8792cd57e6c2b7e0a556e586a2f",
+          "hash_scope": "Exact saved HTTP response-body bytes, before XML/HTML parsing or PDF text extraction. Accept-Encoding: identity was requested; no Content-Encoding was returned. HTTP framing/headers are not part of the hash.",
+          "content_status": "Publisher-attributed 2018 full manual PDF from an Ohio State-hosted mirror; relevant original-author chapter inspected."
+        }
+      ],
+      "authorship_verification": "PDF front matter identifies Eli Lilly & Company and NCATS as publisher and says NCATS manages content; chapter header names Auld and Inglese, with Inglese affiliation NCATS/NIH. Hosting is an Ohio State mirror, not a successfully fetched current NCBI page.",
+      "inspected_locations": [
+        {
+          "section": "Front matter, publisher and version",
+          "pdf_pages": "1–3"
+        },
+        {
+          "section": "Assay Artifact Definition",
+          "printed_pages": "1027–1028",
+          "pdf_pages": "1047–1048"
+        },
+        {
+          "section": "Role of Primary, Secondary, Orthogonal and Counterscreen Assays in the Identification of Assay Artifacts; Figure 1 caption",
+          "printed_pages": "1028–1029",
+          "pdf_pages": "1048–1049"
+        },
+        {
+          "section": "Role of Ligand-based Stabilization of Reporter Enzymes in RGA Responses; Figure 7 caption",
+          "printed_pages": "1036–1038",
+          "pdf_pages": "1056–1058"
+        },
+        {
+          "section": "Strategies to Mitigate Luciferase Inhibitor Interference",
+          "printed_pages": "1038–1039",
+          "pdf_pages": "1058–1059"
+        }
+      ],
+      "text_transformation": {
+        "method": "pypdf 5.9.0 text extraction, with one-based PDF-page markers. Extracted inspection window is PDF pages 1021–1060; only listed chapter sections are evidence for this task. No OCR.",
+        "sha256_derived_excerpt_text": "ce2b7b35193d1ab51c0820bcda3450b5d99b378c430349b9478c7ec4e5b73252",
+        "hash_distinction": "Derived-text hash is not the raw full-PDF hash."
+      },
+      "short_excerpts": [
+        {
+          "locator": "Printed p.1028 / PDF p.1048",
+          "excerpt": "Positive results in orthogonal assays do not imply that the desired mechanism of activity has been achieved.",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        },
+        {
+          "locator": "Printed p.1038 / PDF p.1058",
+          "excerpt": "one can check for direct interference with the formulated detection mix.",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        },
+        {
+          "locator": "Printed p.1038 / PDF p.1058",
+          "excerpt": "the enzyme assay can be run to completion or excess product can be added to the assay (in the absence of the enzyme)",
+          "quote_processing": "Whitespace normalized only; checked against extracted source text."
+        }
+      ],
+      "guidance_and_actual_conditions_observed": [
+        "Artifacts are changes in assay signal unrelated to the biological target/pathway. The chapter distinguishes reporter interference from genuine off-target biology such as cytotoxicity.",
+        "Orthogonal assays aim to preserve the biological question while changing an independent detection component. A counterscreen seeks detector interference; a negative counterscreen alone does not establish target activity, and a positive orthogonal result alone does not establish the desired mechanism.",
+        "For biochemical luciferase detection, the published control concept is to run reaction to completion or add excess product without the target enzyme, then add detection reagents and test compounds for effects on the detection reaction. No universal product concentration or NUDT5-specific acceptance band is stated.",
+        "Reporter inhibitors can give decreased luminescence directly or increased/bell-shaped responses in cell-based reporter assays through ligand-based reporter stabilization and detection-reagent effects. Signal direction alone is not proof of biology.",
+        "The chapter recommends orthogonal reporters and notes detector variants/formulations differ in inhibitor susceptibility. Less susceptible does not mean interference-proof."
+      ],
+      "application_to_this_task": "A proposed AMP-spike/no-NUDT5 AMP-Glo control is an adaptation of this published detection-control principle, not a performed or source-validated NUDT5 protocol. Complement it with appropriately qualified MG/product-detection controls and a non-shared detection method; separately check any cellular nuclear-ATP reporter and general cell effects.",
+      "access_and_evidence_limits": [
+        "All attempted current NCBI main/print/reader/PDF/alias routes returned HTTP 200 challenge HTML; those hashes identify failed representations only.",
+        "The accessed substantive text is the 2018 chapter in a 2018 manual mirrored by Ohio State. Its identity/version were verified from front matter, but identity with the current online chapter is not claimed.",
+        "Only relevant chapter sections, not the 1340-page manual as a whole, were substantively inspected.",
+        "This is authoritative general assay guidance, not direct experimental evidence that TH5427, MRK compounds, or any project candidate interferes with a specific assay."
+      ]
+    }
+  ],
+  "interpretation": {
+    "type": "assay_design_interpretation_not_completed_qualification",
+    "key_correction": "Do not cite Page 2018 for an AMP-Glo protocol. Cite Page for MG/HPLC and Balikci 2024 for AMP-Glo. Any new comparison between them is a proposed qualification study, not published matched-assay validation.",
+    "future_qualification_requirements": [
+      {
+        "gate": "G0",
+        "required_evidence": "Document intended protein species/construct, actual sample identity, relevant purity/solubility/exposure and reagent identities. Resolve source catalog discrepancies rather than guessing.",
+        "status": "Not measured or qualified here."
+      },
+      {
+        "gate": "G1: product detection and reaction performance",
+        "required_evidence": "Establish product calibration/recovery, background and reaction/detection linearity, substrate/time behavior, reproducibility and acceptable DMSO/compound exposure in the intended matrix. Preserve published condition variants until a locally justified choice is made.",
+        "status": "Future independent pilot work; no numerical acceptance limits invented."
+      },
+      {
+        "gate": "G1: reporter/coupling controls",
+        "required_evidence": "For MG, distinguish phosphate contamination/color effects and phosphatase-coupling interference from NUDT5 effects; for AMP-Glo, evaluate known-product recovery through the detection system without NUDT5 and suitable compound-only/background controls. Match actual reagent formulation and readout exposure. These are proposed adaptations, not completed checks.",
+        "status": "Not performed; compound interference is possible, not demonstrated."
+      },
+      {
+        "gate": "G1: orthogonal interpretation",
+        "required_evidence": "Pair interpretable catalytic product measurements with a genuinely independent detection route and appropriately controlled binding evidence. MG and AMP-Glo both involve coupling chemistry. A cell-viability or engagement endpoint is not a replacement biochemical assay; binding KD is not inhibition IC50.",
+        "status": "Future qualification; same-lab paired data absent."
+      },
+      {
+        "gate": "G1: ATP production",
+        "required_evidence": "Qualify and measure ATP-producing chemistry separately. Hydrolytic AMP/Pi formation does not establish ATP synthesis or the nuclear ATP phenotype. Page provides a separate radiolabeled TLC example, not automatic validation of a future luminescent ATP reporter.",
+        "status": "No ATP-production or cell reporter qualification performed."
+      },
+      {
+        "gate": "G4: concentration-response analysis lock",
+        "required_evidence": "Specify response definition and controls, relative midpoint versus absolute control-normalized 50% crossing, model and parameter constraints, weighting, technical-replicate aggregation versus independent experiments, uncertainty, maximum effect, and rules for incomplete/flat/failed/censored curves. Lock justified criteria after independent pilots and before confirmatory outcomes.",
+        "status": "No fitted dataset, adopted threshold, or completed analysis lock."
+      }
+    ],
+    "not_permitted_inferences": [
+      "Do not call a numerical fit biologically validated because software converges.",
+      "Do not replace undefined absolute IC50 with relative IC50 without changing the estimand label.",
+      "Do not treat a control-normalized zero as experimentally proven zero activity without independent support.",
+      "Do not equate a reported >50 micromolar bound, a missing assay, a decoy label, and measured inactivity.",
+      "Do not promote published potency/QC numbers to local go/no-go thresholds, or claim a lab passed a gate.",
+      "Do not promote retrospective source/MRK results, literature remeasurement, or SOFTWARE TESTS ONLY synthetic data to new prospective biological evidence."
+    ],
+    "reference_links": {
+      "published_MG_and_HPLC": "P2018",
+      "published_AMP_Glo": "B2024",
+      "IC50_estimand": "GP_REL",
+      "incomplete_curve_limits": "GP_INC",
+      "reporter_interference": "AGM_LUC"
+    }
+  }
+}

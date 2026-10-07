@@ -1,0 +1,47 @@
+source_compound,target,csv_line,author_csv_raw,ledger_text,table1_text,numeric_or_status_agrees_after_whitespace_trim,table1_check
+1,NUDT5,2,0.837 ± 0.329,0.837 ± 0.329,0.837 ± 0.329,True,agrees
+1,NUDT14,2,0.990 ± 0.110,0.990 ± 0.110,0.990 ± 0.110,True,agrees
+2,NUDT5,3,not active,not active,,True,not_in_table1
+2,NUDT14,3,not tested,not tested,,True,not_in_table1
+3,NUDT5,4,not active,not active,,True,not_in_table1
+3,NUDT14,4,not tested,not tested,,True,not_in_table1
+4,NUDT5,5,13.9 ± 0.62 ,13.9 ± 0.62,,True,not_in_table1
+4,NUDT14,5,not tested,not tested,,True,not_in_table1
+5,NUDT5,6,21.2 ± 1.02 ,21.2 ± 1.02,,True,not_in_table1
+5,NUDT14,6,not tested,not tested,,True,not_in_table1
+6,NUDT5,7,not tested,not tested,,True,not_in_table1
+6,NUDT14,7,not tested,not tested,,True,not_in_table1
+7,NUDT5,8,not tested,not tested,,True,not_in_table1
+7,NUDT14,8,not tested,not tested,,True,not_in_table1
+8,NUDT5,9,not tested,not tested,,True,not_in_table1
+8,NUDT14,9,not tested,not tested,,True,not_in_table1
+9,NUDT5,10,0.270 ± 0.027,0.270 ± 0.027,0.270 ± 0.027,True,agrees
+9,NUDT14,10,0.162 ± 0.005,0.162 ± 0.005,0.162 ± 0.005,True,agrees
+10,NUDT5,11,0.487 ± 0.010,0.487 ± 0.010,0.487 ± 0.010,True,agrees
+10,NUDT14,11,0.263 ± 0.031,0.263 ± 0.031,0.263 ± 0.031,True,agrees
+11,NUDT5,12,2.04 ± 0.240,2.04 ± 0.240,2.04 ± 0.240,True,agrees
+11,NUDT14,12,0.519 ± 0.084,0.519 ± 0.084,0.519 ± 0.084,True,agrees
+12,NUDT5,13,not active,not active,NA,True,agrees
+12,NUDT14,13,not active,not active,NA,True,agrees
+13,NUDT5,14,not active,not active,NA,True,agrees
+13,NUDT14,14,3.72 ± 0.190,3.72 ± 0.190,3.72 ± 0.190,True,agrees
+14,NUDT5,15,13.8 ± 0.900,13.8 ± 0.900,13.8 ± 0.900,True,agrees
+14,NUDT14,15,1.64 ± 0.140,1.64 ± 0.140,1.64 ± 0.140,True,agrees
+15,NUDT5,16,not active,not active,NA,True,agrees
+15,NUDT14,16,not active,not active,NA,True,agrees
+16,NUDT5,17,not tested,not tested,,True,not_in_table1
+16,NUDT14,17,not tested,not tested,,True,not_in_table1
+17a,NUDT5,18,not tested,not tested,,True,not_in_table1
+17a,NUDT14,18,not tested,not tested,,True,not_in_table1
+17b,NUDT5,19,not tested,not tested,,True,not_in_table1
+17b,NUDT14,19,not tested,not tested,,True,not_in_table1
+18a,NUDT5,20,not tested,not tested,,True,not_in_table1
+18a,NUDT14,20,not tested,not tested,,True,not_in_table1
+18b,NUDT5,21,not tested,not tested,,True,not_in_table1
+18b,NUDT14,21,not tested,not tested,,True,not_in_table1
+18c,NUDT5,22,not tested,not tested,,True,not_in_table1
+18c,NUDT14,22,not tested,not tested,,True,not_in_table1
+19,NUDT5,23,not tested,not tested,,True,not_in_table1
+19,NUDT14,23,not tested,not tested,,True,not_in_table1
+N-Boc-protected 7,NUDT5,24,not tested,not tested,,True,not_in_table1
+N-Boc-protected 7,NUDT14,24,not tested,not tested,,True,not_in_table1

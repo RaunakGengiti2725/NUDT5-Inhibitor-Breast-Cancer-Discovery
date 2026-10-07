@@ -1,0 +1,89 @@
+{
+  "arguments": {
+    "output": "/home/ubuntu/selectivity-release",
+    "predictions": "research/results/transfer.json",
+    "repository": ".",
+    "source": "research/selectivity/paired_evidence.json"
+  },
+  "artifacts": {
+    "diagnostic_scores.csv": {
+      "sha256": "417b0210046864bad588b3fa20eb16d16a30581de5470472459dd008906a7593",
+      "size_bytes": 17081
+    },
+    "pharmacology.csv": {
+      "sha256": "7efbe79ffe1142d22d7003dc6ae38206223dc7155c1c999fc62db85bde0cbb0a",
+      "size_bytes": 12043
+    },
+    "selectivity.json": {
+      "sha256": "380f193ec8c895397bac0aea0c802acd1d2c6d483de0cd732b2868431b57aedd",
+      "size_bytes": 190079
+    },
+    "selectivity.md": {
+      "sha256": "e37061e9a6143747faa2ac87876c287467a6ccb4fb60c04a574dcb3a8c4b9a56",
+      "size_bytes": 8299
+    },
+    "target_endpoints.csv": {
+      "sha256": "d38aa5c822e4f3aaa5114853db063ee8d115d1bb53d75442472e37b9c989feae",
+      "size_bytes": 20520
+    }
+  },
+  "command": [
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/.venv/bin/python",
+    "scripts/scripts/selectivity.py",
+    "--source",
+    "research/selectivity/paired_evidence.json",
+    "--predictions",
+    "research/results/transfer.json",
+    "--repository",
+    ".",
+    "--output",
+    "/home/ubuntu/selectivity-release"
+  ],
+  "completion": "This manifest is published last; absent manifest means incomplete run",
+  "files": {
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/compounds.csv": "d628a0fa1926c1e44c9b2a79adf92b444959e80153cf9019ef5e56b4747c3576",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/final_hits.csv": "38c8d5266ce127b1fd5babde0c895190d0b382e3c9e3dae7581e320766745100",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/requirements.lock": "be23dbecaf88d46dcd0a985949c015a8d75676f76ed00115c7b9c754fb62bd0c",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/reference_structures.csv": "db8f9c3d748c75b0d14895f30080ce105e57f47d88597b5db3ea2a3d060b2d2f",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/results/source-assay-provenance.json": "788645a68ee6e87e1be9528283d9a821246395ce0a1fcfe673545706e0774b56",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/results/transfer-manifest.json": "cb60e86c60aa1d51d804020ba2790427f2db5f0ef3a6ca0de06d8ec3455f5b7e",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/results/transfer.json": "df6b544a2c5b8aca0ab3007f016133f8fd012629210e375bd34d0fdbad32e50a",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/README.md": "68790a8855413e957eed6e534335906fead9a94ba46450c40cba0f36b489baeb",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/analysis_contract.json": "b01dcc6bb2be97fa684a33b62c77291929833ff3d867a92189b53ae15c7e6e4f",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/analysis_contract.md": "62e23497ef996a29953e81d5c130ae82e490bbea1001711f87c83229de4a1dda",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/artifact_manifest.json": "6754924b9eb5be2b21d255113c6cb373d029a2ef5f123cd20c8eb3ca135643d1",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/assay_conditions.json": "360713b14426e39e9945b020e9baa27a21de75c24326ef92d85bb732fbff9b5b",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/contract_test_vectors.json": "85ccee090ea74ebd4c9da4c088457979d602786c9d103b4d1abf89ad143bb00c",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/frozen_scores.csv": "80516dc081cdf2008e46e30151870e0d88d5bce1f086c3e857ffe30b03a625e3",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/independent_verification.json": "e1919a8acf3a8cbf9e1249f5c260be9f9e7767ec6b40473573bffc690e790adc",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/paired_evidence.json": "2872dd55843e6cc7ac03ece02df2684bb7ab637786df47d95b2cd14626c7aa6f",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/paired_evidence.schema.json": "167e029f2fbccc47dc7aa78dd4a75ced24f04df8b4bb09df4f498260934d1887",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/primary_excerpts.json": "fc0b01db2de097ab34baaedcc3c50a8f11d2ab0957386ea0d02556c1ef5c5c5c",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/provenance.json": "96e60805ad39af96339666e08cfff047cfa8d76c38c3733ccb7514004c17f64c",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/source_disagreements.json": "28a045e8fc6d1aead6787a9d55fd4b58009203d57c9cf7b58aeed320392e3a8e",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/source_verification.csv": "17d7345ffd3cc11c9c64ec6ab0d4a983dd79957a378f1ecd17624a0cfbc04ae4",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/sources/balikci.xml.gz": "c314a1940ec6ee60cb530cb75bcea3b437303653cec1bcb661e955cd8b40627b",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/sources/jm4c00072_0007.jpg.gz": "92dfc00c9547b4e7b715822f5b6d016a5e2aae76de26c6abf42b50fce3542b6b",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/sources/jm4c00072_0008.jpg.gz": "eb656f3aeddeb9c1b0b888a75b2f5bcf13555745b3d9dc63a8ec566ac87339a1",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/sources/jm4c00072_si_002.csv.gz": "a628c90932abb6c9eaac12a6236462248da96cd6e7a855fb4cde28562a5705dd",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/summary_counts.json": "428664709d4d4153f1df7ba2e98682b022519b99cacbefbcd8b7e6ae9f8f2dac",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/target_evidence.csv": "d38aa5c822e4f3aaa5114853db063ee8d115d1bb53d75442472e37b9c989feae",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/selectivity/verification.md": "b5793a46f28dc2a6ef6378826247b06952d75e9bbc662bf1d45efd9b31850e70",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/research/source_assays.csv": "5bd0f9e201135d0ae2c5786887a5a514d6e6516e7e791bb4cdf1ae45286f573e",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/scripts/scripts/selectivity.py": "ea68091d0602c8f423865f7556eea421c8c43758b510aa0b96f8a7aef5f01d85",
+    "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery/scripts/scripts/transfer.py": "e592d095678369c08ff0b4574ba867cfced70c0baebf4776df7257380e6676fa"
+  },
+  "git_dirty": false,
+  "git_revision": "26c20a349bbdbaab67550802d3922b6b7e7ba163",
+  "platform": "Linux-6.8.0-1061-aws-x86_64-with-glibc2.35",
+  "python": "3.12.15",
+  "schema_version": "1.0.0",
+  "versions": {
+    "matplotlib": "3.10.3",
+    "numpy": "2.2.6",
+    "rdkit": "2025.9.6",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.3"
+  },
+  "warning": "Previously inspected single-publication retrospective evidence; not fresh external or prospective validation. No models fitted, new experiments, selectivity classifier, significance tests, ratio confidence intervals or biological qualification."
+}

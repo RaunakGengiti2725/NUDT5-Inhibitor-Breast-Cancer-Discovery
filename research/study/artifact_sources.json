@@ -1,0 +1,41 @@
+{
+  "source_session_role": "study",
+  "sources": [
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/7ba87084-14c3-48f4-a9fb-efa8469e7db0/NUDT5_external_evidence_report.md",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/835676c8-c47a-45a8-9551-ff7acf74a54d/structural_selectivity_report.md",
+    "https://www.thesgc.org/chemical-probes/mrk-952",
+    "https://www.thesgc.org/sites/default/files/inline-images/download_17.png",
+    "https://www.thesgc.org/sites/default/files/inline-images/download%20%281%29_13.png",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7618541/",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:41196952%20AND%20SRC:MED&format=json&resultType=core",
+    "https://researcher-resources.acs.org/publish/author_guidelines?coden=acbcct",
+    "https://researcher-resources.acs.org/publish/author_guidelines?coden=amclct",
+    "https://researcher-resources.acs.org/publish/author_guidelines?coden=jcisd8"
+  ],
+  "artifacts": [
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/02e4e61d-4547-4f0d-a120-3d6af2eb138f/NUDT5_extension_report.md",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/fc55cc60-95ef-430d-b799-32841d7af866/hypotheses_falsification.csv",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/0cac0882-bb04-4dba-9445-6295749f9124/evidence_categories.json",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/68fa428e-70eb-45af-bab9-2b384d6653ea/validation_and_gates.json",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/bddf09ca-4d89-4cbb-88ea-f074fc692b9e/source_register.json",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/8fb85bcf-136a-475b-935e-885d340f9cb2/artifact_validation.json",
+    "https://la-hacks-rttothemoon.devinenterprise.com/attachments/e98116cc-59eb-4481-b5d0-6f26ec93efbe/NUDT5_extension_evidence_bundle.zip"
+  ],
+  "limits": [
+    "No repository inspection, edits, commits, pushes, PRs, new sessions, outreach, deposit changes, model fitting/scoring, docking, simulations or experiments occurred.",
+    "The 45-structure counts, 19 positives/26 unassayed decoys, project identity mappings, known TH5427 graph error and supplied structural-file caveats were accepted as context, not independently re-audited.",
+    "Scientific expansion stopped after one citation hop from the 2026 degrader study to the 2025 Science study. This was not an exhaustive novelty or literature search.",
+    "Not searched or repeated: broad literature/database census, patents, PubChem BioAssay, vendors/availability/prices, all later citations, actual repository overlap, raw assay reanalysis, new PDB/contact or structure-factor analysis, supplementary-data re-audit, and the original nuclear-ATP study cited by Page.",
+    "The 2025 Europe PMC XML endpoint returned HTTP 500; its primary full text was successfully retrieved and inspected through PMC HTML. Downloading a complete article does not imply every figure, supplement or raw dataset was audited.",
+    "The 2025 and 2026 mechanistic papers share investigators and the degrader toolkit and are not wholly independent replications.",
+    "MRK-952 purified-assay species and construct remain unresolved. Human-cell use does not identify the purified-enzyme construct; a strict species-confirmed human biochemical holdout claim remains blocked.",
+    "The probe-pair outcomes are already exposed. A correct single ordering is only one concordant pair; under a symmetric random-order null its probability is one half. A reverse order contradicts that pair-specific prediction, not every possible use of the model.",
+    "Y74E catalytic competence in the published ADP-ribose assay does not establish its ATP-producing activity, PPAT binding, expression or localization in T47D. Those properties, same-line context competence and cellular engagement/selectivity windows are prerequisites, not demonstrated outcomes here.",
+    "The proposed prospective validation has not been executed or operationally locked. Sample sizes, meaningful-effect/equivalence margins and exposure windows must be justified from independent qualification/pilot work before confirmatory measurements; none were fabricated.",
+    "Feasibility rankings are conditional on laboratory platforms and reagent access that were not checked. The three extensions remain hypotheses, not measured discoveries.",
+    "Venue assessments reflect inspected official scopes and scientific judgment, not acceptance probabilities. No new biological data, clinical efficacy, exhaustive novelty, or publication acceptance guarantee is provided."
+  ]
+}

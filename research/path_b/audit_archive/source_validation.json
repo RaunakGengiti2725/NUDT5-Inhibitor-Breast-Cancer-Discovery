@@ -1,0 +1,2900 @@
+{
+  "baseline": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+  "manuscript_sha256": "5ee7257be5a09c9862c2ead2f98416e1e8d1b2fa875624ca009df5cb95934bbb",
+  "commands": "commands_run.md",
+  "details": {
+    "baseline": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+    "scope": "Independent source, archive, Methods, supplemental and frozen-output fidelity; no fresh model fitting or structural observations",
+    "errors": [],
+    "warnings": [
+      {
+        "same_basename_different_namespace": [
+          "input_hashes.json",
+          "p1_audit_evidence"
+        ],
+        "not_a_corresponding_artifact": true
+      },
+      {
+        "same_basename_different_namespace": [
+          "artifact_manifest.json",
+          "p3_audit_evidence"
+        ],
+        "not_a_corresponding_artifact": true
+      }
+    ],
+    "original_release_files": [
+      "README.md",
+      "compounds.csv",
+      "final_hits.csv",
+      "requirements.txt",
+      "scripts/scripts/pipeline.py"
+    ],
+    "original_release_matches_archive": true,
+    "zip_checks": {
+      "p1_audit_evidence.zip": {
+        "members": 28,
+        "sha256": "a5803796f65c119ff548d31da6b05393053b196787e2b7ba046220bfe2683300",
+        "crc_ok": true
+      },
+      "path_b_priority0_final_handoff.zip": {
+        "members": 41,
+        "sha256": "d8651da42780f6bb564c0bfcfd9efcf079c338aba774d95777a362e3f73a9d50",
+        "crc_ok": true
+      },
+      "P2_evidence_bundle.zip": {
+        "members": 40,
+        "sha256": "5b772547518da828e250c254b1bd22d176ae0295e4fe8fd1ec5b14fcf0aa22c3",
+        "crc_ok": true
+      },
+      "p3_audit_evidence.zip": {
+        "members": 46,
+        "sha256": "f2ef4cd7af4c1b7b9013b1e15e710fe927d47846948f67724ddca1b5ba204407",
+        "crc_ok": true
+      }
+    },
+    "standalone_zip_comparisons": [
+      {
+        "attachment": "partitions.json",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      },
+      {
+        "attachment": "current_methods.csv",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      },
+      {
+        "attachment": "P2_validation.json",
+        "archive": "P2_evidence_bundle",
+        "match": true
+      },
+      {
+        "attachment": "commands_run.md",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      },
+      {
+        "attachment": "P2_coverage_supplements.json",
+        "archive": "P2_evidence_bundle",
+        "match": true
+      },
+      {
+        "attachment": "P2_provenance.json",
+        "archive": "P2_evidence_bundle",
+        "match": true
+      },
+      {
+        "attachment": "p1_claim_audit.csv",
+        "archive": "p1_audit_evidence",
+        "match": true
+      },
+      {
+        "attachment": "audit_provenance.json",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      },
+      {
+        "attachment": "requested_component_checklist.csv",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      },
+      {
+        "attachment": "p3_claim_dispositions.csv",
+        "archive": "p3_audit_evidence",
+        "match": true
+      },
+      {
+        "attachment": "historical_methods_coverage.csv",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      },
+      {
+        "attachment": "input_hashes.json",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      },
+      {
+        "attachment": "input_hashes.json",
+        "archive": "p1_audit_evidence",
+        "match": false
+      },
+      {
+        "attachment": "P2_gap_notes.md",
+        "archive": "P2_evidence_bundle",
+        "match": true
+      },
+      {
+        "attachment": "P2_claim_dispositions.csv",
+        "archive": "P2_evidence_bundle",
+        "match": true
+      },
+      {
+        "attachment": "artifact_manifest.json",
+        "archive": "p3_audit_evidence",
+        "match": false
+      },
+      {
+        "attachment": "artifact_manifest.json",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      },
+      {
+        "attachment": "P2_inventory_context.csv",
+        "archive": "P2_evidence_bundle",
+        "match": true
+      },
+      {
+        "attachment": "priority0_report.md",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      },
+      {
+        "attachment": "claim_inventory.csv",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      },
+      {
+        "attachment": "p3_coverage_and_gaps.md",
+        "archive": "p3_audit_evidence",
+        "match": true
+      },
+      {
+        "attachment": "line_coverage_ledger.csv",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      },
+      {
+        "attachment": "current_methods_coverage.csv",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      },
+      {
+        "attachment": "p1_audit_notes.md",
+        "archive": "p1_audit_evidence",
+        "match": true
+      },
+      {
+        "attachment": "handoff_validation.json",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      },
+      {
+        "attachment": "historical_methods.csv",
+        "archive": "path_b_priority0_final_handoff",
+        "match": true
+      }
+    ],
+    "archive_manifests": [
+      {
+        "archive": "path_b_priority0_final_handoff",
+        "checked_entries": 40,
+        "all_match": true
+      },
+      {
+        "archive": "p1_audit_evidence",
+        "checked_entries": 27,
+        "all_match": true
+      },
+      {
+        "archive": "p3_audit_evidence",
+        "checked_entries": 45,
+        "all_match": true
+      }
+    ],
+    "repository_hash_checks": {
+      "p1_audit_evidence": {
+        "checked": 51,
+        "unresolved_path_aliases": []
+      },
+      "P2_evidence_bundle": {
+        "checked": 72,
+        "unresolved_path_aliases": []
+      },
+      "p3_audit_evidence": {
+        "checked": 48,
+        "unresolved_path_aliases": []
+      }
+    },
+    "docx_counts": {
+      "paragraphs": 720,
+      "tables": 13,
+      "blocks": 1324
+    },
+    "methods": {
+      "current_methods.csv": {
+        "rows": 97,
+        "statuses": {
+          "PARTIALLY IMPLEMENTED": 6,
+          "IMPLEMENTED": 91
+        },
+        "quote_mismatches": [],
+        "uncovered_nonwhitespace": []
+      },
+      "historical_methods.csv": {
+        "rows": 264,
+        "statuses": {
+          "PARTIALLY IMPLEMENTED": 130,
+          "DESCRIBED ONLY": 134
+        },
+        "quote_mismatches": []
+      }
+    },
+    "historical_key_passages": {
+      "P004": "3Raunak Gengiti* and Nikhil Srinivasan",
+      "P192": "115  DUD-E property-matched decoys [35]: |∆MW| < 50, |∆cLogP| < 1.0, T < 0.3 [36]."
+    },
+    "checklist": {
+      "count": 21,
+      "statuses": {
+        "DESCRIBED ONLY": 20,
+        "IMPLEMENTED": 1
+      },
+      "erratum": "CL-12 and CM-047–049 omit implemented diagnostic expected_calibration_error; no trained fused calibration is present."
+    },
+    "supplements": [
+      {
+        "id": "P2-S001",
+        "parents": [
+          "C-0589",
+          "C-0590",
+          "C-0591",
+          "C-0592",
+          "C-0593",
+          "C-0594"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 196,
+        "line_end": 196,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-S002",
+        "parents": [
+          "C-0595",
+          "C-0596",
+          "C-0597",
+          "C-0598",
+          "C-0599",
+          "C-0600"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 197,
+        "line_end": 197,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-S003",
+        "parents": [
+          "C-0601",
+          "C-0602",
+          "C-0603",
+          "C-0604",
+          "C-0605",
+          "C-0606"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 198,
+        "line_end": 198,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-S004",
+        "parents": [
+          "C-0607",
+          "C-0608",
+          "C-0609",
+          "C-0610",
+          "C-0611",
+          "C-0612"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 199,
+        "line_end": 199,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-S005",
+        "parents": [
+          "C-0613",
+          "C-0614",
+          "C-0615",
+          "C-0616",
+          "C-0617",
+          "C-0618"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 200,
+        "line_end": 200,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-S006",
+        "parents": [
+          "C-0619",
+          "C-0620",
+          "C-0621",
+          "C-0622",
+          "C-0623",
+          "C-0624"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 201,
+        "line_end": 201,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-S007",
+        "parents": [
+          "C-0583",
+          "C-0584",
+          "C-0585",
+          "C-0586",
+          "C-0587",
+          "C-0588"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 194,
+        "line_end": 194,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-S008",
+        "parents": [
+          "C-0291",
+          "C-0292",
+          "C-0293",
+          "C-0294",
+          "C-0295",
+          "C-0296"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 112,
+        "line_end": 112,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-S009",
+        "parents": [],
+        "source": "research/manuscript.md",
+        "line_start": 144,
+        "line_end": 144,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-S010",
+        "parents": [],
+        "source": "scripts/build_selectivity_figures.py",
+        "line_start": 174,
+        "line_end": 189,
+        "fidelity": "AST-assembled captions, not contiguous code text"
+      },
+      {
+        "id": "P2-S011",
+        "parents": [],
+        "source": "scripts/build_selectivity_figures.py",
+        "line_start": 174,
+        "line_end": 189,
+        "fidelity": "AST-assembled captions, not contiguous code text"
+      },
+      {
+        "id": "P2-X0305-RF",
+        "parents": [
+          "C-0305"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 116,
+        "line_end": 116,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0305-GBT",
+        "parents": [
+          "C-0305"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 116,
+        "line_end": 116,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0305-SVM_RBF",
+        "parents": [
+          "C-0305"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 116,
+        "line_end": 116,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0305-Nearest_active",
+        "parents": [
+          "C-0305"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 116,
+        "line_end": 116,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0305-Equal_mean",
+        "parents": [
+          "C-0305"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 116,
+        "line_end": 116,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0318-Equal_mean",
+        "parents": [
+          "C-0318"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 120,
+        "line_end": 120,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0318-GBT",
+        "parents": [
+          "C-0318"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 120,
+        "line_end": 120,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0318-Nearest_active",
+        "parents": [
+          "C-0318"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 120,
+        "line_end": 120,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0318-Property_LR",
+        "parents": [
+          "C-0318"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 120,
+        "line_end": 120,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0318-RF",
+        "parents": [
+          "C-0318"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 120,
+        "line_end": 120,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0318-SVM_RBF",
+        "parents": [
+          "C-0318"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 120,
+        "line_end": 120,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0351-NUDT5",
+        "parents": [
+          "C-0351"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 128,
+        "line_end": 128,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0351-NUDT14",
+        "parents": [
+          "C-0351"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 128,
+        "line_end": 128,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0405-Property_LR",
+        "parents": [
+          "C-0405"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 144,
+        "line_end": 144,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0405-Fingerprint_LR",
+        "parents": [
+          "C-0405"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 144,
+        "line_end": 144,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0405-SVM_RBF",
+        "parents": [
+          "C-0405"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 144,
+        "line_end": 144,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0405-RF",
+        "parents": [
+          "C-0405"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 144,
+        "line_end": 144,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0405-Nearest_active",
+        "parents": [
+          "C-0405"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 144,
+        "line_end": 144,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0502-Nearest_active",
+        "parents": [
+          "C-0502"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 169,
+        "line_end": 169,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0502-SVM_RBF",
+        "parents": [
+          "C-0502"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 169,
+        "line_end": 169,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0502-Equal_mean",
+        "parents": [
+          "C-0502"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 169,
+        "line_end": 169,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0504-Property_LR",
+        "parents": [
+          "C-0504"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 169,
+        "line_end": 169,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0504-RF",
+        "parents": [
+          "C-0504"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 169,
+        "line_end": 169,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0562-Nearest_active",
+        "parents": [
+          "C-0562"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 186,
+        "line_end": 186,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0562-SVM_RBF",
+        "parents": [
+          "C-0562"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 186,
+        "line_end": 186,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0562-Equal_mean",
+        "parents": [
+          "C-0562"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 186,
+        "line_end": 186,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0563-Property_LR",
+        "parents": [
+          "C-0563"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 186,
+        "line_end": 186,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0563-RF",
+        "parents": [
+          "C-0563"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 186,
+        "line_end": 186,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0561-Property_LR",
+        "parents": [
+          "C-0561"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 186,
+        "line_end": 186,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0561-SVM_RBF",
+        "parents": [
+          "C-0561"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 186,
+        "line_end": 186,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0561-Nearest_active",
+        "parents": [
+          "C-0561"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 186,
+        "line_end": 186,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0561-Equal_mean",
+        "parents": [
+          "C-0561"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 186,
+        "line_end": 186,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P2-X0561-GBT",
+        "parents": [
+          "C-0561"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 186,
+        "line_end": 186,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S001",
+        "parents": [
+          "C-0589",
+          "C-0590",
+          "C-0591",
+          "C-0592",
+          "C-0593",
+          "C-0594"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 196,
+        "line_end": 196,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S002",
+        "parents": [
+          "C-0595",
+          "C-0596",
+          "C-0597",
+          "C-0598",
+          "C-0599",
+          "C-0600"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 197,
+        "line_end": 197,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S003",
+        "parents": [
+          "C-0601",
+          "C-0602",
+          "C-0603",
+          "C-0604",
+          "C-0605",
+          "C-0606"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 198,
+        "line_end": 198,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S004",
+        "parents": [
+          "C-0607",
+          "C-0608",
+          "C-0609",
+          "C-0610",
+          "C-0611",
+          "C-0612"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 199,
+        "line_end": 199,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S005",
+        "parents": [
+          "C-0613",
+          "C-0614",
+          "C-0615",
+          "C-0616",
+          "C-0617",
+          "C-0618"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 200,
+        "line_end": 200,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S006",
+        "parents": [
+          "C-0619",
+          "C-0620",
+          "C-0621",
+          "C-0622",
+          "C-0623",
+          "C-0624"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 201,
+        "line_end": 201,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S007",
+        "parents": [
+          "C-0635"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 207,
+        "line_end": 207,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S008",
+        "parents": [
+          "C-0635"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 207,
+        "line_end": 207,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S009",
+        "parents": [
+          "C-0640"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 207,
+        "line_end": 207,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S010",
+        "parents": [
+          "C-0640"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 207,
+        "line_end": 207,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S011",
+        "parents": [
+          "C-0641"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 207,
+        "line_end": 207,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S012",
+        "parents": [
+          "C-0641"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 207,
+        "line_end": 207,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S013",
+        "parents": [
+          "C-0643"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 209,
+        "line_end": 209,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S014",
+        "parents": [
+          "C-0643"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 209,
+        "line_end": 209,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S015",
+        "parents": [
+          "C-0643"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 209,
+        "line_end": 209,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S016",
+        "parents": [
+          "C-0644"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 209,
+        "line_end": 209,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S017",
+        "parents": [
+          "C-0644"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 209,
+        "line_end": 209,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S018",
+        "parents": [
+          "C-0645"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 209,
+        "line_end": 209,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S019",
+        "parents": [
+          "C-0645"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 209,
+        "line_end": 209,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S020",
+        "parents": [
+          "C-0652"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 209,
+        "line_end": 209,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S021",
+        "parents": [
+          "C-0652"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 209,
+        "line_end": 209,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S022",
+        "parents": [
+          "C-0656"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 211,
+        "line_end": 211,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S023",
+        "parents": [
+          "C-0656"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 211,
+        "line_end": 211,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S024",
+        "parents": [
+          "C-0656"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 211,
+        "line_end": 211,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S025",
+        "parents": [
+          "C-0656"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 211,
+        "line_end": 211,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S026",
+        "parents": [
+          "C-0656"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 211,
+        "line_end": 211,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S027",
+        "parents": [
+          "C-0656"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 211,
+        "line_end": 211,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S028",
+        "parents": [
+          "C-0659"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 211,
+        "line_end": 211,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S029",
+        "parents": [
+          "C-0670"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 218,
+        "line_end": 218,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S030",
+        "parents": [
+          "C-0670"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 218,
+        "line_end": 218,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S031",
+        "parents": [
+          "C-0670"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 218,
+        "line_end": 218,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S032",
+        "parents": [
+          "C-0674"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 220,
+        "line_end": 220,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S033",
+        "parents": [
+          "C-0674"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 220,
+        "line_end": 220,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S034",
+        "parents": [
+          "C-0674"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 220,
+        "line_end": 220,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S035",
+        "parents": [
+          "C-0682"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 224,
+        "line_end": 224,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S036",
+        "parents": [
+          "C-0682"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 224,
+        "line_end": 224,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S037",
+        "parents": [
+          "C-0682"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 224,
+        "line_end": 224,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S038",
+        "parents": [
+          "C-0682"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 224,
+        "line_end": 224,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S039",
+        "parents": [
+          "C-0743"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 254,
+        "line_end": 254,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S040",
+        "parents": [
+          "C-0743"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 254,
+        "line_end": 254,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S041",
+        "parents": [
+          "C-0743"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 254,
+        "line_end": 254,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S042",
+        "parents": [
+          "C-0743"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 254,
+        "line_end": 254,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S043",
+        "parents": [
+          "C-0743"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 254,
+        "line_end": 254,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S044",
+        "parents": [
+          "C-0743"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 254,
+        "line_end": 254,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S045",
+        "parents": [
+          "C-0745"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 254,
+        "line_end": 254,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S046",
+        "parents": [
+          "C-0745"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 254,
+        "line_end": 254,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S047",
+        "parents": [
+          "C-0745"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 254,
+        "line_end": 254,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S048",
+        "parents": [
+          "C-0747"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 254,
+        "line_end": 254,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S049",
+        "parents": [
+          "C-0747"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 254,
+        "line_end": 254,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S050",
+        "parents": [
+          "C-0757"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 256,
+        "line_end": 256,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S051",
+        "parents": [
+          "C-0757"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 256,
+        "line_end": 256,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S052",
+        "parents": [
+          "C-0757"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 256,
+        "line_end": 256,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S053",
+        "parents": [
+          "C-0757"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 256,
+        "line_end": 256,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S054",
+        "parents": [
+          "C-0759"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 258,
+        "line_end": 258,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S055",
+        "parents": [
+          "C-0759"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 258,
+        "line_end": 258,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S056",
+        "parents": [
+          "C-0759"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 258,
+        "line_end": 258,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S057",
+        "parents": [
+          "C-0759"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 258,
+        "line_end": 258,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S058",
+        "parents": [
+          "C-0759"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 258,
+        "line_end": 258,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S059",
+        "parents": [
+          "C-0780"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 262,
+        "line_end": 262,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S060",
+        "parents": [
+          "C-0780"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 262,
+        "line_end": 262,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S061",
+        "parents": [
+          "C-0780"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 262,
+        "line_end": 262,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S062",
+        "parents": [
+          "C-0780"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 262,
+        "line_end": 262,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S063",
+        "parents": [
+          "C-0795"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S064",
+        "parents": [
+          "C-0795"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S065",
+        "parents": [
+          "C-0795"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S066",
+        "parents": [
+          "C-0795"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S067",
+        "parents": [
+          "C-0795"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S068",
+        "parents": [
+          "C-0795"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S069",
+        "parents": [
+          "C-0795"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S070",
+        "parents": [
+          "C-0800"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S071",
+        "parents": [
+          "C-0800"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S072",
+        "parents": [
+          "C-0800"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S073",
+        "parents": [
+          "C-0800"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S074",
+        "parents": [
+          "C-0808"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S075",
+        "parents": [
+          "C-0808"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S076",
+        "parents": [
+          "C-0808"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S077",
+        "parents": [
+          "C-0808"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 268,
+        "line_end": 268,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S078",
+        "parents": [
+          "C-0827"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 277,
+        "line_end": 277,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S079",
+        "parents": [
+          "C-0827"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 277,
+        "line_end": 277,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S080",
+        "parents": [
+          "C-0827"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 277,
+        "line_end": 277,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S081",
+        "parents": [
+          "C-0827"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 277,
+        "line_end": 277,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S082",
+        "parents": [
+          "C-0827"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 277,
+        "line_end": 277,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S083",
+        "parents": [
+          "C-0827"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 277,
+        "line_end": 277,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S084",
+        "parents": [
+          "C-0827"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 277,
+        "line_end": 277,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S085",
+        "parents": [
+          "C-0827"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 277,
+        "line_end": 277,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S086",
+        "parents": [
+          "C-0827"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 277,
+        "line_end": 277,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S087",
+        "parents": [
+          "C-0837"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 278,
+        "line_end": 278,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S088",
+        "parents": [
+          "C-0837"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 278,
+        "line_end": 278,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S089",
+        "parents": [
+          "C-0847"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 280,
+        "line_end": 280,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S090",
+        "parents": [
+          "C-0847"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 280,
+        "line_end": 280,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S091",
+        "parents": [
+          "C-0873"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 286,
+        "line_end": 286,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S092",
+        "parents": [
+          "C-0873"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 286,
+        "line_end": 286,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S093",
+        "parents": [
+          "C-0873"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 286,
+        "line_end": 286,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S094",
+        "parents": [
+          "C-0698"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 232,
+        "line_end": 232,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S095",
+        "parents": [
+          "C-0698"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 232,
+        "line_end": 232,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S096",
+        "parents": [
+          "C-0698"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 232,
+        "line_end": 232,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S097",
+        "parents": [
+          "C-0812"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 272,
+        "line_end": 272,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S098",
+        "parents": [
+          "C-0812"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 272,
+        "line_end": 272,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S099",
+        "parents": [
+          "C-0812"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 272,
+        "line_end": 272,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S100",
+        "parents": [
+          "C-0812"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 272,
+        "line_end": 272,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S101",
+        "parents": [
+          "C-0812"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 272,
+        "line_end": 272,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S102",
+        "parents": [
+          "C-0812"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 272,
+        "line_end": 272,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S103",
+        "parents": [
+          "C-0812"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 272,
+        "line_end": 272,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S104",
+        "parents": [
+          "C-0812"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 272,
+        "line_end": 272,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S105",
+        "parents": [
+          "C-0812"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 272,
+        "line_end": 272,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S106",
+        "parents": [
+          "C-0812"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 272,
+        "line_end": 272,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S107",
+        "parents": [
+          "C-0812"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 272,
+        "line_end": 272,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S108",
+        "parents": [
+          "C-0842"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 279,
+        "line_end": 279,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S109",
+        "parents": [
+          "C-0842"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 279,
+        "line_end": 279,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S110",
+        "parents": [
+          "C-0854"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 281,
+        "line_end": 281,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S111",
+        "parents": [
+          "C-0854"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 281,
+        "line_end": 281,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S112",
+        "parents": [
+          "C-0812"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 272,
+        "line_end": 272,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      },
+      {
+        "id": "P3-S113",
+        "parents": [
+          "C-0775"
+        ],
+        "source": "research/manuscript.md",
+        "line_start": 262,
+        "line_end": 262,
+        "fidelity": "exact parent/context slice; semantic subclaim separately labelled"
+      }
+    ],
+    "frozen_geometry": {
+      "source": "research/structure_comparison/results/observed_proximity.json",
+      "site_ids": [
+        {
+          "assembly_id": "1",
+          "auth_asym_id": "A",
+          "auth_comp_id": "W0O",
+          "auth_seq_id": "301",
+          "insertion_code_raw": "?",
+          "label_asym_id": "C",
+          "label_comp_id": "W0O",
+          "label_entity_id": "2",
+          "label_seq_id": ".",
+          "model_id": "1",
+          "operation_id": "1",
+          "pdb_id": "8OTV",
+          "site_id": "8OTV:model1:C:A:301",
+          "target": "NUDT14"
+        },
+        {
+          "assembly_id": "1",
+          "auth_asym_id": "B",
+          "auth_comp_id": "W0O",
+          "auth_seq_id": "302",
+          "insertion_code_raw": "?",
+          "label_asym_id": "F",
+          "label_comp_id": "W0O",
+          "label_entity_id": "2",
+          "label_seq_id": ".",
+          "model_id": "1",
+          "operation_id": "1",
+          "pdb_id": "8OTV",
+          "site_id": "8OTV:model1:F:B:302",
+          "target": "NUDT14"
+        },
+        {
+          "assembly_id": "1",
+          "auth_asym_id": "AAA",
+          "auth_comp_id": "W0O",
+          "auth_seq_id": "301",
+          "insertion_code_raw": "?",
+          "label_asym_id": "C",
+          "label_comp_id": "W0O",
+          "label_entity_id": "2",
+          "label_seq_id": ".",
+          "model_id": "1",
+          "operation_id": "1",
+          "pdb_id": "8RIY",
+          "site_id": "8RIY:model1:C:AAA:301",
+          "target": "NUDT5"
+        },
+        {
+          "assembly_id": "1",
+          "auth_asym_id": "BBB",
+          "auth_comp_id": "W0O",
+          "auth_seq_id": "301",
+          "insertion_code_raw": "?",
+          "label_asym_id": "D",
+          "label_comp_id": "W0O",
+          "label_entity_id": "2",
+          "label_seq_id": ".",
+          "model_id": "1",
+          "operation_id": "1",
+          "pdb_id": "8RIY",
+          "site_id": "8RIY:model1:D:BBB:301",
+          "target": "NUDT5"
+        }
+      ],
+      "residue_count": 1730,
+      "status_counts": {
+        "observed": 1564,
+        "partial_observed": 58,
+        "refused": 108
+      },
+      "atom_pairs": 1278,
+      "selected_rows": [
+        {
+          "json_pointer": "/residue_proximity/107",
+          "complete_residue_distance_A": null,
+          "complete_residue_distance_status": "not_estimated",
+          "conditional_local_conformer": false,
+          "fractional_occupancy": false,
+          "geometry_status": "observed",
+          "ligand_conformer_id": ".",
+          "minimum_witness_pairs": [
+            {
+              "distance_A": 17.27001661840544,
+              "fractional_occupancy": false,
+              "ligand_atom": {
+                "B_iso_or_equiv": 34.81,
+                "assembly_id": "1",
+                "atom_site_id": "3242",
+                "auth_asym_id": "A",
+                "auth_atom_id": "C21",
+                "auth_comp_id": "W0O",
+                "auth_seq_id": "301",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": false,
+                "label_alt_id": ".",
+                "label_asym_id": "C",
+                "label_atom_id": "C21",
+                "label_comp_id": "W0O",
+                "label_entity_id": "2",
+                "label_seq_id": ".",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8OTV",
+                "type_symbol": "C",
+                "xyz_A": [
+                  -4.999,
+                  6.265,
+                  -21.624
+                ]
+              },
+              "protein_atom": {
+                "B_iso_or_equiv": 41.75,
+                "assembly_id": "1",
+                "atom_site_id": "797",
+                "auth_asym_id": "A",
+                "auth_atom_id": "CD2",
+                "auth_comp_id": "LEU",
+                "auth_seq_id": "107",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": true,
+                "label_alt_id": ".",
+                "label_asym_id": "A",
+                "label_atom_id": "CD2",
+                "label_comp_id": "LEU",
+                "label_entity_id": "1",
+                "label_seq_id": "108",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8OTV",
+                "type_symbol": "C",
+                "xyz_A": [
+                  -6.684,
+                  10.097,
+                  -4.869
+                ]
+              }
+            }
+          ],
+          "missing_ligand_heavy_atoms": [],
+          "missing_or_excluded_atoms": {
+            "declared_missing_atoms": [],
+            "declared_missing_residues": [],
+            "excluded_atoms": []
+          },
+          "observed_min_distance_A": 17.27001661840544,
+          "protein_conformer_id": ".",
+          "reasons": [],
+          "residue_identity": {
+            "assembly_id": "1",
+            "atom_insertion_code_raw": "?",
+            "auth_asym_id": "A",
+            "auth_seq_id": "107",
+            "insertion_code_raw": ".",
+            "label_asym_id": "A",
+            "label_comp_id": "LEU",
+            "label_entity_id": "1",
+            "label_seq_id": "108",
+            "model_id": "1",
+            "operation_id": "1",
+            "pdb_id": "8OTV",
+            "pdb_seq_num": "107",
+            "target": "NUDT14"
+          },
+          "retained_ligand_atom_count": 30,
+          "retained_protein_atom_count": 8,
+          "site_id": "8OTV:model1:C:A:301",
+          "within_3_5A": false,
+          "within_4_0A": false,
+          "within_4_5A": false,
+          "within_5_0A": false
+        },
+        {
+          "json_pointer": "/residue_proximity/331",
+          "complete_residue_distance_A": null,
+          "complete_residue_distance_status": "not_estimated",
+          "conditional_local_conformer": false,
+          "fractional_occupancy": false,
+          "geometry_status": "observed",
+          "ligand_conformer_id": ".",
+          "minimum_witness_pairs": [
+            {
+              "distance_A": 3.609411586394658,
+              "fractional_occupancy": false,
+              "ligand_atom": {
+                "B_iso_or_equiv": 34.22,
+                "assembly_id": "1",
+                "atom_site_id": "3233",
+                "auth_asym_id": "A",
+                "auth_atom_id": "C15",
+                "auth_comp_id": "W0O",
+                "auth_seq_id": "301",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": false,
+                "label_alt_id": ".",
+                "label_asym_id": "C",
+                "label_atom_id": "C15",
+                "label_comp_id": "W0O",
+                "label_entity_id": "2",
+                "label_seq_id": ".",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8OTV",
+                "type_symbol": "C",
+                "xyz_A": [
+                  -3.125,
+                  8.75,
+                  -23.169
+                ]
+              },
+              "protein_atom": {
+                "B_iso_or_equiv": 34.25,
+                "assembly_id": "1",
+                "atom_site_id": "2419",
+                "auth_asym_id": "B",
+                "auth_atom_id": "CD2",
+                "auth_comp_id": "LEU",
+                "auth_seq_id": "107",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": true,
+                "label_alt_id": ".",
+                "label_asym_id": "B",
+                "label_atom_id": "CD2",
+                "label_comp_id": "LEU",
+                "label_entity_id": "1",
+                "label_seq_id": "108",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8OTV",
+                "type_symbol": "C",
+                "xyz_A": [
+                  -5.403,
+                  9.932,
+                  -25.707
+                ]
+              }
+            }
+          ],
+          "missing_ligand_heavy_atoms": [],
+          "missing_or_excluded_atoms": {
+            "declared_missing_atoms": [],
+            "declared_missing_residues": [],
+            "excluded_atoms": []
+          },
+          "observed_min_distance_A": 3.609411586394658,
+          "protein_conformer_id": ".",
+          "reasons": [],
+          "residue_identity": {
+            "assembly_id": "1",
+            "atom_insertion_code_raw": "?",
+            "auth_asym_id": "B",
+            "auth_seq_id": "107",
+            "insertion_code_raw": ".",
+            "label_asym_id": "B",
+            "label_comp_id": "LEU",
+            "label_entity_id": "1",
+            "label_seq_id": "108",
+            "model_id": "1",
+            "operation_id": "1",
+            "pdb_id": "8OTV",
+            "pdb_seq_num": "107",
+            "target": "NUDT14"
+          },
+          "retained_ligand_atom_count": 30,
+          "retained_protein_atom_count": 8,
+          "site_id": "8OTV:model1:C:A:301",
+          "within_3_5A": false,
+          "within_4_0A": true,
+          "within_4_5A": true,
+          "within_5_0A": true
+        },
+        {
+          "json_pointer": "/residue_proximity/554",
+          "complete_residue_distance_A": null,
+          "complete_residue_distance_status": "not_estimated",
+          "conditional_local_conformer": false,
+          "fractional_occupancy": false,
+          "geometry_status": "observed",
+          "ligand_conformer_id": ".",
+          "minimum_witness_pairs": [
+            {
+              "distance_A": 3.7805418923746905,
+              "fractional_occupancy": false,
+              "ligand_atom": {
+                "B_iso_or_equiv": 48.5,
+                "assembly_id": "1",
+                "atom_site_id": "3270",
+                "auth_asym_id": "B",
+                "auth_atom_id": "C17",
+                "auth_comp_id": "W0O",
+                "auth_seq_id": "302",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": false,
+                "label_alt_id": ".",
+                "label_asym_id": "F",
+                "label_atom_id": "C17",
+                "label_comp_id": "W0O",
+                "label_entity_id": "2",
+                "label_seq_id": ".",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8OTV",
+                "type_symbol": "C",
+                "xyz_A": [
+                  -10.185,
+                  11.549,
+                  -5.583
+                ]
+              },
+              "protein_atom": {
+                "B_iso_or_equiv": 38.4,
+                "assembly_id": "1",
+                "atom_site_id": "795",
+                "auth_asym_id": "A",
+                "auth_atom_id": "CG",
+                "auth_comp_id": "LEU",
+                "auth_seq_id": "107",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": true,
+                "label_alt_id": ".",
+                "label_asym_id": "A",
+                "label_atom_id": "CG",
+                "label_comp_id": "LEU",
+                "label_entity_id": "1",
+                "label_seq_id": "108",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8OTV",
+                "type_symbol": "C",
+                "xyz_A": [
+                  -6.944,
+                  11.045,
+                  -3.703
+                ]
+              }
+            }
+          ],
+          "missing_ligand_heavy_atoms": [],
+          "missing_or_excluded_atoms": {
+            "declared_missing_atoms": [],
+            "declared_missing_residues": [],
+            "excluded_atoms": []
+          },
+          "observed_min_distance_A": 3.7805418923746905,
+          "protein_conformer_id": ".",
+          "reasons": [],
+          "residue_identity": {
+            "assembly_id": "1",
+            "atom_insertion_code_raw": "?",
+            "auth_asym_id": "A",
+            "auth_seq_id": "107",
+            "insertion_code_raw": ".",
+            "label_asym_id": "A",
+            "label_comp_id": "LEU",
+            "label_entity_id": "1",
+            "label_seq_id": "108",
+            "model_id": "1",
+            "operation_id": "1",
+            "pdb_id": "8OTV",
+            "pdb_seq_num": "107",
+            "target": "NUDT14"
+          },
+          "retained_ligand_atom_count": 30,
+          "retained_protein_atom_count": 8,
+          "site_id": "8OTV:model1:F:B:302",
+          "within_3_5A": false,
+          "within_4_0A": true,
+          "within_4_5A": true,
+          "within_5_0A": true
+        },
+        {
+          "json_pointer": "/residue_proximity/778",
+          "complete_residue_distance_A": null,
+          "complete_residue_distance_status": "not_estimated",
+          "conditional_local_conformer": false,
+          "fractional_occupancy": false,
+          "geometry_status": "observed",
+          "ligand_conformer_id": ".",
+          "minimum_witness_pairs": [
+            {
+              "distance_A": 18.592730138417004,
+              "fractional_occupancy": false,
+              "ligand_atom": {
+                "B_iso_or_equiv": 47.16,
+                "assembly_id": "1",
+                "atom_site_id": "3277",
+                "auth_asym_id": "B",
+                "auth_atom_id": "C21",
+                "auth_comp_id": "W0O",
+                "auth_seq_id": "302",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": false,
+                "label_alt_id": ".",
+                "label_asym_id": "F",
+                "label_atom_id": "C21",
+                "label_comp_id": "W0O",
+                "label_entity_id": "2",
+                "label_seq_id": ".",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8OTV",
+                "type_symbol": "C",
+                "xyz_A": [
+                  -10.644,
+                  11.29,
+                  -7.92
+                ]
+              },
+              "protein_atom": {
+                "B_iso_or_equiv": 34.25,
+                "assembly_id": "1",
+                "atom_site_id": "2419",
+                "auth_asym_id": "B",
+                "auth_atom_id": "CD2",
+                "auth_comp_id": "LEU",
+                "auth_seq_id": "107",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": true,
+                "label_alt_id": ".",
+                "label_asym_id": "B",
+                "label_atom_id": "CD2",
+                "label_comp_id": "LEU",
+                "label_entity_id": "1",
+                "label_seq_id": "108",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8OTV",
+                "type_symbol": "C",
+                "xyz_A": [
+                  -5.403,
+                  9.932,
+                  -25.707
+                ]
+              }
+            }
+          ],
+          "missing_ligand_heavy_atoms": [],
+          "missing_or_excluded_atoms": {
+            "declared_missing_atoms": [],
+            "declared_missing_residues": [],
+            "excluded_atoms": []
+          },
+          "observed_min_distance_A": 18.592730138417004,
+          "protein_conformer_id": ".",
+          "reasons": [],
+          "residue_identity": {
+            "assembly_id": "1",
+            "atom_insertion_code_raw": "?",
+            "auth_asym_id": "B",
+            "auth_seq_id": "107",
+            "insertion_code_raw": ".",
+            "label_asym_id": "B",
+            "label_comp_id": "LEU",
+            "label_entity_id": "1",
+            "label_seq_id": "108",
+            "model_id": "1",
+            "operation_id": "1",
+            "pdb_id": "8OTV",
+            "pdb_seq_num": "107",
+            "target": "NUDT14"
+          },
+          "retained_ligand_atom_count": 30,
+          "retained_protein_atom_count": 8,
+          "site_id": "8OTV:model1:F:B:302",
+          "within_3_5A": false,
+          "within_4_0A": false,
+          "within_4_5A": false,
+          "within_5_0A": false
+        },
+        {
+          "json_pointer": "/residue_proximity/945",
+          "complete_residue_distance_A": null,
+          "complete_residue_distance_status": "not_estimated",
+          "conditional_local_conformer": false,
+          "fractional_occupancy": true,
+          "geometry_status": "partial_observed",
+          "ligand_conformer_id": ".",
+          "minimum_witness_pairs": [
+            {
+              "distance_A": 3.7555613428620767,
+              "fractional_occupancy": false,
+              "ligand_atom": {
+                "B_iso_or_equiv": 53.862,
+                "assembly_id": "1",
+                "atom_site_id": "2940",
+                "auth_asym_id": "AAA",
+                "auth_atom_id": "C20",
+                "auth_comp_id": "W0O",
+                "auth_seq_id": "301",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": false,
+                "label_alt_id": ".",
+                "label_asym_id": "C",
+                "label_atom_id": "C20",
+                "label_comp_id": "W0O",
+                "label_entity_id": "2",
+                "label_seq_id": ".",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8RIY",
+                "type_symbol": "C",
+                "xyz_A": [
+                  -37.086,
+                  12.599,
+                  8.787
+                ]
+              },
+              "protein_atom": {
+                "B_iso_or_equiv": 39.848,
+                "assembly_id": "1",
+                "atom_site_id": "306",
+                "auth_asym_id": "AAA",
+                "auth_atom_id": "N",
+                "auth_comp_id": "ARG",
+                "auth_seq_id": "51",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": true,
+                "label_alt_id": ".",
+                "label_asym_id": "A",
+                "label_atom_id": "N",
+                "label_comp_id": "ARG",
+                "label_entity_id": "1",
+                "label_seq_id": "52",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8RIY",
+                "type_symbol": "N",
+                "xyz_A": [
+                  -38.748,
+                  10.885,
+                  5.888
+                ]
+              }
+            }
+          ],
+          "missing_ligand_heavy_atoms": [],
+          "missing_or_excluded_atoms": {
+            "declared_missing_atoms": [
+              {
+                "PDB_ins_code": "?",
+                "PDB_model_num": "1",
+                "auth_asym_id": "AAA",
+                "auth_atom_id": "CZ",
+                "auth_comp_id": "ARG",
+                "auth_seq_id": "51",
+                "id": "5",
+                "label_alt_id": "?",
+                "label_asym_id": "A",
+                "label_atom_id": "CZ",
+                "label_comp_id": "ARG",
+                "label_seq_id": "52",
+                "occupancy_flag": "0",
+                "polymer_flag": "Y"
+              }
+            ],
+            "declared_missing_residues": [],
+            "excluded_atoms": [
+              {
+                "B_iso_or_equiv": 40.868,
+                "assembly_id": "1",
+                "atom_site_id": "314",
+                "auth_asym_id": "AAA",
+                "auth_atom_id": "CZ",
+                "auth_comp_id": "ARG",
+                "auth_seq_id": "51",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": true,
+                "label_alt_id": ".",
+                "label_asym_id": "A",
+                "label_atom_id": "CZ",
+                "label_comp_id": "ARG",
+                "label_entity_id": "1",
+                "label_seq_id": "52",
+                "model_id": "1",
+                "occupancy": 0.0,
+                "operation_id": "1",
+                "pdb_id": "8RIY",
+                "type_symbol": "C",
+                "xyz_A": [
+                  -35.769,
+                  5.664,
+                  7.289
+                ]
+              }
+            ]
+          },
+          "observed_min_distance_A": 3.7555613428620767,
+          "protein_conformer_id": ".",
+          "reasons": [],
+          "residue_identity": {
+            "assembly_id": "1",
+            "atom_insertion_code_raw": "?",
+            "auth_asym_id": "AAA",
+            "auth_seq_id": "51",
+            "insertion_code_raw": ".",
+            "label_asym_id": "A",
+            "label_comp_id": "ARG",
+            "label_entity_id": "1",
+            "label_seq_id": "52",
+            "model_id": "1",
+            "operation_id": "1",
+            "pdb_id": "8RIY",
+            "pdb_seq_num": "51",
+            "target": "NUDT5"
+          },
+          "retained_ligand_atom_count": 30,
+          "retained_protein_atom_count": 10,
+          "site_id": "8RIY:model1:C:AAA:301",
+          "within_3_5A": false,
+          "within_4_0A": true,
+          "within_4_5A": true,
+          "within_5_0A": true
+        },
+        {
+          "json_pointer": "/residue_proximity/1154",
+          "complete_residue_distance_A": null,
+          "complete_residue_distance_status": "not_estimated",
+          "conditional_local_conformer": false,
+          "fractional_occupancy": true,
+          "geometry_status": "observed",
+          "ligand_conformer_id": ".",
+          "minimum_witness_pairs": [
+            {
+              "distance_A": 14.329326327500535,
+              "fractional_occupancy": false,
+              "ligand_atom": {
+                "B_iso_or_equiv": 40.859,
+                "assembly_id": "1",
+                "atom_site_id": "2951",
+                "auth_asym_id": "AAA",
+                "auth_atom_id": "N5",
+                "auth_comp_id": "W0O",
+                "auth_seq_id": "301",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": false,
+                "label_alt_id": ".",
+                "label_asym_id": "C",
+                "label_atom_id": "N5",
+                "label_comp_id": "W0O",
+                "label_entity_id": "2",
+                "label_seq_id": ".",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8RIY",
+                "type_symbol": "N",
+                "xyz_A": [
+                  -30.46,
+                  12.18,
+                  2.569
+                ]
+              },
+              "protein_atom": {
+                "B_iso_or_equiv": 37.72,
+                "assembly_id": "1",
+                "atom_site_id": "1769",
+                "auth_asym_id": "BBB",
+                "auth_atom_id": "N",
+                "auth_comp_id": "ARG",
+                "auth_seq_id": "51",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": true,
+                "label_alt_id": ".",
+                "label_asym_id": "B",
+                "label_atom_id": "N",
+                "label_comp_id": "ARG",
+                "label_entity_id": "1",
+                "label_seq_id": "52",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8RIY",
+                "type_symbol": "N",
+                "xyz_A": [
+                  -32.068,
+                  26.407,
+                  3.149
+                ]
+              }
+            }
+          ],
+          "missing_ligand_heavy_atoms": [],
+          "missing_or_excluded_atoms": {
+            "declared_missing_atoms": [],
+            "declared_missing_residues": [],
+            "excluded_atoms": []
+          },
+          "observed_min_distance_A": 14.329326327500535,
+          "protein_conformer_id": ".",
+          "reasons": [],
+          "residue_identity": {
+            "assembly_id": "1",
+            "atom_insertion_code_raw": "?",
+            "auth_asym_id": "BBB",
+            "auth_seq_id": "51",
+            "insertion_code_raw": ".",
+            "label_asym_id": "B",
+            "label_comp_id": "ARG",
+            "label_entity_id": "1",
+            "label_seq_id": "52",
+            "model_id": "1",
+            "operation_id": "1",
+            "pdb_id": "8RIY",
+            "pdb_seq_num": "51",
+            "target": "NUDT5"
+          },
+          "retained_ligand_atom_count": 30,
+          "retained_protein_atom_count": 11,
+          "site_id": "8RIY:model1:C:AAA:301",
+          "within_3_5A": false,
+          "within_4_0A": false,
+          "within_4_5A": false,
+          "within_5_0A": false
+        },
+        {
+          "json_pointer": "/residue_proximity/1363",
+          "complete_residue_distance_A": null,
+          "complete_residue_distance_status": "not_estimated",
+          "conditional_local_conformer": false,
+          "fractional_occupancy": true,
+          "geometry_status": "partial_observed",
+          "ligand_conformer_id": ".",
+          "minimum_witness_pairs": [
+            {
+              "distance_A": 14.29582019332924,
+              "fractional_occupancy": false,
+              "ligand_atom": {
+                "B_iso_or_equiv": 37.241,
+                "assembly_id": "1",
+                "atom_site_id": "2981",
+                "auth_asym_id": "BBB",
+                "auth_atom_id": "N5",
+                "auth_comp_id": "W0O",
+                "auth_seq_id": "301",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": false,
+                "label_alt_id": ".",
+                "label_asym_id": "D",
+                "label_atom_id": "N5",
+                "label_comp_id": "W0O",
+                "label_entity_id": "2",
+                "label_seq_id": ".",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8RIY",
+                "type_symbol": "N",
+                "xyz_A": [
+                  -40.607,
+                  25.03,
+                  6.801
+                ]
+              },
+              "protein_atom": {
+                "B_iso_or_equiv": 39.848,
+                "assembly_id": "1",
+                "atom_site_id": "306",
+                "auth_asym_id": "AAA",
+                "auth_atom_id": "N",
+                "auth_comp_id": "ARG",
+                "auth_seq_id": "51",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": true,
+                "label_alt_id": ".",
+                "label_asym_id": "A",
+                "label_atom_id": "N",
+                "label_comp_id": "ARG",
+                "label_entity_id": "1",
+                "label_seq_id": "52",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8RIY",
+                "type_symbol": "N",
+                "xyz_A": [
+                  -38.748,
+                  10.885,
+                  5.888
+                ]
+              }
+            }
+          ],
+          "missing_ligand_heavy_atoms": [],
+          "missing_or_excluded_atoms": {
+            "declared_missing_atoms": [
+              {
+                "PDB_ins_code": "?",
+                "PDB_model_num": "1",
+                "auth_asym_id": "AAA",
+                "auth_atom_id": "CZ",
+                "auth_comp_id": "ARG",
+                "auth_seq_id": "51",
+                "id": "5",
+                "label_alt_id": "?",
+                "label_asym_id": "A",
+                "label_atom_id": "CZ",
+                "label_comp_id": "ARG",
+                "label_seq_id": "52",
+                "occupancy_flag": "0",
+                "polymer_flag": "Y"
+              }
+            ],
+            "declared_missing_residues": [],
+            "excluded_atoms": [
+              {
+                "B_iso_or_equiv": 40.868,
+                "assembly_id": "1",
+                "atom_site_id": "314",
+                "auth_asym_id": "AAA",
+                "auth_atom_id": "CZ",
+                "auth_comp_id": "ARG",
+                "auth_seq_id": "51",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": true,
+                "label_alt_id": ".",
+                "label_asym_id": "A",
+                "label_atom_id": "CZ",
+                "label_comp_id": "ARG",
+                "label_entity_id": "1",
+                "label_seq_id": "52",
+                "model_id": "1",
+                "occupancy": 0.0,
+                "operation_id": "1",
+                "pdb_id": "8RIY",
+                "type_symbol": "C",
+                "xyz_A": [
+                  -35.769,
+                  5.664,
+                  7.289
+                ]
+              }
+            ]
+          },
+          "observed_min_distance_A": 14.29582019332924,
+          "protein_conformer_id": ".",
+          "reasons": [],
+          "residue_identity": {
+            "assembly_id": "1",
+            "atom_insertion_code_raw": "?",
+            "auth_asym_id": "AAA",
+            "auth_seq_id": "51",
+            "insertion_code_raw": ".",
+            "label_asym_id": "A",
+            "label_comp_id": "ARG",
+            "label_entity_id": "1",
+            "label_seq_id": "52",
+            "model_id": "1",
+            "operation_id": "1",
+            "pdb_id": "8RIY",
+            "pdb_seq_num": "51",
+            "target": "NUDT5"
+          },
+          "retained_ligand_atom_count": 30,
+          "retained_protein_atom_count": 10,
+          "site_id": "8RIY:model1:D:BBB:301",
+          "within_3_5A": false,
+          "within_4_0A": false,
+          "within_4_5A": false,
+          "within_5_0A": false
+        },
+        {
+          "json_pointer": "/residue_proximity/1572",
+          "complete_residue_distance_A": null,
+          "complete_residue_distance_status": "not_estimated",
+          "conditional_local_conformer": false,
+          "fractional_occupancy": true,
+          "geometry_status": "observed",
+          "ligand_conformer_id": ".",
+          "minimum_witness_pairs": [
+            {
+              "distance_A": 3.2512725201065518,
+              "fractional_occupancy": true,
+              "ligand_atom": {
+                "B_iso_or_equiv": 37.33,
+                "assembly_id": "1",
+                "atom_site_id": "2968",
+                "auth_asym_id": "BBB",
+                "auth_atom_id": "C18",
+                "auth_comp_id": "W0O",
+                "auth_seq_id": "301",
+                "fractional_occupancy": false,
+                "insertion_code_raw": "?",
+                "is_protein": false,
+                "label_alt_id": ".",
+                "label_asym_id": "D",
+                "label_atom_id": "C18",
+                "label_comp_id": "W0O",
+                "label_entity_id": "2",
+                "label_seq_id": ".",
+                "model_id": "1",
+                "occupancy": 1.0,
+                "operation_id": "1",
+                "pdb_id": "8RIY",
+                "type_symbol": "C",
+                "xyz_A": [
+                  -31.282,
+                  26.194,
+                  7.852
+                ]
+              },
+              "protein_atom": {
+                "B_iso_or_equiv": 53.401,
+                "assembly_id": "1",
+                "atom_site_id": "1775",
+                "auth_asym_id": "BBB",
+                "auth_atom_id": "CD",
+                "auth_comp_id": "ARG",
+                "auth_seq_id": "51",
+                "fractional_occupancy": true,
+                "insertion_code_raw": "?",
+                "is_protein": true,
+                "label_alt_id": ".",
+                "label_asym_id": "B",
+                "label_atom_id": "CD",
+                "label_comp_id": "ARG",
+                "label_entity_id": "1",
+                "label_seq_id": "52",
+                "model_id": "1",
+                "occupancy": 0.78,
+                "operation_id": "1",
+                "pdb_id": "8RIY",
+                "type_symbol": "C",
+                "xyz_A": [
+                  -32.003,
+                  29.07,
+                  6.518
+                ]
+              }
+            }
+          ],
+          "missing_ligand_heavy_atoms": [],
+          "missing_or_excluded_atoms": {
+            "declared_missing_atoms": [],
+            "declared_missing_residues": [],
+            "excluded_atoms": []
+          },
+          "observed_min_distance_A": 3.2512725201065518,
+          "protein_conformer_id": ".",
+          "reasons": [],
+          "residue_identity": {
+            "assembly_id": "1",
+            "atom_insertion_code_raw": "?",
+            "auth_asym_id": "BBB",
+            "auth_seq_id": "51",
+            "insertion_code_raw": ".",
+            "label_asym_id": "B",
+            "label_comp_id": "ARG",
+            "label_entity_id": "1",
+            "label_seq_id": "52",
+            "model_id": "1",
+            "operation_id": "1",
+            "pdb_id": "8RIY",
+            "pdb_seq_num": "51",
+            "target": "NUDT5"
+          },
+          "retained_ligand_atom_count": 30,
+          "retained_protein_atom_count": 11,
+          "site_id": "8RIY:model1:D:BBB:301",
+          "within_3_5A": true,
+          "within_4_0A": true,
+          "within_4_5A": true,
+          "within_5_0A": true
+        }
+      ]
+    },
+    "primary_excerpt_fidelity": {
+      "source": "research/structure_comparison/sources/PMC11089510.xml",
+      "sha256": "0710da1ebedd4accde6e6cddf8cfe9a2d350c062890fbcfd03bf94bd6f316df0",
+      "matching_entries": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ]
+    },
+    "tracked_status": ""
+  }
+}

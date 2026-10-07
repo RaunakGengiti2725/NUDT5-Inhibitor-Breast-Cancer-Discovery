@@ -1,0 +1,262 @@
+{
+  "as_of_utc": "2026-10-04",
+  "sources": {
+    "S1": {
+      "title": "SGC/MSD MRK-952 producer dossier",
+      "url": "https://www.thesgc.org/chemical-probes/mrk-952",
+      "type": "primary producer dossier",
+      "inspected": "Overview and both assay figures",
+      "independence": "Producer data, not a dedicated peer-reviewed MRK assay paper."
+    },
+    "S2": {
+      "title": "Selectivity profile of MRK-952 by SPR",
+      "url": "https://www.thesgc.org/sites/default/files/inline-images/download_17.png",
+      "type": "primary producer figure",
+      "inspected": "Entire figure, visually",
+      "independence": "Same dossier as S1; not a separate study."
+    },
+    "S3": {
+      "title": "MRK-952/NC biochemical curves and stereochemistry annotation",
+      "url": "https://www.thesgc.org/sites/default/files/inline-images/download%20%281%29_13.png",
+      "type": "primary producer figure",
+      "inspected": "Entire figure, visually",
+      "independence": "Same biochemical observations as dossier prose, despite different endpoint labels."
+    },
+    "S4": {
+      "title": "Balıkçı et al. Unexpected Noncovalent Off-Target Activity of Clinical BTK Inhibitors Leads to Discovery of a Dual NUDT5/14 Antagonist (2024)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+      "doi": "10.1021/acs.jmedchem.4c00072",
+      "type": "primary paper",
+      "inspected": "Selected Results/Figs. 3–5, synthesis/structural assignments, catalytic and cellular engagement Methods",
+      "independence": "Already-curated project source, never counted as new external data."
+    },
+    "S5": {
+      "title": "Page et al. Targeted NUDT5 inhibitors block hormone signaling in breast cancer cells (2018)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+      "doi": "10.1038/s41467-017-02293-7",
+      "type": "primary paper",
+      "inspected": "Selected Results, Fig. 4, DARTS and ligand-contact assignments",
+      "independence": "Known reference, not new training data."
+    },
+    "S6": {
+      "title": "Marques et al. Targeted Protein Degradation of NUDT5 Dissociates Catalytic Inhibition from Protein Loss in 6-Thioguanine Response (2026)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+      "doi": "10.1038/s41467-026-74489-9",
+      "type": "primary paper",
+      "inspected": "Abstract, Results/Figs. 1, 3–4, Discussion, reference 45 and acknowledgments",
+      "independence": "Overlapping investigators and degrader toolkit with S7; not wholly independent replication."
+    },
+    "S7": {
+      "title": "Nguyen et al. A non-enzymatic role of Nudix hydrolase 5 in repressing purine de novo synthesis (2025)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7618541/",
+      "doi": "10.1126/science.adv4257",
+      "type": "primary paper",
+      "inspected": "Abstract, Results/Figs. 4–6, Discussion, mutant construction, PPAT co-IP and catalytic Methods",
+      "independence": "Followed S6 reference 45; overlaps investigators and tools with S6."
+    },
+    "V1": {
+      "title": "ACS Chemical Biology author guidelines",
+      "url": "https://researcher-resources.acs.org/publish/author_guidelines?coden=acbcct",
+      "type": "official journal policy",
+      "inspected": "Scope and article-type requirements"
+    },
+    "V2": {
+      "title": "ACS Medicinal Chemistry Letters author guidelines",
+      "url": "https://researcher-resources.acs.org/publish/author_guidelines?coden=amclct",
+      "type": "official journal policy",
+      "inspected": "Scope and article-type requirements"
+    },
+    "V3": {
+      "title": "Journal of Chemical Information and Modeling author guidelines",
+      "url": "https://researcher-resources.acs.org/publish/author_guidelines?coden=jcisd8",
+      "type": "official journal policy",
+      "inspected": "Scope and article-type requirements"
+    },
+    "I1": {
+      "title": "Supplied external-evidence report",
+      "url": "https://la-hacks-rttothemoon.devinenterprise.com/attachments/7ba87084-14c3-48f4-a9fb-efa8469e7db0/NUDT5_external_evidence_report.md",
+      "type": "supplied research synthesis",
+      "inspected": "Report read; database counts and fingerprint calculations not rerun"
+    },
+    "I2": {
+      "title": "Supplied structural-selectivity report",
+      "url": "https://la-hacks-rttothemoon.devinenterprise.com/attachments/835676c8-c47a-45a8-9551-ff7acf74a54d/structural_selectivity_report.md",
+      "type": "supplied research synthesis",
+      "inspected": "Report read; PDB metadata/occupancy calculations not rerun"
+    }
+  },
+  "direct_http_responses": [
+    {
+      "file": "raw/sgc.html",
+      "url": "https://www.thesgc.org/chemical-probes/mrk-952",
+      "final_url": "https://www.thesgc.org/chemical-probes/mrk-952",
+      "status": 200,
+      "bytes": 59934,
+      "sha256": "5b894ef2de3383b2ecba8fd5b56ba9c7062941a7780d8b746fbeb31d8e4bbbb2",
+      "retrieved_utc": "2026-10-04T22:33:14.988097+00:00",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "file": "raw/degrader.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+      "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13462928/fullTextXML",
+      "status": 200,
+      "bytes": 138253,
+      "sha256": "410d0bb126d04581d8a02a94ae1b444790ddefaa38eaa640ebc512b49421b7d5",
+      "retrieved_utc": "2026-10-04T22:33:16.592456+00:00",
+      "content_type": "application/xml"
+    },
+    {
+      "file": "raw/balikci.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+      "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+      "status": 200,
+      "bytes": 130787,
+      "sha256": "0710da1ebedd4accde6e6cddf8cfe9a2d350c062890fbcfd03bf94bd6f316df0",
+      "retrieved_utc": "2026-10-04T22:33:16.353610+00:00",
+      "content_type": "application/xml"
+    },
+    {
+      "file": "raw/page.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+      "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5772648/fullTextXML",
+      "status": 200,
+      "bytes": 152176,
+      "sha256": "bc7c46fc4d464adb0cb2d5ec1ce56c4accc781f94c23f1c8744441d2b045a071",
+      "retrieved_utc": "2026-10-04T22:33:16.453454+00:00",
+      "content_type": "application/xml"
+    },
+    {
+      "file": "raw/purine.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7618541/fullTextXML",
+      "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7618541/fullTextXML",
+      "status": 500,
+      "bytes": 150,
+      "sha256": "bdd7b28a484e3a6d1f384971e043b48bb4cc4f95286a3d13d6f12fa646078290",
+      "retrieved_utc": "2026-10-04T22:35:24.268062+00:00",
+      "content_type": "application/json"
+    },
+    {
+      "file": "raw/acschembio.html",
+      "url": "https://researcher-resources.acs.org/publish/author_guidelines?coden=acbcct",
+      "final_url": "https://researcher-resources.acs.org/publish/author_guidelines?coden=acbcct",
+      "status": 200,
+      "bytes": 129285,
+      "sha256": "32b3cd852df280e6d072d20bf6dda520a5e0380008397cd704d53e7a9984de27",
+      "retrieved_utc": "2026-10-04T22:35:23.021361+00:00",
+      "content_type": "text/html;charset=UTF-8"
+    },
+    {
+      "file": "raw/jcim.html",
+      "url": "https://researcher-resources.acs.org/publish/author_guidelines?coden=jcisd8",
+      "final_url": "https://researcher-resources.acs.org/publish/author_guidelines?coden=jcisd8",
+      "status": 200,
+      "bytes": 121188,
+      "sha256": "7d3029719cf45061a68c7639276be49be11286aa94419265f14f340793127442",
+      "retrieved_utc": "2026-10-04T22:35:22.902754+00:00",
+      "content_type": "text/html;charset=UTF-8"
+    },
+    {
+      "file": "raw/medchemlett.html",
+      "url": "https://researcher-resources.acs.org/publish/author_guidelines?coden=amclct",
+      "final_url": "https://researcher-resources.acs.org/publish/author_guidelines?coden=amclct",
+      "status": 200,
+      "bytes": 152474,
+      "sha256": "be34169d91423b0e6a9dc7c77c63f6ed98ae238952f4d59675b42f62bcfa364a",
+      "retrieved_utc": "2026-10-04T22:35:22.980418+00:00",
+      "content_type": "text/html;charset=UTF-8"
+    },
+    {
+      "file": "raw/purine_pmc.html",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7618541/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7618541/",
+      "status": 200,
+      "bytes": 311336,
+      "sha256": "be4ed13117b3c57f3131fe004f43297e6f8606a1d3003caeff8794f81441a086",
+      "retrieved_utc": "2026-10-04T22:35:56.414296+00:00",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "file": "raw/purine_metadata.json",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:41196952%20AND%20SRC:MED&format=json&resultType=core",
+      "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:41196952%20AND%20SRC:MED&format=json&resultType=core",
+      "status": 200,
+      "bytes": 24121,
+      "sha256": "b9492574d86f852cfa37b77f42aa08f33eaf9354cbc207be4757036971e97582",
+      "retrieved_utc": "2026-10-04T22:35:56.692085+00:00",
+      "content_type": "application/json;charset=UTF-8"
+    },
+    {
+      "file": "raw/sgc_selectivity.png",
+      "url": "https://www.thesgc.org/sites/default/files/inline-images/download_17.png",
+      "final_url": "https://www.thesgc.org/sites/default/files/inline-images/download_17.png",
+      "status": 200,
+      "bytes": 60173,
+      "sha256": "1f2a6ee5d197b6a0cdaf5319c014c6616d10e203e497551c76d3b72f7f08effa",
+      "retrieved_utc": "2026-10-04T22:35:35.767900+00:00",
+      "content_type": "image/png"
+    },
+    {
+      "file": "raw/sgc_biochemical_curves.png",
+      "url": "https://www.thesgc.org/sites/default/files/inline-images/download%20%281%29_13.png",
+      "final_url": "https://www.thesgc.org/sites/default/files/inline-images/download%20%281%29_13.png",
+      "status": 200,
+      "bytes": 118249,
+      "sha256": "cb584602546df68dd53394b8978ff88f1f47c235ce949143dbc68a218ec23857",
+      "retrieved_utc": "2026-10-04T22:35:35.776627+00:00",
+      "content_type": "image/png"
+    }
+  ],
+  "http_counts": {
+    "200": 11,
+    "500": 1
+  },
+  "scope": {
+    "read_inputs": [
+      "I1",
+      "I2"
+    ],
+    "additional_download_not_claimed_as_read_in_full": "Supplied structural evidence_ledger.json",
+    "scientific_expansion": "Four seeded sources (SGC, Page, Balikci, Marques); one citation follow-up from Marques ref. 45 to Nguyen; stopped there.",
+    "metadata_lookup": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:41196952%20AND%20SRC:MED&format=json&resultType=core",
+    "web_searches": [
+      {
+        "query": "site.researcher-resources.acs.org ACS Chemical Biology author guidelines scope",
+        "results_requested": 3
+      },
+      {
+        "query": "site.researcher-resources.acs.org Journal of Chemical Information and Modeling author guidelines scope experimental validation",
+        "results_requested": 2
+      },
+      {
+        "query": "site.researcher-resources.acs.org ACS Medicinal Chemistry Letters scope author guidelines biological evaluation",
+        "results_requested": 2
+      }
+    ],
+    "search_result_use": "Discovery of official scope URLs only; substantive claims verified on downloaded guidelines. Search-engine response bodies are not part of the HTTP snapshot manifest.",
+    "not_searched": [
+      "Broad literature/database census",
+      "Patents",
+      "PubChem BioAssay",
+      "Vendors, stocks or prices",
+      "All later citations",
+      "Repository files or actual 45-graph overlap",
+      "PDB structures/contact distances or structure factors",
+      "Raw assay data or supplementary-data re-audit",
+      "Original nuclear-ATP study cited by Page"
+    ],
+    "access_limit": "PMC7618541 Europe PMC XML returned HTTP 500; PMC primary HTML was successfully retrieved and inspected.",
+    "actions_not_taken": [
+      "Repository edits",
+      "Commits",
+      "Pushes",
+      "PRs",
+      "New sessions",
+      "Outreach/contact",
+      "Deposit changes",
+      "Model fitting/scoring",
+      "Docking/MD",
+      "Experiments"
+    ]
+  }
+}

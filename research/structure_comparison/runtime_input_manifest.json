@@ -1,0 +1,133 @@
+{
+  "created_at_utc": "2026-10-05T06:37:47.064743+00:00",
+  "expected_entries": [
+    {
+      "assembly_id": "1",
+      "coordinate_path": "research/structure_comparison/sources/8RIY.cif",
+      "expected_model_ids": [
+        "1"
+      ],
+      "expected_site_ids": [
+        "8RIY:model1:C:AAA:301",
+        "8RIY:model1:D:BBB:301"
+      ],
+      "operation_ids": [
+        "1"
+      ],
+      "pdb_id": "8RIY",
+      "protein_label_asym_ids": [
+        "A",
+        "B"
+      ],
+      "target": "NUDT5"
+    },
+    {
+      "assembly_id": "1",
+      "coordinate_path": "research/structure_comparison/sources/8OTV.cif",
+      "expected_model_ids": [
+        "1"
+      ],
+      "expected_site_ids": [
+        "8OTV:model1:C:A:301",
+        "8OTV:model1:F:B:302"
+      ],
+      "operation_ids": [
+        "1"
+      ],
+      "pdb_id": "8OTV",
+      "protein_label_asym_ids": [
+        "A",
+        "B"
+      ],
+      "target": "NUDT14"
+    }
+  ],
+  "input_revision": "9cd03744521a2271d3db1b81727d3e196c7900f8",
+  "inputs": [
+    {
+      "path": "research/structure_comparison/sources/8RIY.cif",
+      "role": "coordinates",
+      "sha256": "39267e781393f99681d7f154d2def2a271c8a10ae9a2bc6fe819cbf78d9c5047"
+    },
+    {
+      "path": "research/structure_comparison/sources/8OTV.cif",
+      "role": "coordinates",
+      "sha256": "de0634d63fa910036a789617e78a2919d0e2767c3ea36c5c3c97d86abbdd4cd8"
+    },
+    {
+      "path": "research/structure_comparison/sources/W0O.cif",
+      "role": "CCD_identity_and_atom_names",
+      "sha256": "e4ba053ac961bc92dcb9db34fcbee43d58a08e2b153c8f2e85a2934adfdc38dc"
+    },
+    {
+      "path": "research/structure_comparison/sources/W0O-chemcomp.json",
+      "role": "CCD_descriptors",
+      "sha256": "91dd68bc6343e6430a1ec7fd4d36f5fe6c2241ed883f12dc795e1063c7208d17"
+    },
+    {
+      "path": "research/structure_comparison/ligand_identity.json",
+      "role": "ledger_cross_reference",
+      "sha256": "ad036d5df5603ae7b71f088927ae9112f21082fe204491580f48d0c785ca88ea"
+    },
+    {
+      "path": "research/structure_comparison/structure_metadata.json",
+      "role": "curated_metadata_expectations",
+      "sha256": "5cabcd6feded5575ec9db9ea30667a784c805e4f8f0ff2cbb805d56ceb2f464a"
+    },
+    {
+      "path": "research/structure_comparison/ligand_sites.json",
+      "role": "all_sites_expectations",
+      "sha256": "5745188775e042a32e48ae5056b30b9e0f1361b8fd09a4851b54d0149d08dd7e"
+    },
+    {
+      "path": "research/structure_comparison/primary_excerpts.json",
+      "role": "published_assignments_not_computed_contacts",
+      "sha256": "9b26214a5fa8d4eff02b58aae0b373ea059411a140125f72ca1bbd4465581407"
+    },
+    {
+      "path": "research/selectivity/paired_evidence.json",
+      "role": "unchanged_existing_repository_provenance",
+      "sha256": "2872dd55843e6cc7ac03ece02df2684bb7ab637786df47d95b2cd14626c7aa6f"
+    },
+    {
+      "path": "research/selectivity/sources/jm4c00072_si_002.csv.gz",
+      "role": "unchanged_existing_repository_provenance",
+      "sha256": "a628c90932abb6c9eaac12a6236462248da96cd6e7a855fb4cde28562a5705dd"
+    },
+    {
+      "path": "research/source_assays.csv",
+      "role": "unchanged_existing_repository_provenance",
+      "sha256": "5bd0f9e201135d0ae2c5786887a5a514d6e6516e7e791bb4cdf1ae45286f573e"
+    },
+    {
+      "path": "requirements.lock",
+      "role": "unchanged_existing_repository_provenance",
+      "sha256": "be23dbecaf88d46dcd0a985949c015a8d75676f76ed00115c7b9c754fb62bd0c"
+    },
+    {
+      "path": "requirements-structure.lock",
+      "role": "runtime_dependencies",
+      "sha256": "3cfbc6569618490698d97977f36ec0300aeac9cfe4ffe2e19748af266f81daa6"
+    },
+    {
+      "path": "research/structure_comparison/geometry_contract.json",
+      "role": "normative_fixed_contract",
+      "sha256": "1e6a696ee2420ee2bdb7a3fe4ae82c949b3c69c289157764e61780a608670fef"
+    },
+    {
+      "path": "research/structure_comparison/acceptance_cases.json",
+      "role": "implementation_acceptance_specification",
+      "sha256": "7e04399122330bc14a0caf574130a81f8f16dfb24f2fb0d512234281010ddde5"
+    },
+    {
+      "path": "research/structure_comparison/input_manifest.json",
+      "role": "historical_input_manifest",
+      "sha256": "cad97467261b7c45be03fdfd54ac532a8a585a75d7a410f049f428e98b253b96"
+    }
+  ],
+  "intended_use": "retrospective_descriptive_geometry_only",
+  "origin": "published_deposited_coordinates",
+  "path_base": "explicit --repository directory, never caller working directory",
+  "schema_version": 1,
+  "source_change_policy": "A differing hash rejects this fixed package; retrieve changed source separately, inspect and version a new manifest. Never substitute the expected hash or overwrite a historical snapshot."
+}

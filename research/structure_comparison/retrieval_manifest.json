@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "path": "sources/8RIY.cif",
+      "requested_url": "https://files.rcsb.org/download/8RIY.cif",
+      "resolved_url": "https://files.rcsb.org/download/8RIY.cif",
+      "retrieved_at_utc": "2026-10-05T06:01:32.903381+00:00",
+      "http_status": 200,
+      "content_type": "chemical/x-cif",
+      "last_modified": null,
+      "bytes": 394679,
+      "sha256": "39267e781393f99681d7f154d2def2a271c8a10ae9a2bc6fe819cbf78d9c5047"
+    },
+    {
+      "path": "sources/8RIY-entry.json",
+      "requested_url": "https://data.rcsb.org/rest/v1/core/entry/8RIY",
+      "resolved_url": "https://data.rcsb.org/rest/v1/core/entry/8RIY",
+      "retrieved_at_utc": "2026-10-05T06:01:33.069005+00:00",
+      "http_status": 200,
+      "content_type": "application/json",
+      "last_modified": null,
+      "bytes": 14342,
+      "sha256": "04974f83dcb5cda67cfc8ffc2ebbdc06fef0d9488051929c5cdae0ea313d31d5"
+    },
+    {
+      "path": "sources/8RIY-polymer-1.json",
+      "requested_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/8RIY/1",
+      "resolved_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/8RIY/1",
+      "retrieved_at_utc": "2026-10-05T06:01:33.191976+00:00",
+      "http_status": 200,
+      "content_type": "application/json",
+      "last_modified": null,
+      "bytes": 29612,
+      "sha256": "3962cd16e86c8146d639bd29f0513557d1a46fd5651a2da85aaa233f6bd5e481"
+    },
+    {
+      "path": "sources/8RIY-assembly-1.json",
+      "requested_url": "https://data.rcsb.org/rest/v1/core/assembly/8RIY/1",
+      "resolved_url": "https://data.rcsb.org/rest/v1/core/assembly/8RIY/1",
+      "retrieved_at_utc": "2026-10-05T06:01:33.284580+00:00",
+      "http_status": 200,
+      "content_type": "application/json",
+      "last_modified": null,
+      "bytes": 3220,
+      "sha256": "089305782788027e238debdc4219cf6f59553b94b50ecf8bd7d363a1ea116cc5"
+    },
+    {
+      "path": "sources/8OTV.cif",
+      "requested_url": "https://files.rcsb.org/download/8OTV.cif",
+      "resolved_url": "https://files.rcsb.org/download/8OTV.cif",
+      "retrieved_at_utc": "2026-10-05T06:01:33.346143+00:00",
+      "http_status": 200,
+      "content_type": "chemical/x-cif",
+      "last_modified": null,
+      "bytes": 711733,
+      "sha256": "de0634d63fa910036a789617e78a2919d0e2767c3ea36c5c3c97d86abbdd4cd8"
+    },
+    {
+      "path": "sources/8OTV-entry.json",
+      "requested_url": "https://data.rcsb.org/rest/v1/core/entry/8OTV",
+      "resolved_url": "https://data.rcsb.org/rest/v1/core/entry/8OTV",
+      "retrieved_at_utc": "2026-10-05T06:01:33.438867+00:00",
+      "http_status": 200,
+      "content_type": "application/json",
+      "last_modified": null,
+      "bytes": 11354,
+      "sha256": "197a7ebc3e79b6caac1241fc41943800d7cc55ac2e4ccc9ed6a00fd679cb008c"
+    },
+    {
+      "path": "sources/8OTV-polymer-1.json",
+      "requested_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/8OTV/1",
+      "resolved_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/8OTV/1",
+      "retrieved_at_utc": "2026-10-05T06:01:33.562098+00:00",
+      "http_status": 200,
+      "content_type": "application/json",
+      "last_modified": null,
+      "bytes": 21769,
+      "sha256": "eda23bf9aa132209792ca31ff9731a7d10040c3fe7ce84b37c27c9f4925e0e02"
+    },
+    {
+      "path": "sources/8OTV-assembly-1.json",
+      "requested_url": "https://data.rcsb.org/rest/v1/core/assembly/8OTV/1",
+      "resolved_url": "https://data.rcsb.org/rest/v1/core/assembly/8OTV/1",
+      "retrieved_at_utc": "2026-10-05T06:01:33.656191+00:00",
+      "http_status": 200,
+      "content_type": "application/json",
+      "last_modified": null,
+      "bytes": 3183,
+      "sha256": "bab298ee79a6d9b7585ad1bdbd1dcb41f971d96b7cc631d2c03ebcd2376aa85c"
+    },
+    {
+      "path": "sources/W0O.cif",
+      "requested_url": "https://files.rcsb.org/ligands/download/W0O.cif",
+      "resolved_url": "https://files.rcsb.org/ligands/download/W0O.cif",
+      "retrieved_at_utc": "2026-10-05T06:01:33.785024+00:00",
+      "http_status": 200,
+      "content_type": "chemical/x-cif",
+      "last_modified": null,
+      "bytes": 10425,
+      "sha256": "e4ba053ac961bc92dcb9db34fcbee43d58a08e2b153c8f2e85a2934adfdc38dc"
+    },
+    {
+      "path": "sources/W0O-chemcomp.json",
+      "requested_url": "https://data.rcsb.org/rest/v1/core/chemcomp/W0O",
+      "resolved_url": "https://data.rcsb.org/rest/v1/core/chemcomp/W0O",
+      "retrieved_at_utc": "2026-10-05T06:01:33.885453+00:00",
+      "http_status": 200,
+      "content_type": "application/json",
+      "last_modified": null,
+      "bytes": 3262,
+      "sha256": "91dd68bc6343e6430a1ec7fd4d36f5fe6c2241ed883f12dc795e1063c7208d17"
+    },
+    {
+      "path": "sources/gemmi-0.7.3-pypi.json",
+      "requested_url": "https://pypi.org/pypi/gemmi/0.7.3/json",
+      "resolved_url": "https://pypi.org/pypi/gemmi/0.7.3/json",
+      "retrieved_at_utc": "2026-10-05T06:01:33.985172+00:00",
+      "http_status": 200,
+      "content_type": "application/json",
+      "last_modified": null,
+      "bytes": 34514,
+      "sha256": "e01bbb5bdc1203f8acc0ecbb04308a30b7bd244d45f5831a2cfe58c1e6df2616"
+    },
+    {
+      "path": "sources/gemmi-0.7.3-cif-docs.rst",
+      "requested_url": "https://raw.githubusercontent.com/project-gemmi/gemmi/v0.7.3/docs/cif.rst",
+      "resolved_url": "https://raw.githubusercontent.com/project-gemmi/gemmi/v0.7.3/docs/cif.rst",
+      "retrieved_at_utc": "2026-10-05T06:01:34.189988+00:00",
+      "http_status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "last_modified": null,
+      "bytes": 84699,
+      "sha256": "4f55da8227e66d3e2f8c1cc3a52324ccf6b5eb335c80159e330023894f1ebdd2"
+    },
+    {
+      "path": "sources/PMC11089510.xml",
+      "requested_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+      "resolved_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11089510/fullTextXML",
+      "retrieved_at_utc": "2026-10-05T06:02:03.257320+00:00",
+      "http_status": 200,
+      "content_type": "application/xml",
+      "last_modified": null,
+      "bytes": 130787,
+      "sha256": "0710da1ebedd4accde6e6cddf8cfe9a2d350c062890fbcfd03bf94bd6f316df0"
+    },
+    {
+      "path": "sources/occupancy-flag-atoms.html",
+      "requested_url": "https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v50.dic/Items/_pdbx_unobs_or_zero_occ_atoms.occupancy_flag.html",
+      "resolved_url": "https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v50.dic/Items/_pdbx_unobs_or_zero_occ_atoms.occupancy_flag.html",
+      "retrieved_at_utc": "2026-10-05T06:03:16.576955+00:00",
+      "http_status": 200,
+      "content_type": "text/html",
+      "bytes": 15448,
+      "sha256": "080a5ecfd364a3d5e4293d08f54aee662eab38ddcf5521809fd026a3692ba3e0"
+    },
+    {
+      "path": "sources/occupancy-flag-residues.html",
+      "requested_url": "https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v50.dic/Items/_pdbx_unobs_or_zero_occ_residues.occupancy_flag.html",
+      "resolved_url": "https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v50.dic/Items/_pdbx_unobs_or_zero_occ_residues.occupancy_flag.html",
+      "retrieved_at_utc": "2026-10-05T06:03:16.701198+00:00",
+      "http_status": 200,
+      "content_type": "text/html",
+      "bytes": 15488,
+      "sha256": "a4acff5615b29f3d950151427d801daf105c72ea22132ad475137c0bc03f5d02"
+    }
+  ]
+}

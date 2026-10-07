@@ -1,0 +1,153 @@
+{
+  "base_input_commit": "9cd03744521a2271d3db1b81727d3e196c7900f8",
+  "code_commit_for_run": "bfd5d7ea57c1ea0315c47ddc315117c0724d6433",
+  "commands": [
+    [
+      ".venv/bin/nudt5-structure",
+      "--repository",
+      "/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery",
+      "--input-manifest",
+      "research/structure_comparison/runtime_input_manifest.json",
+      "--contract",
+      "research/structure_comparison/geometry_contract.json",
+      "--output",
+      "research/structure_comparison/results/observed_proximity.json"
+    ],
+    [
+      "python",
+      "scripts/build_structure_comparison_figures.py",
+      "--input",
+      "research/structure_comparison/results/observed_proximity.json",
+      "--input-sha256",
+      "c4ded0765a28a07fc52e7cebdaf52536d5d3b6fe0d884394e78c951a93c1fffd",
+      "--output",
+      "research/structure_comparison/results/derived"
+    ]
+  ],
+  "counts": {
+    "atom_pairs_within_5A": 1278,
+    "excluded_atoms": 375,
+    "geometry_status": {
+      "observed": 1564,
+      "partial_observed": 58,
+      "refused": 108
+    },
+    "nonprotein_inventory_atoms": 374,
+    "refusals": 108,
+    "residue_conformer_rows": 1730,
+    "rows_per_site": {
+      "8OTV:model1:C:A:301": 447,
+      "8OTV:model1:F:B:302": 447,
+      "8RIY:model1:C:AAA:301": 418,
+      "8RIY:model1:D:BBB:301": 418
+    }
+  },
+  "dependency_locks": {
+    "requirements-structure.lock": "3cfbc6569618490698d97977f36ec0300aeac9cfe4ffe2e19748af266f81daa6",
+    "requirements.lock": "be23dbecaf88d46dcd0a985949c015a8d75676f76ed00115c7b9c754fb62bd0c"
+  },
+  "dependency_versions": {
+    "build": "1.3.0",
+    "gemmi": "0.7.3",
+    "matplotlib": "3.10.3",
+    "mypy": "1.18.2",
+    "numpy": "2.2.6",
+    "pip-audit": "2.9.0",
+    "pytest": "9.0.3",
+    "ruff": "0.14.0"
+  },
+  "derived": {
+    "artifacts": {
+      "atom_pairs_within_5A.csv": {
+        "sha256": "611d493908174f61bce6ad683cc6a04063be85f30f2cbb88dfe79d2bda1925e4",
+        "size_bytes": 129319
+      },
+      "observed_proximity_map.pdf": {
+        "sha256": "8d3115bab222f11e72c2df48bc1f21af150b0f2204508d13e32e526418964222",
+        "size_bytes": 64213
+      },
+      "observed_proximity_map.png": {
+        "sha256": "980d43f601c9b06420296a60345a0ed8edd1cbefcced757bcc4df9bc705c7322",
+        "size_bytes": 885246
+      },
+      "observed_proximity_map.svg": {
+        "sha256": "7d575f2003156664c635a6ced95eabb7759bd3e749c93b2152048faae3740033",
+        "size_bytes": 94064
+      },
+      "radius_sensitivity.csv": {
+        "sha256": "8a1231be9cc76152e154d43f3b006522c5330d1c11726619282423a44a8df842",
+        "size_bytes": 7271
+      },
+      "residue_proximity.csv": {
+        "sha256": "c3c6b9481323af9692e3737629748ed43b722a6cb39932e5876ea37be1712def",
+        "size_bytes": 301888
+      }
+    },
+    "code_sha256": "f4ec1393dea09ae8bbe933fa34cd1d65e33337e77895933d19536dbd5e4ccf86",
+    "derived_manifest_sha256": "2925b6dc9bffbc2dd990ae8dd91720b7aec1685fbfbca4ecdcbc52f05f114388"
+  },
+  "determinism": "Rerun to a scratch path produced identical JSON apart from provenance command/timestamps/git fields; figure/table rerun was byte-identical for all 7 derived files.",
+  "engine_code_sha256": "95e1a5d136a29977691ea5adae4a2bb75c50a074d29472f9775b1a229255e448",
+  "independent_hand_checks": [
+    {
+      "abs_difference_A": 0.0,
+      "engine_A": 2.710402553127487,
+      "geometry_status": "observed",
+      "ligand_atom": "C18 #2968",
+      "protein_atom": "OD2 #1818 occ 1.0",
+      "raw_text_awk_A": 2.710402553127487,
+      "residue": "ASP auth BBB/60",
+      "site_id": "8RIY:model1:D:BBB:301"
+    },
+    {
+      "abs_difference_A": 4.440892098500626e-16,
+      "engine_A": 3.2512725201065518,
+      "geometry_status": "observed",
+      "ligand_atom": "C18 #2968",
+      "protein_atom": "CD #1775 occ 0.78",
+      "raw_text_awk_A": 3.251272520106552,
+      "residue": "ARG auth BBB/51",
+      "site_id": "8RIY:model1:D:BBB:301"
+    },
+    {
+      "abs_difference_A": 4.440892098500626e-16,
+      "engine_A": 3.7555613428620767,
+      "geometry_status": "partial_observed",
+      "ligand_atom": "C20 #2940",
+      "protein_atom": "N #306 occ 1.0",
+      "raw_text_awk_A": 3.755561342862077,
+      "residue": "ARG auth AAA/51",
+      "site_id": "8RIY:model1:C:AAA:301"
+    },
+    {
+      "abs_difference_A": 0.0,
+      "engine_A": 2.850305948490444,
+      "geometry_status": "observed",
+      "ligand_atom": "N5 #3249",
+      "protein_atom": "O #273 occ 1.0",
+      "raw_text_awk_A": 2.850305948490444,
+      "residue": "ASP auth A/35",
+      "site_id": "8OTV:model1:C:A:301"
+    },
+    {
+      "abs_difference_A": 4.440892098500626e-16,
+      "engine_A": 3.3118398210058415,
+      "geometry_status": "observed",
+      "ligand_atom": "N5 #3284",
+      "protein_atom": "CD2 #2737 occ 1.0",
+      "raw_text_awk_A": 3.311839821005842,
+      "residue": "LEU auth B/148",
+      "site_id": "8OTV:model1:F:B:302"
+    }
+  ],
+  "platform": "Linux-6.8.0-1061-aws-x86_64-with-glibc2.35",
+  "python": "3.12.15",
+  "result": {
+    "path": "research/structure_comparison/results/observed_proximity.json",
+    "sha256": "c4ded0765a28a07fc52e7cebdaf52536d5d3b6fe0d884394e78c951a93c1fffd",
+    "size_bytes": 9040843
+  },
+  "schema_version": 1,
+  "scope": "New structural-run provenance only. Historical research/results/* were produced by earlier runs and are unchanged; their runtime versions are recorded in their own manifests and are not restated here.",
+  "worktree_clean_at_run": true
+}

@@ -1,0 +1,7 @@
+compound_name,inchikey,exact_graph_in_retrieved_Balikci_rows,max_morgan_radius2_2048_chiral_tanimoto_to_retrieved_Balikci,nearest_chembl_id,exact_graph_in_any_retrieved_database_row,comparison_scope
+CHEMBL4065181 / BDBM50236118,YTGYWPTWNBGCLG-UHFFFAOYSA-N,False,0.152778,CHEMBL5549952,True,Only 14 unique ChEMBL graphs from Balikci target rows; NOT original 23-compound source CSV or repository 45 graphs
+"NVP-BHG712 regioisomer; identity keyed by graph, not vendor name",MWKSRKSEWLRPBL-UHFFFAOYSA-N,False,0.165217,CHEMBL3707348,True,Only 14 unique ChEMBL graphs from Balikci target rows; NOT original 23-compound source CSV or repository 45 graphs
+"NVP-BHG712 regioisomer; identity keyed by graph, not vendor name",ZCCPLJOKGAACRT-UHFFFAOYSA-N,False,0.165217,CHEMBL3707348,True,Only 14 unique ChEMBL graphs from Balikci target rows; NOT original 23-compound source CSV or repository 45 graphs
+TH5427 (known reference),QXCXMVYVUHVFLP-UHFFFAOYSA-N,True,1.0,CHEMBL5557167,True,Only 14 unique ChEMBL graphs from Balikci target rows; NOT original 23-compound source CSV or repository 45 graphs
+MRK-952,CAPZLSKZPWSIKV-LJQANCHMSA-N,False,0.186916,CHEMBL5557834,False,Only 14 unique ChEMBL graphs from Balikci target rows; NOT original 23-compound source CSV or repository 45 graphs
+MRK-952-NC,HSIKTHHVIIENBG-SFHVURJKSA-N,False,0.157407,CHEMBL5557834,False,Only 14 unique ChEMBL graphs from Balikci target rows; NOT original 23-compound source CSV or repository 45 graphs

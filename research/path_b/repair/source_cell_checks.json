@@ -1,0 +1,324 @@
+[
+  {
+    "compound": "1",
+    "target": "NUDT5",
+    "raw": "0.837 \u00b1 0.329",
+    "ledger": "0.837 \u00b1 0.329",
+    "exact_match": true
+  },
+  {
+    "compound": "1",
+    "target": "NUDT14",
+    "raw": "0.990 \u00b1 0.110",
+    "ledger": "0.990 \u00b1 0.110",
+    "exact_match": true
+  },
+  {
+    "compound": "2",
+    "target": "NUDT5",
+    "raw": "not active",
+    "ledger": "not active",
+    "exact_match": true
+  },
+  {
+    "compound": "2",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "3",
+    "target": "NUDT5",
+    "raw": "not active",
+    "ledger": "not active",
+    "exact_match": true
+  },
+  {
+    "compound": "3",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "4",
+    "target": "NUDT5",
+    "raw": "13.9 \u00b1 0.62 ",
+    "ledger": "13.9 \u00b1 0.62 ",
+    "exact_match": true
+  },
+  {
+    "compound": "4",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "5",
+    "target": "NUDT5",
+    "raw": "21.2 \u00b1 1.02 ",
+    "ledger": "21.2 \u00b1 1.02 ",
+    "exact_match": true
+  },
+  {
+    "compound": "5",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "6",
+    "target": "NUDT5",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "6",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "7",
+    "target": "NUDT5",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "7",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "8",
+    "target": "NUDT5",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "8",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "9",
+    "target": "NUDT5",
+    "raw": "0.270 \u00b1 0.027",
+    "ledger": "0.270 \u00b1 0.027",
+    "exact_match": true
+  },
+  {
+    "compound": "9",
+    "target": "NUDT14",
+    "raw": "0.162 \u00b1 0.005",
+    "ledger": "0.162 \u00b1 0.005",
+    "exact_match": true
+  },
+  {
+    "compound": "10",
+    "target": "NUDT5",
+    "raw": "0.487 \u00b1 0.010",
+    "ledger": "0.487 \u00b1 0.010",
+    "exact_match": true
+  },
+  {
+    "compound": "10",
+    "target": "NUDT14",
+    "raw": "0.263 \u00b1 0.031",
+    "ledger": "0.263 \u00b1 0.031",
+    "exact_match": true
+  },
+  {
+    "compound": "11",
+    "target": "NUDT5",
+    "raw": "2.04 \u00b1 0.240",
+    "ledger": "2.04 \u00b1 0.240",
+    "exact_match": true
+  },
+  {
+    "compound": "11",
+    "target": "NUDT14",
+    "raw": "0.519 \u00b1 0.084",
+    "ledger": "0.519 \u00b1 0.084",
+    "exact_match": true
+  },
+  {
+    "compound": "12",
+    "target": "NUDT5",
+    "raw": "not active",
+    "ledger": "not active",
+    "exact_match": true
+  },
+  {
+    "compound": "12",
+    "target": "NUDT14",
+    "raw": "not active",
+    "ledger": "not active",
+    "exact_match": true
+  },
+  {
+    "compound": "13",
+    "target": "NUDT5",
+    "raw": "not active",
+    "ledger": "not active",
+    "exact_match": true
+  },
+  {
+    "compound": "13",
+    "target": "NUDT14",
+    "raw": "3.72 \u00b1 0.190",
+    "ledger": "3.72 \u00b1 0.190",
+    "exact_match": true
+  },
+  {
+    "compound": "14",
+    "target": "NUDT5",
+    "raw": "13.8 \u00b1 0.900",
+    "ledger": "13.8 \u00b1 0.900",
+    "exact_match": true
+  },
+  {
+    "compound": "14",
+    "target": "NUDT14",
+    "raw": "1.64 \u00b1 0.140",
+    "ledger": "1.64 \u00b1 0.140",
+    "exact_match": true
+  },
+  {
+    "compound": "15",
+    "target": "NUDT5",
+    "raw": "not active",
+    "ledger": "not active",
+    "exact_match": true
+  },
+  {
+    "compound": "15",
+    "target": "NUDT14",
+    "raw": "not active",
+    "ledger": "not active",
+    "exact_match": true
+  },
+  {
+    "compound": "16",
+    "target": "NUDT5",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "16",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "17a",
+    "target": "NUDT5",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "17a",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "17b",
+    "target": "NUDT5",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "17b",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "18a",
+    "target": "NUDT5",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "18a",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "18b",
+    "target": "NUDT5",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "18b",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "18c",
+    "target": "NUDT5",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "18c",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "19",
+    "target": "NUDT5",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "19",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "N-Boc-protected 7",
+    "target": "NUDT5",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  },
+  {
+    "compound": "N-Boc-protected 7",
+    "target": "NUDT14",
+    "raw": "not tested",
+    "ledger": "not tested",
+    "exact_match": true
+  }
+]

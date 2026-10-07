@@ -1,364 +1,799 @@
-#!/usr/bin/env python3
-"""
-NUDT5 Inhibitor Discovery Pipeline
-Transferability-Weighted Consensus Scoring (TWCS)
+"""Audit supplied chemical records and run explicitly exploratory label diagnostics.
 
-Author: Raunak Gengiti
-Affiliation: Independent Research, San Diego, CA
-
-Usage:
-    python scripts/pipeline.py
-
-Outputs:
-    - Benchmark table (AUC, EF, BEDROC) for all methods
-    - Y-randomization validation
-    - Leave-scaffold-out cross-validation
-    - TWCS scores for 10 proposed candidates
-    - Figures saved to results/
+No measured activity is inferred from a CSV label. Raw inputs are never modified.
 """
 
-import os
+from __future__ import annotations
+
+import argparse
 import csv
+import hashlib
+import importlib.metadata
+import json
+import math
+import os
+import platform
+import subprocess
+import sys
+import tempfile
+from collections import Counter, defaultdict
+from collections.abc import Callable, Mapping, Sequence
+from dataclasses import dataclass, replace
+from pathlib import Path
+from typing import Any, cast
+
 import numpy as np
-import warnings
-warnings.filterwarnings("ignore")
-
-from rdkit import Chem, RDLogger
-RDLogger.logger().setLevel(RDLogger.ERROR)
-from rdkit.Chem import AllChem, Descriptors, rdMolDescriptors, DataStructs
+from numpy.typing import ArrayLike, NDArray
+from rdkit import Chem
+from rdkit.Chem import Descriptors, rdFingerprintGenerator, rdMolDescriptors
 from rdkit.Chem.FilterCatalog import FilterCatalog, FilterCatalogParams
-
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from rdkit.Chem.Scaffolds import MurckoScaffold
+from rdkit.DataStructs.cDataStructs import BulkTanimotoSimilarity, ConvertToNumpyArray
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import average_precision_score, roc_auc_score
+from sklearn.model_selection import StratifiedGroupKFold, StratifiedKFold
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
-from sklearn.model_selection import StratifiedKFold, LeaveOneOut
-from sklearn.metrics import roc_auc_score, roc_curve
 
-np.random.seed(42)
+FloatArray = NDArray[np.float64]
+IntArray = NDArray[np.int64]
+ROOT = Path(__file__).resolve().parents[2]
+PROPERTY_NAMES = ("mw", "clogp", "tpsa", "hbd", "hba", "nrb", "fsp3")
+WARNING = (
+    "Exploratory diagnostics of unverified source labels versus untested decoys. "
+    "Not evidence of NUDT5 inhibition, scaffold transfer, safety or therapeutic efficacy."
+)
 
-# ----------------------------------------------------------------
-# Paths
-# ----------------------------------------------------------------
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "data", "compounds.csv")
-RESULTS = os.path.join(ROOT, "results")
-os.makedirs(RESULTS, exist_ok=True)
 
-# ----------------------------------------------------------------
-# 1. Load compounds from CSV
-# ----------------------------------------------------------------
-def load_compounds(path):
-    actives, decoys = [], []
-    with open(path) as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            smi = row["smiles"].strip('"')
-            mol = Chem.MolFromSmiles(smi)
-            if mol is None:
+@dataclass(frozen=True)
+class Compound:
+    identifier: str
+    smiles: str
+    canonical_smiles: str
+    scaffold: str
+    label: int | None
+    source_row: dict[str, str]
+
+
+def molecule(smiles: str) -> Any:
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is None or mol.GetNumAtoms() == 0:
+        raise ValueError(f"Invalid or empty SMILES: {smiles!r}")
+    return mol
+
+
+def read_compounds(
+    path: Path, *, labelled: bool = True
+) -> tuple[list[Compound], list[dict[str, Any]]]:
+    records: list[Compound] = []
+    issues: list[dict[str, Any]] = []
+    seen_ids: set[str] = set()
+    with path.open(newline="", encoding="utf-8-sig") as handle:
+        reader = csv.DictReader(handle, strict=True)
+        try:
+            fieldnames = list(reader.fieldnames or [])
+        except csv.Error as exc:
+            raise ValueError(f"{path.name}: malformed CSV header: {exc}") from exc
+        required = {"id", "smiles"} | ({"label"} if labelled else set())
+        if not required.issubset(fieldnames):
+            raise ValueError(f"{path.name}: required columns are {sorted(required)}")
+        repeated = sorted({name for name in fieldnames if fieldnames.count(name) > 1})
+        if repeated:
+            raise ValueError(f"{path.name}: duplicate column names are ambiguous: {repeated}")
+        try:
+            rows = list(enumerate(reader, start=2))
+        except csv.Error as exc:
+            raise ValueError(f"{path.name}: malformed CSV content: {exc}") from exc
+        for line, raw in rows:
+            if None in raw or any(value is None for value in raw.values()):
+                issues.append(
+                    {
+                        "line": line,
+                        "id": raw.get("id"),
+                        "error": "Malformed CSV row",
+                        "source_row": {str(k): v for k, v in raw.items()},
+                    }
+                )
                 continue
-            if row["label"] == "1":
-                actives.append(smi)
-            else:
-                decoys.append(smi)
-    return actives, decoys
+            row = {key: value.strip() for key, value in raw.items()}
+            identifier = row["id"]
+            error = None
+            if not identifier or identifier in seen_ids:
+                error = "Missing or duplicate record ID"
+            seen_ids.add(identifier)
+            if labelled and row["label"] not in {"0", "1"}:
+                error = "Label must be exactly 0 or 1"
+            try:
+                mol = molecule(row["smiles"])
+            except ValueError as exc:
+                error = str(exc)
+            if error:
+                issues.append({"line": line, "id": identifier, "error": error, "source_row": row})
+                continue
+            canonical = Chem.MolToSmiles(mol, isomericSmiles=True)
+            scaffold_function = cast(
+                Callable[[str | None, Any, bool], str], MurckoScaffold.MurckoScaffoldSmiles
+            )
+            scaffold = scaffold_function(None, mol, False)
+            records.append(
+                Compound(
+                    identifier,
+                    row["smiles"],
+                    canonical,
+                    scaffold or "ACYCLIC",
+                    int(row["label"]) if labelled else None,
+                    row,
+                )
+            )
+    if not records:
+        raise ValueError(f"{path.name}: no valid records; issues={issues}")
+    return records, issues
 
-# ----------------------------------------------------------------
-# 2. Featurization
-# ----------------------------------------------------------------
-def smiles_to_fp(smi, radius=2, nbits=2048):
-    mol = Chem.MolFromSmiles(smi)
-    if mol is None:
-        return None
-    fp = AllChem.GetMorganFingerprintAsBitVect(mol, radius, nBits=nbits)
-    arr = np.zeros(nbits)
-    DataStructs.ConvertToNumpyArray(fp, arr)
-    return arr
 
-def smiles_to_bitvect(smi, radius=2, nbits=2048):
-    mol = Chem.MolFromSmiles(smi)
-    if mol is None:
-        return None
-    return AllChem.GetMorganFingerprintAsBitVect(mol, radius, nBits=nbits)
+def deduplicate(records: Sequence[Compound]) -> tuple[list[Compound], list[dict[str, Any]]]:
+    by_identity: dict[str, list[Compound]] = defaultdict(list)
+    for record in records:
+        by_identity[record.canonical_smiles].append(record)
+    unique: list[Compound] = []
+    duplicates: list[dict[str, Any]] = []
+    for identity, group in sorted(by_identity.items()):
+        if len({record.label for record in group}) > 1:
+            raise ValueError(f"Conflicting labels for structure: {[r.identifier for r in group]}")
+        ordered = sorted(group, key=lambda record: record.identifier)
+        unique.append(ordered[0])
+        if len(ordered) > 1:
+            duplicates.append(
+                {
+                    "canonical_smiles": identity,
+                    "ids": [record.identifier for record in ordered],
+                    "representative": ordered[0].identifier,
+                }
+            )
+    return sorted(unique, key=lambda record: record.identifier), duplicates
 
-def compute_props(smi):
-    mol = Chem.MolFromSmiles(smi)
-    if mol is None:
-        return {}
-    total_c = sum(1 for a in mol.GetAtoms() if a.GetAtomicNum() == 6)
-    sp3_c = sum(1 for a in mol.GetAtoms()
-                if a.GetAtomicNum() == 6 and a.GetHybridization().name == "SP3")
+
+def smiles_to_bitvect(smiles: str, radius: int = 2, nbits: int = 2048) -> Any:
+    if radius < 0 or nbits < 1:
+        raise ValueError("Fingerprint radius must be nonnegative and bit count positive")
+    generator = rdFingerprintGenerator.GetMorganGenerator(radius=radius, fpSize=nbits)
+    return generator.GetFingerprint(molecule(smiles))
+
+
+def smiles_to_fp(smiles: str, radius: int = 2, nbits: int = 2048) -> FloatArray:
+    vector = np.zeros(nbits, dtype=np.float64)
+    ConvertToNumpyArray(smiles_to_bitvect(smiles, radius, nbits), vector)
+    return vector
+
+
+def compute_props(smiles: str) -> dict[str, float]:
+    mol = molecule(smiles)
     return {
-        "MW": round(Descriptors.MolWt(mol), 1),
-        "cLogP": round(Descriptors.MolLogP(mol), 2),
-        "TPSA": round(Descriptors.TPSA(mol), 1),
-        "HBD": rdMolDescriptors.CalcNumHBD(mol),
-        "HBA": rdMolDescriptors.CalcNumHBA(mol),
-        "NRB": rdMolDescriptors.CalcNumRotatableBonds(mol),
-        "Fsp3": round(sp3_c / total_c, 2) if total_c > 0 else 0.0,
+        "mw": float(cast(Any, Descriptors).MolWt(mol)),
+        "clogp": float(rdMolDescriptors.CalcCrippenDescriptors(mol)[0]),
+        "tpsa": float(rdMolDescriptors.CalcTPSA(mol)),
+        "hbd": float(rdMolDescriptors.CalcNumHBD(mol)),
+        "hba": float(rdMolDescriptors.CalcNumHBA(mol)),
+        "nrb": float(rdMolDescriptors.CalcNumRotatableBonds(mol)),
+        "fsp3": float(rdMolDescriptors.CalcFractionCSP3(mol)),
     }
 
-# ----------------------------------------------------------------
-# 3. Metrics
-# ----------------------------------------------------------------
-def enrichment_factor(y_true, y_scores, frac=0.01):
-    n = len(y_true)
-    n_act = y_true.sum()
-    top_n = max(1, int(frac * n))
-    top_idx = np.argsort(y_scores)[::-1][:top_n]
-    hits = y_true[top_idx].sum()
-    return (hits / top_n) / (n_act / n) if n_act > 0 else 0
 
-def bedroc(y_true, y_scores, alpha=20):
-    n = len(y_true)
-    n_a = int(y_true.sum())
-    if n_a == 0:
-        return 0
-    ranks = [r + 1 for r, i in enumerate(np.argsort(y_scores)[::-1]) if y_true[i] == 1]
-    R_a = n_a / n
-    s = sum(np.exp(-alpha * r / n) for r in ranks)
-    Rmax = (1 - np.exp(-alpha * R_a)) / (R_a * (1 - np.exp(-alpha)))
-    Rmin = (1 - np.exp(alpha * R_a)) / (R_a * (1 - np.exp(alpha)))
-    if Rmax == Rmin:
-        return 0
-    return max(0, min(1, (s * R_a / n_a - Rmin) / (Rmax - Rmin)))
+def ranking_inputs(y_true: ArrayLike, y_scores: ArrayLike) -> tuple[IntArray, FloatArray]:
+    labels = np.asarray(y_true, dtype=np.float64)
+    scores = np.asarray(y_scores, dtype=np.float64)
+    if labels.ndim != 1 or scores.shape != labels.shape or len(labels) == 0:
+        raise ValueError("Labels and scores must be nonempty, equally sized one-dimensional arrays")
+    if not np.isfinite(scores).all() or not np.isin(labels, [0, 1]).all():
+        raise ValueError("Scores must be finite and labels binary")
+    if len(np.unique(labels)) != 2:
+        raise ValueError("Ranking metrics require both classes")
+    return labels.astype(np.int64), scores
 
-# ----------------------------------------------------------------
-# 4. TWCS Consensus
-# ----------------------------------------------------------------
-def normalize(arr):
-    mn, mx = arr.min(), arr.max()
-    return (arr - mn) / (mx - mn) if mx > mn else arr
 
-def twcs_consensus(score_dict, weights=None):
-    """Compute TWCS consensus from a dict of {method_name: scores_array}."""
-    names = list(score_dict.keys())
+def expected_rank_labels(y_true: ArrayLike, y_scores: ArrayLike) -> FloatArray:
+    """Average over every ordering within exactly tied scores, without favoring IDs."""
+    labels, scores = ranking_inputs(y_true, y_scores)
+    order = np.argsort(-scores, kind="stable")
+    ordered_scores = scores[order]
+    ranked = labels[order].astype(np.float64)
+    boundaries = np.r_[0, np.flatnonzero(np.diff(ordered_scores)) + 1, len(scores)]
+    for start, end in zip(boundaries[:-1], boundaries[1:], strict=True):
+        ranked[start:end] = ranked[start:end].mean()
+    return ranked
+
+
+def enrichment_factor(y_true: ArrayLike, y_scores: ArrayLike, frac: float = 0.01) -> float:
+    if not math.isfinite(frac) or not 0 < frac <= 1:
+        raise ValueError("Fraction must be in (0, 1]")
+    ranked = expected_rank_labels(y_true, y_scores)
+    count = math.ceil(frac * len(ranked))
+    return float(ranked[:count].mean() / ranked.mean())
+
+
+def bedroc(y_true: ArrayLike, y_scores: ArrayLike, alpha: float = 20.0) -> float:
+    if not math.isfinite(alpha) or alpha <= 0:
+        raise ValueError("BEDROC alpha must be finite and positive")
+    labels, _ = ranking_inputs(y_true, y_scores)
+    ranked = expected_rank_labels(y_true, y_scores)
+    weights = np.exp(-alpha * (np.arange(len(labels), dtype=np.float64) / len(labels)))
+    if alpha < np.finfo(np.float64).eps:
+        weights = -np.arange(len(labels), dtype=np.float64) / len(labels)
+    elif alpha < 0.01:
+        # Remove the common constant before summing; expm1 retains tiny-alpha differences.
+        weights = (
+            np.expm1(-alpha * (np.arange(len(labels), dtype=np.float64) / len(labels))) / alpha
+        )
+    active = int(labels.sum())
+    best, worst = weights[:active].sum(), weights[-active:].sum()
+    if best == worst:
+        raise ValueError("BEDROC alpha is too small for numerical precision")
+    return float(np.clip((np.dot(ranked, weights) - worst) / (best - worst), 0, 1))
+
+
+def consensus_scores(
+    score_dict: Mapping[str, ArrayLike], weights: Mapping[str, float] | None = None
+) -> FloatArray:
+    """A fixed weighted mean of bounded scores, not transfer learning or calibrated risk."""
+    if not score_dict:
+        raise ValueError("Consensus requires at least one score vector")
+    names = list(score_dict)
+    arrays = [np.asarray(score_dict[name], dtype=np.float64) for name in names]
+    if any(
+        array.ndim != 1
+        or array.size == 0
+        or array.shape != arrays[0].shape
+        or not np.isfinite(array).all()
+        or (array < 0).any()
+        or (array > 1).any()
+        for array in arrays
+    ):
+        raise ValueError("Consensus requires equally sized, finite vectors in [0, 1]")
     if weights is None:
-        weights = {n: 1.0 / len(names) for n in names}
-    normed = {n: normalize(score_dict[n]) for n in names}
-    consensus = sum(weights[n] * normed[n] for n in names)
-    return consensus
+        coefficients: FloatArray = np.ones(len(names))
+    else:
+        if set(weights) != set(names):
+            raise ValueError("Weight names must exactly match score names")
+        coefficients = np.asarray([weights[name] for name in names], dtype=np.float64)
+    if not np.isfinite(coefficients).all() or (coefficients < 0).any() or coefficients.max() <= 0:
+        raise ValueError("Weights must be finite, nonnegative, and have positive total")
+    coefficients = coefficients / coefficients.max()
+    result = np.asarray(
+        np.average(np.stack(arrays), axis=0, weights=coefficients), dtype=np.float64
+    )
+    if not np.isfinite(result).all():
+        raise ValueError("Nonfinite consensus arithmetic")
+    return result
 
-# ----------------------------------------------------------------
-# 5. Proposed compounds
-# ----------------------------------------------------------------
-PROPOSED = {
-    "NC5-01": "O=c1[nH]c(=O)c2n(Cc3nn(C)c(-c4ccc(F)cc4)n3)c(N3CCNCC3)nc2n1C",
-    "NC5-02": "Nc1ncnc2[nH]nc(-c3ccc(Oc4ccccc4)cc3)c12",
-    "NC5-03": "O=S(=O)(N1CCNCC1)c1ccc2[nH]c(-c3ccccn3)nc2c1",
-    "NC5-04": "c1nc(N)c2ncn(CC(=O)NS(=O)(=O)c3ccc(Cl)cc3)c2n1",
-    "NC5-05": "O=C(NCc1cnc2ccccc2n1)c1c[nH]c2ccccc12",
-    "NC5-06": "Nc1nc2ncc(CN3CCNCC3)nc2c(=O)[nH]1",
-    "NC5-07": "O=c1[nH]c(Nc2ccc(F)cc2)nc2cnc(Cc3nnc(-c4ccc(Cl)cc4)o3)nc12",
-    "NC5-08": "O=C(Nc1ccc(F)cc1)Cn1c(=O)[nH]c2nc[nH]c(=O)c21",
-    "NC5-09": "O=C(/C=C/c1ccc(F)cc1)N1CCN(c2nc3ccccc3c(=O)[nH]2)CC1",
-    "NC5-10": "O=C(c1cnc2nc(N)ccn12)Nc1cccc(S(N)(=O)=O)c1",
-}
 
-TH5427 = "O=c1[nH]c(=O)c2n(Cc3nnc(-c4ccc(Cl)c(Cl)c4)o3)c(N3CCNCC3)nc2n1C"
+def permutation_pvalue(observed: float, null_scores: ArrayLike) -> float:
+    null = np.asarray(null_scores, dtype=np.float64)
+    if (
+        null.ndim != 1
+        or null.size == 0
+        or not np.isfinite(null).all()
+        or not math.isfinite(observed)
+    ):
+        raise ValueError("Permutation scores must be a nonempty finite vector")
+    return float((np.count_nonzero(null >= observed) + 1) / (len(null) + 1))
 
-# ================================================================
-# MAIN
-# ================================================================
-def main():
-    print("=" * 65)
-    print("  NUDT5 Inhibitor Discovery -- TWCS Pipeline")
-    print("=" * 65)
 
-    # --- Load data ---
-    print("\n[1/7] Loading compounds...")
-    actives, decoys = load_compounds(DATA)
-    # Replicate decoys to get ~500 (26 unique x 20)
-    decoys_expanded = (decoys * 20)[:520]
-    print(f"  {len(actives)} actives, {len(decoys_expanded)} decoys")
-
-    # --- Featurize ---
-    print("[2/7] Computing ECFP4 fingerprints...")
-    Xa = np.array([x for x in (smiles_to_fp(s) for s in actives) if x is not None])
-    Xd = np.array([x for x in (smiles_to_fp(s) for s in decoys_expanded) if x is not None])
-    X = np.vstack([Xa, Xd])
-    y = np.array([1] * len(Xa) + [0] * len(Xd))
-    na, nd = len(Xa), len(Xd)
-    print(f"  Feature matrix: {X.shape[0]} x {X.shape[1]}")
-
-    # Tanimoto similarity to TH5427
-    th_fp = smiles_to_bitvect(TH5427)
-    all_smiles = actives[:na] + decoys_expanded[:nd]
-    sim_scores = np.array([
-        DataStructs.TanimotoSimilarity(th_fp, smiles_to_bitvect(s))
-        if smiles_to_bitvect(s) is not None else 0.0
-        for s in all_smiles
-    ])
-
-    # --- 5-Fold CV Benchmark ---
-    print("[3/7] Running 5-fold CV benchmark...")
-    models = {
-        "RF": RandomForestClassifier(n_estimators=100, max_features="sqrt",
-                                      random_state=42, n_jobs=-1),
-        "GBT": GradientBoostingClassifier(n_estimators=100, max_depth=3,
-                                           learning_rate=0.1, random_state=42),
-        "SVM": SVC(kernel="rbf", C=10, probability=True, random_state=42),
+def metrics(y_true: ArrayLike, scores: ArrayLike) -> dict[str, float | int]:
+    labels, values = ranking_inputs(y_true, scores)
+    return {
+        "n": len(labels),
+        "positives": int(labels.sum()),
+        "auc": float(roc_auc_score(labels, values)),
+        "sensitivity_at_0_5": float(np.mean(values[labels == 1] >= 0.5)),
+        "specificity_at_0_5": float(np.mean(values[labels == 0] < 0.5)),
+        "average_precision": float(average_precision_score(labels, values)),
+        "ef_1pct": enrichment_factor(labels, values, 0.01),
+        "ef_5pct": enrichment_factor(labels, values, 0.05),
+        "ef_1pct_k": math.ceil(len(labels) * 0.01),
+        "ef_5pct_k": math.ceil(len(labels) * 0.05),
+        "bedroc20": bedroc(labels, values),
     }
 
-    skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-    cv_probs = {n: np.zeros(len(y)) for n in models}
-    cv_probs["Similarity"] = sim_scores
-    cv_probs["Random"] = np.random.random(len(y))
 
+def scaffold_splits(
+    labels: IntArray, groups: Sequence[str], folds: int, seed: int
+) -> list[tuple[IntArray, IntArray]]:
+    if len(groups) != len(labels) or folds < 2 or len(set(groups)) < folds:
+        raise ValueError("Insufficient aligned scaffold groups or invalid fold count")
+    splitter = StratifiedGroupKFold(n_splits=folds, shuffle=True, random_state=seed)
+    result: list[tuple[IntArray, IntArray]] = []
+    group_array = np.asarray(groups)
+    for train, test in splitter.split(np.zeros(len(labels)), labels, groups):
+        if len(test) == 0 or len(np.unique(labels[train])) != 2:
+            raise ValueError("A scaffold fold is empty or its training set lacks a class")
+        if set(group_array[train]) & set(group_array[test]):
+            raise ValueError("Scaffold overlap detected between train and test")
+        result.append((train, test))
+    return result
+
+
+def series_splits(records: Sequence[Compound], seed: int) -> list[tuple[IntArray, IntArray]]:
+    """Hold out each labelled positive series with a disjoint partition of decoys."""
+    series = sorted(
+        {record.source_row.get("series", "") for record in records if record.label == 1}
+    )
+    if len(series) < 2 or "" in series:
+        raise ValueError("Series holdout requires at least two nonempty positive-series labels")
+    negatives = np.asarray(
+        [i for i, record in enumerate(records) if record.label == 0], dtype=np.int64
+    )
+    if len(negatives) < len(series):
+        raise ValueError("Series holdout needs at least one test decoy per series")
+    rng = np.random.default_rng(seed)
+    negative_parts = np.array_split(rng.permutation(negatives), len(series))
+    all_indices = np.arange(len(records), dtype=np.int64)
+    splits = []
+    for group, negative in zip(series, negative_parts, strict=True):
+        positive = np.array(
+            [
+                i
+                for i, record in enumerate(records)
+                if record.label == 1 and record.source_row["series"] == group
+            ],
+            dtype=np.int64,
+        )
+        test = np.sort(np.r_[positive, negative])
+        train = np.setdiff1d(all_indices, test)
+        splits.append((train, test))
+    return splits
+
+
+def auc_resampling(
+    labels: IntArray, scores: FloatArray, groups: Sequence[str], seed: int, draws: int = 1000
+) -> dict[str, Any]:
+    """Cluster resampling of fixed OOF scores, not a model-retraining confidence interval."""
+    if draws < 1 or len(groups) != len(labels):
+        raise ValueError("Positive draws and aligned groups are required")
+    ranking_inputs(labels, scores)
+    group_array = np.asarray(groups)
+    identities = np.unique(group_array)
+    members = [np.flatnonzero(group_array == group) for group in identities]
+    rng = np.random.default_rng(seed)
+    aucs = []
+    one_class = 0
+    for _ in range(draws):
+        indices = np.concatenate([members[i] for i in rng.integers(0, len(members), len(members))])
+        if len(np.unique(labels[indices])) < 2:
+            one_class += 1
+            continue
+        aucs.append(float(roc_auc_score(labels[indices], scores[indices])))
+    if not aucs:
+        raise ValueError("All cluster bootstrap draws lack both classes")
+    low, high = np.quantile(aucs, [0.025, 0.975])
+    return {
+        "conditional_auc_percentile_95": [float(low), float(high)],
+        "draws": draws,
+        "valid_draws": len(aucs),
+        "one_class_draws": one_class,
+        "unit": "exact Murcko scaffold",
+        "model_refitted": False,
+        "limitation": "Fixed-OOF-score descriptive interval; ignores training-set uncertainty",
+    }
+
+
+def randomized_label_diagnostic(
+    records: Sequence[Compound],
+    observed: Mapping[str, float],
+    permutations: int,
+    folds: int,
+    seed: int,
+) -> dict[str, Any]:
+    if permutations < 1:
+        raise ValueError("At least one permutation is required")
+    labels = np.asarray([record.label for record in records], dtype=np.int64)
+    rng = np.random.default_rng(seed)
+    null: dict[str, list[float]] = {name: [] for name in observed}
+    for iteration in range(permutations):
+        shuffled = rng.permutation(labels)
+        permuted = [
+            replace(record, label=int(label))
+            for record, label in zip(records, shuffled, strict=True)
+        ]
+        scores, _ = out_of_fold(permuted, split="molecule", folds=folds, seed=seed)
+        for name, values in scores.items():
+            null[name].append(float(roc_auc_score(shuffled, values)))
+        if (iteration + 1) % 10 == 0:
+            print(f"Label-permutation diagnostic: {iteration + 1}/{permutations}", flush=True)
+    return {
+        "permutations": permutations,
+        "minimum_pvalue": 1 / (permutations + 1),
+        "split": "molecule; stratification recomputed from each permuted label vector",
+        "warning": (
+            "Unrestricted unique-molecule label-shuffling diagnostic; "
+            "correlated chemical series are not assumed biologically exchangeable. "
+            "These p-values do not validate biological activity or rule out dataset bias."
+        ),
+        "methods": {
+            name: {
+                "observed_auc": observed[name],
+                "null_auc": values,
+                "p_plus_one": permutation_pvalue(observed[name], values),
+            }
+            for name, values in null.items()
+        },
+    }
+
+
+def fit_scores(
+    x_train: FloatArray,
+    y_train: IntArray,
+    x_test: FloatArray,
+    properties_train: FloatArray,
+    properties_test: FloatArray,
+    seed: int,
+) -> dict[str, FloatArray]:
+    models: dict[str, RandomForestClassifier | GradientBoostingClassifier | SVC] = {
+        "RF": RandomForestClassifier(
+            n_estimators=100, max_features="sqrt", random_state=seed, n_jobs=1
+        ),
+        "GBT": GradientBoostingClassifier(
+            n_estimators=100, max_depth=3, learning_rate=0.1, random_state=seed
+        ),
+        "SVM_RBF": SVC(kernel="rbf", C=10, probability=True, random_state=seed),
+    }
+    scores = {}
     for name, model in models.items():
-        for tri, tsi in skf.split(X, y):
-            mc = type(model)(**model.get_params())
-            mc.fit(X[tri], y[tri])
-            cv_probs[name][tsi] = mc.predict_proba(X[tsi])[:, 1]
+        model.fit(x_train, y_train)
+        scores[name] = np.asarray(model.predict_proba(x_test)[:, 1], dtype=np.float64)
+    property_model = make_pipeline(StandardScaler(), LogisticRegression(C=1, max_iter=2000))
+    property_model.fit(properties_train, y_train)
+    scores["Property_LR"] = np.asarray(
+        property_model.predict_proba(properties_test)[:, 1], dtype=np.float64
+    )
+    active = x_train[y_train == 1]
+    intersection = x_test @ active.T
+    union = x_test.sum(axis=1)[:, None] + active.sum(axis=1)[None, :] - intersection
+    scores["Nearest_active"] = np.max(
+        np.divide(intersection, union, out=np.zeros_like(intersection), where=union != 0), axis=1
+    )
+    scores["Equal_mean"] = consensus_scores(
+        {name: scores[name] for name in ("RF", "GBT", "SVM_RBF", "Nearest_active")}
+    )
+    return scores
 
-    # Consensus
-    cv_probs["TWCS"] = twcs_consensus({
-        "RF": cv_probs["RF"], "GBT": cv_probs["GBT"],
-        "SVM": cv_probs["SVM"], "Similarity": cv_probs["Similarity"],
-    })
 
-    print(f"\n  {'Method':<14} {'AUC':>6} {'EF1%':>7} {'EF5%':>7} {'BEDROC':>8}")
-    print("  " + "-" * 46)
-    bench = {}
-    for name in ["Random", "Similarity", "RF", "GBT", "SVM", "TWCS"]:
-        auc = roc_auc_score(y, cv_probs[name])
-        ef1 = enrichment_factor(y, cv_probs[name], 0.01)
-        ef5 = enrichment_factor(y, cv_probs[name], 0.05)
-        bed = bedroc(y, cv_probs[name])
-        bench[name] = {"AUC": auc, "EF1": ef1, "EF5": ef5, "BEDROC": bed}
-        print(f"  {name:<14} {auc:>6.3f} {ef1:>7.1f} {ef5:>7.1f} {bed:>8.3f}")
-
-    # --- Y-Randomization ---
-    print("\n[4/7] Y-randomization (5 permutations)...")
-    yrand = {n: [] for n in models}
-    for _ in range(5):
-        ys = np.random.permutation(y)
-        for name, model in models.items():
-            ps = np.zeros(len(y))
-            for tri, tsi in skf.split(X, ys):
-                mc = type(model)(**model.get_params())
-                mc.fit(X[tri], ys[tri])
-                ps[tsi] = mc.predict_proba(X[tsi])[:, 1]
-            yrand[name].append(roc_auc_score(ys, ps))
-
-    print(f"\n  {'Model':<8} {'Real AUC':>10} {'Rand mean':>10} {'p-value':>10}")
-    print("  " + "-" * 40)
-    for name in models:
-        real = bench[name]["AUC"]
-        rmean = np.mean(yrand[name])
-        p = np.mean(np.array(yrand[name]) >= real)
-        print(f"  {name:<8} {real:>10.3f} {rmean:>10.3f} {p:>10.3f}")
-
-    # --- LOOCV ---
-    print("\n[5/7] LOOCV on actives...")
-    loo = LeaveOneOut()
-    for name, model in models.items():
-        preds = np.zeros(na)
-        for tri, tsi in loo.split(Xa):
-            Xtr = np.vstack([Xa[tri], Xd])
-            ytr = np.array([1] * len(tri) + [0] * nd)
-            mc = type(model)(**model.get_params())
-            mc.fit(Xtr, ytr)
-            preds[tsi] = mc.predict_proba(Xa[tsi])[:, 1]
-        sens = np.mean(preds > 0.5)
-        print(f"  {name} LOOCV sensitivity: {sens:.2f}")
-
-    # --- Leave-scaffold-out ---
-    print("\n[6/7] Leave-scaffold-out (TH5427 series -> ibrutinib series)...")
-    th_idx = list(range(min(18, na)))
-    ib_idx = list(range(min(18, na), na))
-    if len(ib_idx) > 0:
-        for name, model in models.items():
-            Xtr = np.vstack([Xa[th_idx], Xd])
-            ytr = np.array([1] * len(th_idx) + [0] * nd)
-            mc = type(model)(**model.get_params())
-            mc.fit(Xtr, ytr)
-            ib_probs = mc.predict_proba(Xa[ib_idx])[:, 1]
-            sens = np.mean(ib_probs > 0.5)
-            print(f"  {name} LSO sensitivity: {sens:.2f}")
+def out_of_fold(
+    records: Sequence[Compound], *, split: str, folds: int, seed: int
+) -> tuple[dict[str, FloatArray], list[dict[str, Any]]]:
+    labels = np.asarray([record.label for record in records], dtype=np.int64)
+    if len(np.unique(labels)) != 2 or (split != "series" and min(Counter(labels).values()) < folds):
+        raise ValueError("Each class must contain at least the requested fold count")
+    features = np.stack([smiles_to_fp(record.smiles) for record in records])
+    descriptors = [compute_props(record.smiles) for record in records]
+    properties = np.array([[row[name] for name in PROPERTY_NAMES] for row in descriptors])
+    groups = [record.scaffold for record in records]
+    if split == "scaffold":
+        splits = scaffold_splits(labels, groups, folds, seed)
+    elif split == "series":
+        splits = series_splits(records, seed)
+    elif split == "molecule":
+        splits = list(
+            StratifiedKFold(n_splits=folds, shuffle=True, random_state=seed).split(features, labels)
+        )
     else:
-        print("  Skipped (insufficient ibrutinib-series compounds)")
+        raise ValueError("Split must be molecule, scaffold or series")
+    predictions: dict[str, FloatArray] = {}
+    assignments = []
+    for fold, (train, test) in enumerate(splits):
+        scores = fit_scores(
+            features[train],
+            labels[train],
+            features[test],
+            properties[train],
+            properties[test],
+            seed,
+        )
+        for name, values in scores.items():
+            predictions.setdefault(name, np.full(len(labels), np.nan))[test] = values
+        for index in test:
+            assignments.append(
+                {
+                    "id": records[index].identifier,
+                    "fold": fold,
+                    "label": int(labels[index]),
+                    "scaffold": groups[index],
+                }
+            )
+    if any(not np.isfinite(values).all() for values in predictions.values()):
+        raise ValueError("Out-of-fold predictions do not cover every record")
+    return predictions, sorted(assignments, key=lambda row: row["id"])
 
-    # --- Score proposed compounds ---
-    print("\n[7/7] Scoring proposed candidates...")
-    final_models = {}
-    for name, model in models.items():
-        mc = type(model)(**model.get_params())
-        mc.fit(X, y)
-        final_models[name] = mc
 
-    # PAINS filter
+def fold_statistics(
+    records: Sequence[Compound],
+    assignments: Sequence[Mapping[str, Any]],
+    predictions: Mapping[str, FloatArray],
+) -> dict[str, Any]:
+    by_id = {record.identifier: i for i, record in enumerate(records)}
+    labels = np.asarray([record.label for record in records], dtype=np.int64)
+    output: dict[str, Any] = {}
+    for fold in sorted({row["fold"] for row in assignments}):
+        indices = np.array([by_id[row["id"]] for row in assignments if row["fold"] == fold])
+        if len(np.unique(labels[indices])) != 2:
+            output[str(fold)] = {
+                "n": len(indices),
+                "positives": int(labels[indices].sum()),
+                "auc": None,
+                "reason": "Test fold contains only one class",
+            }
+        else:
+            output[str(fold)] = {
+                name: metrics(labels[indices], scores[indices])
+                for name, scores in predictions.items()
+            }
+    return output
+
+
+def candidate_audit(
+    records: Sequence[Compound], candidates: Sequence[Compound]
+) -> list[dict[str, Any]]:
+    fingerprints = [smiles_to_bitvect(record.smiles) for record in records]
     params = FilterCatalogParams()
     params.AddCatalog(FilterCatalogParams.FilterCatalogs.PAINS)
-    pains_catalog = FilterCatalog(params)
+    catalog = FilterCatalog(params)
+    output = []
+    for candidate in candidates:
+        props = compute_props(candidate.smiles)
+        similarity = np.asarray(
+            BulkTanimotoSimilarity(smiles_to_bitvect(candidate.smiles), fingerprints)
+        )
+        matches = [
+            record.identifier
+            for record in records
+            if record.canonical_smiles == candidate.canonical_smiles
+        ]
+        differences = {}
+        for name, value in props.items():
+            if name in candidate.source_row:
+                try:
+                    supplied = float(candidate.source_row[name])
+                except ValueError as exc:
+                    raise ValueError(f"{candidate.identifier}: nonnumeric supplied {name}") from exc
+                if not math.isfinite(supplied):
+                    raise ValueError(f"{candidate.identifier}: nonfinite supplied {name}")
+                differences[name] = {
+                    "reported": supplied,
+                    "computed": value,
+                    "delta": value - supplied,
+                }
+        nearest = int(np.argmax(similarity))
+        active_indices = [i for i, record in enumerate(records) if record.label == 1]
+        nearest_active = (
+            max(active_indices, key=lambda i: float(similarity[i])) if active_indices else None
+        )
+        output.append(
+            {
+                "id": candidate.identifier,
+                "canonical_smiles": candidate.canonical_smiles,
+                "training_identity_matches": matches,
+                "nearest_training_id": records[nearest].identifier,
+                "max_training_tanimoto": float(similarity[nearest]),
+                "nearest_active_id": (
+                    records[nearest_active].identifier if nearest_active is not None else None
+                ),
+                "max_active_tanimoto": (
+                    float(similarity[nearest_active]) if nearest_active is not None else None
+                ),
+                "properties": props,
+                "reported_property_comparison": differences,
+                "pains_alerts": [
+                    match.GetDescription()
+                    for match in catalog.GetMatches(molecule(candidate.smiles))
+                ],
+                "ro5_violations": sum(
+                    [props["mw"] > 500, props["clogp"] > 5, props["hbd"] > 5, props["hba"] > 10]
+                ),
+                "veber_pass": props["nrb"] <= 10 and props["tpsa"] <= 140,
+                "status": (
+                    "training_overlap_not_novel"
+                    if matches
+                    else "not_in_training_set_novelty_and_activity_unverified"
+                ),
+            }
+        )
+    return output
 
-    print(f"\n  {'ID':<8} {'TWCS':>6} {'RF':>6} {'GBT':>6} {'SVM':>6} "
-          f"{'T(TH)':>6} {'MW':>6} {'cLogP':>6} {'PAINS':>6}")
-    print("  " + "-" * 62)
 
-    for cid in sorted(PROPOSED, key=lambda c: c):
-        smi = PROPOSED[cid]
-        fp_arr = smiles_to_fp(smi)
-        fp_bv = smiles_to_bitvect(smi)
-        if fp_arr is None or fp_bv is None:
-            continue
-        sim = DataStructs.TanimotoSimilarity(th_fp, fp_bv)
-        rf_p = final_models["RF"].predict_proba(fp_arr.reshape(1, -1))[0][1]
-        gb_p = final_models["GBT"].predict_proba(fp_arr.reshape(1, -1))[0][1]
-        sv_p = final_models["SVM"].predict_proba(fp_arr.reshape(1, -1))[0][1]
-        con = np.mean([rf_p, gb_p, sv_p, sim])
-        props = compute_props(smi)
-        mol = Chem.MolFromSmiles(smi)
-        pains_ok = "OK" if pains_catalog.GetFirstMatch(mol) is None else "ALERT"
-        print(f"  {cid:<8} {con:>6.3f} {rf_p:>6.3f} {gb_p:>6.3f} {sv_p:>6.3f} "
-              f"{sim:>6.3f} {props['MW']:>6.0f} {props['cLogP']:>6.2f} {pains_ok:>6}")
+def input_manifest(paths: Sequence[Path], arguments: Mapping[str, Any]) -> dict[str, Any]:
+    try:
+        revision = subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=True
+        ).stdout.strip()
+        dirty = bool(
+            subprocess.run(
+                ["git", "status", "--porcelain"],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                check=True,
+            ).stdout.strip()
+        )
+    except (OSError, subprocess.CalledProcessError):
+        revision, dirty = "unavailable", None
+    return {
+        "warning": WARNING,
+        "arguments": {k: str(v) if isinstance(v, Path) else v for k, v in arguments.items()},
+        "python": platform.python_version(),
+        "platform": platform.platform(),
+        "versions": {
+            name: importlib.metadata.version(name)
+            for name in ("rdkit", "scikit-learn", "numpy", "scipy", "matplotlib")
+        },
+        "git_revision": revision,
+        "git_dirty": dirty,
+        "files": {
+            str(path.resolve()): hashlib.sha256(path.read_bytes()).hexdigest() for path in paths
+        },
+    }
 
-    # --- Figures ---
-    print("\n  Saving figures...")
-    colors = {"Random": "#999", "Similarity": "#FF9800", "RF": "#2196F3",
-              "GBT": "#4CAF50", "SVM": "#9C27B0", "TWCS": "#E91E63"}
 
-    # ROC
-    fig, ax = plt.subplots(figsize=(7, 6))
-    for name in ["Random", "Similarity", "RF", "GBT", "SVM", "TWCS"]:
-        fpr, tpr, _ = roc_curve(y, cv_probs[name])
-        lw = 2.5 if name == "TWCS" else 1.5
-        ls = ":" if name == "Random" else ("--" if name == "Similarity" else "-")
-        ax.plot(fpr, tpr, color=colors[name], linewidth=lw, linestyle=ls,
-                label=f'{name} (AUC={bench[name]["AUC"]:.3f})')
-    ax.plot([0, 1], [0, 1], "k--", alpha=0.3)
-    ax.set_xlabel("False Positive Rate")
-    ax.set_ylabel("True Positive Rate")
-    ax.set_title("ROC: Method Benchmarking", fontweight="bold")
-    ax.legend(fontsize=9)
-    plt.tight_layout()
-    plt.savefig(os.path.join(RESULTS, "roc_benchmark.png"), dpi=200)
-    plt.close()
+def write_json(path: Path, value: Any) -> None:
+    payload = json.dumps(value, indent=2, sort_keys=True, allow_nan=False) + "\n"
+    with tempfile.NamedTemporaryFile(
+        mode="w", encoding="utf-8", dir=path.parent, prefix=".nudt5-", delete=False
+    ) as handle:
+        staging = Path(handle.name)
+        try:
+            handle.write(payload)
+            handle.flush()
+            os.fsync(handle.fileno())
+        except BaseException:
+            staging.unlink(missing_ok=True)
+            raise
+    try:
+        os.link(staging, path)
+    finally:
+        staging.unlink(missing_ok=True)
 
-    # EF bar chart
-    fig, ax = plt.subplots(figsize=(8, 5))
-    ms = ["Random", "Similarity", "RF", "GBT", "SVM", "TWCS"]
-    x = np.arange(len(ms))
-    ax.bar(x - 0.18, [bench[m]["EF1"] for m in ms], 0.35,
-           label="EF 1%", color=[colors[m] for m in ms], alpha=0.9)
-    ax.bar(x + 0.18, [bench[m]["EF5"] for m in ms], 0.35,
-           label="EF 5%", color=[colors[m] for m in ms], alpha=0.5)
-    ax.set_xticks(x)
-    ax.set_xticklabels(ms)
-    ax.set_ylabel("Enrichment Factor")
-    ax.set_title("Enrichment by Method", fontweight="bold")
-    ax.legend()
-    plt.tight_layout()
-    plt.savefig(os.path.join(RESULTS, "enrichment_factors.png"), dpi=200)
-    plt.close()
 
-    print(f"  Saved roc_benchmark.png and enrichment_factors.png to {RESULTS}/")
-    print("\n" + "=" * 65)
-    print("  Pipeline complete.")
-    print("=" * 65)
+def main(argv: Sequence[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("command", nargs="?", choices=["audit", "benchmark"], default="audit")
+    parser.add_argument("--compounds", type=Path, default=ROOT / "compounds.csv")
+    parser.add_argument("--candidates", type=Path, default=ROOT / "final_hits.csv")
+    parser.add_argument("--output", type=Path, default=Path.cwd() / "results" / "audit")
+    parser.add_argument(
+        "--allow-invalid",
+        action="store_true",
+        help="Explicitly quarantine invalid records in exploratory benchmarks",
+    )
+    parser.add_argument("--acknowledge-unverified-labels", action="store_true")
+    parser.add_argument("--folds", type=int, default=5)
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--permutations", type=int, default=0)
+    parser.add_argument("--bootstrap-draws", type=int, default=1000)
+    parser.add_argument("--repeat-seeds", type=int, default=1)
+    args = parser.parse_args(argv)
+    try:
+        if args.output.exists() and (not args.output.is_dir() or any(args.output.iterdir())):
+            raise ValueError(
+                "Output must be a new or empty directory; previous runs are never overwritten"
+            )
+        if args.seed < 0 or args.seed >= 2**32 or args.folds < 2:
+            raise ValueError("Seed must be in [0, 2**32) and folds at least two")
+        if args.permutations < 0 or args.bootstrap_draws < 1 or args.repeat_seeds < 1:
+            raise ValueError("Invalid diagnostic draw counts")
+        if args.seed + args.repeat_seeds > 2**32:
+            raise ValueError("Repeated seeds exceed the supported range")
+        records, issues = read_compounds(args.compounds)
+        candidates, candidate_issues = read_compounds(args.candidates, labelled=False)
+        unique, duplicates = deduplicate(records)
+        unique_candidates, candidate_duplicates = deduplicate(candidates)
+        audit = {
+            "warning": WARNING,
+            "valid_records": len(records),
+            "unique_records": len(unique),
+            "label_counts": dict(Counter(str(record.label) for record in unique)),
+            "source_counts": dict(
+                Counter(record.source_row.get("source", "") for record in unique)
+            ),
+            "unique_scaffolds": len({record.scaffold for record in unique}),
+            "invalid_records": issues,
+            "duplicate_structures": duplicates,
+            "candidate_issues": candidate_issues,
+            "candidate_duplicates": candidate_duplicates,
+            "candidates": candidate_audit(unique, unique_candidates),
+            "identity_policy": (
+                "RDKit canonical isomeric SMILES; no salt, tautomer or protonation merging"
+            ),
+            "scaffold_policy": (
+                "RDKit Bemis-Murcko, no chirality; all acyclic molecules share ACYCLIC"
+            ),
+        }
+        benchmark: dict[str, Any] = {}
+        if args.command == "benchmark":
+            if not args.acknowledge_unverified_labels:
+                raise ValueError(
+                    "Benchmark requires --acknowledge-unverified-labels; read the warning"
+                )
+            if (issues or candidate_issues) and not args.allow_invalid:
+                raise ValueError(
+                    f"Invalid records: {issues + candidate_issues}; "
+                    "use audit or explicitly --allow-invalid"
+                )
+            labels = np.asarray([record.label for record in unique], dtype=np.int64)
+            for split in ("molecule", "scaffold", "series"):
+                scores, assignments = out_of_fold(
+                    unique, split=split, folds=args.folds, seed=args.seed
+                )
+                benchmark[split] = {
+                    "metrics": {name: metrics(labels, values) for name, values in scores.items()},
+                    "conditional_resampling": {
+                        name: auc_resampling(
+                            labels,
+                            values,
+                            [r.scaffold for r in unique],
+                            args.seed,
+                            args.bootstrap_draws,
+                        )
+                        for name, values in scores.items()
+                    },
+                    "fold_metrics": fold_statistics(unique, assignments, scores),
+                    "assignments": assignments,
+                    "predictions": [
+                        {
+                            "id": record.identifier,
+                            "label": record.label,
+                            **{name: float(values[index]) for name, values in scores.items()},
+                        }
+                        for index, record in enumerate(unique)
+                    ],
+                }
+            if args.permutations:
+                benchmark["label_randomization"] = randomized_label_diagnostic(
+                    unique,
+                    {
+                        name: float(values["auc"])
+                        for name, values in benchmark["molecule"]["metrics"].items()
+                    },
+                    args.permutations,
+                    args.folds,
+                    args.seed,
+                )
+            sensitivity = []
+            for seed in range(args.seed, args.seed + args.repeat_seeds):
+                for split in ("molecule", "scaffold", "series"):
+                    if seed == args.seed:
+                        values = benchmark[split]["metrics"]
+                    else:
+                        predictions, _ = out_of_fold(
+                            unique, split=split, folds=args.folds, seed=seed
+                        )
+                        values = {
+                            name: metrics(labels, scores) for name, scores in predictions.items()
+                        }
+                    sensitivity.append({"seed": seed, "split": split, "metrics": values})
+            benchmark["seed_sensitivity"] = sensitivity
+        environment_files = [
+            ROOT / name
+            for name in ("requirements.txt", "requirements.lock")
+            if (ROOT / name).is_file()
+        ]
+        manifest = input_manifest(
+            [args.compounds, args.candidates, Path(__file__), *environment_files], vars(args)
+        )
+        args.output.mkdir(parents=True, exist_ok=True)
+        write_json(args.output / "audit.json", audit)
+        if benchmark:
+            write_json(args.output / "benchmark.json", benchmark)
+        write_json(args.output / "manifest.json", manifest)
+        print(WARNING)
+        print(
+            f"Audited {len(unique)} unique valid records; "
+            f"{len(issues)} invalid records retained in report."
+        )
+        print(f"Results: {args.output.resolve()}")
+        return 0
+    except (OSError, ValueError) as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 2
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

@@ -1,0 +1,136 @@
+{
+  "entries": [
+    {
+      "source_id": "page_fulltext",
+      "title": "Targeted NUDT5 inhibitors block hormone signaling in breast cancer cells",
+      "doi": "10.1038/s41467-017-02293-7",
+      "journal": "Nature Communications",
+      "volume": "9",
+      "issue": null,
+      "first_page_or_article": "250",
+      "last_page": null,
+      "publication_dates": [
+        {
+          "attributes": {},
+          "day": "17",
+          "month": "1",
+          "year": "2018"
+        }
+      ]
+    },
+    {
+      "source_id": "balikci_fulltext",
+      "title": "Unexpected Noncovalent Off-Target Activity of Clinical BTK Inhibitors Leads to Discovery of a Dual NUDT5/14 Antagonist",
+      "doi": "10.1021/acs.jmedchem.4c00072",
+      "journal": "Journal of Medicinal Chemistry",
+      "volume": "67",
+      "issue": "9",
+      "first_page_or_article": "7245",
+      "last_page": null,
+      "publication_dates": [
+        {
+          "attributes": {},
+          "day": "18",
+          "month": "4",
+          "year": "2024"
+        }
+      ]
+    },
+    {
+      "source_id": "qian_fulltext",
+      "title": "The novel phosphatase NUDT5 is a critical regulator of triple-negative breast cancer growth",
+      "doi": "10.1186/s13058-024-01778-w",
+      "journal": "Breast Cancer Research : BCR",
+      "volume": "26",
+      "issue": null,
+      "first_page_or_article": "23",
+      "last_page": null,
+      "publication_dates": [
+        {
+          "attributes": {},
+          "day": "5",
+          "month": "2",
+          "year": "2024"
+        }
+      ]
+    },
+    {
+      "source_id": "qian_correction_fulltext",
+      "title": "Correction: The novel phosphatase NUDT5 is a critical regulator of triple-negative breast cancer growth",
+      "doi": "10.1186/s13058-024-01814-9",
+      "journal": "Breast Cancer Research : BCR",
+      "volume": "26",
+      "issue": null,
+      "first_page_or_article": "53",
+      "last_page": null,
+      "publication_dates": [
+        {
+          "attributes": {},
+          "day": "26",
+          "month": "3",
+          "year": "2024"
+        }
+      ]
+    },
+    {
+      "source_id": "marques_fulltext",
+      "title": "Targeted Protein Degradation of NUDT5 Dissociates Catalytic Inhibition from Protein Loss in 6-Thioguanine Response",
+      "doi": "10.1038/s41467-026-74489-9",
+      "journal": "Nature Communications",
+      "volume": "17",
+      "issue": null,
+      "first_page_or_article": "8192",
+      "last_page": null,
+      "publication_dates": [
+        {
+          "attributes": {
+            "pub-type": "epub"
+          },
+          "day": "30",
+          "month": "6",
+          "year": "2026"
+        },
+        {
+          "attributes": {
+            "pub-type": "collection"
+          },
+          "day": null,
+          "month": null,
+          "year": "2026"
+        }
+      ]
+    },
+    {
+      "source_id": "nguyen_metadata",
+      "title": "A non-enzymatic role of Nudix hydrolase 5 in repressing purine de novo synthesis.",
+      "doi": "10.1126/science.adv4257",
+      "journal": "Science (New York, N.Y.)",
+      "volume": "390",
+      "issue": "6778",
+      "pages": "1143-1150",
+      "first_publication_date": "2025-11-06",
+      "issue_year": "2025",
+      "limitation": "Abstract and metadata only; online and issue dates must not be conflated."
+    },
+    {
+      "source_id": "marques_preprint_metadata",
+      "title": "Targeted Protein Degradation of NUDT5 Reveals an Unexpected Non-Enzymatic Role in 6-Thioguanine-Mediated Toxicity",
+      "doi": "10.1101/2025.03.16.643557",
+      "date": [
+        [
+          2025,
+          3,
+          17
+        ]
+      ],
+      "status": "2025 preprint; preserve when discussing version history, not the current peer-reviewed citation",
+      "relationship": "Title/topic/author continuity with 2026 article inspected; Crossref relation field itself is empty."
+    }
+  ],
+  "writer_actions": [
+    "Prefer Marques 2026 Nature Communications 17, 8192, DOI 10.1038/s41467-026-74489-9 for the current source; retain the 2025 preprint in version history if needed.",
+    "Nguyen: Science 390(6778), 1143–1150 (2025), DOI 10.1126/science.adv4257; online 2025-11-06 is distinct from the December issue metadata.",
+    "Qian: Breast Cancer Research 26, 23 (2024); correction 26, 53 (2024), DOI 10.1186/s13058-024-01814-9.",
+    "Page: Nature Communications 9, 250 (2018); funding acknowledgement correction 10, 5050 (2019), DOI 10.1038/s41467-019-12806-1."
+  ]
+}

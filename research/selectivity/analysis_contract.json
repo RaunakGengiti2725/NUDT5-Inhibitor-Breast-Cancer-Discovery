@@ -1,0 +1,198 @@
+{
+  "canonical_data": "paired_evidence.json",
+  "cohorts": {
+    "do_not_reuse_transfer_eligible_ids": "Its10 IDs require only NUDT5 observations; 2,3,4,5 lack NUDT14 and are not paired.",
+    "historical_excluded_overlap": [
+      "10",
+      "11"
+    ],
+    "paired_nonoverlap": [
+      "1",
+      "9",
+      "12",
+      "13",
+      "14",
+      "15"
+    ],
+    "paired_source": [
+      "1",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15"
+    ],
+    "point_only_nonoverlap": [
+      "1",
+      "9",
+      "14"
+    ],
+    "ratio_informative_nonoverlap": [
+      "1",
+      "9",
+      "13",
+      "14"
+    ],
+    "reference_sensitivity_extra_overlap": "6, both endpoints untested; same paired6",
+    "source": "All23 graphs, all46 target cells, including overlaps and untested"
+  },
+  "conditions": "assay_conditions.json",
+  "disagreements": "source_disagreements.json",
+  "endpoint_contract": {
+    "accepted_endpoint": "IC50",
+    "accepted_family": "purified_enzyme_catalytic_inhibition",
+    "numeric": "finite positive reported_mean, finite nonnegative reported_sd; comparator =; no bound",
+    "right_censored": "no numeric mean/SD; comparator >; bound 50 uM; strict true",
+    "unit": "uM",
+    "unknown_values": "null in JSON; empty CSV field, never 0/NaN/inf/string NA sentinel. Table1 raw NA is explicitly decoded as >50, not generic missing.",
+    "untested": "no comparator/mean/SD/bound/biological_n; not an inactive or a bound"
+  },
+  "estimand": {
+    "denominator": "reported mean catalytic IC50 NUDT5",
+    "log_definition": "log10(R)",
+    "log_symbol": "L",
+    "not": [
+      "affinity constant",
+      "clinical selectivity",
+      "binary selective/nonselective class",
+      "paired-replicate estimate",
+      "mean of ratios",
+      "ratio confidence interval"
+    ],
+    "numerator": "reported mean catalytic IC50 NUDT14",
+    "orientation": "R>1 or L>0 favors lower NUDT5 reported mean under these assay conditions",
+    "symbol": "R",
+    "unit": "dimensionless"
+  },
+  "identity": {
+    "candidates": "candidate matches retained separately; 11=NC5-02=ACT-19 is one graph",
+    "canonical": "Chem.MolToSmiles(mol,isomericSmiles=True), source salts/stereochemistry unchanged",
+    "diagnostic_exclusion": "ANY exact canonical, neutral parent, or parent-tautomer training match excludes compound from model diagnostic, never from source pharmacology",
+    "library": "RDKit 2025.09.6; Python3.12 hash-locked environment",
+    "parent": "FragmentParent then Uncharger, canonical isomeric SMILES; exclusion flag only",
+    "tautomer": "TautomerEnumerator.Canonicalize(neutral parent), canonical isomeric SMILES; exclusion flag only; may erase details",
+    "training": "45 valid unique original repository graphs; invalid ACT-18 quarantined, not repaired",
+    "uniqueness": "All23 original compound IDs and canonical graphs must be unique; aliases/conflicting graphs fail closed, not silently deduplicated"
+  },
+  "io": {
+    "atomicity_tests": [
+      "nonempty output refuses without edits",
+      "existing destination file unchanged",
+      "write/validation failure leaves no partial published report; staging cleaned"
+    ],
+    "csv": "UTF-8, newline=\"\", LF records, csv.DictReader/Writer; exact expected header, no duplicate/empty headers, no ragged rows, strict=True, no duplicate IDs; preserve quoted commas and original raw text whitespace",
+    "json": "allow_nan=False, finite values only, nulls preserved, explicit schema_version; reject duplicate object keys when reading.",
+    "manifest": "Record input/content hashes, actual command/revision/dirty state, dependency versions and retrieval timestamps; never rewrite historical provenance to new revision.",
+    "output": "New or empty directory only. Validate all inputs before publishing artifacts; do not overwrite nonempty dirs or individual files. Stage in destination filesystem, flush+fsync and os.link publish as existing pipeline.write_json; clean owned staging on failure."
+  },
+  "long_projection": "target_evidence.csv",
+  "ownership": "Only research/selectivity/; original CSVs and historical numerical JSON immutable",
+  "presentation": {
+    "allowed": "Per-compound means/SD/bounds, R or strict bound/log same orientation, scores and descriptive counts/ranks only",
+    "forbidden": [
+      "selectivity classifier",
+      "AUC/AP/enrichment",
+      "p-values/significance",
+      "correlation/generalization claim",
+      "CI from source SD",
+      "threshold/seed/exclusion tuning",
+      "label near1 as validated selective/nonselective"
+    ],
+    "high_score_definition": "No threshold/class. Display score and within-six descriptive rank, not a tuned favorable cutoff.",
+    "optional_future_figure": "If implemented: log10 R x-axis (dimensionless; >0 favors NUDT5); fixed score y-axis (uncalibrated); label compound IDs; arrows/open bound markers for13, separate not-estimable strip for12/15, separate overlap/untested table; include n=6, only3 point ratios; colorblind-safe Okabe-Ito and shapes; no fabricated uncertainty bands; export PNG/PDF/SVG atomically with downloadable artifacts.",
+    "ordering": "Source-author order; model table historical Equal_mean descending, disclose all6 methods and tied ranks",
+    "precision": "Full binary64 values in JSON/CSV; rounding only presentation. Raw source strings preserve reported precision.",
+    "primary_output": "All23-row source table plus clearly separated six-row model diagnostic table",
+    "rank_rule": "1 + number of eligible scores strictly greater, independently per scenario/method; ties share min rank, subsequent ranks skip. Noneligible rank is null. No R rank for censored/missing rows."
+  },
+  "provenance": "provenance.json",
+  "ratio_rule_input_order": [
+    "NUDT5",
+    "NUDT14"
+  ],
+  "ratio_rules": [
+    {
+      "formula": "mean14/mean5",
+      "if": [
+        "numeric",
+        "numeric"
+      ],
+      "log10_formula": "log10(mean14/mean5)",
+      "status": "point"
+    },
+    {
+      "formula": "R < mean14/bound5",
+      "if": [
+        "right_censored",
+        "numeric"
+      ],
+      "status": "upper_bound",
+      "strict": true
+    },
+    {
+      "formula": "R > bound14/mean5",
+      "if": [
+        "numeric",
+        "right_censored"
+      ],
+      "status": "lower_bound",
+      "strict": true
+    },
+    {
+      "formula": null,
+      "if": [
+        "right_censored",
+        "right_censored"
+      ],
+      "interpretation": "Any R>0 and any real log10 R; no informative finite bound or direction",
+      "status": "double_censored"
+    },
+    {
+      "formula": null,
+      "if": "either untested",
+      "status": "missing_endpoint"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "score_join": {
+    "Equal_mean_definition": "Existing arithmetic mean of RF,GBT,SVM_RBF,Nearest_active only; not all six methods",
+    "forbidden_calls": [
+      "fit_scores",
+      "score_panel",
+      "measured_challenge",
+      "probe_challenge",
+      "reference_sensitivity",
+      "run"
+    ],
+    "keys": "source_compound ID plus exact original source_smiles, canonical graph and all recomputed identity keys; compare raw ledger/source strings and input hashes too",
+    "methods": [
+      "RF",
+      "GBT",
+      "SVM_RBF",
+      "Nearest_active",
+      "Property_LR",
+      "Equal_mean"
+    ],
+    "missing_score": "Retain compound and mark unavailable with reason; fail score table release if a promised join is missing/ambiguous, do not fill with zero or refit",
+    "primary_pointer": "/measured_source_challenge/rows",
+    "scenario_separation": "Show historical and already-recorded authenticated-reference sensitivity separately. Never choose better scores or pool scenarios; no new model run.",
+    "sensitivity_pointer": "/reference_sensitivity/measured_source_challenge/rows",
+    "source": "research/results/transfer.json"
+  },
+  "score_projection": "frozen_scores.csv",
+  "semantic_acceptance_checks": [
+    "exact23 source rows and46 endpoint cells; each compound has exactly one NUDT5 and NUDT14",
+    "all16 table1 cells exactly verified with NA->>50; outside rows not falsely table-verified",
+    "source/long projections and score columns consistent; exact source and input hashes checked",
+    "5 point +1 upper +2 double +15 missing; nonoverlap3+1+2, six paired and four informative",
+    "ratio comparator/point/bound/null/log consistency; >50 is strict; no finite bound for double-censored",
+    "recompute original45 identities and reference replacements; overlap10/11 all levels, sensitivity adds6 only; candidate11=NC5-02",
+    "both score scenarios have23 rows and six frozen methods; joined values byte-numeric equal to source JSON; method ties retained",
+    "all uncertainty/control/SD discrepancies retained; no source overwrite or synthetic biological rows"
+  ],
+  "status": "Local retrospective analysis contract; not preregistered, not a new experiment; source outcomes/scores already inspected",
+  "structural_schema": "paired_evidence.schema.json",
+  "uncertainty": "Retain source SDs and definitions at target level only. No ratio SD, propagated CI, significance, covariance assumption, raw replicate synthesis or biological bootstrap."
+}

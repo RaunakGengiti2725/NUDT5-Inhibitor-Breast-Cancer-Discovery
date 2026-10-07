@@ -1,0 +1,1119 @@
+{
+  "schema_version": 1,
+  "project_code_license": null,
+  "anonymous_access_checked": false,
+  "classes": {
+    "external_databases": {
+      "author_cleared": false,
+      "source": null,
+      "holder": null,
+      "license_version": null,
+      "reuse_basis": null,
+      "attribution": null
+    },
+    "historical_author_data": {
+      "author_cleared": false,
+      "source": null,
+      "holder": null,
+      "license_version": null,
+      "reuse_basis": null,
+      "attribution": null
+    },
+    "project_code": {
+      "author_cleared": false,
+      "source": null,
+      "holder": null,
+      "license_version": null,
+      "reuse_basis": null,
+      "attribution": null
+    },
+    "project_documents_and_results": {
+      "author_cleared": false,
+      "source": null,
+      "holder": null,
+      "license_version": null,
+      "reuse_basis": null,
+      "attribution": null
+    },
+    "upstream_sources": {
+      "author_cleared": false,
+      "source": null,
+      "holder": null,
+      "license_version": null,
+      "reuse_basis": null,
+      "attribution": null
+    }
+  },
+  "item_review": "Every allowlisted path is assigned a source class. Class clearance requires item-level inspection, including publisher terms, PDB/CCD CC0, database licenses and attribution. Open download is not permission.",
+  "distribution_status": "private author-review only; not authorized for public upload",
+  "items": {
+    ".github/workflows/ci.yml": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    ".gitignore": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "README.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "compounds.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "final_hits.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "pyproject.toml": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "requirements-structure.lock": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "requirements-structure.txt": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "requirements.lock": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "requirements.txt": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/assay/PROTOCOL.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/assay/contract.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/assay/handoff_requirements.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/assay/manifest.schema.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/assay/references.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/assay/stress_matrix.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/audit.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/claim_ledger.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/conclusion_categories.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/deposit_correction.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/extension_design.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/NUDT5_external_evidence_report.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/artifact_sources.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/ic50_ledger.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/kd_ledger.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/nudt5_measured_ledger.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/nudt5_measured_ledger.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/observed_database_rows.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/observed_source_overlap.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/pubchem/README.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/pubchem/accession-aids.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/pubchem/assay-descriptions.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/pubchem/audit.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/pubchem/cid-properties.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/pubchem/cid_properties_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/pubchem/concise-activities.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/pubchem/concise_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/pubchem/description_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/pubchem/geneid-aids.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/pubchem/query_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/snapshot_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/external/summary_counts.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/manuscript.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/original_inventory.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/change_closure_report.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/current_gaps.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/diagnostic_supplement.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/diff_verification.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/frozen_inputs.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/laboratory_specification.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/numerical_reproduction.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/arg51_atom_distances.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/arg51_group_minima.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/component_bootstrap_sensitivity.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/definitions_sources.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/edia-dictionary.html.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/ediascorer.html.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/independent_context.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/independent_geometry.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/independent_support.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/opia-dictionary.html.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/quality-suite.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/recomputed_evidence.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/recomputed_statistics.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/source-preservation.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/source_cell_checks.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/audit_context.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/bibliography_checks.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/identity_summary.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/regenerate_identity.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/source_claims.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/source_register.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/sources/marques_fulltext.xml.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/sources/marques_preprint_metadata.json.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/sources/nguyen_fulltext.html.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/sources/nguyen_metadata.json.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/sources/page_correction_excerpt.txt": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/sources/page_fulltext.xml.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/sources/qian_correction_fulltext.xml.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/sources/qian_correction_metadata.json.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/sources/qian_fulltext.xml.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/sources/qian_metadata.json.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/test_identity.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/test_sources.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/verification.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/withdrawn_historical_assertions.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/provenance.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/reference_sources/958.cif.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/reference_sources/9CH.cif.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/reference_structures.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/release_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/results/audit.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/results/benchmark.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/results/controls-manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/results/controls.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/results/descriptors-rdkit-2023.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/results/descriptors-rdkit-2025.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/results/manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/results/selectivity-manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/results/selectivity.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/results/source-assay-provenance.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/results/transfer-manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/results/transfer.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/results/zenodo-record.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/README.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/analysis/diagnostic_scores.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/analysis/pharmacology.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/analysis/selectivity.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/analysis/target_endpoints.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/analysis_contract.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/analysis_contract.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/artifact_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/assay_conditions.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/contract_test_vectors.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/frozen_scores.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/implementation.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/independent_verification.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/paired_evidence.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/paired_evidence.schema.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/primary_excerpts.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/provenance.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/source_disagreements.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/source_verification.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/sources/balikci.xml.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/sources/jm4c00072_0007.jpg.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/sources/jm4c00072_0008.jpg.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/sources/jm4c00072_si_002.csv.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/summary_counts.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/target_evidence.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/selectivity/verification.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/source_assays.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structural/compound_control_panel.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structural/evidence_ledger.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structural/experimental_plan.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structural/structural_metadata.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structural/structural_selectivity_report.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/README.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/acceptance_cases.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/artifact_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/caveats.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/flagged_atoms.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/geometry_contract.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/handoff_sources.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/hypotheses_controls.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/input_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/inspection-parser.lock": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/inspection_provenance.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/lab_handoff.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/ligand_atoms.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/ligand_identity.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/ligand_sites.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/README.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/results/8OTV_C_A_301_slices.png": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/results/8OTV_F_B_302_slices.png": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/results/8RIY_A_AAA_51_slices.png": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/results/8RIY_B_BBB_51_slices.png": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/results/8RIY_C_AAA_301_slices.png": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/results/8RIY_D_BBB_301_slices.png": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/results/completion.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/results/local_atom_samples.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/results/model_support.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/results/residue_availability.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/results/site_availability.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/results/summary.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/source_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/source_notes.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/sources/8otv-files.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/sources/8otv-sf.cif.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/sources/8otv.ccp4.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/sources/8otv_diff.ccp4.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/sources/8otv_validation.xml.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/sources/8riy-files.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/sources/8riy-sf.cif.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/sources/8riy.ccp4.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/sources/8riy_diff.ccp4.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/model_support/sources/8riy_validation.xml.gz": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/polymer_residue_inventory.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/primary_excerpts.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/primary_exclusions.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/results/VERIFICATION.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/results/derived/atom_pairs_within_5A.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/results/derived/derived_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/results/derived/observed_proximity_map.pdf": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/results/derived/observed_proximity_map.png": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/results/derived/observed_proximity_map.svg": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/results/derived/radius_sensitivity.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/results/derived/residue_proximity.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/results/observed_proximity.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/results/run_provenance.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/retrieval_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/runtime_input_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/8OTV-assembly-1.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/8OTV-entry.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/8OTV-polymer-1.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/8OTV.cif": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/8RIY-assembly-1.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/8RIY-entry.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/8RIY-polymer-1.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/8RIY.cif": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/PMC11089510.xml": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/W0O-chemcomp.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/W0O.cif": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/gemmi-0.7.3-cif-docs.rst": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/gemmi-0.7.3-pypi.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/occupancy-flag-atoms.html": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/sources/occupancy-flag-residues.html": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/structure_metadata.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/unobserved_or_zero_occupancy_atoms.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/unobserved_or_zero_occupancy_residues.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/verification.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/structure_comparison/verification.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/study/NUDT5_extension_report.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/study/artifact_sources.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/study/artifact_validation.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/study/evidence_categories.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/study/hypotheses_falsification.csv": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/study/source_register.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/study/validation_and_gates.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/submission/claim_traceability.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/submission/cover_letter_core.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/submission/manuscript.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/submission/manuscript.template.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/submission/prose_lock.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/submission/public_archive.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/submission/rights_review.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/verification.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/bmc_prose.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/build_bmc_submission.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/build_extension_figures.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/build_path_b_documents.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/build_pubchem_audit.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/build_release_manifest.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/build_research_documents.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/build_selectivity_figures.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/build_structure_comparison_figures.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/build_structure_model_support.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/path_b_diagnostics.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/scripts/assay.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/scripts/controls.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/scripts/pipeline.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/scripts/selectivity.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/scripts/structure_comparison.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/scripts/transfer.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/submission_archive.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_assay.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_bmc_submission.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_controls.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_documents.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_extension_figures.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_path_b_documents.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_path_b_repair.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_pipeline.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_pubchem_audit.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_release.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_selectivity.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_selectivity_figures.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_stress_repairs.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_structure_comparison.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_structure_comparison_figures.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_structure_model_support.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "tests/test_transfer.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/submission/source_context.md": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/source_checks/identity_summary_stress_repair.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/path_b/repair/reviews_manifest.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/submission/private_archive.json": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "research/runtime_history/transfer-aa5febd.py.txt": {
+      "author_cleared": false,
+      "decision_and_source": null
+    },
+    "scripts/author_release.py": {
+      "author_cleared": false,
+      "decision_and_source": null
+    }
+  }
+}

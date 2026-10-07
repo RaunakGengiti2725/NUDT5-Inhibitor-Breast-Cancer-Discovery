@@ -1,0 +1,50 @@
+[
+  {
+    "command": ".venv/bin/ruff check .",
+    "exit_code": 0,
+    "seconds": 0.01,
+    "log": "/home/ubuntu/path-b-repair/verification/ruff.log"
+  },
+  {
+    "command": ".venv/bin/ruff format --check .",
+    "exit_code": 0,
+    "seconds": 0.01,
+    "log": "/home/ubuntu/path-b-repair/verification/format.log"
+  },
+  {
+    "command": ".venv/bin/mypy --no-incremental",
+    "exit_code": 0,
+    "seconds": 9.47,
+    "log": "/home/ubuntu/path-b-repair/verification/mypy.log"
+  },
+  {
+    "command": ".venv/bin/python -m pytest",
+    "exit_code": 0,
+    "seconds": 274.49,
+    "log": "/home/ubuntu/path-b-repair/verification/pytest.log"
+  },
+  {
+    "command": ".venv/bin/python -m pytest research/path_b/source_checks",
+    "exit_code": 0,
+    "seconds": 5.08,
+    "log": "/home/ubuntu/path-b-repair/verification/source-checks.log"
+  },
+  {
+    "command": ".venv/bin/python -m compileall -q scripts tests",
+    "exit_code": 0,
+    "seconds": 0.03,
+    "log": "/home/ubuntu/path-b-repair/verification/compile.log"
+  },
+  {
+    "command": ".venv/bin/python -m build",
+    "exit_code": 0,
+    "seconds": 2.0,
+    "log": "/home/ubuntu/path-b-repair/verification/build.log"
+  },
+  {
+    "command": ".venv/bin/pip-audit",
+    "exit_code": 0,
+    "seconds": 0.67,
+    "log": "/home/ubuntu/path-b-repair/verification/pip-audit.log"
+  }
+]

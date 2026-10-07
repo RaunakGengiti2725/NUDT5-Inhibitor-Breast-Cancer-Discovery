@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "sites": [
+    {
+      "assembly_id": "1",
+      "atom_site_ids": [
+        "2923",
+        "2924",
+        "2925",
+        "2926",
+        "2927",
+        "2928",
+        "2929",
+        "2930",
+        "2931",
+        "2932",
+        "2933",
+        "2934",
+        "2935",
+        "2936",
+        "2937",
+        "2938",
+        "2939",
+        "2940",
+        "2941",
+        "2942",
+        "2943",
+        "2944",
+        "2945",
+        "2946",
+        "2947",
+        "2948",
+        "2949",
+        "2950",
+        "2951",
+        "2952"
+      ],
+      "auth_asym_id": "AAA",
+      "auth_comp_id": "W0O",
+      "auth_seq_id": "301",
+      "complete_site_geometry_status": "refused",
+      "complete_site_refusal_reason": "Deposited dimer has unobserved protein residues/atoms; no complete-pocket absence statement or missing-coordinate imputation is supported.",
+      "expected_CCD_heavy_atom_count": 30,
+      "insertion_code_raw": "?",
+      "label_asym_id": "C",
+      "label_comp_id": "W0O",
+      "label_entity_id": "2",
+      "label_seq_id": ".",
+      "ligand_altlocs_raw": [
+        "."
+      ],
+      "ligand_heavy_geometry_status": "complete_deposited_atom_set",
+      "missing_CCD_heavy_atoms": [],
+      "model_id": "1",
+      "observed_geometry_policy": "eligible_with_missingness_and_conformer_flags",
+      "occupancy_values_raw": [
+        "1.000"
+      ],
+      "operation_ids": [
+        "1"
+      ],
+      "pdb_id": "8RIY",
+      "present_positive_occupancy_heavy_atom_count": 30,
+      "receptor_auth_asym_ids": [
+        "AAA",
+        "BBB"
+      ],
+      "receptor_label_asym_ids": [
+        "A",
+        "B"
+      ],
+      "site_id": "8RIY:model1:C:AAA:301",
+      "target": "NUDT5",
+      "unexpected_heavy_atoms": []
+    },
+    {
+      "assembly_id": "1",
+      "atom_site_ids": [
+        "2953",
+        "2954",
+        "2955",
+        "2956",
+        "2957",
+        "2958",
+        "2959",
+        "2960",
+        "2961",
+        "2962",
+        "2963",
+        "2964",
+        "2965",
+        "2966",
+        "2967",
+        "2968",
+        "2969",
+        "2970",
+        "2971",
+        "2972",
+        "2973",
+        "2974",
+        "2975",
+        "2976",
+        "2977",
+        "2978",
+        "2979",
+        "2980",
+        "2981",
+        "2982"
+      ],
+      "auth_asym_id": "BBB",
+      "auth_comp_id": "W0O",
+      "auth_seq_id": "301",
+      "complete_site_geometry_status": "refused",
+      "complete_site_refusal_reason": "Deposited dimer has unobserved protein residues/atoms; no complete-pocket absence statement or missing-coordinate imputation is supported.",
+      "expected_CCD_heavy_atom_count": 30,
+      "insertion_code_raw": "?",
+      "label_asym_id": "D",
+      "label_comp_id": "W0O",
+      "label_entity_id": "2",
+      "label_seq_id": ".",
+      "ligand_altlocs_raw": [
+        "."
+      ],
+      "ligand_heavy_geometry_status": "complete_deposited_atom_set",
+      "missing_CCD_heavy_atoms": [],
+      "model_id": "1",
+      "observed_geometry_policy": "eligible_with_missingness_and_conformer_flags",
+      "occupancy_values_raw": [
+        "1.000"
+      ],
+      "operation_ids": [
+        "1"
+      ],
+      "pdb_id": "8RIY",
+      "present_positive_occupancy_heavy_atom_count": 30,
+      "receptor_auth_asym_ids": [
+        "AAA",
+        "BBB"
+      ],
+      "receptor_label_asym_ids": [
+        "A",
+        "B"
+      ],
+      "site_id": "8RIY:model1:D:BBB:301",
+      "target": "NUDT5",
+      "unexpected_heavy_atoms": []
+    },
+    {
+      "assembly_id": "1",
+      "atom_site_ids": [
+        "3221",
+        "3222",
+        "3223",
+        "3224",
+        "3225",
+        "3226",
+        "3227",
+        "3228",
+        "3229",
+        "3230",
+        "3231",
+        "3232",
+        "3233",
+        "3234",
+        "3235",
+        "3236",
+        "3237",
+        "3238",
+        "3239",
+        "3240",
+        "3241",
+        "3242",
+        "3243",
+        "3244",
+        "3245",
+        "3246",
+        "3247",
+        "3248",
+        "3249",
+        "3250"
+      ],
+      "auth_asym_id": "A",
+      "auth_comp_id": "W0O",
+      "auth_seq_id": "301",
+      "complete_site_geometry_status": "refused",
+      "complete_site_refusal_reason": "Deposited dimer has unobserved protein residues/atoms; no complete-pocket absence statement or missing-coordinate imputation is supported.",
+      "expected_CCD_heavy_atom_count": 30,
+      "insertion_code_raw": "?",
+      "label_asym_id": "C",
+      "label_comp_id": "W0O",
+      "label_entity_id": "2",
+      "label_seq_id": ".",
+      "ligand_altlocs_raw": [
+        "."
+      ],
+      "ligand_heavy_geometry_status": "complete_deposited_atom_set",
+      "missing_CCD_heavy_atoms": [],
+      "model_id": "1",
+      "observed_geometry_policy": "eligible_with_missingness_and_conformer_flags",
+      "occupancy_values_raw": [
+        "1.00"
+      ],
+      "operation_ids": [
+        "1"
+      ],
+      "pdb_id": "8OTV",
+      "present_positive_occupancy_heavy_atom_count": 30,
+      "receptor_auth_asym_ids": [
+        "A",
+        "B"
+      ],
+      "receptor_label_asym_ids": [
+        "A",
+        "B"
+      ],
+      "site_id": "8OTV:model1:C:A:301",
+      "target": "NUDT14",
+      "unexpected_heavy_atoms": []
+    },
+    {
+      "assembly_id": "1",
+      "atom_site_ids": [
+        "3256",
+        "3257",
+        "3258",
+        "3259",
+        "3260",
+        "3261",
+        "3262",
+        "3263",
+        "3264",
+        "3265",
+        "3266",
+        "3267",
+        "3268",
+        "3269",
+        "3270",
+        "3271",
+        "3272",
+        "3273",
+        "3274",
+        "3275",
+        "3276",
+        "3277",
+        "3278",
+        "3279",
+        "3280",
+        "3281",
+        "3282",
+        "3283",
+        "3284",
+        "3285"
+      ],
+      "auth_asym_id": "B",
+      "auth_comp_id": "W0O",
+      "auth_seq_id": "302",
+      "complete_site_geometry_status": "refused",
+      "complete_site_refusal_reason": "Deposited dimer has unobserved protein residues/atoms; no complete-pocket absence statement or missing-coordinate imputation is supported.",
+      "expected_CCD_heavy_atom_count": 30,
+      "insertion_code_raw": "?",
+      "label_asym_id": "F",
+      "label_comp_id": "W0O",
+      "label_entity_id": "2",
+      "label_seq_id": ".",
+      "ligand_altlocs_raw": [
+        "."
+      ],
+      "ligand_heavy_geometry_status": "complete_deposited_atom_set",
+      "missing_CCD_heavy_atoms": [],
+      "model_id": "1",
+      "observed_geometry_policy": "eligible_with_missingness_and_conformer_flags",
+      "occupancy_values_raw": [
+        "1.00"
+      ],
+      "operation_ids": [
+        "1"
+      ],
+      "pdb_id": "8OTV",
+      "present_positive_occupancy_heavy_atom_count": 30,
+      "receptor_auth_asym_ids": [
+        "A",
+        "B"
+      ],
+      "receptor_label_asym_ids": [
+        "A",
+        "B"
+      ],
+      "site_id": "8OTV:model1:F:B:302",
+      "target": "NUDT14",
+      "unexpected_heavy_atoms": []
+    }
+  ],
+  "warning": "Four deposited crystallographic sites, not four independent biological observations."
+}

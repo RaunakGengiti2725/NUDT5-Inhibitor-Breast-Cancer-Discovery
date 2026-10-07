@@ -1,0 +1,133 @@
+"""Read-only independent identity and frozen-score arithmetic checks; no fitting."""
+
+import json
+from pathlib import Path
+from typing import Any
+
+import gemmi
+import numpy as np
+from rdkit import Chem
+
+ROOT = Path("/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery")
+BASE = ROOT / "research/structure_comparison"
+OUT = Path("/home/ubuntu/structural-review")
+
+
+def rows(block: Any, name: str) -> list[dict[str, str]]:
+    cols = block.get_mmcif_category(name, raw=True)
+    return [
+        dict(
+            zip(
+                cols,
+                [x if x in (".", "?") else gemmi.cif.as_string(x) for x in values],
+                strict=True,
+            )
+        )
+        for values in zip(*cols.values(), strict=True)
+    ]
+
+
+ccd = gemmi.cif.read_file(str(BASE / "sources/W0O.cif")).sole_block()
+expected = {
+    (a["atom_id"], a["type_symbol"])
+    for a in rows(ccd, "_chem_comp_atom.")
+    if a["type_symbol"] not in ["H", "D"]
+}
+identity = json.loads((BASE / "ligand_identity.json").read_text())
+source_graph = Chem.MolToSmiles(Chem.MolFromSmiles(identity["source_smiles"]))
+ccd_graphs = [
+    Chem.MolToSmiles(Chem.MolFromSmiles(a["descriptor"]))
+    for a in rows(ccd, "_pdbx_chem_comp_descriptor.")
+    if a["type"].startswith("SMILES")
+]
+assert all(g == source_graph for g in ccd_graphs)
+assert len(expected) == 30
+site_checks = []
+for pdb in ["8RIY", "8OTV"]:
+    block = gemmi.cif.read_file(str(BASE / "sources" / f"{pdb}.cif")).sole_block()
+    lig = [
+        a
+        for a in rows(block, "_atom_site.")
+        if a["label_comp_id"] == "W0O" and a["type_symbol"] not in ["H", "D"]
+    ]
+    for label in sorted({a["label_asym_id"] for a in lig}):
+        atoms = [a for a in lig if a["label_asym_id"] == label]
+        actual = {(a["label_atom_id"], a["type_symbol"]) for a in atoms}
+        assert actual == expected and len(atoms) == 30
+        assert {a["label_alt_id"] for a in atoms} == {"."}
+        assert {float(a["occupancy"]) for a in atoms} == {1.0}
+        site_checks.append(
+            {
+                "pdb": pdb,
+                "label_chain": label,
+                "author_chain": atoms[0]["auth_asym_id"],
+                "author_residue": atoms[0]["auth_seq_id"],
+                "heavy_atom_name_element_match": True,
+                "heavy_atom_count": len(atoms),
+                "all_occupancy_one": True,
+                "alternate": ".",
+            }
+        )
+c = json.loads((ROOT / "research/results/controls.json").read_text())["evaluations"][
+    "full_valid_set"
+]
+preds = sorted(c["predictions"], key=lambda r: r["index"])
+assert [p["index"] for p in preds] == list(range(45))
+y = np.array([p["label"] for p in preds])
+assert int(y.sum()) == 19
+
+
+def auc(scores: list[float]) -> float:
+    s = np.array(scores)
+    d = s[y == 1, None] - s[None, y == 0]
+    return float(((d > 0).sum() + 0.5 * (d == 0).sum()) / d.size)
+
+
+checks = []
+for name, metrics in c["methods"].items():
+    value = auc([r["scores"][name] for r in preds])
+    assert abs(value - metrics["auc"]) < 1e-12
+    checks.append(
+        {
+            "name": name,
+            "independent_pair_count_auc": value,
+            "stored_auc": metrics["auc"],
+        }
+    )
+for name, item in c["ablations"].items():
+    if name.endswith("_only_lr"):
+        value = auc(item["scores"])
+        assert abs(value - item["metrics"]["auc"]) < 1e-12
+        checks.append(
+            {
+                "name": name,
+                "independent_pair_count_auc": value,
+                "stored_auc": item["metrics"]["auc"],
+            }
+        )
+for row in preds:
+    scores = row["scores"]
+    equal = sum(scores[k] for k in ["RF", "GBT", "SVM_RBF", "Nearest_active"]) / 4
+    assert abs(equal - scores["Equal_mean"]) < 1e-12
+paired = json.loads((ROOT / "research/selectivity/paired_evidence.json").read_text())
+compound9 = next(r for r in paired["rows"] if r["source_compound"] == "9")
+ratio = (
+    compound9["endpoints"]["NUDT14"]["reported_mean"]
+    / compound9["endpoints"]["NUDT5"]["reported_mean"]
+)
+assert ratio == 0.6 == compound9["ratio"]["point"]
+result = {
+    "scope": (
+        "Frozen evidence arithmetic and graph checks, not biological validation or new fitting."
+    ),
+    "w0o_smiles_descriptors_matched": len(ccd_graphs),
+    "source_graph": source_graph,
+    "site_checks": site_checks,
+    "full_valid_set_n": 45,
+    "positive_source_labels": 19,
+    "frozen_auc_checks": checks,
+    "equal_mean_component_arithmetic_all_45": True,
+    "compound9_ratio_of_reported_means": ratio,
+}
+(OUT / "independent_context.json").write_text(json.dumps(result, indent=2))
+print(json.dumps(result, indent=2))

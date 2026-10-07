@@ -1,0 +1,21 @@
+{
+  "baseline": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+  "manuscript_sha256": "5ee7257be5a09c9862c2ead2f98416e1e8d1b2fa875624ca009df5cb95934bbb",
+  "commands": "commands_run.md",
+  "details": {
+    "baseline": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+    "manuscript_sha256": "5ee7257be5a09c9862c2ead2f98416e1e8d1b2fa875624ca009df5cb95934bbb",
+    "command": "python /home/ubuntu/path_b_consolidation/validate_final.py",
+    "all_checks_passed": true,
+    "verified_claim_units": 1041,
+    "checks": [
+      "1041 unique units; all 874 originals and upstream classifications/evidence retained; only two explicitly logged original-status changes",
+      "All standalone CSVs carry exact revision/manuscript hash/common command provenance",
+      "All M1–M14/D1–D7 covered; priorities ordered; every cut and lab action pending; density and guide work not falsely closed",
+      "Fourteen numbered author requests; conditional laboratory constraints; UNSENT inquiry has no invented lab/funding declarations or recipient placeholder",
+      "All JSON/CSV/Python parse; all payload hashes/ZIP bytes/CRC match; no raw copyrighted papers in distributed archive",
+      "Repository remains clean, detached at baseline, with identical manuscript SHA256"
+    ],
+    "limits": "No production code/model/biology or new structural validation implied"
+  }
+}

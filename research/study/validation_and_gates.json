@@ -1,0 +1,174 @@
+{
+  "status": "Research design only; no scores or experiments were generated.",
+  "ranks": [
+    {
+      "rank": 1,
+      "id": "H1",
+      "name": "Context-specific catalysis versus PPAT-scaffold dependence"
+    },
+    {
+      "rank": 2,
+      "id": "H2",
+      "name": "Differential Arg51 recognition and target selectivity"
+    },
+    {
+      "rank": 3,
+      "id": "H3",
+      "name": "Fixed MRK probe-pair transfer diagnostic"
+    }
+  ],
+  "retrospective": {
+    "purpose": "Known-answer challenge; not blinded or prospective validation.",
+    "lock_before_scoring": [
+      "Model/weights/training-data/configuration hashes",
+      "Deterministic authentic TH5427 graph correction fixed before any scoring; do not choose whichever graph produces the preferred result",
+      "Structure normalization, charge/protonation/tautomer and stereochemistry policy",
+      "Declared score objective and ranking direction",
+      "Random seeds, pose-selection rule and treatment of failures/ties/abstentions",
+      "Baseline formulas and directions; similarity fingerprint parameters",
+      "All-45 exact/isomeric graph and nearest-neighbor overlap accounting",
+      "Eligibility and endpoint separation rules"
+    ],
+    "forbidden": [
+      "Retraining or reweighting",
+      "Choosing poses/structures/baseline directions after observing ranks",
+      "Calling unassayed decoys experimentally inactive",
+      "Pooling IC50, KD, cellular engagement and viability labels",
+      "Treating familiar remeasured compounds as unseen predictions"
+    ],
+    "report": [
+      "Raw scores and pair order",
+      "Applicability domain, graph overlap and nearest-neighbor identities",
+      "Baseline orders and failures",
+      "Exposed-label status and missing biochemical species/construct",
+      "One concordant pair has symmetric random-order probability 1/2; no population performance claim"
+    ],
+    "not_estimable": [
+      "AUC",
+      "enrichment",
+      "precision",
+      "calibration",
+      "generalization",
+      "superiority over trivial baselines"
+    ]
+  },
+  "prospective": {
+    "qualification": "Independent pilots/QC are excluded from confirmatory outcomes; lock after pilot, before validation.",
+    "primary_h1": "Within the same qualified T47D model, compare WT/E112Q/Y74E rescue patterns across hormone and purine-stress contexts; use endpoint-specific scales/models, not raw pooling. If only different cell models are feasible, narrow the inference accordingly.",
+    "minimum_core_h1": [
+      "NUDT5-depleted cells rescued with empty/WT/E112Q/Y74E near endogenous expression",
+      "Hormone-starved and stimulated conditions using Page protocol as a starting point",
+      "Predeclared nuclear ATP time-course summary; orthogonal downstream transcription and direct counts as secondary outcomes",
+      "TH5427 and MRK-952 at independently qualified engagement windows with protein abundance monitored",
+      "Purine-stress arm only after a measurable same-line response is established; HAP1 serves known positive-control replication"
+    ],
+    "conditional_arms": [
+      "Compound 9 plus NUDT14 loss/WT-rescue, NUDT5/14 double perturbation and counterscreened BTK control only if a differential effect/window exists",
+      "dNUDT5 paired with dNUDT5nc if available; both can engage NUDT5, but the control lacks productive degradation. Recheck abundance/time course and selectivity in the intended cells; neither is assumed biologically inert",
+      "Arg51 mutants and later precisely specified new chemical pair only after protein and binding qualification"
+    ],
+    "outcome_lock": [
+      "Complete eligible panel and structures/construct sequences",
+      "Blinded compound/sample IDs and randomization",
+      "Primary estimands and endpoint-specific statistical models",
+      "Independent biological experimental units, blocking factors and technical-replicate aggregation",
+      "Pilot-derived sample size/precision and predeclared stopping rule",
+      "Exclusions, handling of missing/censored observations, curve-fitting and assay-failure rules",
+      "Multiplicity policy; uncertainty/equivalence bounds justified before outcomes",
+      "Fixed scoring predictions for genuinely uninspected activity outcomes",
+      "Local timestamp/hash; this session creates no registration or deposit"
+    ],
+    "not_new_predictive_validation": [
+      "MRK-952/NC remeasurement",
+      "Balikci 9/10/11 or the already-curated 23-compound source remeasurement",
+      "Known HAP1 purine-response replication"
+    ],
+    "new_validation": "New model-context mechanistic outcomes can validate H1/H2; genuinely uninspected compound activity outcomes can validate frozen predictions. Known controls remain controls."
+  },
+  "gates": [
+    {
+      "id": "G0",
+      "stage": "Identity and materials",
+      "go": "Structures, stereochemical uncertainty, physical sample identity, purity/solubility and protein species/construct are documented for intended use.",
+      "no_go": "Unresolved identity, uncertain usable exposure or missing construct precludes the affected strict claim.",
+      "not_falsification": "Supply or metadata failure is not a test of H1/H2 biology.",
+      "numerical_rule": "No invented cutoff; establish analytical acceptance and exposure-specific suitability independently."
+    },
+    {
+      "id": "G1",
+      "stage": "Biochemical qualification",
+      "go": "Direct product assays have a characterized linear range and reproducibility; orthogonal binding is interpretable; aggregation/reporter controls pass; ATP-producing reaction is separately measured.",
+      "no_go": "Signal interference, unqualified detection, absent functional baseline or inconsistent orthogonal results.",
+      "not_falsification": "An invalid assay cannot refute the biological hypothesis.",
+      "numerical_rule": "Dynamic range and precision derived from independent assay qualification; no generic fold-change or potency requirement imposed."
+    },
+    {
+      "id": "G2",
+      "stage": "Separation-of-function panel",
+      "go": "Near-endogenous WT/E112Q/Y74E have appropriate fold/dimer/localization and intended hydrolysis/ATP-production/PPAT-binding properties.",
+      "no_go": "Catalysis and PPAT binding cannot be separated without confounding abundance or localization.",
+      "not_falsification": "A failed allele is not evidence that catalysis is dispensable or required.",
+      "numerical_rule": "Predefine equivalence/functional margins from independent assay capability and mechanistic relevance."
+    },
+    {
+      "id": "G3",
+      "stage": "Cellular window",
+      "go": "Validated NUDT5 engagement with abundance measured; NUDT14 and BTK contribution assessable; reporter/general toxicity and hormone/purine assay competence established.",
+      "no_go": "No exposure window separates the proposed mechanisms or no baseline phenotype is measurable.",
+      "not_falsification": "Equal dose is not equal engagement; thermal shifts are not calibrated occupancy.",
+      "numerical_rule": "Choose concentrations from measured engagement/exposure and assay qualification rather than literature IC50 multiples."
+    },
+    {
+      "id": "G4",
+      "stage": "Prospective analysis lock",
+      "go": "Blinded IDs, fixed panel, randomization, primary endpoints/contrasts, independent biological units, sample size/precision, exclusions, uncertainty/equivalence and stopping rules timestamped locally before validation.",
+      "no_go": "Outcomes have been used to tune selection, scores or decision criteria; label exploratory and design a new validation.",
+      "not_falsification": "A protocol change requires a new labeled test, not retrospective relabeling as confirmatory.",
+      "numerical_rule": "Size/margins chosen from pilot variance and independently justified smallest meaningful effect; none fabricated here."
+    },
+    {
+      "id": "G5",
+      "stage": "Mechanistic adjudication",
+      "go": "Prespecified contrasts are resolved at the locked precision and supported by qualified orthogonal chemical/genetic evidence.",
+      "no_go": "A precise contrary pattern rejects the scoped claim; lack of precision or failed controls yields inconclusive.",
+      "not_falsification": "Non-significance alone is not evidence of equivalence or no target dependence.",
+      "numerical_rule": "Apply only the predeclared interpretation rule; never choose a threshold after seeing outcomes."
+    }
+  ],
+  "venue_fit": [
+    {
+      "venue": "ACS Chemical Biology",
+      "source_id": "V1",
+      "potential": "H1 with an original causal context/function boundary",
+      "current_status": "Not ready: no new experimental result",
+      "rejection_arguments": [
+        "Published 2025/2026 mechanism repackaged as novelty",
+        "Cell-line-only incremental follow-up",
+        "Unqualified rescue or target attribution"
+      ]
+    },
+    {
+      "venue": "ACS Medicinal Chemistry Letters",
+      "source_id": "V2",
+      "potential": "H2 with differentiated measured SAR/selectivity or a novel supported mechanism",
+      "current_status": "Not ready: known compounds and untested hypotheses",
+      "rejection_arguments": [
+        "Already-published binding rationale without new energetic or selectivity evidence",
+        "Inadequate chemical/biological characterization",
+        "Docking mistaken for pharmacology"
+      ]
+    },
+    {
+      "venue": "Journal of Chemical Information and Modeling",
+      "source_id": "V3",
+      "potential": "Only a broader methodological contribution with adequate experimental validation",
+      "current_status": "Poor fit for H3 alone",
+      "rejection_arguments": [
+        "One exposed pair cannot establish generalization",
+        "No demonstrated new method",
+        "Single-target docking application lacks adequate experimental validation"
+      ]
+    }
+  ],
+  "no_acceptance_or_novelty_guarantee": true
+}

@@ -1,0 +1,161 @@
+{
+  "review_type": "AI review, not human peer review",
+  "reviewed_commit": "22830642f7d33ca3319872b5ba4c513baff50154",
+  "branch": "devin/1791243628-path-b-manuscript",
+  "declared_baseline": "40b9b0708d888a015abe5043bb273c3c6ee601ae",
+  "review_package_sha256": "63a8c1f1fde68b51f0544129dda997ad3a7618b0c1043428b7a1206aed91f517",
+  "conditional_target": "Journal of Molecular Graphics and Modelling, specialist venue",
+  "recommendation": "reject",
+  "recommendation_basis": "publication significance, not demonstrated arithmetic error",
+  "killer_objection_id": "O1",
+  "objections": [
+    {
+      "id": "O1",
+      "severity": "critical",
+      "category": "incremental contribution",
+      "locations": ["research/manuscript.md:13-17", "research/manuscript.md:49-61", "research/manuscript.md:124-130", "research/manuscript.md:144-146", "research/path_b/diagnostic_supplement.md:61"],
+      "claim_at_issue": "Deposited compound-9 geometry supports an all-site, atom-specific description",
+      "classification": "nothing currently available",
+      "evidence": "The source Figure 1 and Figure 3 captions in research/selectivity/sources/balikci.xml.gz already report the chain-B R51 hydrophobic interaction, and the source deposited 8RIY and 8OTV. The revision adds no independent placement validation, omit or polder map, rerefinement, energy calculation or new measurement. The retained JMGM scope excerpt excludes routine modelling with very limited new insight.",
+      "required_action": "No wording repair suffices. Either add independently validated structural or experimental evidence, or reframe for a reproducibility or data-audit venue.",
+      "venue_consequence": "Rejection at a specialist modelling venue even after full copyediting."
+    },
+    {
+      "id": "O2",
+      "severity": "major",
+      "category": "IC50 ratio interpretation and protocol comparability",
+      "locations": ["research/manuscript.md:93", "research/manuscript.md:35-37", "research/manuscript.md:76-93", "scripts/scripts/selectivity.py:290-333"],
+      "claim_at_issue": "retrospective counterexample to reading a high activity-label score as NUDT5-selective inhibition",
+      "classification": "existing evidence",
+      "evidence": "R = 0.162/0.270 = 0.600 reproduces exactly, but the source methods specify 20-minute NUDT5 and 60-minute NUDT14 reactions normalized to 500 nM TH5427, n = 2 biological replicates in triplicate sets, with no raw pairing or covariance available. The score is trained on unverified labels against unassayed decoys and is not a selectivity estimator.",
+      "required_action": "Replace counterexample with descriptive discordance under the two reported protocols; state that it challenges only the invalid reading of the score; do not derive ratio uncertainty from summary SDs.",
+      "venue_consequence": "Fixable; unrepaired it invites a reviewer charge of overclaiming selectivity."
+    },
+    {
+      "id": "O3",
+      "severity": "major",
+      "category": "displayed ratio precision versus effective uncertainty",
+      "locations": ["research/manuscript.md:35-37", "research/manuscript.md:76-93", "research/manuscript.md:136", "research/selectivity/paired_evidence.json", "research/selectivity/assay_conditions.json"],
+      "claim_at_issue": "Table 2 mean +/- SD beside six-decimal ratios",
+      "classification": "existing evidence for the display repair; nothing currently available for an inferential ratio interval",
+      "evidence": "All 46 endpoint cells match the author CSV exactly and ratios are exact functions of rounded reported means. No ratio CI is computed and none can be, since raw replicate pairing and covariance are absent.",
+      "required_action": "Round to source-appropriate precision or label values as computed from displayed source means, and note that displayed precision is arithmetic, not measurement precision.",
+      "venue_consequence": "Descriptive framing is salvageable; any quantitative selectivity ranking should be rejected until raw data exist."
+    },
+    {
+      "id": "O4",
+      "severity": "major",
+      "category": "grouped conformal calibration sparsity",
+      "locations": ["research/path_b/diagnostic_supplement.md:33-41", "documents/diagnostic_supplement.md:257-268", "scripts/scripts/controls.py:244-330"],
+      "claim_at_issue": "reported empirical coverage of 0.978 and 0.956 in the similarity split",
+      "classification": "existing evidence",
+      "evidence": "Recomputed from stored outputs: similarity_component_split has class-1 calibration count 2 in all five outer folds with class-1 minimum p-value 1/3, so class 1 is force-included at alpha 0.1 and 0.2; 43 of 45 and 42 of 45 sets contain both labels. In full_valid_set at alpha 0.1, 22 of 45 molecules fall in folds where both classes are force-included by minimum p-value alone.",
+      "required_action": "Display per-class calibration counts, minimum p-values and set-size frequencies beside each cohort and label the similarity split a sparse-calibration stress test. No refitting needed.",
+      "venue_consequence": "Fixable; unrepaired the coverage column misleads."
+    },
+    {
+      "id": "O5",
+      "severity": "major",
+      "category": "incompatible discrimination estimands",
+      "locations": ["research/manuscript.md:97-120", "research/path_b/diagnostic_supplement.md:33", "scripts/scripts/controls.py:444-588"],
+      "claim_at_issue": "Table 3 pooled out-of-fold ROC-AUC read as one out-of-sample ranking estimate",
+      "classification": "existing evidence",
+      "evidence": "full_valid_set recomputation: Equal_mean pooled 0.9312 versus within-fold pair-weighted 0.9655; Property_LR 0.9798 versus 1.0000; 87 within-fold comparable pairs versus 494 pooled pairs; Train_prevalence pooled 0.2460 with within-fold 0.5000 in all five folds, and pooled 0.1569 in the similarity split.",
+      "required_action": "Report pooled and within-fold estimands side by side with pair counts and explain why pooled is retained.",
+      "venue_consequence": "Fixable display issue; neither estimand establishes target recognition."
+    },
+    {
+      "id": "O6",
+      "severity": "major",
+      "category": "bootstrap scope and grouping sensitivity",
+      "locations": ["research/manuscript.md:43", "research/manuscript.md:120", "research/path_b/diagnostic_supplement.md:37", "scripts/scripts/controls.py:334-364", "scripts/scripts/controls.py:406-441"],
+      "claim_at_issue": "conditional 95 percent intervals presented beside AUC tables",
+      "classification": "existing evidence for labelling and grouping disclosure; nothing currently available for workflow-level uncertainty",
+      "evidence": "1000 draws resample scaffold groups from frozen out-of-fold scores with model_refitted false. Stored full_valid_set ranges reproduce as Equal_mean [0.6849, 1.0000], Property_LR [0.9082, 1.0000], paired difference [-0.2464, 0]. Resampling stored Tanimoto components instead of exact scaffolds in the similarity split gives Equal_mean [0.9286, 1.0000] with 17 single-class draws versus [0.9339, 1.0000] and none.",
+      "required_action": "Label every range a fixed-score group-resampling percentile range, state the grouping dependence, and avoid superiority language. Workflow uncertainty would require refitting inside resamples and a defined target population.",
+      "venue_consequence": "Fixable labelling; a population confidence claim would be unsupportable."
+    },
+    {
+      "id": "O7",
+      "severity": "moderate",
+      "category": "panel breadth and selection risk",
+      "locations": ["research/manuscript.md:97-120", "research/path_b/diagnostic_supplement.md:65-67", "scripts/build_path_b_documents.py:322-345"],
+      "claim_at_issue": "diagnostic panel prominence and within-panel superlatives",
+      "classification": "existing evidence",
+      "evidence": "Six methods, 17 ablations, three cohorts, five seeds, three cutoffs, reference sensitivity, calibration, two conformal levels and a transfer challenge are reported. Two single-descriptor controls, hba_only_lr and tpsa_only_lr, reach pooled AUC 0.9960 above the consensus score, which the manuscript concedes.",
+      "required_action": "Add a compact inventory of all cohorts, methods, seeds and cutoffs and qualify superlatives as within this stored panel. No multiplicity correction is required for purely descriptive tables.",
+      "venue_consequence": "Framing risk; inferential wording would require correction."
+    },
+    {
+      "id": "O8",
+      "severity": "minor-moderate",
+      "category": "figure attribution error",
+      "locations": ["documents/diagnostics.png panel B", "scripts/build_research_documents.py:102-115", "scripts/scripts/pipeline.py:410-492"],
+      "claim_at_issue": "panel titled Sensitivity to decoy partitions",
+      "classification": "existing evidence",
+      "evidence": "The seed drives series_splits decoy allocation and also the model fitting and split generation in fit_scores and out_of_fold, so the seed 42-46 curve mixes both sources of variation.",
+      "required_action": "Rename to seed sensitivity of the series-holdout diagnostic, or hold fitting randomness fixed and vary only decoy allocation.",
+      "venue_consequence": "Minor; an alert reviewer would still flag it as a mislabel."
+    },
+    {
+      "id": "O9",
+      "severity": "minor",
+      "category": "metric policy contradiction",
+      "locations": ["research/path_b/diagnostic_supplement.md:35", "documents/diagnostic_supplement.md:76", "documents/diagnostic_supplement.md:90", "documents/diagnostic_supplement.md:104", "documents/diagnostic_supplement.md:117", "scripts/scripts/controls.py:144-176"],
+      "claim_at_issue": "A zero denominator remains undefined rather than becoming zero",
+      "classification": "existing evidence",
+      "evidence": "sklearn.metrics.matthews_corrcoef returns 0.0 for constant predictions and the annex publishes MCC 0.0000 for every Constant_0_5 row and for Train_prevalence in full_valid_set and similarity_component_split, while precision_at_0_5 is correctly reported as null elsewhere.",
+      "required_action": "Report those MCC cells as undefined, or state that the implementation follows sklearn's zero convention, then regenerate the annex.",
+      "venue_consequence": "Reproducibility documentation defect only."
+    }
+  ],
+  "unanswerable_objections": [
+    {
+      "id": "U1",
+      "issue": "No independent biological or energetic result and no demonstrated general method is available in the revision.",
+      "venue_consequence": "The specialist-venue contribution threshold remains unmet regardless of writing quality."
+    },
+    {
+      "id": "U2",
+      "issue": "Raw paired IC50 replicates, replicate covariance, complete nesting and protocol-matched cross-target comparability are unavailable.",
+      "venue_consequence": "No ratio interval, selectivity claim or harmonized comparison can be certified; ratios must remain descriptive."
+    },
+    {
+      "id": "U3",
+      "issue": "The journal author guide was inaccessible and author-owned declarations, including Nikhil Srinivasan's retained contribution and authorship, remain open.",
+      "venue_consequence": "Submission compliance cannot be assessed in this review; these are author decisions."
+    }
+  ],
+  "not_objections": [
+    "The equal-weight mean is implemented as described and kept distinct from the historical normalized TWCS; it matches a recomputed raw four-score mean to within 1e-14.",
+    "Censoring handling is strict: not active is retained as a bound, double-censored pairs yield no ratio, and no inactive potency is invented.",
+    "Descriptive ECE is genuinely implemented in controls.py:179-202; bin-count sensitivity is modest, Equal_mean 0.0627 at five bins versus 0.0673 at ten.",
+    "The grouped conformal implementation matches its stated empirical-only scope.",
+    "The structural extraction preserves both chains, all four W0O sites, occupancy, alternates and partial or null rows; independent recomputation from 8RIY.cif confirms both Arg51 minima.",
+    "The source-transfer challenge is correctly flagged as uncontrolled; with ten eligible endpoints and five positives at 50 micromolar its 1.000 AUCs carry little information.",
+    "Tests, hashes and page-identity checks were treated as software and provenance evidence only.",
+    "Recorded access failures were not treated as source contradictions."
+  ],
+  "verification": {
+    "release_inventory_files": 136,
+    "release_inventory_errors": 0,
+    "source_archive_tracked_files": 294,
+    "source_archive_differences": 0,
+    "source_endpoint_cells_exactly_matched": 46,
+    "paired_ratio_states_recomputed": 8,
+    "ablation_aucs_recomputed": 17,
+    "arg51_minima_recomputed_independently": 2,
+    "arg51_AAA_distance_angstrom": 3.7555613428620767,
+    "arg51_BBB_distance_angstrom": 3.2512725201065518,
+    "model_fitting_performed": false,
+    "tracked_files_edited": false,
+    "input_sha256": {
+      "research/results/controls.json": "6593a34bbf9f75b64216af68b4a23d539026d284b102a63f2d234c3ae0d040a6",
+      "research/results/benchmark.json": "e143831e4c56e32f7f26c6ebe194e478c0828e2b4a17c1da1157fc04dccd5c65",
+      "research/results/transfer.json": "df6b544a2c5b8aca0ab3007f016133f8fd012629210e375bd34d0fdbad32e50a",
+      "research/selectivity/paired_evidence.json": "2872dd55843e6cc7ac03ece02df2684bb7ab637786df47d95b2cd14626c7aa6f",
+      "research/selectivity/sources/jm4c00072_si_002.csv.gz": "a628c90932abb6c9eaac12a6236462248da96cd6e7a855fb4cde28562a5705dd",
+      "research/structure_comparison/sources/8RIY.cif": "39267e781393f99681d7f154d2def2a271c8a10ae9a2bc6fe819cbf78d9c5047"
+    }
+  }
+}

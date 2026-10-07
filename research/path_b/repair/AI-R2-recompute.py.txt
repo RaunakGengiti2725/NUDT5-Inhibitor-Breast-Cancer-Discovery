@@ -1,0 +1,278 @@
+"""Read-only independent calculation from raw CIF categories, not the repository engine."""
+
+import collections
+import csv
+import gzip
+import json
+import xml.etree.ElementTree as ET
+from importlib.metadata import version
+from pathlib import Path
+from typing import Any
+
+import gemmi
+import numpy as np
+
+ROOT = Path("/home/ubuntu/repos/NUDT5-Inhibitor-Breast-Cancer-Discovery")
+BASE = ROOT / "research/structure_comparison"
+OUT = Path("/home/ubuntu/structural-review")
+
+
+def rows(block, name):
+    cols = block.get_mmcif_category(name, raw=True)
+    return [
+        {
+            k: (v if v in (".", "?") else gemmi.cif.as_string(v))
+            for k, v in zip(cols, values, strict=True)
+        }
+        for values in zip(*cols.values(), strict=True)
+    ]
+
+
+def xyz(a):
+    return np.array([float(a["Cartn_" + k]) for k in "xyz"])
+
+
+def writecsv(name, records):
+    with (OUT / name).open("w") as f:
+        w = csv.DictWriter(f, fieldnames=list(records[0]))
+        w.writeheader()
+        w.writerows(records)
+
+
+reference = json.loads((BASE / "results/observed_proximity.json").read_text())
+refrows = {
+    (
+        r["residue_identity"]["pdb_id"],
+        r["site_id"].split(":")[2],
+        r["residue_identity"]["label_asym_id"],
+        r["residue_identity"]["label_seq_id"],
+        r["protein_conformer_id"],
+    ): r
+    for r in reference["residue_proximity"]
+}
+refpairs = {
+    (
+        r["ligand_atom"]["pdb_id"],
+        r["ligand_atom"]["atom_site_id"],
+        r["protein_atom"]["atom_site_id"],
+        r["protein_conformer_id"],
+    ): r["distance_A"]
+    for r in reference["atom_pairs_within_5A"]
+}
+newrows = {}
+newpairs = {}
+argrows = []
+group_minima = []
+site_summary = []
+validation = []
+metadata = {}
+errors: list[list[Any]] = []
+for pdb in ["8RIY", "8OTV"]:
+    block = gemmi.cif.read_file(str(BASE / "sources" / f"{pdb}.cif")).sole_block()
+    atoms = rows(block, "_atom_site.")
+    heavy = [a for a in atoms if a["type_symbol"] not in ["H", "D"] and float(a["occupancy"]) > 0]
+    proteins = [a for a in heavy if a["label_asym_id"] in ["A", "B"]]
+    scheme = rows(block, "_pdbx_poly_seq_scheme.")
+    missing_atoms = rows(block, "_pdbx_unobs_or_zero_occ_atoms.")
+    ligsites = sorted({a["label_asym_id"] for a in atoms if a["label_comp_id"] == "W0O"})
+    fractional = [
+        {
+            k: a[k]
+            for k in [
+                "id",
+                "label_asym_id",
+                "auth_asym_id",
+                "label_seq_id",
+                "auth_seq_id",
+                "label_comp_id",
+                "label_atom_id",
+                "label_alt_id",
+                "occupancy",
+            ]
+        }
+        for a in atoms
+        if float(a["occupancy"]) < 1
+    ]
+    metadata[pdb] = {
+        "atom_rows": len(atoms),
+        "fractional_or_zero": fractional,
+        "nonblank_alternates": dict(
+            collections.Counter(a["label_alt_id"] for a in atoms if a["label_alt_id"] != ".")
+        ),
+        "assemblies": rows(block, "_pdbx_struct_assembly_gen."),
+        "operators": rows(block, "_pdbx_struct_oper_list."),
+        "resolution": rows(block, "_refine."),
+    }
+    for site in ligsites:
+        ligand = [a for a in heavy if a["label_asym_id"] == site]
+        lc = np.array([xyz(a) for a in ligand])
+        tally: collections.Counter[str] = collections.Counter()
+        for sr in scheme:
+            if sr["asym_id"] not in ["A", "B"]:
+                continue
+            allpa = [
+                a
+                for a in atoms
+                if a["label_asym_id"] == sr["asym_id"] and a["label_seq_id"] == sr["seq_id"]
+            ]
+            alts = sorted({a["label_alt_id"] for a in allpa} - {"."}) or ["."]
+            for alt in alts:
+                pa = [
+                    a
+                    for a in allpa
+                    if a["label_alt_id"] in [".", alt]
+                    and a["type_symbol"] not in ["H", "D"]
+                    and float(a["occupancy"]) > 0
+                ]
+                partial = any(
+                    a["label_asym_id"] == sr["asym_id"] and a["label_seq_id"] == sr["seq_id"]
+                    for a in missing_atoms
+                ) or any(float(a["occupancy"]) == 0 for a in allpa)
+                status = "refused" if not pa else "partial_observed" if partial else "observed"
+                key = (pdb, site, sr["asym_id"], sr["seq_id"], alt)
+                tally[status] += 1
+                value = None
+                wp = []
+                if pa:
+                    ds = np.linalg.norm(
+                        lc[:, None, :] - np.array([xyz(a) for a in pa])[None, :, :],
+                        axis=2,
+                    )
+                    value = float(ds.min())
+                    for i, j in np.argwhere(ds == value):
+                        wp.append((ligand[i]["id"], pa[j]["id"]))
+                    for i, j in np.argwhere(ds <= 5):
+                        newpairs[(pdb, ligand[i]["id"], pa[j]["id"], alt)] = float(ds[i, j])
+                newrows[key] = (value, status, wp)
+                old = refrows.get(key)
+                if old is None:
+                    errors.append(["missing reference row", key])
+                    continue
+                if status != old["geometry_status"]:
+                    errors.append(["status", key, status, old["geometry_status"]])
+                ov = old["observed_min_distance_A"]
+                if (value is None) != (ov is None) or (
+                    value is not None and abs(value - ov) > 1e-10
+                ):
+                    errors.append(["distance", key, value, ov])
+                ow = {
+                    (
+                        w["ligand_atom"]["atom_site_id"],
+                        w["protein_atom"]["atom_site_id"],
+                    )
+                    for w in old["minimum_witness_pairs"]
+                }
+                if set(wp) != ow:
+                    errors.append(["witness", key, wp, list(ow)])
+                for rad in [3.5, 4.0, 4.5, 5.0]:
+                    field = f"within_{rad:.1f}A".replace(".", "_")
+                    actual = None if value is None else value <= rad
+                    if actual != old[field]:
+                        errors.append(["threshold", key, rad])
+        site_summary.append(
+            {
+                "pdb": pdb,
+                "ligand_label": site,
+                "ligand_auth": ligand[0]["auth_asym_id"],
+                "ligand_auth_seq": ligand[0]["auth_seq_id"],
+                "heavy_atoms": len(ligand),
+                "occupancies": sorted({a["occupancy"] for a in ligand}),
+                "alternates": sorted({a["label_alt_id"] for a in ligand}),
+                **tally,
+            }
+        )
+        if pdb == "8RIY":
+            for chain in ["A", "B"]:
+                aa = [a for a in atoms if a["label_asym_id"] == chain and a["auth_seq_id"] == "51"]
+                for a in aa:
+                    d = np.linalg.norm(lc - xyz(a), axis=1)
+                    ix = int(np.argmin(d))
+                    argrows.append(
+                        {
+                            "pdb": pdb,
+                            "ligand_label": site,
+                            "ligand_auth": ligand[0]["auth_asym_id"],
+                            "protein_label": chain,
+                            "protein_auth": a["auth_asym_id"],
+                            "protein_label_seq": a["label_seq_id"],
+                            "protein_auth_seq": a["auth_seq_id"],
+                            "protein_atom": a["label_atom_id"],
+                            "atom_site_id": a["id"],
+                            "occupancy": float(a["occupancy"]),
+                            "B": float(a["B_iso_or_equiv"]),
+                            "positive_retained": float(a["occupancy"]) > 0,
+                            "nearest_ligand_atom": ligand[ix]["label_atom_id"],
+                            "distance_A": float(d[ix]),
+                        }
+                    )
+                for name, names in [
+                    ("backbone", {"N", "CA", "C", "O", "OXT"}),
+                    ("sidechain", {"CB", "CG", "CD", "NE", "CZ", "NH1", "NH2"}),
+                    ("guanidinium", {"NE", "CZ", "NH1", "NH2"}),
+                ]:
+                    candidates = [
+                        x
+                        for x in argrows
+                        if x["ligand_label"] == site
+                        and x["protein_label"] == chain
+                        and x["protein_atom"] in names
+                        and x["positive_retained"]
+                    ]
+                    v = min(candidates, key=lambda x: x["distance_A"])
+                    group_minima.append(
+                        {
+                            "site": site,
+                            "chain": chain,
+                            "group": name,
+                            "protein_atom": v["protein_atom"],
+                            "ligand_atom": v["nearest_ligand_atom"],
+                            "distance_A": v["distance_A"],
+                            "occupancy": v["occupancy"],
+                        }
+                    )
+    report = ET.fromstring(
+        gzip.decompress(
+            (BASE / "model_support/sources" / f"{pdb.lower()}_validation.xml.gz").read_bytes()
+        )
+    )
+    for n in report.findall("ModelledSubgroup"):
+        if n.get("resname") == "W0O" or (
+            pdb == "8RIY" and n.get("resname") == "ARG" and n.get("resnum") == "51"
+        ):
+            validation.append(
+                {
+                    "pdb": pdb,
+                    "attributes": n.attrib,
+                    "outliers": [{"kind": x.tag, **x.attrib} for x in n],
+                }
+            )
+
+pair_keys_agree = set(newpairs) == set(refpairs)
+max_pair_error = max(abs(newpairs[k] - refpairs[k]) for k in newpairs.keys() & refpairs.keys())
+result = {
+    "method": (
+        "Independent raw CIF category traversal plus numpy Euclidean distances; "
+        "no repository geometry imports. Deposited crystal assembly operators checked separately."
+    ),
+    "gemmi": version("gemmi"),
+    "numpy": np.__version__,
+    "rows_recomputed": len(newrows),
+    "row_keys_agree": set(newrows) == set(refrows),
+    "row_comparison_errors": errors,
+    "pairs_recomputed": len(newpairs),
+    "pair_keys_agree": pair_keys_agree,
+    "max_pair_error_A": max_pair_error,
+    "site_summary": site_summary,
+    "arg51_group_minima": group_minima,
+    "metadata": metadata,
+    "validation_records": validation,
+}
+(OUT / "independent_geometry.json").write_text(json.dumps(result, indent=2))
+writecsv("arg51_atom_distances.csv", argrows)
+writecsv("arg51_group_minima.csv", group_minima)
+print(
+    json.dumps(
+        {k: v for k, v in result.items() if k not in ["metadata", "validation_records"]},
+        indent=2,
+    )
+)

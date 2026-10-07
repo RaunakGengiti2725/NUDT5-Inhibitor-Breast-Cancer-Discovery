@@ -234,6 +234,14 @@ def test_fractional_consensus_matches_representable_weight_oracle(scale: float) 
         "PLACE\u034fHOLDER text",
         "see \u034f<\u034f!\u034f-\u034f- hidden",
         "T\u00a0B\u00a0D",
+        "T\u0307 B\u0307 D\u0307",
+        "Funding T B D.",
+        "Funding T\u0307 B\u0307 D\u0307.",
+        "Funding T\u0307\u00a0B\u0307\u00a0D\u0307.",
+        "Funding: M I S S I N G.",
+        "t\u0323o\u0323 d\u0323o\u0323",
+        "I\u0307 N S E R T",
+        "P\u0301L A C E\u0304 H O L D E R",
     ],
 )
 def test_mark_hidden_placeholders_refused(bad: str) -> None:
@@ -247,6 +255,8 @@ def test_mark_hidden_placeholders_refused(bad: str) -> None:
     [
         "Jos\u00e9 Mu\u00f1oz, Institut f\u00fcr Chemie, Berlin.",
         "Supported by grant 123; the funder had no role in analysis.",
+        "A\u030angstro\u0308m distances in Table 1 are reported to three decimals.",
+        "R. Gengiti had nothing to do with any competing commercial interest.",
     ],
 )
 def test_accented_author_text_still_accepted(good: str) -> None:

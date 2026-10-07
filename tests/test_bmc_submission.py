@@ -424,7 +424,7 @@ def test_author_schema_rejects_unknown_and_missing_keys() -> None:
         release_gaps(record)
 
 
-@pytest.mark.parametrize("kind", ["missing", "duplicate", "incomplete", "obfuscated"])
+@pytest.mark.parametrize("kind", ["missing", "duplicate", "incomplete", "obfuscated", "spaced"])
 def test_external_author_record_never_falls_back(tmp_path: Path, kind: str) -> None:
     path = tmp_path / "answers.json"
     record = approved_fixture()
@@ -436,7 +436,11 @@ def test_external_author_record_never_falls_back(tmp_path: Path, kind: str) -> N
         with pytest.raises(ValueError, match="Duplicate JSON key"):
             build(ROOT, tmp_path / "out", author_record=path)
     else:
-        record["statements"]["funding"] = None if kind == "incomplete" else "T\u034fB\u034fD"
+        record["statements"]["funding"] = {
+            "incomplete": None,
+            "obfuscated": "T\u034fB\u034fD",
+            "spaced": "Funding T\u0307 B\u0307 D\u0307.",
+        }[kind]
         path.write_text(json.dumps(record))
         with pytest.raises(ValueError, match="Author release blocked.*funding"):
             build(ROOT, tmp_path / "out", author_record=path, require_author_confirmation=True)
@@ -496,6 +500,20 @@ def test_completed_author_path_without_unpinning_provenance(tmp_path: Path) -> N
     assert record["statements"]["final_byline_and_addresses"] in [p.text for p in doc.paragraphs]
     with ZipFile(output / "Private_audit_provenance.zip") as archive:
         assert archive.read(f"private/source/{PACKAGE}/author_confirmation.json") == frozen_record
+    for index, placeholder in enumerate(("T\u0307 B\u0307 D\u0307", "Funding T B D.")):
+        invalid_record = json.loads(record_bytes)
+        invalid_record["statements"]["funding"] = placeholder
+        record_path.write_text(json.dumps(invalid_record))
+        invalid_output = tmp_path / f"invalid-{index}"
+        with pytest.raises(ValueError, match="Author release blocked: funding"):
+            build(
+                checkout,
+                invalid_output,
+                author_record=record_path,
+                require_author_confirmation=True,
+            )
+        assert not invalid_output.exists()
+    record_path.write_bytes(record_bytes)
     extracted = tmp_path / "extracted"
     for name in ("Additional_file_2.zip", "Additional_file_3.zip", "Private_audit_provenance.zip"):
         with ZipFile(output / name) as archive:

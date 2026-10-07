@@ -70,12 +70,26 @@ def valid_statement(value: Any) -> bool:
     )
     if not any(c.isalnum() for c in visible):
         return False
+    decomposed = unicodedata.normalize("NFKD", normalized)
     markless = "".join(
         c
-        for c in unicodedata.normalize("NFKD", normalized)
+        for c in decomposed
         if not unicodedata.category(c).startswith("M") and c not in "\u115f\u1160\u2800\u3164\uffa0"
     )
-    for candidate in (normalized, markless, visible):
+    # Marks and separators are stripped together as well, so neither hides a placeholder word.
+    collapsed = "".join(
+        c
+        for c in decomposed
+        if not unicodedata.category(c).startswith(("M", "Z"))
+        and c not in "\u115f\u1160\u2800\u3164\uffa0"
+    )
+    spelled_placeholders = "|".join(
+        r"\s+".join(word)
+        for word in ("TODO", "TBD", "MISSING", "INSERT", "PLACEHOLDER", "REPLACE", "REPLACEMENT")
+    )
+    if re.search(rf"\b(?:{spelled_placeholders})\b", markless, re.I):
+        return False
+    for candidate in (normalized, markless, visible, collapsed):
         if re.search(
             r"\b(?:TODO|TBD|MISSING|INSERT|PLACEHOLDER|REPLACE(?:MENT)?)\b", candidate, re.I
         ):

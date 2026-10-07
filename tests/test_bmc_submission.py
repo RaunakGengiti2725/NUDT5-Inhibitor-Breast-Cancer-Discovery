@@ -422,3 +422,133 @@ def test_author_schema_rejects_unknown_and_missing_keys() -> None:
     del record["statements"]["funding"]
     with pytest.raises(ValueError, match="fields"):
         release_gaps(record)
+
+
+@pytest.mark.parametrize("kind", ["missing", "duplicate", "incomplete", "obfuscated"])
+def test_external_author_record_never_falls_back(tmp_path: Path, kind: str) -> None:
+    path = tmp_path / "answers.json"
+    record = approved_fixture()
+    if kind == "missing":
+        with pytest.raises(FileNotFoundError):
+            build(ROOT, tmp_path / "out", author_record=path, require_author_confirmation=True)
+    elif kind == "duplicate":
+        path.write_text('{"status":"author_confirmed","status":"author_answers_required"}')
+        with pytest.raises(ValueError, match="Duplicate JSON key"):
+            build(ROOT, tmp_path / "out", author_record=path)
+    else:
+        record["statements"]["funding"] = None if kind == "incomplete" else "T\u034fB\u034fD"
+        path.write_text(json.dumps(record))
+        with pytest.raises(ValueError, match="Author release blocked.*funding"):
+            build(ROOT, tmp_path / "out", author_record=path, require_author_confirmation=True)
+    assert not (tmp_path / "out").exists()
+
+
+def test_completed_author_path_without_unpinning_provenance(tmp_path: Path) -> None:
+    import shutil
+
+    from submission_archive import distribution_gaps
+
+    # Synthetic declarations/permissions exercise software, never approve the actual paper.
+    checkout = tmp_path / "checkout"
+    subprocess.run(
+        ["git", "clone", "--shared", str(ROOT), str(checkout)],
+        check=True,
+        capture_output=True,
+    )
+    tracked = subprocess.check_output(["git", "-C", str(ROOT), "ls-files", "-z"]).decode()
+    for name in filter(None, tracked.split("\0")):
+        (checkout / name).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / name, checkout / name)
+    record_path = tmp_path / "completed-record.json"
+    record = approved_fixture()
+    record["statements"]["final_byline_and_addresses"] = "Synthetic test author, José *literal*."
+    record_bytes = json.dumps(record, ensure_ascii=False).encode()
+    record_path.write_bytes(record_bytes)
+    rights_path = checkout / PACKAGE / "rights_review.json"
+    rights = json.loads(rights_path.read_bytes())
+    rights["project_code_license"] = "Synthetic test license, not a rights decision."
+    rights["anonymous_access_checked"] = True
+    for row in rights["classes"].values():
+        for key in row:
+            row[key] = True if key == "author_cleared" else "Synthetic test assertion only."
+    for row in rights["items"].values():
+        row["author_cleared"] = True
+        row["decision_and_source"] = "Synthetic test assertion only."
+    rights_path.write_text(json.dumps(rights))
+    assert distribution_gaps(checkout) == []
+    frozen_record = (checkout / PACKAGE / "author_confirmation.json").read_bytes()
+    output = tmp_path / "confirmed"
+    manifest = json.loads(
+        build(
+            checkout, output, author_record=record_path, require_author_confirmation=True
+        ).read_bytes()
+    )
+    assert manifest["author_record_sha256"] == hashlib.sha256(record_bytes).hexdigest()
+    assert manifest["external_author_record"] and manifest["submission_ready"]
+    assert not manifest["submitted"] and not manifest["biological_validation"]
+    assert (output / "author_confirmation.json").read_bytes() == record_bytes
+    assert (checkout / PACKAGE / "author_confirmation.json").read_bytes() == frozen_record
+    article = (output / "BMC_research_note.md").read_text()
+    assert "AUTHOR-REVIEW DRAFT" not in article and "## Declarations" in article
+    for key in ("final_byline_and_addresses", "funding", "ai_assistance_disclosure"):
+        assert record["statements"][key] in article
+    doc = Document(str(output / "BMC_research_note.docx"))
+    assert record["statements"]["final_byline_and_addresses"] in [p.text for p in doc.paragraphs]
+    with ZipFile(output / "Private_audit_provenance.zip") as archive:
+        assert archive.read(f"private/source/{PACKAGE}/author_confirmation.json") == frozen_record
+    extracted = tmp_path / "extracted"
+    for name in ("Additional_file_2.zip", "Additional_file_3.zip", "Private_audit_provenance.zip"):
+        with ZipFile(output / name) as archive:
+            if name != "Private_audit_provenance.zip":
+                assert not any(
+                    "author_confirmation" in n or "completed-record" in n
+                    for n in archive.namelist()
+                )
+            archive.extractall(extracted)
+    source = extracted / "source"
+    rebuilt = tmp_path / "confirmed-without-git"
+    subprocess.run(
+        [
+            sys.executable,
+            str(source / "scripts/build_bmc_submission.py"),
+            "--repository",
+            str(source),
+            "--output",
+            str(rebuilt),
+            "--author-record",
+            str(record_path),
+            "--require-author-confirmation",
+        ],
+        check=True,
+        capture_output=True,
+        env={**os.environ, "PYTHONPATH": str(source / "scripts/scripts")},
+    )
+    normalized = []
+    for package in (output, rebuilt):
+        built_manifest = json.loads((package / "submission-manifest.json").read_bytes())
+        prose = (package / "BMC_research_note.md").read_text()
+        for name in ("Additional_file_2.zip", "Additional_file_3.zip"):
+            digest = hashlib.sha256((package / name).read_bytes()).hexdigest()
+            assert digest == built_manifest["files"][name]["sha256"]
+            assert prose.count(digest) == 1
+            prose = prose.replace(digest, f"{name} verified digest")
+        prefix = "Code access and requirements: "
+        start = prose.index(prefix) + len(prefix)
+        access, length = json.JSONDecoder().raw_decode(prose[start:])
+        assert access == built_manifest["code_access"]
+        normalized.append(
+            prose[:start] + "Verified build-specific source provenance" + prose[start + length :]
+        )
+    # Archive bytes and Git availability differ; scientific prose and author text must not.
+    assert normalized[0] == normalized[1]
+    assert (rebuilt / "author_confirmation.json").read_bytes() == record_bytes
+    # The override must not excuse tampering with the archived original author record.
+    (checkout / PACKAGE / "author_confirmation.json").write_text(json.dumps(record))
+    with pytest.raises(ValueError, match="Private provenance changed:.*author_confirmation"):
+        build(
+            checkout,
+            tmp_path / "tampered",
+            author_record=record_path,
+            require_author_confirmation=True,
+        )
+    assert not (tmp_path / "tampered").exists()

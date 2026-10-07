@@ -70,10 +70,18 @@ def valid_statement(value: Any) -> bool:
     )
     if not any(c.isalnum() for c in visible):
         return False
-    if re.search(r"\b(?:TODO|TBD|MISSING|INSERT|PLACEHOLDER|REPLACE(?:MENT)?)\b", normalized, re.I):
-        return False
-    if re.search(r"\[\s*OWNER|\\(?:g<|[0-9])|\$\{|\{\{|<!--", normalized, re.I):
-        return False
+    markless = "".join(
+        c
+        for c in unicodedata.normalize("NFKD", normalized)
+        if not unicodedata.category(c).startswith("M") and c not in "\u115f\u1160\u2800\u3164\uffa0"
+    )
+    for candidate in (normalized, markless, visible):
+        if re.search(
+            r"\b(?:TODO|TBD|MISSING|INSERT|PLACEHOLDER|REPLACE(?:MENT)?)\b", candidate, re.I
+        ):
+            return False
+        if re.search(r"\[\s*OWNER|\\(?:g<|[0-9])|\$\{|\{\{|<!--", candidate, re.I):
+            return False
     # Author fields are literal single paragraphs, not Markdown or document structure.
     return not normalized.lstrip().startswith(("#", "|")) and not any(
         c in normalized for c in ("\n", "\r", "\u2028", "\u2029")

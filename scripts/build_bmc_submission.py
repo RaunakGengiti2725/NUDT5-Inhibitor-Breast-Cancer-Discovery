@@ -18,7 +18,7 @@ import build_research_documents as documents
 import numpy as np
 from author_release import CONFIRMATIONS as CONFIRMATIONS
 from author_release import STATEMENTS as STATEMENTS
-from author_release import blank_record, read_record
+from author_release import blank_record, unique_object
 from author_release import release_gaps as release_gaps
 from bmc_prose import validate_prose
 from docx import Document
@@ -150,7 +150,13 @@ def declarations(
     return "## Declarations\n\n" + "\n\n".join(f"### {h}\n\n{v}" for h, v in pairs) + "\n\n"
 
 
-def build(repository: Path, output: Path, *, require_author_confirmation: bool = False) -> Path:
+def build(
+    repository: Path,
+    output: Path,
+    *,
+    require_author_confirmation: bool = False,
+    author_record: Path | None = None,
+) -> Path:
     if output.is_symlink() or (output.exists() and (not output.is_dir() or any(output.iterdir()))):
         raise ValueError("Submission output must be a new or empty directory")
     path_b.locked_inputs(repository, repository / "research/results")
@@ -170,11 +176,15 @@ def build(repository: Path, output: Path, *, require_author_confirmation: bool =
     blocks = path_b.quantitative_blocks(*data)
     path_b.synchronize(text, {k: blocks[k] for k in ("sites", "paired", "controls")})
     checks = article_checks(text)
-    record = (
-        read_record(package / "author_confirmation.json")
-        if (package / "author_confirmation.json").exists()
-        else blank_record()
+    record_path = (
+        author_record if author_record is not None else package / "author_confirmation.json"
     )
+    record_bytes = (
+        source_bytes(record_path.parent, record_path.name)
+        if author_record is not None or record_path.exists()
+        else json_bytes(blank_record())
+    )
+    record = json.loads(record_bytes, object_pairs_hook=unique_object)
     gaps = release_gaps(record)
     rights_gaps = distribution_gaps(repository)
     access = code_access(repository)
@@ -307,10 +317,10 @@ def build(repository: Path, output: Path, *, require_author_confirmation: bool =
             "author_actions.md",
             "reviewer_candidates.md",
             "claim_traceability.md",
-            "author_confirmation.json",
         ):
             if (package / name).exists():
                 (staging / name).write_bytes((package / name).read_bytes())
+        (staging / "author_confirmation.json").write_bytes(record_bytes)
         for name in ("Additional_file_1.pdf", *archives):
             if (staging / name).stat().st_size > MAX_ADDITIONAL_BYTES:
                 raise ValueError(f"Additional file exceeds 20 MB: {name}")
@@ -319,6 +329,8 @@ def build(repository: Path, output: Path, *, require_author_confirmation: bool =
             "journal": "BMC Research Notes",
             "article_type": "Research note",
             "author_release_checks_complete": not gaps,
+            "author_record_sha256": hashlib.sha256(record_bytes).hexdigest(),
+            "external_author_record": author_record is not None,
             "submission_ready": not gaps and not rights_gaps,
             "distribution_gaps": rights_gaps,
             "code_access": access,
@@ -399,9 +411,17 @@ def main() -> None:
     parser.add_argument("--repository", type=Path, default=documents.ROOT)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--require-author-confirmation", action="store_true")
+    parser.add_argument(
+        "--author-record",
+        type=Path,
+        help="Completed author JSON outside the frozen provenance; never inferred as approval",
+    )
     args = parser.parse_args()
     build(
-        args.repository, args.output, require_author_confirmation=args.require_author_confirmation
+        args.repository,
+        args.output,
+        require_author_confirmation=args.require_author_confirmation,
+        author_record=args.author_record,
     )
 
 

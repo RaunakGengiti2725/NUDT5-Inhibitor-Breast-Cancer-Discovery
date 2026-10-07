@@ -223,3 +223,33 @@ def test_fractional_consensus_matches_representable_weight_oracle(scale: float) 
         with np.errstate(all="raise"):
             actual = consensus_scores(score, {"a": scale, "b": scale})
         np.testing.assert_allclose(actual, [oracle, 1.0], rtol=1e-15, atol=1e-16)
+
+
+@pytest.mark.parametrize(
+    "bad",
+    [
+        "T\u034fB\u034fD",
+        "M\u034fISSING",
+        "T\u0300B\u0300D",
+        "PLACE\u034fHOLDER text",
+        "see \u034f<\u034f!\u034f-\u034f- hidden",
+        "T\u00a0B\u00a0D",
+    ],
+)
+def test_mark_hidden_placeholders_refused(bad: str) -> None:
+    from author_release import valid_statement
+
+    assert not valid_statement(bad)
+
+
+@pytest.mark.parametrize(
+    "good",
+    [
+        "Jos\u00e9 Mu\u00f1oz, Institut f\u00fcr Chemie, Berlin.",
+        "Supported by grant 123; the funder had no role in analysis.",
+    ],
+)
+def test_accented_author_text_still_accepted(good: str) -> None:
+    from author_release import valid_statement
+
+    assert valid_statement(good)

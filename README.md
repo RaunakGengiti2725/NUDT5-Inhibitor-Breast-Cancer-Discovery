@@ -38,7 +38,7 @@ This revision preserves the original CSVs and replaces an unreliable screening d
 
 The supplied dataset contains 46 records (20 labelled positives, 26 untested decoys). One positive, ACT-18, is not a valid RDKit molecule. NC5-02 is identical to training record ACT-19. Two structures have authenticated source-paper assay mappings; most source labels remain unverified (see the evidence ledger). A negative decoy label does **not** mean experimentally demonstrated inactivity.
 
-## Install (Python 3.11+, verified on Python 3.12)
+## Install (Python 3.12; pyproject requires >=3.12)
 
 ```sh
 uv venv .venv --python 3.12
@@ -315,3 +315,30 @@ all factual statements and approvals. Read `research/submission/author_actions.m
 Do not infer no funding, no conflicts, exclusive submission, sole authorship, permissions
 or human verification. Machine checks cannot authenticate an author's declaration.
 No external submission, public deposit, payment, laboratory contact or PR merge occurs.
+
+### Author finalization without rewriting frozen provenance
+
+Keep the archived `research/submission/author_confirmation.json` unchanged. Copy it
+outside the repository, fill it with truthful author statements and confirmations,
+and pass that separate file explicitly:
+
+```sh
+.venv/bin/python scripts/build_bmc_submission.py --output /path/to/new-author-package \
+  --author-record /path/to/completed-author-record.json --require-author-confirmation
+```
+
+The original author record, review hashes and scientific source locks remain
+mandatory and unchanged. The actual input record is validated, copied into the
+private author package, and SHA-256 recorded in its submission manifest. It never
+joins the public supporting archives. A missing, malformed or incomplete supplied
+record fails rather than falling back to the archived record. The item-level
+`research/submission/rights_review.json` must also be truthfully completed; author
+answers cannot clear rights by themselves. Do not set approval flags speculatively.
+These checks verify recorded statements, not their truth, author eligibility,
+permission, editorial significance or journal acceptance.
+
+To reconstruct a finalized author package without Git, extract Additional files 2
+and 3 and the private provenance companion as documented, then pass the completed
+record outside `source/` with `--author-record`. The original private archive stays
+historical provenance; the emitted `author_confirmation.json` is the actual record
+used for that build. No manuscript is submitted by the build command.

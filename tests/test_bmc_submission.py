@@ -573,3 +573,59 @@ def test_completed_author_path_without_unpinning_provenance(tmp_path: Path) -> N
             require_author_confirmation=True,
         )
     assert not (tmp_path / "tampered").exists()
+
+
+def test_partial_author_byline_does_not_approve_release(tmp_path: Path) -> None:
+    frozen = (ROOT / PACKAGE / "author_confirmation.json").read_bytes()
+    record = json.loads(frozen)
+    byline = "Élodie [Example]_* " + hashlib.sha256(str(tmp_path).encode()).hexdigest()[:16]
+    record["statements"]["final_byline_and_addresses"] = byline
+    record_path = tmp_path / "partial-author.json"
+    record_bytes = json.dumps(record).encode()
+    record_path.write_bytes(record_bytes)
+    with pytest.raises(ValueError, match="contributor_history_resolved"):
+        build(
+            ROOT, tmp_path / "strict", author_record=record_path, require_author_confirmation=True
+        )
+    assert not (tmp_path / "strict").exists()
+    output = tmp_path / "draft"
+    manifest = json.loads(build(ROOT, output, author_record=record_path).read_bytes())
+    extracted = tmp_path / "extracted"
+    for name in ("Additional_file_2.zip", "Additional_file_3.zip", "Private_audit_provenance.zip"):
+        with ZipFile(output / name) as archive:
+            archive.extractall(extracted)
+    rebuilt = tmp_path / "rebuilt"
+    build(extracted / "source", rebuilt, author_record=record_path)
+    for package in (output, rebuilt):
+        current = json.loads((package / "submission-manifest.json").read_bytes())
+        assert not any(
+            current[k]
+            for k in (
+                "submission_ready",
+                "author_release_checks_complete",
+                "submitted",
+                "biological_validation",
+            )
+        )
+        assert "contributor_history_resolved" in current["author_owned_gaps"]
+        assert current["distribution_gaps"]
+        assert current["author_record_sha256"] == hashlib.sha256(record_bytes).hexdigest()
+        assert current["external_author_record"]
+        assert (package / "author_confirmation.json").read_bytes() == record_bytes
+        article = (package / "BMC_research_note.md").read_text()
+        original = (ROOT / PACKAGE / "manuscript.md").read_text()
+        assert article.split("## Abstract", 1)[1] == original.split("## Abstract", 1)[1]
+        assert article.count(byline) == 1
+        paragraphs = [p.text for p in Document(str(package / "BMC_research_note.docx")).paragraphs]
+        assert byline in paragraphs
+        assert any(p.startswith("AUTHOR-REVIEW DRAFT.") for p in paragraphs)
+        with ZipFile(package / "Private_audit_provenance.zip") as archive:
+            assert archive.read(f"private/source/{PACKAGE}/author_confirmation.json") == frozen
+        for name in ("Additional_file_2.zip", "Additional_file_3.zip"):
+            with ZipFile(package / name) as archive:
+                assert all(byline.encode() not in archive.read(n) for n in archive.namelist())
+    assert (output / "BMC_research_note.md").read_bytes() == (
+        rebuilt / "BMC_research_note.md"
+    ).read_bytes()
+    assert (ROOT / PACKAGE / "author_confirmation.json").read_bytes() == frozen
+    assert manifest["article_checks"] == article_checks(original)

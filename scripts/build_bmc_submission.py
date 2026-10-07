@@ -18,7 +18,7 @@ import build_research_documents as documents
 import numpy as np
 from author_release import CONFIRMATIONS as CONFIRMATIONS
 from author_release import STATEMENTS as STATEMENTS
-from author_release import blank_record, unique_object
+from author_release import blank_record, unique_object, valid_statement
 from author_release import release_gaps as release_gaps
 from bmc_prose import validate_prose
 from docx import Document
@@ -287,6 +287,14 @@ def build(
                 "No concurrent submission is active.\n"
             )
         else:
+            byline = record["statements"]["final_byline_and_addresses"]
+            if valid_statement(byline):
+                text = re.sub(
+                    r"^AUTHOR-REVIEW DRAFT\..*?$",
+                    lambda match: byline + "\n\n" + match[0],
+                    text,
+                    flags=re.M,
+                )
             cover = (
                 "# Cover-letter scientific core\n\n"
                 "AUTHOR-REVIEW DRAFT. The text below is not a complete submission letter. "
